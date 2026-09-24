@@ -49,6 +49,7 @@ export default function Contacto() {
                 key={opcion.letra}
                 accessibilityRole="radio"
                 accessibilityState={{ checked: marcada }}
+                aria-checked={marcada}
                 accessibilityLabel={`Opción ${opcion.letra}: ${leerExpresion(opcion.partes)}`}
                 onPress={() => setElegida(opcion.letra)}
                 style={[estilos.opcion, marcada ? estilos.opcionMarcada : estilos.opcionQuieta]}

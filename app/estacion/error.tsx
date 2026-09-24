@@ -47,6 +47,7 @@ export default function CazarElError() {
                 accessibilityRole="button"
                 accessibilityLabel={`Paso ${paso.numero}: ${leerExpresion(paso.partes)}`}
                 accessibilityState={{ selected: esteSenalado }}
+                aria-selected={esteSenalado}
                 onPress={() => setSenalado(paso.numero)}
                 style={({ pressed }) => [
                   estilos.paso,
@@ -83,6 +84,7 @@ export default function CazarElError() {
                   accessibilityRole="radio"
                   accessibilityLabel={motivo}
                   accessibilityState={{ checked: elegido }}
+                  aria-checked={elegido}
                   onPress={() => setMotivoElegido(i)}
                   style={({ pressed }) => [
                     estilos.motivo,

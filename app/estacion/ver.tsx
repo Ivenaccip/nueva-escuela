@@ -1,5 +1,4 @@
 import { router } from 'expo-router';
-import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import {
@@ -22,10 +21,6 @@ const SIGUIENTE = '/estacion/contacto';
  * dar: aquí el estudiante nada más mira y decide si ya lo sabía.
  */
 export default function VerElVideo() {
-  // Todavía no hay reproductor; guardamos el toque para que el botón no mienta
-  // sobre lo que hace y el lector de pantalla anuncie el cambio.
-  const [reproduciendo, setReproduciendo] = useState(false);
-
   const avanzar = () => router.push(SIGUIENTE);
 
   return (
@@ -42,9 +37,7 @@ export default function VerElVideo() {
           <Tarjeta style={estilos.video}>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel={reproduciendo ? 'Pausar el video' : 'Reproducir el video'}
-              accessibilityState={{ selected: reproduciendo }}
-              onPress={() => setReproduciendo((antes) => !antes)}
+              accessibilityLabel="Reproducir el video"
               style={({ pressed }) => [estilos.reproducir, pressed && estilos.reproducirTocado]}
             >
               <IconoReproducir />
@@ -68,7 +61,6 @@ export default function VerElVideo() {
         <View style={estilos.zonaSaltar}>
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel="Saltar el video, ya lo sabía"
             onPress={avanzar}
             style={({ pressed }) => [estilos.saltar, pressed && estilos.saltarTocado]}
           >

@@ -52,6 +52,7 @@ export default function Circulo() {
                 key={materia}
                 accessibilityRole="tab"
                 accessibilityState={{ selected: activa }}
+                aria-selected={activa}
                 style={[estilos.materia, activa ? estilos.materiaActiva : estilos.materiaQuieta]}
               >
                 <Text style={activa ? estilos.materiaTextoActivo : estilos.materiaTexto}>
@@ -144,7 +145,9 @@ const estilos = StyleSheet.create({
     color: colores.texto,
   },
   zonaCirculo: {
-    flex: 1,
+    // flexGrow y no flex: dentro del Cuerpo, flex:1 deja el alto del círculo
+    // fuera de la cuenta y la pantalla nunca llega a desplazarse hasta él.
+    flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },

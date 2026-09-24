@@ -94,6 +94,7 @@ export function Expresion({
             abajo={parte.abajo}
             tamano={tamano}
             color={color}
+            fuente={fuente}
           />
         ),
       });
