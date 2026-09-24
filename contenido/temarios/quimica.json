@@ -1,0 +1,598 @@
+{
+  "clave": "quimica",
+  "nombre": "Química",
+  "familias": [
+    {
+      "nombre": "materia",
+      "dequeVa": "Qué es un material y cómo se mide: volumen, densidad, estados y los cambios que no crean sustancias nuevas."
+    },
+    {
+      "nombre": "mezclas",
+      "dequeVa": "Dos sustancias juntas sin unirse: cómo se clasifican, cómo se separan y qué tan concentradas están."
+    },
+    {
+      "nombre": "átomo",
+      "dequeVa": "Lo que hay dentro de un átomo y cómo se cuenta: partículas, número atómico, iones y electrones por nivel."
+    },
+    {
+      "nombre": "tabla periódica",
+      "dequeVa": "Cómo se lee la tabla y qué predice: grupo, periodo, metal o no metal, y la valencia de cada elemento."
+    },
+    {
+      "nombre": "enlaces",
+      "dequeVa": "Por qué los átomos se pegan entre sí y cómo se escribe la fórmula que resulta de esa unión."
+    },
+    {
+      "nombre": "nomenclatura",
+      "dequeVa": "Ponerle nombre a un compuesto viendo su fórmula, y escribir la fórmula cuando te dan el nombre."
+    },
+    {
+      "nombre": "reacciones",
+      "dequeVa": "Lo que pasa cuando una sustancia se convierte en otra: cómo se escribe, qué se conserva y cómo se balancea."
+    },
+    {
+      "nombre": "ácidos y bases",
+      "dequeVa": "Dos familias que se reconocen por su fórmula, se miden con la escala de pH y se cancelan entre sí."
+    }
+  ],
+  "totalTemas": 35,
+  "temas": [
+    {
+      "numero": 1,
+      "titulo": "Volumen por desplazamiento de agua",
+      "familia": "materia",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo medir el volumen de una piedra metiéndola en agua, y explicar por qué se resta el nivel de antes.",
+      "dependeDe": [],
+      "errorTipico": "Reporta el nivel final de la probeta como si fuera el volumen del objeto (dice 85 mL cuando el objeto mide 25 mL), porque no resta el nivel inicial; y cuando sí resta, lo hace al revés (inicial menos final) y le queda un volumen negativo. También lee la probeta desde arriba en lugar de hacerlo a la altura del menisco.",
+      "losCincoPasos": "Los de la medición: anotar el nivel inicial del agua, meter el objeto, anotar el nivel final, restar final menos inicial, y escribir el resultado con su unidad.",
+      "notacion": "Números con unidad de volumen, incluida una con superíndice: mL y cm³. Una resta escrita en un renglón dentro de la frase, como 85 mL − 60 mL = 25 mL, con el signo menos de resta (no guion)."
+    },
+    {
+      "numero": 2,
+      "titulo": "Densidad: por qué flota o se hunde",
+      "familia": "materia",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular la densidad de un material y decir si flota en agua, aunque el objeto sea muy pesado.",
+      "dependeDe": [
+        1
+      ],
+      "errorTipico": "Divide volumen entre masa en lugar de masa entre volumen, porque acomoda arriba el número más grande para que la división \"salga bonita\". Y al decidir si flota compara pesos (\"pesa 2 kg, entonces se hunde\") en vez de comparar la densidad con la del agua.",
+      "losCincoPasos": "Los del cálculo: anotar la masa, anotar el volumen, dividir masa entre volumen, escribir la unidad g/cm³, y comparar el resultado con 1 g/cm³ para decidir si flota o se hunde.",
+      "notacion": "Fracción apilada con palabras dentro (masa arriba, volumen abajo), unidad compuesta con superíndice y diagonal: g/cm³. Signos de comparación dentro de la frase: 0.7 g/cm³ < 1 g/cm³."
+    },
+    {
+      "numero": 3,
+      "titulo": "Los estados de la materia y sus partículas",
+      "familia": "materia",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo decir en qué estado está un material y explicar cómo se mueven sus partículas por dentro.",
+      "dependeDe": [],
+      "errorTipico": "Cree que al pasar a gas las partículas \"se hacen más grandes\" o \"se estiran\", en vez de separarse y moverse más rápido siendo las mismas. Y dice que en el sólido las partículas están quietas, sin ningún movimiento.",
+      "losCincoPasos": "Los del razonamiento: nombrar el estado, decir si tiene forma propia, decir si tiene volumen propio, describir qué tan juntas están las partículas, y describir qué tan rápido se mueven.",
+      "notacion": "Texto. Lo único no verbal es un esquema de puntos (las partículas) que el estudiante compara entre tres recuadros; no hace falta escribir fórmulas."
+    },
+    {
+      "numero": 4,
+      "titulo": "Cambios de estado: fusión y evaporación",
+      "familia": "materia",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo nombrar cada cambio de estado y explicar que el agua no desaparece al hervir: se vuelve vapor.",
+      "dependeDe": [
+        3
+      ],
+      "errorTipico": "Dice que al hervir el agua \"se convierte en aire\" o que se acaba, en vez de que pasa a vapor y sigue siendo agua. Además usa \"se derrite\" para la evaporación y llama gas a la nube blanca que sale de la olla, que en realidad ya es agua líquida condensada.",
+      "losCincoPasos": "Identificar el estado inicial, identificar el estado final, nombrar el cambio (fusión, evaporación, condensación, solidificación), decir si se dio o se quitó calor, y decir qué pasó con las partículas.",
+      "notacion": "Texto más flechas simples entre estados: sólido → líquido → gas. Es la primera flecha que aparece en la app, y lee \"se convierte en\". También temperaturas con el símbolo de grado: 0 °C, 100 °C."
+    },
+    {
+      "numero": 5,
+      "titulo": "Cambio físico o cambio químico",
+      "familia": "materia",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo distinguir un cambio físico de uno químico preguntándome si apareció una sustancia nueva.",
+      "dependeDe": [
+        4
+      ],
+      "errorTipico": "Clasifica como químico todo lo que se ve distinto —disolver azúcar, romper un vidrio, moler café— porque \"ya no es igual que antes\"; y clasifica como físico el clavo oxidado porque \"nada más cambió de color\".",
+      "losCincoPasos": "Decir qué sustancia había antes, decir qué hay después, decidir si se puede regresar a lo de antes, buscar señales de sustancia nueva (gas, olor, color que no se quita, sólido en el fondo), y concluir el tipo de cambio.",
+      "notacion": "Texto: los nombres de las sustancias se escriben con palabras (azúcar, agua, óxido), todavía sin fórmulas. Sirve una tabla de dos columnas, antes y después."
+    },
+    {
+      "numero": 6,
+      "titulo": "Pura, homogénea o heterogénea",
+      "familia": "mezclas",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo decir si algo es sustancia pura o mezcla, y si la mezcla es homogénea o heterogénea.",
+      "dependeDe": [
+        3
+      ],
+      "errorTipico": "Llama \"pura\" al agua de garrafón, a la leche o al refresco porque se ven parejos: confunde homogénea con sustancia pura. Del otro lado, dice que el aire es sustancia pura porque no se le ven las partes.",
+      "losCincoPasos": "Decir de cuántas sustancias distintas está hecho, decidir si es pura o mezcla, ver si se distinguen las partes a simple vista, clasificarla en homogénea o heterogénea, y dar otro ejemplo del mismo tipo.",
+      "notacion": "Sobre todo texto, pero en los escalones altos aparecen fórmulas con subíndice para separar sustancia pura de mezcla: H₂O y NaCl contra \"agua de mar\"."
+    },
+    {
+      "numero": 7,
+      "titulo": "Filtración y decantación",
+      "familia": "mezclas",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo elegir entre filtrar y decantar según si el sólido está disuelto o nada más revuelto.",
+      "dependeDe": [
+        6
+      ],
+      "errorTipico": "Escoge filtración para separar agua con sal, porque cree que el filtro atrapa todo lo que no sea agua. No distingue que el filtro solo retiene lo que quedó sin disolver.",
+      "losCincoPasos": "Nombrar los componentes de la mezcla, decir si es homogénea o heterogénea, decidir si el sólido está disuelto o solo revuelto, elegir el método, y decir qué queda de cada lado al terminar.",
+      "notacion": "Texto y nombres de materiales, con una tabla de dos columnas: lo que se queda en el filtro y lo que pasa. Sin fórmulas."
+    },
+    {
+      "numero": 8,
+      "titulo": "Evaporación, destilación y cristalización",
+      "familia": "mezclas",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo separar una mezcla aprovechando que cada sustancia hierve a distinta temperatura.",
+      "dependeDe": [
+        6,
+        4
+      ],
+      "errorTipico": "Cree que al evaporar agua salada la sal también se va con el vapor, así que dice que no queda nada en el recipiente. Y escoge destilación cuando solo quiere recuperar el sólido, sin preguntarse cuál de los dos componentes le interesa conservar.",
+      "losCincoPasos": "Nombrar los dos componentes, decir cuál hierve a menor temperatura, decidir cuál se quiere recuperar, elegir el método, y decir dónde queda cada componente al final.",
+      "notacion": "Temperaturas de ebullición con símbolo de grado (78 °C, 100 °C) dentro de la frase, y flechas de cambio de estado: líquido → gas → líquido."
+    },
+    {
+      "numero": 9,
+      "titulo": "Disoluciones: soluto y disolvente",
+      "familia": "mezclas",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo identificar el soluto y el disolvente de una disolución, y explicar que el soluto sigue ahí.",
+      "dependeDe": [
+        6
+      ],
+      "errorTipico": "Llama soluto al componente que está en mayor cantidad porque es \"el principal\": dice que en el agua de limón el soluto es el agua. Y sostiene que el azúcar disuelta \"ya no está\" porque no se ve.",
+      "losCincoPasos": "Nombrar los dos componentes, comparar sus cantidades, decir cuál es el soluto, decir cuál es el disolvente, y decir en qué estado estaba cada uno antes de mezclarse.",
+      "notacion": "Texto con masas y su unidad (20 g de azúcar en 200 g de agua). Importa que en pantalla se distingan bien tres palabras parecidas: soluto, disolvente y disolución."
+    },
+    {
+      "numero": 10,
+      "titulo": "Solubilidad y disolución saturada",
+      "familia": "mezclas",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo decir cuánto soluto cabe en un agua antes de que empiece a quedar sólido en el fondo.",
+      "dependeDe": [
+        9
+      ],
+      "errorTipico": "Cree que cualquier cantidad de sólido se disuelve si se revuelve más fuerte o más tiempo, así que responde que no sobra nada. Y usa el dato de solubilidad de una temperatura para otra distinta, sin fijarse en que el dato viene con su temperatura.",
+      "losCincoPasos": "Leer la solubilidad a esa temperatura, ver cuánto soluto se quiere meter, comparar las dos cantidades, decidir si la disolución queda insaturada o saturada, y restar para saber cuánto sólido queda sin disolver.",
+      "notacion": "El dato se escribe como \"36 g por cada 100 g de agua a 20 °C\", con unidad y temperatura pegadas al número, más una resta en renglón. En escalones altos, una tabla chica de solubilidad contra temperatura."
+    },
+    {
+      "numero": 11,
+      "titulo": "Concentración en porcentaje en masa",
+      "familia": "mezclas",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo calcular el porcentaje en masa de una disolución dividiendo entre la disolución completa.",
+      "dependeDe": [
+        9
+      ],
+      "errorTipico": "Divide la masa del soluto entre la masa del disolvente en vez de entre la masa de la disolución: con 20 g de azúcar en 100 g de agua escribe 20/100 = 20 % cuando lo correcto es 20/120 = 16.7 %. Lo hace porque \"el agua es lo que va abajo\".",
+      "losCincoPasos": "Anotar la masa del soluto, sumar soluto más disolvente para obtener la masa de la disolución, escribir la fracción, hacer la división, y multiplicar por 100 y poner el signo %.",
+      "notacion": "Fracción apilada con etiquetas largas adentro (masa del soluto arriba, masa de la disolución abajo) dentro de la frase; se necesita que quepa texto, no solo números, en cada piso de la fracción. Además × 100 y el signo %."
+    },
+    {
+      "numero": 12,
+      "titulo": "Partes por millón (ppm)",
+      "familia": "mezclas",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo expresar en ppm qué tan concentrado está un contaminante y compararlo con el límite permitido.",
+      "dependeDe": [
+        11
+      ],
+      "errorTipico": "Multiplica por 100 como si fuera porcentaje y reporta un valor diez mil veces menor (dice 0.0005 ppm donde van 5 ppm). El otro error de siempre: arma la fracción con miligramos arriba y gramos abajo sin igualar las unidades.",
+      "losCincoPasos": "Pasar la masa del soluto a miligramos, pasar la disolución a litros o kilogramos, escribir la fracción, multiplicar por 1 000 000, y comparar el resultado con el límite permitido para decidir si el agua se puede beber.",
+      "notacion": "Potencia de diez con superíndice (10⁶), unidades compuestas con diagonal (mg/L, mg/kg) y números grandes con espacio de miles: 1 000 000. La sigla ppm va en minúsculas dentro del texto."
+    },
+    {
+      "numero": 13,
+      "titulo": "Protones, neutrones y electrones",
+      "familia": "átomo",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo decir qué partícula va en el núcleo, cuál anda afuera y qué carga tiene cada una.",
+      "dependeDe": [
+        6
+      ],
+      "errorTipico": "Mete los electrones al núcleo junto con protones y neutrones porque \"todo está adentro del átomo\"; y le asigna carga negativa al neutrón porque el nombre le suena parecido a negativo.",
+      "losCincoPasos": "Nombrar la partícula, decir su carga, decir dónde está (núcleo o alrededor), decir si aporta masa o casi no, y armar un átomo neutro comprobando que las cargas se cancelan.",
+      "notacion": "Cargas escritas como superíndice con signo pegado al símbolo de la partícula: p⁺, e⁻, n⁰. También el símbolo del elemento con mayúscula y minúscula correctas."
+    },
+    {
+      "numero": 14,
+      "titulo": "Número atómico y número de masa",
+      "familia": "átomo",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo sacar protones, electrones y neutrones de un átomo leyendo su casilla de la tabla periódica.",
+      "dependeDe": [
+        13
+      ],
+      "errorTipico": "Toma el número de masa como si fueran los neutrones (dice que el sodio tiene 23 neutrones) en vez de restar A − Z; o suma protones más electrones para obtener el número de masa. Al leer la casilla confunde cuál de los dos números es cuál.",
+      "losCincoPasos": "Leer el número atómico Z, decir cuántos protones hay, decir cuántos electrones hay si el átomo es neutro, leer el número de masa A, y restar A − Z para los neutrones.",
+      "notacion": "El símbolo con los dos números del mismo lado izquierdo, apilados: número de masa como superíndice arriba y número atómico como subíndice abajo, ²³₁₁Na. Esto la app todavía no lo puede escribir: es superíndice y subíndice alineados en la misma columna."
+    },
+    {
+      "numero": 15,
+      "titulo": "Iones: cationes y aniones",
+      "familia": "átomo",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo escribir la carga de un ion y explicar por qué ganar electrones lo deja negativo.",
+      "dependeDe": [
+        14
+      ],
+      "errorTipico": "Cree que ganar electrones da carga positiva (\"gané, entonces subo\") y escribe Cl⁺ donde va Cl⁻. El otro error: cambia el número de protones para formar el ion, en lugar de cambiar solo electrones.",
+      "losCincoPasos": "Contar los protones, contar los electrones que quedan después del cambio, restar protones menos electrones, escribir el signo de la carga, y nombrarlo catión o anión.",
+      "notacion": "Carga como superíndice con el número antes del signo: Na⁺, Cl⁻, Ca²⁺, O²⁻. Hay que poder teclear \"2+\" como superíndice en el hueco, no solo un signo suelto."
+    },
+    {
+      "numero": 16,
+      "titulo": "El modelo de Bohr: los niveles",
+      "familia": "átomo",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo acomodar los electrones de un átomo por niveles y comprobar que la suma da su número atómico.",
+      "dependeDe": [
+        14
+      ],
+      "errorTipico": "Reparte los electrones en partes iguales entre los niveles (para el sodio pone 6, 6, 5) en vez de llenar 2 y luego 8; o empieza a llenar por el nivel de afuera hacia adentro.",
+      "losCincoPasos": "Leer Z, tomar ese total de electrones, llenar el primer nivel con 2, llenar el segundo con 8, y poner el resto en el siguiente nivel comprobando que la suma dé Z.",
+      "notacion": "Dos formas al mismo tiempo: el diagrama de círculos concéntricos con un número en cada anillo, y la configuración escrita en renglón con comas, 2, 8, 1."
+    },
+    {
+      "numero": 17,
+      "titulo": "Electrones de valencia",
+      "familia": "átomo",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo contar los electrones del último nivel y decir si al átomo le conviene ganarlos o perderlos.",
+      "dependeDe": [
+        16
+      ],
+      "errorTipico": "Da como electrones de valencia el total de electrones del átomo: dice que el cloro tiene 17 electrones de valencia en vez de 7, porque no distingue el último nivel del átomo entero.",
+      "losCincoPasos": "Escribir la configuración por niveles, señalar cuál es el último nivel ocupado, contar los electrones de ese nivel, calcular cuántos le faltan para llegar a 8, y predecir si el átomo tiende a ganar o a perder.",
+      "notacion": "Configuración en renglón con el último número resaltado (2, 8, 7) y estructura de puntos de Lewis: hasta ocho puntos repartidos en los cuatro lados del símbolo."
+    },
+    {
+      "numero": 18,
+      "titulo": "Grupos y periodos de la tabla",
+      "familia": "tabla periódica",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo ubicar un elemento por grupo y periodo, y decir qué me dice cada uno de esos dos números.",
+      "dependeDe": [
+        14
+      ],
+      "errorTipico": "Invierte los dos: llama grupo al renglón y periodo a la columna, así que del magnesio dice \"grupo 3, periodo II\". También busca al elemento guiándose por el número de masa en vez del número atómico.",
+      "losCincoPasos": "Localizar el símbolo en la tabla, leer su número atómico, contar la columna para el grupo, contar el renglón para el periodo, y decir qué predice cada número: electrones de valencia y número de niveles.",
+      "notacion": "Símbolos de una y dos letras con la mayúscula y la minúscula correctas (Na, no NA ni na), la casilla con número atómico arriba y masa abajo, y números romanos de grupo: IA, IIA, VIIA."
+    },
+    {
+      "numero": 19,
+      "titulo": "Metales, no metales y metaloides",
+      "familia": "tabla periódica",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo clasificar un elemento como metal, no metal o metaloide por su lugar en la tabla.",
+      "dependeDe": [
+        18
+      ],
+      "errorTipico": "Clasifica como metal todo lo que brilla o se ve duro, e incluye al grafito y al azufre; y como no metal a cualquier cosa que se vea opaca, como el hierro oxidado. No usa la escalera de la tabla para decidir.",
+      "losCincoPasos": "Ubicar el elemento en la tabla, ver de qué lado de la escalera cae, revisar si tiene brillo y conduce, revisar si es maleable o quebradizo, y clasificarlo con las dos pruebas juntas.",
+      "notacion": "Símbolos de elementos y una tabla comparativa de tres columnas (metal, metaloide, no metal) con propiedades en renglones. Sin fórmulas."
+    },
+    {
+      "numero": 20,
+      "titulo": "El grupo predice la valencia",
+      "familia": "tabla periódica",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo sacar la valencia de un elemento con solo ver en qué grupo de la tabla está.",
+      "dependeDe": [
+        17,
+        18
+      ],
+      "errorTipico": "Usa el número del grupo como carga sin pensar en el signo: al cloro del grupo VIIA le pone +7, cuando frente a un metal actúa como −1 porque le conviene ganar un electrón, no perder siete.",
+      "losCincoPasos": "Leer el número de grupo, sacar de ahí los electrones de valencia, decidir si le conviene ganar o perder, contar cuántos electrones son, y escribir la carga con su signo.",
+      "notacion": "Números romanos de grupo (IA a VIIIA) junto a cargas en superíndice con signo: Mg²⁺, N³⁻. Una tabla de dos columnas grupo → valencia que se consulta durante el ejercicio."
+    },
+    {
+      "numero": 21,
+      "titulo": "Enlace iónico: pasar electrones",
+      "familia": "enlaces",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo explicar un enlace iónico diciendo quién cede electrones y quién los recibe, y por qué se atraen.",
+      "dependeDe": [
+        15,
+        19,
+        20
+      ],
+      "errorTipico": "Pone al metal ganando electrones y al no metal cediéndolos, al revés de lo que pasa. Y cuando las cargas no coinciden junta un ion 2+ con uno 1− uno a uno, sin darse cuenta de que faltó un electrón por colocar.",
+      "losCincoPasos": "Identificar cuál es metal y cuál no metal, sacar la valencia de cada uno, decir quién cede y quién recibe, igualar el número de electrones cedidos con los recibidos, y escribir los dos iones con su carga.",
+      "notacion": "Estructuras de Lewis con puntos, una flecha curva de transferencia que va del metal al no metal, y cargas en superíndice: Na⁺ y Cl⁻ juntos en la misma línea."
+    },
+    {
+      "numero": 22,
+      "titulo": "Enlace covalente: compartir",
+      "familia": "enlaces",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo explicar que dos no metales comparten pares de electrones, y decir si el enlace es sencillo, doble o triple.",
+      "dependeDe": [
+        17,
+        19
+      ],
+      "errorTipico": "Dibuja transferencia de electrones entre dos no metales y les pone cargas, como si fuera iónico, porque aplica lo del tema anterior sin revisar si hay un metal. Y cuando sí comparte, comparte un solo electrón en vez de un par.",
+      "losCincoPasos": "Comprobar que los dos son no metales, contar los electrones de valencia de cada uno, ver cuántos le faltan a cada uno para llegar a 8, formar los pares compartidos, y contar los pares para decir si el enlace es sencillo, doble o triple.",
+      "notacion": "Estructura de Lewis con puntos y rayas, y enlaces múltiples escritos en renglón: O=O, N≡N. Además fórmulas con subíndice, H₂ y CO₂."
+    },
+    {
+      "numero": 23,
+      "titulo": "Fórmula por cruce de valencias",
+      "familia": "enlaces",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo escribir la fórmula de un compuesto cruzando las valencias, sin arrastrar el signo de la carga.",
+      "dependeDe": [
+        20,
+        21
+      ],
+      "errorTipico": "Baja la carga con todo y signo al cruzarla: de Ca²⁺ y Cl⁻ escribe Ca₋₁Cl₊₂ o deja el subíndice 1 escrito (CaCl₂ le queda Ca₁Cl₂). También olvida simplificar y escribe Mg₂O₂ en vez de MgO.",
+      "losCincoPasos": "Escribir primero el metal y después el no metal, poner la valencia de cada uno arriba, cruzar los números hacia abajo como subíndices, quitar los signos y el subíndice 1, y simplificar si ambos subíndices se pueden dividir entre el mismo número.",
+      "notacion": "Subíndices al pie del símbolo (CaCl₂, Al₂O₃), cargas en superíndice antes de cruzarlas, y dos flechas cruzadas que van de la carga de arriba al subíndice del otro. El hueco de la estación 3 tiene que aceptar subíndices tecleados."
+    },
+    {
+      "numero": 24,
+      "titulo": "Número de oxidación",
+      "familia": "nomenclatura",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo sacar el número de oxidación de un elemento en una fórmula usando que todo debe sumar cero.",
+      "dependeDe": [
+        23
+      ],
+      "errorTipico": "Toma el subíndice como si fuera el número de oxidación: en SO₂ dice que el oxígeno vale −2 y el azufre +2 \"porque hay dos oxígenos\", sin multiplicar el −2 por el subíndice ni plantear la suma igual a cero.",
+      "losCincoPasos": "Asignar el valor conocido (oxígeno −2 o hidrógeno +1), multiplicarlo por su subíndice, plantear que la suma de todo da cero, despejar lo que aporta el otro elemento, y dividir entre su subíndice para sacar su número de oxidación.",
+      "notacion": "El número de oxidación se escribe arriba del símbolo, con el signo antes del número, mientras el subíndice va abajo del mismo símbolo. Hay que poder poner superíndice y subíndice sobre una misma letra a la vez, y una ecuación en renglón: (+1)(2) + x + (−2)(4) = 0."
+    },
+    {
+      "numero": 25,
+      "titulo": "Nombrar óxidos (nomenclatura Stock)",
+      "familia": "nomenclatura",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo nombrar un óxido metálico y decidir cuándo lleva número romano y cuándo no.",
+      "dependeDe": [
+        24
+      ],
+      "errorTipico": "Escribe como número romano el subíndice y no el número de oxidación: al Fe₂O₃ le dice \"óxido de hierro (II)\" por el 2 del hierro, cuando va (III). Y le pone romano al sodio o al calcio, que tienen una sola valencia y no lo necesitan.",
+      "losCincoPasos": "Identificar el metal y el oxígeno, sacar el número de oxidación del metal, revisar si ese metal tiene una o varias valencias posibles, escribir \"óxido de\" más el nombre del metal, y agregar el número romano entre paréntesis solo si hacía falta.",
+      "notacion": "Fórmulas con subíndice (Fe₂O₃, CuO, Na₂O) y el nombre con número romano entre paréntesis: óxido de hierro (III). Conviven en el mismo renglón el subíndice de la fórmula y el romano del nombre."
+    },
+    {
+      "numero": 26,
+      "titulo": "Hidróxidos: el grupo OH",
+      "familia": "nomenclatura",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo escribir y nombrar un hidróxido, y usar el paréntesis cuando hay más de un grupo OH.",
+      "dependeDe": [
+        25
+      ],
+      "errorTipico": "Rompe el grupo OH al cruzar la valencia: escribe CaO₂H₂ o CaOH₂ en vez de Ca(OH)₂, porque le pone el subíndice al oxígeno solo en lugar de a todo el grupo. Al nombrarlo dice \"óxido de calcio\" en vez de \"hidróxido de calcio\".",
+      "losCincoPasos": "Identificar el metal, tomar OH como una sola pieza con carga −1, cruzar la valencia del metal hacia el grupo, poner paréntesis si el subíndice resultó mayor que 1, y nombrarlo \"hidróxido de\" más el metal.",
+      "notacion": "Paréntesis con subíndice por fuera: Ca(OH)₂, Al(OH)₃. Es la primera vez que el hueco de la estación 3 necesita paréntesis y un subíndice pegado al paréntesis de cierre."
+    },
+    {
+      "numero": 27,
+      "titulo": "Ácidos: hidrácidos y oxiácidos",
+      "familia": "nomenclatura",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo distinguir un hidrácido de un oxiácido nada más viendo si la fórmula trae oxígeno.",
+      "dependeDe": [
+        24
+      ],
+      "errorTipico": "Le pone la terminación -hídrico a un ácido que sí tiene oxígeno: llama \"ácido sulfhídrico\" al H₂SO₄ (que es sulfúrico), porque no revisa la fórmula en busca de oxígeno antes de elegir la terminación.",
+      "losCincoPasos": "Ver si la fórmula empieza con hidrógeno, revisar si aparece oxígeno, elegir la familia (hidrácido u oxiácido), sacar el número de oxidación del elemento central, y elegir la terminación: -hídrico, -oso o -ico.",
+      "notacion": "Fórmulas con el hidrógeno al frente y subíndices: HCl, H₂S, HNO₃, H₂SO₄. Los nombres cambian de terminación, así que conviene poder resaltar el final de la palabra."
+    },
+    {
+      "numero": 28,
+      "titulo": "La ecuación química",
+      "familia": "reacciones",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo leer una ecuación química y contar los átomos sin confundir el coeficiente con el subíndice.",
+      "dependeDe": [
+        5,
+        23
+      ],
+      "errorTipico": "Lee el subíndice como si fuera coeficiente: de 2H₂O dice \"hay dos átomos de hidrógeno\" en vez de cuatro, o dice que H₂O son dos moléculas de agua. También escribe el signo = en lugar de la flecha, como si fuera una igualdad de matemáticas.",
+      "losCincoPasos": "Separar lo que está antes y después de la flecha, nombrar los reactivos, nombrar los productos, contar los átomos de un elemento multiplicando coeficiente por subíndice, y leer la ecuación completa en voz alta.",
+      "notacion": "Todo junto en un renglón: coeficiente de tamaño normal al frente, subíndice al pie, signo + entre sustancias y flecha de reacción → , como en 2H₂ + O₂ → 2H₂O. También los estados entre paréntesis: (s), (l), (g), (ac)."
+    },
+    {
+      "numero": 29,
+      "titulo": "Ley de conservación de la masa",
+      "familia": "reacciones",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo explicar por qué la masa no cambia en una reacción, aunque en la báscula parezca que sí.",
+      "dependeDe": [
+        28
+      ],
+      "errorTipico": "Dice que la masa se perdió cuando se desprende un gas: la pastilla efervescente en un vaso abierto \"pesa menos al final, entonces la materia sí se destruye\", porque no cuenta el CO₂ que se salió del recipiente.",
+      "losCincoPasos": "Anotar la masa de los reactivos, anotar la masa de lo que quedó, revisar si el recipiente estaba abierto o cerrado, identificar si entró o salió un gas, y sumar ese gas para comprobar que las dos masas coinciden.",
+      "notacion": "Sumas de masas con unidad en renglón (4.0 g + 32.0 g = 36.0 g) junto a la ecuación con flecha, y una tabla de dos columnas: antes y después. Aparecen fórmulas de gases con subíndice, CO₂ y O₂."
+    },
+    {
+      "numero": 30,
+      "titulo": "Balanceo por tanteo",
+      "familia": "reacciones",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo balancear una ecuación poniendo coeficientes al frente, sin tocar nunca los subíndices.",
+      "dependeDe": [
+        29
+      ],
+      "errorTipico": "Cambia los subíndices para que cuadren los átomos: convierte H₂O en H₂O₂ para que le sobre un oxígeno, sin darse cuenta de que así ya no es agua sino otra sustancia. Es el error clásico de este tema.",
+      "losCincoPasos": "Contar los átomos de cada elemento de los dos lados, elegir el elemento que está desbalanceado, poner un coeficiente al frente de una fórmula, volver a contar todos los elementos, y ajustar hidrógeno y oxígeno hasta el final.",
+      "notacion": "Coeficiente grande al frente contra subíndice chico al pie, bien diferenciados en tamaño: 2H₂ + O₂ → 2H₂O. Se necesita también una tabla de conteo de átomos, un renglón por elemento y una columna por lado de la flecha."
+    },
+    {
+      "numero": 31,
+      "titulo": "El mol y la masa molar",
+      "familia": "reacciones",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo calcular cuánto pesa un mol de un compuesto multiplicando cada masa atómica por su subíndice.",
+      "dependeDe": [
+        14,
+        23
+      ],
+      "errorTipico": "Suma las masas atómicas sin multiplicarlas por el subíndice: para H₂O escribe 1 + 16 = 17 g/mol en vez de (1×2) + 16 = 18 g/mol. También toma de la casilla el número atómico en lugar de la masa atómica.",
+      "losCincoPasos": "Escribir la fórmula, buscar la masa atómica de cada elemento en la tabla, multiplicar cada masa por su subíndice, sumar todos los productos, y escribir el total con la unidad g/mol.",
+      "notacion": "Fórmula con subíndices, masas atómicas con decimales (35.5), multiplicaciones en renglón con paréntesis y la unidad compuesta g/mol. En el video aparece 6.022 × 10²³ con superíndice, aunque no se calcule con él."
+    },
+    {
+      "numero": 32,
+      "titulo": "Ácidos y bases: cómo reconocerlos",
+      "familia": "ácidos y bases",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo reconocer un ácido y una base por su fórmula y por el color que toma un indicador.",
+      "dependeDe": [
+        9,
+        27
+      ],
+      "errorTipico": "Usa \"si quema o irrita\" como prueba y concluye que el cloro y el jabón son ácidos, cuando son bases. Con el indicador, adivina el color en lugar de leerlo de la escala, y confunde qué color corresponde a ácido y cuál a base.",
+      "losCincoPasos": "Ver si la fórmula empieza con H o termina en OH, predecir si es ácido o base, elegir el indicador, leer el color que toma, y concluir dando un ejemplo de la casa que sea igual.",
+      "notacion": "Fórmulas con H al frente y OH al final (HCl, H₂SO₄, NaOH, Ca(OH)₂) junto a una barra de colores del indicador; el color es parte del ejercicio, así que tiene que verse en pantalla, no describirse."
+    },
+    {
+      "numero": 33,
+      "titulo": "La escala de pH",
+      "familia": "ácidos y bases",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo ubicar una sustancia en la escala de pH y explicar que bajar un número la hace diez veces más ácida.",
+      "dependeDe": [
+        32
+      ],
+      "errorTipico": "Cree que a mayor pH más ácido, porque lee la escala como \"cantidad de acidez\": dice que el pH 12 del jabón es más ácido que el pH 2 del limón. Y toma la escala como si fuera lineal: para él pH 3 es apenas un poco más ácido que pH 5, cuando es cien veces.",
+      "losCincoPasos": "Leer el valor de pH, compararlo con 7, clasificarlo en ácido, neutro o básico, contar a cuántas unidades está del 7, y traducir esa diferencia a cuántas veces más ácido o más básico es.",
+      "notacion": "La escala del 0 al 14 con colores, dibujada a lo ancho y con la sustancia colocada encima. El símbolo pH con p minúscula y H mayúscula pegadas, y potencias de 10 con superíndice: 10 veces, 10² veces."
+    },
+    {
+      "numero": 34,
+      "titulo": "Neutralización: sal y agua",
+      "familia": "ácidos y bases",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo escribir la reacción de un ácido con una base y decir qué sal queda al final.",
+      "dependeDe": [
+        33,
+        30,
+        26
+      ],
+      "errorTipico": "Cree que neutralizar es \"quitar el ácido\" y que no queda nada, así que del lado de los productos solo escribe agua y se le olvida la sal. Cuando sí la escribe, la arma con el metal equivocado: toma el hidrógeno del ácido en lugar del metal de la base.",
+      "losCincoPasos": "Identificar cuál es el ácido y cuál la base, tomar el metal de la base, tomar el resto del ácido, cruzar sus valencias para escribir la sal, y escribir el agua y balancear la ecuación completa.",
+      "notacion": "Ecuación completa con flecha, signos + y subíndices: HCl + NaOH → NaCl + H₂O. Los nombres de sal cambian de terminación (-uro, -ato), y en los escalones altos aparece Ca(OH)₂ con paréntesis del lado de los reactivos."
+    },
+    {
+      "numero": 35,
+      "titulo": "Oxidación y reducción",
+      "familia": "reacciones",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo decir quién se oxidó y quién se redujo viendo cómo cambian los números de oxidación.",
+      "dependeDe": [
+        24,
+        15
+      ],
+      "errorTipico": "Cree que oxidarse es ganar electrones, porque \"oxidarse es ganar oxígeno\", así que lo dice al revés. Y da por hecho que sin oxígeno no hay oxidación: no reconoce que el zinc se oxida al reaccionar con ácido clorhídrico.",
+      "losCincoPasos": "Sacar el número de oxidación de cada elemento en los reactivos, sacarlo en los productos, ver cuál subió y cuál bajó, decir quién se oxidó y quién se redujo, y decir hacia dónde se fueron los electrones.",
+      "notacion": "Número de oxidación con signo escrito arriba de cada símbolo de la ecuación, más flechas que van del valor de antes al de después marcando la subida o la bajada. Todo eso sobre una ecuación que ya trae flecha de reacción y subíndices."
+    }
+  ],
+  "noEncajan": [
+    {
+      "tema": "Isótopos y el carbono-14",
+      "porQue": "El procedimiento es exactamente el mismo que el de \"Número atómico y número de masa\": restar A − Z. Su estación 5 tendría que repetir los mismos cinco pasos del tema anterior, y su único error (creer que al cambiar los neutrones cambia el elemento) ya se caza dentro de ese tema.",
+      "queHacer": "Fundirlo como los escalones 4 y 5 de \"Número atómico y número de masa\": dos átomos con el mismo Z y distinta A, y la pregunta de si siguen siendo el mismo elemento."
+    },
+    {
+      "tema": "Enlace metálico (el mar de electrones)",
+      "porQue": "No tiene procedimiento con pasos separables: es una imagen que se explica y se cree. No hay nada que completar en la estación 3 y la estación 5 tendría que inventar un paso mal que ningún estudiante comete de verdad.",
+      "queHacer": "Fundirlo con \"Metales, no metales y metaloides\": va en el video, como la explicación de por qué los metales conducen y son maleables."
+    },
+    {
+      "tema": "Tipos de reacción: síntesis, descomposición y sustitución",
+      "porQue": "La clasificación se hace de una mirada, en un solo paso: se cuenta cuántas sustancias hay de cada lado. No da para una cadena de cinco pasos, y a esta edad tampoco hay un error clásico propio.",
+      "queHacer": "Usarlo como los escalones de \"La ecuación química\": cada escalón, una ecuación de un tipo distinto que hay que leer y clasificar."
+    },
+    {
+      "tema": "Modelos atómicos históricos (Dalton, Thomson, Rutherford, Bohr)",
+      "porQue": "Es historia, no procedimiento. No hay una expresión a la que le falte un pedazo (estación 3) ni un paso que esté mal (estación 5): lo único evaluable sería memorizar quién propuso qué.",
+      "queHacer": "Dejarlo como el video de \"El modelo de Bohr: los niveles\", que es donde sí sirve: contar por qué se llegó a los niveles. Fuera del circuito de seis estaciones."
+    },
+    {
+      "tema": "Cálculos estequiométricos (gramos → moles → gramos)",
+      "porQue": "Encadena tres conversiones y pide tener a la vez balanceo, masa molar y proporción. No cabe en un video de 3 a 5 minutos, y en la estación 5 el estudiante no sabría si el paso malo es de química o de regla de tres.",
+      "queHacer": "Dejarlo fuera de 3º de secundaria. Si más adelante se quiere, hay que partirlo en dos temas de bachillerato: \"de gramos a moles\" y \"la proporción de la ecuación\"."
+    },
+    {
+      "tema": "Electronegatividad y polaridad del enlace",
+      "porQue": "El procedimiento sí existe (restar dos valores y clasificar el enlace), pero en secundaria en México no se les da la tabla de electronegatividades: el estudiante no tendría de dónde sacar el dato, así que el ejercicio se vuelve adivinar un número.",
+      "queHacer": "Meter la idea en el video de \"Enlace covalente: compartir\" como una frase (\"no siempre comparten parejo\"), sin ejercicios. El tipo de enlace se sigue prediciendo con metal + no metal."
+    },
+    {
+      "tema": "Química y tecnología (el proyecto del bloque 5)",
+      "porQue": "Es un proyecto abierto, sin respuesta única. Las estaciones 2, 3, 4 y 5 necesitan una respuesta correcta y aquí no la hay; solo la 6 (explicar) tendría sentido, y una estación sola no cierra el círculo.",
+      "queHacer": "Dejarlo fuera del circuito: va como trabajo de clase o de equipo, no como tema de Andamio."
+    },
+    {
+      "tema": "Propiedades intensivas y extensivas",
+      "porQue": "Demasiado chico: se reduce a clasificar una lista de propiedades en dos montones. No da para seis estaciones y el error que comete el estudiante ya está cubierto en el tema de densidad.",
+      "queHacer": "Fundirlo con \"Densidad: por qué flota o se hunde\", que es el ejemplo de propiedad intensiva: el mismo material tiene la misma densidad sea un pedazo grande o chico."
+    },
+    {
+      "tema": "El número de Avogadro y la conversión mol ↔ partículas",
+      "porQue": "El error que cometerían sería de notación científica y de exponentes, no de química: se atoran con 6.022 × 10²³ antes de llegar a la idea. La estación 5 acabaría cazando un error de matemáticas.",
+      "queHacer": "Dejar en el tema 31 solo la masa molar, que sí tiene pasos y error propios, y mencionar el número de Avogadro en el video como dato, sin ejercicios."
+    }
+  ],
+  "huecos": [
+    {
+      "donde": "Entre el 6 «Pura, homogénea o heterogénea» y el 13 «Protones, neutrones y electrones» (y obligatorio antes del 23 «Fórmula por cruce de valencias»)",
+      "que": "Nadie enseña qué es un elemento, qué es un compuesto y qué dice una fórmula. El tema 6 ya mete H₂O y NaCl «en los escalones altos», el 23 pide escribir CaCl₂ y hasta el 28 aparece por primera vez «contar los átomos multiplicando coeficiente por subíndice». Es decir: el estudiante escribe subíndices doce temas antes de que alguien le diga qué significan. Es el hueco más grande del temario.",
+      "arreglo": "Tema nuevo después del 6: «Elemento, compuesto y cómo se lee una fórmula». Cinco pasos: leer el símbolo, decir qué elemento es, leer el subíndice de cada uno, contar cuántos átomos hay de cada elemento, decir si es elemento o compuesto. Error típico: leer H₂O como «dos aguas» o como «hidrógeno dos, oxígeno»; y confundir CO (compuesto) con Co (cobalto) porque escribe CO y co indistinto. De paso resuelve la mayúscula/minúscula del símbolo, que el 13 y el 18 dan por sabida."
+    },
+    {
+      "donde": "Entre el 27 «Ácidos: hidrácidos y oxiácidos» y el 34 «Neutralización: sal y agua»",
+      "que": "La familia nomenclatura tiene óxidos, hidróxidos y ácidos, pero no tiene sales. Y el 34 pide «cruzar sus valencias para escribir la sal» y avisa que «los nombres de sal cambian de terminación (-uro, -ato)» sin que ningún tema haya enseñado de dónde salen esas terminaciones. Peor: para armar Na₂SO₄ hay que tratar SO₄ como un bloque con carga 2−, y lo único que se enseñó como bloque fue el OH del 26.",
+      "arreglo": "Tema nuevo «Sales: del ácido a la sal», depende de 26 y 27. Cinco pasos: identificar el metal, identificar el resto del ácido (el radical), tomar su carga como bloque, cruzar valencias con paréntesis si hace falta, y cambiar la terminación del ácido a la de la sal (-hídrico→-uro, -ico→-ato, -oso→-ito). Error típico: parte el grupo al cruzar (CaSO₄ le queda CaS O₄ o Ca₂SO₄₂) y le deja al nombre la terminación del ácido («sulfúrico de sodio»)."
+    },
+    {
+      "donde": "Entre el 20 «El grupo predice la valencia» y el 25 «Nombrar óxidos (nomenclatura Stock)»",
+      "que": "El 20 promete que el grupo da la valencia, un solo número. El 25 exige saber que el hierro tiene +2 y +3, y el 27 exige elegir entre -oso e -ico según cuál de las dos valencias usó. Nadie dice de dónde sale la segunda valencia ni que los metales de transición no obedecen la regla del grupo. Del mismo golpe: «contar la columna para el grupo» (paso 3 del 18) da columna 17 para el cloro en la tabla de 18 columnas que traen los libros, no VIIA.",
+      "arreglo": "Dos parches chicos, no un tema nuevo. En el 18, acotar el paso a los grupos A y decir explícitamente que las columnas de en medio (los de transición) se cuentan aparte. En el 20, agregar una tabla de consulta de valencias fijas y variables que se quede visible en el 25 y el 27 (Fe +2/+3, Cu +1/+2, S +4/+6), y un escalón alto donde el elemento tenga dos valencias posibles y haya que decidir cuál usó la fórmula."
+    },
+    {
+      "donde": "Dentro del 16 «El modelo de Bohr: los niveles»",
+      "que": "El quinto paso —«poner el resto en el siguiente nivel»— da un resultado falso en cuanto Z pasa de 18: para el calcio arroja 2, 8, 10 en vez de 2, 8, 8, 2. Y el calcio no es un caso raro aquí: aparece en el 20 (Ca²⁺), el 21, el 23, el 26 (Ca(OH)₂) y el 34. Falta el paso de tope del tercer nivel. Aparte, el ejemplo del error típico no cuadra: «para el sodio pone 6, 6, 5» suma 17 electrones y el sodio tiene 11.",
+      "arreglo": "Cambiar el quinto paso a «llenar el tercer nivel con 8 y pasar lo que sobre al cuarto», acotar los escalones a Z ≤ 20, y arreglar el ejemplo del error (con sodio sería 4, 4, 3; si se quiere conservar el 6, 6, 5, el elemento es el cloro)."
+    },
+    {
+      "donde": "Entre el 23 «Fórmula por cruce de valencias» y el 24 «Número de oxidación»",
+      "que": "Salto de dificultad callado. En el 23 el estudiante cruza dos números; en el 24 tiene que plantear una ecuación, multiplicar por subíndices, manejar signos negativos y despejar: (+1)(2) + x + (−2)(4) = 0. Es el primer despeje algebraico de toda la materia y llega sin escalón previo. Además el tema solo declara dos reglas (O = −2, H = +1) y calla las otras dos que sus propios ejercicios necesitan: elemento libre = 0 e ion monoatómico = su carga.",
+      "arreglo": "Que los escalones 1 y 2 sean binarios donde el número se lee sin despejar (Na₂O, CaO, Fe₂O₃: un solo elemento desconocido y suma directa), y solo los escalones 4 y 5 sean ternarios tipo H₂SO₄. Y meter las cuatro reglas completas en el video y en la tabla de consulta del ejercicio."
+    },
+    {
+      "donde": "Entre el 14 «Número atómico y número de masa» y el 31 «El mol y la masa molar»",
+      "que": "El 31 pide buscar «la masa atómica de cada elemento en la tabla» y su notación usa decimales (35.5). El único tema que enseña a leer la casilla es el 14, y ahí el número de masa A es un entero. El estudiante no tiene cómo saber que el número de la casilla con decimales es otro número distinto del A que aprendió a restar. Los isótopos, que son justo la explicación del decimal, se mandaron a fundir dentro del 14, pero al 14 no se le pidió cubrir eso.",
+      "arreglo": "Al fundir isótopos en el 14 (escalones 4 y 5, como ya está previsto), cerrar con la pregunta de por qué la casilla del cloro dice 35.5 si ningún átomo de cloro pesa 35.5. Y en el 31 agregar al error típico el de confundir el A entero con la masa atómica de la casilla."
+    },
+    {
+      "donde": "Entre el 25 «Nombrar óxidos (nomenclatura Stock)» y el 28 «La ecuación química»",
+      "que": "CO₂ se usa en el 22, el 24, el 28, el 29 y el 31, y SO₂ es el ejemplo del error típico del 24, pero ningún tema enseña a nombrar un óxido no metálico. El 25 dice «identificar el metal y el oxígeno» y el 23 dice «escribir primero el metal y después el no metal»: los dos temas de escritura de fórmulas suponen que siempre hay un metal. El estudiante puede leer CO₂ y no tiene forma de nombrarlo.",
+      "arreglo": "O ampliar el 25 con un escalón alto de óxidos no metálicos con prefijos (mono-, di-, tri-: dióxido de carbono, trióxido de azufre), o un tema hermano corto después del 25. Error típico servido: le pone número romano al no metal («óxido de carbono (IV)») o le mete prefijo al metálico («dióxido de calcio»)."
+    }
+  ],
+  "dependenciasRotas": [
+    "Tema 14 «Número atómico y número de masa» ↔ tema 18 «Grupos y periodos de la tabla»: el 14 lee la casilla de la tabla periódica (y su error típico es precisamente confundir cuál número es cuál en la casilla), pero la tabla se presenta hasta el 18, que a su vez declara depender del 14. Es circular. Hay que sacar del 18 la parte de «cómo está hecha una casilla» y ponerla antes del 14, dejando el 18 solo con grupo y periodo.",
+    "Tema 13 «Protones, neutrones y electrones» declara depender del 6 «Pura, homogénea o heterogénea», que no le aporta nada: saber distinguir una mezcla de una sustancia pura no ayuda a colocar un protón. Su prerrequisito real —qué es un elemento y qué es un átomo— no existe como tema. Es la dependencia declarada porque era la única disponible.",
+    "Tema 32 «Ácidos y bases: cómo reconocerlos» declara 9 y 27, pero su notación usa NaOH y Ca(OH)₂ y su regla es «ver si la fórmula empieza con H o termina en OH». El OH se enseña en el 26 «Hidróxidos». Falta declarar el 26.",
+    "Tema 35 «Oxidación y reducción» declara 24 y 15, pero sus cinco pasos trabajan sobre una ecuación con reactivos, productos y flecha, y su notación lo dice: «sobre una ecuación que ya trae flecha de reacción y subíndices». Falta declarar el 28, y como los ejemplos vienen balanceados, también el 30.",
+    "Tema 28 «La ecuación química» incluye el estado (ac) —acuoso— en su notación, que solo tiene sentido si ya se vio disolución. Falta declarar el 9.",
+    "Tema 31 «El mol y la masa molar» declara 14 y 23, pero el 14 no le da el dato que necesita (la masa atómica con decimales, no el A entero). Y del otro lado queda colgado: al haberse sacado la estequiometría, ningún tema posterior usa la masa molar, así que el estudiante nunca ve para qué la calculó. Conviene engancharlo con el 29 (comprobar la conservación de la masa con masas molares) para que tenga salida.",
+    "Tema 2 «Densidad: por qué flota o se hunde» declara el 1 (volumen) pero no tiene de dónde salga la masa: ningún tema la mide ni la separa del peso, y el quedaSabiendo del propio tema juega con eso («aunque el objeto sea muy pesado»). Basta con que el primer paso del 2 incluya leer la balanza y que el video separe masa de peso; si no, el error típico de comparar pesos no tiene contra qué contrastarse."
+  ],
+  "veredicto": "La columna vertebral se sostiene bien: materia → mezclas → átomo → tabla → enlaces → nomenclatura → reacciones es el orden correcto por dependencias, y los errores típicos son de los más concretos que se pueden pedir —ninguno es genérico, todos nombran el error real con su número y su motivo, así que la estación 5 está viva en los 35 temas. Lo que falla está en los extremos de la cadena de fórmulas: abajo nadie enseña qué dice una fórmula (subíndice, símbolo, elemento contra compuesto) y aun así se usan desde el tema 6 y se escriben desde el 23; arriba la familia nomenclatura se acaba sin sales, y el 34 las pide dadas. Esos dos temas nuevos son lo que más urge, en ese orden. Después, tres parches cortos que no piden tema nuevo: el quinto paso del 16 da resultado falso desde el calcio, el 24 mete el primer despeje algebraico de la materia sin escalón previo, y el 20 promete una valencia por grupo que el 25 y el 27 contradicen en cuanto aparece el hierro."
+}

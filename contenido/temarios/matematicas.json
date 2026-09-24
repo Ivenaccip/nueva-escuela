@@ -1,0 +1,967 @@
+{
+  "clave": "matematicas",
+  "nombre": "Matemáticas",
+  "familias": [
+    {
+      "nombre": "números",
+      "dequeVa": "Qué significa dividir y de qué está hecho un número: divisores, primos, MCD y mcm."
+    },
+    {
+      "nombre": "fracciones",
+      "dequeVa": "Qué es una fracción y sus cuatro operaciones, siempre apoyadas en la recta numérica."
+    },
+    {
+      "nombre": "decimales",
+      "dequeVa": "El punto decimal: valor posicional, las cuatro operaciones y el puente con las fracciones."
+    },
+    {
+      "nombre": "enteros",
+      "dequeVa": "Los números con signo: la recta con negativos, sus operaciones y la jerarquía."
+    },
+    {
+      "nombre": "proporción",
+      "dequeVa": "Razones, valor unitario, porcentajes, regla de tres y variación inversa."
+    },
+    {
+      "nombre": "potencias",
+      "dequeVa": "Exponentes, sus leyes, raíz cuadrada y notación científica."
+    },
+    {
+      "nombre": "álgebra",
+      "dequeVa": "El paso de los números a las letras: traducir, reducir, desarrollar y factorizar."
+    },
+    {
+      "nombre": "ecuaciones",
+      "dequeVa": "Resolver igualdades con incógnita, de la balanza a la fórmula general."
+    },
+    {
+      "nombre": "variación",
+      "dequeVa": "El plano cartesiano y las gráficas que dicen cómo una cantidad depende de otra."
+    },
+    {
+      "nombre": "geometría",
+      "dequeVa": "Ángulos: los que se forman entre paralelas y los que suman dentro de un polígono."
+    },
+    {
+      "nombre": "medida",
+      "dequeVa": "Perímetro, área y volumen: qué se mide, con qué fórmula y en qué unidad."
+    },
+    {
+      "nombre": "triángulos",
+      "dequeVa": "Pitágoras, semejanza y las primeras razones trigonométricas."
+    },
+    {
+      "nombre": "datos",
+      "dequeVa": "Leer una gráfica y resumir un montón de datos con un solo número."
+    },
+    {
+      "nombre": "azar",
+      "dequeVa": "Contar todo lo que puede pasar y medir qué tan probable es."
+    }
+  ],
+  "totalTemas": 60,
+  "temas": [
+    {
+      "numero": 1,
+      "titulo": "Qué significa dividir",
+      "familia": "números",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo decir si un problema pide repartir o pide cuántas veces cabe, y qué hacer con lo que sobra.",
+      "dependeDe": [],
+      "errorTipico": "Cree que dividir siempre achica: ante \"¿cuántos vasos de 0.5 L salen de 3 L?\" multiplica 3 × 0.5 = 1.5, porque 6 le parece demasiado grande para ser el resultado de una división.",
+      "losCincoPasos": "Los cinco pasos de decidir qué operación pide el problema, resolverla, interpretar el residuo y comprobar con una multiplicación.",
+      "notacion": "texto y división en renglón con residuo: 27 ÷ 4 = 6 y sobran 3; también la galera para dividir"
+    },
+    {
+      "numero": 2,
+      "titulo": "Divisores, primos y factorización",
+      "familia": "números",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo partir cualquier número en factores primos y ver de un vistazo si se divide entre 2, 3, 5 o 9.",
+      "dependeDe": [],
+      "errorTipico": "Dice que 51 es primo porque \"no es par, no acaba en 5 y no sale en las tablas\": nunca prueba el 3 (5+1=6) y deja de buscar antes de llegar a la raíz.",
+      "losCincoPasos": "Los cinco pasos de descomponer un número en factores primos por divisiones sucesivas y comprobar multiplicando de regreso.",
+      "notacion": "columna de divisiones sucesivas y resultado con superíndice: 360 = 2³ × 3² × 5"
+    },
+    {
+      "numero": 3,
+      "titulo": "MCD y mcm: cuál sirve para qué",
+      "familia": "números",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo sacar el MCD y el mcm de dos números y decidir cuál me pide el problema sin adivinar.",
+      "dependeDe": [
+        2
+      ],
+      "errorTipico": "Contesta con el MCD cuando el problema pide el mcm: dos camiones pasan cada 12 y cada 18 minutos y dice que coinciden a los 6, porque se queda con el número más chico.",
+      "losCincoPasos": "Los cinco pasos de descomponer ambos números, elegir factores comunes o todos, multiplicar y comprobar contra lo que pide el problema.",
+      "notacion": "superíndice en los factores y notación abreviada: MCD(12, 18) = 6, mcm(12, 18) = 36"
+    },
+    {
+      "numero": 4,
+      "titulo": "La fracción: parte, reparto y recta",
+      "familia": "fracciones",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo leer 3/4 como tres de cuatro partes y como 3 ÷ 4, y ubicarla en la recta numérica.",
+      "dependeDe": [
+        1
+      ],
+      "errorTipico": "Para ubicar 3/4 en una recta que va de 0 a 2, parte toda la recta en cuatro y lo pone en 1½: parte el dibujo completo en vez de partir la unidad.",
+      "losCincoPasos": "Los cinco pasos de ubicar una fracción en la recta: hallar la unidad, partirla, contar, marcar y comprobar con el entero.",
+      "notacion": "fracción apilada dentro de una frase y recta numérica con marcas tocables: 3/4 entre 0 y 1"
+    },
+    {
+      "numero": 5,
+      "titulo": "Fracciones equivalentes y simplificar",
+      "familia": "fracciones",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo encontrar fracciones que valen lo mismo y dejar cualquiera en su forma más simple.",
+      "dependeDe": [
+        4,
+        2
+      ],
+      "errorTipico": "Simplifica restando lo mismo arriba y abajo: de 6/8 pasa a 4/6 quitándole 2 a cada uno, en vez de dividir los dos entre 2.",
+      "losCincoPasos": "Los cinco pasos de simplificar una fracción hasta su mínima expresión usando el MCD y comprobar que sigue valiendo lo mismo.",
+      "notacion": "fracción apilada con el divisor anotado en flechas a los lados: 18/24 —÷6→ 3/4"
+    },
+    {
+      "numero": 6,
+      "titulo": "Comparar y ordenar fracciones",
+      "familia": "fracciones",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo ordenar fracciones de menor a mayor y explicar por qué entre más partes, cada parte es más chica.",
+      "dependeDe": [
+        5
+      ],
+      "errorTipico": "Dice que 1/8 es mayor que 1/5 porque 8 es mayor que 5: lee los denominadores como si fueran cantidades enteras.",
+      "losCincoPasos": "Los cinco pasos de comparar dos fracciones llevándolas a denominador común y ubicándolas en la recta para confirmar.",
+      "notacion": "dos fracciones apiladas lado a lado con un hueco chico en medio para teclear <, > o ="
+    },
+    {
+      "numero": 7,
+      "titulo": "Suma y resta de fracciones",
+      "familia": "fracciones",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo sumar y restar fracciones de distinto denominador, y explicar por qué los de abajo no se suman.",
+      "dependeDe": [
+        5,
+        3
+      ],
+      "errorTipico": "Suma en línea recta: 1/2 + 1/3 = 2/5, numerador con numerador y denominador con denominador, sin notar que el resultado es menor que 1/2.",
+      "losCincoPasos": "Los cinco pasos de sumar fracciones: sacar el mcm, convertir cada una, sumar numeradores, simplificar y comprobar el tamaño.",
+      "notacion": "fracciones apiladas en fila con + y =, y un hueco del tamaño de una fracción: 1/2 + 1/3 = [ ]"
+    },
+    {
+      "numero": 8,
+      "titulo": "Multiplicación de fracciones",
+      "familia": "fracciones",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo multiplicar fracciones y sacar la fracción de una cantidad, y explicar por qué sale más chico.",
+      "dependeDe": [
+        4
+      ],
+      "errorTipico": "Busca denominador común antes de multiplicar, como si fuera suma: convierte 2/3 × 1/4 en 8/12 × 3/12; también espera que el resultado sea mayor que los dos factores.",
+      "losCincoPasos": "Los cinco pasos de multiplicar dos fracciones: simplificar en cruz, multiplicar arriba, multiplicar abajo, simplificar y revisar el tamaño.",
+      "notacion": "fracciones apiladas con × y =, con tachadura de simplificación cruzada: 2/3 × 9/10"
+    },
+    {
+      "numero": 9,
+      "titulo": "División de fracciones",
+      "familia": "fracciones",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo dividir una fracción entre otra, y explicar por qué el resultado sale más grande.",
+      "dependeDe": [
+        8,
+        1
+      ],
+      "errorTipico": "Multiplica los numeradores pero suma los denominadores (2/3 ÷ 4/5 le da 10/7), o voltea la primera fracción en vez de la segunda.",
+      "losCincoPasos": "Los cinco pasos de dividir fracciones: voltear la segunda, cambiar a multiplicación, multiplicar arriba, multiplicar abajo y simplificar.",
+      "notacion": "fracciones apiladas con ÷ y × en fila y un hueco del tamaño de una fracción: 3/5 ÷ 1/4 = 3/5 × [ ]"
+    },
+    {
+      "numero": 10,
+      "titulo": "Decimales: qué vale cada lugar",
+      "familia": "decimales",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo leer, escribir y ordenar decimales, y decir cuánto vale cada cifra según su lugar.",
+      "dependeDe": [],
+      "errorTipico": "Ordena decimales por cuántas cifras tienen: asegura que 0.65 es mayor que 0.7 porque 65 es mayor que 7.",
+      "losCincoPasos": "Los cinco pasos de comparar dos decimales: igualar cifras con ceros, comparar décimos, luego centésimos, decidir y ubicar en la recta.",
+      "notacion": "número con punto decimal, tabla de lugares (décimos, centésimos, milésimos) y recta numérica con hueco"
+    },
+    {
+      "numero": 11,
+      "titulo": "Suma y resta de decimales",
+      "familia": "decimales",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo sumar y restar decimales sin perder el punto, y sé para qué sirve rellenar con ceros.",
+      "dependeDe": [
+        10
+      ],
+      "errorTipico": "Alinea por la derecha en vez de por el punto: acomoda 12.75 + 3.5 con el 5 debajo del 5 y termina sumando como si fueran 1275 + 35.",
+      "losCincoPasos": "Los cinco pasos de sumar decimales en columna: alinear el punto, rellenar con ceros, sumar por columna, bajar el punto y estimar para revisar.",
+      "notacion": "operación en columna con los puntos alineados verticalmente y un hueco por cifra: 12.75 + 3.50"
+    },
+    {
+      "numero": 12,
+      "titulo": "Multiplicación de decimales",
+      "familia": "decimales",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo multiplicar decimales contando las cifras del punto, y explicar por qué 0.3 × 0.4 sale tan chico.",
+      "dependeDe": [
+        11
+      ],
+      "errorTipico": "Cuenta mal los decimales del resultado: hace 3 × 4 = 12 y le pone un solo decimal, así que contesta 1.2 en vez de 0.12.",
+      "losCincoPasos": "Los cinco pasos de multiplicar decimales: quitar los puntos, multiplicar como enteros, contar cifras decimales, colocar el punto y estimar para revisar.",
+      "notacion": "multiplicación en columna sin alinear el punto, con el conteo de decimales anotado: 0.3 × 0.4 = [ ]"
+    },
+    {
+      "numero": 13,
+      "titulo": "Dividir entre un decimal",
+      "familia": "decimales",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo dividir entre un decimal y explicar por qué dividir entre algo menor que 1 da un resultado mayor.",
+      "dependeDe": [
+        12,
+        1
+      ],
+      "errorTipico": "Recorre el punto nada más en el divisor y deja el dividendo igual: en 7.5 ÷ 0.25 le sale 0.3 en vez de 30, y no le extraña que el resultado salga más chico.",
+      "losCincoPasos": "Los cinco pasos de dividir entre un decimal: contar los lugares del divisor, recorrer el punto en los dos, dividir, colocar el punto y comprobar multiplicando.",
+      "notacion": "galera de división con flechas de recorrido del punto: 7.5 ÷ 0.25 → 750 ÷ 25"
+    },
+    {
+      "numero": 14,
+      "titulo": "De fracción a decimal y de vuelta",
+      "familia": "decimales",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo pasar de fracción a decimal y de regreso, y reconocer cuándo el decimal se repite para siempre.",
+      "dependeDe": [
+        10,
+        13,
+        4
+      ],
+      "errorTipico": "Lee 3/8 como \"tres punto ocho\", o divide el denominador entre el numerador; y al regresar, escribe 0.25 como 25/10 en vez de 25/100.",
+      "losCincoPasos": "Los cinco pasos de convertir una fracción a decimal dividiendo numerador entre denominador y decidir si es exacto o periódico.",
+      "notacion": "fracción apilada, galera de división y raya de periodo encima de la cifra: 1/3 = 0.3̄"
+    },
+    {
+      "numero": 15,
+      "titulo": "La recta numérica con negativos",
+      "familia": "enteros",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo ordenar números negativos y decir cuál está más lejos del cero sin confundir tamaño con valor.",
+      "dependeDe": [
+        10
+      ],
+      "errorTipico": "Ordena los negativos como si fueran positivos: afirma que −7 es mayor que −2 porque 7 es mayor que 2.",
+      "losCincoPasos": "Los cinco pasos de ubicar varios números con signo en la recta, compararlos y medir su distancia al cero.",
+      "notacion": "recta numérica horizontal con el cero al centro, signo − pegado al número y barras de valor absoluto: |−7| = 7"
+    },
+    {
+      "numero": 16,
+      "titulo": "Suma y resta de enteros",
+      "familia": "enteros",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo sumar y restar números con signo, y explicar por qué restar un negativo termina sumando.",
+      "dependeDe": [
+        15
+      ],
+      "errorTipico": "Junta los dos números y le deja el signo del primero: escribe −5 + 3 = −8 en vez de −2, porque suma en lugar de moverse sobre la recta.",
+      "losCincoPasos": "Los cinco pasos de resolver una suma con signos: identificar los signos, decidir si se juntan o se cancelan, operar, poner el signo y comprobar en la recta.",
+      "notacion": "signos pegados al número y paréntesis para separar operación de signo: 8 − (−3); flechas sobre una recta"
+    },
+    {
+      "numero": 17,
+      "titulo": "Multiplicación y división de enteros",
+      "familia": "enteros",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo multiplicar y dividir con signos, y sé que esa regla de signos no sirve para sumar.",
+      "dependeDe": [
+        16
+      ],
+      "errorTipico": "Aplica la regla de los signos a una suma: escribe −4 + (−5) = +9 porque \"menos por menos es más\".",
+      "losCincoPasos": "Los cinco pasos de resolver un producto con signos: contar los negativos, decidir el signo, multiplicar los números, escribir el resultado y comprobar con un caso conocido.",
+      "notacion": "paréntesis alrededor de los negativos y superíndice: (−2)³ = −8 contra −2³; fracción apilada con signo"
+    },
+    {
+      "numero": 18,
+      "titulo": "Jerarquía de operaciones",
+      "familia": "enteros",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo resolver operaciones combinadas en el orden correcto y explicar cómo el orden cambia el resultado.",
+      "dependeDe": [
+        17
+      ],
+      "errorTipico": "Resuelve de izquierda a derecha: en 2 + 3 × 4 contesta 20; y escribe −3² = 9 porque eleva el signo junto con el número.",
+      "losCincoPasos": "Los cinco pasos de resolver una expresión combinada: paréntesis, potencias, multiplicaciones y divisiones, sumas y restas, y revisión final.",
+      "notacion": "paréntesis anidados, superíndice y raya de fracción que agrupa: 2 + 3 × (4 − 1)² sobre 3"
+    },
+    {
+      "numero": 19,
+      "titulo": "Razón: comparar dos cantidades",
+      "familia": "proporción",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo escribir la razón entre dos cantidades y distinguirla de la simple diferencia entre ellas.",
+      "dependeDe": [
+        4
+      ],
+      "errorTipico": "Responde con una resta cuando la pregunta es de razón: si hay 12 niñas y 8 niños dice \"hay 4 más\" en vez de \"3 por cada 2\".",
+      "losCincoPasos": "Los cinco pasos de escribir una razón, simplificarla, leerla como \"tantos por cada tantos\" y usarla para predecir otro caso.",
+      "notacion": "razón con dos puntos y como fracción apilada, dentro de una frase: 12:8 = 3:2 = 3/2"
+    },
+    {
+      "numero": 20,
+      "titulo": "Proporcionalidad directa y valor unitario",
+      "familia": "proporción",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo sacar cuánto vale una sola unidad y con eso llenar cualquier tabla de proporcionalidad.",
+      "dependeDe": [
+        19
+      ],
+      "errorTipico": "Escala sumando en vez de multiplicar: si 3 kg cuestan $45, para 6 kg suma 3 al precio y contesta $48 en lugar de duplicar a $90.",
+      "losCincoPasos": "Los cinco pasos de completar una tabla proporcional: revisar que sí sea proporcional, sacar el valor unitario, multiplicar, llenar y comprobar con otro renglón.",
+      "notacion": "tabla de dos renglones con un hueco por celda y la constante como fracción apilada: 45/3 = 15 por kg"
+    },
+    {
+      "numero": 21,
+      "titulo": "Porcentajes: qué son y cómo se sacan",
+      "familia": "proporción",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo sacar el porcentaje de una cantidad y decir qué porcentaje representa una parte de un total.",
+      "dependeDe": [
+        20,
+        10
+      ],
+      "errorTipico": "Divide entre el porcentaje en vez de multiplicar: para el 15% de 80 hace 80 ÷ 15; o recorre el punto un solo lugar y contesta 8.",
+      "losCincoPasos": "Los cinco pasos de calcular un porcentaje: pasarlo a fracción o decimal, multiplicar por el total, resolver, poner la unidad y estimar para revisar.",
+      "notacion": "símbolo % pegado al número y la triple equivalencia: 15% = 15/100 = 0.15"
+    },
+    {
+      "numero": 22,
+      "titulo": "Regla de tres y cuándo no se vale",
+      "familia": "proporción",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo resolver con regla de tres y, sobre todo, darme cuenta de cuándo no se vale usarla.",
+      "dependeDe": [
+        20
+      ],
+      "errorTipico": "La aplica donde no hay proporcionalidad: si a los 10 años medía 1.40 m, calcula que a los 20 medirá 2.80 m; o cruza los datos en el orden equivocado.",
+      "losCincoPasos": "Los cinco pasos de resolver con regla de tres: acomodar los datos, revisar que la relación sea proporcional, cruzar, despejar y comprobar.",
+      "notacion": "tabla de dos por dos con flechas cruzadas y una igualdad de fracciones apiladas: x/8 = 45/3"
+    },
+    {
+      "numero": 23,
+      "titulo": "Aumentos y descuentos",
+      "familia": "proporción",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular precios con descuento o con IVA de un solo paso, y sé por qué dos descuentos no se suman.",
+      "dependeDe": [
+        21
+      ],
+      "errorTipico": "Cree que subir 20% y luego bajar 20% regresa al precio original, y que un 30% más un 10% de descuento equivalen a un 40%.",
+      "losCincoPasos": "Los cinco pasos de aplicar un cambio porcentual: identificar el total base, armar el factor, multiplicar, aplicar el segundo cambio y comparar con el precio inicial.",
+      "notacion": "símbolo $ y %, y el factor entre paréntesis: $450 × (1 − 0.30); $450 × 1.16"
+    },
+    {
+      "numero": 24,
+      "titulo": "Proporcionalidad inversa",
+      "familia": "proporción",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo distinguir cuándo al subir una cantidad la otra baja, y resolverlo con el producto constante.",
+      "dependeDe": [
+        22
+      ],
+      "errorTipico": "Usa regla de tres directa en una relación inversa: si 4 albañiles tardan 12 días, contesta que 6 albañiles tardan 18 en vez de 8.",
+      "losCincoPasos": "Los cinco pasos de resolver una relación inversa: ver hacia dónde se mueve cada cantidad, sacar el producto constante, plantear, despejar y revisar que el resultado baje.",
+      "notacion": "tabla de dos renglones con el producto anotado al lado y una igualdad en fila: 4 × 12 = 6 × x"
+    },
+    {
+      "numero": 25,
+      "titulo": "Potencias: qué dice el exponente",
+      "familia": "potencias",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo calcular una potencia y explicar qué cuenta el exponente y qué cuenta la base.",
+      "dependeDe": [
+        8
+      ],
+      "errorTipico": "Multiplica la base por el exponente: escribe 3⁴ = 12 en vez de 81, y 2⁵ = 10 en vez de 32.",
+      "losCincoPasos": "Los cinco pasos de calcular una potencia: identificar base y exponente, desarrollarla como multiplicación repetida, multiplicar por partes, obtener el valor y comprobar.",
+      "notacion": "superíndice dentro de un renglón de texto y hueco en el exponente: 3⁴ = 3 × 3 × 3 × 3; 2^[ ] = 32"
+    },
+    {
+      "numero": 26,
+      "titulo": "Leyes de los exponentes",
+      "familia": "potencias",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo multiplicar y dividir potencias de la misma base sin tener que desarrollarlas una por una.",
+      "dependeDe": [
+        25
+      ],
+      "errorTipico": "Multiplica también las bases: escribe 2³ × 2⁴ = 4⁷; y al elevar una potencia a otra suma en vez de multiplicar: (2³)⁴ = 2⁷.",
+      "losCincoPasos": "Los cinco pasos de simplificar una expresión con potencias: separar bases iguales, sumar exponentes del producto, restar los del cociente, reducir y comprobar con números chicos.",
+      "notacion": "superíndice con expresiones y fracción apilada de potencias: (2³ × 2⁴)/2⁵; (x²)³"
+    },
+    {
+      "numero": 27,
+      "titulo": "Exponente cero y exponente negativo",
+      "familia": "potencias",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo con exponentes cero y negativos, y explico por qué 2⁻³ es un octavo y no menos ocho.",
+      "dependeDe": [
+        26
+      ],
+      "errorTipico": "Escribe 5⁰ = 0 y 2⁻³ = −8: piensa que el exponente cero anula el número y que el signo del exponente le pasa al resultado.",
+      "losCincoPasos": "Los cinco pasos de convertir una potencia de exponente negativo en fracción: escribir el recíproco, quitar el signo, calcular la potencia, simplificar y comprobar con la ley del cociente.",
+      "notacion": "superíndice con signo menos y fracción apilada: 2⁻³ = 1/2³ = 1/8; x⁻² dentro de una frase"
+    },
+    {
+      "numero": 28,
+      "titulo": "Raíz cuadrada: exacta y aproximada",
+      "familia": "potencias",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo sacar raíces exactas y aproximar las que no lo son, comprobando siempre con una multiplicación.",
+      "dependeDe": [
+        25,
+        2
+      ],
+      "errorTipico": "Divide entre dos: dice que la raíz de 36 es 18; y al aproximar la de 50 contesta 7.5 \"porque está a la mitad entre 7 y 8\", sin verificar que 7.5² = 56.25.",
+      "losCincoPasos": "Los cinco pasos de aproximar una raíz: acorralarla entre dos enteros, probar un decimal, multiplicar, ajustar y decidir el valor aproximado.",
+      "notacion": "símbolo de raíz con vínculo sobre la cantidad y signo ≈: √50 ≈ 7.07; √144 = 12"
+    },
+    {
+      "numero": 29,
+      "titulo": "Notación científica",
+      "familia": "potencias",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo escribir números enormes y diminutos en notación científica y regresarlos a su forma normal.",
+      "dependeDe": [
+        27,
+        12
+      ],
+      "errorTipico": "Deja dos cifras antes del punto y cuenta mal el signo: escribe 45 000 como 45 × 10³ y 0.00045 como 4.5 × 10⁴ en vez de 4.5 × 10⁻⁴.",
+      "losCincoPasos": "Los cinco pasos de escribir un número en notación científica: poner el punto tras la primera cifra, contar los lugares movidos, decidir el signo del exponente, escribirlo y comprobar regresándolo.",
+      "notacion": "superíndice con signo y multiplicación por 10, con hueco en el exponente: 4.5 × 10⁻⁴"
+    },
+    {
+      "numero": 30,
+      "titulo": "Del número a la letra",
+      "familia": "álgebra",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo escribir con letras lo que dice una frase, y comprobar mi traducción probando un número.",
+      "dependeDe": [
+        18
+      ],
+      "errorTipico": "Traduce en el orden en que lee: \"el doble de un número más tres\" lo escribe 2(n + 3), y \"cinco menos que x\" lo escribe 5 − x en vez de x − 5.",
+      "losCincoPasos": "Los cinco pasos de traducir una frase: nombrar la incógnita, partir la frase, escribir cada trozo, armar la expresión y comprobarla con un valor de prueba.",
+      "notacion": "letras pegadas al coeficiente, paréntesis y fracción apilada con letra: 2n + 3; (x − 5)/2"
+    },
+    {
+      "numero": 31,
+      "titulo": "Sucesiones y el enésimo término",
+      "familia": "álgebra",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo encontrar la regla de una sucesión y con ella saber el término 100 sin contar uno por uno.",
+      "dependeDe": [
+        30
+      ],
+      "errorTipico": "Da la diferencia como si fuera la regla: para 4, 7, 10, 13 escribe \"3n\" o \"n + 3\" en vez de 3n + 1, y no comprueba con n = 1.",
+      "losCincoPasos": "Los cinco pasos de hallar la regla general: sacar la diferencia, escribir el término con esa diferencia, ajustar el término independiente, comprobar con n = 1 y comprobar con n = 4.",
+      "notacion": "subíndice para la posición y expresión con n: a₁₀; regla 3n + 1; tabla de posición y término con huecos"
+    },
+    {
+      "numero": 32,
+      "titulo": "Evaluar una expresión sustituyendo",
+      "familia": "álgebra",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo sustituir un valor en una expresión, aunque sea negativo, sin perder el paréntesis en el camino.",
+      "dependeDe": [
+        30,
+        18
+      ],
+      "errorTipico": "Sustituye sin paréntesis: en x² con x = −3 escribe −3² y contesta −9; y en 3x con x = 4 escribe 34 en vez de 12.",
+      "losCincoPasos": "Los cinco pasos de evaluar una expresión: escribir la expresión, sustituir con paréntesis, resolver potencias, resolver productos y terminar con sumas y restas.",
+      "notacion": "paréntesis obligatorio alrededor del valor y superíndice: 2(−3)² − 5(−3) + 1"
+    },
+    {
+      "numero": 33,
+      "titulo": "Términos semejantes",
+      "familia": "álgebra",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo reducir una expresión larga juntando solamente lo que sí se puede juntar.",
+      "dependeDe": [
+        32
+      ],
+      "errorTipico": "Junta lo que no es semejante: escribe 3x + 2x² = 5x³ o 4a + 3b = 7ab, sumando también los exponentes o pegando letras distintas.",
+      "losCincoPasos": "Los cinco pasos de reducir una expresión: marcar cada término con su signo, agrupar los semejantes, sumar coeficientes, dejar la letra igual y ordenar por exponente.",
+      "notacion": "letras con superíndice mezcladas en una fila larga: 3x² − 5x + 2x² + 7x − 4"
+    },
+    {
+      "numero": 34,
+      "titulo": "Distribuir y quitar paréntesis",
+      "familia": "álgebra",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo quitar paréntesis sin perder signos, y sé que el menos de afuera le toca a todo lo de adentro.",
+      "dependeDe": [
+        33
+      ],
+      "errorTipico": "Solo le cambia el signo al primer término: convierte 8 − (3x − 5) en 8 − 3x − 5; o multiplica 3(x + 4) como 3x + 4.",
+      "losCincoPasos": "Los cinco pasos de quitar un paréntesis: ver el signo de afuera, multiplicar el primer término, multiplicar el segundo, escribir sin paréntesis y reducir semejantes.",
+      "notacion": "paréntesis con signo o coeficiente delante y letras: 8 − (3x − 5); −2(4a − 7)"
+    },
+    {
+      "numero": 35,
+      "titulo": "Qué es una ecuación: la balanza",
+      "familia": "ecuaciones",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo decir qué significa resolver una ecuación y comprobar si un número es de verdad la solución.",
+      "dependeDe": [
+        32
+      ],
+      "errorTipico": "Opera de un solo lado: de x + 5 = 12 escribe x = 12 + 5; cree que lo que se le hace a un lado no tiene que hacerse al otro.",
+      "losCincoPasos": "Los cinco pasos de comprobar una solución: sustituir en el lado izquierdo, resolverlo, sustituir en el derecho, resolverlo y comparar los dos resultados.",
+      "notacion": "igualdad con letra y hueco a un lado: x + 5 = 12; dibujo de balanza con los dos platos"
+    },
+    {
+      "numero": 36,
+      "titulo": "Ecuaciones de primer grado",
+      "familia": "ecuaciones",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo resolver ecuaciones con la incógnita en los dos lados y comprobar que mi respuesta sí sirve.",
+      "dependeDe": [
+        35,
+        34
+      ],
+      "errorTipico": "Pasa el número con la misma operación: de 3x = 15 escribe x = 15 − 3; y al mover un término al otro lado se le olvida cambiarle el signo.",
+      "losCincoPasos": "Los cinco pasos de despejar: quitar paréntesis, juntar las letras de un lado, juntar los números del otro, dividir entre el coeficiente y comprobar.",
+      "notacion": "igualdad en fila con paréntesis y fracción apilada con letra: 5x − 3 = 2x + 9; (x + 1)/4 = 3"
+    },
+    {
+      "numero": 37,
+      "titulo": "De problema a ecuación",
+      "familia": "ecuaciones",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo convertir un problema en ecuación, resolverla y contestar lo que de verdad me estaban preguntando.",
+      "dependeDe": [
+        36,
+        30
+      ],
+      "errorTipico": "No define qué es x y le pone la letra al total en vez de a la parte desconocida; al terminar entrega el valor de x aunque la pregunta pedía otra cosa.",
+      "losCincoPasos": "Los cinco pasos de resolver un problema con ecuación: nombrar la incógnita, escribir la ecuación, resolverla, comprobar contra el enunciado y contestar en palabras.",
+      "notacion": "un renglón de \"sea x = [ ]\" y debajo la ecuación con huecos, más la respuesta con unidades ($, kg, años)"
+    },
+    {
+      "numero": 38,
+      "titulo": "El plano cartesiano",
+      "familia": "variación",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo ubicar y leer puntos en los cuatro cuadrantes sin confundir la x con la y.",
+      "dependeDe": [
+        15
+      ],
+      "errorTipico": "Invierte el par ordenado: ubica (3, −2) donde va (−2, 3); y en los cuadrantes de la izquierda cuenta hacia la derecha por costumbre.",
+      "losCincoPasos": "Los cinco pasos de ubicar un punto: leer la primera coordenada, moverse en x, leer la segunda, moverse en y y marcar diciendo el cuadrante.",
+      "notacion": "par ordenado con paréntesis y coma, y cuadrícula con ejes tocables: (−3, 2)"
+    },
+    {
+      "numero": 39,
+      "titulo": "La gráfica de y = mx",
+      "familia": "variación",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo graficar una relación proporcional y leer en la gráfica cuánto vale la constante.",
+      "dependeDe": [
+        38,
+        20
+      ],
+      "errorTipico": "Traza una recta que no pasa por el origen para una relación proporcional, y saca la constante restando dos valores de y en vez de dividir y entre x.",
+      "losCincoPasos": "Los cinco pasos de graficar una relación proporcional: llenar la tabla, ubicar los puntos, trazar la recta por el origen, sacar la constante y usarla para predecir un valor.",
+      "notacion": "ecuación con letras y plano con cuadrícula: y = 2.5x; tabla de x y y con huecos por celda"
+    },
+    {
+      "numero": 40,
+      "titulo": "La función lineal y = mx + b",
+      "familia": "variación",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo sacar la ecuación de una recta desde su gráfica o desde dos puntos, y decir qué son m y b.",
+      "dependeDe": [
+        39,
+        36
+      ],
+      "errorTipico": "Calcula la pendiente al revés, dividiendo lo horizontal entre lo vertical; y lee la b como el punto donde la recta cruza el eje x.",
+      "losCincoPasos": "Los cinco pasos de hallar la ecuación de una recta: elegir dos puntos, restar las y, restar las x, dividir para la pendiente y leer la ordenada al origen.",
+      "notacion": "ecuación con letras, subíndices y fracción apilada: m = (y₂ − y₁)/(x₂ − x₁); y = −3x + 5"
+    },
+    {
+      "numero": 41,
+      "titulo": "Sistemas de dos ecuaciones",
+      "familia": "ecuaciones",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo resolver un sistema de dos ecuaciones y comprobar que el par sirve en las dos a la vez.",
+      "dependeDe": [
+        37,
+        40
+      ],
+      "errorTipico": "Resuelve solo una de las dos ecuaciones y entrega ese valor; al usar suma y resta no iguala primero los coeficientes o se le olvida operar los términos independientes.",
+      "losCincoPasos": "Los cinco pasos de resolver por suma y resta: igualar coeficientes, eliminar una incógnita, despejar la otra, sustituir para la primera y comprobar en las dos ecuaciones.",
+      "notacion": "dos ecuaciones apiladas con llave a la izquierda, subíndices y par ordenado de respuesta: (x, y) = (4, −1)"
+    },
+    {
+      "numero": 42,
+      "titulo": "Productos notables",
+      "familia": "álgebra",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo desarrollar (a + b)² y (a + b)(a − b) sin que se me pierda el doble producto.",
+      "dependeDe": [
+        34,
+        26
+      ],
+      "errorTipico": "Reparte el exponente a cada término: escribe (x + 5)² = x² + 25 porque se salta el doble producto 2(x)(5).",
+      "losCincoPasos": "Los cinco pasos de desarrollar un binomio al cuadrado: cuadrado del primero, doble producto, cuadrado del segundo, escribir el trinomio y comprobar con un valor.",
+      "notacion": "paréntesis con superíndice y letras con coeficiente: (x + 5)²; (2a − 3b)(2a + 3b)"
+    },
+    {
+      "numero": 43,
+      "titulo": "Factor común",
+      "familia": "álgebra",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo sacar el factor común de una expresión y comprobarlo multiplicando otra vez hacia atrás.",
+      "dependeDe": [
+        34,
+        3
+      ],
+      "errorTipico": "Deja vacío el término que se va completo: de 4x² + 4x escribe 4x(x) o 4x(x + 0) en vez de 4x(x + 1); o saca solo el número y se olvida de la letra.",
+      "losCincoPasos": "Los cinco pasos de factorizar por factor común: sacar el MCD de los coeficientes, sacar la letra de menor exponente, dividir cada término, escribir el paréntesis y comprobar multiplicando.",
+      "notacion": "letras con superíndice y paréntesis: 12x³ − 8x² = 4x²(3x − 2)"
+    },
+    {
+      "numero": 44,
+      "titulo": "Factorizar trinomios y diferencias",
+      "familia": "álgebra",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo factorizar un trinomio y una diferencia de cuadrados, y revisar el resultado multiplicando.",
+      "dependeDe": [
+        42,
+        43
+      ],
+      "errorTipico": "Busca los dos números sin cuidar los signos: factoriza x² − 5x + 6 como (x + 2)(x + 3); y trata x² + 9 como si fuera diferencia de cuadrados.",
+      "losCincoPasos": "Los cinco pasos de factorizar x² + bx + c: listar las parejas que multiplicadas dan c, revisar cuál suma b, decidir los signos, escribir los dos binomios y comprobar multiplicando.",
+      "notacion": "trinomio con superíndice y dos paréntesis seguidos: x² − 5x + 6 = (x − 2)(x − 3); x² − 49 = (x + 7)(x − 7)"
+    },
+    {
+      "numero": 45,
+      "titulo": "Ecuación cuadrática por factorización",
+      "familia": "ecuaciones",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo resolver una ecuación de segundo grado factorizando y explicar por qué salen dos soluciones.",
+      "dependeDe": [
+        44,
+        36
+      ],
+      "errorTipico": "Factoriza sin haber igualado a cero, o iguala cada factor al número de la derecha; y cuando le sale (x − 2)(x + 3) = 0 entrega solo x = 2.",
+      "losCincoPasos": "Los cinco pasos de resolver factorizando: pasar todo a un lado, igualar a cero, factorizar, igualar cada factor a cero y comprobar las dos raíces.",
+      "notacion": "ecuación con superíndice y dos respuestas con subíndice: x² − 5x + 6 = 0; x₁ = 2, x₂ = 3"
+    },
+    {
+      "numero": 46,
+      "titulo": "Fórmula general y el discriminante",
+      "familia": "ecuaciones",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo usar la fórmula general y saber antes de terminar si habrá dos, una o ninguna solución.",
+      "dependeDe": [
+        45,
+        28
+      ],
+      "errorTipico": "Toma b sin su signo (usa b = 5 cuando la ecuación dice −5x), divide entre 2 en vez de entre 2a, o deja fuera de la raíz el 4ac.",
+      "losCincoPasos": "Los cinco pasos de aplicar la fórmula general: identificar a, b y c con signo, calcular el discriminante, sacar la raíz, aplicar el ± y simplificar las dos raíces.",
+      "notacion": "fracción apilada grande con raíz y signo ± dentro de un renglón: x = (−b ± √(b² − 4ac))/2a"
+    },
+    {
+      "numero": 47,
+      "titulo": "Ángulos entre paralelas",
+      "familia": "geometría",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo encontrar cualquier ángulo entre dos paralelas y decir con qué nombre lo saqué.",
+      "dependeDe": [],
+      "errorTipico": "Da por iguales dos ángulos que en realidad son colaterales (suman 180°), porque supone que en la figura todos los ángulos o son iguales o son suplementarios sin fijarse cuál es cuál.",
+      "losCincoPasos": "Los cinco pasos de hallar un ángulo: ubicar la transversal, nombrar la relación con el ángulo conocido, decidir si es igual o suplementario, calcular y comprobar con el ángulo de junto.",
+      "notacion": "símbolo de grado y de ángulo con tres letras: ∠ABC = 65°; figura con ángulos numerados y tocables"
+    },
+    {
+      "numero": 48,
+      "titulo": "Suma de ángulos en polígonos",
+      "familia": "geometría",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular la suma de los ángulos de cualquier polígono y cuánto mide cada uno si es regular.",
+      "dependeDe": [
+        47
+      ],
+      "errorTipico": "Multiplica los lados por 180 sin restar 2: dice que un pentágono suma 900° en vez de 540°; o usa 360° como suma de los ángulos de un triángulo.",
+      "losCincoPasos": "Los cinco pasos de calcular los ángulos de un polígono regular: contar lados, partirlo en triángulos desde un vértice, multiplicar por 180°, dividir entre el número de lados y comprobar.",
+      "notacion": "fórmula con paréntesis y símbolo de grado: (n − 2) × 180°; hueco para teclear la medida de cada ángulo"
+    },
+    {
+      "numero": 49,
+      "titulo": "Perímetro y área de figuras básicas",
+      "familia": "medida",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo sacar perímetro y área de triángulos y cuadriláteros, y sé cuál medida sirve como altura.",
+      "dependeDe": [
+        8
+      ],
+      "errorTipico": "Usa el lado inclinado del paralelogramo o del triángulo como altura en vez de la perpendicular, y reporta el área en cm en lugar de cm².",
+      "losCincoPasos": "Los cinco pasos de calcular un área: reconocer la figura, identificar base y altura perpendicular, aplicar la fórmula, operar y escribir la unidad cuadrada.",
+      "notacion": "fórmula con fracción apilada y unidad con superíndice: A = (b × h)/2; 24 cm²; figura con medidas tocables"
+    },
+    {
+      "numero": 50,
+      "titulo": "Área por descomposición",
+      "familia": "medida",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo sacar el área de una figura rara partiéndola en figuras que sí conozco.",
+      "dependeDe": [
+        49,
+        48
+      ],
+      "errorTipico": "Encima dos pedazos y cuenta esa parte dos veces, o deja un trozo fuera; en el trapecio multiplica las dos bases en vez de sumarlas.",
+      "losCincoPasos": "Los cinco pasos de calcular un área compuesta: trazar los cortes, anotar las medidas de cada parte, calcular cada área, sumarlas y revisar que ninguna se repita.",
+      "notacion": "fórmula con fracción apilada y unidad con superíndice: A = ((B + b) × h)/2; figura con líneas de corte punteadas"
+    },
+    {
+      "numero": 51,
+      "titulo": "El círculo: π, perímetro y área",
+      "familia": "medida",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular perímetro y área de un círculo sin confundir el radio con el diámetro.",
+      "dependeDe": [
+        49,
+        25
+      ],
+      "errorTipico": "Mete el diámetro donde va el radio y calcula el área como πd²; o entrega 2πr cuando le pidieron área.",
+      "losCincoPasos": "Los cinco pasos de calcular el área de un círculo desde el diámetro: sacar el radio, elevarlo al cuadrado, multiplicar por π, redondear y poner la unidad cuadrada.",
+      "notacion": "símbolo π, superíndice y unidad cuadrada: A = πr²; P = 2πr; 78.5 cm²"
+    },
+    {
+      "numero": 52,
+      "titulo": "Volumen de prismas y cilindros",
+      "familia": "medida",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo sacar el volumen de prismas y cilindros, y explicar por qué siempre es base por altura.",
+      "dependeDe": [
+        49,
+        51
+      ],
+      "errorTipico": "Multiplica las tres medidas que ve sin fijarse cuál forma la base (en un prisma triangular olvida el medio), y reporta el resultado en cm².",
+      "losCincoPasos": "Los cinco pasos de calcular un volumen: reconocer la base, calcular su área, identificar la altura, multiplicar y escribir la unidad cúbica.",
+      "notacion": "fórmula con superíndice y unidad cúbica: V = πr²h; 1 570 cm³; dibujo del cuerpo con medidas tocables"
+    },
+    {
+      "numero": 53,
+      "titulo": "Volumen de pirámide, cono y esfera",
+      "familia": "medida",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo sacar el volumen de conos, pirámides y esferas, y sé de dónde sale ese tercio.",
+      "dependeDe": [
+        52
+      ],
+      "errorTipico": "Se salta el tercio y calcula el cono como si fuera cilindro; o usa la altura inclinada (la generatriz) en lugar de la altura vertical.",
+      "losCincoPasos": "Los cinco pasos de calcular el volumen de un cono: identificar la altura vertical, sacar el área de la base, multiplicar por la altura, dividir entre tres y poner la unidad cúbica.",
+      "notacion": "fracción apilada con π y superíndice: V = (πr²h)/3; V = (4πr³)/3; unidad cm³"
+    },
+    {
+      "numero": 54,
+      "titulo": "Teorema de Pitágoras",
+      "familia": "triángulos",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo sacar cualquier lado de un triángulo rectángulo y decir si el resultado tiene sentido.",
+      "dependeDe": [
+        28,
+        48,
+        49
+      ],
+      "errorTipico": "Siempre suma los cuadrados, aunque le pidan un cateto: con hipotenusa 10 y cateto 6 contesta √136 = 11.6, sin notar que un cateto no puede medir más que la hipotenusa.",
+      "losCincoPasos": "Los cinco pasos de aplicar Pitágoras: identificar la hipotenusa, plantear la igualdad, despejar el lado buscado, sacar la raíz y comprobar que la hipotenusa sea el lado mayor.",
+      "notacion": "superíndice y raíz con vínculo: c² = a² + b²; a = √(c² − b²); triángulo con los lados etiquetados"
+    },
+    {
+      "numero": 55,
+      "titulo": "Semejanza de triángulos y Tales",
+      "familia": "triángulos",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo encontrar un lado desconocido con triángulos semejantes, emparejando bien los lados.",
+      "dependeDe": [
+        20,
+        48
+      ],
+      "errorTipico": "Escala sumando la diferencia en vez de multiplicar por la razón: si un lado pasa de 6 a 9, le suma 3 a todos los demás; o empareja lados que no se corresponden.",
+      "losCincoPasos": "Los cinco pasos de resolver con semejanza: verificar los ángulos iguales, emparejar lados correspondientes, escribir la proporción, despejar y comprobar la razón con otro par de lados.",
+      "notacion": "símbolo ~, letras con prima y dos fracciones apiladas igualadas: AB/A′B′ = BC/B′C′"
+    },
+    {
+      "numero": 56,
+      "titulo": "Seno, coseno y tangente",
+      "familia": "triángulos",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo sacar un lado o un ángulo de un triángulo rectángulo eligiendo entre seno, coseno y tangente.",
+      "dependeDe": [
+        55,
+        54
+      ],
+      "errorTipico": "Nombra opuesto y adyacente respecto al ángulo equivocado porque siempre mira el mismo lado del dibujo; y cuando la incógnita es el ángulo multiplica en vez de usar la función inversa.",
+      "losCincoPasos": "Los cinco pasos de resolver un triángulo rectángulo: marcar el ángulo, nombrar los tres lados respecto a él, elegir la razón que usa los dos datos, plantear y despejar.",
+      "notacion": "abreviatura con ángulo en grados, fracción apilada y función inversa con superíndice: sen 35° = co/h; tan⁻¹(0.7)"
+    },
+    {
+      "numero": 57,
+      "titulo": "Leer gráficas de barras y circulares",
+      "familia": "datos",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo sacar datos de una gráfica y darme cuenta cuando una comparación está mal hecha.",
+      "dependeDe": [
+        21
+      ],
+      "errorTipico": "Compara porcentajes de dos gráficas circulares con totales distintos como si fueran cantidades: \"en esta escuela reprueban más porque el pedazo es más grande\", aunque una tenga 40 alumnos y la otra 400.",
+      "losCincoPasos": "Los cinco pasos de sacar una cantidad real de una gráfica: leer el total, leer el porcentaje o la altura, calcular la cantidad, hacer lo mismo con la otra gráfica y comparar cantidades, no pedazos.",
+      "notacion": "gráfica de barras y circular con etiquetas tocables, símbolo % y un hueco para teclear la cantidad con unidad"
+    },
+    {
+      "numero": 58,
+      "titulo": "Media, mediana y moda",
+      "familia": "datos",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo calcular media, mediana y moda, y decir cuál describe mejor un grupo de datos.",
+      "dependeDe": [
+        7,
+        1
+      ],
+      "errorTipico": "Saca la mediana sin ordenar los datos antes, y al calcular la media divide entre el número de valores distintos en vez de entre cuántos datos hay.",
+      "losCincoPasos": "Los cinco pasos de resumir un conjunto de datos: ordenarlos, sumarlos, dividir entre cuántos son, ubicar el del centro y elegir cuál medida conviene reportar.",
+      "notacion": "lista de datos entre llaves, fracción apilada de la suma entre el total y barra sobre la letra: x̄ = 48/6 = 8"
+    },
+    {
+      "numero": 59,
+      "titulo": "Probabilidad clásica",
+      "familia": "azar",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo calcular la probabilidad de un evento y expresarla como fracción, decimal y porcentaje.",
+      "dependeDe": [
+        4,
+        21
+      ],
+      "errorTipico": "Pone los casos favorables sobre los desfavorables en vez de sobre el total: para sacar un 5 en un dado escribe 1/5; o suma probabilidades y le da más de 1 sin que le parezca raro.",
+      "losCincoPasos": "Los cinco pasos de calcular una probabilidad: listar todos los casos posibles, contar los favorables, escribir la fracción, simplificarla y pasarla a porcentaje.",
+      "notacion": "P con el evento entre paréntesis y fracción apilada: P(par) = 3/6 = 1/2 = 50%"
+    },
+    {
+      "numero": 60,
+      "titulo": "Árbol de posibilidades y regla del producto",
+      "familia": "azar",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo contar todos los resultados posibles con un diagrama de árbol y saber cuándo multiplicar.",
+      "dependeDe": [
+        59,
+        8
+      ],
+      "errorTipico": "Suma cuando debe multiplicar: para dos volados seguidos dice que hay 2 + 2 = 4 ramas pero que la probabilidad de dos águilas es 1/2 + 1/2 = 1, en vez de 1/2 × 1/2.",
+      "losCincoPasos": "Los cinco pasos de resolver con árbol: dibujar las ramas del primer evento, abrir las del segundo, contar los resultados totales, marcar los favorables y multiplicar las probabilidades del camino.",
+      "notacion": "diagrama de árbol con ramas etiquetadas y fracciones apiladas sobre cada rama: P(AA) = 1/2 × 1/2 = 1/4"
+    }
+  ],
+  "noEncajan": [
+    {
+      "tema": "Construcciones con regla y compás (mediatriz, bisectriz, alturas y puntos notables)",
+      "porQue": "La respuesta es un trazo, no algo que se teclee en un hueco: las estaciones 3 y 4 se quedan sin dónde vivir, y el paso malo de la estación 5 sería un movimiento de mano, no un renglón que se pueda tocar.",
+      "queHacer": "Dejarlo fuera de Andamio. Si se quiere conservar algo, rescatar solo la parte numérica (cuánto mide el ángulo que forma la bisectriz) dentro de \"Ángulos entre paralelas\"."
+    },
+    {
+      "tema": "Simetría, traslación, rotación y reflexión",
+      "porQue": "Lo que se pide es una figura transformada, no un valor; el error típico es un dibujo mal colocado y no un paso de un procedimiento que se pueda separar en cinco.",
+      "queHacer": "Convertirlo en un tema de coordenadas dentro de la familia variación (\"a dónde llega el punto (3, 2) al reflejarse en el eje y\"), donde sí hay un valor que teclear, o dejarlo fuera."
+    },
+    {
+      "tema": "Cuerpos geométricos: desarrollos planos, vistas y aristas",
+      "porQue": "Es reconocimiento espacial: se acierta o no se acierta, pero no hay una cadena de pasos separables ni un error clásico de procedimiento, solo fallas de imaginación.",
+      "queHacer": "Fundirlo con \"Volumen de prismas y cilindros\": que viva dentro del video de ese tema, sin ser tema propio."
+    },
+    {
+      "tema": "Estimación y cálculo mental",
+      "porQue": "No hay un único camino correcto: dos estimaciones distintas pueden estar las dos bien, así que la estación 5 no puede señalar un paso objetivamente malo sin volverse injusta.",
+      "queHacer": "Repartirlo como último paso de comprobación dentro de otros temas (decimales, porcentajes, raíz cuadrada), donde estimar sirve para cachar un resultado absurdo."
+    },
+    {
+      "tema": "Probabilidad frecuencial y experimentos aleatorios",
+      "porQue": "Exige repetir un experimento muchas veces; el resultado es un dato empírico que cambia cada vez, y ningún paso puede marcarse como equivocado porque el azar no se equivoca.",
+      "queHacer": "Meterlo en el video de \"Probabilidad clásica\", contrastando lo que dice la teoría con lo que sale al tirar el dado cincuenta veces."
+    },
+    {
+      "tema": "Lectura crítica de gráficas engañosas (eje cortado, escalas distintas)",
+      "porQue": "El error no está en un paso de un cálculo sino en un juicio; el estudiante puede tener razón por motivos distintos a los previstos y la estación 5 se vuelve ambigua.",
+      "queHacer": "Ponerlo como último escalón de la estación 4 de \"Leer gráficas de barras y circulares\", donde sí hay un dato concreto que pedir."
+    },
+    {
+      "tema": "Escalas, planos y mapas",
+      "porQue": "Sí funcionaría, pero es la misma regla de tres con otro nombre: su error típico real (no convertir las unidades antes de escalar) ya vive en proporcionalidad, y repetirlo gasta un tema.",
+      "queHacer": "Fundirlo: que las escalas sean los escalones de la estación 4 de \"Proporcionalidad directa y valor unitario\" y de \"Semejanza de triángulos y Tales\"."
+    },
+    {
+      "tema": "Media, mediana y moda con datos agrupados en intervalos",
+      "porQue": "Junta dos procedimientos distintos (armar la tabla de intervalos y luego calcular con marcas de clase); no cabe en un video de cinco minutos ni en cinco pasos sin apretarlo.",
+      "queHacer": "Partirlo: dejar \"Media, mediana y moda\" con datos sueltos, y posponer los datos agrupados para una segunda vuelta del tema, cuando el guardián lo regrese más difícil."
+    }
+  ],
+  "huecos": [
+    {
+      "donde": "Entre el 18 (Jerarquía de operaciones) y el 25 (Potencias: qué dice el exponente)",
+      "que": "El 18 enseña el orden 'paréntesis, POTENCIAS, multiplicación...' y su error típico es −3² = 9, pero las potencias no existen todavía: llegan siete temas después. El estudiante tiene que decidir qué hace primero con un símbolo que nunca le explicaron.",
+      "arreglo": "Mover 'Potencias: qué dice el exponente' (25) para que quede antes del 18, justo después de 17. Depende de 8, que ya está mucho más atrás, así que el movimiento no rompe nada. La jerarquía queda dependiendo de 17 y del nuevo 25."
+    },
+    {
+      "donde": "Entre el 6 (Comparar y ordenar fracciones) y el 7 (Suma y resta de fracciones)",
+      "que": "Falta el número mixto y la fracción impropia. Ningún tema enseña que 7/3 y 2 1/3 son lo mismo, y sin eso el 7 y el 9 producen resultados (12/5, 10/7) que el estudiante no sabe leer ni escribir como se los va a pedir su maestro. En 6º y 1º de secundaria el número mixto está en todas las páginas del libro.",
+      "arreglo": "Tema nuevo: 'Fracciones mixtas e impropias'. Error típico: resta por partes, 3 1/4 − 1 3/4 = 2 y −2/4, o lee 2 1/3 como 2 × 1/3. Depende de 5. Los cinco pasos: multiplicar entero por denominador, sumar el numerador, escribir la impropia, dividir de regreso y comprobar en la recta."
+    },
+    {
+      "donde": "Entre el 34 (Distribuir y quitar paréntesis) y el 42 (Productos notables)",
+      "que": "El 34 solo enseña monomio por paréntesis: 3(x + 4). Nadie enseña (x + 3)(x + 5). Y el 42 pide desarrollar (a + b)² con una receta memorizada ('cuadrado del primero, doble producto...') que el estudiante no puede justificar, y el 44 le pide comprobar su factorización multiplicando dos binomios que nunca multiplicó. Es el salto callado más grande del temario.",
+      "arreglo": "Tema nuevo: 'Multiplicar dos binomios' (3º secundaria), entre 34 y 42. Error típico: multiplica en paralelo, (x + 3)(x + 5) = x² + 15, sin los términos cruzados. Depende de 34 y 33. Con eso el doble producto del 42 deja de ser magia y la comprobación del 44 se sostiene."
+    },
+    {
+      "donde": "Antes del 47 (Ángulos entre paralelas), que hoy tiene dependeDe vacío",
+      "que": "El 47 arranca dando por sabidos ángulo, grado, suplementario y opuesto por el vértice: su propio error típico habla de 'colaterales que suman 180°'. Es el único tema de geometría que entra sin puerta, y entra a media velocidad.",
+      "arreglo": "Tema nuevo: 'Ángulos: complementarios, suplementarios y opuestos por el vértice' (1º secundaria, dependeDe vacío). Error típico: le piden el suplemento de 60° y contesta 30° porque usa 90 en lugar de 180. El 47 pasa a depender de él."
+    },
+    {
+      "donde": "Antes del 49 (Perímetro y área de figuras básicas), en la familia medida",
+      "que": "La familia promete decir 'en qué unidad' y ningún tema enseña a convertirlas. Del 49 al 53 se reporta en cm², m², cm³ y litros sin que nadie explique cuánto vale cada salto, y el error de unidades aparece de refilón dentro de otros temas en vez de tener el suyo.",
+      "arreglo": "Tema nuevo: 'Convertir unidades: largo, área y volumen' (1º secundaria, depende de 12). Error típico: dice que 1 m² = 100 cm² porque convierte el lado una sola vez, en vez de 10 000; y pasa 2 500 cm³ a litros recorriendo tres lugares en vez de los que son."
+    },
+    {
+      "donde": "Entre el 21 (Porcentajes) y el 23 (Aumentos y descuentos)",
+      "que": "Falta el porcentaje inverso: dada la parte y el porcentaje, hallar el total. El 21 solo va de ida y el 23 se salta directo a encadenar factores. Es la pregunta que más aparece en la vida real de un estudiante de 2º ('costó $348 ya con el 20% de descuento, ¿de cuánto era?') y la que más se equivoca.",
+      "arreglo": "Tema nuevo: 'Del porcentaje al total' (2º secundaria, depende de 21 y 22). Error típico: le suma el 20% a $348 y contesta $417.60 en vez de dividir entre 0.80 y obtener $435."
+    },
+    {
+      "donde": "Después del 58 (Media, mediana y moda), en la familia datos",
+      "que": "La familia datos se acaba en 1º de secundaria. Un estudiante de 2º o de 3º que busque 'lo de su clase de esta semana' en datos no encuentra nada, y le falta justo la idea que convierte el promedio en algo honesto: dos grupos con la misma media pueden ser completamente distintos.",
+      "arreglo": "Tema nuevo: 'Rango: qué tan parejos son los datos' (2º secundaria, depende de 58). Error típico: saca el rango restando el último menos el primero de la lista sin ordenarla, y afirma que dos grupos con la misma media son iguales."
+    },
+    {
+      "donde": "Después del 52 (Volumen de prismas y cilindros)",
+      "que": "Se calcula el volumen de todos los cuerpos pero nunca su área total, que es contenido de 2º y sí es un cálculo con pasos separables (no es el reconocimiento espacial que el temario descartó con razón en 'cuerpos geométricos').",
+      "arreglo": "Tema nuevo: 'Área total de prismas y cilindros' (2º secundaria, depende de 52 y 51). Error típico: en el cilindro suma el rectángulo y una sola tapa, o usa el diámetro como largo del rectángulo sin notar que ése ya es 2πr."
+    },
+    {
+      "donde": "Entre el 40 (La función lineal y = mx + b) y el 45 (Ecuación cuadrática por factorización)",
+      "que": "La familia variación se detiene en la recta. El 45 y el 46 explican que una cuadrática tiene dos soluciones, una o ninguna, pero nunca se ve por qué: la parábola que cruza el eje x dos veces, una o ninguna. El discriminante del 46 se queda como una regla sin dibujo.",
+      "arreglo": "Tema nuevo: 'La parábola y = ax²' (3º secundaria, depende de 40 y 32), colocado antes del 45. Error típico: tabula solo valores positivos de x y traza media parábola; o cree que y = x² crece igual que y = 2x porque los dos 'suben'."
+    }
+  ],
+  "dependenciasRotas": [
+    "Tema 18 (Jerarquía de operaciones) → apunta solo al 17, pero su procedimiento y su error típico (−3² = 9) exigen el tema 25 (Potencias), que va después. Es la única dependencia que apunta hacia adelante y hay que arreglarla reordenando.",
+    "Tema 8 (Multiplicación de fracciones) → declara solo el 4, pero sus cinco pasos son 'simplificar en cruz... simplificar' y su notación trae la tachadura de simplificación. Le falta declarar el 5.",
+    "Temas 26 y 27 (Leyes de los exponentes, exponente cero y negativo) → su notación usa letras ((x²)³, x⁻²) y el paso a las letras es el tema 30, que va después. O se quitan las letras de la notación y se dejan para una segunda vuelta, o los temas se mueven detrás del 30.",
+    "Tema 50 (Área por descomposición, 1º secundaria) → depende del 48 (Suma de ángulos en polígonos, 2º secundaria). Es una inversión de grado y además es falsa: partir un trapecio en triángulos no necesita saber cuánto suman los ángulos de un pentágono. Dejarlo dependiendo del 49 solamente.",
+    "Temas 54 (Pitágoras) y 55 (Semejanza y Tales) → declaran el 48 por la misma razón prestada. Lo que de verdad necesitan es el 47 (ángulos) para el 55 y el 28 y 49 para el 54. El 48 ahí solo alarga el camino.",
+    "Temas 22 (Regla de tres) y 24 (Proporcionalidad inversa), ambos antes del 35 → sus cinco pasos dicen 'despejar' y su notación es una igualdad de fracciones con x, pero la primera ecuación (35, la balanza) llega trece temas después. O el despeje se explica ahí como producto cruzado sin nombrarlo despeje, o los temas 35 y 36 se adelantan.",
+    "Tema 21 (Porcentajes) → declara el 10 pero su notación es 15% = 15/100 = 0.15, que es exactamente lo que enseña el 14 (De fracción a decimal y de vuelta). Le falta declararlo.",
+    "Tema 46 (Fórmula general) → declara el 45 y el 28, pero su error típico (tomar b sin su signo) es un error de sustitución: le falta declarar el 32 (Evaluar sustituyendo), que es donde vive el paréntesis obligatorio alrededor del valor negativo."
+  ],
+  "veredicto": "El temario se sostiene: la columna aritmética (1 al 29) está bien encadenada, los errores típicos son casi todos concretos y reconocibles, y la lista de temasQueNoEncajan está mejor pensada que la mayoría de los temarios que sí se publican. Lo que más urge es el tema 18: enseña a resolver potencias siete temas antes de que existan las potencias, y es la única dependencia que apunta hacia adelante. Después, dos huecos que hacen caer al estudiante sin avisar: el número mixto, que falta entero y sale en cada resultado de las fracciones, y el salto del 34 al 42, donde se pide desarrollar (a + b)² sin que nadie haya multiplicado nunca dos binomios. El resto son agujeros de cobertura más que de andamio: datos se acaba en 1º de secundaria, variación nunca llega a la parábola, y medida promete unidades que ningún tema enseña a convertir. Un solo error típico está flojo, el del 47: dice que el estudiante 'no se fija cuál es cuál' en vez de dar el número equivocado que escribe, y por eso la estación 5 de ese tema todavía no tiene con qué llenarse."
+}

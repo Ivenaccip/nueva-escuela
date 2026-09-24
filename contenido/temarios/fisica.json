@@ -1,0 +1,618 @@
+{
+  "clave": "fisica",
+  "nombre": "Física",
+  "familias": [
+    {
+      "nombre": "materia",
+      "dequeVa": "De qué está hecho todo y cómo se mide: masa, volumen, y por qué unas cosas flotan y otras se van al fondo."
+    },
+    {
+      "nombre": "movimiento",
+      "dequeVa": "Describir cómo se mueve algo sin preguntar todavía quién lo empuja: distancia, rapidez, gráficas y aceleración."
+    },
+    {
+      "nombre": "fuerzas",
+      "dequeVa": "Quién empuja y quién jala, y las tres leyes de Newton que dicen qué pasa cuando las fuerzas se suman o se cancelan."
+    },
+    {
+      "nombre": "energía",
+      "dequeVa": "Trabajo, energía que cambia de forma y potencia: la contabilidad de lo que puede provocar cambios."
+    },
+    {
+      "nombre": "calor",
+      "dequeVa": "Qué mide de verdad un termómetro, en qué se diferencia el calor de la temperatura y cómo viaja de un lado a otro."
+    },
+    {
+      "nombre": "electricidad",
+      "dequeVa": "Desde los papelitos que levanta un globo frotado hasta un circuito con varios focos y la ley de Ohm."
+    },
+    {
+      "nombre": "magnetismo",
+      "dequeVa": "Los imanes, sus polos que nunca vienen solos, y la corriente eléctrica que fabrica magnetismo."
+    },
+    {
+      "nombre": "sonido",
+      "dequeVa": "Las ondas como algo que viaja sin llevarse la materia, y todo lo que se puede oír en ellas."
+    },
+    {
+      "nombre": "luz",
+      "dequeVa": "La luz que va derecho, rebota y se dobla: sombras, espejos y el popote quebrado dentro del vaso."
+    }
+  ],
+  "totalTemas": 35,
+  "temas": [
+    {
+      "numero": 1,
+      "titulo": "Masa y volumen",
+      "familia": "materia",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo medir masa y volumen por separado, y explicar por qué un kilo de algodón y un kilo de clavos pesan igual.",
+      "dependeDe": [],
+      "errorTipico": "Usa \"pesado\" y \"grande\" como si fueran la misma palabra: dice que el bloque más grande tiene más masa aunque sea de unicel, y cuando le piden volumen contesta en gramos.",
+      "losCincoPasos": "Los pasos para medir el volumen de una piedra metiéndola en agua: leer el nivel inicial de la probeta, meter la piedra, leer el nivel final, restar los dos niveles y escribir el resultado con su unidad de volumen.",
+      "notacion": "Número con su unidad pegada y unidades distintas conviviendo en la misma resta: \"85 mL − 60 mL = 25 cm³\". Hace falta escribir cm³ con superíndice y poder teclear g, mL y cm³ en el hueco."
+    },
+    {
+      "numero": 2,
+      "titulo": "Densidad: flotar o hundirse",
+      "familia": "materia",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo calcular la densidad de algo y decir, antes de aventarlo al agua, si va a flotar o se va a hundir.",
+      "dependeDe": [
+        1
+      ],
+      "errorTipico": "Dice que se hunde \"porque pesa más\" comparando masas sin comparar volúmenes: por eso jura que un barco de acero no puede flotar y que un clavo flotaría si fuera chiquito.",
+      "losCincoPasos": "Los pasos para decidir si un objeto flota: anotar su masa, anotar su volumen, dividir masa entre volumen, comparar el resultado con 1 g/cm³ del agua y concluir flota o se hunde.",
+      "notacion": "Fracción apilada con unidad arriba y abajo metida dentro de una frase: 240 g sobre 300 cm³, y el resultado escrito como 0.8 g/cm³. La diagonal de la unidad compuesta tiene que verse distinta de la raya de fracción."
+    },
+    {
+      "numero": 3,
+      "titulo": "Distancia recorrida y desplazamiento",
+      "familia": "movimiento",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo decir cuánto caminé y qué tan lejos acabé del punto de partida, que casi nunca es el mismo número.",
+      "dependeDe": [],
+      "errorTipico": "Suma todos los tramos también para el desplazamiento: si avanza 40 m al norte y regresa 25 m, contesta 65 m en las dos preguntas, y entrega el desplazamiento sin decir hacia dónde quedó.",
+      "losCincoPasos": "Los pasos para separar las dos cantidades en un recorrido de ida y vuelta: marcar el punto de partida, sumar todos los tramos caminados, ubicar el punto final sobre la recta, restar la posición final menos la inicial y decir la dirección que quedó.",
+      "notacion": "Números con signo y con dirección en el mismo renglón: \"+40 m\", \"−25 m\", \"15 m hacia el norte\", más una recta numérica corta con una flecha que marque el sentido. El hueco debe aceptar signo y palabra, no solo dígitos."
+    },
+    {
+      "numero": 4,
+      "titulo": "Rapidez: metros por segundo",
+      "familia": "movimiento",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo calcular la rapidez de algo que se mueve y explicar qué significa el número que me salió.",
+      "dependeDe": [
+        3
+      ],
+      "errorTipico": "Divide al revés, tiempo entre distancia, y entrega un número con unidad s/m sin notar que \"segundos por metro\" no dice qué tan rápido va; también mezcla metros con horas sin revisarlo.",
+      "losCincoPasos": "Los pasos de un cálculo de rapidez: sacar la distancia del enunciado, sacar el tiempo, revisar que las dos unidades combinen, dividir distancia entre tiempo y escribir el resultado con su unidad compuesta.",
+      "notacion": "Fracción apilada con unidades dentro de la frase: 120 m sobre 15 s, y el resultado como 8 m/s. El hueco tiene que aceptar una unidad compuesta tecleada (m/s, km/h), no solo el número."
+    },
+    {
+      "numero": 5,
+      "titulo": "Rapidez media, no promedio",
+      "familia": "movimiento",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo sacar la rapidez media de un viaje de ida y vuelta, y explicar por qué no es el promedio de las dos rapideces.",
+      "dependeDe": [
+        4
+      ],
+      "errorTipico": "Promedia las dos rapideces: si va a 60 km/h de ida y a 20 km/h de regreso contesta 40 km/h, en vez de dividir la distancia total entre el tiempo total (le sale 30 km/h).",
+      "losCincoPasos": "Los pasos del viaje de ida y vuelta: calcular el tiempo del primer tramo, calcular el del segundo, sumar las distancias, sumar los tiempos y dividir el total entre el total.",
+      "notacion": "Fracción apilada con una suma completa arriba y otra abajo, todo dentro del renglón: (120 km + 120 km) sobre (2 h + 6 h). El numerador y el denominador tienen que caber con paréntesis y unidades."
+    },
+    {
+      "numero": 6,
+      "titulo": "La gráfica distancia-tiempo",
+      "familia": "movimiento",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo leer una gráfica de distancia contra tiempo y decir cuándo va rápido, cuándo lento y cuándo está parado.",
+      "dependeDe": [
+        4
+      ],
+      "errorTipico": "Lee la gráfica como si fuera el dibujo del camino: dice que la recta inclinada es \"una subida\" y que la línea horizontal significa que se regresó, cuando significa que está quieto.",
+      "losCincoPasos": "Los pasos para sacar la rapidez de un tramo de la gráfica: leer el punto donde empieza el tramo, leer el punto donde termina, restar las distancias, restar los tiempos y dividir una resta entre la otra.",
+      "notacion": "Plano cartesiano con ejes rotulados d (m) y t (s), pares ordenados como (4 s, 20 m) que se puedan tocar en la gráfica, y la pendiente escrita como fracción apilada de dos restas: (80 m − 20 m) sobre (8 s − 4 s)."
+    },
+    {
+      "numero": 7,
+      "titulo": "Aceleración: cambiar de velocidad",
+      "familia": "movimiento",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular una aceleración y explicar por qué frenar también es acelerar.",
+      "dependeDe": [
+        4,
+        6
+      ],
+      "errorTipico": "Confunde ir rápido con acelerar: si el coche va a 100 km/h contesta que su aceleración es 100, y dice que al frenar \"no hay aceleración\" porque la velocidad está bajando.",
+      "losCincoPasos": "Los pasos de un cálculo de aceleración: anotar la velocidad inicial, anotar la final, restarlas en ese orden (final menos inicial), dividir entre el tiempo y leer qué significa el signo del resultado.",
+      "notacion": "Subíndices en las letras: v_f y v_i, y unidad con superíndice: m/s². La resta va apilada sobre el tiempo y el signo negativo tiene que verse y poder teclearse en el hueco."
+    },
+    {
+      "numero": 8,
+      "titulo": "Caída libre: todos caen igual",
+      "familia": "movimiento",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular a qué velocidad llega algo que se cae, y explicar por qué su peso no cambia el resultado.",
+      "dependeDe": [
+        7
+      ],
+      "errorTipico": "Cree que lo más pesado cae más rápido: contesta que el martillo llega antes que la pluma aunque no haya aire, y mete la masa en el cálculo buscando dónde multiplicarla.",
+      "losCincoPasos": "Los pasos para saber a qué velocidad llega algo que se suelta: escribir que la velocidad inicial es cero, tomar g = 10 m/s², multiplicar g por el tiempo, revisar que la masa no aparece en ninguna parte y contestar con unidad.",
+      "notacion": "Superíndices en t² y en m/s², la fracción ½ apilada al principio de la fórmula de la altura, y el dato g = 10 m/s² fijo a la vista mientras se teclea."
+    },
+    {
+      "numero": 9,
+      "titulo": "Fuerzas y fuerza resultante",
+      "familia": "fuerzas",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo dibujar las fuerzas que actúan sobre algo y sacar la resultante cuando unas van en contra de otras.",
+      "dependeDe": [],
+      "errorTipico": "Suma las magnitudes sin fijarse en el sentido: con 30 N a la derecha y 20 N a la izquierda contesta 50 N; además dibuja una flecha \"de movimiento\" en vez de decir quién ejerce cada fuerza.",
+      "losCincoPasos": "Los pasos para sacar la fuerza resultante sobre una línea: nombrar quién ejerce cada fuerza, dibujar cada flecha con su tamaño, marcar cuáles van en sentido contrario, restar las opuestas y decir hacia dónde queda la resultante.",
+      "notacion": "Flechas horizontales rotuladas con su magnitud en newtons (30 N), signos + y − para el sentido dentro de la cuenta, y una respuesta que mezcla número y dirección: \"10 N hacia la derecha\"."
+    },
+    {
+      "numero": 10,
+      "titulo": "Primera ley: la inercia",
+      "familia": "fuerzas",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo explicar por qué algo que se mueve no necesita que nadie lo siga empujando.",
+      "dependeDe": [
+        9,
+        4
+      ],
+      "errorTipico": "Cree que si algo se mueve es porque algo lo sigue empujando: dice que la pelota \"lleva fuerza adentro\" después de la patada y que se detiene cuando esa fuerza se le acaba.",
+      "losCincoPasos": "Los pasos para explicar por qué un disco sigue derecho sobre el hielo: listar las fuerzas que de verdad hay, ver que el peso y la normal se cancelan, ver que no queda ninguna fuerza horizontal, concluir que la resultante es cero y decir qué le pasa entonces a la velocidad.",
+      "notacion": "Diagrama de un cuerpo con flechas rotuladas (peso, normal, fricción, empujón) que se puedan tocar una por una, y la igualdad \"F resultante = 0 N\" escrita en el renglón."
+    },
+    {
+      "numero": 11,
+      "titulo": "Fricción: la fuerza escondida",
+      "familia": "fuerzas",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular la fricción sobre algo que avanza parejo, y explicar por qué el empujón no le gana.",
+      "dependeDe": [
+        10
+      ],
+      "errorTipico": "Con una caja que avanza a rapidez constante, asegura que el empujón debe ser mayor que la fricción \"porque si no, no avanzaría\": confunde moverse con acelerar.",
+      "losCincoPasos": "Los pasos para hallar la fricción cuando algo va a rapidez constante: anotar el empujón en newtons, notar que la rapidez no cambia, concluir que la resultante es cero, igualar la fricción con el empujón y escribirla con su unidad.",
+      "notacion": "Dos flechas opuestas del mismo largo con su magnitud en N sobre el mismo dibujo, y la igualdad \"empujón = fricción\" tecleable en el hueco (número + unidad)."
+    },
+    {
+      "numero": 12,
+      "titulo": "Masa y peso no son lo mismo",
+      "familia": "fuerzas",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular mi peso en newtons aquí y en la Luna, y explicar por qué mi masa es la misma en los dos lados.",
+      "dependeDe": [
+        9,
+        1
+      ],
+      "errorTipico": "Da el peso en kilogramos (\"peso 50 kg\") y dice que en la Luna \"tienes menos masa\"; cuando usa la fórmula, mete los kilogramos donde ya iban newtons.",
+      "losCincoPasos": "Los pasos para sacar el peso de alguien en la Luna: anotar su masa en kilogramos, decir que la masa no cambia al viajar, cambiar el valor de la gravedad a 1.6 m/s², multiplicar masa por gravedad y escribir el resultado en newtons.",
+      "notacion": "Dos unidades distintas en la misma frase sin que se confundan, kg para masa y N para peso, con la multiplicación P = m · g y el punto de multiplicación visible; el hueco debe pedir la unidad además del número."
+    },
+    {
+      "numero": 13,
+      "titulo": "Segunda ley: F = m · a",
+      "familia": "fuerzas",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular la aceleración que produce una fuerza, y explicar por qué el doble de fuerza no da el doble de rapidez.",
+      "dependeDe": [
+        9,
+        7,
+        12
+      ],
+      "errorTipico": "Mete el peso en newtons donde la fórmula pide la masa en kilogramos, y cree que al doble de fuerza le toca el doble de velocidad en vez del doble de aceleración.",
+      "losCincoPasos": "Los pasos para hallar la aceleración de un carrito: sacar la fuerza resultante, revisar que la masa esté en kilogramos y no en newtons, escribir el despeje a = F/m, hacer la división y poner la unidad m/s².",
+      "notacion": "Fórmula con letras y su despeje como fracción apilada dentro de la frase (F sobre m), con tres unidades distintas en juego: N, kg y m/s² con superíndice."
+    },
+    {
+      "numero": 14,
+      "titulo": "Tercera ley: acción y reacción",
+      "familia": "fuerzas",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo encontrar el par de fuerzas de acción y reacción, y explicar por qué no se cancelan entre ellas.",
+      "dependeDe": [
+        13
+      ],
+      "errorTipico": "Pone las dos fuerzas del par sobre el mismo objeto y concluye que se cancelan, \"y entonces nada se movería\"; también dice que el camión le pega más fuerte al coche que el coche al camión.",
+      "losCincoPasos": "Los pasos para analizar un choque entre dos cuerpos: nombrar los dos cuerpos, escribir la fuerza de A sobre B, escribir la de B sobre A, comparar sus tamaños y decir sobre cuál cuerpo actúa cada una.",
+      "notacion": "Pares de flechas rotuladas con quién actúa sobre quién (\"camión sobre coche\", \"coche sobre camión\"), dibujadas en dos cuerpos separados, con la misma magnitud en N escrita en las dos."
+    },
+    {
+      "numero": 15,
+      "titulo": "Trabajo: sólo si algo se movió",
+      "familia": "energía",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular el trabajo de una fuerza, y explicar por qué cargar la mochila parado no es trabajo.",
+      "dependeDe": [
+        13
+      ],
+      "errorTipico": "Dice que sostener quieto una mochila pesada sí es trabajo \"porque me cansé\", y multiplica fuerza por distancia aunque la fuerza apunte hacia otro lado que el movimiento.",
+      "losCincoPasos": "Los pasos para calcular el trabajo al arrastrar una caja: identificar la fuerza que empuja, revisar que la caja de verdad se movió, medir la distancia en la dirección del empujón, multiplicar fuerza por distancia y escribir el resultado en joules.",
+      "notacion": "Multiplicación con unidades que se combinan en una nueva: 50 N × 3 m = 150 J, con el punto o la cruz de multiplicación y la equivalencia N·m = J escrita al lado."
+    },
+    {
+      "numero": 16,
+      "titulo": "Energía cinética: v al cuadrado",
+      "familia": "energía",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular la energía cinética, y explicar por qué al doble de rapidez le tocan cuatro veces más energía.",
+      "dependeDe": [
+        15,
+        4
+      ],
+      "errorTipico": "Cree que al doble de rapidez corresponde el doble de energía: dice que un coche a 40 km/h tiene el doble que a 20 km/h, cuando tiene cuatro veces más, porque olvida elevar al cuadrado.",
+      "losCincoPasos": "Los pasos para comparar dos coches: escribir la fórmula, elevar la primera rapidez al cuadrado, elevar la segunda al cuadrado, dividir una energía entre la otra y decir cuántas veces más grande es.",
+      "notacion": "Superíndice en v² dentro del renglón, la fracción ½ apilada al inicio de la fórmula, y el resultado en J. El hueco debe aceptar un exponente tecleado."
+    },
+    {
+      "numero": 17,
+      "titulo": "Energía potencial: masa y altura",
+      "familia": "energía",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular la energía potencial de algo, y decir desde dónde estoy midiendo la altura.",
+      "dependeDe": [
+        15,
+        12
+      ],
+      "errorTipico": "Mide la altura desde donde se le ocurre (desde la mesa y no desde el piso que él mismo escogió como referencia), y mete kilogramos donde el producto ya llevaba el peso en newtons.",
+      "losCincoPasos": "Los pasos para calcular la energía potencial de un objeto en un estante: elegir el nivel de referencia, medir la altura desde ese nivel, anotar la masa en kilogramos, multiplicar m · g · h y escribir joules.",
+      "notacion": "Subíndice en E_p, un producto de tres factores en un solo renglón (m · g · h) y una línea punteada en el dibujo que marque el nivel de referencia con su altura en metros."
+    },
+    {
+      "numero": 18,
+      "titulo": "La energía se transforma",
+      "familia": "energía",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo seguirle la pista a la energía de una pelota que rebota y decir a dónde se fue la que falta.",
+      "dependeDe": [
+        16,
+        17
+      ],
+      "errorTipico": "Dice que la energía \"se gastó\" o \"se perdió\" cuando la pelota deja de botar, en vez de nombrar a dónde se fue (calor y sonido); habla de la energía como de algo que se acaba.",
+      "losCincoPasos": "Los pasos para seguir la energía de una pelota que cae: anotar la potencial allá arriba, igualarla con la cinética abajo, despejar la rapidez, calcularla, y nombrar en qué se convirtió la energía que falta en el siguiente rebote.",
+      "notacion": "Cadena con flechas entre formas de energía dentro de la frase (E_p → E_c → calor + sonido) y la igualdad E_p = E_c con subíndices y valores en J."
+    },
+    {
+      "numero": 19,
+      "titulo": "Potencia: watts y kilowatts-hora",
+      "familia": "energía",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular cuánta luz gasta un aparato, y explicar la diferencia entre los watts y los kilowatts-hora.",
+      "dependeDe": [
+        15
+      ],
+      "errorTipico": "Usa potencia y energía como sinónimos: dice que el motor más potente \"hace más trabajo\" en vez de el mismo trabajo en menos tiempo, y en el recibo suma los watts como si ya fueran kilowatts-hora.",
+      "losCincoPasos": "Los pasos para saber cuánto cuesta tener algo prendido: anotar los watts del aparato, pasarlos a kilowatts, multiplicar por las horas de uso, obtener los kWh y multiplicar por el precio del kWh.",
+      "notacion": "Fracción apilada J sobre s con su nombre al lado (watt), y tres unidades que se parecen pero no son iguales conviviendo en la misma pantalla: W, kW y kWh, más pesos con decimales."
+    },
+    {
+      "numero": 20,
+      "titulo": "Temperatura y partículas",
+      "familia": "calor",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo explicar qué mide un termómetro por dentro, y por qué el metal se siente más frío que la madera.",
+      "dependeDe": [
+        1
+      ],
+      "errorTipico": "Usa el tacto como termómetro: dice que el metal de la banca está más frío que la madera aunque lleven horas en el mismo cuarto; y cree que al calentar, las partículas mismas se hacen más grandes o se derriten.",
+      "losCincoPasos": "Los pasos para explicar por qué el metal se siente más frío: decir a qué temperatura está cada material, compararlas, notar que son iguales, señalar quién le quita calor a la mano más rápido y concluir qué es lo que siente la piel.",
+      "notacion": "Temperaturas con el símbolo de grado (24 °C) y comparaciones con los signos = , > y <; junto a eso un dibujo de partículas con flechitas de vibración que cambian de tamaño."
+    },
+    {
+      "numero": 21,
+      "titulo": "Calor no es temperatura",
+      "familia": "calor",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo explicar por qué una tina tibia tiene más calor que una taza hirviendo, aunque esté a menos grados.",
+      "dependeDe": [
+        20,
+        18
+      ],
+      "errorTipico": "Cree que el calor es algo que los cuerpos tienen guardado: dice que la taza de agua hirviendo \"tiene más calor\" que la tina tibia, y que el suéter da calor en vez de no dejarlo salir.",
+      "losCincoPasos": "Los pasos para comparar el calor de dos recipientes: anotar la masa de cada uno, anotar el cambio de temperatura de cada uno, multiplicar masa por calor específico y por ΔT en el primero, hacer lo mismo en el segundo y comparar los dos resultados.",
+      "notacion": "La letra griega Δ pegada a la T (ΔT) dentro de la frase, un producto de tres factores por renglón, y dos unidades de energía que conviven en el mismo tema: J y cal."
+    },
+    {
+      "numero": 22,
+      "titulo": "Cambios de estado: la meseta",
+      "familia": "calor",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo leer una gráfica de calentamiento y explicar por qué el agua hirviendo no pasa de 100 °C aunque le suba la flama.",
+      "dependeDe": [
+        21
+      ],
+      "errorTipico": "Cree que si le sube la flama el agua hirviendo se pone más caliente que 100 °C; y cuando ve la parte plana de la gráfica dice que ahí el termómetro se descompuso o que dejaron de medir.",
+      "losCincoPasos": "Los pasos para leer una gráfica de calentamiento: ubicar dónde la temperatura sube, ubicar dónde se queda plana, nombrar qué cambio de estado ocurre en esa meseta, decir en qué se está usando el calor mientras la temperatura no sube, y leer el valor de la meseta.",
+      "notacion": "Gráfica de temperatura contra tiempo con una meseta horizontal que se pueda tocar por tramos, ejes en °C y minutos, y los nombres de los cambios de estado (fusión, ebullición) como etiquetas sobre la curva."
+    },
+    {
+      "numero": 23,
+      "titulo": "Cómo viaja el calor",
+      "familia": "calor",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo decir si algo se calienta por conducción, convección o radiación, y dónde conviene poner el clima en un cuarto.",
+      "dependeDe": [
+        21
+      ],
+      "errorTipico": "Cree que \"el calor siempre sube\", así que pone el aire acondicionado al ras del piso y el calentador en el techo; y le llama conducción a todo, incluido el sol que calienta sin tocar nada.",
+      "losCincoPasos": "Los pasos para decidir por qué mecanismo se calienta algo: ver si hay contacto directo, ver si hay aire o agua que se pueda mover, ver si llega sin nada de materia en medio, nombrar el mecanismo y decir dónde conviene colocar el aparato.",
+      "notacion": "Texto con flechas de dirección sobre el dibujo de un cuarto (aire caliente que sube, frío que baja) y los tres nombres —conducción, convección, radiación— como palabras que se teclean en el hueco."
+    },
+    {
+      "numero": 24,
+      "titulo": "Cargas eléctricas: el globo",
+      "familia": "electricidad",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo explicar por qué un globo frotado levanta papelitos que no tienen ninguna carga.",
+      "dependeDe": [
+        20
+      ],
+      "errorTipico": "Cree que al frotar se \"crea\" electricidad de la nada, y que un objeto cargado sólo puede atraer a otro cargado: por eso no se explica que el globo levante papelitos neutros.",
+      "losCincoPasos": "Los pasos para explicar el globo que se pega a la pared: decir qué se frotó con qué, decir qué se pasó de un material al otro, decir con qué carga quedó el globo, decir qué les pasa a las cargas de la pared cuando se acerca, y concluir por qué se atraen.",
+      "notacion": "Signos + y − sueltos y repetidos sobre el dibujo de un globo y una pared, que se puedan contar; frases con \"se atraen\" y \"se repelen\" tecleadas en el hueco. Sin fórmulas."
+    },
+    {
+      "numero": 25,
+      "titulo": "El circuito cerrado",
+      "familia": "electricidad",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo encontrar por qué un foco no prende, y explicar por qué la corriente que regresa a la pila es la misma que salió.",
+      "dependeDe": [
+        24
+      ],
+      "errorTipico": "Cree que la corriente sale de la pila, se gasta en el foco y ya no vuelve: dibuja un solo cable hacia el foco y dice que el cable de regreso \"trae menos\".",
+      "losCincoPasos": "Los pasos para revisar por qué un foco no prende: salir de un polo de la pila siguiendo el cable, pasar por el apagador, pasar por el foco, regresar al otro polo, y señalar en qué punto el camino se rompe.",
+      "notacion": "Diagrama de circuito con los símbolos de pila, foco y apagador, y cables como líneas que se puedan seguir y tocar por tramos; nada de números todavía."
+    },
+    {
+      "numero": 26,
+      "titulo": "Voltaje, corriente y resistencia",
+      "familia": "electricidad",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular la corriente de un circuito con la ley de Ohm, y decir qué hace cada una de las tres cosas.",
+      "dependeDe": [
+        25
+      ],
+      "errorTipico": "Usa voltaje y corriente como sinónimos (\"la pila tiene corriente guardada\") y, al despejar, divide al revés: pone la resistencia entre el voltaje y no el voltaje entre la resistencia.",
+      "losCincoPasos": "Los pasos para hallar la corriente de un circuito: anotar el voltaje de la pila, anotar la resistencia del foco, escribir V = I · R, despejar I = V/R, y hacer la división poniendo la unidad correcta.",
+      "notacion": "Fórmula de tres letras y su despeje como fracción apilada dentro de la frase (V sobre R), con tres unidades distintas: V, A y el símbolo Ω. El hueco debe aceptar Ω tecleada o elegida."
+    },
+    {
+      "numero": 27,
+      "titulo": "Circuitos en serie y en paralelo",
+      "familia": "electricidad",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo predecir qué focos se quedan prendidos si quito uno, según si están en serie o en paralelo.",
+      "dependeDe": [
+        26
+      ],
+      "errorTipico": "Cree que todos los circuitos se portan igual: dice que si quita un foco se apagan los demás aunque estén en paralelo, y que en serie cada foco recibe el voltaje completo de la pila.",
+      "losCincoPasos": "Los pasos para predecir qué pasa al quitar un foco: contar cuántos caminos salen de la pila, seguir cada camino hasta el otro polo, quitar el foco y ver si queda algún camino completo, decir qué focos siguen prendidos y decir si brillan igual que antes.",
+      "notacion": "Dos diagramas de circuito lado a lado con los focos numerados y los caminos marcables con el dedo; voltajes repartidos escritos sobre cada foco (1.5 V, 1.5 V) y corriente en A."
+    },
+    {
+      "numero": 28,
+      "titulo": "Imanes: polos que no vienen solos",
+      "familia": "magnetismo",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo decir qué pasa si parto un imán a la mitad, y por qué nunca me queda un pedazo de puro polo norte.",
+      "dependeDe": [],
+      "errorTipico": "Cree que si parte un imán a la mitad se queda con un pedazo de puro polo norte y otro de puro sur; y dice que el imán atrae todos los metales, incluidos el aluminio del refresco y el cobre.",
+      "losCincoPasos": "Los pasos para predecir qué pasa al partir un imán: marcar sus dos polos, cortarlo por la mitad, revisar cada pedazo por separado, nombrar los polos nuevos que aparecieron, y decir qué pasa si acercas los dos pedazos.",
+      "notacion": "Etiquetas N y S sobre barras que se parten en el dibujo, líneas de campo saliendo de un polo y entrando al otro, y huecos donde se teclea una sola letra (N o S)."
+    },
+    {
+      "numero": 29,
+      "titulo": "El electroimán",
+      "familia": "magnetismo",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo armar un electroimán y decir qué le tengo que cambiar para que levante más clips.",
+      "dependeDe": [
+        25,
+        28
+      ],
+      "errorTipico": "Cree que el clavo queda imantado para siempre después de desconectar la pila, y que el número de vueltas del alambre no importa mientras la pila sea grande.",
+      "losCincoPasos": "Los pasos para probar un electroimán: enrollar el alambre en el clavo contando las vueltas, conectar la pila, acercar clips y contar cuántos levanta, agregar vueltas y volver a contar, y desconectar para ver cuántos se quedan pegados.",
+      "notacion": "Tablita de dos columnas (vueltas / clips levantados) con números enteros que se teclean, y el dibujo del clavo con el alambre enrollado y la pila conectada."
+    },
+    {
+      "numero": 30,
+      "titulo": "Ondas: qué viaja y qué no",
+      "familia": "sonido",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo medir la longitud y la frecuencia de una onda, y explicar por qué el corcho no se va con la ola.",
+      "dependeDe": [
+        18
+      ],
+      "errorTipico": "Cree que el material viaja junto con la onda: dice que el corcho en el agua avanza con la ola hasta la orilla, en vez de subir y bajar quedándose en su lugar.",
+      "losCincoPasos": "Los pasos para leer una onda dibujada: marcar una cresta, marcar el valle, medir la longitud de onda de cresta a cresta, contar cuántas ondas pasan en un segundo para sacar la frecuencia, y decir qué se movió de lugar y qué no.",
+      "notacion": "Dibujo de onda con la longitud medida de cresta a cresta y la amplitud medida desde la línea de en medio; las letras λ y f con sus unidades (m y Hz) tecleables en el hueco."
+    },
+    {
+      "numero": 31,
+      "titulo": "El sonido necesita un medio",
+      "familia": "sonido",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular a qué distancia cayó un rayo, y explicar por qué en el espacio no se oiría ninguna explosión.",
+      "dependeDe": [
+        30,
+        4
+      ],
+      "errorTipico": "Cree que el sonido viaja mejor en el aire que en el agua o en un riel de acero \"porque el aire está libre\", y da por hecho que en el espacio sí se oyen las explosiones.",
+      "losCincoPasos": "Los pasos para calcular a qué distancia está algo por el sonido: anotar el tiempo que tardó, anotar la rapidez del sonido en ese medio, multiplicar, decidir si el sonido hizo un viaje de ida o de ida y vuelta, y dividir entre dos sólo si fue eco.",
+      "notacion": "Multiplicación con unidades (340 m/s × 3 s = 1 020 m) y una división entre 2 al final; una tablita con la rapidez del sonido en aire, agua y acero para consultar mientras se teclea."
+    },
+    {
+      "numero": 32,
+      "titulo": "Tono y volumen",
+      "familia": "sonido",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo distinguir si un sonido cambió de tono o de volumen, y decir qué fue lo que cambió en la onda.",
+      "dependeDe": [
+        30
+      ],
+      "errorTipico": "Usa \"más fuerte\" y \"más agudo\" como si fueran lo mismo: dice que si le subes al volumen la nota se oye más aguda, y que la cuerda gruesa suena \"más bajito\" en vez de más grave.",
+      "losCincoPasos": "Los pasos para decidir qué cambió en un sonido: comparar la amplitud de las dos ondas, comparar su frecuencia, decir cuál de las dos se oye como volumen, decir cuál se oye como tono, y nombrar el cambio con las dos palabras correctas.",
+      "notacion": "Dos ondas dibujadas una junto a la otra para comparar de un vistazo, con la amplitud marcada y la frecuencia en Hz, y las palabras agudo/grave y fuerte/débil como opciones que se teclean."
+    },
+    {
+      "numero": 33,
+      "titulo": "Luz recta y sombras",
+      "familia": "luz",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo predecir cómo cambia una sombra al mover la lámpara, y explicar por qué en oscuridad total no veo nada.",
+      "dependeDe": [],
+      "errorTipico": "Cree que la sombra es algo que el objeto avienta, y que si espera un rato puede ver en oscuridad total porque \"los ojos se acostumbran\"; dibuja los rayos saliendo del ojo hacia el objeto.",
+      "losCincoPasos": "Los pasos para predecir el tamaño de una sombra: ubicar la fuente de luz, ubicar el objeto, trazar dos rayos rectos que rocen sus orillas, ver dónde pegan esos rayos en la pared, y decir si la sombra crece o se achica al acercar la lámpara.",
+      "notacion": "Rayos como líneas rectas con punta de flecha que salen de la lámpara y se pueden trazar sobre el dibujo, con medidas en cm del objeto, de la sombra y de las distancias."
+    },
+    {
+      "numero": 34,
+      "titulo": "Reflexión: el ángulo y la normal",
+      "familia": "luz",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo trazar el rayo que sale de un espejo, midiendo los ángulos desde la normal y no desde el vidrio.",
+      "dependeDe": [
+        33
+      ],
+      "errorTipico": "Mide el ángulo desde la superficie del espejo en vez de desde la normal: a un rayo que llega a 30° le contesta 60°; y dice que el espejo voltea la imagen de cabeza.",
+      "losCincoPasos": "Los pasos para trazar el rayo reflejado: marcar el punto donde el rayo pega en el espejo, trazar la normal perpendicular en ese punto, medir el ángulo de llegada desde la normal, copiar ese mismo ángulo del otro lado, y trazar el rayo que sale.",
+      "notacion": "Ángulos con el símbolo de grado (30°) escritos junto a cada rayo, una línea punteada perpendicular al espejo (la normal) y un transportador sobre el dibujo; el hueco pide un número con °."
+    },
+    {
+      "numero": 35,
+      "titulo": "Refracción: el popote quebrado",
+      "familia": "luz",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo explicar por qué el popote se ve quebrado en el vaso y por qué el pez no está donde lo veo.",
+      "dependeDe": [
+        34
+      ],
+      "errorTipico": "Cree que la luz \"se rompe\" al entrar al agua, y que viaja más rápido en el agua porque el agua es más densa; por eso dice que el pez está justo donde se ve.",
+      "losCincoPasos": "Los pasos para explicar el popote quebrado: decir de dónde sale el rayo, decir a qué medio entra, decir si ahí la luz va más rápido o más lento, decir hacia qué lado de la normal se dobla, y decir dónde cree el ojo que está el objeto.",
+      "notacion": "Dos medios separados por una línea horizontal, la normal punteada en el punto de entrada, el rayo dibujado con un quiebre, y las etiquetas \"más rápido\" / \"más lento\" junto a cada medio con su valor de rapidez."
+    }
+  ],
+  "noEncajan": [
+    {
+      "tema": "Marco de referencia (el movimiento es relativo)",
+      "porQue": "El concepto es de los mejores de la materia y el error típico existe de verdad (decir que algo \"está quieto\" sin decir respecto a qué), pero no hay ningún dato que teclear: las estaciones 3 y 4 piden un hueco con un número o una palabra, y aquí sólo hay una discusión. Los cinco pasos quedarían como cinco afirmaciones, no como un procedimiento.",
+      "queHacer": "Fundirlo con \"Distancia recorrida y desplazamiento\": es el video de la estación 1 y los dos primeros escalones de la escalera (el pasajero visto desde la banqueta y visto desde el camión)."
+    },
+    {
+      "tema": "Conversión de unidades (km/h ↔ m/s)",
+      "porQue": "Tiene un error clásico precioso —multiplicar por 3.6 cuando tocaba dividir, porque memorizó el número sin saber de dónde sale— pero por sí solo no da para seis estaciones: en la estación 6 no hay nada que explicar con tus palabras más allá de \"así se convierte\".",
+      "queHacer": "Fundirlo con \"Rapidez\" como escalones 4 y 5 de la escalera, y meter el error de la conversión como uno de los motivos de su estación 5."
+    },
+    {
+      "tema": "Presión y flotación (Pascal, Arquímedes)",
+      "porQue": "El error sí es de concepto (confundir presión con fuerza: \"el clavo entra porque le pones más fuerza con la punta\"), pero al escribir los cinco pasos el paso malo se va casi siempre a la conversión de cm² a m²: acaba siendo un tema de aritmética disfrazado de física. Además arrastra toda la hidrostática, que no cabe en un video de cinco minutos.",
+      "queHacer": "Dejarlo para un bloque aparte de fluidos, después de \"Masa y peso\", partido en dos temas: presión = fuerza entre área, y empuje. Mientras tanto, la parte de flotación ya vive en \"Densidad\"."
+    },
+    {
+      "tema": "Equilibrio térmico y calorimetría",
+      "porQue": "Partido en dos, la mitad sobra y la otra mitad no cabe: la parte cualitativa (el frío no viaja, el hielo no \"pasa frío\") ya es el corazón de la estación 5 de \"Calor no es temperatura\", y la parte con números exige igualar Q cedido con Q absorbido y despejar, que es álgebra de más arriba.",
+      "queHacer": "Dejar la parte cualitativa como escalones 4 y 5 de \"Calor no es temperatura\"; el cálculo de la temperatura final, fuera del temario."
+    },
+    {
+      "tema": "Conductores y aislantes",
+      "porQue": "Es una clasificación de dos cajones, no un procedimiento: no hay cinco pasos entre los cuales pueda haber exactamente uno malo. Un estudiante lo resuelve con una lista memorizada.",
+      "queHacer": "Fundirlo con \"El circuito cerrado\": el foco que no prende porque en el camino alguien metió un clip de plástico. Ahí sí es un paso del razonamiento."
+    },
+    {
+      "tema": "Inducción electromagnética (el generador)",
+      "porQue": "El error típico existe y es bueno (creer que un imán quieto dentro de una bobina produce corriente), pero para llegar ahí hace falta la idea de campo magnético que cambia con el tiempo. Ni el video de cinco minutos ni las estaciones 3 y 4 la aguantan sin fórmulas que no se ven en secundaria.",
+      "queHacer": "Dejarlo como el último escalón de \"El electroimán\" (mover el imán prende el foco, dejarlo quieto lo apaga) y guardarlo como tema completo para un nivel posterior."
+    },
+    {
+      "tema": "Espectro electromagnético",
+      "porQue": "Es una lista que se memoriza en orden, no una cadena de razonamiento. La estación 5 tendría que inventarse un \"paso malo\" donde en realidad sólo hay un dato mal escrito, y eso entrena a buscar erratas, no a pensar.",
+      "queHacer": "Dejarlo dentro del video de \"Refracción\", o convertirlo en una comparación de longitudes de onda pegada como escalera de \"Ondas\"."
+    },
+    {
+      "tema": "Lentes, el ojo y la miopía",
+      "porQue": "El procedimiento de verdad es trazar rayos a través de una lente y ubicar dónde se forma la imagen; sin eso, los cinco pasos se vuelven cinco afirmaciones que el estudiante no puede verificar, y la estación 3 no tiene qué teclear.",
+      "queHacer": "Partirlo: dejar \"por qué se ve más grande con una lupa\" como escalera de \"Refracción\", y guardar la formación de imágenes para un bloque de óptica posterior."
+    },
+    {
+      "tema": "El Sistema Solar y la gravitación universal",
+      "porQue": "La parte que sí tiene un error clásico —\"en el espacio no hay gravedad\", \"los astronautas flotan porque ya no los jala la Tierra\"— no trae ningún procedimiento con pasos, y la fórmula de gravitación universal no se ve a esta edad. Sin ella, la estación 3 se queda sin hueco que llenar.",
+      "queHacer": "Dejar \"cuánto pesarías en la Luna y en Marte\" como escalera de \"Masa y peso\", que es donde el error se caza mejor."
+    },
+    {
+      "tema": "Historia de la física (Galileo, Newton, Franklin)",
+      "porQue": "Es narrativa: no hay procedimiento con pasos separables ni un error que cometa de verdad un estudiante de 13 años; lo único que se puede equivocar es una fecha o un nombre, y eso no es lo que esta app quiere entrenar.",
+      "queHacer": "Que viva en los videos de la estación 1 de \"Primera ley\" y de \"Caída libre\": es justo lo que hace bueno a un video de tres minutos, pero no aguanta las otras cinco estaciones."
+    }
+  ],
+  "huecos": [
+    {
+      "donde": "Entre el 4 (Rapidez) y el 5 (Rapidez media)",
+      "que": "Nadie enseña a despejar. El tema 5 pide de entrada \"calcular el tiempo del primer tramo\" (t = d/v), el 13 pide \"escribir el despeje a = F/m\", el 26 pide \"despejar I = V/R\" y el 31 pide multiplicar v · t. Los cuatro dan por sabido dar la vuelta a una fórmula de tres letras, y el único tema que tocó una fórmula antes (el 4) solo la usó tal cual viene. El error típico del 4 (\"divide al revés\") y el del 26 (\"pone la resistencia entre el voltaje\") son el MISMO error, y es el error de un tema que no existe.",
+      "arreglo": "Tema nuevo, 1º de secundaria, después del 4: \"Despejar: de v = d/t sacar d y sacar t\". Procedimiento claro de cinco pasos (nombrar lo que busco, ver si está arriba o abajo, taparlo, escribir la operación que queda, revisar con las unidades). Error de estación 5: dividir al revés y entregar s/m. Ponerlo en el dependeDe de 5, 13, 26 y 31."
+    },
+    {
+      "donde": "Entre el 9 (Fuerzas y resultante) y el 10 (Primera ley)",
+      "que": "Los cinco pasos del 10 dicen \"ver que el peso y la normal se cancelan\". El peso llega hasta el 12, dos temas después, y la fuerza normal no aparece en ningún tema del temario: se estrena dentro de los pasos y dentro del dibujo. Un alumno que llega al 10 no tiene con qué nombrar la mitad de las flechas que le van a pedir tocar.",
+      "arreglo": "Mover el 12 (Masa y peso) antes del 10, y meter entre los dos un tema de \"Las fuerzas sobre un cuerpo quieto: peso, normal y el diagrama\". Tiene procedimiento (elegir el cuerpo, dibujar el peso, dibujar lo que lo sostiene, ver si se cancelan, escribir la resultante) y tiene el error clásico que ya está escrito en el 9: dibujar una flecha \"de movimiento\" que nadie ejerce."
+    },
+    {
+      "donde": "Entre el 2 (Densidad) y el 20 (Temperatura y partículas)",
+      "que": "La familia materia se queda en masa, volumen y densidad: nunca dice de qué está hecho todo. Pero el 20 pide un dibujo de partículas vibrando, el 21 habla de calor guardado en la masa, el 22 pide nombrar fusión y ebullición (sólido, líquido y gas sin que nadie los haya distinguido) y el 24 pide \"decir qué se pasó de un material al otro\" al frotar el globo, o sea electrones. Cinco temas de dos familias distintas se apoyan en un modelo que no tiene tema propio.",
+      "arreglo": "Tema nuevo en materia, después del 1: \"Todo está hecho de partículas: sólido, líquido y gas\". Procedimiento: decir qué tan juntas están, qué tanto se mueven, si tienen forma propia, si se pueden comprimir, y nombrar el estado. Error clásico: creer que al calentar las partículas mismas crecen o se derriten (ya está redactado dentro del 20, ahí sobra y aquí es el corazón). Meterlo en el dependeDe del 20, 22 y 24."
+    },
+    {
+      "donde": "Dentro del 21 (Calor no es temperatura)",
+      "que": "El quedaSabiendo es cualitativo (\"la tina tibia tiene más calor que la taza hirviendo\") pero los cinco pasos son una calorimetría completa: masa por calor específico por ΔT, dos veces, y comparar. El calor específico no se define en ningún lado, no tiene tabla de consulta declarada en la notación, y es justo el dato que hace que el agua se comporte distinto del aceite. Son dos temas metidos en uno, y el segundo no está enseñado.",
+      "arreglo": "Partirlo. El 21 se queda cualitativo (el calor no se tiene, se pasa; el suéter no da calor) con cinco pasos de razonamiento y su error ya escrito. Un tema aparte después, \"Cuánto calor hace falta: Q = m · c · ΔT\", con su tablita de calor específico a la vista y el error de meter la temperatura final en vez de la diferencia."
+    },
+    {
+      "donde": "Dentro del 18 (La energía se transforma)",
+      "que": "El paso 3 dice \"despejar la rapidez\" de E_p = E_c. Eso es despejar una v que está elevada al cuadrado: raíz cuadrada. Es el salto de dificultad más callado del temario, porque el resto del tema es puro razonamiento bonito y de golpe pide álgebra que no se ve ni en el 16, donde el cuadrado apenas se estrena.",
+      "arreglo": "Cambiar ese paso: dar la rapidez de llegada y pedir la altura, o quedarse en comparar cuánta energía había arriba contra cuánta quedó después del rebote (que además es lo que cobra el error típico). Si se quiere la raíz, que sea el último escalón de la escalera, no un paso obligatorio de la estación 5."
+    },
+    {
+      "donde": "En el 3 (Distancia y desplazamiento) y el 9 (Fuerzas y resultante), los dos marcados 6º de primaria",
+      "que": "Los dos piden signo como dirección: \"+40 m\", \"−25 m\", restar final menos inicial, y en el 9 sumar con + y − para el sentido. Los números con signo son de 1º de secundaria; en 6º no los han visto. Además el 7 necesita que el resultado negativo se lea como frenado. Nadie enseña el signo como dirección y tres temas lo cobran.",
+      "arreglo": "O reetiquetar el 3 y el 9 a 1º de secundaria, o dejar en 6º una versión con palabras (\"hacia el norte\", \"a la derecha\") y meter el signo como escalones altos de la escalera. Lo que no puede quedarse es un tema de 6º cuyo hueco solo acepta un número con signo."
+    },
+    {
+      "donde": "Entre el 7 (Aceleración) y el 8 (Caída libre)",
+      "que": "La única gráfica de movimiento es la de distancia contra tiempo (tema 6). La aceleración se calcula pero nunca se ve, y el error clásico de la gráfica se repite un piso más arriba con otra respuesta: en la v-t una línea horizontal NO significa que está parado, significa que va parejo. Ese error es exactamente el que el 6 acaba de corregir, y sin tema propio el alumno arrastra la lectura vieja.",
+      "arreglo": "Tema nuevo después del 7: \"La gráfica velocidad-tiempo\". Cinco pasos para sacar la aceleración de un tramo (leer el punto inicial, el final, restar velocidades, restar tiempos, dividir), error de estación 5: leer la recta horizontal como \"está quieto\". De paso le da al 22 (la meseta) un segundo apoyo de lectura de gráficas."
+    },
+    {
+      "donde": "Después del 35 (Refracción), cerrando la familia luz",
+      "que": "La familia se queda sin color. No hay nada que explique por qué una playera roja se ve roja, ni qué pasa con ella bajo una luz azul. El error existe y es fortísimo a los 13 años: creer que el color está pegado al objeto y que mezclar luces es como mezclar pinturas.",
+      "arreglo": "Tema nuevo, 2º de secundaria, dependeDe [35]: \"¿De qué color se ve?\". Cinco pasos: decir qué colores trae la luz que llega, decir cuáles refleja el objeto, cuáles absorbe, cuál llega al ojo, y concluir de qué color se ve. Se teclea un nombre de color en el hueco, y el escalón alto es la playera roja bajo luz azul."
+    },
+    {
+      "donde": "En el 20 (Temperatura y partículas) y el 29 (El electroimán)",
+      "que": "Sus cinco pasos no son procedimientos, así que la estación 5 se queda sin paso malo. Los del 20 son cinco afirmaciones encadenadas (decir, comparar, notar, señalar, concluir): es el mismo defecto por el que se rechazó \"Marco de referencia\". Los del 29 son un protocolo de laboratorio (enrollar, conectar, contar, agregar, desconectar); ahí el paso equivocado solo puede ser un error de procedimiento, y el errorTipico declarado son dos creencias sueltas que ningún paso toca.",
+      "arreglo": "En el 20, volver los pasos una comparación con números (temperatura de cada material medida con termómetro, restar contra la temperatura de la mano, decir cuál se lleva más calor por segundo) apoyada en el tema de partículas. En el 29, convertir la estación 5 en control de variables: el paso malo es cambiar las vueltas Y la pila al mismo tiempo y aun así concluir que fueron las vueltas."
+    },
+    {
+      "donde": "En todo el temario: las etiquetas de grado",
+      "que": "Los 35 temas están marcados o \"6º primaria\" o \"2º secundaria\". No hay un solo tema de 1º ni de 3º de secundaria, y el rango que se pidió llega hasta 3º. Un alumno de 13 o de 15 que entre a buscar lo de su clase de esta semana no encuentra nada, y entre el tema 4 y el 5 hay dos años de salto sin escalón intermedio.",
+      "arreglo": "Dos cosas: etiquetar 1º de secundaria los temas nuevos de puente (despeje, signo como dirección, partículas), y reabrir la lista de temasQueNoEncajan, porque varios se descartaron por \"todavía no les toca\" y a 3º sí les toca: presión = fuerza entre área y empuje (partidos en dos), formación de imágenes con lentes, e inducción electromagnética. Con eso el temario cubre el rango completo en vez de dos bandas sueltas."
+    }
+  ],
+  "dependenciasRotas": [
+    "Tema 10 (Primera ley) declara [9, 4], pero sus cinco pasos usan el peso, que es el tema 12 (posterior), y la fuerza normal, que no está en ningún tema del temario.",
+    "Tema 12 (Masa y peso) declara [9, 1] y no declara el 8 (Caída libre), que es donde se estrena g en m/s². Sin el 8, el 1.6 m/s² de la Luna es un número que cae del cielo.",
+    "Tema 20 (Temperatura y partículas) declara [1], pero su explicación central —quién le quita calor a la mano más rápido— es conducción, o sea el tema 23, tres temas después.",
+    "Tema 22 (Cambios de estado) no declara el 6 (La gráfica distancia-tiempo), que es el único lugar donde se aprende a leer ejes, tramos y mesetas.",
+    "Tema 23 (Cómo viaja el calor) no declara el 2 (Densidad): la convección es \"el aire caliente pesa menos por el mismo volumen y sube\", y sin densidad queda como la frase memorizada que su propio errorTipico quiere cazar.",
+    "Tema 24 (Cargas eléctricas) declara el 20 (Temperatura), que no le aporta nada de lo que usa; lo que necesita de verdad es el modelo de partículas con carga, que no existe como tema.",
+    "Temas 5, 13, 26 y 31 dependen todos de despejar una fórmula, y ninguno declara —ni podría— un tema que lo enseñe.",
+    "Tema 18 (La energía se transforma) pide despejar la rapidez de una v al cuadrado; el 16, del que depende, solo enseña a elevar al cuadrado, nunca a deshacerlo.",
+    "Tema 30 (Ondas) declara el 18 (La energía se transforma) y no usa nada de él: ninguno de sus cinco pasos habla de energía. La dependencia está puesta pero no carga peso.",
+    "Tema 8 (Caída libre): su notación anuncia la fórmula de la altura con ½ y t², pero ninguno de sus cinco pasos la construye ni la usa. El tema promete una fórmula que no enseña."
+  ],
+  "veredicto": "El temario se sostiene: las familias están bien cortadas, el tamaño de cada tema es el correcto y los errores típicos son de los buenos —concretos, de alumno real, y casi todos llenan solos la estación 5 (el del 5, el del 11, el del 14 y el del 26 son ejemplares). Lo que más urge es el despeje: cuatro temas lo cobran, dos lo confiesan en su propio errorTipico y ningún tema lo enseña; ése es el hueco que tira gente de la app. Después, en orden: el peso y la normal que el tema 10 usa antes de que existan, y el modelo de partículas que sostiene en el aire a cinco temas de calor y electricidad. Y como el rango ahora llega a 3º de secundaria, conviene reabrir los descartes: presión y empuje, lentes e inducción se rechazaron por prematuros, y a los 15 años ya no lo son —hoy el temario solo tiene dos grados etiquetados de los cuatro que debería cubrir."
+}

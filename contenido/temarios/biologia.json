@@ -1,0 +1,638 @@
+{
+  "clave": "biologia",
+  "nombre": "Biología",
+  "familias": [
+    {
+      "nombre": "célula",
+      "dequeVa": "De qué está hecho todo lo vivo y cómo se mira de cerca."
+    },
+    {
+      "nombre": "nutrición",
+      "dequeVa": "De qué está hecha la comida y qué le pasa adentro del cuerpo."
+    },
+    {
+      "nombre": "energía",
+      "dequeVa": "De dónde saca energía un ser vivo y cómo le llega el oxígeno a cada célula."
+    },
+    {
+      "nombre": "salud",
+      "dequeVa": "Por qué nos enfermamos, cómo se defiende el cuerpo y qué hacen de verdad los medicamentos."
+    },
+    {
+      "nombre": "reproducción",
+      "dequeVa": "Cómo aparecen nuevos seres vivos, con pareja y sin ella."
+    },
+    {
+      "nombre": "sexualidad",
+      "dequeVa": "El cuerpo que cambia en la adolescencia y las decisiones informadas que trae."
+    },
+    {
+      "nombre": "herencia",
+      "dequeVa": "Por qué te pareces a tu familia y qué se puede predecir de una cruza."
+    },
+    {
+      "nombre": "evolución",
+      "dequeVa": "Por qué las especies cambian con el tiempo y cómo se lee su parentesco."
+    },
+    {
+      "nombre": "biodiversidad",
+      "dequeVa": "Cómo se distingue, se ordena y se nombra la variedad de la vida."
+    },
+    {
+      "nombre": "ecosistemas",
+      "dequeVa": "Quién depende de quién y por dónde pasan la materia y la energía."
+    }
+  ],
+  "totalTemas": 35,
+  "temas": [
+    {
+      "numero": 1,
+      "titulo": "Qué cuenta como ser vivo",
+      "familia": "célula",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo decidir si algo está vivo revisando criterio por criterio, y explicar por qué moverse no es prueba.",
+      "dependeDe": [],
+      "errorTipico": "Usa el movimiento como prueba: dice que el río y el fuego están vivos porque se mueven, crecen y 'se alimentan' de leña, y que una semilla seca o un árbol quieto no lo están.",
+      "losCincoPasos": "Los cinco pasos son la revisión de un caso dudoso contra un criterio cada vez: se nutre, responde a estímulos, crece, se reproduce y está hecho de células.",
+      "notacion": "Texto. Basta con frases y una lista de criterios con palomita o tache al lado: '¿se reproduce? ✓ / ¿está hecho de células? ✗'."
+    },
+    {
+      "numero": 2,
+      "titulo": "La célula, la unidad de lo vivo",
+      "familia": "célula",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo explicar que todo ser vivo está hecho de células y estimar cuántas caben en un pedacito de piel.",
+      "dependeDe": [
+        1
+      ],
+      "errorTipico": "Cree que las células son un adorno que va por dentro del cuerpo y no el cuerpo mismo: dice que un elefante tiene células más grandes que un ratón, y que el hueso o la sangre 'no son células'.",
+      "losCincoPasos": "Los cinco pasos son el razonamiento de escala: cuánto mide una célula, cuánto mide la muestra, pasar las dos a la misma unidad, dividir y decir cuántas células cabían ahí.",
+      "notacion": "Texto con medidas muy chicas y su unidad dentro de la frase: '0.02 mm', '20 µm'. El hueco tiene que aceptar decimales y la letra µ."
+    },
+    {
+      "numero": 3,
+      "titulo": "El aumento del microscopio",
+      "familia": "célula",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo calcular el aumento total de un microscopio y decir qué tan grande es de verdad lo que estoy viendo.",
+      "dependeDe": [
+        2
+      ],
+      "errorTipico": "Suma los aumentos en vez de multiplicarlos (10× + 40× = 50×) y cree que al cambiar al objetivo grande va a ver más cosas en el campo, cuando ve menos.",
+      "losCincoPasos": "Los cinco pasos van del microscopio al dato: elegir el objetivo, multiplicar ocular por objetivo, enfocar con el tornillo fino, medir cuántas células cruzan el campo y decir el tamaño real de una.",
+      "notacion": "Producto con el signo de aumento pegado al número: '10× × 40× = 400×'. El hueco debe aceptar el símbolo × dentro de la respuesta, no solo dígitos."
+    },
+    {
+      "numero": 4,
+      "titulo": "Célula animal y célula vegetal",
+      "familia": "célula",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo distinguir una célula vegetal de una animal por lo que se ve, y decir qué partes tienen las dos.",
+      "dependeDe": [
+        2,
+        3
+      ],
+      "errorTipico": "Dice que la célula vegetal no tiene membrana 'porque ya tiene pared', y confunde el cloroplasto con la célula entera: cree que hasta las células de la raíz son verdes.",
+      "losCincoPasos": "Los cinco pasos son la identificación de una muestra desconocida: forma rígida o no, hay pared, hay cloroplastos, hay una vacuola grande, y conclusión de si es animal o vegetal.",
+      "notacion": "Texto con nombres de partes sobre un dibujo con rótulos numerados que se tocan. La estación 3 pide teclear el nombre de la parte que falta: 'pared celular'."
+    },
+    {
+      "numero": 5,
+      "titulo": "Los nutrimentos de la comida",
+      "familia": "nutrición",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo decir qué nutrimentos trae un platillo y para qué le sirve cada uno a mi cuerpo.",
+      "dependeDe": [
+        1
+      ],
+      "errorTipico": "Confunde alimento con nutrimento y reparte por fama: dice que el huevo 'es pura proteína', que el aguacate es grasa mala y que la tortilla no aporta nada porque engorda.",
+      "losCincoPasos": "Los cinco pasos son la lectura de un platillo: separar los ingredientes, decir qué nutrimento aporta cada uno, cuál domina, para qué le sirve al cuerpo y qué nutrimento le falta al plato.",
+      "notacion": "Texto. Hace falta poder meter cantidades con unidad dentro de la frase: '120 g de frijol', '2 cucharadas de aceite'."
+    },
+    {
+      "numero": 6,
+      "titulo": "Leer la etiqueta nutrimental",
+      "familia": "nutrición",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo leer una etiqueta y calcular cuánta azúcar y cuánta energía me estoy comiendo de verdad.",
+      "dependeDe": [
+        5
+      ],
+      "errorTipico": "Lee la columna 'por 100 g' como si fuera todo el paquete: dice que las galletas traen 480 kcal cuando el envase trae tres porciones y en realidad suma 1 440.",
+      "losCincoPasos": "Los cinco pasos son el cálculo de lo que de veras se comió: tamaño de la porción, porciones por envase, energía por porción, multiplicar y comparar contra lo que pide un día.",
+      "notacion": "Tabla de dos columnas con números y unidades (g, mg, kcal) y una multiplicación con hueco: '160 kcal × 3 = ___'. Los sellos van como texto en caja negra: 'EXCESO DE AZÚCARES'."
+    },
+    {
+      "numero": 7,
+      "titulo": "El viaje del taco: digestión",
+      "familia": "nutrición",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo seguir un taco por todo el tubo digestivo y decir en qué parte pasa de verdad a la sangre.",
+      "dependeDe": [
+        5
+      ],
+      "errorTipico": "Cree que la digestión termina en el estómago y que ahí se absorben los nutrimentos; deja al intestino delgado como un simple tubo de paso rumbo al baño.",
+      "losCincoPasos": "Los cinco pasos son el recorrido del bocado: boca, esófago, estómago, intestino delgado e intestino grueso, diciendo en cada uno qué se deshace y qué se absorbe.",
+      "notacion": "Texto con una cadena de órganos unidos por flechas: 'boca → esófago → estómago'. La estación 3 pide teclear el órgano que falta en medio de la cadena."
+    },
+    {
+      "numero": 8,
+      "titulo": "Enzimas: por qué el pH las apaga",
+      "familia": "nutrición",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo explicar por qué una enzima solo trabaja en su pH y por qué no se gasta al cortar el alimento.",
+      "dependeDe": [
+        7
+      ],
+      "errorTipico": "Cree que la enzima se gasta o se vuelve parte del alimento, y que 'entre más ácido, mejor se digiere todo'; por eso no entiende que la amilasa de la boca se apague al caer al estómago.",
+      "losCincoPasos": "Los cinco pasos son la cadena de una enzima: qué sustrato corta, en qué pH trabaja, qué le pasa si el pH cambia, si se recupera o no, y qué enzima toma el relevo más adelante.",
+      "notacion": "Escala de pH con número ('pH 2', 'pH 8') y flecha de reacción con la enzima encima: 'almidón —amilasa→ glucosa'. Hacen falta subíndices para C₆H₁₂O₆."
+    },
+    {
+      "numero": 9,
+      "titulo": "Fotosíntesis: comer del aire",
+      "familia": "energía",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo explicar que la planta se construye con el carbono del aire, y decir qué entra y qué sale en la fotosíntesis.",
+      "dependeDe": [
+        4,
+        5
+      ],
+      "errorTipico": "Dice que la planta 'se alimenta de la tierra' y que el tronco está hecho del suelo que subió por la raíz; no acepta que casi toda la madera venga del bióxido de carbono del aire.",
+      "losCincoPasos": "Los cinco pasos son el balance de entradas y salidas: qué entra por la hoja, qué entra por la raíz, dónde ocurre, qué se forma y qué sale — y de dónde salió entonces la masa de la planta.",
+      "notacion": "Ecuación con subíndices y flecha con texto encima: CO₂ + H₂O —luz→ C₆H₁₂O₆ + O₂. Hace falta subíndice numérico y que la flecha cargue una palabra."
+    },
+    {
+      "numero": 10,
+      "titulo": "De dónde sale la energía",
+      "familia": "energía",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo distinguir respirar de respiración celular, y explicar que las plantas también respiran, de día y de noche.",
+      "dependeDe": [
+        9,
+        7
+      ],
+      "errorTipico": "Cree que respirar es cosa de pulmones nada más y que las plantas 'no respiran porque hacen fotosíntesis'; además piensa que la energía viene guardada en el oxígeno y no en la glucosa.",
+      "losCincoPasos": "Los cinco pasos son el destino de la glucosa: entra a la célula, se junta con el oxígeno, se libera energía, salen bióxido de carbono y agua, y en qué se gasta esa energía.",
+      "notacion": "La ecuación al revés de la anterior, con subíndices: C₆H₁₂O₆ + O₂ → CO₂ + H₂O + energía. Conviene poder poner 'energía' como palabra dentro de la ecuación."
+    },
+    {
+      "numero": 11,
+      "titulo": "El viaje del oxígeno",
+      "familia": "energía",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo seguir una molécula de oxígeno del aire hasta una célula de mi pie, y regresar con el bióxido de carbono.",
+      "dependeDe": [
+        10
+      ],
+      "errorTipico": "Cree que el oxígeno se 'usa' en el pulmón o en el corazón, y que la sangre lleva aire; dibuja el bióxido de carbono saliendo directo de la célula a la boca, sin pasar por la sangre.",
+      "losCincoPasos": "Los cinco pasos son el recorrido de una molécula de oxígeno: nariz, alvéolo, sangre, corazón, célula — y el mismo camino de vuelta para el bióxido de carbono.",
+      "notacion": "Texto con cadena de órganos y flechas; hace falta marcar 'con oxígeno / sin oxígeno' con una etiqueta y no solo con rojo y azul, para quien no distingue colores."
+    },
+    {
+      "numero": 12,
+      "titulo": "Por qué entra el aire al pulmón",
+      "familia": "energía",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo explicar que el aire entra empujado por la diferencia de presión, no jalado por el pulmón.",
+      "dependeDe": [
+        11
+      ],
+      "errorTipico": "Cree que el pulmón jala el aire por su cuenta, como un globo que se infla solo, y al describir una inhalación dice que el diafragma sube y la caja torácica se cierra.",
+      "losCincoPasos": "Los cinco pasos son la cadena mecánica de una inhalación: el diafragma baja, el volumen del tórax aumenta, la presión de adentro baja, queda por debajo de la de afuera y el aire entra.",
+      "notacion": "Flechas de sube y baja pegadas a la palabra ('↑ volumen', '↓ presión') y una comparación con símbolo: 'P dentro < P fuera'. El hueco debe aceptar < y >."
+    },
+    {
+      "numero": 13,
+      "titulo": "La cadena de un contagio",
+      "familia": "salud",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo rastrear cómo llegó una infección de una persona a otra y decir en qué eslabón conviene cortarla.",
+      "dependeDe": [
+        2
+      ],
+      "errorTipico": "Confunde la causa con la circunstancia: dice que le dio gripa 'por salir sin suéter' o por mojarse, y da por hecho que quien no tiene síntomas no contagia.",
+      "losCincoPasos": "Los cinco pasos son el rastreo de un caso: qué agente lo causa, dónde vivía ese agente, por qué vía viajó, por dónde entró al cuerpo y qué eslabón se puede cortar.",
+      "notacion": "Texto con una cadena de flechas entre cosas y personas: 'agua sin hervir → boca → intestino'. Sin fórmulas; sí hace falta que cada eslabón se pueda tocar."
+    },
+    {
+      "numero": 14,
+      "titulo": "Cómo funciona una vacuna",
+      "familia": "salud",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo explicar qué entrena una vacuna en mi cuerpo y por qué la protección tarda días en aparecer.",
+      "dependeDe": [
+        13
+      ],
+      "errorTipico": "Cree que la vacuna 'te da la enfermedad en chiquito' y que si después se enferma de algo es que no sirvió; también supone que protege desde el mismo día en que se la ponen.",
+      "losCincoPasos": "Los cinco pasos son la respuesta del cuerpo: entra el pedazo del microbio, los linfocitos lo reconocen, se fabrican anticuerpos, quedan células de memoria y al llegar el microbio de verdad la respuesta es rápida.",
+      "notacion": "Texto con una línea de tiempo en días marcada por puntos: 'día 0 · día 10 · día 21', con la segunda dosis señalada sobre la línea."
+    },
+    {
+      "numero": 15,
+      "titulo": "Reproducción sexual y asexual",
+      "familia": "reproducción",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo decir si un ser vivo se reprodujo sexual o asexualmente, y predecir si los hijos salen iguales o distintos.",
+      "dependeDe": [
+        2
+      ],
+      "errorTipico": "Entiende asexual como 'sin pareja' y clasifica por movimiento: dice que la planta con flor es asexual porque no busca pareja, y que los hijos asexuales 'se parecen mucho' en vez de ser copias idénticas.",
+      "losCincoPasos": "Los cinco pasos son la clasificación de un caso: cuántos progenitores hay, si hubo células sexuales, si se mezcló información, cuánta variación tienen los hijos y qué le conviene a esa especie.",
+      "notacion": "Texto. Ayuda poder escribir un esquema con uno o dos progenitores y sus crías, y marcar 'idéntico' o 'distinto' junto a cada cría."
+    },
+    {
+      "numero": 16,
+      "titulo": "De la flor al fruto",
+      "familia": "reproducción",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo explicar cómo un grano de polen termina siendo semilla, y qué parte de la flor se vuelve el fruto.",
+      "dependeDe": [
+        15
+      ],
+      "errorTipico": "Cree que la abeja deposita la semilla dentro de la flor, o que la flor se hace fruto de tanto regarla; se salta la fecundación y usa polen y semilla como si fueran lo mismo.",
+      "losCincoPasos": "Los cinco pasos son la cadena de la polinización: el polen sale de la antera, llega al estigma, baja por el tubo polínico, fecunda al óvulo, y el óvulo se hace semilla mientras el ovario se hace fruto.",
+      "notacion": "Texto con flechas y nombres de las partes de la flor sobre un dibujo rotulado. La estación 3 pide teclear la parte que falta: 'estigma'."
+    },
+    {
+      "numero": 17,
+      "titulo": "Pubertad: qué la dispara",
+      "familia": "sexualidad",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo explicar qué hormona dispara cada cambio de la pubertad y por qué cada quien lleva su propio calendario.",
+      "dependeDe": [
+        15
+      ],
+      "errorTipico": "Cree que los cambios llegan a la misma edad y en el mismo orden para todos, y que ir 'adelantado' o 'atrasado' respecto al salón significa que algo anda mal.",
+      "losCincoPasos": "Los cinco pasos son la cadena que va del cerebro al cuerpo: el hipotálamo avisa, la hipófisis suelta su hormona, ésta viaja por la sangre a ovarios o testículos, ahí se producen estrógenos o testosterona y aparecen los cambios.",
+      "notacion": "Texto con cadena de flechas entre glándulas y rangos de edad dentro de la frase: 'entre los 9 y los 14 años'. Conviene una barra de rango, no un dato único."
+    },
+    {
+      "numero": 18,
+      "titulo": "El ciclo menstrual, día por día",
+      "familia": "sexualidad",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo ubicar la ovulación contando desde el día 1 del sangrado, y decir cuándo hay riesgo de embarazo.",
+      "dependeDe": [
+        17
+      ],
+      "errorTipico": "Empieza a contar los días cuando termina el sangrado, no cuando empieza, y coloca la ovulación al final del ciclo; de ahí concluye que 'durante la regla no puede haber embarazo'.",
+      "losCincoPasos": "Los cinco pasos son la lectura de un calendario de ciclo: marcar el día 1 del sangrado, el engrosamiento del endometrio, la ovulación hacia la mitad, la ventana en que puede haber fecundación y el desprendimiento si no la hubo.",
+      "notacion": "Calendario con los días numerados del 1 al 28 y marcas sobre días concretos ('día 14'); el hueco de la estación 3 recibe un número de día, y la escalera necesita ciclos de 26 o 31 días."
+    },
+    {
+      "numero": 19,
+      "titulo": "Fecundación y embarazo",
+      "familia": "sexualidad",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo decir dónde ocurre la fecundación, cuánto tarda la implantación y desde cuándo hay embarazo.",
+      "dependeDe": [
+        18,
+        15
+      ],
+      "errorTipico": "Cree que la fecundación ocurre en el útero y no en la trompa, y que el embarazo empieza exactamente el día de la relación, sin contar los días que tarda el cigoto en implantarse.",
+      "losCincoPasos": "Los cinco pasos son el recorrido hasta el embarazo: el óvulo sale del ovario, entra a la trompa, ahí lo fecunda un espermatozoide, el cigoto se divide mientras baja y se implanta en el endometrio.",
+      "notacion": "Texto con nombres de órganos, flechas del recorrido y una línea de días desde la ovulación: 'día 0 · día 6'."
+    },
+    {
+      "numero": 20,
+      "titulo": "Doble protección: embarazo e ITS",
+      "familia": "sexualidad",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo decir qué protege cada método y por qué contra las infecciones hace falta el condón aunque haya otro.",
+      "dependeDe": [
+        19,
+        13
+      ],
+      "errorTipico": "Cree que un solo método cubre todo: da por hecho que la pastilla o el DIU también protegen de infecciones, y supone que una persona sin síntomas visibles no tiene ninguna ITS.",
+      "losCincoPasos": "Los cinco pasos son la evaluación de una decisión: qué riesgo de embarazo hay, qué riesgo de infección hay, qué cubre el método elegido, qué queda sin cubrir y qué segunda medida lo completa.",
+      "notacion": "Tabla de palomitas y tachas: cada método contra 'evita embarazo' y 'evita ITS', más porcentajes de efectividad como texto ('91%'). Hace falta una tabla tocable, no solo prosa."
+    },
+    {
+      "numero": 21,
+      "titulo": "ADN, gen y cromosoma",
+      "familia": "herencia",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo ordenar célula, núcleo, cromosoma, gen y ADN de lo grande a lo chico, y decir dónde está la receta.",
+      "dependeDe": [
+        2,
+        15
+      ],
+      "errorTipico": "Invierte los tamaños: dice que el ADN contiene al gen y el gen al cromosoma, o que 'el ADN está en la sangre' como si fuera un líquido aparte de las células.",
+      "losCincoPasos": "Los cinco pasos son el acercamiento de lo grande a lo chico: cuerpo, célula, núcleo, cromosoma, gen — diciendo en cada nivel qué contiene a qué.",
+      "notacion": "Texto con la cadena de contención, y números con unidad de conteo: '46 cromosomas', '23 pares'. Ayudan los paréntesis anidados: 'núcleo (cromosoma (gen))'."
+    },
+    {
+      "numero": 22,
+      "titulo": "Alelos dominante y recesivo",
+      "familia": "herencia",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo explicar por qué un alelo dominante no es el más común, y deducir los alelos de alguien por lo que se le ve.",
+      "dependeDe": [
+        21
+      ],
+      "errorTipico": "Entiende dominante como 'el más común' o 'el más fuerte' y concluye que, si los ojos cafés son dominantes, en un salón casi nadie debería tener ojos claros.",
+      "losCincoPasos": "Los cinco pasos son la lectura de un caso familiar: qué rasgo se ve, qué alelos existen, cuál se impone cuando están los dos, qué combinación trae quien no muestra el rasgo y qué se concluye de sus papás.",
+      "notacion": "Letras con mayúscula y minúscula que se distingan a simple vista: 'A' contra 'a', y pares pegados: 'Aa', 'aa'. Hace falta una tipografía donde A y a no se confundan en pantalla chica."
+    },
+    {
+      "numero": 23,
+      "titulo": "El cuadro de Punnett",
+      "familia": "herencia",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo armar un cuadro de Punnett con los gametos correctos y leer en él qué puede salir de una cruza.",
+      "dependeDe": [
+        22
+      ],
+      "errorTipico": "Pone el genotipo completo en la orilla del cuadro ('Aa' arriba de una sola columna) en vez de un alelo por orilla, y termina con cuatro casillas que nada más repiten a los papás.",
+      "losCincoPasos": "Los cinco pasos son el llenado del cuadro: escribir el genotipo de cada progenitor, separar sus gametos, ponerlos en las orillas, llenar las cuatro casillas y contar cuántas de cada tipo salieron.",
+      "notacion": "Rejilla de 2×2 con letras en las orillas y dentro de las casillas; hay que poder teclear en una casilla concreta. El resultado se escribe como '3:1' y como fracción apilada 3/4."
+    },
+    {
+      "numero": 24,
+      "titulo": "El 3 a 1 no es una promesa",
+      "familia": "herencia",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo pasar de 3:1 a 75% y explicar por qué cada embarazo vuelve a empezar de cero.",
+      "dependeDe": [
+        23
+      ],
+      "errorTipico": "Lee la proporción 3:1 como un cupo que se llena: si ya nacieron tres hijos sanos, asegura que el cuarto forzosamente tendrá la enfermedad porque 'ya le toca'.",
+      "losCincoPasos": "Los cinco pasos son la traducción de la proporción a probabilidad: contar las casillas, escribir la fracción, pasarla a porcentaje, aplicarla a un embarazo nuevo y decir qué no cambia por los hijos anteriores.",
+      "notacion": "Proporción '3:1', fracción apilada 3/4 y porcentaje '75%' conviviendo en la misma frase; el hueco debe aceptar cualquiera de los tres formatos como respuesta."
+    },
+    {
+      "numero": 25,
+      "titulo": "XX y XY: quién lo determina",
+      "familia": "herencia",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo mostrar con un cuadro que el cromosoma del padre decide el sexo, y que siempre queda mitad y mitad.",
+      "dependeDe": [
+        23
+      ],
+      "errorTipico": "Cree que la madre determina el sexo del bebé, o que depende 'de quién sea más fuerte'; al armar el cuadro escribe X y Y en las dos orillas, también en la de la madre.",
+      "losCincoPasos": "Los cinco pasos son el cuadro de los cromosomas sexuales: genotipo de la madre, genotipo del padre, gametos de cada uno, llenado de las cuatro casillas y lectura de que la probabilidad queda en mitad y mitad.",
+      "notacion": "Letras X y Y en pares ('XX', 'XY') dentro de la rejilla de Punnett; para rasgos ligados hace falta superíndice, como 'Xᵈ'."
+    },
+    {
+      "numero": 26,
+      "titulo": "Selección natural, paso a paso",
+      "familia": "evolución",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo explicar el cambio de una especie sin decir que el animal se esforzó, y señalar dónde empieza la variación.",
+      "dependeDe": [
+        22,
+        15
+      ],
+      "errorTipico": "Explica con Lamarck sin saberlo: dice que la jirafa estiró el cuello para alcanzar las hojas y por eso sus hijos nacieron con el cuello largo, o que los insectos 'se acostumbraron' al insecticida.",
+      "losCincoPasos": "Los cinco pasos son la cadena de la selección: ya había variación de antemano, esa variación se hereda, llega una presión del ambiente, unos dejan más crías que otros, y en la siguiente generación la proporción cambió.",
+      "notacion": "Texto con conteos por generación y flechas entre ellas: '40 claros y 10 oscuros → 25 y 25'. Conviene poder escribir porcentajes junto al conteo."
+    },
+    {
+      "numero": 27,
+      "titulo": "Leer las capas: fósiles",
+      "familia": "evolución",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo ordenar fósiles por la capa en que aparecen y decir cuál vivió antes, sin saber su edad exacta.",
+      "dependeDe": [
+        26
+      ],
+      "errorTipico": "Cree que las capas de abajo son las más recientes porque 'se acaban de hundir', y llama fósil a cualquier hueso viejo aunque no se haya mineralizado.",
+      "losCincoPasos": "Los cinco pasos son la inferencia de edad relativa: identificar las capas, ordenarlas de abajo hacia arriba, ubicar el fósil en su capa, compararlo con otro fósil y concluir cuál vivió primero.",
+      "notacion": "Corte del terreno con estratos apilados y numerados que se puedan tocar; edades grandes dentro de la frase: '65 millones de años', '65 ma'."
+    },
+    {
+      "numero": 28,
+      "titulo": "Leer un árbol de parentesco",
+      "familia": "evolución",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo encontrar el ancestro común de dos especies en un árbol y decir cuál es pariente más cercano de cuál.",
+      "dependeDe": [
+        26,
+        27
+      ],
+      "errorTipico": "Lee el árbol como una escalera de mejoras: dice que el humano viene del chimpancé porque está junto a él, y que lo de más a la derecha 'está más evolucionado'.",
+      "losCincoPasos": "Los cinco pasos son la lectura del árbol: localizar las dos especies, subir por cada rama, encontrar el nodo donde se juntan, decir qué carácter apareció en ese nodo y concluir el parentesco.",
+      "notacion": "Árbol de ramas con nodos tocables y nombres de especie en cursivas, con mayúscula solo en el género: 'Canis lupus'. Hace falta cursiva dentro de una frase."
+    },
+    {
+      "numero": 29,
+      "titulo": "Por qué falla un antibiótico",
+      "familia": "salud",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo explicar que lo resistente no es mi cuerpo sino la bacteria, y por qué hay que terminar el tratamiento.",
+      "dependeDe": [
+        26,
+        13
+      ],
+      "errorTipico": "Toma antibiótico para la gripa y suspende el tratamiento en cuanto se siente bien; explica la resistencia diciendo que 'su cuerpo se acostumbró al medicamento', no que sobrevivieron las bacterias resistentes.",
+      "losCincoPasos": "Los cinco pasos son la selección dentro del cuerpo: en la población ya había bacterias resistentes, el antibiótico mata a las sensibles, las resistentes sobreviven, se multiplican sin competencia, y la siguiente infección ya no cede.",
+      "notacion": "Texto con conteos de bacterias antes y después ('de 1 000 000 quedan 50') y una línea de días de tratamiento con marcas: 'día 3 · día 7 · día 10'."
+    },
+    {
+      "numero": 30,
+      "titulo": "¿Son de la misma especie?",
+      "familia": "biodiversidad",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo decidir si dos animales parecidos son de la misma especie usando el criterio de la cría fértil.",
+      "dependeDe": [
+        26,
+        15
+      ],
+      "errorTipico": "Decide por el parecido: dice que el perro y el lobo son especies distintas porque no se parecen, y que el caballo y la burra son la misma porque tuvieron cría, sin notar que la mula no deja descendencia.",
+      "losCincoPasos": "Los cinco pasos son la aplicación del criterio: si se cruzan en la naturaleza, si hay cría, si esa cría es fértil, si comparten territorio, y qué nombre científico les toca entonces.",
+      "notacion": "Nombre científico en cursivas, género con mayúscula y especie con minúscula: 'Canis lupus', 'Canis familiaris'. La estación 3 obliga a respetar mayúscula y cursiva al teclear."
+    },
+    {
+      "numero": 31,
+      "titulo": "Usar una clave dicotómica",
+      "familia": "biodiversidad",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo identificar un organismo siguiendo una clave dicotómica paso a paso, sin adivinar por el dibujo.",
+      "dependeDe": [
+        30,
+        4
+      ],
+      "errorTipico": "Se brinca pasos y elige el nombre que le suena por la foto; cuando ninguna de las dos opciones le convence contesta 'las dos' o regresa al principio en vez de revisar el ejemplar.",
+      "losCincoPasos": "Los cinco pasos son el recorrido de la clave: leer la pareja de opciones, buscar ese carácter en el ejemplar, elegir una sola, saltar al número que indica y repetir hasta llegar al nombre.",
+      "notacion": "Lista numerada con pares de opciones (1a / 1b) y saltos a otro número; se toca la opción y la app salta. El nombre final se escribe en cursivas."
+    },
+    {
+      "numero": 32,
+      "titulo": "¿Hacia dónde apunta la flecha?",
+      "familia": "ecosistemas",
+      "grado": "6º primaria",
+      "quedaSabiendo": "Ya puedo armar una cadena alimentaria con las flechas en el sentido correcto y explicar qué significa cada flecha.",
+      "dependeDe": [
+        9,
+        10
+      ],
+      "errorTipico": "Dibuja la flecha del que come hacia lo comido ('gato → ratón') porque la lee como 'se come a', en vez de seguir hacia dónde va la materia y la energía.",
+      "losCincoPasos": "Los cinco pasos son el armado de una cadena: identificar al productor, quién se lo come, quién sigue, poner cada flecha hacia el que recibe la energía, y cerrar con los descomponedores.",
+      "notacion": "Cadena de nombres unidos por flechas dentro de la frase: 'pasto → grillo → rana → víbora'. La flecha tiene que poder tocarse para voltearla."
+    },
+    {
+      "numero": 33,
+      "titulo": "Por qué se angosta la pirámide",
+      "familia": "ecosistemas",
+      "grado": "2º secundaria",
+      "quedaSabiendo": "Ya puedo calcular cuánta energía llega a cada nivel y explicar por qué no existen pirámides de diez pisos.",
+      "dependeDe": [
+        32
+      ],
+      "errorTipico": "Cree que la energía se recicla igual que la materia, y explica que hay pocos depredadores 'porque son grandes y nacen pocos', no porque en cada nivel se pierde casi toda la energía.",
+      "losCincoPasos": "Los cinco pasos son el cálculo por niveles: energía del productor, el 10% que pasa al siguiente, el 10% del que sigue, cuántos niveles se alcanzan a sostener y adónde se fue todo lo demás.",
+      "notacion": "Cadena de números con unidad y porcentaje: '10 000 kcal → 1 000 kcal → 100 kcal', con el 10% escrito sobre la flecha. El hueco recibe número con unidad."
+    },
+    {
+      "numero": 34,
+      "titulo": "Si se va una especie",
+      "familia": "ecosistemas",
+      "grado": "1º secundaria",
+      "quedaSabiendo": "Ya puedo seguir el efecto dominó de quitar una especie y explicar por qué el primer efecto no es el final.",
+      "dependeDe": [
+        32,
+        33
+      ],
+      "errorTipico": "Se detiene en el primer paso: si desaparece el depredador dice que 'habrá más presas y a todas les va a ir mejor', sin seguir hasta que las presas se acaban su propio alimento.",
+      "losCincoPasos": "Los cinco pasos son la cadena de consecuencias: quién se queda sin alimento, quién se queda sin depredador, qué población sube, de qué se acaba esa población, y cómo queda el ecosistema al final.",
+      "notacion": "Red de nombres con flechas y marcas de aumento o disminución junto a cada población: '↑ venado', '↓ pasto'. Hace falta poder marcar una especie como ausente."
+    },
+    {
+      "numero": 35,
+      "titulo": "Efecto invernadero: la cadena",
+      "familia": "ecosistemas",
+      "grado": "3º secundaria",
+      "quedaSabiendo": "Ya puedo explicar por qué el efecto invernadero es necesario y qué paso de la cadena estamos cambiando nosotros.",
+      "dependeDe": [
+        9,
+        32,
+        33
+      ],
+      "errorTipico": "Confunde la capa de ozono con el efecto invernadero: dice que hace más calor porque 'entra el sol por el agujero', y cree que el efecto invernadero es malo de por sí y habría que quitarlo.",
+      "losCincoPasos": "Los cinco pasos son la cadena del calentamiento: entra la luz del Sol, el suelo la devuelve como calor, los gases de invernadero retienen parte de ese calor, más quema de combustible mete más CO₂, y sube la temperatura promedio.",
+      "notacion": "Fórmulas con subíndice (CO₂, CH₄), flechas de entrada y salida de energía, y datos con unidad dentro de la frase: '+1.1 °C', '420 ppm'."
+    }
+  ],
+  "noEncajan": [
+    {
+      "tema": "El plato del bien comer y la jarra del buen beber",
+      "porQue": "Es una clasificación por grupos, no una cadena de razonamiento. Los cinco pasos de la estación 5 saldrían siendo cinco veces el mismo error (metió el frijol en verduras) y el plato no da cantidades, así que tampoco hay nada que calcular ni que inferir.",
+      "queHacer": "Fundirlo con 'Los nutrimentos de la comida': funciona muy bien como estación 2 y como escalones de la estación 4, revisando un menú de la tiendita de la escuela."
+    },
+    {
+      "tema": "Aparatos reproductores: partes y sus nombres",
+      "porQue": "Es vocabulario sobre un dibujo. No hay procedimiento, y el 'paso mal' sería nada más una etiqueta cambiada de lugar, que se agota en un intento.",
+      "queHacer": "Repartirlo como estación 2 y 3 dentro de 'El ciclo menstrual, día por día' y 'Fecundación y embarazo', donde las partes sí se usan para razonar algo."
+    },
+    {
+      "tema": "Los organelos de la célula, uno por uno",
+      "porQue": "Es una lista de nombres con su función. La estación 5 se vuelve un juego de memoria: el paso malo es 'el ribosoma hace la digestión' y no hay cadena que reconstruir.",
+      "queHacer": "Dejar la mitocondria dentro de 'De dónde sale la energía' y el cloroplasto dentro de 'Fotosíntesis'; el resto vive como estación 2 de 'La célula, la unidad de lo vivo'."
+    },
+    {
+      "tema": "Niveles de organización: célula, tejido, órgano, sistema, organismo",
+      "porQue": "Es una lista ordenada. Se pueden fabricar cinco pasos (ordenar los niveles), pero el paso malo siempre es del mismo tipo —un nivel fuera de lugar— y el tema se agota en una sola pasada.",
+      "queHacer": "Fundirlo con 'El viaje del taco', donde los niveles se usan para explicar algo, o dejarlo dentro del video de 'La célula, la unidad de lo vivo'."
+    },
+    {
+      "tema": "Biodiversidad de México: megadiversidad y especies endémicas",
+      "porQue": "Es un catálogo de datos. La cadena causal existe (latitud, dos océanos, relieve, muchos climas, muchos nichos), pero no hay un error que un estudiante de 12 años cometa de verdad: el 'error' sería no acordarse de una cifra.",
+      "queHacer": "Convertirlo en escalones de la estación 4 de 'Usar una clave dicotómica', con ejemplares mexicanos, o dejarlo como lectura fuera del círculo."
+    },
+    {
+      "tema": "Cuidado del ambiente: las tres erres y acciones sustentables",
+      "porQue": "Es compromiso y actitud, no inferencia. Marcar 'el paso equivocado' obliga a decidir cuál conducta está mal y la estación 5 se convierte en un sermón, que es justo lo que la app no debe hacer.",
+      "queHacer": "Volverlo estación 4 de 'Efecto invernadero: la cadena', con situaciones de números reales (kg de CO₂ por trayecto, litros de agua por regadera) donde sí falta un dato."
+    },
+    {
+      "tema": "Sexualidad como proyecto de vida: afectos, identidad, género y equidad",
+      "porQue": "No hay un paso que esté objetivamente mal. Señalar 'el paso equivocado' en la vivencia de alguien convierte la estación 5 en un juicio sobre personas, y la estación 6 en una confesión calificada.",
+      "queHacer": "Dejarlo fuera de Andamio. Corresponde a conversación con el maestro, la familia y orientación, no a un ejercicio de cinco pasos. Lo que sí entra es la parte con datos: ciclo, fecundación y doble protección."
+    },
+    {
+      "tema": "Adicciones, tabaco, alcohol y salud mental",
+      "porQue": "La cadena es probabilística y personal. El 'único paso mal' terminaría señalando a un estudiante o a alguien de su casa, y el error típico que existe es un prejuicio, no un razonamiento corregible.",
+      "queHacer": "Rescatar sólo la parte fisiológica —qué le hace el humo al alvéolo y cómo baja el intercambio de oxígeno— como escalón de la estación 4 de 'El viaje del oxígeno'."
+    },
+    {
+      "tema": "Primeros auxilios e higiene personal",
+      "porQue": "Son instrucciones a seguir, no un razonamiento que se pueda equivocar de manera interesante. El error típico sería 'no siguió el protocolo', que no enseña nada al corregirlo.",
+      "queHacer": "Fuera. Si se quiere conservar, como recordatorio dentro de 'La cadena de un contagio': el lavado de manos entra ahí como el eslabón que se corta."
+    },
+    {
+      "tema": "Historia de la biología: Mendel, Darwin, Pasteur, Hooke",
+      "porQue": "Es relato. No hay procedimiento ni error típico de razonamiento: lo que se equivoca el estudiante es la fecha o el apellido, y eso no da para seis estaciones.",
+      "queHacer": "Convertirlo en el video (estación 1) de los temas a los que pertenece: Mendel abre 'El cuadro de Punnett', Darwin abre 'Selección natural, paso a paso' y Pasteur abre 'La cadena de un contagio'."
+    }
+  ],
+  "huecos": [
+    {
+      "donde": "Entre 21 'ADN, gen y cromosoma' y 23 'El cuadro de Punnett'",
+      "que": "Nadie enseña que un gameto lleva la mitad: un alelo de cada par. El paso 2 del cuadro de Punnett ('separar sus gametos') es justamente lo que el temario nunca explicó, y el error típico que el 23 declara —poner 'Aa' entero en una orilla— no es un descuido, es la consecuencia exacta de no saber meiosis. El 25 se hunde igual: sin esto no hay razón para que la madre sólo aporte X.",
+      "arreglo": "Tema nuevo 'La mitad de cada quien' (1º secundaria) entre 21 y 22. Cinco pasos: la célula tiene 46 cromosomas en 23 pares → los copia → los reparte en dos rondas → cada gameto queda con 23 → al juntarse dos gametos vuelven a ser 46. Error típico: cree que el óvulo y el espermatozoide traen 46 cada uno (y el bebé tendría 92), o que el gameto se lleva los dos alelos del par. Después 23, 25 y 26 dependen de él."
+    },
+    {
+      "donde": "Entre 13 'La cadena de un contagio' y 14 'Cómo funciona una vacuna'",
+      "que": "El temario nunca dice qué es una bacteria ni qué es un virus, y luego tres temas lo dan por sabido: el 14 habla de 'el pedazo del microbio', el 20 de ITS, y el 29 declara como error típico 'toma antibiótico para la gripa' sin que exista un tema donde se aprenda por qué eso no sirve. El 4 sólo enseña célula animal y vegetal: la bacteria no cabe en ninguna de las dos y el virus ni siquiera es célula.",
+      "arreglo": "'¿Bacteria o virus?' (1º secundaria) después del 13. Cinco pasos como cadena de decisión: ¿tiene célula propia? → ¿se multiplica solo o necesita secuestrar una célula? → ¿le pega el antibiótico? → ¿hay vacuna? → qué me toca hacer entonces. Error típico: pedir antibiótico para la gripa, y creer que el virus es 'una bacteria más fuerte'. Luego 14, 20 y 29 dependen de él."
+    },
+    {
+      "donde": "Entre 10 'De dónde sale la energía' y 11 'El viaje del oxígeno'",
+      "que": "El 11 pide seguir el oxígeno por 'nariz, alvéolo, sangre, corazón, célula', y su error típico —'cree que la sangre lleva aire', 'dibuja el bióxido de carbono saliendo directo de la célula a la boca'— es un error de circulación, no de respiración. Ningún tema enseña el circuito de la sangre. El 7 también lo asume ('en qué parte pasa de verdad a la sangre') y el 17 hace que la hormona 'viaje por la sangre' sin haber dicho cómo.",
+      "arreglo": "'El circuito de la sangre' (1º secundaria) antes del 11. Cinco pasos siguiendo una gota: sale del lado izquierdo → llega al capilar y entrega ahí el oxígeno → vuelve al lado derecho cargada de bióxido de carbono → pasa por el pulmón y recarga → regresa al lado izquierdo. Error típico: cree que la sangre va y regresa por el mismo tubo, y que el corazón es una sola bomba con una sola salida. 7, 11 y 17 pasan a depender de él."
+    },
+    {
+      "donde": "Entre 33 'Por qué se angosta la pirámide' y 35 'Efecto invernadero: la cadena'",
+      "que": "El propio 33 declara como error típico 'cree que la energía se recicla igual que la materia' — o sea, da por hecho que el alumno ya sabe que la materia sí da la vuelta. Ningún tema lo enseña: los descomponedores aparecen como quinto paso del 32 y nada más. Sin eso, el 35 no puede explicar de dónde salió el carbono del combustible ni por qué quemarlo devuelve al aire algo que alguna vez estuvo vivo.",
+      "arreglo": "'El carbono da la vuelta' (2º secundaria) entre 33 y 35. Cinco pasos siguiendo un átomo de carbono: del aire a la hoja por fotosíntesis → de la planta al animal que se la come → de vuelta al aire por la respiración → o al suelo, y de ahí al aire por el descomponedor → o se queda atrapado millones de años como carbón y petróleo, hasta que lo sacamos y lo quemamos. Error típico: cree que la planta seca 'desaparece' y que el árbol que se pudre no devuelve nada."
+    },
+    {
+      "donde": "Entre 2 'La célula, la unidad de lo vivo' y 15 'Reproducción sexual y asexual'",
+      "que": "Nada explica de dónde salen más células. El 2 quiere corregir 'el elefante tiene células más grandes que el ratón' y la corrección honesta es 'tiene más, no más grandes', que exige saber que una célula se parte en dos. El 15 afirma que los hijos asexuales son copias idénticas sin decir por qué. El 29 dice que las bacterias resistentes 'se multiplican sin competencia' sin haber dicho cómo se multiplica una.",
+      "arreglo": "'Una célula se parte en dos' (1º secundaria) después del 2. Cinco pasos: copia su ADN → se acomodan los cromosomas en medio → se separan las copias hacia los dos lados → se parte la célula → quedan dos con exactamente la misma información. Error típico: cree que el cuerpo crece porque las células se inflan, y que cada célula hija se queda con la mitad del ADN. Lo necesitan 15, 29 y el tema de meiosis."
+    },
+    {
+      "donde": "Entre 21 'ADN, gen y cromosoma' y 22 'Alelos dominante y recesivo'",
+      "que": "El 22 quiere tumbar la idea de que dominante es 'el más fuerte', pero sin un tema que diga qué hace un gen, 'se impone cuando están los dos' queda igual de mágico que 'gana la pelea'. La respuesta honesta —un alelo alcanza a fabricar la proteína que funciona, el otro sale defectuoso, y con una copia buena basta— no está en ningún lado del temario.",
+      "arreglo": "'Qué hace de verdad un gen' (3º secundaria) después del 21. Cinco pasos: el gen es una instrucción → la instrucción fabrica una proteína → la proteína hace un trabajo concreto (el pigmento, la enzima) → un alelo fabrica la que sirve y el otro sale defectuosa → con una copia buena alcanza, y por eso ese alelo se ve. Error típico: cree que el gen es el rasgo mismo ('el gen de los ojos cafés es café') y que el alelo dominante es el que está en más gente."
+    },
+    {
+      "donde": "Antes de 26 'Selección natural, paso a paso'",
+      "que": "El primer paso del 26 es 'ya había variación de antemano', que es la bisagra entera que tumba a Lamarck — y el temario no dice de dónde salió esa variación. Mientras sea un supuesto sin origen, el alumno deja la puerta abierta para volver a explicarla como respuesta al ambiente, que es exactamente el error que el tema quiere corregir.",
+      "arreglo": "'De dónde sale una variedad nueva' (3º secundaria), después de la meiosis y antes del 26. Cinco pasos: la célula copia su ADN → a veces se equivoca en una letra → si el cambio cae en un gameto se hereda → el cambio ocurrió antes y sin relación con el ambiente → sólo después el ambiente decide si sirve o no. Error típico: cree que la mutación la provoca la necesidad ('le salió porque le hacía falta') y que toda mutación es mala."
+    },
+    {
+      "donde": "Dentro de 2 'La célula, la unidad de lo vivo' y 3 'El aumento del microscopio', los dos en 6º primaria",
+      "que": "Salto de dificultad callado, y un círculo. El 2 pide 'cuánto mide una célula' y convertir mm a µm para dividir, pero esa medición sale del microscopio, que es el tema 3, que depende del 2. Y el 3 mete dos procedimientos en un solo círculo: el aumento total (multiplicar ocular por objetivo) y el tamaño real (medir el campo y dividir entre cuántas células cruzan), más la proporción inversa 'más aumento, menos campo'. Es demasiado para 6º de primaria.",
+      "arreglo": "Sacar el cálculo de escala del 2 y dejarlo en 'todo ser vivo está hecho de células, y son muchísimas' (el conteo se vuelve escalones de la estación 4, con números redondos). Partir el 3 en dos temas: 'El aumento total', con su error de sumar 10× + 40× = 50×, y 'Del campo al tamaño real', con el error de creer que a más aumento se ve más cosa."
+    },
+    {
+      "donde": "En 16 'De la flor al fruto', 17 'Pubertad: qué la dispara' y 32 '¿Hacia dónde apunta la flecha?', los tres etiquetados 6º primaria",
+      "que": "Los tres son contenido de 6º de primaria pero quedan encerrados detrás de temas de secundaria: 16 y 17 detrás del 15 (1º sec) y 32 detrás del 10 (1º sec). Como el orden es por dependencias, un niño de 6º que entra buscando la cadena alimentaria de su clase de esta semana tiene que atravesar respiración celular primero, y en la práctica esos tres nunca le tocan en su grado.",
+      "arreglo": "Revisar si cada dependencia es de verdad. El 32 sólo necesita saber qué es un productor, que ya da el 9 (6º primaria): quitarle el 10. El 16 necesita que exista la fecundación, no la clasificación sexual/asexual del 15. El 17 no necesita el 15 para nada; lo que sí necesita es el circuito de la sangre. Si al final 15 hace falta para los dos, conviene bajarlo a 6º primaria en vez de subir a ellos."
+    },
+    {
+      "donde": "En 31 'Usar una clave dicotómica'",
+      "que": "Es el único errorTipico que no es un razonamiento equivocado sino un incumplimiento: 'se brinca pasos', 'contesta las dos', 'regresa al principio'. Por el criterio que el propio temario usa para sacar 'Primeros auxilios' —'el error típico sería no siguió el protocolo, que no enseña nada al corregirlo'— este tema reprueba su propia prueba: la estación 5 quedaría señalando desobediencia, no un error de lectura.",
+      "arreglo": "Anclar el error en un carácter concreto mal leído: elige '1a: alas membranosas' para un escarabajo porque lo vio volar, sin levantarle los élitros; o cuenta los folíolos como si fueran hojas y se va por 'hojas simples'. Así el paso malo de la estación 5 es una observación equivocada que se puede discutir y corregir, en vez de un regaño."
+    }
+  ],
+  "dependenciasRotas": [
+    "8 'Enzimas: por qué el pH las apaga' va antes del 9 pero usa glucosa, C₆H₁₂O₆ y la flecha de reacción, que es el 9 'Fotosíntesis' quien los introduce. Debe declarar dependencia del 9 (y del 10) y moverse después de ellos.",
+    "23 'El cuadro de Punnett' depende sólo del 22, pero su paso 2 es 'separar sus gametos': necesita meiosis, que no existe en el temario. El 25 'XX y XY' arrastra el mismo hueco (por qué la madre sólo aporta X).",
+    "29 'Por qué falla un antibiótico' depende de 26 y 13, y su error típico es tomar antibiótico para la gripa: necesita distinguir bacteria de virus, y ningún tema anterior lo enseña. El 14 'Cómo funciona una vacuna' lo asume igual.",
+    "11 'El viaje del oxígeno' declara sólo el 10, pero su error típico es de circulación, no de respiración. Falta el circuito de la sangre, que además asumen el 7 ('pasa de verdad a la sangre') y el 17 ('viaja por la sangre a ovarios o testículos').",
+    "32 '¿Hacia dónde apunta la flecha?' (6º primaria) depende del 10 (1º secundaria). La dirección de la flecha sólo necesita saber qué es un productor, que da el 9: la dependencia del 10 está de más y le sube el grado de entrada.",
+    "17 'Pubertad' (6º primaria) depende del 15 (1º secundaria), dependencia que su cadena de cinco pasos no usa, y no declara lo que sí usa: que la sangre transporta la hormona del cerebro a ovarios o testículos.",
+    "16 'De la flor al fruto' (6º primaria) queda detrás del 15 (1º secundaria); además trabaja sobre partes de la planta sin declarar el 4 'Célula animal y célula vegetal'.",
+    "22 'Alelos dominante y recesivo' depende del 21, pero para explicar por qué un alelo 'se impone' necesita que un gen fabrique una proteína, y no hay tema donde eso se diga.",
+    "26 'Selección natural' arranca con 'ya había variación de antemano' y no declara de dónde sale esa variación: ni la mutación ni la mezcla de la meiosis tienen tema propio.",
+    "35 'Efecto invernadero' declara 9, 32 y 33, pero no el 10: necesita que la respiración devuelva CO₂ al aire, y necesita además que el combustible sea carbono que estuvo vivo, cosa que ningún tema dice.",
+    "2 'La célula, la unidad de lo vivo' resuelve un cálculo de escala con medidas que sólo salen del microscopio (tema 3), y el 3 depende del 2: la dependencia va en círculo.",
+    "20 'Doble protección' depende del 13, pero para decir qué cubre cada método necesita saber que unas ITS son virales y otras bacterianas — el mismo hueco de bacteria contra virus.",
+    "31 'Usar una clave dicotómica' depende del 4, que sólo cubre célula animal y vegetal; las claves se usan sobre ejemplares que muchas veces no son ni una ni otra, y lo que de verdad necesita es leer caracteres, no tipos de célula.",
+    "12 'Por qué entra el aire al pulmón' se sostiene entero sobre el concepto de presión (Física de 2º secundaria) y 24 'El 3 a 1 no es una promesa' sobre pasar fracción a porcentaje y sobre la independencia de eventos (Matemáticas). Ninguno de los dos declara su prerrequisito de otra materia."
+  ],
+  "veredicto": "El temario se sostiene: las cadenas son de verdad cadenas, casi todos los errores típicos son errores que un chavo de 12 años comete en serio, y la lista de temasQueNoEncajan está mejor pensada que muchos temarios completos. Lo que le falta no es cobertura, es plomería: hay cuatro piezas de conexión que varios temas ya dan por sabidas y nadie enseña — meiosis, bacteria contra virus, el circuito de la sangre y el regreso de la materia. Lo más urgente es la meiosis: sin ella toda la familia de herencia (23, 24, 25) queda como una regla de llenar casillas sin razón, y el error típico que el propio 23 declara es el síntoma exacto de ese hueco. En segundo lugar, bacteria contra virus antes del 14 y del 29, porque el 29 declara un error típico —antibiótico para la gripa— que ningún tema previo pone al alumno en posición de corregir; y de paso, revisar las dependencias de 16, 17 y 32, que son contenido de 6º de primaria enterrado detrás de secundaria."
+}

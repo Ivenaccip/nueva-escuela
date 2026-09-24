@@ -33,7 +33,6 @@ export type Estacion = {
 export type ParteMat =
   | { tipo: 'texto'; valor: string }
   | { tipo: 'fraccion'; arriba: string | number; abajo: string | number }
-  /** El espacio que el estudiante tiene que llenar. */
   /**
    * El espacio que el estudiante tiene que llenar. `ancho` y `alto` son las
    * medidas finales del recuadro, bordes incluidos: el diseño las fija por
