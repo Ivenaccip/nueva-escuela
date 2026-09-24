@@ -39,3 +39,53 @@ Docs: https://docs.expo.dev/eas/index.md
 - If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
 - Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
 - Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+
+---
+
+# Andamio
+
+App de estudio. Un tema se recorre en seis estaciones dispuestas en círculo;
+cuando las seis están hechas, el círculo se cierra y el tema se guarda para
+que vuelva más adelante.
+
+La interfaz está copiada de un canvas de diseño. **El diseño manda**: las
+medidas son exactas, no aproximadas.
+
+## Una sola base de código
+
+Expo Router sobre React Native Web: la misma UI sale a web, iOS y Android.
+En escritorio, `Marco` dibuja el teléfono de 390 centrado, tal como el
+diseño. No hay una carpeta "web" y otra "móvil", y no debería haberla.
+
+## Dónde va cada cosa
+
+| Carpeta | Qué vive ahí |
+|---|---|
+| `app/` | Las rutas. Una pantalla por archivo, nada más. |
+| `src/tema/` | Colores, fuentes, espacios, radios. **Única fuente de color.** |
+| `src/componentes/` | Lo que se repite entre pantallas. |
+| `src/contenido/` | Tipos del contenido y el ejemplo de relleno. |
+| `_viejo/` | Proyecto anterior, archivado. No se toca ni se importa. |
+
+## Reglas
+
+- **Ningún hex fuera de `src/tema`.** Si falta un tono, se agrega ahí primero.
+- **Nada de `fontWeight`** junto a las fuentes cargadas: el peso ya viene en
+  el `fontFamily` (`fuentes.cuerpoFuerte`, no `fontWeight: '600'`). Con
+  fuentes personalizadas, Android ignora el peso y rompe la tipografía.
+- **El contenido no se escribe en las pantallas.** Sale de `src/contenido`.
+  Cuando lleguen los ejercicios de verdad, se reemplaza `demo.ts` y ninguna
+  pantalla cambia.
+- **Las fracciones se escriben apiladas**, con `Fraccion` o `Expresion`,
+  nunca como `"3/5"` en una línea.
+- **Todo lo tocable lleva `accessibilityRole` y `accessibilityLabel`**, y mide
+  44 como mínimo.
+- El botón que avanza va siempre abajo, con `paddingBottom: usePieSeguro()`.
+- Comentarios en español, y sólo cuando explican un porqué que no se ve en el
+  código.
+
+## Antes de dar algo por terminado
+
+```bash
+npx tsc --noEmit
+```

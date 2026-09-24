@@ -34,7 +34,6 @@ export function Fraccion({ arriba, abajo, tamano = 20, color = colores.texto }: 
 const estilos = StyleSheet.create({
   columna: {
     alignItems: 'center',
-    marginHorizontal: 3,
   },
   cifra: {
     fontFamily: fuentes.cuerpo,

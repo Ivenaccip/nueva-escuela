@@ -92,7 +92,7 @@ export const tema: Tema = {
       { tipo: 'texto', valor: '=' },
       { tipo: 'fraccion', arriba: 3, abajo: 5 },
       { tipo: 'texto', valor: '×' },
-      { tipo: 'hueco' },
+      { tipo: 'hueco', valor: '4/', ancho: 106, alto: 58 },
     ],
   },
 
@@ -104,11 +104,12 @@ export const tema: Tema = {
     expresion: [
       { tipo: 'fraccion', arriba: 3, abajo: 5 },
       { tipo: 'texto', valor: '÷' },
-      { tipo: 'hueco', ancho: 74 },
+      { tipo: 'hueco', ancho: 78, alto: 58 },
       { tipo: 'texto', valor: '=' },
       { tipo: 'fraccion', arriba: 12, abajo: 5 },
     ],
     pregunta: '¿Qué fracción iba en el hueco?',
+    respuestaInicial: '1/4',
   },
 
   error: {
@@ -157,6 +158,8 @@ export const tema: Tema = {
     aclaracion:
       'Con tus palabras. Aquí no hay nada que copiar, y no hay pistas: esto es justo lo que quiero ver.',
     nota: 'Si no estás de acuerdo con lo que te conteste, puedes discutírselo.',
+    borrador:
+      'Dividir entre una fracción es preguntar cuántas veces cabe. Como 1/4 es chiquito, cabe muchas veces, por eso el resultado sale más grande que con lo que empezaste. Voltearla es un atajo para',
   },
 
   cierre: {

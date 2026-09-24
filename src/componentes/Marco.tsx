@@ -37,10 +37,7 @@ export function Marco({ children }: { children: ReactNode }) {
     return (
       <View style={estilos.escenario}>
         <View
-          style={[
-            estilos.telefono,
-            { height: Math.min(ALTO_MARCO, Math.max(560, height - 64)) },
-          ]}
+          style={[estilos.telefono, { height: Math.min(ALTO_MARCO, Math.max(560, height - 64)) }]}
         >
           {children}
         </View>

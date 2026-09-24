@@ -4,10 +4,11 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import {
   BotonPrincipal,
   CirculoTema,
+  Cuerpo,
   IconoLlama,
   IconoMoneda,
   Marco,
-  usePieSeguro,
+  Pie,
 } from '../src/componentes';
 import { perfil, tema } from '../src/contenido/demo';
 import type { Estacion } from '../src/contenido/tipos';
@@ -18,7 +19,6 @@ import { colores, espacio, fuentes, radios } from '../src/tema';
  * estación va y deja entrar a cualquiera de las seis.
  */
 export default function Circulo() {
-  const pie = usePieSeguro();
   const actual = tema.estaciones.find((e) => e.estado === 'actual') ?? tema.estaciones[0];
 
   const entrar = (estacion: Estacion) => {
@@ -27,54 +27,56 @@ export default function Circulo() {
 
   return (
     <Marco>
-      <View style={estilos.cuentas}>
-        <View style={estilos.cuenta}>
-          <IconoLlama />
-          <Text style={estilos.cifra}>{perfil.racha}</Text>
+      <Cuerpo>
+        <View style={estilos.cuentas}>
+          <View style={estilos.cuenta}>
+            <IconoLlama />
+            <Text style={estilos.cifra}>{perfil.racha}</Text>
+          </View>
+          <View style={estilos.cuenta}>
+            <IconoMoneda />
+            <Text style={estilos.cifra}>{perfil.monedas}</Text>
+          </View>
         </View>
-        <View style={estilos.cuenta}>
-          <IconoMoneda />
-          <Text style={estilos.cifra}>{perfil.monedas}</Text>
+
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={estilos.materias}
+          contentContainerStyle={estilos.materiasContenido}
+        >
+          {perfil.materias.map((materia) => {
+            const activa = materia === perfil.materiaActiva;
+            return (
+              <Pressable
+                key={materia}
+                accessibilityRole="tab"
+                accessibilityState={{ selected: activa }}
+                style={[estilos.materia, activa ? estilos.materiaActiva : estilos.materiaQuieta]}
+              >
+                <Text style={activa ? estilos.materiaTextoActivo : estilos.materiaTexto}>
+                  {materia}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </ScrollView>
+
+        <View style={estilos.encabezado}>
+          <Text style={estilos.migaja}>
+            tema {tema.indice} de {tema.total} · {tema.familia}
+          </Text>
+          <Text style={estilos.titulo}>{tema.titulo}</Text>
         </View>
-      </View>
 
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={estilos.materias}
-        contentContainerStyle={estilos.materiasContenido}
-      >
-        {perfil.materias.map((materia) => {
-          const activa = materia === perfil.materiaActiva;
-          return (
-            <Pressable
-              key={materia}
-              accessibilityRole="tab"
-              accessibilityState={{ selected: activa }}
-              style={[estilos.materia, activa ? estilos.materiaActiva : estilos.materiaQuieta]}
-            >
-              <Text style={activa ? estilos.materiaTextoActivo : estilos.materiaTexto}>
-                {materia}
-              </Text>
-            </Pressable>
-          );
-        })}
-      </ScrollView>
+        <View style={estilos.zonaCirculo}>
+          <CirculoTema estaciones={tema.estaciones} alTocar={entrar} />
+        </View>
+      </Cuerpo>
 
-      <View style={estilos.encabezado}>
-        <Text style={estilos.migaja}>
-          tema {tema.indice} de {tema.total} · {tema.familia}
-        </Text>
-        <Text style={estilos.titulo}>{tema.titulo}</Text>
-      </View>
-
-      <View style={estilos.zonaCirculo}>
-        <CirculoTema estaciones={tema.estaciones} alTocar={entrar} />
-      </View>
-
-      <View style={[estilos.pie, { paddingBottom: pie }]}>
+      <Pie>
         <BotonPrincipal onPress={() => entrar(actual)}>seguir donde me quedé</BotonPrincipal>
-      </View>
+      </Pie>
     </Marco>
   );
 }
@@ -145,8 +147,5 @@ const estilos = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  pie: {
-    paddingHorizontal: espacio.margenAncho,
   },
 });

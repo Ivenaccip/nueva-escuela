@@ -44,7 +44,12 @@ export function CirculoTema({ estaciones, alTocar }: Props) {
 
   return (
     <View style={estilos.lienzo}>
-      <Svg width={LADO} height={LADO} viewBox={`0 0 ${LADO} ${LADO}`} style={StyleSheet.absoluteFill}>
+      <Svg
+        width={LADO}
+        height={LADO}
+        viewBox={`0 0 ${LADO} ${LADO}`}
+        style={StyleSheet.absoluteFill}
+      >
         {estaciones.map((estacion, i) => {
           const recorrido = estacion.estado === 'hecha';
           return (
@@ -98,7 +103,7 @@ export function CirculoTema({ estaciones, alTocar }: Props) {
         );
       })}
 
-      <View style={estilos.centro} pointerEvents="none">
+      <View style={estilos.centro}>
         <Text style={estilos.centroEtiqueta}>vas en</Text>
         <Text style={estilos.centroNombre}>{actual.nombre}</Text>
         <Text style={estilos.centroEtiqueta}>
@@ -153,6 +158,8 @@ const estilos = StyleSheet.create({
     color: colores.textoTenue,
   },
   centro: {
+    // El rótulo no debe robarle el toque a los nodos que tiene debajo.
+    pointerEvents: 'none',
     position: 'absolute',
     left: 81,
     top: 136,

@@ -1,7 +1,8 @@
 export { BarraEstacion } from './BarraEstacion';
 export { BotonPrincipal } from './BotonPrincipal';
 export { CirculoTema } from './CirculoTema';
-export { Expresion } from './Expresion';
+export { Cuerpo, Pie } from './Cuerpo';
+export { Expresion, leerExpresion } from './Expresion';
 export { Fraccion } from './Fraccion';
 export { Marco, useEsEscritorio, usePieSeguro } from './Marco';
 export { Tarjeta } from './Tarjeta';

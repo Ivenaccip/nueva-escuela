@@ -5,13 +5,7 @@
  */
 
 /** Las seis estaciones, en orden. La clave es también la ruta. */
-export type ClaveEstacion =
-  | 'ver'
-  | 'contacto'
-  | 'completar'
-  | 'escalera'
-  | 'error'
-  | 'explicar';
+export type ClaveEstacion = 'ver' | 'contacto' | 'completar' | 'escalera' | 'error' | 'explicar';
 
 export const ORDEN_ESTACIONES: ClaveEstacion[] = [
   'ver',
@@ -40,7 +34,12 @@ export type ParteMat =
   | { tipo: 'texto'; valor: string }
   | { tipo: 'fraccion'; arriba: string | number; abajo: string | number }
   /** El espacio que el estudiante tiene que llenar. */
-  | { tipo: 'hueco'; valor?: string; ancho?: number };
+  /**
+   * El espacio que el estudiante tiene que llenar. `ancho` y `alto` son las
+   * medidas finales del recuadro, bordes incluidos: el diseño las fija por
+   * ejercicio y no salen del tamaño de letra.
+   */
+  | { tipo: 'hueco'; valor?: string; ancho?: number; alto?: number };
 
 /** Estación 1 · ver el video. */
 export type ContenidoVer = {
@@ -76,6 +75,8 @@ export type ContenidoEscalera = {
   expresion: ParteMat[];
   pregunta: string;
   pistas: number;
+  /** Lo que el diseño muestra ya tecleado en el campo. */
+  respuestaInicial?: string;
 };
 
 /** Estación 5 · cazar el error. */
@@ -95,6 +96,8 @@ export type ContenidoExplicar = {
   titulo: string;
   aclaracion: string;
   nota: string;
+  /** Con lo que arranca el campo. Vacío cuando el estudiante empieza de cero. */
+  borrador: string;
 };
 
 /** El cierre del círculo. */

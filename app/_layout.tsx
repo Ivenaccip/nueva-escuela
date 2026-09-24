@@ -1,7 +1,4 @@
-import {
-  Fraunces_400Regular,
-  Fraunces_600SemiBold,
-} from '@expo-google-fonts/fraunces';
+import { Fraunces_400Regular, Fraunces_600SemiBold } from '@expo-google-fonts/fraunces';
 import {
   IBMPlexSans_400Regular,
   IBMPlexSans_500Medium,
