@@ -1,0 +1,379 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/04-escalera",
+  "$comment": "AUTOCONTENIDO: los $defs de partes.json se copian aqui abajo. Regenerar con: node contenido/esquema/armar.mjs --escribir",
+  "type": "object",
+  "description": "Estacion 4, la escalera: de tres a cinco escalones del mismo procedimiento, con datos que cambian y dificultad que sube. El primero arranca casi en el ejemplo del canon; el ultimo o el penultimo es el problema inverso (te dan el resultado y falta un dato de entrada). Es un ARREGLO: en cual escalon va el estudiante, cuantas pistas le quedan y lo que trae tecleado son de la app, no de aqui.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del canon sin cambiarlo. Solo sirve para trazar de que tema es esta salida: el llamador lo compara contra el tema que pidio antes de guardar, y una respuesta que se cruza en un reintento se caza aqui.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La materia del tema, copiada del canon sin cambiarla.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "escalones": {
+      "type": "array",
+      "description": "Los escalones en el orden en que se suben. El orden del arreglo ES el orden de la escalera: no hay campo de posicion, la pantalla lo deriva. Cinco cuando el tema aguanta cinco, nunca menos de tres.",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "description": "Un escalon: una situacion de la vida real, el renglon con su hueco, la pregunta, la respuesta y sus pistas.",
+        "properties": {
+          "situacion": {
+            "type": "string",
+            "description": "Una frase que pone la escena y los datos. Mexicana y ordinaria: la tiendita, el camion, el tinaco, la receta, el recibo de luz, la cancha. No explica el procedimiento (eso ya paso en la estacion 3) y no repite la situacion de otro escalon. Prohibido 'Juan tiene 3 manzanas', prohibido el problema de libro, prohibido inventar un dato verificable (una distancia real, un precio, una marca). Cabe en dos renglones a 21 px.",
+            "minLength": 25,
+            "maxLength": 120
+          },
+          "expresion": {
+            "$ref": "#/$defs/renglonConHueco",
+            "description": "El renglon del escalon, con EXACTAMENTE un hueco pelon ({tipo:hueco}, sin valor ni ancho ni alto). Se dibuja a 32 px en una tarjeta que deja unos 310 px (app/estacion/escalera.tsx:79-84): eso son unos catorce caracteres de texto mas una fraccion mas el hueco. De tres a cinco atomos; las palabras van en la situacion y en la pregunta. Un hueco NO puede ser el numerador ni el denominador de una fraccion (src/componentes/Fraccion.tsx:19-45): cuando el hueco cae ahi, la division se escribe en un renglon con el atomo ÷, como '400 ÷ [hueco] = 5'. La unidad nunca va dentro del hueco.",
+            "maxItems": 8
+          },
+          "pregunta": {
+            "type": "string",
+            "description": "Una frase corta que dice que va en el hueco, con su unidad: '¿Cuantos metros por segundo avanza el camion?', '¿Que fraccion iba en el hueco?'. No repite la situacion y no explica el procedimiento.",
+            "minLength": 12,
+            "maxLength": 100
+          },
+          "respuesta": {
+            "type": "object",
+            "description": "Lo que el estudiante teclea cuando acierta. Misma regla que la estacion 3: el campo de la 4 es un TextInput del sistema (app/estacion/escalera.tsx:86-95) y fisicamente acepta letras, pero por contrato pide lo mismo que el teclado de doce teclas (app/estacion/completar.tsx:23-28).",
+            "properties": {
+              "tecleado": {
+                "$ref": "#/$defs/tecleado",
+                "description": "La respuesta correcta, solo digitos y la diagonal. Sin unidad, sin punto decimal, sin signo menos, sin letras, sin espacios. Si la cuenta del escalon no cierra exacta, cambia los numeros del escalon."
+              },
+              "aceptaTambien": {
+                "type": "array",
+                "description": "Las otras formas que tambien das por buenas: ['6/8'] cuando la buena es '3/4' y el tema todavia no enseña simplificar. Arreglo vacio cuando no hay otra forma valida, o cuando el tema si enseña simplificar y la forma sin simplificar no cuenta.",
+                "items": {
+                  "$ref": "#/$defs/tecleado"
+                },
+                "maxItems": 4
+              },
+              "comoSeLee": {
+                "type": "string",
+                "description": "El numero del hueco dicho en palabras, con su unidad, para el lector de pantalla: 'ocho metros por segundo'. La unidad se dice aunque no se teclee.",
+                "minLength": 3,
+                "maxLength": 90
+              }
+            },
+            "required": [
+              "tecleado",
+              "aceptaTambien",
+              "comoSeLee"
+            ],
+            "additionalProperties": false
+          },
+          "pistas": {
+            "type": "array",
+            "description": "Dos o tres pistas de este escalon, escalonadas: la 1 reencuadra la pregunta sin dar numeros nuevos, la 2 nombra la accion del paso del canon con los numeros de este escalon, la 3 se acerca hasta casi tocar la respuesta. Con dos pistas escribes la 1 y la 2. Cuantas le quedan al estudiante y cuando se libera la siguiente son de la app: aqui solo va el texto y su orden.",
+            "minItems": 2,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "properties": {
+                "orden": {
+                  "type": "integer",
+                  "description": "En que lugar se libera esta pista: 1 la primera, 2 la segunda, 3 la ultima. Sin repetir y sin saltos.",
+                  "minimum": 1,
+                  "maximum": 3
+                },
+                "texto": {
+                  "type": "string",
+                  "description": "La pista. Nombra la ACCION del paso del canon, nunca su numero: el estudiante no lleva la numeracion en la cabeza, nunca ha visto la lista numerada en pantalla, y 'paso 2 del procedimiento' le gasta una pista sin decirle nada. Ninguna pista contiene el numero de la respuesta, ni su fraccion, ni sus digitos por separado, ni la suma o el producto que la arma: si solo hay que copiarla, la pista se llevo el ejercicio.",
+                  "minLength": 20,
+                  "maxLength": 160
+                }
+              },
+              "required": [
+                "orden",
+                "texto"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "pasoDelCanon": {
+            "type": "integer",
+            "description": "Sobre cual de los cinco pasos del canon cae el hueco de este escalon. Tiene que ser un paso que el canon ya enseño. En los escalones normales suele ser el paso de la cuenta; en el inverso, el paso donde se sacaba el dato que borraste.",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "esInverso": {
+            "type": "boolean",
+            "description": "true cuando a este escalon le dieron el resultado y le falta un dato de entrada ('el maestro borro el divisor sin querer al limpiar el pizarron'). Va en el ultimo escalon o en el penultimo, nunca en el primero. Un solo escalon inverso, o dos cuando a cada uno le falta un dato distinto.",
+            "default": false
+          }
+        },
+        "required": [
+          "situacion",
+          "expresion",
+          "pregunta",
+          "respuesta",
+          "pistas",
+          "pasoDelCanon",
+          "esInverso"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede",
+      "description": "null cuando la escalera salio completa. Se llena cuando el procedimiento del tema no se puede practicar con este teclado ni con estos cuatro atomos: la respuesta es una palabra, un trazo, un decimal o un negativo, o el renglon necesita una tabla o un dibujo. Antes de llenarlo, un intento de reformular (pedir el numerador en vez del resultado, 8/10 en vez de 0.8); si la reformulacion cambia lo que el tema enseña, entonces si se llena."
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "escalones",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

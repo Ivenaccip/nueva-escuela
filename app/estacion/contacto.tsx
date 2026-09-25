@@ -66,11 +66,15 @@ export default function Contacto() {
                     {opcion.letra}
                   </Text>
                 </View>
-                <Expresion
-                  partes={opcion.partes}
-                  tamano={20}
-                  color={marcada ? colores.texto : colores.textoSuave}
-                />
+                {/* Sin esto, una opción que no quepa se saldría del borde en
+                    vez de partirse, como pasa en la estación 5. */}
+                <View style={estilos.contenidoOpcion}>
+                  <Expresion
+                    partes={opcion.partes}
+                    tamano={20}
+                    color={marcada ? colores.texto : colores.textoSuave}
+                  />
+                </View>
               </Pressable>
             );
           })}
@@ -110,8 +114,14 @@ const estilos = StyleSheet.create({
     paddingTop: 22,
     gap: 11,
   },
+  contenidoOpcion: {
+    flex: 1,
+  },
   opcion: {
-    height: 64,
+    // El diseño mide 64: con `minHeight` una opción de dos renglones crece en
+    // vez de desbordarse, y la que cabe en uno se sigue viendo a 64 exactos.
+    minHeight: 64,
+    paddingVertical: 8,
     paddingHorizontal: 18,
     borderRadius: radios.opcion,
     borderWidth: 2,

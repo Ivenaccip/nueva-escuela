@@ -1,0 +1,114 @@
+{
+  "temaNumero": 9,
+  "materia": "matematicas",
+  "titulo": "División de fracciones",
+  "notacion": "lineal",
+  "formaDeRespuesta": "fraccion",
+  "procedimiento": {
+    "nombre": "Dividir una fracción entre otra fracción",
+    "pasos": [
+      {
+        "numero": 1,
+        "queSeHace": "Separas las dos fracciones: la primera es la que se reparte, la segunda es la que divide.",
+        "renglon": [
+          { "tipo": "texto", "valor": "Se reparte" },
+          { "tipo": "fraccion", "arriba": 3, "abajo": 5 },
+          { "tipo": "texto", "valor": ". Divide" },
+          { "tipo": "fraccion", "arriba": 1, "abajo": 4 }
+        ],
+        "porQue": "Los dos lugares no valen lo mismo, y sólo uno de los dos se voltea. Quien no distingue cuál es cuál voltea la primera y el resultado sale al revés."
+      },
+      {
+        "numero": 2,
+        "queSeHace": "Volteas la que divide: el de abajo sube y el de arriba baja.",
+        "renglon": [
+          { "tipo": "fraccion", "arriba": 1, "abajo": 4 },
+          { "tipo": "texto", "valor": "volteada es" },
+          { "tipo": "fraccion", "arriba": 4, "abajo": 1 }
+        ],
+        "porQue": "Dividir entre un cuarto es preguntar cuántos cuartos caben, y en cada entero caben cuatro. Ese 4 es el que sube: no es un truco de escritura, es la cuenta de cuántas veces cabe."
+      },
+      {
+        "numero": 3,
+        "queSeHace": "Cambias el signo de dividir por el de multiplicar.",
+        "renglon": [
+          { "tipo": "fraccion", "arriba": 3, "abajo": 5 },
+          { "tipo": "texto", "valor": "×" },
+          { "tipo": "fraccion", "arriba": 4, "abajo": 1 }
+        ],
+        "porQue": "Ya volteaste la que divide, así que la pregunta cambió de forma: dividir entre un cuarto y multiplicar por cuatro contestan lo mismo."
+      },
+      {
+        "numero": 4,
+        "queSeHace": "Multiplicas los de arriba entre sí, y los de abajo entre sí.",
+        "renglon": [{ "tipo": "texto", "valor": "Arriba 3 × 4 = 12. Abajo 5 × 1 = 5." }],
+        "porQue": "Los dos pisos son independientes: arriba se cuentan los pedazos y abajo el tamaño de cada pedazo. El de abajo también se multiplica, aunque en una suma de fracciones no se toque."
+      },
+      {
+        "numero": 5,
+        "queSeHace": "Revisas si arriba y abajo se dividen entre el mismo número, y si se dividen, simplificas.",
+        "renglon": [
+          { "tipo": "texto", "valor": "=" },
+          { "tipo": "fraccion", "arriba": 12, "abajo": 5 }
+        ],
+        "porQue": "Doce quintos y veinticuatro décimos son el mismo número escrito con pedazos de distinto tamaño. Se deja el más corto para poder compararlo con otro sin volver a calcular."
+      }
+    ]
+  },
+  "ejemplo": {
+    "deQueVa": "una tira de listón que se corta en pedazos todos iguales, y se cuenta cuántos pedazos salen",
+    "planteamiento": [
+      { "tipo": "fraccion", "arriba": 3, "abajo": 5 },
+      { "tipo": "texto", "valor": "÷" },
+      { "tipo": "fraccion", "arriba": 1, "abajo": 4 }
+    ],
+    "resultado": [{ "tipo": "fraccion", "arriba": 12, "abajo": 5 }],
+    "resultadoEnPalabras": "doce quintos"
+  },
+  "error": {
+    "enUnaFrase": "Multiplica los de arriba y suma los de abajo.",
+    "creenciaDeAtras": "cree que el piso de abajo se junta sumando, porque así le funcionó cuando sumaba fracciones y el de abajo se quedaba quieto",
+    "pasoQueCorrompe": 4,
+    "renglonMalo": [{ "tipo": "texto", "valor": "Arriba 3 × 4 = 12. Abajo 5 + 1 = 6." }],
+    "resultadoMalo": [
+      { "tipo": "texto", "valor": "=" },
+      { "tipo": "fraccion", "arriba": 12, "abajo": 6 }
+    ],
+    "comoSeCacha": "En el mismo renglón hay dos operaciones distintas: arriba multiplica y abajo suma. El 6 de abajo no puede salir de multiplicar 5 por 1, y no hace falta rehacer nada para verlo."
+  },
+  "erroresSecundarios": [
+    {
+      "enUnaFrase": "Voltea la primera fracción en vez de la segunda.",
+      "creenciaDeAtras": "cree que voltear es algo que se le hace a la división completa y no a la fracción que divide, así que da igual cuál de las dos se voltee"
+    }
+  ],
+  "vocabulario": [
+    {
+      "palabra": "la que divide",
+      "queEs": "La segunda fracción, la que dice de qué tamaño son los pedazos. Es la única de las dos que se voltea.",
+      "noEsLoMismoQue": "la que se reparte, que es la primera y se queda igual"
+    },
+    {
+      "palabra": "voltear una fracción",
+      "queEs": "Pasar el número de abajo arriba y el de arriba abajo, sin cambiar ninguno de los dos números."
+    },
+    {
+      "palabra": "cuántas veces cabe",
+      "queEs": "La pregunta que contesta una división: cuántos pedazos de este tamaño salen de lo que tengo.",
+      "noEsLoMismoQue": "repartir en partes iguales, que es la otra pregunta que también contesta una división"
+    },
+    {
+      "palabra": "simplificar",
+      "queEs": "Dividir arriba y abajo entre el mismo número para escribir la misma fracción con números más chicos."
+    }
+  ],
+  "cotas": {
+    "numeros": "numeradores y denominadores enteros del 1 al 12; el resultado siempre sale exacto como fracción, nunca con punto decimal y nunca negativo",
+    "unidades": [],
+    "simbolos": [
+      { "tipo": "texto", "valor": "÷" },
+      { "tipo": "texto", "valor": "×" }
+    ]
+  },
+  "noSePuede": null
+}

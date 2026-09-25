@@ -1,0 +1,1113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/X2-figura",
+  "$comment": "AUTOCONTENIDO: los $defs de partes.json los pega armar.mjs aqui abajo. Regenerar con: node contenido/esquema/armar.mjs --escribir. Se escribe SIN $defs propios porque armar.mjs reemplaza el bloque completo.",
+  "type": "object",
+  "description": "Caso aparte: los temas cuya notacion pide un dibujo de verdad (grafica, recta numerica, circuito, escala de pH, diagrama de fuerzas). El modelo NO devuelve SVG: devuelve una especificacion declarativa que un componente de React Native dibuja una sola vez, con los colores de src/tema. Ademas devuelve un plan B lineal, hecho con los cuatro atomos, para que el tema pueda correr hoy sin la figura, y noSePuede lleno describiendo el componente que falta.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del canon sin cambiarlo.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La materia del tema, copiada del canon.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "titulo": {
+      "type": "string",
+      "description": "El titulo del tema, copiado del canon sin cambiarlo.",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "figura": {
+      "description": "La especificacion de la figura: que hay que dibujar, no como se dibuja. null cuando lo que el tema necesita no es ninguna de las cinco clases (estructura de Lewis, onda, rayos de luz, rejilla de Punnett, grafica de barras, figura geometrica con medidas, esquema de particulas, arbol, balanza): en ese caso no se inventa una clase, se deja null y noSePuede dice que clase falta.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "description": "La figura del tema. Una sola por tema, dibujada sobre el ejemplo canonico.",
+          "properties": {
+            "titulo": {
+              "type": "string",
+              "description": "Que muestra la figura, en una frase sin numeros: 'La distancia de un camion contra el tiempo'. Es tambien el encabezado que la pantalla pone arriba del dibujo.",
+              "minLength": 8,
+              "maxLength": 90
+            },
+            "queSeLee": {
+              "type": "string",
+              "description": "Que tiene que sacar el estudiante de la figura para poder contestar. Una frase. Si la respuesta no sale de mirar el dibujo, la figura es adorno y sobra.",
+              "minLength": 15,
+              "maxLength": 300
+            },
+            "leerEnVozAlta": {
+              "type": "string",
+              "description": "La figura dictada en palabras, para el lector de pantalla y para quien no distingue colores. Tiene que alcanzar para contestar sin ver el dibujo: di los rotulos, los valores y donde esta el hueco, en el orden en que se leen. Es el accessibilityLabel del componente, asi que va en una sola cadena plana.",
+              "minLength": 40,
+              "maxLength": 700
+            },
+            "datos": {
+              "description": "Los datos de la figura, en la forma de su clase. Son cinco clases y no hay mas. Nada de coordenadas en pixeles, nada de colores, nada de SVG: el componente decide la escala, el grosor y el tono con los valores de src/tema.",
+              "oneOf": [
+                {
+                  "type": "object",
+                  "description": "Recta numerica: una linea con marcas y, cuando el tema lo pide, una flecha que marca un salto o un sentido. Para fracciones entre 0 y 1, negativos alrededor del cero, valor absoluto y desplazamiento.",
+                  "properties": {
+                    "clase": {
+                      "const": "rectaNumerica"
+                    },
+                    "rotulo": {
+                      "type": "string",
+                      "description": "Que se mide sobre la recta, con su unidad si la tiene: 'posicion (m)'. Se omite cuando la recta son numeros pelones.",
+                      "minLength": 1,
+                      "maxLength": 40
+                    },
+                    "desde": {
+                      "type": "number",
+                      "description": "Donde empieza la recta. Puede ser negativo."
+                    },
+                    "hasta": {
+                      "type": "number",
+                      "description": "Donde termina la recta. Mayor que desde."
+                    },
+                    "paso": {
+                      "type": "number",
+                      "description": "Cada cuanto va una rayita. Que los extremos caigan en una rayita.",
+                      "exclusiveMinimum": 0
+                    },
+                    "marcas": {
+                      "type": "array",
+                      "description": "Los puntos senalados sobre la recta. Los de referencia (0, 1, el cero al centro) van sin falta; el que el estudiante tiene que ubicar va con falta en true.",
+                      "minItems": 1,
+                      "maxItems": 14,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "number",
+                            "description": "La posicion sobre la recta, como numero. Para 3/4 se escribe 0.75 aqui y '3/4' en etiqueta: el numero coloca, la etiqueta se lee."
+                          },
+                          "etiqueta": {
+                            "type": "string",
+                            "description": "Lo que se escribe junto a la marca, tal cual: '0', '3/4', '−7', '+40 m'. El menos es − (U+2212).",
+                            "minLength": 1,
+                            "maxLength": 14
+                          },
+                          "falta": {
+                            "type": "boolean",
+                            "description": "true en la marca que el estudiante tiene que ubicar. Exactamente una marca de toda la figura lleva true."
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "etiqueta",
+                          "falta"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "flecha": {
+                      "type": "object",
+                      "description": "El salto o el sentido, cuando el tema va de desplazamiento o de sumar enteros. Se omite en las rectas que solo ubican un numero.",
+                      "properties": {
+                        "desde": {
+                          "type": "number",
+                          "description": "De donde sale la flecha."
+                        },
+                        "hasta": {
+                          "type": "number",
+                          "description": "A donde llega la flecha. El componente dibuja la punta de este lado."
+                        },
+                        "etiqueta": {
+                          "type": "string",
+                          "description": "Lo que dice la flecha encima: '−25 m', 'avanza 3'.",
+                          "minLength": 1,
+                          "maxLength": 24
+                        }
+                      },
+                      "required": [
+                        "desde",
+                        "hasta",
+                        "etiqueta"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "clase",
+                    "desde",
+                    "hasta",
+                    "paso",
+                    "marcas"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "description": "Plano cartesiano con ejes numericos: puntos, una recta, una quebrada o una curva. Cubre el plano a secas, y = mx, distancia contra tiempo y la meseta de los cambios de estado. No cubre barras ni graficas circulares.",
+                  "properties": {
+                    "clase": {
+                      "const": "planoCartesiano"
+                    },
+                    "ejeX": {
+                      "type": "object",
+                      "description": "El eje horizontal.",
+                      "properties": {
+                        "rotulo": {
+                          "type": "string",
+                          "description": "Que mide el eje: 't', 'tiempo', 'x'.",
+                          "minLength": 1,
+                          "maxLength": 24
+                        },
+                        "unidad": {
+                          "type": "string",
+                          "description": "La unidad entre parentesis en el eje: 's', 'min', 'm'. Se omite cuando el eje no lleva unidad.",
+                          "minLength": 1,
+                          "maxLength": 8
+                        },
+                        "desde": {
+                          "type": "number",
+                          "description": "Donde empieza el eje."
+                        },
+                        "hasta": {
+                          "type": "number",
+                          "description": "Donde termina el eje."
+                        },
+                        "paso": {
+                          "type": "number",
+                          "description": "Cada cuanto va una linea de la cuadricula.",
+                          "exclusiveMinimum": 0
+                        }
+                      },
+                      "required": [
+                        "rotulo",
+                        "desde",
+                        "hasta",
+                        "paso"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "ejeY": {
+                      "type": "object",
+                      "description": "El eje vertical, con los mismos campos que el horizontal.",
+                      "properties": {
+                        "rotulo": {
+                          "type": "string",
+                          "description": "Que mide el eje: 'd', 'temperatura', 'y'.",
+                          "minLength": 1,
+                          "maxLength": 24
+                        },
+                        "unidad": {
+                          "type": "string",
+                          "description": "La unidad entre parentesis en el eje: 'm', '°C'. Se omite cuando el eje no lleva unidad.",
+                          "minLength": 1,
+                          "maxLength": 8
+                        },
+                        "desde": {
+                          "type": "number",
+                          "description": "Donde empieza el eje."
+                        },
+                        "hasta": {
+                          "type": "number",
+                          "description": "Donde termina el eje."
+                        },
+                        "paso": {
+                          "type": "number",
+                          "description": "Cada cuanto va una linea de la cuadricula.",
+                          "exclusiveMinimum": 0
+                        }
+                      },
+                      "required": [
+                        "rotulo",
+                        "desde",
+                        "hasta",
+                        "paso"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "trazo": {
+                      "type": "string",
+                      "description": "Como se unen los puntos. puntos: no se unen. recta: una sola linea derecha. quebrada: segmentos rectos de punto a punto, para los tramos de un viaje. curva: una linea suave, para la meseta de un cambio de estado.",
+                      "enum": [
+                        "puntos",
+                        "recta",
+                        "quebrada",
+                        "curva"
+                      ]
+                    },
+                    "puntos": {
+                      "type": "array",
+                      "description": "Los puntos de la figura, en el orden en que se recorren. Con trazo quebrada o curva, el orden es el del recorrido.",
+                      "minItems": 2,
+                      "maxItems": 12,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "description": "Su valor en el eje horizontal, dentro de desde y hasta."
+                          },
+                          "y": {
+                            "type": "number",
+                            "description": "Su valor en el eje vertical, dentro de desde y hasta. En el punto que falta este valor es la verdad: el componente no lo dibuja, lo usa la app para calificar."
+                          },
+                          "etiqueta": {
+                            "type": "string",
+                            "description": "Lo que se escribe junto al punto: '(4 s, 20 m)', 'arranca'. Se omite en los puntos que no se rotulan.",
+                            "minLength": 1,
+                            "maxLength": 24
+                          },
+                          "falta": {
+                            "type": "boolean",
+                            "description": "true en el punto que el estudiante tiene que sacar. El componente no lo dibuja: pone una guia punteada en su x y deja el lugar vacio, como el hueco de un renglon. Exactamente un punto de toda la figura lleva true."
+                          }
+                        },
+                        "required": [
+                          "x",
+                          "y",
+                          "falta"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "clase",
+                    "ejeX",
+                    "ejeY",
+                    "trazo",
+                    "puntos"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "description": "Circuito electrico como grafo: que piezas hay y que esta unido con que. El componente pone los simbolos y los cables; aqui no van ni posiciones ni cables.",
+                  "properties": {
+                    "clase": {
+                      "const": "circuito"
+                    },
+                    "arreglo": {
+                      "type": "string",
+                      "description": "Como estan repartidos los focos. Es lo que el tema compara.",
+                      "enum": [
+                        "serie",
+                        "paralelo",
+                        "mixto"
+                      ]
+                    },
+                    "elementos": {
+                      "type": "array",
+                      "description": "Las piezas del circuito. Los cables no son piezas: son las conexiones.",
+                      "minItems": 2,
+                      "maxItems": 8,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Nombre corto para poder conectarla: 'pila', 'foco1'. Minusculas y digitos.",
+                            "pattern": "^[a-z][a-z0-9]{0,7}$"
+                          },
+                          "tipo": {
+                            "type": "string",
+                            "description": "Que pieza es. Son estas y no hay mas.",
+                            "enum": [
+                              "pila",
+                              "foco",
+                              "apagador",
+                              "resistencia",
+                              "ampermetro",
+                              "voltimetro"
+                            ]
+                          },
+                          "etiqueta": {
+                            "type": "string",
+                            "description": "Como se nombra en el dibujo: 'foco 1'. Se omite cuando el simbolo se explica solo.",
+                            "minLength": 1,
+                            "maxLength": 24
+                          },
+                          "valor": {
+                            "type": "string",
+                            "description": "El dato escrito junto a la pieza, con su unidad y tal cual se lee: '1.5 V', '3 A', '2 Ω'. No lo teclea el estudiante, asi que aqui si puede llevar punto decimal.",
+                            "minLength": 1,
+                            "maxLength": 14
+                          },
+                          "falta": {
+                            "type": "boolean",
+                            "description": "true en la pieza o el dato que el estudiante tiene que sacar. Exactamente un elemento de toda la figura lleva true."
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "tipo",
+                          "falta"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "conexiones": {
+                      "type": "array",
+                      "description": "Los cables, como pares de piezas unidas. Para que el circuito este cerrado, cada pieza aparece por lo menos dos veces.",
+                      "minItems": 2,
+                      "maxItems": 12,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "de": {
+                            "type": "string",
+                            "description": "El id de una pieza.",
+                            "pattern": "^[a-z][a-z0-9]{0,7}$"
+                          },
+                          "a": {
+                            "type": "string",
+                            "description": "El id de la otra pieza.",
+                            "pattern": "^[a-z][a-z0-9]{0,7}$"
+                          }
+                        },
+                        "required": [
+                          "de",
+                          "a"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "clase",
+                    "arreglo",
+                    "elementos",
+                    "conexiones"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "description": "La escala de pH, del 0 al 14, con sustancias colocadas encima. La escala siempre va del 0 al 14: no se recorta ni se estira. La zona va escrita con palabras porque el color no puede ser el unico dato que distinga un acido de una base.",
+                  "properties": {
+                    "clase": {
+                      "const": "escalaDePh"
+                    },
+                    "sustancias": {
+                      "type": "array",
+                      "description": "Lo que se coloca sobre la escala, con su pH.",
+                      "minItems": 1,
+                      "maxItems": 6,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "nombre": {
+                            "type": "string",
+                            "description": "Como se llama, en palabras de todos los dias: 'jugo de limon', 'agua de la llave'.",
+                            "minLength": 3,
+                            "maxLength": 40
+                          },
+                          "ph": {
+                            "type": "number",
+                            "description": "Su pH, del 0 al 14.",
+                            "minimum": 0,
+                            "maximum": 14
+                          },
+                          "zona": {
+                            "type": "string",
+                            "description": "En que parte de la escala cae. Tiene que cuadrar con el pH: menos de 7 es acido, 7 es neutro, mas de 7 es basico.",
+                            "enum": [
+                              "acido",
+                              "neutro",
+                              "basico"
+                            ]
+                          },
+                          "falta": {
+                            "type": "boolean",
+                            "description": "true en la sustancia cuyo pH o cuya posicion tiene que sacar el estudiante. Exactamente una sustancia de toda la figura lleva true."
+                          }
+                        },
+                        "required": [
+                          "nombre",
+                          "ph",
+                          "zona",
+                          "falta"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "tramo": {
+                      "type": "object",
+                      "description": "Un rango marcado sobre la escala, para los temas que hablan de un intervalo y no de un punto: el pH donde una enzima trabaja. Se omite cuando el tema solo coloca sustancias.",
+                      "properties": {
+                        "desde": {
+                          "type": "number",
+                          "description": "Donde empieza el rango.",
+                          "minimum": 0,
+                          "maximum": 14
+                        },
+                        "hasta": {
+                          "type": "number",
+                          "description": "Donde termina el rango.",
+                          "minimum": 0,
+                          "maximum": 14
+                        },
+                        "etiqueta": {
+                          "type": "string",
+                          "description": "Que es ese rango: 'aqui trabaja la amilasa'.",
+                          "minLength": 3,
+                          "maxLength": 40
+                        }
+                      },
+                      "required": [
+                        "desde",
+                        "hasta",
+                        "etiqueta"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "clase",
+                    "sustancias"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "description": "Diagrama de fuerzas: uno o dos cuerpos con flechas rotuladas. Cubre fuerza resultante, inercia, friccion y accion y reaccion. Las flechas solo van en las cuatro direcciones de la pantalla: el temario no pide ninguna inclinada.",
+                  "properties": {
+                    "clase": {
+                      "const": "diagramaDeFuerzas"
+                    },
+                    "cuerpos": {
+                      "type": "array",
+                      "description": "El cuerpo o los dos cuerpos del dibujo. Dos solo en accion y reaccion.",
+                      "minItems": 1,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Nombre corto para colgarle flechas: 'caja', 'coche'.",
+                            "pattern": "^[a-z][a-z0-9]{0,7}$"
+                          },
+                          "que": {
+                            "type": "string",
+                            "description": "Que es el cuerpo, en pocas palabras: 'una caja de 20 kg sobre el piso'.",
+                            "minLength": 5,
+                            "maxLength": 60
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "que"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "flechas": {
+                      "type": "array",
+                      "description": "Las fuerzas, una flecha cada una. El componente dibuja el largo proporcional a la magnitud: dos fuerzas iguales salen del mismo largo sin que haya que pedirlo.",
+                      "minItems": 1,
+                      "maxItems": 5,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "sobre": {
+                            "type": "string",
+                            "description": "El id del cuerpo al que se le aplica.",
+                            "pattern": "^[a-z][a-z0-9]{0,7}$"
+                          },
+                          "nombre": {
+                            "type": "string",
+                            "description": "Como se llama la fuerza, con la palabra del vocabulario del canon y no un sinonimo: 'peso', 'normal', 'friccion', 'empujon'.",
+                            "minLength": 3,
+                            "maxLength": 40
+                          },
+                          "magnitud": {
+                            "type": "number",
+                            "description": "Cuanto vale, dentro de las cotas del canon.",
+                            "minimum": 0
+                          },
+                          "unidad": {
+                            "type": "string",
+                            "description": "La unidad de la fuerza, casi siempre N.",
+                            "minLength": 1,
+                            "maxLength": 6
+                          },
+                          "sentido": {
+                            "type": "string",
+                            "description": "Hacia donde apunta.",
+                            "enum": [
+                              "derecha",
+                              "izquierda",
+                              "arriba",
+                              "abajo"
+                            ]
+                          },
+                          "falta": {
+                            "type": "boolean",
+                            "description": "true en la flecha cuya magnitud o cuyo sentido tiene que sacar el estudiante. Exactamente una flecha de toda la figura lleva true."
+                          }
+                        },
+                        "required": [
+                          "sobre",
+                          "nombre",
+                          "magnitud",
+                          "unidad",
+                          "sentido",
+                          "falta"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "resultante": {
+                      "type": "object",
+                      "description": "La suma de las fuerzas, cuando el tema la pide escrita en el dibujo. Se omite cuando la resultante es justo lo que se pregunta.",
+                      "properties": {
+                        "magnitud": {
+                          "type": "number",
+                          "description": "Cuanto vale la resultante. Cero cuando se cancelan.",
+                          "minimum": 0
+                        },
+                        "unidad": {
+                          "type": "string",
+                          "description": "La unidad, casi siempre N.",
+                          "minLength": 1,
+                          "maxLength": 6
+                        },
+                        "sentido": {
+                          "type": "string",
+                          "description": "Hacia donde apunta la resultante. ninguno cuando vale cero.",
+                          "enum": [
+                            "derecha",
+                            "izquierda",
+                            "arriba",
+                            "abajo",
+                            "ninguno"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "magnitud",
+                        "unidad",
+                        "sentido"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "clase",
+                    "cuerpos",
+                    "flechas"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "hueco": {
+              "type": "object",
+              "description": "El hueco de la figura: el unico elemento con falta en true, dicho en palabras. Uno por figura.",
+              "properties": {
+                "que": {
+                  "type": "string",
+                  "description": "Que falta en el dibujo, en una frase: 'el punto que marca donde esta el camion a los 12 s'.",
+                  "minLength": 15,
+                  "maxLength": 240
+                },
+                "donde": {
+                  "type": "string",
+                  "description": "En que parte de la figura va, referido a los datos de arriba y no a pixeles: 'sobre la linea de los 12 s'.",
+                  "minLength": 10,
+                  "maxLength": 240
+                },
+                "respuesta": {
+                  "$ref": "#/$defs/tecleado",
+                  "description": "Lo que el estudiante teclea, cuando lo que falta se dice con un entero o una fraccion. Solo digitos y la diagonal. Sin unidad: la unidad la pone el eje o el enunciado. Se omite cuando lo que falta es un trazo y no un numero; entonces la respuesta tecleable vive en el plan B."
+                },
+                "respuestaEnPalabras": {
+                  "type": "string",
+                  "description": "La respuesta dicha en voz alta, con su unidad: 'ochenta metros'. Es lo que el lector de pantalla dicta al terminar.",
+                  "minLength": 3,
+                  "maxLength": 120
+                }
+              },
+              "required": [
+                "que",
+                "donde",
+                "respuestaEnPalabras"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "titulo",
+            "queSeLee",
+            "leerEnVozAlta",
+            "datos",
+            "hueco"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "planB": {
+      "type": "object",
+      "description": "La misma pregunta sin el dibujo, escrita con los cuatro atomos, para que el tema pueda correr hoy. Cubre las dos estaciones que la figura iba a cargar: la 3 (completar el paso) y la 4 (escalera). Las estaciones 1, 2, 5 y 6 de este tema salen de sus prompts normales, porque no necesitan la figura para existir.",
+      "properties": {
+        "queSobrevive": {
+          "type": "string",
+          "description": "Que parte de lo que el tema ensena se puede contestar sin ver el dibujo, en una frase.",
+          "minLength": 20,
+          "maxLength": 300
+        },
+        "queSePierde": {
+          "type": "string",
+          "description": "Que se pierde de verdad al quitar el dibujo. Sin adornos: es el dato con el que se decide si vale la pena construir el componente.",
+          "minLength": 20,
+          "maxLength": 300
+        },
+        "datosEnPalabras": {
+          "$ref": "#/$defs/renglon",
+          "description": "Los datos que la figura llevaba, dichos en un renglon de atomos, para que el estudiante tenga con que trabajar: 'A los 4 s iba en 20 m. A los 8 s iba en 80 m.'"
+        },
+        "completar": {
+          "type": "object",
+          "description": "La estacion 3 sin figura: un renglon con un hueco sobre uno de los cinco pasos del canon.",
+          "properties": {
+            "pasoDelCanon": {
+              "type": "integer",
+              "description": "En cual de los cinco pasos del canon cae el hueco.",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "expresion": {
+              "$ref": "#/$defs/renglonConHueco",
+              "description": "El renglon con EXACTAMENTE un hueco. La unidad va en un atomo de texto despues del hueco: el hueco recibe solo el numero."
+            },
+            "respuesta": {
+              "type": "object",
+              "description": "La respuesta correcta del hueco.",
+              "properties": {
+                "tecleado": {
+                  "$ref": "#/$defs/tecleado",
+                  "description": "Lo que se teclea, con el teclado de doce teclas: digitos y diagonal."
+                },
+                "aceptaTambien": {
+                  "type": "array",
+                  "description": "Otras formas de teclear lo mismo que tambien se dan por buenas: la fraccion sin simplificar, el entero escrito como fraccion. Arreglo vacio cuando no hay otra.",
+                  "items": {
+                    "$ref": "#/$defs/tecleado"
+                  },
+                  "maxItems": 4
+                },
+                "comoSeLee": {
+                  "type": "string",
+                  "description": "La respuesta dicha en voz alta, con su unidad: 'quince metros por segundo'.",
+                  "minLength": 3,
+                  "maxLength": 120
+                }
+              },
+              "required": [
+                "tecleado",
+                "aceptaTambien",
+                "comoSeLee"
+              ],
+              "additionalProperties": false
+            },
+            "pistas": {
+              "type": "array",
+              "description": "Dos o tres pistas escalonadas. La 1 reencuadra la pregunta, la 2 senala el paso del canon, la 3 casi da la respuesta. Cuantas quedan y cuando se liberan lo pone la app: aqui solo va el orden y el texto.",
+              "minItems": 2,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "orden": {
+                    "type": "integer",
+                    "description": "En que lugar se ofrece, empezando en 1.",
+                    "minimum": 1,
+                    "maximum": 3
+                  },
+                  "texto": {
+                    "type": "string",
+                    "description": "La pista, en una o dos frases.",
+                    "minLength": 15,
+                    "maxLength": 240
+                  }
+                },
+                "required": [
+                  "orden",
+                  "texto"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "pasoDelCanon",
+            "expresion",
+            "respuesta",
+            "pistas"
+          ],
+          "additionalProperties": false
+        },
+        "escalones": {
+          "type": "array",
+          "description": "La estacion 4 sin figura. Es un arreglo: la app deriva en cual va. Suben de dificultad sin salirse de las cotas del canon, y uno de ellos cae justo donde vive el error tipico.",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "situacion": {
+                "type": "string",
+                "description": "Una frase de la vida real que trae el caso, sin la figura.",
+                "minLength": 20,
+                "maxLength": 240
+              },
+              "expresion": {
+                "$ref": "#/$defs/renglonConHueco",
+                "description": "El renglon con EXACTAMENTE un hueco."
+              },
+              "pregunta": {
+                "type": "string",
+                "description": "Que se pregunta, en una frase corta.",
+                "minLength": 10,
+                "maxLength": 160
+              },
+              "respuesta": {
+                "type": "object",
+                "description": "La respuesta correcta de este escalon.",
+                "properties": {
+                  "tecleado": {
+                    "$ref": "#/$defs/tecleado",
+                    "description": "Lo que se teclea: digitos y diagonal."
+                  },
+                  "aceptaTambien": {
+                    "type": "array",
+                    "description": "Otras formas de teclear lo mismo. Vacio cuando no hay otra.",
+                    "items": {
+                      "$ref": "#/$defs/tecleado"
+                    },
+                    "maxItems": 4
+                  },
+                  "comoSeLee": {
+                    "type": "string",
+                    "description": "La respuesta dicha en voz alta, con su unidad.",
+                    "minLength": 3,
+                    "maxLength": 120
+                  }
+                },
+                "required": [
+                  "tecleado",
+                  "aceptaTambien",
+                  "comoSeLee"
+                ],
+                "additionalProperties": false
+              },
+              "pistas": {
+                "type": "array",
+                "description": "Una a tres pistas escalonadas de este escalon.",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "orden": {
+                      "type": "integer",
+                      "description": "En que lugar se ofrece, empezando en 1.",
+                      "minimum": 1,
+                      "maximum": 3
+                    },
+                    "texto": {
+                      "type": "string",
+                      "description": "La pista, en una o dos frases.",
+                      "minLength": 15,
+                      "maxLength": 240
+                    }
+                  },
+                  "required": [
+                    "orden",
+                    "texto"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "situacion",
+              "expresion",
+              "pregunta",
+              "respuesta",
+              "pistas"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "queSobrevive",
+        "queSePierde",
+        "datosEnPalabras",
+        "completar",
+        "escalones"
+      ],
+      "additionalProperties": false
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede",
+      "description": "En este caso NUNCA es null: hoy nada en src/componentes dibuja una figura, asi que el tema no se puede recorrer completo aunque la spec salga perfecta. En que va el componente que falta (la clase de figura), en porQue el archivo que lo demuestra, y en queHagoConEsto si el tema corre mientras tanto con el plan B o si conviene dejarlo fuera."
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "titulo",
+    "figura",
+    "planB",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

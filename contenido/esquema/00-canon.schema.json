@@ -1,0 +1,532 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/00-canon",
+  "$comment": "AUTOCONTENIDO: los $defs de partes.json estan copiados aqui abajo. Regenerar con: node contenido/esquema/armar.mjs",
+  "type": "object",
+  "description": "El canon del tema: el paso 0. Fija el procedimiento que las estaciones 3, 4 y 5 van a compartir. Se genera UNA vez por tema y se le pasa entero a las seis estaciones.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del temario.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "titulo": {
+      "type": "string",
+      "description": "El titulo del tema, copiado del temario sin cambiarlo.",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "notacion": {
+      "type": "string",
+      "description": "A que prompt de estacion hay que mandar este tema. lineal: todo cabe en renglones de atomos, es el caso normal. tabla: hace falta una tabla de dos o tres columnas. figura: hace falta un dibujo (grafica, recta numerica, diagrama de Lewis, esquema de fuerzas, probeta, plano cartesiano).",
+      "enum": [
+        "lineal",
+        "tabla",
+        "figura"
+      ]
+    },
+    "formaDeRespuesta": {
+      "type": "string",
+      "description": "Que forma tiene lo que el estudiante contesta en las estaciones 3 y 4. numero y fraccion se teclean con el teclado de hoy. palabra y trazo NO: si es una de esas dos, hay que llenar noSePuede.",
+      "enum": [
+        "numero",
+        "fraccion",
+        "palabra",
+        "trazo"
+      ]
+    },
+    "procedimiento": {
+      "type": "object",
+      "description": "Los cinco pasos escritos de verdad. Esta es la parte que las estaciones 3, 4 y 5 no pueden contradecir.",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "description": "Como se llama el procedimiento en una frase corta, en segunda persona: 'Dividir una fraccion entre otra'.",
+          "minLength": 5,
+          "maxLength": 120
+        },
+        "pasos": {
+          "type": "array",
+          "description": "Exactamente cinco pasos, en orden.",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "properties": {
+              "numero": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "queSeHace": {
+                "type": "string",
+                "description": "La accion, en segunda persona y en una frase: 'Volteas la segunda fraccion'.",
+                "minLength": 8,
+                "maxLength": 200
+              },
+              "renglon": {
+                "$ref": "#/$defs/renglon",
+                "description": "Como queda escrito el paso sobre el ejemplo canonico, con atomos. Si el paso no se escribe (es una decision, no una cuenta), un solo atomo de texto con la frase."
+              },
+              "porQue": {
+                "type": "string",
+                "description": "Por que se hace, no como. Lo que el estudiante necesita para no repetirlo de memoria.",
+                "minLength": 15,
+                "maxLength": 300
+              }
+            },
+            "required": [
+              "numero",
+              "queSeHace",
+              "renglon",
+              "porQue"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "nombre",
+        "pasos"
+      ],
+      "additionalProperties": false
+    },
+    "ejemplo": {
+      "type": "object",
+      "description": "El ejemplo canonico. Es el mismo caso que recorren los cinco pasos, y el que las estaciones usan de referencia.",
+      "properties": {
+        "deQueVa": {
+          "type": "string",
+          "description": "Una frase que situa el ejemplo sin numeros.",
+          "minLength": 10,
+          "maxLength": 200
+        },
+        "planteamiento": {
+          "$ref": "#/$defs/renglon"
+        },
+        "resultado": {
+          "$ref": "#/$defs/renglon"
+        },
+        "resultadoEnPalabras": {
+          "type": "string",
+          "description": "El resultado dicho en voz alta, para el lector de pantalla y para la explicacion: 'doce quintos'.",
+          "minLength": 3,
+          "maxLength": 200
+        }
+      },
+      "required": [
+        "deQueVa",
+        "planteamiento",
+        "resultado",
+        "resultadoEnPalabras"
+      ],
+      "additionalProperties": false
+    },
+    "error": {
+      "type": "object",
+      "description": "El error tipico del temario, ubicado en un paso concreto del procedimiento de arriba.",
+      "properties": {
+        "enUnaFrase": {
+          "type": "string",
+          "description": "Que hace mal, en una frase, sin regañar.",
+          "minLength": 15,
+          "maxLength": 300
+        },
+        "creenciaDeAtras": {
+          "type": "string",
+          "description": "Lo que el estudiante cree que es cierto y lo lleva a ese error. Sin esto la estacion 5 no puede escribir motivos que suenen razonables.",
+          "minLength": 15,
+          "maxLength": 300
+        },
+        "pasoQueCorrompe": {
+          "type": "integer",
+          "description": "En cual de los cinco pasos se cae. Tiene que ser un paso que el procedimiento de arriba ya enseño.",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "renglonMalo": {
+          "$ref": "#/$defs/renglon",
+          "description": "Como queda escrito ese paso cuando se hace mal, sobre el mismo ejemplo canonico."
+        },
+        "resultadoMalo": {
+          "$ref": "#/$defs/renglon",
+          "description": "A donde llega el error si nadie lo detiene."
+        },
+        "comoSeCacha": {
+          "type": "string",
+          "description": "La señal que delata el error sin rehacer la cuenta: 'el resultado salio mas chico que con lo que empezaste'.",
+          "minLength": 15,
+          "maxLength": 300
+        }
+      },
+      "required": [
+        "enUnaFrase",
+        "creenciaDeAtras",
+        "pasoQueCorrompe",
+        "renglonMalo",
+        "resultadoMalo",
+        "comoSeCacha"
+      ],
+      "additionalProperties": false
+    },
+    "erroresSecundarios": {
+      "type": "array",
+      "description": "Las OTRAS confusiones que errorTipico describe y que no caben en error, que es uno solo. 58 de los 165 temas traen dos: \"busca denominador comun antes de multiplicar; tambien espera que el resultado sea mayor que los dos factores\" son dos, y la segunda no vive en un paso sino en lo que el estudiante espera del resultado. Cobras en error la que se cae en un paso y las demas van aqui. Arreglo vacio cuando errorTipico describe una sola. Ninguna se tira: la estacion 2 las convierte en distractores y la 6 en un contraargumento.",
+      "minItems": 0,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "properties": {
+          "enUnaFrase": {
+            "type": "string",
+            "description": "Que hace mal o que espera de mas, en una frase, sin regañar.",
+            "minLength": 15,
+            "maxLength": 300
+          },
+          "creenciaDeAtras": {
+            "type": "string",
+            "description": "Lo que el estudiante cree que es cierto y lo lleva ahi. De aqui sale el distractor de la estacion 2 y el contraargumento de la 6.",
+            "minLength": 15,
+            "maxLength": 300
+          }
+        },
+        "required": [
+          "enUnaFrase",
+          "creenciaDeAtras"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "vocabulario": {
+      "type": "array",
+      "description": "Las palabras del tema. Las seis estaciones usan estas y no sinonimos.",
+      "minItems": 3,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "properties": {
+          "palabra": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 60
+          },
+          "queEs": {
+            "type": "string",
+            "description": "Que es, en una frase de estudiante de secundaria.",
+            "minLength": 10,
+            "maxLength": 240
+          },
+          "noEsLoMismoQue": {
+            "type": "string",
+            "description": "Con que se confunde, cuando se confunde con algo.",
+            "maxLength": 240
+          }
+        },
+        "required": [
+          "palabra",
+          "queEs"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "cotas": {
+      "type": "object",
+      "description": "Los limites de los numeros y las unidades del tema. Las estaciones no se salen de aqui.",
+      "properties": {
+        "numeros": {
+          "type": "string",
+          "description": "Que numeros puede usar el tema, en una frase: 'enteros del 1 al 12, denominadores hasta 12, sin decimales'.",
+          "minLength": 10,
+          "maxLength": 300
+        },
+        "unidades": {
+          "type": "array",
+          "description": "Las unidades del tema, escritas como se escriben. Vacio si el tema no lleva unidades.",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20
+          },
+          "maxItems": 12
+        },
+        "simbolos": {
+          "type": "array",
+          "description": "Los simbolos que el tema necesita, cada uno ya escrito con atomos, para que las seis estaciones los escriban igual.",
+          "items": {
+            "$ref": "#/$defs/parteMat"
+          },
+          "maxItems": 24
+        }
+      },
+      "required": [
+        "numeros",
+        "unidades",
+        "simbolos"
+      ],
+      "additionalProperties": false
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede"
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "titulo",
+    "notacion",
+    "formaDeRespuesta",
+    "procedimiento",
+    "ejemplo",
+    "error",
+    "erroresSecundarios",
+    "vocabulario",
+    "cotas",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

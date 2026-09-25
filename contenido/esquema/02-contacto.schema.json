@@ -1,0 +1,350 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/02-contacto",
+  "$comment": "AUTOCONTENIDO: los $defs de partes.json se copian aqui abajo. Regenerar con: node contenido/esquema/armar.mjs --escribir",
+  "type": "object",
+  "description": "Estacion 2 · primer contacto, sin penalizacion. Un bloque de preguntas de cuatro opciones que diagnostica lo que el estudiante cree antes de que equivocarse le cueste algo. Aqui no se teclea (no hay huecos) y no hay pistas: lo que el estudiante se lleva es queRevela.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del canon sin cambiarlo. Solo sirve para trazar de que tema es este bloque.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La materia del tema, copiada del canon sin cambiarla.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "preguntas": {
+      "type": "array",
+      "description": "De tres a cinco preguntas, en el orden en que se muestran. Es una lista: cual va, cuantas faltan y el progreso los deriva la pantalla, asi que aqui no hay indice ni total. Las preguntas son independientes: ninguna supone que la anterior se contesto bien. Reparte las preguntas entre pasos distintos del canon; el unico paso que se vale repetir es el del error.",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "enunciado": {
+            "$ref": "#/$defs/renglon",
+            "description": "La pregunta, escrita con atomos. Una sola cosa por pregunta. Nunca en negativo (nada de '¿cual NO es'): con un enunciado negativo las tres opciones equivocadas son afirmaciones ciertas y queRevela se queda sin nada que revelar. Sin huecos: en esta estacion no se teclea."
+          },
+          "pasoDelCanon": {
+            "type": "integer",
+            "description": "Cual de los cinco pasos del procedimiento del canon toca esta pregunta. Si la pregunta es de vocabulario, el paso donde esa palabra se usa. Tiene que ser un paso que el canon si tiene.",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "opciones": {
+            "type": "array",
+            "description": "Exactamente cuatro opciones, en el orden A, B, C, D. Una sola correcta. Las cuatro parejas en forma y en largo: si la correcta es una fraccion, las otras tres son fracciones; si es un numero de un digito, las otras tres tambien. La correcta no puede ser la mas larga ni la mas especifica, y cambia de letra entre preguntas.",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "properties": {
+                "letra": {
+                  "type": "string",
+                  "description": "La letra de la tarjeta. Van en orden: la primera opcion del arreglo es A, la segunda B, la tercera C y la cuarta D.",
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                  ]
+                },
+                "partes": {
+                  "type": "array",
+                  "description": "La opcion escrita con atomos, en un solo renglon corto: una fraccion, una formula, un numero, una operacion corta, o una frase de tres o cuatro palabras. Hasta cuatro atomos, y el texto de cada uno hasta 30 caracteres: la tarjeta mide 64 de alto (app/estacion/contacto.tsx:114) y una opcion larga se parte en dos renglones y desbalancea el bloque. Nunca una oracion completa ni un parrafo. Sin huecos. Ninguna opcion habla de las otras: nada de 'todas las anteriores', 'ninguna de las anteriores' ni 'A y B'.",
+                  "items": {
+                    "$ref": "#/$defs/parteMatCorta"
+                  },
+                  "minItems": 1,
+                  "maxItems": 4
+                },
+                "esCorrecta": {
+                  "type": "boolean",
+                  "description": "true en una sola de las cuatro opciones de esta pregunta."
+                },
+                "esElErrorTipico": {
+                  "type": "boolean",
+                  "description": "true solo en la opcion que reproduce tal cual el error tipico del canon: el resultado exacto al que llega quien cree canon.error.creenciaDeAtras. Exactamente UNA opcion de todo el bloque lo lleva en true, va en la pregunta cuyo pasoDelCanon es canon.error.pasoQueCorrompe, y nunca es la correcta. Todas las demas van en false. Si el errorTipico del temario describe dos confusiones, el canon ya escogio una: esa es la que va en true; la otra puede seguir siendo distractor con false."
+                },
+                "queRevela": {
+                  "type": "string",
+                  "description": "Lo que esta eleccion delata, dicho al estudiante en segunda persona. En una opcion equivocada: que esta creyendo y que es lo que en realidad pasa, descrito sin regañar ('estas leyendo el subindice como si contara los atomos de todas las moleculas'). En la correcta: que hizo, en una frase, sin felicitar. Es lo unico que el estudiante se lleva de esta estacion, y es lo que la vuelve sin penalizacion. Dos opciones de la misma pregunta no pueden revelar lo mismo.",
+                  "minLength": 25,
+                  "maxLength": 220
+                }
+              },
+              "required": [
+                "letra",
+                "partes",
+                "esCorrecta",
+                "esElErrorTipico",
+                "queRevela"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "enunciado",
+          "pasoDelCanon",
+          "opciones"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede",
+      "description": "null cuando el bloque salio completo. Se llena cuando lo que este tema necesita preguntar no cabe en los cuatro atomos ni en una tarjeta de un renglon: una grafica, un trazo, un color, una tabla de dos columnas, una frase larga. Antes de llenarlo, intenta UNA reformulacion (preguntar por el numero en vez de por el dibujo, por el nombre en vez de por el color); si la reformulacion cambia lo que el tema enseña, entonces si se llena. Viaja siempre, aunque las preguntas salgan bien."
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "preguntas",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

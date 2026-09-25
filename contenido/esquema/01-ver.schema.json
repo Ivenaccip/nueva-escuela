@@ -1,0 +1,521 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/01-ver",
+  "$comment": "Estacion 1 · ver el video. AUTOCONTENIDO: armar.mjs copia aqui los $defs de partes.json (node contenido/esquema/armar.mjs --escribir). armar.mjs REEMPLAZA el bloque $defs entero, asi que este esquema no puede tener $defs propios: por eso la forma del candidato a video esta escrita completa dos veces, en video y en alternativas.items. De los atomos este esquema solo usa #/$defs/noSePuede: la estacion 1 no dibuja renglones, sus dos campos de pantalla son texto plano que pinta <Text> (src/contenido/tipos.ts:44-49).",
+  "type": "object",
+  "description": "Estacion 1 de 6 · ver el video. Lo que abre el tema: la pregunta que el video contesta, el resumen de dos frases, la busqueda con la que se encontro el video, el video elegido y dos respaldos. Es la unica estacion sin respuesta y sin pistas: aqui el estudiante nada mas mira. Ningun campo de estado vive aqui.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del temario. Solo sirve para trazar de donde salio este contenido.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La materia del tema, copiada del temario.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "pregunta": {
+      "type": "string",
+      "description": "La pregunta que el video contesta, escrita grande arriba de la pantalla (app/estacion/ver.tsx:37-43). NO es el titulo del tema: el titulo nombra el tema, esta pregunta abre el hueco que el tema llena. Empieza con la apertura de interrogacion y termina con el cierre. Pregunta por el POR QUE, no por el procedimiento: por que se voltea la segunda, no como se dividen dos fracciones. No dice la respuesta, no dice el truco, no usa formulas: lo que necesite un subindice se escribe con palabras o con el simbolo pelon del elemento. Cabe en tres renglones de 27 puntos: si pasa de 70 caracteres, no cabe.",
+      "minLength": 14,
+      "maxLength": 70,
+      "pattern": "¿[^¿]*\\?$"
+    },
+    "resumen": {
+      "type": "string",
+      "description": "Dos frases debajo del video (app/estacion/ver.tsx:45-47). Dicen la IDEA que el video deja, no el procedimiento: si el resumen se puede seguir como receta, esta mal escrito. La primera frase dice de que se trata; la segunda cierra. Sin formulas, sin markdown, sin los numeros del ejemplo del canon.",
+      "minLength": 60,
+      "maxLength": 200
+    },
+    "busqueda": {
+      "type": "object",
+      "description": "Con que se busco y con que se decide. Se guarda para poder repetir la busqueda cuando el video muera, sin volver a pensar los criterios.",
+      "properties": {
+        "consulta": {
+          "type": "string",
+          "description": "La consulta que de verdad se le dio al buscador y que trajo el video elegido, copiada tal cual. No la consulta ideal: la que se uso.",
+          "minLength": 15,
+          "maxLength": 200
+        },
+        "consultasAlternas": {
+          "type": "array",
+          "description": "Otras consultas que se probaron o que conviene probar cuando el video muera. Una a tres.",
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 200
+          },
+          "minItems": 1,
+          "maxItems": 3
+        },
+        "criterios": {
+          "type": "array",
+          "description": "Que tiene que cumplir un video para servirle a ESTE tema y a ESTE grado. Cada criterio se puede revisar mirando el video: explica por que se cruzan y no solo como se cruzan, no que sea de buena calidad. Tres a seis.",
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 240
+          },
+          "minItems": 3,
+          "maxItems": 6
+        },
+        "descarta": {
+          "type": "array",
+          "description": "Que descarta un video para este tema, aunque el titulo se vea bien: intro larga, examen resuelto de otro nivel, el error tipico del canon enseñado como si fuera correcto. Dos a cinco.",
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 240
+          },
+          "minItems": 2,
+          "maxItems": 5
+        }
+      },
+      "required": [
+        "consulta",
+        "consultasAlternas",
+        "criterios",
+        "descarta"
+      ],
+      "additionalProperties": false
+    },
+    "video": {
+      "description": "El video elegido. null cuando la busqueda no trajo ni un video que cumpla los criterios: en ese caso alternativas va vacio, confianza es baja y noSePuede se llena. Nunca se rellena con un video inventado ni con uno que no aparecio en los resultados.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "description": "La URL canonica del video, exactamente en esta forma y de 43 caracteres: la direccion de watch de YouTube mas los once caracteres del id. Tiene que haber aparecido LITERALMENTE en los resultados de la busqueda. Sin youtu.be, sin shorts, sin playlist, sin embed, sin el parametro t, sin el parametro list, sin nada despues del id.",
+              "pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$",
+              "minLength": 43,
+              "maxLength": 43
+            },
+            "idDeYouTube": {
+              "type": "string",
+              "description": "Los once caracteres del id, copiados de la URL de arriba caracter por caracter. Va aparte a proposito: quien llama compara los dos campos y si no coinciden tira el video entero, porque un id que no cuadra con su URL es un id inventado.",
+              "pattern": "^[A-Za-z0-9_-]{11}$",
+              "minLength": 11,
+              "maxLength": 11
+            },
+            "titulo": {
+              "type": "string",
+              "description": "El titulo del video como venia escrito en el resultado de la busqueda, copiado tal cual, con sus mayusculas y sus acentos. Sin resumirlo, sin corregirlo, sin traducirlo. Quien llama lo compara con el titulo que devuelve YouTube: si no es el mismo video, se tira.",
+              "minLength": 5,
+              "maxLength": 200
+            },
+            "canal": {
+              "type": "string",
+              "description": "El nombre del canal como venia en el resultado. Si el resultado no traia canal, se escribe que no venia en el resultado y la confianza baja: un canal adivinado es un canal inventado.",
+              "minLength": 2,
+              "maxLength": 120
+            },
+            "variedadDeEspanol": {
+              "type": "string",
+              "description": "De donde suena el español del video. Se prefiere Mexico, luego America Latina. España se acepta solo cuando nada de Mexico ni de America Latina explica el por que, y entonces la confianza no puede ser alta. No se pudo determinar es una respuesta valida y honesta.",
+              "enum": [
+                "Mexico",
+                "America Latina",
+                "España",
+                "no se pudo determinar"
+              ]
+            },
+            "explicaElPorQue": {
+              "type": "boolean",
+              "description": "true solo si lo que se alcanza a ver del video (titulo y descripcion en el resultado) dice que explica POR QUE funciona el procedimiento. false cuando nada mas enseña el algoritmo o el truco para memorizarlo. Un video que solo da el truco puede ir de alternativa, no de elegido."
+            },
+            "duracion": {
+              "type": "string",
+              "description": "OPCIONAL, y es el unico campo opcional de este esquema. Lo que dura, en minutos y segundos, como se pinta sobre el video (app/estacion/ver.tsx:45-47). Se escribe UNICAMENTE si el tiempo aparecio literalmente en el resultado de la busqueda. Si no aparecio, se omite el campo: nunca se estima. Una duracion inventada se ve sobre el video y el estudiante la descubre mal en el primer segundo. Quien llama la saca de la API de datos de YouTube.",
+              "pattern": "^[0-9]{1,2}:[0-5][0-9]$",
+              "minLength": 4,
+              "maxLength": 5
+            },
+            "dondeSalio": {
+              "type": "string",
+              "description": "Con cual de las consultas salio y como venia escrito en el resultado. Es la huella: si este campo no se puede escribir sin adornarlo, el video no aparecio en la busqueda y no se reporta.",
+              "minLength": 20,
+              "maxLength": 300
+            },
+            "porQueEste": {
+              "type": "string",
+              "description": "Por que este y no los otros, contra los criterios de arriba. Si el video falla un criterio, se dice cual falla: una pega declarada se puede revisar, una pega escondida no.",
+              "minLength": 25,
+              "maxLength": 300
+            }
+          },
+          "required": [
+            "url",
+            "idDeYouTube",
+            "titulo",
+            "canal",
+            "variedadDeEspanol",
+            "explicaElPorQue",
+            "dondeSalio",
+            "porQueEste"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "alternativas": {
+      "type": "array",
+      "description": "Los respaldos, por si el elegido se cae: un video escolar de hace tres años se vuelve privado o se borra sin avisar. Dos cuando video no es null, los dos distintos del elegido y distintos entre si. Menos de dos solo cuando la busqueda no trajo mas: los huecos no se rellenan con videos inventados, se dejan y la confianza baja. Vacio cuando video es null. Mismos campos y mismas reglas que video.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "La URL canonica del video, exactamente en esta forma y de 43 caracteres: la direccion de watch de YouTube mas los once caracteres del id. Tiene que haber aparecido LITERALMENTE en los resultados de la busqueda. Sin youtu.be, sin shorts, sin playlist, sin embed, sin parametros extra.",
+            "pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$",
+            "minLength": 43,
+            "maxLength": 43
+          },
+          "idDeYouTube": {
+            "type": "string",
+            "description": "Los once caracteres del id, copiados de la URL de arriba caracter por caracter. Quien llama compara los dos campos y si no coinciden tira este respaldo.",
+            "pattern": "^[A-Za-z0-9_-]{11}$",
+            "minLength": 11,
+            "maxLength": 11
+          },
+          "titulo": {
+            "type": "string",
+            "description": "El titulo del video como venia escrito en el resultado de la busqueda, copiado tal cual. Sin resumirlo, sin corregirlo, sin traducirlo.",
+            "minLength": 5,
+            "maxLength": 200
+          },
+          "canal": {
+            "type": "string",
+            "description": "El nombre del canal como venia en el resultado. Si el resultado no traia canal, se escribe que no venia en el resultado.",
+            "minLength": 2,
+            "maxLength": 120
+          },
+          "variedadDeEspanol": {
+            "type": "string",
+            "description": "De donde suena el español del video. No se pudo determinar es una respuesta valida y honesta.",
+            "enum": [
+              "Mexico",
+              "America Latina",
+              "España",
+              "no se pudo determinar"
+            ]
+          },
+          "explicaElPorQue": {
+            "type": "boolean",
+            "description": "true solo si lo que se alcanza a ver del video dice que explica POR QUE funciona el procedimiento. false cuando nada mas enseña el algoritmo."
+          },
+          "duracion": {
+            "type": "string",
+            "description": "OPCIONAL. Solo si el tiempo aparecio literalmente en el resultado de la busqueda. Nunca se estima.",
+            "pattern": "^[0-9]{1,2}:[0-5][0-9]$",
+            "minLength": 4,
+            "maxLength": 5
+          },
+          "dondeSalio": {
+            "type": "string",
+            "description": "Con cual de las consultas salio y como venia escrito en el resultado. Es la huella del video.",
+            "minLength": 20,
+            "maxLength": 300
+          },
+          "porQueEste": {
+            "type": "string",
+            "description": "Por que sirve de respaldo y en que es peor que el elegido. Un respaldo que se vende como igual de bueno no es un respaldo, es una duda.",
+            "minLength": 25,
+            "maxLength": 300
+          }
+        },
+        "required": [
+          "url",
+          "idDeYouTube",
+          "titulo",
+          "canal",
+          "variedadDeEspanol",
+          "explicaElPorQue",
+          "dondeSalio",
+          "porQueEste"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 3
+    },
+    "confianza": {
+      "type": "string",
+      "description": "Que tanto se sostiene el video elegido. alta: la URL y el titulo salieron literales en la busqueda, el canal se ve, explica el por que y el español es de Mexico o de America Latina. media: falta alguna de esas cosas, y porQueEsaConfianza dice cual. baja: el video es dudoso, o hay menos de dos alternativas, o video es null. Con video en null la confianza es baja y no hay otra opcion. La confianza no reemplaza la validacion: quien llama valida la URL de todos modos.",
+      "enum": [
+        "alta",
+        "media",
+        "baja"
+      ]
+    },
+    "porQueEsaConfianza": {
+      "type": "string",
+      "description": "Que sostiene esa confianza y que no. Aqui se nombran las pegas: que no se pudo ver la duracion, que el canal es de España, que solo hubo una alternativa. Sin esto, media no le sirve a nadie.",
+      "minLength": 25,
+      "maxLength": 400
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede",
+      "description": "null cuando el tema se abre bien con un video. Se llena cuando la busqueda no trajo ningun video en español que explique este tema para este grado, o cuando lo que el tema necesita ver es un dibujo que ningun video encontrado muestra. Antes de llenarlo se prueba UNA reformulacion de la consulta: mas corta, con las palabras del temario en vez de las del canon, o apuntando al tema del que este depende. Si la reformulacion tampoco trae nada, se llena."
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "pregunta",
+    "resumen",
+    "busqueda",
+    "video",
+    "alternativas",
+    "confianza",
+    "porQueEsaConfianza",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,710 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/X3-respuesta-no-numerica",
+  "$comment": "AUTOCONTENIDO: los $defs de partes.json estan copiados aqui abajo. Regenerar con: node contenido/esquema/armar.mjs --escribir",
+  "type": "object",
+  "description": "Caso aparte: la respuesta que el teclado de hoy no puede escribir. Elige UN teclado para todo el tema y escribe con el las respuestas de la estacion 3 y de los escalones de la estacion 4. Su salida reemplaza expresion, respuesta y pistas de esas dos estaciones; no toca las otras cuatro.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del temario.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La clave de la materia, copiada del temario.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "titulo": {
+      "type": "string",
+      "description": "El titulo del tema, copiado del temario sin cambiarlo.",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "teclado": {
+      "type": "string",
+      "description": "Con que contesta el estudiante en las estaciones 3 y 4 de este tema. UNO para todo el tema: la app arma el teclado una vez y no lo cambia entre estaciones. digitos: el teclado de hoy, 1-9, 0, diagonal y borrar (app/estacion/completar.tsx:23-28); cero cambio de codigo y es la primera opcion si la respuesta cabe ahi. fichas: las mismas teclas de hoy con otras etiquetas, las que este tema necesita; la app las saca del campo fichas. opciones: el hueco se vuelve una eleccion de 2 a 4 etiquetas cortas, una por respuesta. texto: teclado normal del sistema, para una palabra que no se puede cerrar en una lista.",
+      "enum": [
+        "digitos",
+        "fichas",
+        "opciones",
+        "texto"
+      ]
+    },
+    "porQueEseTeclado": {
+      "type": "string",
+      "description": "Por que este tema pide ese teclado y no el anterior de la lista. Nombra el caracter que falta (una letra, un signo, un parentesis, una coma, un punto) o el conjunto cerrado que existe. No repite el nombre del teclado en otras palabras.",
+      "minLength": 30,
+      "maxLength": 400
+    },
+    "tecladosDescartados": {
+      "type": "array",
+      "description": "Los teclados mas baratos que no se eligieron, con su motivo. Si teclado no es digitos, digitos va aqui a fuerza: es el unico que no cuesta codigo. Si teclado es texto, van digitos, fichas y opciones.",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "properties": {
+          "teclado": {
+            "type": "string",
+            "description": "El teclado que se descarto.",
+            "enum": [
+              "digitos",
+              "fichas",
+              "opciones",
+              "texto"
+            ]
+          },
+          "porQue": {
+            "type": "string",
+            "description": "Que se rompe con ese teclado en este tema: que caracter no puede escribir, o que parte del razonamiento se lleva puesta.",
+            "minLength": 25,
+            "maxLength": 300
+          }
+        },
+        "required": [
+          "teclado",
+          "porQue"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "fichas": {
+      "type": "array",
+      "description": "Las teclas del tema. EXACTAMENTE 0 cuando teclado no es fichas. De 3 a 11 cuando si: con borrar son 12 teclas, las mismas 4 filas de 3 que ya dibuja app/estacion/completar.tsx:23-28, asi que el diseno del teclado no cambia. Una ficha escribe en el hueco exactamente lo que trae pintado. El juego de fichas sirve a la estacion 3 y a todos los escalones de la 4 a la vez, y tiene que permitir escribir tambien el error tipico del canon.",
+      "minItems": 0,
+      "maxItems": 11,
+      "items": {
+        "type": "object",
+        "properties": {
+          "etiqueta": {
+            "type": "string",
+            "description": "Lo que va pintado en la tecla, y lo mismo que escribe al tocarla. Hasta 4 caracteres: la tecla mide alrededor de 110 de ancho con letra de 22 (app/estacion/completar.tsx tecla, flex 1, height 56). Sin espacios. Vale un digito (2), un simbolo de elemento (Ca), un signo (+, −, =, <), un parentesis, una coma, un punto, un numero romano (VIIA) o una letra de variable (x).",
+            "minLength": 1,
+            "maxLength": 4,
+            "pattern": "^\\S{1,4}$"
+          },
+          "comoSeLee": {
+            "type": "string",
+            "description": "Como se dice la tecla en voz alta, para el lector de pantalla: 'calcio', 'dos', 'mas', 'menos', 'abre parentesis'. No es la definicion de la ficha, es su nombre dicho.",
+            "minLength": 2,
+            "maxLength": 60
+          }
+        },
+        "required": [
+          "etiqueta",
+          "comoSeLee"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "comoSeCompara": {
+      "type": "object",
+      "description": "Que perdona la app al comparar lo escrito con la respuesta correcta. Con digitos, fichas y opciones los tres van en false: el teclado solo puede escribir lo que trae pintado, asi que la comparacion es exacta. Con texto casi siempre los tres en true, porque ahi se estaria calificando ortografia.",
+      "properties": {
+        "ignoraMayusculas": {
+          "type": "boolean",
+          "description": "true si 'Mitosis' y 'mitosis' cuentan igual. En quimica va en false: Co es cobalto y CO es monoxido de carbono."
+        },
+        "ignoraAcentos": {
+          "type": "boolean",
+          "description": "true si 'osmosis' cuenta igual que 'osmosis' con acento."
+        },
+        "ignoraEspaciosDeMas": {
+          "type": "boolean",
+          "description": "true si sobra o falta un espacio y la respuesta sigue contando."
+        }
+      },
+      "required": [
+        "ignoraMayusculas",
+        "ignoraAcentos",
+        "ignoraEspaciosDeMas"
+      ],
+      "additionalProperties": false
+    },
+    "completar": {
+      "type": "object",
+      "description": "La estacion 3 con este teclado: un renglon con un hueco, su respuesta y sus pistas.",
+      "properties": {
+        "pasoDelCanon": {
+          "type": "integer",
+          "description": "En cual de los cinco pasos del canon vive el hueco. Tiene que ser un paso que el canon ya escribio.",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "expresion": {
+          "$ref": "#/$defs/renglonConHueco",
+          "description": "El paso escrito con atomos, con EXACTAMENTE un hueco donde va la respuesta. Las unidades no entran al hueco: van en el renglon o en la pregunta."
+        },
+        "respuesta": {
+          "type": "object",
+          "description": "Que cuenta como correcto en ese hueco.",
+          "properties": {
+            "correcta": {
+              "type": "string",
+              "description": "Lo que tiene que quedar escrito en el hueco, tal cual, y lo unico que la app compara. Con digitos casa con ^[0-9]+(/[0-9]+)?$. Con fichas es la union de etiquetas de fichas, sin espacios y sin ninguna etiqueta que no exista. Con opciones es la etiqueta de la opcion correcta, letra por letra. Con texto es la palabra o las dos palabras que se esperan.",
+              "minLength": 1,
+              "maxLength": 24
+            },
+            "enAtomos": {
+              "$ref": "#/$defs/renglon",
+              "description": "La respuesta escrita de verdad, con los cuatro atomos: CaCl2 tecleado es [texto 'Ca', simbolo 'Cl' sub '2']. Sirve para que la pantalla pinte la respuesta bien cuando ya esta contestada y para que el lector de pantalla la dicte. Sin hueco adentro."
+            },
+            "comoSeLee": {
+              "type": "string",
+              "description": "La respuesta dicha en voz alta, para el lector de pantalla: 'ce a, ce ele con dos abajo'. No es la explicacion de la respuesta.",
+              "minLength": 3,
+              "maxLength": 120
+            },
+            "aceptaTambien": {
+              "type": "array",
+              "description": "Otras formas de escribir la MISMA respuesta que tambien cuentan (el plural, la variante sin acento que el teclado de texto deja escribir, la fraccion sin simplificar si el canon la permite). Vacio cuando solo hay una forma. Nunca una respuesta distinta, y nunca el error tipico.",
+              "minItems": 0,
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 24
+              }
+            },
+            "opciones": {
+              "type": "array",
+              "description": "EXACTAMENTE 0 cuando teclado no es opciones. De 2 a 4 cuando si, con una sola esCorrecta en true. La etiqueta es de un renglon corto: el hueco no crece (src/componentes/Expresion.tsx:104).",
+              "minItems": 0,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "etiqueta": {
+                    "type": "string",
+                    "description": "Lo que se lee en la opcion, y lo que queda escrito en el hueco al elegirla.",
+                    "minLength": 1,
+                    "maxLength": 24
+                  },
+                  "esCorrecta": {
+                    "type": "boolean",
+                    "description": "true en una sola opcion de la lista."
+                  },
+                  "queRevela": {
+                    "type": "string",
+                    "description": "En las equivocadas: que cree el estudiante que la eligio, dicho sin regañar. Una de las equivocadas sale de canon.error.creenciaDeAtras. En la correcta: en que se nota que si entendio, no un festejo.",
+                    "minLength": 15,
+                    "maxLength": 240
+                  }
+                },
+                "required": [
+                  "etiqueta",
+                  "esCorrecta",
+                  "queRevela"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "correcta",
+            "enAtomos",
+            "comoSeLee",
+            "aceptaTambien",
+            "opciones"
+          ],
+          "additionalProperties": false
+        },
+        "pistas": {
+          "type": "array",
+          "description": "Dos o tres pistas escalonadas. La app decide cuando sueltas cada una; tu solo escribes el texto y el orden.",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "properties": {
+              "orden": {
+                "type": "integer",
+                "description": "1 reencuadra la pregunta sin dar dato. 2 nombra el paso del canon donde esta la respuesta. 3 casi la da: deja un solo movimiento por hacer.",
+                "minimum": 1,
+                "maximum": 3
+              },
+              "texto": {
+                "type": "string",
+                "description": "La pista. La 3 no escribe la respuesta completa: si la escribe, deja de ser pista.",
+                "minLength": 15,
+                "maxLength": 240
+              }
+            },
+            "required": [
+              "orden",
+              "texto"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "pasoDelCanon",
+        "expresion",
+        "respuesta",
+        "pistas"
+      ],
+      "additionalProperties": false
+    },
+    "escalera": {
+      "type": "array",
+      "description": "Los escalones de la estacion 4, con el mismo teclado. Es una lista: la app deriva en cual va, el contenido no dice 'escalon 3 de 5'. Suben de dificultad sin salirse de canon.cotas y sin pedir una ficha que no este en el juego de arriba.",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "situacion": {
+            "type": "string",
+            "description": "Una frase de la vida real que situa el escalon, sin inventar datos. Si el tema no tiene un caso real honesto, una frase de clase antes que un dato falso.",
+            "minLength": 20,
+            "maxLength": 240
+          },
+          "expresion": {
+            "$ref": "#/$defs/renglonConHueco",
+            "description": "El escalon escrito con atomos, con EXACTAMENTE un hueco."
+          },
+          "pregunta": {
+            "type": "string",
+            "description": "Que se pide, en una frase. Aqui van las unidades, porque al hueco no entran.",
+            "minLength": 10,
+            "maxLength": 160
+          },
+          "respuesta": {
+            "type": "object",
+            "description": "Que cuenta como correcto en el hueco de este escalon. Mismas reglas que en completar.",
+            "properties": {
+              "correcta": {
+                "type": "string",
+                "description": "Lo que tiene que quedar escrito en el hueco, tal cual. Con fichas, union de etiquetas que existan en el juego de fichas del tema.",
+                "minLength": 1,
+                "maxLength": 24
+              },
+              "enAtomos": {
+                "$ref": "#/$defs/renglon",
+                "description": "La respuesta escrita con los cuatro atomos. Sin hueco adentro."
+              },
+              "comoSeLee": {
+                "type": "string",
+                "description": "La respuesta dicha en voz alta, para el lector de pantalla.",
+                "minLength": 3,
+                "maxLength": 120
+              },
+              "aceptaTambien": {
+                "type": "array",
+                "description": "Otras formas de escribir la misma respuesta. Vacio cuando solo hay una.",
+                "minItems": 0,
+                "maxItems": 4,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 24
+                }
+              },
+              "opciones": {
+                "type": "array",
+                "description": "EXACTAMENTE 0 cuando teclado no es opciones. De 2 a 4 cuando si, con una sola esCorrecta en true.",
+                "minItems": 0,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "etiqueta": {
+                      "type": "string",
+                      "description": "Lo que se lee en la opcion, y lo que queda en el hueco al elegirla.",
+                      "minLength": 1,
+                      "maxLength": 24
+                    },
+                    "esCorrecta": {
+                      "type": "boolean",
+                      "description": "true en una sola opcion de la lista."
+                    },
+                    "queRevela": {
+                      "type": "string",
+                      "description": "Que cree el estudiante que eligio esa opcion, sin regañar. Una de las equivocadas sale de canon.error.creenciaDeAtras.",
+                      "minLength": 15,
+                      "maxLength": 240
+                    }
+                  },
+                  "required": [
+                    "etiqueta",
+                    "esCorrecta",
+                    "queRevela"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "correcta",
+              "enAtomos",
+              "comoSeLee",
+              "aceptaTambien",
+              "opciones"
+            ],
+            "additionalProperties": false
+          },
+          "pistas": {
+            "type": "array",
+            "description": "Dos o tres pistas escalonadas para este escalon.",
+            "minItems": 2,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "properties": {
+                "orden": {
+                  "type": "integer",
+                  "description": "1 reencuadra, 2 nombra el paso del canon, 3 casi da la respuesta.",
+                  "minimum": 1,
+                  "maximum": 3
+                },
+                "texto": {
+                  "type": "string",
+                  "description": "La pista. Ninguna escribe la respuesta completa.",
+                  "minLength": 15,
+                  "maxLength": 240
+                }
+              },
+              "required": [
+                "orden",
+                "texto"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "situacion",
+          "expresion",
+          "pregunta",
+          "respuesta",
+          "pistas"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede",
+      "description": "null cuando los cuatro teclados alcanzan. Se llena cuando la respuesta es un trazo, cuando hacen falta mas de 11 fichas o una etiqueta de mas de 4 caracteres, cuando el juego de fichas deja la respuesta armada de dos toques, o cuando con texto la app acabaria calificando ortografia en vez de lo que el tema ensena. En queHagoConEsto va que teclado haria falta, con nombre."
+    },
+    "faltaCodigo": {
+      "type": "boolean",
+      "description": "true cuando el teclado elegido no es \"digitos\", o sea siempre que haga falta codigo que hoy no existe: \"fichas\" pide que FILAS salga del contenido, \"opciones\" pide una fila de opciones donde va el teclado, \"texto\" pide un TextInput en la estacion 3. Solo \"digitos\" corre con el codigo de hoy (app/estacion/completar.tsx:23-28). Cuando esto va en true, noSePuede va lleno y nombra el teclado que falta: el llamador filtra por noSePuede y no publica un tema donde el estudiante veria el teclado de digitos y una respuesta que necesita letras."
+    },
+    "planB": {
+      "type": "object",
+      "description": "La version con el teclado de \"digitos\" del hueco de la estacion 3 y de los escalones de la 4, para que el tema pueda correr HOY aunque pida menos. Siempre viaja, incluso cuando el teclado elegido ya es \"digitos\" (ahi describe que el plan B es la version buena). Es lo mismo que hace X2-figura con su plan B lineal.",
+      "properties": {
+        "sirveHoy": {
+          "type": "boolean",
+          "description": "true cuando el plan B de abajo se puede servir con el codigo de hoy sin trabarse: la respuesta casa con ^[0-9]+(/[0-9]+)?$ y el renglon se escribe con los cuatro atomos. false cuando no hay manera de pedir un numero sin dejar de enseñar el tema; entonces el tema no se publica hasta que el teclado exista."
+        },
+        "comoQuedaria": {
+          "type": "string",
+          "description": "Que se le pregunta en la estacion 3 y en los escalones de la 4 cuando la respuesta tiene que ser un numero: el subindice en vez de la formula completa, el numero de atomos en vez del nombre, el numero que se compara en vez de la palabra. Concreto, con el hueco nombrado.",
+          "minLength": 40,
+          "maxLength": 600
+        },
+        "queSePierde": {
+          "type": "string",
+          "description": "Que deja de medir el plan B contra la version con el teclado bueno. Dicho sin suavizar: es lo que se recupera el dia que el teclado se escriba.",
+          "minLength": 30,
+          "maxLength": 400
+        }
+      },
+      "required": [
+        "sirveHoy",
+        "comoQuedaria",
+        "queSePierde"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "titulo",
+    "teclado",
+    "porQueEseTeclado",
+    "tecladosDescartados",
+    "fichas",
+    "comoSeCompara",
+    "completar",
+    "escalera",
+    "noSePuede",
+    "faltaCodigo",
+    "planB"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "if": {
+    "properties": {
+      "teclado": {
+        "not": {
+          "const": "digitos"
+        }
+      }
+    },
+    "required": [
+      "teclado"
+    ]
+  },
+  "then": {
+    "properties": {
+      "faltaCodigo": {
+        "const": true
+      },
+      "noSePuede": {
+        "type": "object"
+      }
+    }
+  },
+  "else": {
+    "properties": {
+      "faltaCodigo": {
+        "const": false
+      }
+    }
+  }
+}

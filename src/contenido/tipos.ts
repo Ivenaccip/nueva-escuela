@@ -34,6 +34,13 @@ export type ParteMat =
   | { tipo: 'texto'; valor: string }
   | { tipo: 'fraccion'; arriba: string | number; abajo: string | number }
   /**
+   * Un símbolo con lo que lleva pegado arriba o abajo. Con este átomo solo salen
+   * el subíndice, el superíndice, la carga, la unidad con exponente y la
+   * variable con letra: H₂, 2³, Ca²⁺, cm³, v_f. Sin él, toda Química y toda
+   * Física llegan sin cómo escribirse.
+   */
+  | { tipo: 'simbolo'; valor: string; sub?: string; sup?: string }
+  /**
    * El espacio que el estudiante tiene que llenar. `ancho` y `alto` son las
    * medidas finales del recuadro, bordes incluidos: el diseño las fija por
    * ejercicio y no salen del tamaño de letra.

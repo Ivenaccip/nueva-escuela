@@ -1,0 +1,1807 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/X1-tabla",
+  "$comment": "AUTOCONTENIDO: los $defs de partes.json estan copiados abajo por armar.mjs. La rejilla NO vive en $defs (armar.mjs reemplaza ese bloque entero), por eso su definicion esta escrita entera en las cuatro estaciones; las cuatro copias son identicas y se generan juntas. Regenerar los atomos con: node contenido/esquema/armar.mjs --escribir",
+  "type": "object",
+  "description": "Caso aparte: los temas cuya notacion es una rejilla y no un renglon. Una sola llamada escribe las estaciones 2, 3, 4 y 5, porque la rejilla tiene que ser la misma en las cuatro y cuatro llamadas separadas no se hablan. Las estaciones 1 y 6 no llevan rejilla y siguen yendo a sus prompts normales.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del temario.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La clave de la materia, copiada del temario.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "titulo": {
+      "type": "string",
+      "description": "El titulo del tema, copiado del temario sin cambiarlo.",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "rejilla": {
+      "type": "object",
+      "description": "Que rejilla pide este tema y como se llena. Vale para las cuatro estaciones: la regla de la celda es la misma en todas.",
+      "properties": {
+        "deQueEs": {
+          "type": "string",
+          "description": "La rejilla del tema en una frase: que va en las columnas, que va en los renglones y que va dentro de las celdas.",
+          "minLength": 20,
+          "maxLength": 300
+        },
+        "porQueNoCabeEnUnRenglon": {
+          "type": "string",
+          "description": "Por que este tema no se puede escribir en renglones: que se pierde al aplanarlo. Si resulta que si cabe en un renglon, este tema no era de tabla y va al prompt lineal.",
+          "minLength": 20,
+          "maxLength": 300
+        },
+        "reglaDeLaCelda": {
+          "type": "string",
+          "description": "La regla que amarra cada celda con sus encabezados. En el cuadro de Punnett: \"cada casilla es el alelo de su renglon pegado al de su columna, la mayuscula primero\". Sin esta regla la rejilla son celdas sueltas y el estudiante la copia sin entenderla.",
+          "minLength": 20,
+          "maxLength": 300
+        },
+        "comoSeLlena": {
+          "type": "string",
+          "description": "teclado: TODAS las respuestas de las celdas hueco casan con ^[0-9]+(/[0-9]+)?$ y las doce teclas de app/estacion/completar.tsx:23-28 las pueden escribir. banco: alguna respuesta lleva letras (Aa, XY, Na) y hay que tocarla en un banco de fichas, porque el teclado no tiene letras.",
+          "enum": [
+            "teclado",
+            "banco"
+          ]
+        },
+        "banco": {
+          "type": "array",
+          "description": "Solo cuando comoSeLlena es banco: las fichas que se tocan para llenar las celdas. Van las correctas y las equivocadas revueltas, y entre las equivocadas la del error tipico del canon (por ejemplo aA cuando la regla pide la mayuscula primero). Se deja fuera cuando comoSeLlena es teclado.",
+          "minItems": 3,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "description": "Una ficha del banco, corta.",
+            "minLength": 1,
+            "maxLength": 8,
+            "pattern": "^[0-9A-Za-z/]{1,8}$"
+          }
+        }
+      },
+      "required": [
+        "deQueEs",
+        "porQueNoCabeEnUnRenglon",
+        "reglaDeLaCelda",
+        "comoSeLlena"
+      ],
+      "additionalProperties": false
+    },
+    "contacto": {
+      "type": "object",
+      "description": "Estacion 2, sin penalizacion. Aqui no se castiga: se diagnostica. Se mira una rejilla ya llena y se marca una opcion.",
+      "properties": {
+        "preguntas": {
+          "type": "array",
+          "description": "Las preguntas, en orden. Es una lista, no \"pregunta 2 de 4\": el indice y el avance los deriva la app.",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "tabla": {
+                "type": "object",
+                "description": "La rejilla que se mira para contestar. Llena: todas sus celdas son de tipo dato, porque en la estacion 2 no se llena nada. Puede venir bien llena o mal llena, segun lo que la pregunta quiera diagnosticar. La rejilla es un contenedor de renglones, no un quinto atomo: cada celda lleva adentro un renglon de los cuatro atomos de siempre. Cabe en 390 puntos de ancho: de dos a cuatro columnas, de uno a cinco renglones, y como mucho cuatro celdas de tipo hueco en toda la rejilla.",
+                "properties": {
+                  "deQueEs": {
+                    "type": "string",
+                    "description": "De que es esta rejilla, en una frase: \"cuadro de Punnett de la cruza Aa x Aa\", \"conteo de atomos de cada lado de la flecha\". Con los numeros y las letras del canon, no con otros.",
+                    "minLength": 10,
+                    "maxLength": 160
+                  },
+                  "rotuloEsquina": {
+                    "type": "string",
+                    "description": "Opcional. Lo que va en la esquina de arriba a la izquierda, donde se cruzan los dos encabezados: \"madre / padre\", \"elemento\". Se deja fuera cuando la esquina va vacia.",
+                    "minLength": 2,
+                    "maxLength": 40
+                  },
+                  "columnas": {
+                    "type": "array",
+                    "description": "Los encabezados de las columnas, de izquierda a derecha, uno por columna de datos. La columna de los rotulos de renglon no se cuenta aqui. Casi siempre son datos; son huecos solo cuando el ejercicio pide justamente deducir el encabezado.",
+                    "minItems": 2,
+                    "maxItems": 4,
+                    "items": {
+                      "description": "Encabezado de una columna.",
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                          "properties": {
+                            "tipo": {
+                              "const": "dato",
+                              "description": "Celda escrita desde el principio."
+                            },
+                            "partes": {
+                              "$ref": "#/$defs/renglon",
+                              "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                            },
+                            "deDondeSale": {
+                              "type": "string",
+                              "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                              "minLength": 4,
+                              "maxLength": 90
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "partes",
+                            "deDondeSale"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                          "properties": {
+                            "tipo": {
+                              "const": "hueco",
+                              "description": "Celda por llenar."
+                            },
+                            "respuesta": {
+                              "type": "string",
+                              "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                              "minLength": 1,
+                              "maxLength": 8,
+                              "pattern": "^[0-9A-Za-z/]{1,8}$"
+                            },
+                            "comoSeLee": {
+                              "type": "string",
+                              "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                              "minLength": 3,
+                              "maxLength": 120
+                            },
+                            "deDondeSale": {
+                              "type": "string",
+                              "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                              "minLength": 4,
+                              "maxLength": 90
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "respuesta",
+                            "comoSeLee",
+                            "deDondeSale"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    }
+                  },
+                  "filas": {
+                    "type": "array",
+                    "description": "Los renglones, de arriba a abajo. Cada renglon trae su rotulo y una celda por columna: filas[i].celdas tiene que traer exactamente tantas celdas como encabezados hay en columnas, ni una mas ni una menos.",
+                    "minItems": 1,
+                    "maxItems": 5,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "rotulo": {
+                          "description": "El rotulo del renglon: lo que va en la orilla izquierda.",
+                          "oneOf": [
+                            {
+                              "type": "object",
+                              "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                              "properties": {
+                                "tipo": {
+                                  "const": "dato",
+                                  "description": "Celda escrita desde el principio."
+                                },
+                                "partes": {
+                                  "$ref": "#/$defs/renglon",
+                                  "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                                },
+                                "deDondeSale": {
+                                  "type": "string",
+                                  "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                                  "minLength": 4,
+                                  "maxLength": 90
+                                }
+                              },
+                              "required": [
+                                "tipo",
+                                "partes",
+                                "deDondeSale"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                              "properties": {
+                                "tipo": {
+                                  "const": "hueco",
+                                  "description": "Celda por llenar."
+                                },
+                                "respuesta": {
+                                  "type": "string",
+                                  "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                                  "minLength": 1,
+                                  "maxLength": 8,
+                                  "pattern": "^[0-9A-Za-z/]{1,8}$"
+                                },
+                                "comoSeLee": {
+                                  "type": "string",
+                                  "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                                  "minLength": 3,
+                                  "maxLength": 120
+                                },
+                                "deDondeSale": {
+                                  "type": "string",
+                                  "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                                  "minLength": 4,
+                                  "maxLength": 90
+                                }
+                              },
+                              "required": [
+                                "tipo",
+                                "respuesta",
+                                "comoSeLee",
+                                "deDondeSale"
+                              ],
+                              "additionalProperties": false
+                            }
+                          ]
+                        },
+                        "celdas": {
+                          "type": "array",
+                          "description": "Las celdas del renglon, de izquierda a derecha, una por cada encabezado de columna y en el mismo orden.",
+                          "minItems": 2,
+                          "maxItems": 4,
+                          "items": {
+                            "description": "Una celda del cuerpo de la rejilla.",
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                                "properties": {
+                                  "tipo": {
+                                    "const": "dato",
+                                    "description": "Celda escrita desde el principio."
+                                  },
+                                  "partes": {
+                                    "$ref": "#/$defs/renglon",
+                                    "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                                  },
+                                  "deDondeSale": {
+                                    "type": "string",
+                                    "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                                    "minLength": 4,
+                                    "maxLength": 90
+                                  }
+                                },
+                                "required": [
+                                  "tipo",
+                                  "partes",
+                                  "deDondeSale"
+                                ],
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "object",
+                                "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                                "properties": {
+                                  "tipo": {
+                                    "const": "hueco",
+                                    "description": "Celda por llenar."
+                                  },
+                                  "respuesta": {
+                                    "type": "string",
+                                    "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                                    "minLength": 1,
+                                    "maxLength": 8,
+                                    "pattern": "^[0-9A-Za-z/]{1,8}$"
+                                  },
+                                  "comoSeLee": {
+                                    "type": "string",
+                                    "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                                    "minLength": 3,
+                                    "maxLength": 120
+                                  },
+                                  "deDondeSale": {
+                                    "type": "string",
+                                    "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                                    "minLength": 4,
+                                    "maxLength": 90
+                                  }
+                                },
+                                "required": [
+                                  "tipo",
+                                  "respuesta",
+                                  "comoSeLee",
+                                  "deDondeSale"
+                                ],
+                                "additionalProperties": false
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "rotulo",
+                        "celdas"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "deQueEs",
+                  "columnas",
+                  "filas"
+                ],
+                "additionalProperties": false
+              },
+              "pregunta": {
+                "type": "string",
+                "description": "Lo que se pregunta sobre la rejilla, en una frase. Se contesta mirando la rejilla, no de memoria.",
+                "minLength": 10,
+                "maxLength": 200
+              },
+              "opciones": {
+                "type": "array",
+                "description": "Cuatro opciones, letras A a D, con exactamente una correcta.",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "letra": {
+                      "type": "string",
+                      "description": "A, B, C o D, en ese orden y sin repetir.",
+                      "enum": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                      ]
+                    },
+                    "partes": {
+                      "$ref": "#/$defs/renglon",
+                      "description": "La opcion, de UN solo renglon: app/estacion/contacto.tsx:113-121 tiene height 64 fija y una opcion que no quepa se desborda en vez de partirse. Una fraccion, un numero, o tres o cuatro palabras."
+                    },
+                    "esCorrecta": {
+                      "type": "boolean",
+                      "description": "true en una sola de las cuatro opciones."
+                    },
+                    "queRevela": {
+                      "type": "string",
+                      "description": "Que delata esta opcion sobre lo que el estudiante cree. En la correcta, que entendio. Una de las tres equivocadas tiene que ser el error tipico del canon, escrito sin regañar.",
+                      "minLength": 15,
+                      "maxLength": 240
+                    }
+                  },
+                  "required": [
+                    "letra",
+                    "partes",
+                    "esCorrecta",
+                    "queRevela"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "planB": {
+                "type": "object",
+                "description": "El plan B lineal: la misma pregunta sin rejilla, para que el tema pueda correr hoy mientras el componente de tabla no exista. No es un adorno: es la version que se va a ver en pantalla.",
+                "properties": {
+                  "comoSeReformula": {
+                    "type": "string",
+                    "description": "Que cambia al quitar la rejilla, en una frase: \"en vez de llenar las cuatro casillas, se cuentan las que ya vienen llenas\".",
+                    "minLength": 15,
+                    "maxLength": 240
+                  },
+                  "enunciado": {
+                    "$ref": "#/$defs/renglon",
+                    "description": "La misma pregunta escrita en renglones de atomos, sin rejilla. Las opciones y los motivos no cambian: ya son renglones y la pantalla de hoy los dibuja."
+                  },
+                  "queSePierde": {
+                    "type": "string",
+                    "description": "Que deja de aprender el estudiante sin la rejilla. Honesto: si no se pierde nada, este tema no necesitaba tabla y va al prompt lineal.",
+                    "minLength": 15,
+                    "maxLength": 240
+                  }
+                },
+                "required": [
+                  "comoSeReformula",
+                  "enunciado",
+                  "queSePierde"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "tabla",
+              "pregunta",
+              "opciones",
+              "planB"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "preguntas"
+      ],
+      "additionalProperties": false
+    },
+    "completar": {
+      "type": "object",
+      "description": "Estacion 3, el hueco. La rejilla del ejemplo canonico llega casi llena y falta lo que el estudiante pone.",
+      "properties": {
+        "pasoDelCanon": {
+          "type": "integer",
+          "description": "En cual de los cinco pasos del canon vive el hueco. Tiene que ser un paso que el canon ya enseño, con su numeracion sin cambiar.",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "tabla": {
+          "type": "object",
+          "description": "La rejilla del ejemplo canonico con celdas por llenar: de una a cuatro de tipo hueco, y el resto datos que ya se ven. Los numeros y las letras son los del canon, no otros. La rejilla es un contenedor de renglones, no un quinto atomo: cada celda lleva adentro un renglon de los cuatro atomos de siempre. Cabe en 390 puntos de ancho: de dos a cuatro columnas, de uno a cinco renglones, y como mucho cuatro celdas de tipo hueco en toda la rejilla.",
+          "properties": {
+            "deQueEs": {
+              "type": "string",
+              "description": "De que es esta rejilla, en una frase: \"cuadro de Punnett de la cruza Aa x Aa\", \"conteo de atomos de cada lado de la flecha\". Con los numeros y las letras del canon, no con otros.",
+              "minLength": 10,
+              "maxLength": 160
+            },
+            "rotuloEsquina": {
+              "type": "string",
+              "description": "Opcional. Lo que va en la esquina de arriba a la izquierda, donde se cruzan los dos encabezados: \"madre / padre\", \"elemento\". Se deja fuera cuando la esquina va vacia.",
+              "minLength": 2,
+              "maxLength": 40
+            },
+            "columnas": {
+              "type": "array",
+              "description": "Los encabezados de las columnas, de izquierda a derecha, uno por columna de datos. La columna de los rotulos de renglon no se cuenta aqui. Casi siempre son datos; son huecos solo cuando el ejercicio pide justamente deducir el encabezado.",
+              "minItems": 2,
+              "maxItems": 4,
+              "items": {
+                "description": "Encabezado de una columna.",
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                    "properties": {
+                      "tipo": {
+                        "const": "dato",
+                        "description": "Celda escrita desde el principio."
+                      },
+                      "partes": {
+                        "$ref": "#/$defs/renglon",
+                        "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                      },
+                      "deDondeSale": {
+                        "type": "string",
+                        "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                        "minLength": 4,
+                        "maxLength": 90
+                      }
+                    },
+                    "required": [
+                      "tipo",
+                      "partes",
+                      "deDondeSale"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                    "properties": {
+                      "tipo": {
+                        "const": "hueco",
+                        "description": "Celda por llenar."
+                      },
+                      "respuesta": {
+                        "type": "string",
+                        "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                        "minLength": 1,
+                        "maxLength": 8,
+                        "pattern": "^[0-9A-Za-z/]{1,8}$"
+                      },
+                      "comoSeLee": {
+                        "type": "string",
+                        "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                        "minLength": 3,
+                        "maxLength": 120
+                      },
+                      "deDondeSale": {
+                        "type": "string",
+                        "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                        "minLength": 4,
+                        "maxLength": 90
+                      }
+                    },
+                    "required": [
+                      "tipo",
+                      "respuesta",
+                      "comoSeLee",
+                      "deDondeSale"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "filas": {
+              "type": "array",
+              "description": "Los renglones, de arriba a abajo. Cada renglon trae su rotulo y una celda por columna: filas[i].celdas tiene que traer exactamente tantas celdas como encabezados hay en columnas, ni una mas ni una menos.",
+              "minItems": 1,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "rotulo": {
+                    "description": "El rotulo del renglon: lo que va en la orilla izquierda.",
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                        "properties": {
+                          "tipo": {
+                            "const": "dato",
+                            "description": "Celda escrita desde el principio."
+                          },
+                          "partes": {
+                            "$ref": "#/$defs/renglon",
+                            "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                          },
+                          "deDondeSale": {
+                            "type": "string",
+                            "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                            "minLength": 4,
+                            "maxLength": 90
+                          }
+                        },
+                        "required": [
+                          "tipo",
+                          "partes",
+                          "deDondeSale"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                        "properties": {
+                          "tipo": {
+                            "const": "hueco",
+                            "description": "Celda por llenar."
+                          },
+                          "respuesta": {
+                            "type": "string",
+                            "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                            "minLength": 1,
+                            "maxLength": 8,
+                            "pattern": "^[0-9A-Za-z/]{1,8}$"
+                          },
+                          "comoSeLee": {
+                            "type": "string",
+                            "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                            "minLength": 3,
+                            "maxLength": 120
+                          },
+                          "deDondeSale": {
+                            "type": "string",
+                            "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                            "minLength": 4,
+                            "maxLength": 90
+                          }
+                        },
+                        "required": [
+                          "tipo",
+                          "respuesta",
+                          "comoSeLee",
+                          "deDondeSale"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "celdas": {
+                    "type": "array",
+                    "description": "Las celdas del renglon, de izquierda a derecha, una por cada encabezado de columna y en el mismo orden.",
+                    "minItems": 2,
+                    "maxItems": 4,
+                    "items": {
+                      "description": "Una celda del cuerpo de la rejilla.",
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                          "properties": {
+                            "tipo": {
+                              "const": "dato",
+                              "description": "Celda escrita desde el principio."
+                            },
+                            "partes": {
+                              "$ref": "#/$defs/renglon",
+                              "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                            },
+                            "deDondeSale": {
+                              "type": "string",
+                              "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                              "minLength": 4,
+                              "maxLength": 90
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "partes",
+                            "deDondeSale"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                          "properties": {
+                            "tipo": {
+                              "const": "hueco",
+                              "description": "Celda por llenar."
+                            },
+                            "respuesta": {
+                              "type": "string",
+                              "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                              "minLength": 1,
+                              "maxLength": 8,
+                              "pattern": "^[0-9A-Za-z/]{1,8}$"
+                            },
+                            "comoSeLee": {
+                              "type": "string",
+                              "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                              "minLength": 3,
+                              "maxLength": 120
+                            },
+                            "deDondeSale": {
+                              "type": "string",
+                              "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                              "minLength": 4,
+                              "maxLength": 90
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "respuesta",
+                            "comoSeLee",
+                            "deDondeSale"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "rotulo",
+                  "celdas"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "deQueEs",
+            "columnas",
+            "filas"
+          ],
+          "additionalProperties": false
+        },
+        "pistas": {
+          "type": "array",
+          "description": "Las pistas, escalonadas y en orden. La 1 reencuadra sin dar nada. La 2 senala el paso del canon que toca. La 3 casi da la respuesta. Es una lista con su texto, no un numero: cuantas quedan y cuando se liberan lo lleva la app.",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "properties": {
+              "orden": {
+                "type": "integer",
+                "description": "1, 2 o 3, de menos ayuda a mas ayuda.",
+                "minimum": 1,
+                "maximum": 3
+              },
+              "texto": {
+                "type": "string",
+                "description": "El texto de la pista, una o dos frases. Con las palabras del vocabulario del canon, sin sinonimos.",
+                "minLength": 15,
+                "maxLength": 240
+              }
+            },
+            "required": [
+              "orden",
+              "texto"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "planB": {
+          "type": "object",
+          "description": "El plan B lineal: la misma pregunta sin rejilla, para que el tema pueda correr hoy mientras el componente de tabla no exista. No es un adorno: es la version que se va a ver en pantalla.",
+          "properties": {
+            "comoSeReformula": {
+              "type": "string",
+              "description": "Que cambia al quitar la rejilla, en una frase: \"en vez de llenar las cuatro casillas, se cuentan las que ya vienen llenas\".",
+              "minLength": 15,
+              "maxLength": 240
+            },
+            "expresion": {
+              "$ref": "#/$defs/renglonConHueco",
+              "description": "La misma pregunta escrita en UN renglon con EXACTAMENTE un hueco. Esto es lo unico que la app sabe dibujar hoy (src/componentes/Expresion.tsx:104 escribe lo tecleado en todos los huecos del renglon a la vez)."
+            },
+            "respuesta": {
+              "$ref": "#/$defs/tecleado",
+              "description": "La respuesta del plan B, tecleada con las doce teclas de app/estacion/completar.tsx:23-28: digitos y diagonal. Sin unidades: la unidad va en el enunciado."
+            },
+            "comoSeLee": {
+              "type": "string",
+              "description": "La respuesta del plan B dicha en voz alta: \"una casilla\", \"tres cuartos\".",
+              "minLength": 3,
+              "maxLength": 120
+            },
+            "queSePierde": {
+              "type": "string",
+              "description": "Que deja de aprender el estudiante sin la rejilla. Honesto: si no se pierde nada, este tema no necesitaba tabla y va al prompt lineal.",
+              "minLength": 15,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "comoSeReformula",
+            "expresion",
+            "respuesta",
+            "comoSeLee",
+            "queSePierde"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "pasoDelCanon",
+        "tabla",
+        "pistas",
+        "planB"
+      ],
+      "additionalProperties": false
+    },
+    "escalera": {
+      "type": "object",
+      "description": "Estacion 4, el procedimiento al reves. Los escalones suben de dificultad sin salirse de canon.cotas.",
+      "properties": {
+        "escalones": {
+          "type": "array",
+          "description": "Los escalones, del mas facil al mas dificil. Es una lista, no \"escalon 4 de 5\": en cual va lo deriva la app.",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "situacion": {
+                "type": "string",
+                "description": "Una frase de la vida real que situa el escalon, sin numeros que no esten en las cotas del canon.",
+                "minLength": 20,
+                "maxLength": 240
+              },
+              "tabla": {
+                "type": "object",
+                "description": "La rejilla de este escalon, con de una a cuatro celdas de tipo hueco. Puede pedir una celda del cuerpo, o un encabezado, que es el procedimiento al reves. La rejilla es un contenedor de renglones, no un quinto atomo: cada celda lleva adentro un renglon de los cuatro atomos de siempre. Cabe en 390 puntos de ancho: de dos a cuatro columnas, de uno a cinco renglones, y como mucho cuatro celdas de tipo hueco en toda la rejilla.",
+                "properties": {
+                  "deQueEs": {
+                    "type": "string",
+                    "description": "De que es esta rejilla, en una frase: \"cuadro de Punnett de la cruza Aa x Aa\", \"conteo de atomos de cada lado de la flecha\". Con los numeros y las letras del canon, no con otros.",
+                    "minLength": 10,
+                    "maxLength": 160
+                  },
+                  "rotuloEsquina": {
+                    "type": "string",
+                    "description": "Opcional. Lo que va en la esquina de arriba a la izquierda, donde se cruzan los dos encabezados: \"madre / padre\", \"elemento\". Se deja fuera cuando la esquina va vacia.",
+                    "minLength": 2,
+                    "maxLength": 40
+                  },
+                  "columnas": {
+                    "type": "array",
+                    "description": "Los encabezados de las columnas, de izquierda a derecha, uno por columna de datos. La columna de los rotulos de renglon no se cuenta aqui. Casi siempre son datos; son huecos solo cuando el ejercicio pide justamente deducir el encabezado.",
+                    "minItems": 2,
+                    "maxItems": 4,
+                    "items": {
+                      "description": "Encabezado de una columna.",
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                          "properties": {
+                            "tipo": {
+                              "const": "dato",
+                              "description": "Celda escrita desde el principio."
+                            },
+                            "partes": {
+                              "$ref": "#/$defs/renglon",
+                              "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                            },
+                            "deDondeSale": {
+                              "type": "string",
+                              "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                              "minLength": 4,
+                              "maxLength": 90
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "partes",
+                            "deDondeSale"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                          "properties": {
+                            "tipo": {
+                              "const": "hueco",
+                              "description": "Celda por llenar."
+                            },
+                            "respuesta": {
+                              "type": "string",
+                              "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                              "minLength": 1,
+                              "maxLength": 8,
+                              "pattern": "^[0-9A-Za-z/]{1,8}$"
+                            },
+                            "comoSeLee": {
+                              "type": "string",
+                              "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                              "minLength": 3,
+                              "maxLength": 120
+                            },
+                            "deDondeSale": {
+                              "type": "string",
+                              "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                              "minLength": 4,
+                              "maxLength": 90
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "respuesta",
+                            "comoSeLee",
+                            "deDondeSale"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    }
+                  },
+                  "filas": {
+                    "type": "array",
+                    "description": "Los renglones, de arriba a abajo. Cada renglon trae su rotulo y una celda por columna: filas[i].celdas tiene que traer exactamente tantas celdas como encabezados hay en columnas, ni una mas ni una menos.",
+                    "minItems": 1,
+                    "maxItems": 5,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "rotulo": {
+                          "description": "El rotulo del renglon: lo que va en la orilla izquierda.",
+                          "oneOf": [
+                            {
+                              "type": "object",
+                              "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                              "properties": {
+                                "tipo": {
+                                  "const": "dato",
+                                  "description": "Celda escrita desde el principio."
+                                },
+                                "partes": {
+                                  "$ref": "#/$defs/renglon",
+                                  "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                                },
+                                "deDondeSale": {
+                                  "type": "string",
+                                  "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                                  "minLength": 4,
+                                  "maxLength": 90
+                                }
+                              },
+                              "required": [
+                                "tipo",
+                                "partes",
+                                "deDondeSale"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                              "properties": {
+                                "tipo": {
+                                  "const": "hueco",
+                                  "description": "Celda por llenar."
+                                },
+                                "respuesta": {
+                                  "type": "string",
+                                  "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                                  "minLength": 1,
+                                  "maxLength": 8,
+                                  "pattern": "^[0-9A-Za-z/]{1,8}$"
+                                },
+                                "comoSeLee": {
+                                  "type": "string",
+                                  "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                                  "minLength": 3,
+                                  "maxLength": 120
+                                },
+                                "deDondeSale": {
+                                  "type": "string",
+                                  "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                                  "minLength": 4,
+                                  "maxLength": 90
+                                }
+                              },
+                              "required": [
+                                "tipo",
+                                "respuesta",
+                                "comoSeLee",
+                                "deDondeSale"
+                              ],
+                              "additionalProperties": false
+                            }
+                          ]
+                        },
+                        "celdas": {
+                          "type": "array",
+                          "description": "Las celdas del renglon, de izquierda a derecha, una por cada encabezado de columna y en el mismo orden.",
+                          "minItems": 2,
+                          "maxItems": 4,
+                          "items": {
+                            "description": "Una celda del cuerpo de la rejilla.",
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                                "properties": {
+                                  "tipo": {
+                                    "const": "dato",
+                                    "description": "Celda escrita desde el principio."
+                                  },
+                                  "partes": {
+                                    "$ref": "#/$defs/renglon",
+                                    "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                                  },
+                                  "deDondeSale": {
+                                    "type": "string",
+                                    "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                                    "minLength": 4,
+                                    "maxLength": 90
+                                  }
+                                },
+                                "required": [
+                                  "tipo",
+                                  "partes",
+                                  "deDondeSale"
+                                ],
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "object",
+                                "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                                "properties": {
+                                  "tipo": {
+                                    "const": "hueco",
+                                    "description": "Celda por llenar."
+                                  },
+                                  "respuesta": {
+                                    "type": "string",
+                                    "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                                    "minLength": 1,
+                                    "maxLength": 8,
+                                    "pattern": "^[0-9A-Za-z/]{1,8}$"
+                                  },
+                                  "comoSeLee": {
+                                    "type": "string",
+                                    "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                                    "minLength": 3,
+                                    "maxLength": 120
+                                  },
+                                  "deDondeSale": {
+                                    "type": "string",
+                                    "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                                    "minLength": 4,
+                                    "maxLength": 90
+                                  }
+                                },
+                                "required": [
+                                  "tipo",
+                                  "respuesta",
+                                  "comoSeLee",
+                                  "deDondeSale"
+                                ],
+                                "additionalProperties": false
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "rotulo",
+                        "celdas"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "deQueEs",
+                  "columnas",
+                  "filas"
+                ],
+                "additionalProperties": false
+              },
+              "pregunta": {
+                "type": "string",
+                "description": "Lo que se pregunta en este escalon, en una frase.",
+                "minLength": 10,
+                "maxLength": 200
+              },
+              "pistas": {
+                "type": "array",
+                "description": "Las pistas, escalonadas y en orden. La 1 reencuadra sin dar nada. La 2 senala el paso del canon que toca. La 3 casi da la respuesta. Es una lista con su texto, no un numero: cuantas quedan y cuando se liberan lo lleva la app.",
+                "minItems": 2,
+                "maxItems": 3,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "orden": {
+                      "type": "integer",
+                      "description": "1, 2 o 3, de menos ayuda a mas ayuda.",
+                      "minimum": 1,
+                      "maximum": 3
+                    },
+                    "texto": {
+                      "type": "string",
+                      "description": "El texto de la pista, una o dos frases. Con las palabras del vocabulario del canon, sin sinonimos.",
+                      "minLength": 15,
+                      "maxLength": 240
+                    }
+                  },
+                  "required": [
+                    "orden",
+                    "texto"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "planB": {
+                "type": "object",
+                "description": "El plan B lineal: la misma pregunta sin rejilla, para que el tema pueda correr hoy mientras el componente de tabla no exista. No es un adorno: es la version que se va a ver en pantalla.",
+                "properties": {
+                  "comoSeReformula": {
+                    "type": "string",
+                    "description": "Que cambia al quitar la rejilla, en una frase: \"en vez de llenar las cuatro casillas, se cuentan las que ya vienen llenas\".",
+                    "minLength": 15,
+                    "maxLength": 240
+                  },
+                  "expresion": {
+                    "$ref": "#/$defs/renglonConHueco",
+                    "description": "La misma pregunta escrita en UN renglon con EXACTAMENTE un hueco. Esto es lo unico que la app sabe dibujar hoy (src/componentes/Expresion.tsx:104 escribe lo tecleado en todos los huecos del renglon a la vez)."
+                  },
+                  "respuesta": {
+                    "$ref": "#/$defs/tecleado",
+                    "description": "La respuesta del plan B, tecleada con las doce teclas de app/estacion/completar.tsx:23-28: digitos y diagonal. Sin unidades: la unidad va en el enunciado."
+                  },
+                  "comoSeLee": {
+                    "type": "string",
+                    "description": "La respuesta del plan B dicha en voz alta: \"una casilla\", \"tres cuartos\".",
+                    "minLength": 3,
+                    "maxLength": 120
+                  },
+                  "queSePierde": {
+                    "type": "string",
+                    "description": "Que deja de aprender el estudiante sin la rejilla. Honesto: si no se pierde nada, este tema no necesitaba tabla y va al prompt lineal.",
+                    "minLength": 15,
+                    "maxLength": 240
+                  }
+                },
+                "required": [
+                  "comoSeReformula",
+                  "expresion",
+                  "respuesta",
+                  "comoSeLee",
+                  "queSePierde"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "situacion",
+              "tabla",
+              "pregunta",
+              "pistas",
+              "planB"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "escalones"
+      ],
+      "additionalProperties": false
+    },
+    "error": {
+      "type": "object",
+      "description": "Estacion 5, cazar el error. Se lee una rejilla que alguien mas lleno mal y se senala el paso equivocado. Aqui no se corrige nada, solo se acusa.",
+      "properties": {
+        "enunciado": {
+          "$ref": "#/$defs/renglon",
+          "description": "Que hizo la persona que se equivoco, en un renglon corto."
+        },
+        "tabla": {
+          "type": "object",
+          "description": "La rejilla como la lleno quien se equivoco. TODAS sus celdas son de tipo dato: aqui no se llena nada. Tiene que verse verosimil, con el error tipico del canon y no con un error que nadie comete. La rejilla es un contenedor de renglones, no un quinto atomo: cada celda lleva adentro un renglon de los cuatro atomos de siempre. Cabe en 390 puntos de ancho: de dos a cuatro columnas, de uno a cinco renglones, y como mucho cuatro celdas de tipo hueco en toda la rejilla.",
+          "properties": {
+            "deQueEs": {
+              "type": "string",
+              "description": "De que es esta rejilla, en una frase: \"cuadro de Punnett de la cruza Aa x Aa\", \"conteo de atomos de cada lado de la flecha\". Con los numeros y las letras del canon, no con otros.",
+              "minLength": 10,
+              "maxLength": 160
+            },
+            "rotuloEsquina": {
+              "type": "string",
+              "description": "Opcional. Lo que va en la esquina de arriba a la izquierda, donde se cruzan los dos encabezados: \"madre / padre\", \"elemento\". Se deja fuera cuando la esquina va vacia.",
+              "minLength": 2,
+              "maxLength": 40
+            },
+            "columnas": {
+              "type": "array",
+              "description": "Los encabezados de las columnas, de izquierda a derecha, uno por columna de datos. La columna de los rotulos de renglon no se cuenta aqui. Casi siempre son datos; son huecos solo cuando el ejercicio pide justamente deducir el encabezado.",
+              "minItems": 2,
+              "maxItems": 4,
+              "items": {
+                "description": "Encabezado de una columna.",
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                    "properties": {
+                      "tipo": {
+                        "const": "dato",
+                        "description": "Celda escrita desde el principio."
+                      },
+                      "partes": {
+                        "$ref": "#/$defs/renglon",
+                        "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                      },
+                      "deDondeSale": {
+                        "type": "string",
+                        "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                        "minLength": 4,
+                        "maxLength": 90
+                      }
+                    },
+                    "required": [
+                      "tipo",
+                      "partes",
+                      "deDondeSale"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                    "properties": {
+                      "tipo": {
+                        "const": "hueco",
+                        "description": "Celda por llenar."
+                      },
+                      "respuesta": {
+                        "type": "string",
+                        "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                        "minLength": 1,
+                        "maxLength": 8,
+                        "pattern": "^[0-9A-Za-z/]{1,8}$"
+                      },
+                      "comoSeLee": {
+                        "type": "string",
+                        "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                        "minLength": 3,
+                        "maxLength": 120
+                      },
+                      "deDondeSale": {
+                        "type": "string",
+                        "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                        "minLength": 4,
+                        "maxLength": 90
+                      }
+                    },
+                    "required": [
+                      "tipo",
+                      "respuesta",
+                      "comoSeLee",
+                      "deDondeSale"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "filas": {
+              "type": "array",
+              "description": "Los renglones, de arriba a abajo. Cada renglon trae su rotulo y una celda por columna: filas[i].celdas tiene que traer exactamente tantas celdas como encabezados hay en columnas, ni una mas ni una menos.",
+              "minItems": 1,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "rotulo": {
+                    "description": "El rotulo del renglon: lo que va en la orilla izquierda.",
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                        "properties": {
+                          "tipo": {
+                            "const": "dato",
+                            "description": "Celda escrita desde el principio."
+                          },
+                          "partes": {
+                            "$ref": "#/$defs/renglon",
+                            "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                          },
+                          "deDondeSale": {
+                            "type": "string",
+                            "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                            "minLength": 4,
+                            "maxLength": 90
+                          }
+                        },
+                        "required": [
+                          "tipo",
+                          "partes",
+                          "deDondeSale"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                        "properties": {
+                          "tipo": {
+                            "const": "hueco",
+                            "description": "Celda por llenar."
+                          },
+                          "respuesta": {
+                            "type": "string",
+                            "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                            "minLength": 1,
+                            "maxLength": 8,
+                            "pattern": "^[0-9A-Za-z/]{1,8}$"
+                          },
+                          "comoSeLee": {
+                            "type": "string",
+                            "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                            "minLength": 3,
+                            "maxLength": 120
+                          },
+                          "deDondeSale": {
+                            "type": "string",
+                            "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                            "minLength": 4,
+                            "maxLength": 90
+                          }
+                        },
+                        "required": [
+                          "tipo",
+                          "respuesta",
+                          "comoSeLee",
+                          "deDondeSale"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "celdas": {
+                    "type": "array",
+                    "description": "Las celdas del renglon, de izquierda a derecha, una por cada encabezado de columna y en el mismo orden.",
+                    "minItems": 2,
+                    "maxItems": 4,
+                    "items": {
+                      "description": "Una celda del cuerpo de la rejilla.",
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "description": "Celda que ya viene escrita. El estudiante la lee, no la llena.",
+                          "properties": {
+                            "tipo": {
+                              "const": "dato",
+                              "description": "Celda escrita desde el principio."
+                            },
+                            "partes": {
+                              "$ref": "#/$defs/renglon",
+                              "description": "Lo que dice la celda, escrito con los cuatro atomos. Corto: una celda mide tres o cuatro caracteres, no una frase. Sin atomos de tipo hueco: una celda que se llena es de tipo hueco, no un dato con un hueco dentro."
+                            },
+                            "deDondeSale": {
+                              "type": "string",
+                              "description": "De donde sale esta celda, en pocas palabras: \"renglon a con columna A\", \"atomos de H del lado izquierdo\", \"el brillo del azufre\". Es la comprobacion de coherencia de la rejilla: si no puedes decir de donde sale, la celda esta inventada y la rejilla no cuadra.",
+                              "minLength": 4,
+                              "maxLength": 90
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "partes",
+                            "deDondeSale"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "description": "Celda vacia: el recuadro que el estudiante llena. La respuesta correcta viaja aqui mismo, porque en una rejilla hay mas de un hueco y cada uno tiene la suya.",
+                          "properties": {
+                            "tipo": {
+                              "const": "hueco",
+                              "description": "Celda por llenar."
+                            },
+                            "respuesta": {
+                              "type": "string",
+                              "description": "Lo que tiene que quedar escrito en la celda, exacto y corto: \"Aa\", \"2\", \"3/4\", \"XY\". Solo digitos, letras y la diagonal. Nada que necesite subindice o superindice: si la respuesta de la celda fuera Xd con la d arriba, esa celda va como dato y el hueco se mueve a otra.",
+                              "minLength": 1,
+                              "maxLength": 8,
+                              "pattern": "^[0-9A-Za-z/]{1,8}$"
+                            },
+                            "comoSeLee": {
+                              "type": "string",
+                              "description": "Como se dice la respuesta en voz alta, para el lector de pantalla: \"A mayuscula, a minuscula\", \"dos\".",
+                              "minLength": 3,
+                              "maxLength": 120
+                            },
+                            "deDondeSale": {
+                              "type": "string",
+                              "description": "De donde sale la respuesta de esta celda, en pocas palabras: \"renglon a con columna A, mayuscula primero\". Es lo que amarra el hueco con los encabezados.",
+                              "minLength": 4,
+                              "maxLength": 90
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "respuesta",
+                            "comoSeLee",
+                            "deDondeSale"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "rotulo",
+                  "celdas"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "deQueEs",
+            "columnas",
+            "filas"
+          ],
+          "additionalProperties": false
+        },
+        "pasos": {
+          "type": "array",
+          "description": "Los cinco pasos del canon tal como los hizo esa persona, en orden y con la numeracion del canon. Uno de los cinco es el renglonMalo del canon.",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "properties": {
+              "numero": {
+                "type": "integer",
+                "description": "Del 1 al 5, el mismo numero que el paso lleva en el canon.",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "partes": {
+                "$ref": "#/$defs/renglon",
+                "description": "El paso escrito en un renglon, corto para que quepa junto a su numero (app/estacion/error.tsx:79-100)."
+              }
+            },
+            "required": [
+              "numero",
+              "partes"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "pasoMalo": {
+          "type": "integer",
+          "description": "Cual de los cinco pasos esta mal. Es canon.error.pasoQueCorrompe, no otro, y tiene que ser un paso que el canon ya enseño.",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "loQueEstaMal": {
+          "type": "object",
+          "description": "Que pedazo de la rejilla delata el error. Es lo que amarra el paso malo con lo que se ve en pantalla.",
+          "properties": {
+            "donde": {
+              "type": "string",
+              "description": "columna: el error esta en un encabezado de columna. fila: en el rotulo de un renglon. celda: dentro del cuerpo de la rejilla.",
+              "enum": [
+                "columna",
+                "fila",
+                "celda"
+              ]
+            },
+            "columna": {
+              "type": "integer",
+              "description": "Que columna, contando desde 1 de izquierda a derecha y sin contar la columna de los rotulos. Va cuando donde es columna o celda; se deja fuera cuando donde es fila.",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "fila": {
+              "type": "integer",
+              "description": "Que renglon, contando desde 1 de arriba a abajo. Va cuando donde es fila o celda; se deja fuera cuando donde es columna.",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "queDice": {
+              "$ref": "#/$defs/renglon",
+              "description": "Lo que ese pedazo dice hoy, tal como se ve en la rejilla de arriba."
+            },
+            "queDeberiaDecir": {
+              "$ref": "#/$defs/renglon",
+              "description": "Lo que tendria que decir. No se muestra en pantalla hasta que se caza el error."
+            }
+          },
+          "required": [
+            "donde",
+            "queDice",
+            "queDeberiaDecir"
+          ],
+          "additionalProperties": false
+        },
+        "porQue": {
+          "type": "string",
+          "description": "La pregunta que sigue una vez senalado el paso, en una frase: \"¿por que esa orilla esta mal?\".",
+          "minLength": 10,
+          "maxLength": 200
+        },
+        "motivos": {
+          "type": "array",
+          "description": "Los motivos entre los que se elige, con exactamente uno bueno. Los malos salen de canon.error.creenciaDeAtras y tienen que sonar razonables: un motivo absurdo se descarta sin pensar.",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "texto": {
+                "type": "string",
+                "description": "El motivo, corto: cabe en un renglon o dos de app/estacion/error.tsx:79-100.",
+                "minLength": 10,
+                "maxLength": 160
+              },
+              "esElBueno": {
+                "type": "boolean",
+                "description": "true en uno solo de los motivos."
+              },
+              "queRevela": {
+                "type": "string",
+                "description": "Que delata este motivo sobre lo que el estudiante cree. En el bueno, que entendio donde se rompe el procedimiento.",
+                "minLength": 15,
+                "maxLength": 240
+              }
+            },
+            "required": [
+              "texto",
+              "esElBueno",
+              "queRevela"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "planB": {
+          "type": "object",
+          "description": "El plan B lineal: la misma pregunta sin rejilla, para que el tema pueda correr hoy mientras el componente de tabla no exista. No es un adorno: es la version que se va a ver en pantalla.",
+          "properties": {
+            "comoSeReformula": {
+              "type": "string",
+              "description": "Que cambia al quitar la rejilla, en una frase: \"en vez de llenar las cuatro casillas, se cuentan las que ya vienen llenas\".",
+              "minLength": 15,
+              "maxLength": 240
+            },
+            "enunciado": {
+              "$ref": "#/$defs/renglon",
+              "description": "La misma pregunta escrita en renglones de atomos, sin rejilla. Las opciones y los motivos no cambian: ya son renglones y la pantalla de hoy los dibuja."
+            },
+            "queSePierde": {
+              "type": "string",
+              "description": "Que deja de aprender el estudiante sin la rejilla. Honesto: si no se pierde nada, este tema no necesitaba tabla y va al prompt lineal.",
+              "minLength": 15,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "comoSeReformula",
+            "enunciado",
+            "queSePierde"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "enunciado",
+        "tabla",
+        "pasos",
+        "pasoMalo",
+        "loQueEstaMal",
+        "porQue",
+        "motivos",
+        "planB"
+      ],
+      "additionalProperties": false
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede",
+      "description": "En este prompt NUNCA es null: si el tema llego hasta aqui es porque pide una rejilla, y hoy nada en src/componentes dibuja una. Se llena diciendo que rejilla hace falta, que componente falta para dibujarla y con que plan B corre el tema mientras no exista. Si ademas rejilla.comoSeLlena es banco, se dice tambien que falta el banco de fichas, porque el teclado de hoy no escribe letras."
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "titulo",
+    "rejilla",
+    "contacto",
+    "completar",
+    "escalera",
+    "error",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

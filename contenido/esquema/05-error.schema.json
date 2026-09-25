@@ -1,0 +1,393 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/05-error",
+  "$comment": "AUTOCONTENIDO: los $defs de partes.json estan copiados aqui abajo. Regenerar con: node contenido/esquema/armar.mjs",
+  "type": "object",
+  "description": "Estacion 5 · cazar el error. Se muestra un procedimiento resuelto por alguien mas, con exactamente un paso mal. El estudiante toca el paso que acusa y luego dice que se hizo mal. Los cinco pasos son los del canon; el paso corrompido es el error tipico del temario, ya ubicado por el canon, nunca un error nuevo. Aqui no se teclea nada y no hay huecos: se toca un paso y se elige un motivo.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del canon sin cambiarlo. Solo sirve para trazar de que tema es esta salida: el llamador lo compara contra el tema que pidio antes de guardar, y una respuesta que se cruza en un reintento se caza aqui.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La materia del tema, copiada del canon sin cambiarla.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "enunciado": {
+      "$ref": "#/$defs/renglon",
+      "description": "El renglon que abre la pantalla: de quien es la resolucion que se va a leer, con los datos del ejemplo canonico escritos con atomos, y el aviso de que hay exactamente un paso mal y hay que tocarlo. Mismos numeros que canon.ejemplo, sin cambiar ninguno."
+    },
+    "pasos": {
+      "type": "array",
+      "description": "Los cinco pasos tal como los escribio quien resolvio, en orden y sin saltarse ninguno. Son los cinco pasos de canon.procedimiento.pasos, con el de la posicion canon.error.pasoQueCorrompe reemplazado por canon.error.renglonMalo, y los posteriores reescritos arrastrando el numero malo. Ni cuatro ni seis: la pantalla dibuja cinco.",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "numero": {
+            "type": "integer",
+            "description": "La posicion del paso, del 1 al 5. Es la misma numeracion del canon: no se reordena.",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "partes": {
+            "$ref": "#/$defs/renglon",
+            "description": "El paso escrito con atomos, en la voz de quien resolvio: primera persona corta ('Volteo la segunda:', 'Divido entre el tiempo:') y enseguida la cuenta. Sin huecos: aqui no se llena nada. Cabe en dos renglones de un telefono de 390; si necesita tres, sobra explicacion. El paso malo se ve exactamente igual que los otros cuatro: ni mas corto, ni con comillas, ni con una marca que lo delate."
+          },
+          "siLoTocas": {
+            "type": "string",
+            "description": "Lo que la app contesta si el estudiante acusa ESTE paso. En un paso que esta bien, di que hace bien este paso en concreto, nombrando su cuenta o sus numeros, de modo que la respuesta no le quede a ningun otro paso: nunca un 'no, ese no' generico y nunca la misma frase en dos pasos. En un paso que arrastra el error, la cuenta si esta bien hecha: dilo, y di que ese paso recibio sus numeros en vez de inventarlos, sin nombrar el paso malo ni el numero corrompido. En el paso malo, confirma la acusacion sin decir todavia que se hizo mal: eso se pregunta en porQue y se contesta en motivos.",
+            "minLength": 30,
+            "maxLength": 260
+          }
+        },
+        "required": [
+          "numero",
+          "partes",
+          "siLoTocas"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "pasoMalo": {
+      "type": "integer",
+      "description": "Cual de los cinco pasos esta mal, por su numero. Es exactamente canon.error.pasoQueCorrompe: no se elige otro paso porque parezca mas cazable. Solo uno esta mal; nunca dos, nunca cero.",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "arrastre": {
+      "type": "string",
+      "description": "Que numeros de los pasos posteriores al malo vienen del error, dichos por su paso: 'el 20 del paso 3 es el 20 de arriba de la division del paso 4, y de ahi sale el 5 del paso 5'. La app lo muestra al cerrar la estacion, cuando el estudiante ya acuso y ya eligio motivo. Tambien es la prueba del ejercicio: si no puedes nombrar que arrastro el error, tus pasos posteriores no lo arrastran y la estacion se volvio un juego de buscar el renglon raro. Cuando pasoMalo es 5 no hay nada despues que arrastrar: dilo asi, y di cual es entonces la señal que lo delata.",
+      "minLength": 40,
+      "maxLength": 400
+    },
+    "porQue": {
+      "type": "string",
+      "description": "La pregunta que aparece una vez que el paso esta marcado, antes de los motivos: 'Y que hizo mal en ese paso'. Una sola pregunta corta. No adelanta el motivo bueno ni repite el renglon.",
+      "minLength": 10,
+      "maxLength": 160
+    },
+    "motivos": {
+      "type": "array",
+      "description": "Los motivos que se ofrecen despues de acusar el paso. Exactamente uno tiene esElBueno en true. Los malos salen de canon.error.creenciaDeAtras y de confusiones reales del tema: tienen que sonar razonables, porque un motivo que nadie escogeria no diagnostica nada. Ninguno dice lo mismo que otro con otras palabras.",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "properties": {
+          "texto": {
+            "type": "string",
+            "description": "El motivo como se lee en el boton: una frase en tercera persona sobre lo que hizo quien resolvio ('Sumo en vez de multiplicar', 'Volteo la fraccion equivocada'). Corta, sin numeros de paso adentro.",
+            "minLength": 10,
+            "maxLength": 120
+          },
+          "esElBueno": {
+            "type": "boolean",
+            "description": "true en el motivo que de verdad describe el error del canon. Exactamente uno de los motivos lo trae en true."
+          },
+          "queRevela": {
+            "type": "string",
+            "description": "Lo que delata elegir este motivo. En un motivo malo: que cree el estudiante que lo trae aqui, y la señal concreta de los renglones que ese motivo no explica. En el motivo bueno: por que si es ese, dicho contra lo que se ve en los renglones. Se describe, no se regaña.",
+            "minLength": 20,
+            "maxLength": 320
+          }
+        },
+        "required": [
+          "texto",
+          "esElBueno",
+          "queRevela"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "pistas": {
+      "type": "array",
+      "description": "Las pistas, escalonadas y en orden. La app decide cuando libera cada una; el contenido solo trae el texto y el orden. La 1 reencuadra sin señalar nada. La 2 estrecha la busqueda a una zona o a un dato. La 3, si va, dice que comparar, sin nombrar el numero del paso malo.",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "properties": {
+          "orden": {
+            "type": "integer",
+            "description": "En que lugar va esta pista, empezando en 1. Es el orden del contenido, no cuantas quedan.",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "texto": {
+            "type": "string",
+            "description": "La pista. Ni da el numero del paso malo ni nombra el motivo bueno.",
+            "minLength": 20,
+            "maxLength": 280
+          }
+        },
+        "required": [
+          "orden",
+          "texto"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede",
+      "description": "null cuando la estacion salio completa. Se llena cuando el paso malo del canon no se puede escribir con los cuatro atomos, cuando el error solo se ve en una tabla o en un dibujo, o cuando el error del canon cae en un paso que no deja nada que arrastrar y el ejercicio se vuelve trivial. Antes de llenarlo, intenta una vez reescribir el renglon malo con los atomos que si hay; si esa reescritura cambia el error que el tema enseña, entonces si se llena."
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "enunciado",
+    "pasos",
+    "pasoMalo",
+    "arrastre",
+    "porQue",
+    "motivos",
+    "pistas",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,762 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/X4-no-encaja",
+  "$comment": "Caso aparte. AUTOCONTENIDO: los $defs de partes.json los pega node contenido/esquema/armar.mjs --escribir. Las formas de aporte.contacto, aporte.escalera, aporte.motivos y aporte.video estan copiadas campo por campo de 02-contacto, 04-escalera, 05-error y 01-ver (seccion 9 del briefing): no son formas nuevas. Si alguno de esos cuatro esquemas cambia un nombre de campo, este archivo se realinea con el, no al contrario.",
+  "type": "object",
+  "description": "El aporte de un tema de noEncajan[] a su tema anfitrion. Un tema de noEncajan[] no produce seis estaciones: produce UN pedazo que se cose a una estacion de otro tema que si las tiene. Este esquema dice de que tema se trata, a donde entra, y el pedazo ya escrito en la forma de esa estacion.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema ANFITRION dentro de su materia, copiado de su canon sin cambiarlo. El tema absorbido no tiene numero: vive en noEncajan[]. Sirve para trazar a que tema se cose este aporte.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La clave de la materia, copiada del temario. El tema absorbido y su anfitrion son siempre de la misma materia.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "temaAbsorbido": {
+      "type": "string",
+      "description": "El nombre del tema que no encaja, copiado LETRA POR LETRA del campo tema de noEncajan[] del temario. No lo acortas, no lo reescribes, no le quitas el parentesis: asi se rastrea de vuelta.",
+      "minLength": 5,
+      "maxLength": 200
+    },
+    "anfitrion": {
+      "type": "object",
+      "description": "El tema del temario que recibe el aporte. Sale de temas[] de la misma materia y viene en la entrada: no lo eliges tu. Viaja SIEMPRE, salvo el unico caso de un tema que el temario manda fuera sin nombrar ningun anfitrion.",
+      "properties": {
+        "numero": {
+          "type": "integer",
+          "description": "El numero del anfitrion dentro de su materia, copiado del temario.",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "titulo": {
+          "type": "string",
+          "description": "El titulo del anfitrion, copiado del temario sin cambiarle una letra.",
+          "minLength": 3,
+          "maxLength": 120
+        }
+      },
+      "required": [
+        "numero",
+        "titulo"
+      ],
+      "additionalProperties": false
+    },
+    "queSeRescata": {
+      "type": "string",
+      "description": "La UNA idea del tema absorbido que sobrevive, en una frase. Es la prueba de que hay algo que absorber: si no puedes nombrarla sin repetir el titulo, no hay aporte y entraPor es fuera.",
+      "minLength": 20,
+      "maxLength": 300
+    },
+    "entraPor": {
+      "type": "string",
+      "description": "Por donde entra el aporte. video: reemplaza la estacion 1 del anfitrion, porque el video ahora tambien cuenta esto. contacto: se agregan preguntas a la estacion 2. escalera: se agregan escalones a la estacion 4. motivos: se agregan motivos equivocados a la estacion 5. fuera: no entra por ningun lado, el tema se queda afuera del circulo. Lo decide el campo queHacer del temario, no tu gusto.",
+      "enum": [
+        "video",
+        "contacto",
+        "escalera",
+        "motivos",
+        "fuera"
+      ]
+    },
+    "porQueAhi": {
+      "type": "string",
+      "description": "Por que esa puerta y no otra, en dos frases. Se apoya en el campo porQue del temario: que le falta al tema absorbido para sostener seis estaciones por si solo.",
+      "minLength": 20,
+      "maxLength": 400
+    },
+    "costura": {
+      "type": "object",
+      "description": "Como se pega el aporte al anfitrion sin romperlo. Se llena siempre, tambien cuando entraPor es fuera.",
+      "properties": {
+        "donde": {
+          "type": "string",
+          "description": "El lugar exacto: 'al final de preguntas[] de la estacion 2', 'como escalones 4 y 5 de la estacion 4', 'reemplaza la estacion 1 completa', 'no se cose: queda fuera del circulo'.",
+          "minLength": 10,
+          "maxLength": 200
+        },
+        "reemplazaOAgrega": {
+          "type": "string",
+          "description": "reemplaza: lo que escribes sustituye la salida de esa estacion del anfitrion (solo el caso video). agrega: se anexa a la lista que esa estacion ya trae. nada: entraPor es fuera y no hay nada que coser.",
+          "enum": [
+            "reemplaza",
+            "agrega",
+            "nada"
+          ]
+        },
+        "queNoDuplica": {
+          "type": "string",
+          "description": "Que del anfitrion NO vuelves a decir: su ejemplo canonico, sus numeros, la pregunta que su estacion ya hace. Un aporte que repite lo que ya estaba le quita un turno al estudiante y no le da nada.",
+          "minLength": 15,
+          "maxLength": 400
+        }
+      },
+      "required": [
+        "donde",
+        "reemplazaOAgrega",
+        "queNoDuplica"
+      ],
+      "additionalProperties": false
+    },
+    "aporte": {
+      "type": "object",
+      "description": "El pedazo, ya escrito en la forma de la estacion por la que entra. Va EXACTAMENTE una de las cuatro llaves: la que nombra entraPor y ninguna otra. Cuando entraPor es fuera, este campo no viaja y noSePuede carga el motivo.",
+      "minProperties": 1,
+      "maxProperties": 1,
+      "properties": {
+        "video": {
+          "type": "object",
+          "description": "Estacion 1 del anfitrion, reescrita para que el video tambien cuente el tema absorbido. Mismos campos que 01-ver: reemplaza su salida, no se suma a ella. Sin duracion: la duracion sale del video que se elija, no se inventa.",
+          "properties": {
+            "pregunta": {
+              "type": "string",
+              "description": "La pregunta que abre el tema y que el video contesta. Cabe en dos renglones del encabezado (app/estacion/ver.tsx:33). Sigue siendo la pregunta del ANFITRION: el tema absorbido entra como la parte que la hace mas interesante, no la secuestra.",
+              "minLength": 10,
+              "maxLength": 140
+            },
+            "resumen": {
+              "type": "string",
+              "description": "Dos frases debajo del video (app/estacion/ver.tsx:52). La primera dice de que va el tema del anfitrion; la segunda mete lo que se rescata del tema absorbido. Sin markdown, sin salto de linea.",
+              "minLength": 60,
+              "maxLength": 320
+            },
+            "consultaDeBusqueda": {
+              "type": "string",
+              "description": "La cadena que se teclea en un buscador para hallar el video. Palabras que un video mexicano de ese grado usaria de verdad, e incluye lo del tema absorbido para que el video elegido si lo cubra.",
+              "minLength": 10,
+              "maxLength": 160
+            },
+            "criterios": {
+              "type": "array",
+              "description": "Con que se decide si un video sirve. Uno de los criterios dice explicitamente que el video tiene que cubrir el tema absorbido: si no, el aporte se pierde y nadie se entera.",
+              "minItems": 3,
+              "maxItems": 6,
+              "items": {
+                "type": "string",
+                "description": "Un criterio comprobable mirando el video: el grado al que le habla, el idioma y el acento, que no pase de los minutos que un chavo aguanta, y que cubra el tema absorbido.",
+                "minLength": 15,
+                "maxLength": 240
+              }
+            }
+          },
+          "required": [
+            "pregunta",
+            "resumen",
+            "consultaDeBusqueda",
+            "criterios"
+          ],
+          "additionalProperties": false
+        },
+        "contacto": {
+          "type": "object",
+          "description": "Preguntas que se AGREGAN al final de preguntas[] de la estacion 2 del anfitrion. Misma forma que 02-contacto. La estacion 2 no penaliza: aqui se diagnostica lo que el estudiante cree, no se le cobra.",
+          "properties": {
+            "preguntas": {
+              "type": "array",
+              "description": "De una a tres preguntas. Son pocas a proposito: se estan anexando a las que el anfitrion ya tiene, y la estacion 2 no puede volverse un examen.",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "enunciado": {
+                    "$ref": "#/$defs/renglon",
+                    "description": "La pregunta, escrita con atomos. Sin huecos: aqui se elige, no se teclea."
+                  },
+                  "opciones": {
+                    "type": "array",
+                    "description": "Cuatro opciones, A a D, una sola correcta. Cada una cabe en UN renglon de 64 de alto (app/estacion/contacto.tsx:113-121): una fraccion, una operacion, o tres o cuatro palabras. Lo que no quepa se desborda, no se parte.",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "letra": {
+                          "type": "string",
+                          "description": "La letra de la opcion. Las cuatro letras aparecen una vez cada una y en orden.",
+                          "enum": [
+                            "A",
+                            "B",
+                            "C",
+                            "D"
+                          ]
+                        },
+                        "partes": {
+                          "$ref": "#/$defs/renglon",
+                          "description": "La opcion escrita con atomos, corta. Sin huecos."
+                        },
+                        "esCorrecta": {
+                          "type": "boolean",
+                          "description": "Verdadero en una sola de las cuatro opciones de cada pregunta."
+                        },
+                        "queRevela": {
+                          "type": "string",
+                          "description": "Lo que delata quien la elige. En las equivocadas, la creencia que lo lleva ahi, sin regañar. En la correcta, que es lo que ya entendio. Una de las tres equivocadas de cada pregunta tiene que ser el error tipico del canon.",
+                          "minLength": 15,
+                          "maxLength": 240
+                        }
+                      },
+                      "required": [
+                        "letra",
+                        "partes",
+                        "esCorrecta",
+                        "queRevela"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "enunciado",
+                  "opciones"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "preguntas"
+          ],
+          "additionalProperties": false
+        },
+        "escalera": {
+          "type": "object",
+          "description": "Escalones que se AGREGAN al final de escalones[] de la estacion 4 del anfitrion. Misma forma que 04-escalera. Entran al final, asi que son los mas dificiles de la escalera, y aun asi no se salen de canon.cotas.",
+          "properties": {
+            "escalones": {
+              "type": "array",
+              "description": "De uno a tres escalones, en orden de dificultad. Es un ARREGLO: la app deriva en cual va el estudiante, tu no numeras nada.",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "situacion": {
+                    "type": "string",
+                    "description": "Una situacion de la vida real, en una o dos frases. Es lo que el tema absorbido aporta: el caso que el anfitrion solo no traia. Sin numeros que contradigan la expresion.",
+                    "minLength": 20,
+                    "maxLength": 300
+                  },
+                  "expresion": {
+                    "$ref": "#/$defs/renglonConHueco",
+                    "description": "El renglon con EXACTAMENTE un hueco. Las unidades van escritas en el renglon o en la situacion: el hueco recibe solo el numero."
+                  },
+                  "pregunta": {
+                    "type": "string",
+                    "description": "Que se pide, en una frase, para que el hueco no quede a interpretacion.",
+                    "minLength": 10,
+                    "maxLength": 200
+                  },
+                  "respuesta": {
+                    "type": "object",
+                    "description": "Lo que va en el hueco. Solo digitos y diagonal: es lo que el teclado puede escribir (app/estacion/completar.tsx:23-28), y la estacion 4 se somete a la misma regla.",
+                    "properties": {
+                      "tecleado": {
+                        "$ref": "#/$defs/tecleado",
+                        "description": "La respuesta correcta, tal como queda tecleada."
+                      },
+                      "aceptaTambien": {
+                        "type": "array",
+                        "description": "Otras formas que tambien se dan por buenas: la fraccion sin simplificar, el entero escrito como fraccion. Arreglo vacio cuando no hay ninguna otra, y eso ya es una respuesta.",
+                        "minItems": 0,
+                        "maxItems": 4,
+                        "items": {
+                          "$ref": "#/$defs/tecleado"
+                        }
+                      },
+                      "comoSeLee": {
+                        "type": "string",
+                        "description": "La respuesta dicha en voz alta, para el lector de pantalla: 'ocho neutrones', 'doce quintos'.",
+                        "minLength": 3,
+                        "maxLength": 120
+                      }
+                    },
+                    "required": [
+                      "tecleado",
+                      "aceptaTambien",
+                      "comoSeLee"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "pistas": {
+                    "type": "array",
+                    "description": "Dos o tres pistas, escalonadas. La app decide cuando liberar cada una; tu solo escribes el orden y el texto.",
+                    "minItems": 2,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "orden": {
+                          "type": "integer",
+                          "description": "1 reencuadra la pregunta sin dar dato. 2 nombra el paso del canon que toca. 3 casi da la respuesta, sin decirla.",
+                          "minimum": 1,
+                          "maximum": 3
+                        },
+                        "texto": {
+                          "type": "string",
+                          "description": "La pista, en una o dos frases. Nombra el paso del canon con su numero y con las palabras del canon, no con sinonimos.",
+                          "minLength": 15,
+                          "maxLength": 240
+                        }
+                      },
+                      "required": [
+                        "orden",
+                        "texto"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "situacion",
+                  "expresion",
+                  "pregunta",
+                  "respuesta",
+                  "pistas"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "escalones"
+          ],
+          "additionalProperties": false
+        },
+        "motivos": {
+          "type": "object",
+          "description": "Motivos que se AGREGAN a motivos[] de la estacion 5 del anfitrion. Misma forma que 05-error, con una sola diferencia: el motivo bueno ya lo escribio la estacion 5 del anfitrion y no puede haber dos, asi que todo lo que entra por aqui lleva esElBueno en false.",
+          "properties": {
+            "motivos": {
+              "type": "array",
+              "description": "Uno o dos motivos equivocados. La creencia del tema absorbido entra aqui: es el motivo que suena mas razonable de la lista y por eso enseña algo cuando se descarta.",
+              "minItems": 1,
+              "maxItems": 2,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "texto": {
+                    "type": "string",
+                    "description": "El motivo, en una frase corta que quepa en un boton. Tiene que ser distinto palabra por palabra de los motivos que el anfitrion ya trae: la pantalla usa el texto como llave de lista (app/estacion/error.tsx:82) y dos textos iguales se pisan.",
+                    "minLength": 10,
+                    "maxLength": 160
+                  },
+                  "esElBueno": {
+                    "type": "boolean",
+                    "description": "Siempre false. El motivo correcto de esa estacion 5 ya existe y es del anfitrion.",
+                    "const": false
+                  },
+                  "queRevela": {
+                    "type": "string",
+                    "description": "Que cree quien lo elige, y por que no alcanza. Sale de la creencia del tema absorbido, no de canon.error.creenciaDeAtras, que ya la usa el anfitrion.",
+                    "minLength": 15,
+                    "maxLength": 240
+                  }
+                },
+                "required": [
+                  "texto",
+                  "esElBueno",
+                  "queRevela"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "motivos"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede"
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "temaAbsorbido",
+    "queSeRescata",
+    "entraPor",
+    "porQueAhi",
+    "costura",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$comment": "Si entraPor es video, el aporte trae la llave video y ninguna otra, y el anfitrion es obligatorio.",
+      "if": {
+        "required": [
+          "entraPor"
+        ],
+        "properties": {
+          "entraPor": {
+            "const": "video"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "anfitrion",
+          "aporte"
+        ],
+        "properties": {
+          "aporte": {
+            "required": [
+              "video"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "$comment": "Si entraPor es contacto, el aporte trae la llave contacto y ninguna otra, y el anfitrion es obligatorio.",
+      "if": {
+        "required": [
+          "entraPor"
+        ],
+        "properties": {
+          "entraPor": {
+            "const": "contacto"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "anfitrion",
+          "aporte"
+        ],
+        "properties": {
+          "aporte": {
+            "required": [
+              "contacto"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "$comment": "Si entraPor es escalera, el aporte trae la llave escalera y ninguna otra, y el anfitrion es obligatorio.",
+      "if": {
+        "required": [
+          "entraPor"
+        ],
+        "properties": {
+          "entraPor": {
+            "const": "escalera"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "anfitrion",
+          "aporte"
+        ],
+        "properties": {
+          "aporte": {
+            "required": [
+              "escalera"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "$comment": "Si entraPor es motivos, el aporte trae la llave motivos y ninguna otra, y el anfitrion es obligatorio.",
+      "if": {
+        "required": [
+          "entraPor"
+        ],
+        "properties": {
+          "entraPor": {
+            "const": "motivos"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "anfitrion",
+          "aporte"
+        ],
+        "properties": {
+          "aporte": {
+            "required": [
+              "motivos"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "$comment": "Si queda fuera, no hay aporte que coser y noSePuede tiene que venir lleno, no en null.",
+      "if": {
+        "required": [
+          "entraPor"
+        ],
+        "properties": {
+          "entraPor": {
+            "const": "fuera"
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "required": [
+            "aporte"
+          ]
+        },
+        "properties": {
+          "noSePuede": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

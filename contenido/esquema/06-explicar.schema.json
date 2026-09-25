@@ -1,0 +1,453 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "andamio/06-explicar",
+  "$comment": "AUTOCONTENIDO: los $defs de partes.json se copian aqui abajo. Regenerar con: node contenido/esquema/armar.mjs --escribir",
+  "type": "object",
+  "description": "Estacion 6 · explicarlo con tus palabras. Trae los tres textos que la pantalla ya pinta (titulo, aclaracion, nota) y la rubrica con la que una SEGUNDA llamada califica lo que el estudiante escribio. Esta estacion no tiene respuesta correcta y no tiene pistas, asi que lo unico que se puede fijar de antemano es la rubrica: hoy no existe en ningun archivo (app/estacion/explicar.tsx:14-22) y sin ella la estacion no se puede calificar.",
+  "properties": {
+    "temaNumero": {
+      "type": "integer",
+      "description": "El numero del tema dentro de su materia, copiado del canon sin cambiarlo. Solo sirve para trazar de que tema es esta salida: el llamador lo compara contra el tema que pidio antes de guardar, y una respuesta que se cruza en un reintento se caza aqui.",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "materia": {
+      "type": "string",
+      "description": "La materia del tema, copiada del canon sin cambiarla.",
+      "enum": [
+        "matematicas",
+        "biologia",
+        "fisica",
+        "quimica"
+      ]
+    },
+    "titulo": {
+      "type": "string",
+      "description": "La peticion, concreta y en una sola pregunta: 'Explicame por que la distancia va arriba y el tiempo abajo'. Es lo que la pantalla pinta en grande (app/estacion/explicar.tsx:31). Va en TEXTO PLANO: la pantalla no dibuja fracciones ni subindices, asi que una fraccion se dice en palabras ('tres quintos entre un cuarto', nunca 3/5) y una formula con subindice se dice por su nombre ('agua'). Nunca 'Explica el tema' ni 'Dime que aprendiste'.",
+      "minLength": 25,
+      "maxLength": 100
+    },
+    "aclaracion": {
+      "type": "string",
+      "description": "Las dos o tres lineas debajo del titulo. Dicen que va con sus palabras, que aqui no hay nada que copiar y que no hay pistas a proposito. Tambien acotan la peticion: de que tiene que hablar y de que no.",
+      "minLength": 40,
+      "maxLength": 220
+    },
+    "nota": {
+      "type": "string",
+      "description": "La linea chica del pie (app/estacion/explicar.tsx:53): que puede discutir lo que se le conteste. Es una promesa que la rubrica tiene que poder cumplir: sin contraargumentos, esta nota miente.",
+      "minLength": 30,
+      "maxLength": 160
+    },
+    "rubrica": {
+      "type": "object",
+      "description": "Con que se califica lo que el estudiante escribio. La pantalla de hoy no la usa: se guarda con el tema y se le manda a una segunda llamada junto con el texto del estudiante. Se escribe pensando en quien va a leer esa respuesta sin haber visto el tema.",
+      "properties": {
+        "ideasQueCuentan": {
+          "type": "array",
+          "description": "Las ideas que tienen que aparecer para que la explicacion cuente como entendida. De dos a cuatro, ni una mas: una lista larga se convierte en una lista de palabras obligatorias. Son ideas, no frases exactas: el estudiante las puede decir con las palabras que quiera y en el orden que quiera. Salen del procedimiento y del porQue de los pasos del canon, no de campos nuevos. Exactamente UNA lleva esImprescindible en true: la que contesta el titulo.",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "idea": {
+                "type": "string",
+                "description": "La idea en una frase, dicha como la diria alguien que ya entendio. No es la definicion del libro ni el nombre del procedimiento.",
+                "minLength": 20,
+                "maxLength": 240
+              },
+              "porQueImporta": {
+                "type": "string",
+                "description": "Que se cae si esta idea falta: en que caso se equivoca quien no la tiene. Si la respuesta honesta es 'nada', la idea no va en esta lista.",
+                "minLength": 20,
+                "maxLength": 300
+              },
+              "comoSuenaDicha": {
+                "type": "string",
+                "description": "Como la escribiria un estudiante de este grado, con sus palabras y sin terminos tecnicos. Es el ejemplo con el que la segunda llamada reconoce la idea aunque venga dicha de otro modo.",
+                "minLength": 15,
+                "maxLength": 240
+              },
+              "esImprescindible": {
+                "type": "boolean",
+                "description": "true en la UNA idea que contesta el titulo, y false en las demas. La explicacion cuenta si aparecen al menos minimoParaContar ideas Y entre ellas la imprescindible. Sin eso el estudiante puede aprobar con las ideas que sirven para cachar el error y no con la que contesta la pregunta: eso es saber la señal, no la razon."
+              }
+            },
+            "required": [
+              "idea",
+              "porQueImporta",
+              "comoSuenaDicha",
+              "esImprescindible"
+            ],
+            "additionalProperties": false
+          },
+          "contains": {
+            "type": "object",
+            "properties": {
+              "esImprescindible": {
+                "const": true
+              }
+            },
+            "required": [
+              "esImprescindible"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        "minimoParaContar": {
+          "type": "integer",
+          "description": "Cuantas de las ideas de arriba tienen que aparecer para que la explicacion cuente. Nunca mas que el numero de ideas de la lista. La idea marcada esImprescindible cuenta aparte: aunque el minimo se alcance sin ella, la explicacion no cuenta. Si con la imprescindible sola ya se ve que entendio, pon 1.",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "suenanBienYNoDicen": {
+          "type": "array",
+          "description": "Respuestas que suenan bien y no dicen nada. El caso clasico es repetir el truco con otras palabras, o nombrar la formula sin decir que significa. De dos a cuatro, escritas en primera persona, tal como las escribiria el estudiante.",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "respuesta": {
+                "type": "string",
+                "description": "La respuesta tal como la escribiria el estudiante. Tiene que sonar bien: una respuesta mala a la vista no le sirve de nada a la segunda llamada.",
+                "minLength": 20,
+                "maxLength": 300
+              },
+              "queLaDelata": {
+                "type": "string",
+                "description": "La señal de que aqui se memorizo sin entender: repite el procedimiento con otras palabras, apela a la clase, habla de los numeros y no de lo que miden, o se apoya en una regla que se cae con otros numeros.",
+                "minLength": 20,
+                "maxLength": 300
+              },
+              "queLeFalta": {
+                "type": "string",
+                "description": "Cual de las ideasQueCuentan le falta, en una frase, para que la segunda llamada sepa que pedirle sin regalarsela.",
+                "minLength": 20,
+                "maxLength": 300
+              }
+            },
+            "required": [
+              "respuesta",
+              "queLaDelata",
+              "queLeFalta"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "contraargumentos": {
+          "type": "array",
+          "description": "Si el estudiante dice tal cosa, que se le contesta para empujarlo un paso mas. Esto es lo que hace honesta la nota de que puede discutir la respuesta: sin contraargumentos, la app le dice que le falta algo y ahi se queda. De dos a cuatro. Uno atiende la creencia de canon.error.creenciaDeAtras. Otro atiende a quien si entendio y no sabe decirlo.",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "siDice": {
+                "type": "string",
+                "description": "Lo que el estudiante dice o reclama, en sus palabras y en primera persona. Puede ser una creencia equivocada, una explicacion a medias, o un desacuerdo con lo que se le contesto.",
+                "minLength": 20,
+                "maxLength": 300
+              },
+              "seLeContesta": {
+                "type": "string",
+                "description": "Que se le contesta: una razon y, cuando se pueda, una pregunta que el mismo puede resolver con el ejemplo del canon. No le da la explicacion completa y no lo descalifica. Si lo que dijo es cierto a medias, se le concede la parte cierta.",
+                "minLength": 30,
+                "maxLength": 400
+              },
+              "aDondeLoEmpuja": {
+                "type": "string",
+                "description": "Que idea de ideasQueCuentan queda a la vista si acepta el empujon. Sin esto, la contestacion es nada mas tener la ultima palabra.",
+                "minLength": 20,
+                "maxLength": 300
+              }
+            },
+            "required": [
+              "siDice",
+              "seLeContesta",
+              "aDondeLoEmpuja"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "ejemploQueSiCuenta": {
+          "type": "string",
+          "description": "Una explicacion completa que si cuenta, en primera persona, de dos a cuatro frases, escrita como la escribiria un estudiante de este grado. No es la explicacion del libro ni la mejor posible: es el piso de lo que cuenta, para que la segunda llamada no pida mas de lo que se pide aqui.",
+          "minLength": 120,
+          "maxLength": 700
+        },
+        "noCuentaEnContra": {
+          "type": "array",
+          "description": "Lo que la segunda llamada NO le puede quitar: la ortografia y los acentos, que no use las palabras del vocabulario, que escriba corto, que no ponga ningun numero. Se califica la idea, no la redaccion.",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 200
+          }
+        }
+      },
+      "required": [
+        "ideasQueCuentan",
+        "minimoParaContar",
+        "suenanBienYNoDicen",
+        "contraargumentos",
+        "ejemploQueSiCuenta",
+        "noCuentaEnContra"
+      ],
+      "additionalProperties": false
+    },
+    "noSePuede": {
+      "$ref": "#/$defs/noSePuede",
+      "description": "null cuando el tema se puede explicar con palabras. Se llena cuando la peticion no se puede hacer sin un dibujo que la pantalla no tiene (una grafica, una recta numerica, un diagrama), o cuando el canon llego con noSePuede lleno y la explicacion se quedaria hablando de algo que el estudiante nunca vio. Antes de llenarlo, intenta una vez pedir el porque de otra parte del procedimiento que si se pueda decir en palabras."
+    }
+  },
+  "required": [
+    "temaNumero",
+    "materia",
+    "titulo",
+    "aclaracion",
+    "nota",
+    "rubrica",
+    "noSePuede"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "texto": {
+      "type": "object",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "textoCorto": {
+      "type": "object",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "fraccion": {
+      "type": "object",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "properties": {
+        "tipo": {
+          "const": "fraccion"
+        },
+        "arriba": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "abajo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tipo",
+        "arriba",
+        "abajo"
+      ],
+      "additionalProperties": false
+    },
+    "simbolo": {
+      "type": "object",
+      "description": "Un simbolo con lo que lleva pegado arriba o abajo. Cubre subindice, superindice, carga y unidad: {valor:'H',sub:'2'} para H2 de H2SO4, {valor:'10',sup:'8'} para 10 a la 8, {valor:'Na',sup:'+'} para el ion sodio, {valor:'cm',sup:'3'} para centimetros cubicos, {valor:'v',sub:'f'} para la velocidad final. Si no lleva ni sub ni sup, es texto: usa texto.",
+      "properties": {
+        "tipo": {
+          "const": "simbolo"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12
+        },
+        "sub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        },
+        "sup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "sub"
+          ]
+        },
+        {
+          "required": [
+            "sup"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "hueco": {
+      "type": "object",
+      "description": "El recuadro que el estudiante llena. No lleva nada mas: ni la respuesta, ni el ancho, ni el alto. La respuesta correcta viaja en el campo respuesta de la estacion; el ancho y el alto los pone la pantalla. Un renglon lleva UN solo hueco: la pantalla escribe lo tecleado en todos los huecos a la vez.",
+      "properties": {
+        "tipo": {
+          "const": "hueco"
+        }
+      },
+      "required": [
+        "tipo"
+      ],
+      "additionalProperties": false
+    },
+    "parteMat": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/texto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "parteMatCorta": {
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoCorto"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglon": {
+      "type": "array",
+      "description": "Un renglon escrito con atomos. SIN huecos: el esquema los rechaza, porque en las pantallas que usan este renglon (enunciados, opciones, pasos de la 5, renglones del canon) no hay teclado y un recuadro punteado no se puede llenar nunca.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 1,
+      "maxItems": 24,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "renglonConHueco": {
+      "type": "array",
+      "description": "Un renglon con EXACTAMENTE un atomo de tipo hueco, y el esquema lo hace cumplir. Con dos o mas, la pantalla escribe lo tecleado en todos y el ejercicio deja de tener sentido (src/componentes/Expresion.tsx:104). Con cero, la estacion 3 muestra un renglon ya resuelto y el teclado no escribe en ninguna parte.",
+      "items": {
+        "$ref": "#/$defs/parteMat"
+      },
+      "minItems": 2,
+      "maxItems": 24,
+      "contains": {
+        "$ref": "#/$defs/hueco"
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "tecleado": {
+      "type": "string",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "pattern": "^[0-9]+(/[0-9]+)?$",
+      "maxLength": 9
+    },
+    "noSePuede": {
+      "description": "La salida de emergencia. null cuando todo salio bien. Si el tema no se puede escribir con estos cuatro atomos o con este teclado, se llena esto en vez de inventar algo que la pantalla no puede dibujar.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "que": {
+              "type": "string",
+              "description": "Que pedazo no se pudo escribir.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "porQue": {
+              "type": "string",
+              "description": "Que atomo, que teclado o que dibujo hace falta.",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "queHagoConEsto": {
+              "type": "string",
+              "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
+              "minLength": 10,
+              "maxLength": 400
+            }
+          },
+          "required": [
+            "que",
+            "porQue",
+            "queHagoConEsto"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}
