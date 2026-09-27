@@ -95,6 +95,27 @@ const sondeo = banderas.has('--sondeo');
 const seco = banderas.has('--seco');
 const rehacer = banderas.has('--rehacer');
 
+// Se comprueban aqui, antes de parir veinte hijos que impriman veinte veces el
+// mismo reclamo. El sondeo no busca videos, asi que no pide la de OpenAI.
+if (!seco) {
+  const hacenFalta = ['ANTHROPIC_API_KEY', ...(sondeo ? [] : ['OPENAI_API_KEY'])].filter(
+    (n) => !process.env[n],
+  );
+  if (hacenFalta.length) {
+    console.error(
+      [
+        '',
+        `Falta ${hacenFalta.join(' y ')} en ${join(raiz, '.env')}.`,
+        '',
+        ...hacenFalta.map((n) => `    ${n}=pega-aqui-la-llave`),
+        '',
+        'Ese archivo lo ignora git y este script lo carga solo. No se mando nada.',
+      ].join('\n'),
+    );
+    process.exit(1);
+  }
+}
+
 const temario = JSON.parse(await readFile(join(aqui, 'temarios', `${materia}.json`), 'utf8'));
 const numeros = [];
 for (let n = desde; n <= hasta; n += 1) {

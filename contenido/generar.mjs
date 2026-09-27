@@ -216,11 +216,32 @@ const seco = banderas.has('--seco');
 
 // El SDK lee ANTHROPIC_API_KEY del entorno por su cuenta. La llave no se copia
 // a ninguna variable de aquí y no se imprime en ningún mensaje.
-if (!seco && !process.env.ANTHROPIC_API_KEY) {
-  morir(
-    'Falta ANTHROPIC_API_KEY en el entorno.\n' +
-      'No la escribas en ningun archivo del repo: exportala en tu shell.',
-  );
+//
+// Las dos llaves se comprueban aquí, antes de la primera llamada. La de OpenAI no
+// se usa hasta la estación 1, y descubrir que falta ahí sería descubrirlo con el
+// canon ya pagado. El sondeo (`--solo canon`) no la necesita, así que no la pide.
+function faltaLaLlave(nombre, paraQue) {
+  if (process.env[nombre]) return null;
+  return [
+    `Falta ${nombre}, que es ${paraQue}.`,
+    '',
+    `Ponla en ${join(dirname(aqui), '.env')}, en el renglon que ya esta ahi:`,
+    '',
+    `    ${nombre}=pega-aqui-la-llave`,
+    '',
+    'Ese archivo lo ignora git, y generar.mjs y tanda.mjs lo cargan solos: no hace',
+    'falta exportar nada en la terminal. Si de todos modos la exportas, esa gana.',
+  ].join('\n');
+}
+
+if (!seco) {
+  const pendientes = [
+    faltaLaLlave('ANTHROPIC_API_KEY', 'la que escribe el contenido'),
+    solo === 'canon'
+      ? null
+      : faltaLaLlave('OPENAI_API_KEY', 'la que busca el video de la estacion 1'),
+  ].filter(Boolean);
+  if (pendientes.length) morir(pendientes.join('\n\n'));
 }
 
 const cliente = seco ? null : new Anthropic();
