@@ -52,3 +52,6 @@ _viejo/
 # que plugins estan prendidos. Si alguna vez se le agrega un bloque `env`, las
 # llaves van en `.env`, no ahi.
 .claude/settings.local.json
+
+# Estado de una corrida de tanda.mjs, no contenido: se regenera solo.
+contenido/temas/_tanda-*.json
