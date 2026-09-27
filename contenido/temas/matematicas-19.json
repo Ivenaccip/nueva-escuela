@@ -1,0 +1,183 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 19,
+  "titulo": "Razón: comparar dos cantidades",
+  "generadoEn": "2026-09-27T03:32:14.078Z",
+  "canon": {
+    "temaNumero": 19,
+    "materia": "matematicas",
+    "titulo": "Razón: comparar dos cantidades",
+    "notacion": "lineal",
+    "formaDeRespuesta": "fraccion",
+    "procedimiento": {
+      "nombre": "Escribir y leer una razón entre dos cantidades",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas las dos cantidades que se comparan y escribes la primera arriba y la segunda abajo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Niñas:"
+            },
+            {
+              "tipo": "texto",
+              "valor": "12"
+            },
+            {
+              "tipo": "texto",
+              "valor": "Niños:"
+            },
+            {
+              "tipo": "texto",
+              "valor": "8"
+            }
+          ],
+          "porQue": "Una razón siempre compara dos cantidades de cosas distintas. Si confundes cuál va arriba, toda la razón sale volteada y significa lo contrario."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Escribes la razón con dos puntos entre los números: el primero, dos puntos, el segundo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "12 : 8"
+            }
+          ],
+          "porQue": "Los dos puntos significan «por cada»: 12 por cada 8 es la forma de comparar dos cantidades sin sumarlas ni restarlas."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Encuentras un número que divide a los dos, y divides ambos entre ese número.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "12 ÷ 4 = 3"
+            },
+            {
+              "tipo": "texto",
+              "valor": "8 ÷ 4 = 2"
+            }
+          ],
+          "porQue": "La razón simplificada usa números más chicos pero dice lo mismo: por cada 3 niñas hay 2 niños. Con números chicos ves el patrón que se repite."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Escribes la razón simplificada con dos puntos y también como fracción apilada.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "3 : 2 ="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 2
+            }
+          ],
+          "porQue": "La razón 3:2 y la fracción 3/2 dicen lo mismo: la proporción que existe entre las dos cantidades. La fracción te deja usar la razón para calcular otros casos."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Lees la razón en voz alta como «tantos por cada tantos».",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Tres por cada dos"
+            }
+          ],
+          "porQue": "Leer la razón en voz alta te confirma que la entendiste: si hay 12 niñas por cada 8 niños, y simplificas, eso es lo mismo que 3 niñas por cada 2 niños. El patrón es el mismo."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un grupo con 12 niñas y 8 niños",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "12 : 8"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "3 : 2 ="
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 3,
+          "abajo": 2
+        }
+      ],
+      "resultadoEnPalabras": "tres por cada dos"
+    },
+    "error": {
+      "enUnaFrase": "Restas las dos cantidades en vez de escribir la razón.",
+      "creenciaDeAtras": "cree que comparar dos números siempre significa ver en cuánto se diferencian, porque restar es la operación que conoce para ver cuál es más grande",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "12 − 8 = 4"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Hay 4 más"
+        }
+      ],
+      "comoSeCacha": "Contesta «hay 4 más» cuando la pregunta pide una razón. Una resta da una diferencia, una razón da una proporción; son respuestas a preguntas distintas."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "No simplifica la razón y deja los números originales.",
+        "creenciaDeAtras": "cree que la razón 12:8 y la razón 3:2 son diferentes, porque los números no son iguales, y no ve que significan lo mismo"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "razón",
+        "queEs": "La comparación entre dos cantidades que dice «tantos de una cosa por cada tantos de otra». La razón 3:2 significa 3 niñas por cada 2 niños.",
+        "noEsLoMismoQue": "la diferencia o la resta, que dice en cuánto se diferencian dos cantidades"
+      },
+      {
+        "palabra": "por cada",
+        "queEs": "Las palabras que describen una razón: significa que el patrón se repite tantas veces como haga falta. En 3:2, por cada grupo de 3 niñas hay un grupo de 2 niños."
+      },
+      {
+        "palabra": "simplificar una razón",
+        "queEs": "Dividir los dos números de la razón entre el mismo número para escribirla con números más chicos, sin cambiar lo que la razón significa."
+      },
+      {
+        "palabra": "proporción",
+        "queEs": "La relación que existe entre dos cantidades, escrita como una razón. La proporción de niñas a niños es 3:2."
+      }
+    ],
+    "cotas": {
+      "numeros": "números enteros del 1 al 20; al simplificar, los números que resultan son enteros chicos, del 1 al 10; el máximo común divisor de los dos números siempre es mayor que 1 para que la razón se pueda simplificar",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": ":"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

@@ -51,6 +51,63 @@ Nada de esto aparece en ninguna salida, en ningún campo:
   ejemplo y su vocabulario son ley. No renombras un paso, no cambias los
   números del ejemplo, no usas un sinónimo de una palabra del vocabulario.
 
+## Los cuatro átomos, en mal y en bien
+
+Todo lo que se ve como matemáticas se escribe con cuatro átomos. Éstos son los
+errores de forma que de verdad se han cometido al escribirlos, cada uno con su
+arreglo. Míralos antes de escribir el primer renglón.
+
+**Un `simbolo` lleva `sub` o `sup`, y lo que lleve no puede venir vacío.** Un
+número pelón no es un `simbolo`, es `texto`.
+
+```
+mal   {"tipo":"simbolo","valor":"2","sup":""}
+mal   {"tipo":"simbolo","valor":"12"}
+bien  {"tipo":"texto","valor":"12"}
+bien  {"tipo":"simbolo","valor":"2","sup":"3"}        2³
+bien  {"tipo":"simbolo","valor":"v","sub":"f"}        v con f al pie
+```
+
+**Cada átomo lleva su `tipo`.** Un objeto sin `tipo` no es un átomo: la pantalla
+lo dibuja como un recuadro vacío.
+
+```
+mal   {"texto":"360 ="}
+mal   {"valor":"360 ="}
+bien  {"tipo":"texto","valor":"360 ="}
+```
+
+**Dentro de una fracción no caben átomos.** `arriba` y `abajo` son una sola
+cadena, de 40 caracteres o menos.
+
+```
+mal   {"tipo":"fraccion","arriba":[{"tipo":"texto","valor":"3"}],"abajo":"5"}
+bien  {"tipo":"fraccion","arriba":3,"abajo":5}
+bien  {"tipo":"fraccion","arriba":"velocidad final − inicial","abajo":"tiempo"}
+```
+
+**Un renglón es siempre un arreglo de átomos**, aunque traiga uno solo, y nunca
+una cadena suelta.
+
+```
+mal   "3/5 ÷ 1/4"
+bien  [{"tipo":"fraccion","arriba":3,"abajo":5},
+       {"tipo":"texto","valor":"÷"},
+       {"tipo":"fraccion","arriba":1,"abajo":4}]
+```
+
+**Un objeto del esquema es un objeto, no el arreglo que lleva dentro.** Si un
+campo pide `{"nombre": ..., "pasos": [...]}`, no devuelvas los pasos pelones.
+
+```
+mal   "procedimiento": [ {"numero":1, ...}, {"numero":2, ...} ]
+bien  "procedimiento": {"nombre":"Dividir una fracción entre otra",
+                        "pasos":[ {"numero":1, ...}, {"numero":2, ...} ]}
+```
+
+El signo menos es `−` (U+2212), no un guion. El de multiplicar es `×`. La flecha
+de una reacción es `→` y va en `texto`.
+
 ## Lo que devuelves
 
 Devuelves **una sola llamada a la herramienta**, con el esquema que se te dio y

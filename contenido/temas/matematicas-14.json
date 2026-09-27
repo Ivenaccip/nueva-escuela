@@ -1,0 +1,178 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 14,
+  "titulo": "De fracción a decimal y de vuelta",
+  "generadoEn": "2026-09-27T03:30:29.216Z",
+  "canon": {
+    "temaNumero": 14,
+    "materia": "matematicas",
+    "titulo": "De fracción a decimal y de vuelta",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Pasar de fracción a decimal dividiendo numerador entre denominador",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Planteas la división del numerador entre el denominador.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 8
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 3 ÷ 8"
+            }
+          ],
+          "porQue": "Una fracción es una división: el numerador es lo que se reparte y el denominador es cuántas partes iguales. El símbolo de fracción y el símbolo de división dicen lo mismo."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Haces la división: coloca el 3 en la galera y el 8 afuera, y empieza la cuenta.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "3 ÷ 8:  3 no cabe en 8, así que el resultado comienza con 0."
+            }
+          ],
+          "porQue": "El numerador es más chico que el denominador, así que el resultado va a empezar con un cero antes del punto. Si el numerador fuera más grande, el resultado empezaría con un entero."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Cuentas cuántas veces cabe el 8 en 30, resta y baja un cero de nuevo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "30 ÷ 8 = 3 de cociente, quedan 6. Baja otro cero: 60."
+            }
+          ],
+          "porQue": "Cuando el cociente es más chico que el divisor, agregas un cero al residuo para seguir contando, y al cociente le sumas un lugar decimal. Así la división avanza paso a paso."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Repites el proceso hasta que el residuo sea cero o notes que el residuo se repite.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "60 ÷ 8 = 7, quedan 4. Baja un cero: 40. 40 ÷ 8 = 5, quedan 0."
+            }
+          ],
+          "porQue": "Cuando el residuo es cero, la división termina y el decimal es exacto. Si el residuo vuelve a aparecer, el decimal se repite para siempre."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Lees el resultado: si terminó en cero, escribes el decimal exacto; si se repitió, marcas qué cifra se repite.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 8
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 0.375"
+            }
+          ],
+          "porQue": "El cociente es el decimal buscado, con cada dígito en su posición: décimos, centésimos, milésimos. Reconocer cuándo termina y cuándo repite te avisa si la fracción es exacta o periódica."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "Convertir tres octavos a número decimal",
+      "planteamiento": [
+        {
+          "tipo": "fraccion",
+          "arriba": 3,
+          "abajo": 8
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "0.375"
+        }
+      ],
+      "resultadoEnPalabras": "cero punto trescientos setenta y cinco"
+    },
+    "error": {
+      "enUnaFrase": "Lee la fracción como 'tres punto ocho' sin hacer la división.",
+      "creenciaDeAtras": "cree que el numerador se lee antes del punto decimal y el denominador después, así que 3/8 es lo mismo que escribir 3.8",
+      "pasoQueCorrompe": 1,
+      "renglonMalo": [
+        {
+          "tipo": "fraccion",
+          "arriba": 3,
+          "abajo": 8
+        },
+        {
+          "tipo": "texto",
+          "valor": "= 3.8"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "3.8"
+        }
+      ],
+      "comoSeCacha": "Tres octavos es menor que uno, así que el resultado tiene que ser más chico que uno. Tres punto ocho es casi el doble, más grande que uno. El resultado no puede ser más grande que la fracción de la que empezaste."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Divide el denominador entre el numerador en vez de al revés.",
+        "creenciaDeAtras": "cree que en una fracción se divide el número más grande entre el más chico, sin importar cuál esté arriba"
+      },
+      {
+        "enUnaFrase": "Cuando regresa de decimal a fracción, escribe 0.25 como 25/10 en vez de 25/100.",
+        "creenciaDeAtras": "cree que el número de ceros en el denominador es el mismo que el número de dígitos después del punto decimal, sin contar el puesto donde van"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "numerador",
+        "queEs": "El número de arriba en una fracción. Es lo que se reparte.",
+        "noEsLoMismoQue": "denominador, que es el de abajo y dice de qué tamaño son los pedazos"
+      },
+      {
+        "palabra": "denominador",
+        "queEs": "El número de abajo en una fracción. Es cuántas partes iguales se dividen el entero.",
+        "noEsLoMismoQue": "numerador, que es el de arriba y dice cuántos pedazos tienes"
+      },
+      {
+        "palabra": "decimal exacto",
+        "queEs": "Un número decimal que termina, como 0.375. La división entre el denominador termina cuando el residuo es cero."
+      },
+      {
+        "palabra": "decimal periódico",
+        "queEs": "Un número decimal donde una cifra o un grupo de cifras se repite para siempre, como 0.333... La división entre el denominador nunca termina."
+      },
+      {
+        "palabra": "residuo",
+        "queEs": "Lo que sobra después de una división. Si en cada paso el residuo es distinto, la división avanza. Si se repite, el decimal se repite."
+      }
+    ],
+    "cotas": {
+      "numeros": "Fracciones con numerador del 1 al 9 y denominador del 2 al 8. Decimales exactos hasta milésimos; decimales periódicos de una cifra que se repite.",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

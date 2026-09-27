@@ -1,0 +1,165 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 16,
+  "titulo": "Suma y resta de enteros",
+  "generadoEn": "2026-09-27T03:31:12.181Z",
+  "canon": {
+    "temaNumero": 16,
+    "materia": "matematicas",
+    "titulo": "Suma y resta de enteros",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Sumar y restar números con signo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Separas el signo de la operación: identifica cuál es el número de partida y cuál es el movimiento sobre la recta.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Partida: 3. Movimiento: restar 5 es moverse 5 hacia la izquierda."
+            }
+          ],
+          "porQue": "El signo que viene con un número dice si es positivo o negativo; el signo de la operación dice si sumas o restas. Son dos cosas distintas y hay que verlas aparte para no confundir."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Interpreta qué significa cada signo: positivo es derecha, negativo es izquierda.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "3 está a la derecha de 0. Restar 5 significa moverse 5 lugares a la izquierda."
+            }
+          ],
+          "porQue": "En la recta numérica, los números positivos están a la derecha del 0 y los negativos a la izquierda. Sumar es avanzar; restar es retroceder. Esto te dice hacia dónde ir, no qué números juntar."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Muévete sobre la recta numérica según la operación.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Comienzas en 3 y te mueves 5 lugares a la izquierda."
+            }
+          ],
+          "porQue": "El movimiento es concreto: si cuentas los lugares que recorres, el sitio donde terminas es el resultado. No juntas números; los ubicas en la recta."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Lee dónde terminaste: ese es el resultado.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Terminas en −2."
+            }
+          ],
+          "porQue": "Después de moverte, el número donde estás es la respuesta. Si empezaste en 3 y llegaste a −2, entonces 3 − 5 = −2."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Comprueba: en la recta, cuenta los pasos de tu resultado hacia la partida; debes llegar.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "De −2 a 3 hay 5 pasos a la derecha. Comprueba: −2 + 5 = 3."
+            }
+          ],
+          "porQue": "Si la suma del resultado y lo que restaste da la partida, la operación es correcta. Esto te asegura que no cometiste el error de juntar números en vez de moverte."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un movimiento en una recta numérica que parte del 3 y retrocede 5 lugares",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "3 −"
+        },
+        {
+          "tipo": "texto",
+          "valor": " (5)"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "−2"
+        }
+      ],
+      "resultadoEnPalabras": "menos dos"
+    },
+    "error": {
+      "enUnaFrase": "Junta los números y le deja el signo del primero: suma 3 + 5 pero escribe el signo del 3.",
+      "creenciaDeAtras": "cree que cuando ve dos números seguidos debe sumarlos sin importar el signo de la operación, y luego le pone el signo del primero",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Suma 3 + 5 = 8 y le pones el signo del 3."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "−8"
+        }
+      ],
+      "comoSeCacha": "El resultado es más negativo (está más a la izquierda) que la partida. Si empiezas en 3 y restas, nunca puedes terminar en un número tan negativo como −8 cuando sólo restas 5."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "número con signo",
+        "queEs": "Un número acompañado de un más o un menos que dice si está a la derecha (positivo) o a la izquierda (negativo) del 0 en la recta.",
+        "noEsLoMismoQue": "el signo de la operación, que dice si sumas o restas"
+      },
+      {
+        "palabra": "operación",
+        "queEs": "El signo que está entre dos números y que dice qué hacer: el más pide sumar, el menos pide restar.",
+        "noEsLoMismoQue": "el signo que viene pegado a un número"
+      },
+      {
+        "palabra": "recta numérica",
+        "queEs": "Una línea con números ordenados: el 0 en medio, los positivos a la derecha y los negativos a la izquierda. Sumar es avanzar hacia la derecha; restar es retroceder hacia la izquierda."
+      },
+      {
+        "palabra": "partida",
+        "queEs": "El número donde comienzas el movimiento en la recta."
+      },
+      {
+        "palabra": "movimiento",
+        "queEs": "El desplazamiento sobre la recta: cuántos lugares avanzas o retrocedes, y hacia dónde."
+      }
+    ],
+    "cotas": {
+      "numeros": "enteros del −12 al 12; suma y resta sin punto decimal; el resultado siempre cabe en ese rango",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "el tema pide flechas y movimientos sobre una recta numérica, pero la notación lineal sólo dibuja renglones con átomos",
+      "porQue": "la pantalla necesita un dibujo de una recta con números, flechas de movimiento, y marcas de punto de partida y punto final. Los cuatro átomos (texto, fracción, símbolo, hueco) no pueden hacer esto.",
+      "queHagoConEsto": "cambiar la notación a 'figura' y enviar el tema a un prompt que sepa dibujar rectas numéricas con flechas de movimiento, o reformular el tema para que la respuesta sea sólo el número final sin pedir la visualización del movimiento en la recta"
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

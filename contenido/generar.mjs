@@ -24,6 +24,7 @@
 // Lee contenido/LEEME.md antes de tocar esto.
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
@@ -466,6 +467,19 @@ async function llamarConReintentos(opciones) {
 function comprobarEsquema(paso, salida) {
   const validar = validadores.get(paso.esquema);
   if (!validar(salida)) {
+    // Se guarda lo rechazado. Un prompt no se arregla adivinando qué devolvió el
+    // modelo: el error de ajv dice qué campo está mal, no qué escribió en su lugar,
+    // y eso último es justo lo que hay que enseñarle a no hacer.
+    // Síncrono a propósito: `morir()` sale del proceso y una escritura con promesa
+    // no alcanza a terminar.
+    const donde = join(dirTemas, `_rechazado-${materia}-${numero}-${paso.clave}.json`);
+    try {
+      mkdirSync(dirTemas, { recursive: true });
+      writeFileSync(donde, JSON.stringify(salida, null, 2) + '\n', 'utf8');
+      console.error(`      lo rechazado se guardó en ${donde}`);
+    } catch {
+      // Si no se puede escribir, el error de ajv de abajo sigue siendo lo importante.
+    }
     throw new Rajada(
       `${paso.clave}: la salida no valida contra ${paso.esquema}\n${contarErrores(validar)}`,
     );

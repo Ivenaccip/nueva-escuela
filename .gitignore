@@ -55,3 +55,6 @@ _viejo/
 
 # Estado de una corrida de tanda.mjs, no contenido: se regenera solo.
 contenido/temas/_tanda-*.json
+
+# Salidas rechazadas, para leer por que fallo un prompt. Se regeneran.
+contenido/temas/_rechazado-*.json

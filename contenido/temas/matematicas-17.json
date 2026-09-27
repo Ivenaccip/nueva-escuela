@@ -1,0 +1,202 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 17,
+  "titulo": "Multiplicación y división de enteros",
+  "generadoEn": "2026-09-27T03:31:33.177Z",
+  "canon": {
+    "temaNumero": 17,
+    "materia": "matematicas",
+    "titulo": "Multiplicación y división de enteros",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Multiplicar y dividir enteros con signos",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Cuentas cuántos números negativos hay en la operación.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Operación"
+            },
+            {
+              "tipo": "texto",
+              "valor": "(−2) ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "(−3):"
+            },
+            {
+              "tipo": "texto",
+              "valor": "dos números negativos"
+            }
+          ],
+          "porQue": "El signo del resultado depende de cuántos negativos multipliques. Es lo primero que tienes que identificar, antes de hacer la cuenta."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Decides el signo: si hay un número par de negativos, el resultado es positivo. Si hay un número impar de negativos, el resultado es negativo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Dos negativos: número par → resultado positivo"
+            }
+          ],
+          "porQue": "Cada negativo que multiplicas cambia el signo una vez. Dos cambios te devuelven al positivo. Tres cambios te dejan en negativo."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Multiplicas o divides los números sin el signo, como si todos fueran positivos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2 × 3 = 6"
+            }
+          ],
+          "porQue": "La multiplicación o división de los números en sí es independiente del signo. Primero resuelves la cuenta numérica."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Le pones el signo que decidiste en el paso 2 al resultado del paso 3.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "(−2) ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "(−3) ="
+            },
+            {
+              "tipo": "texto",
+              "valor": "+6"
+            }
+          ],
+          "porQue": "El número que calculaste lleva el signo que ya elegiste. Un resultado sin signo es un resultado incompleto."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Compruebas si tu resultado tiene sentido usando un caso que ya conoces.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Comprobación: 2 ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "3 ="
+            },
+            {
+              "tipo": "texto",
+              "valor": "+6 ✓"
+            }
+          ],
+          "porQue": "Si multiplicas dos positivos y te da un positivo, tu patrón de signos funciona. Si algo no cuadra con lo que ya sabes, el error está en alguno de los pasos anteriores."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "dos números negativos que se multiplican",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "(−2) ×"
+        },
+        {
+          "tipo": "texto",
+          "valor": "(−3)"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "+6"
+        }
+      ],
+      "resultadoEnPalabras": "más seis"
+    },
+    "error": {
+      "enUnaFrase": "Aplica la regla de los signos a una suma en lugar de una multiplicación.",
+      "creenciaDeAtras": "cree que la regla menos por menos es más funciona igual en la suma, así que −4 + (−5) debe dar un positivo porque tiene dos signos negativos",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Dos negativos: número par → resultado positivo"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "−4 +"
+        },
+        {
+          "tipo": "texto",
+          "valor": "(−5) ="
+        },
+        {
+          "tipo": "texto",
+          "valor": "+9"
+        }
+      ],
+      "comoSeCacha": "El resultado +9 es mayor que cada uno de los números que sumaste. Cuando sumas números negativos, el resultado tiene que ser más negativo que ambos, no más positivo."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Confunde multiplicación con suma al ver dos números negativos juntos.",
+        "creenciaDeAtras": "cree que cualquier vez que haya dos números negativos, la regla de signos se aplica automáticamente, sin importar si se están sumando o multiplicando"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "número negativo",
+        "queEs": "Un número menor que cero, acompañado de un signo menos. Representa deuda, pérdida o movimiento hacia atrás."
+      },
+      {
+        "palabra": "número par",
+        "queEs": "Un número que se divide entre dos sin dejar residuo: 2, 4, 6, 8."
+      },
+      {
+        "palabra": "número impar",
+        "queEs": "Un número que al dividirse entre dos deja residuo de uno: 1, 3, 5, 7.",
+        "noEsLoMismoQue": "número par"
+      },
+      {
+        "palabra": "la regla de los signos",
+        "queEs": "Una regla que solo funciona en multiplicación y división: número par de negativos da positivo, número impar de negativos da negativo.",
+        "noEsLoMismoQue": "la suma de números negativos, donde siempre el resultado es más negativo"
+      },
+      {
+        "palabra": "entero",
+        "queEs": "Un número sin decimales: puede ser positivo, negativo o cero."
+      }
+    ],
+    "cotas": {
+      "numeros": "enteros del 1 al 10; hasta tres números en una operación; resultados entre −100 y +100, sin decimales",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "×"
+        },
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

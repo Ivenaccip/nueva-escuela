@@ -1,0 +1,218 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 18,
+  "titulo": "Jerarquía de operaciones",
+  "generadoEn": "2026-09-27T03:34:31.319Z",
+  "canon": {
+    "temaNumero": 18,
+    "materia": "matematicas",
+    "titulo": "Jerarquía de operaciones",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Resolver una expresión combinada respetando el orden de operaciones",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Resuelves lo que está entre paréntesis.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2 + 3 ×"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "(4 − 1)",
+              "sup": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "÷ 3  →  2 + 3 ×"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "3",
+              "sup": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "÷ 3"
+            }
+          ],
+          "porQue": "Los paréntesis agrupan números que se calculan primero. Si esperas a hacer 4 − 1 después de las potencias o multiplicaciones, todo te sale diferente."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Calculas las potencias.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2 + 3 ×"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "3",
+              "sup": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "÷ 3  →  2 + 3 × 9 ÷ 3"
+            }
+          ],
+          "porQue": "Las potencias se hacen antes que las multiplicaciones y divisiones. En 3² el cuadrado le pertenece solo al 3, no al signo ni a nada que esté al lado."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Haces las multiplicaciones y divisiones en orden, de izquierda a derecha.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2 + 3 × 9 ÷ 3  →  2 + 27 ÷ 3  →  2 + 9"
+            }
+          ],
+          "porQue": "Multiplicar y dividir tienen la misma jerarquía, así que se hacen en el orden en que aparecen. Si multiplicas primero donde está la división, el resultado cambia de antes a después."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Haces las sumas y restas en orden, de izquierda a derecha.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2 + 9  →  11"
+            }
+          ],
+          "porQue": "Las sumas y restas van al final porque la adición y sustracción tienen menor jerarquía. Sumar de izquierda a derecha te da el resultado correcto."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Verificas que el orden de operaciones se respetó y que los cálculos son correctos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Paréntesis, potencias, multiplicación/división, suma/resta. El resultado es 11."
+            }
+          ],
+          "porQue": "Repasar el orden evita que se te olvide dónde debería empezar o si saltaste un paso. Un número diferente indica que el orden se violó en algún lado."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una operación combinada que mezcla paréntesis, potencia, multiplicación, división, suma y resta",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "2 + 3 ×"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "(4 − 1)",
+          "sup": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "÷ 3"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "11"
+        }
+      ],
+      "resultadoEnPalabras": "once"
+    },
+    "error": {
+      "enUnaFrase": "Resuelves de izquierda a derecha sin respetar el orden de operaciones.",
+      "creenciaDeAtras": "cree que todas las operaciones tienen la misma importancia y se resuelven simplemente en el orden en que aparecen",
+      "pasoQueCorrompe": 1,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "2 + 3 = 5  →  5 ×"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "(4 − 1)",
+          "sup": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= 5 × 9 = 45  →  45 ÷ 3 = 15"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "15"
+        }
+      ],
+      "comoSeCacha": "El resultado es diferente al hacer la operación sin paréntesis. Si el paréntesis no cambia nada, el paréntesis no sirvió de nada."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Escribes −3² = 9 porque elevas el signo menos junto con el número.",
+        "creenciaDeAtras": "cree que el exponente se aplica a todo lo que ve: el signo y el número juntos, cuando el exponente solo afecta al número que está inmediatamente antes de él"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "jerarquía de operaciones",
+        "queEs": "El orden en que se resuelven las operaciones en una expresión: primero paréntesis, luego potencias, después multiplicación y división, y al final suma y resta."
+      },
+      {
+        "palabra": "paréntesis",
+        "queEs": "Los símbolos ( ) que agrupan operaciones. Indicam que eso se calcula antes que el resto."
+      },
+      {
+        "palabra": "potencia",
+        "queEs": "Una multiplicación corta: el exponente dice cuántas veces se multiplica la base por sí misma. El exponente solo afecta al número que está justo antes de él.",
+        "noEsLoMismoQue": "una multiplicación común, porque los exponentes tienen mayor jerarquía"
+      },
+      {
+        "palabra": "de izquierda a derecha",
+        "queEs": "El orden en que lees: cuando dos operaciones tienen la misma jerarquía, resuelves la que aparece primero a la izquierda."
+      }
+    ],
+    "cotas": {
+      "numeros": "números enteros del 1 al 10; bases y exponentes del 1 al 3; el resultado siempre es un número entero positivo",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "×"
+        },
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        },
+        {
+          "tipo": "texto",
+          "valor": "("
+        },
+        {
+          "tipo": "texto",
+          "valor": ")"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

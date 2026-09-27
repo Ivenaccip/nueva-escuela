@@ -1,0 +1,163 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 15,
+  "titulo": "La recta numérica con negativos",
+  "generadoEn": "2026-09-27T03:30:49.225Z",
+  "canon": {
+    "temaNumero": 15,
+    "materia": "matematicas",
+    "titulo": "La recta numérica con negativos",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Ubicar números con signo en la recta y comparar sus distancias al cero",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Dibujas una recta horizontal con el cero al centro.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Recta con cero en el centro"
+            }
+          ],
+          "porQue": "El cero es el punto de partida. A su derecha van los positivos y a su izquierda los negativos. Sin él, no tienes referencia para saber dónde va cada número."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Escribes los números positivos a la derecha del cero y los negativos a la izquierda, en orden creciente.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "−2 a la izquierda del cero, 3 a la derecha"
+            }
+          ],
+          "porQue": "Cuanto más lejos a la derecha, más grande es el número. Cuanto más lejos a la izquierda, más chico es (más negativo). La ubicación en la recta te dice cuál es mayor sin confundirte."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Cuentas cuántos pasos hay entre cada número negativo y el cero para encontrar su distancia.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "De −2 al cero hay 2 pasos"
+            }
+          ],
+          "porQue": "La distancia al cero nunca es negativa: es cuántos espacios separan al número del cero. Eso es lo que miden las barras de valor absoluto."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Escribes la distancia con barras: el valor absoluto de un número negativo es ese mismo número sin el signo menos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "|−2| = 2"
+            }
+          ],
+          "porQue": "Las barras dicen: toma la distancia, sin importar el lado de la recta. La distancia del −2 al cero es la misma que la del 2 al cero, aunque uno es negativo y el otro no."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Comparas dos números negativos mirando la recta: el que está más a la izquierda es el menor, aunque su número de valor absoluto sea mayor.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "−7 < −2 porque −7 está más a la izquierda"
+            }
+          ],
+          "porQue": "La posición en la recta te dice el orden. Con negativos, el que se ve más lejos del cero es el menor. El −7 es menor que el −2 aunque 7 sea mayor que 2."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "ubicar dos números negativos en la recta numérica y comparar cuál es menor",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Compara −3 y −7"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "−7 < −3"
+        }
+      ],
+      "resultadoEnPalabras": "menos siete es menor que menos tres"
+    },
+    "error": {
+      "enUnaFrase": "Ordena los números negativos igual que si fueran positivos: dice que −7 es mayor que −2 porque 7 es mayor que 2.",
+      "creenciaDeAtras": "cree que el signo menos es solo una etiqueta y que los números se comparan sin importar el signo, así como 7 es mayor que 2",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "−7 > −2 porque 7 > 2"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "−7 es mayor que −2"
+        }
+      ],
+      "comoSeCacha": "Si ubicas los dos números en la recta, −7 queda más a la izquierda que −2. El que está más a la izquierda no puede ser el mayor. La conclusión contradice la posición en la recta."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Confunde la distancia al cero con el tamaño del número: cree que porque −7 está más lejos del cero, es un número más grande.",
+        "creenciaDeAtras": "cree que lejos del cero significa grande, sin distinguir que en los negativos, lejos del cero significa más chico"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "recta numérica",
+        "queEs": "Una línea con el cero al centro, los positivos a la derecha y los negativos a la izquierda, que te muestra en qué orden están los números.",
+        "noEsLoMismoQue": "un termómetro o una escala, que también tiene arriba y abajo pero mide algo diferente"
+      },
+      {
+        "palabra": "números negativos",
+        "queEs": "Los números menores que cero, escritos con el signo menos pegado. Van a la izquierda del cero en la recta.",
+        "noEsLoMismoQue": "números positivos, que son mayores que cero y van a la derecha"
+      },
+      {
+        "palabra": "valor absoluto",
+        "queEs": "La distancia de un número al cero, escrita sin signo. Se escribe con barras: |−3| = 3.",
+        "noEsLoMismoQue": "el número mismo, que sí lleva el signo negativo"
+      },
+      {
+        "palabra": "comparar",
+        "queEs": "Decidir cuál de dos números es mayor y cuál es menor, usando los signos < y >."
+      }
+    ],
+    "cotas": {
+      "numeros": "enteros del −10 al 10; el resultado es siempre un número entero sin decimales",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "<"
+        },
+        {
+          "tipo": "texto",
+          "valor": ">"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema requiere dibujar una recta numérica horizontal con números negativos y positivos ubicados correctamente.",
+      "porQue": "La notación 'lineal' solo permite renglones de átomos (texto, fracción, símbolo, hueco). No puede dibujar una recta numérica con puntos ubicados, etiquetas de distancia, o barras de valor absoluto posicionadas.",
+      "queHagoConEsto": "Cambiar notacion a 'figura' para que el prompt de rectas numéricas pueda dibujar correctamente los números en la recta, sus posiciones relativas, las distancias al cero y las barras de valor absoluto."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

@@ -1,0 +1,192 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 20,
+  "titulo": "Proporcionalidad directa y valor unitario",
+  "generadoEn": "2026-09-27T03:33:26.086Z",
+  "canon": {
+    "temaNumero": 20,
+    "materia": "matematicas",
+    "titulo": "Proporcionalidad directa y valor unitario",
+    "notacion": "tabla",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Completar una tabla de proporcionalidad directa",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Revisa que los datos formen una proporción: divide una cantidad grande entre su pareja para ver si todos dan el mismo resultado.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "45 ÷ 3 ="
+            },
+            {
+              "tipo": "texto",
+              "valor": "15, y otro renglón:"
+            },
+            {
+              "tipo": "texto",
+              "valor": "90 ÷ 6 ="
+            },
+            {
+              "tipo": "texto",
+              "valor": "15. Sí es proporción."
+            }
+          ],
+          "porQue": "Si todos los renglones dan el mismo número al dividir, entonces multiplicar por ese número lleva de un renglón al otro. Si alguno da distinto, la tabla no es proporcional y no se puede llenar solo multiplicando."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Escribe el valor unitario como una fracción: el precio o la cantidad grande arriba, la cantidad pequeña abajo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Valor unitario ="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": "45",
+              "abajo": "3"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 15 por kg"
+            }
+          ],
+          "porQue": "La fracción simplificada te da cuánto vale una sola unidad. Ese número es el que multiplica a cada dato de la tabla para encontrar su pareja."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Multiplica cada dato conocido por el valor unitario.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "6 kg ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "15 = 90"
+            }
+          ],
+          "porQue": "Una vez que sabes cuánto vale cada unidad, multiplicar te dice cuánto valen varias unidades. Es más rápido que contar de uno en uno."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Escribe el resultado en la celda vacía de la tabla.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "En el renglón de 6 kg, escribes 90 en la columna de pesos."
+            }
+          ],
+          "porQue": "El resultado del paso anterior es el dato que falta. Ponerlo en la tabla la completa."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Comprueba con otro renglón: multiplica un dato de ese renglón por el valor unitario y ve si te da el resultado que está en la tabla.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "3 kg ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "15 = 45. Sí está en la tabla."
+            }
+          ],
+          "porQue": "Si la comprobación sale, el valor unitario era correcto y toda la tabla es segura. Si no sale, hay un error en los pasos anteriores."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una tabla donde 3 kg de arroz cuestan $45 y se busca cuánto cuestan 6 kg",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "kg"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "6 kg cuestan $90"
+        }
+      ],
+      "resultadoEnPalabras": "noventa pesos"
+    },
+    "error": {
+      "enUnaFrase": "Suma el dato que cambió al precio anterior en vez de multiplicar por el valor unitario.",
+      "creenciaDeAtras": "cree que si los kilos crecen en 3, el precio también debe crecer en la misma cantidad que en el renglón anterior, como si el dinero extra fuera un bloque que se suma igual cada vez",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "6 kg: 45 +"
+        },
+        {
+          "tipo": "texto",
+          "valor": "3 = 48"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "6 kg cuestan $48"
+        }
+      ],
+      "comoSeCacha": "El resultado es menor que el doble de 45. Si duplicas los kilos, el precio tiene que duplicarse también: debería ser 90, no 48."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "proporcionalidad directa",
+        "queEs": "Una relación entre dos cantidades donde si una se multiplica, la otra se multiplica por el mismo número."
+      },
+      {
+        "palabra": "valor unitario",
+        "queEs": "Lo que vale o lo que pesa una sola unidad: cuánto cuesta un kg, cuánto tarda una hora, cuánto pesa una bolsa.",
+        "noEsLoMismoQue": "el valor total, que es el precio o peso o tiempo de varias unidades juntas"
+      },
+      {
+        "palabra": "multiplicar",
+        "queEs": "Repetir una cantidad varias veces. Si el valor unitario es 15 y tienes 6 unidades, multiplicas 15 × 6."
+      },
+      {
+        "palabra": "constante de proporcionalidad",
+        "queEs": "El número por el que multiplicas cualquier dato de una tabla proporcional para encontrar su pareja. Es el mismo en todos los renglones."
+      }
+    ],
+    "cotas": {
+      "numeros": "números enteros del 1 al 100; el valor unitario siempre es un número entero; no hay decimales ni números negativos",
+      "unidades": [
+        "kg",
+        "pesos",
+        "metros",
+        "horas",
+        "bolsas",
+        "paquetes"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "×"
+        },
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}
