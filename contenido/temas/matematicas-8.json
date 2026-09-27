@@ -248,7 +248,352 @@
     "porQueEsaConfianza": "Las tres URL y los tres títulos salieron de la lista comprobada. El elegido explica por qué se achica el resultado, el acento es de México y entra directo al punto. Alta confianza porque cubre todos los criterios.",
     "noSePuede": null
   },
-  "contacto": null,
+  "contacto": {
+    "temaNumero": 8,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Antes de multiplicar"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 8,
+            "abajo": 9
+          },
+          {
+            "tipo": "texto",
+            "valor": ", ¿qué buscas?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "un denominador común"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Estás usando lo que aprendiste de suma de fracciones. En la multiplicación no necesitas igualar los denominadores: multiplicas directo."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "si arriba se divide entre abajo"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Buscaste simplificar en cruz antes de multiplicar. Así los números se quedan chicos."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "cuál es más grande"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No necesitas comparar las fracciones. Lo que importa es si algún número de arriba se divide entre alguno de abajo."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "si ambas son propias"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La fracción sea propia o no no te dice qué hacer en el primer paso. Lo que buscas es dividir números de arriba y abajo."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 5,
+            "abajo": 6
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 10
+          },
+          {
+            "tipo": "texto",
+            "valor": ", después de simplificar quedó"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 5,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": ". ¿Qué sigue?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 10,
+                "abajo": 15
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste los numeradores y sumaste los denominadores. En multiplicación los multiplicas, no los sumas."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 10,
+                "abajo": 8
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste arriba y arriba de las dos fracciones, y abajo y abajo. Falta volver a simplificar el resultado."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 2,
+                "abajo": 3
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 5 × 2 arriba y 3 × 5 abajo, luego simplificaste el 10/15 dividiendo entre 5."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 3,
+                "abajo": 2
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Invertiste la fracción. Multiplicas sin invertir; eso se hace en división."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Multiplicaste"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 7,
+            "abajo": 8
+          },
+          {
+            "tipo": "texto",
+            "valor": "y te salió"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 14,
+            "abajo": 40
+          },
+          {
+            "tipo": "texto",
+            "valor": ". ¿Cómo compruebas el resultado?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "que sea menor que los dos factores"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Comparaste tu respuesta. Cuando multiplicas dos fracciones propias, siempre sale más chico."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "que sea mayor que los dos factores"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Crees que multiplicar siempre agranda las cosas. Con números enteros sí, pero con fracciones no: se empequeñecen."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "que el numerador sea 1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No todas las multiplicaciones de fracciones dan un numerador de 1. Lo que importa es que el resultado sea una fracción válida."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "que el denominador sea mayor"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No siempre el denominador sale mayor. Lo que comprueba tu resultado es que sea más chico que cualquiera de tus factores."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Para simplificar en cruz"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 6,
+            "abajo": 7
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 7,
+            "abajo": 12
+          },
+          {
+            "tipo": "texto",
+            "valor": ", ¿qué haces?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "tachas números que se dividen entre el mismo número"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste que 7 con 7 y 6 con 12 se pueden simplificar cruzado, y escribiste lo que quedó."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "sumas los numeradores y denominadores"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás confundiendo multiplicación con suma. Antes de simplificar no sumas nada."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "los giras hacia arriba"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La simplificación en cruz no gira nada. Divide el número de arriba y el de abajo entre lo que comparten."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "cambias arriba por abajo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No cambias la posición de los números. Escribes el resultado de la división donde estaba el número original."
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": {
     "temaNumero": 8,
     "materia": "matematicas",
@@ -538,6 +883,218 @@
     ],
     "noSePuede": null
   },
-  "error": null,
-  "explicar": null
+  "error": {
+    "temaNumero": 8,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien multiplicó"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 2,
+        "abajo": 3
+      },
+      {
+        "tipo": "texto",
+        "valor": "×"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 9,
+        "abajo": 10
+      },
+      {
+        "tipo": "texto",
+        "valor": "y obtuvo"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 216,
+        "abajo": 360
+      },
+      {
+        "tipo": "texto",
+        "valor": "Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Busco denominador común:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 8,
+            "abajo": 12
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 27,
+            "abajo": 30
+          }
+        ],
+        "siLoTocas": "Ese paso es el que le pasa sus números a todos los que siguen."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Multiplico arriba: 8 × 27 = 216"
+          }
+        ],
+        "siLoTocas": "La multiplicación está bien hecha: 8 por 27 son 216. Ese paso recibió sus dos números del paso anterior y no los inventó."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Multiplico abajo: 12 × 30 = 360"
+          }
+        ],
+        "siLoTocas": "La multiplicación también está correcta: 12 por 30 son 360. Ese paso tampoco inventó sus números, los recibió."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Escribo la fracción:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 216,
+            "abajo": 360
+          }
+        ],
+        "siLoTocas": "Ese paso arma bien la fracción con los números que recibió, sin cambiarlos."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Reviso: 216 es mayor que 2/3 y que 9/10. Algo salió mal."
+          }
+        ],
+        "siLoTocas": "La revisión es correcta: 216/360 es mucho más grande que cualquiera de las dos fracciones originales. Cuando multiplicas dos fracciones propias, el resultado nunca crece así."
+      }
+    ],
+    "pasoMalo": 1,
+    "arrastre": "El 8 y el 27 del paso 2 vienen del paso 1, donde 2/3 se convirtió en 8/12 y 9/10 se convirtió en 27/30. El 12 y el 30 del paso 3 también vienen del paso 1. De ahí sale el resultado 216/360 en los pasos 4 y 5. Los pasos 2, 3, 4 y 5 están todos bien hechos con números malos.\"",
+    "porQue": "¿Qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Buscó denominador común como si fuera suma, no multiplicación.",
+        "esElBueno": true,
+        "queRevela": "Para multiplicar dos fracciones nunca hace falta buscar denominador común. Eso se hace en la suma y en la resta. Aquí empieza simplificando en cruz: divide un número de arriba entre un número de abajo de cualquier fracción, y después multiplica. El primer paso pasó por alto toda la simplificación."
+      },
+      {
+        "texto": "Olvidó revisar el tamaño del resultado antes de multiplicar.",
+        "esElBueno": false,
+        "queRevela": "La revisión se hace al final, en el paso 5, no antes de multiplicar. Y además, quien escoge esto está pensando que el error es no revisar, cuando en realidad el primer paso es el que llevó el error hasta aquí. La revisión sí se hizo al final; lo que está mal es lo que pasó antes."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "En la multiplicación de fracciones, el primer paso no es buscar denominador común. Eso funciona para sumar o restar, pero para multiplicar hay otro camino."
+      },
+      {
+        "orden": 2,
+        "texto": "Mira los números 2 y 9 del problema. Dónde deberían estar según las fracciones originales, y dónde aparecen en el primer paso que salió."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara las fracciones originales 2/3 y 9/10 con las que aparecen en el paso 1. Qué le pasó a esos cuatro números. ¿Alguien los modificó antes de multiplicar?"
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 8,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué el resultado sale más chico que los dos números con los que empezaste.",
+    "aclaracion": "Con tus palabras, sin escribir la fórmula. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Cuando multiplicas dos fracciones propias, estás tomando una parte de una parte, y una parte de una parte es siempre más chica que cualquiera de las dos partes.",
+          "porQueImporta": "Sin esta idea, el estudiante espera que multiplicar haga los números más grandes, como cuando multiplica números enteros. Con ella ve que multiplicar fracciones es distinto porque son pedazos, no cantidades completas.",
+          "comoSuenaDicha": "Cuando multiplico dos pedazos, me queda un pedazo más chico que cualquiera de los dos.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "En dos tercios por nueve décimos estás buscando cuánto es dos tercios de nueve décimos, no lo contrario.",
+          "porQueImporta": "Explica por qué el orden de las fracciones importa en el resultado. Sin esta idea, el estudiante podría pensar que da lo mismo cuál pone primero o que el resultado debería ser el promedio de los dos.",
+          "comoSuenaDicha": "Estoy buscando qué fracción de nueve décimos es dos tercios, así que tomo dos tercios del nueve décimos.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "El numerador y el denominador se multiplican por separado porque están contando cosas distintas: arriba los pedazos que tomo, abajo el tamaño de cada pedazo.",
+          "porQueImporta": "Justifica por qué no se busca denominador común como en la suma. Sin esta idea, el estudiante sigue viendo la multiplicación como si fuera una suma disfrazada.",
+          "comoSuenaDicha": "Multiplico los números de arriba entre sí y los de abajo entre sí porque uno cuenta pedazos y el otro cuenta qué tan grandes son.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque multiplicas numerador por numerador y denominador por denominador, así sale más chico.",
+          "queLaDelata": "Describe el procedimiento pero no explica por qué funciona. Cualquiera que memorice los pasos escribe esto, y sin embargo no entendería qué pasa si los números fueran números enteros.",
+          "queLeFalta": "Que diga que cuando multiplicas dos partes, lo que te queda es más pequeño, no porque el procedimiento lo haga, sino porque eso es lo que significa multiplicar fracciones."
+        },
+        {
+          "respuesta": "Porque buscas denominador común antes de multiplicar, así se simplifica más.",
+          "queLaDelata": "Mezcla el procedimiento de suma con el de multiplicación. Esta es la creencia del error típico, y aunque suene como algo que alguien haría, no lleva a un número más chico: lleva a números más grandes innecesariamente.",
+          "queLeFalta": "Que diga que no hace falta denominador común para multiplicar, porque multiplicación es distinto que suma."
+        },
+        {
+          "respuesta": "Porque en la multiplicación de fracciones siempre sale más chico, así es la regla.",
+          "queLaDelata": "Lo dice como una regla que hay que seguir, no como algo que sucede. Si la única razón es que alguien le dijo que así es, cuando el número no sale más chico se queda sin herramientas.",
+          "queLeFalta": "Que diga por qué es una regla: que lo que estás haciendo es tomar una parte de una parte."
+        },
+        {
+          "respuesta": "Porque dos tercios de nueve décimos es menos que nueve décimos solo.",
+          "queLaDelata": "Dice que una parte de algo es menor que todo lo demás, pero no explica por qué cuando multiplicas dos fracciones pasa eso, o cómo lo ves en los números que calculaste.",
+          "queLeFalta": "Que diga que cuando multiplicas dos fracciones, cada una que sea menor que 1 hace que el resultado se achique, y dos veces achicarse es más chico que una."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Pero si busco denominador común antes, los números se simplifican más y el resultado es más chico.",
+          "seLeContesta": "Correcto que se simplifica más, pero eso no es multiplicar fracciones. En suma, el denominador común es necesario para sumar los numeradores. En multiplicación, arriba se cuentan pedazos nuevos y abajo el tamaño nuevo, y los dos se multiplican por separado. ¿Qué pasaría con dos tercios por nueve décimos si escribes ambas con denominador 30 antes de multiplicar?",
+          "aDondeLoEmpuja": "A ver que multiplicación y suma tienen procedimientos distintos, porque están haciendo operaciones distintas con los pedazos."
+        },
+        {
+          "siDice": "Entiendo la idea, pero no sé cómo explicarla sin escribir la fórmula.",
+          "seLeContesta": "Entonces cuenta solo esto: si tomas dos tercios de algo, ¿el resultado es más grande o más chico que lo que tenías? Ahora haz lo mismo con lo que te salió: toma dos tercios de eso. ¿Qué pasó?",
+          "aDondeLoEmpuja": "A que vea que multiplicar una fracción por otra es aplicar dos veces lo mismo que hace una fracción sola, y que dos veces achicarse es muy chico."
+        },
+        {
+          "siDice": "Pero cuando multiplico números enteros, el resultado es más grande, así que debería ser lo contrario con fracciones.",
+          "seLeContesta": "Cierto, con números enteros el resultado crece. Eso pasa porque multiplicas cantidades completas. Aquí no: dos tercios no es una cantidad completa, es un pedazo de algo. Un pedazo de un pedazo no puede ser más grande que cualquiera de los dos pedazos solos.",
+          "aDondeLoEmpuja": "A entender que fracciones propias y números enteros son casos distintos, y que multiplicación significa algo diferente en cada uno."
+        }
+      ],
+      "ejemploQueSiCuenta": "Cuando multiplico dos tercios por nueve décimos, estoy buscando dos tercios de nueve décimos. Dos tercios me hacen un pedazo más chico que lo que tenía, así que de lo que me queda después de tomar dos tercios, me sale algo más chico que el nueve décimos. Y ese resultado es también más chico que dos tercios, porque nueve décimos también hizo un pedazo más chico. Entonces el resultado es más pequeño que los dos números con los que empecé.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras fracción, multiplicar ni denominador: si dice pedazos, partes o tomar, la idea está ahí.",
+        "Que no escriba ningún número: la idea se entiende sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  }
 }

@@ -483,7 +483,50 @@
     ],
     "noSePuede": null
   },
-  "completar": null,
+  "completar": {
+    "temaNumero": 14,
+    "materia": "matematicas",
+    "pasoDelCanon": 1,
+    "queFalta": "el decimal que resulta de dividir 3 entre 8",
+    "expresion": [
+      {
+        "tipo": "fraccion",
+        "arriba": 3,
+        "abajo": 8
+      },
+      {
+        "tipo": "texto",
+        "valor": "= 3 ÷ 8 ="
+      },
+      {
+        "tipo": "hueco"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "375",
+      "aceptaTambien": [],
+      "comoSeLee": "cero punto trescientos setenta y cinco"
+    },
+    "pistas": [
+      {
+        "texto": "Tres octavos es una fracción menor que uno, así que el resultado tiene que ser menor que uno. Empieza por 0.something.",
+        "orden": 1
+      },
+      {
+        "texto": "Plantea la división: el 3 va dentro de la galera y el 8 afuera. El 3 es más chico que 8, así que el cociente comienza con 0 antes del punto.",
+        "orden": 2
+      },
+      {
+        "texto": "Agrega un cero al 3 para que sea 30, y divide 30 ÷ 8. Eso da 3 y sobran 6. Luego 60 ÷ 8 da 7 y sobran 4. Luego 40 ÷ 8 da 5 y sobran 0: termina.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "38",
+      "queSeLeDice": "No leas el 3 y el 8 como si fueran los dígitos después del punto. Tienes que hacer la división entre 8 para saber cuáles son los dígitos que van ahí. Vuelve al paso 1 y plantea la división con la galera."
+    },
+    "noSePuede": null
+  },
   "escalera": {
     "temaNumero": 14,
     "materia": "matematicas",
@@ -785,5 +828,80 @@
     ],
     "noSePuede": null
   },
-  "explicar": null
+  "explicar": {
+    "temaNumero": 14,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué tres octavos es menor que uno si haces 3 ÷ 8.",
+    "aclaracion": "Con tus palabras, sin escribir la división ni la fracción. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Cuando el numerador es más chico que el denominador, el resultado de la división es un número entre cero y uno.",
+          "porQueImporta": "Sin esta idea, alguien puede pensar que los números de la fracción se leen juntos, como si fuera una notación de decimales. Con ella, el tamaño de la fracción depende de qué tan chico es el numerador respecto del denominador.",
+          "comoSuenaDicha": "Si lo que se reparte es más chico que en cuántas partes lo divido, me toca menos de uno.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Dividir el numerador entre el denominador calcula qué le toca a cada parte: es lo opuesto a multiplicar el entero por el denominador.",
+          "porQueImporta": "Quien ve la fracción como una notación de punto decimal nunca ve que es una operación. Con esta idea, la fracción es un cálculo, y el cálculo que hace es repartir.",
+          "comoSuenaDicha": "Divido para saber qué le toca si reparto lo de arriba entre lo de abajo.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Si el resultado es más grande que el número que repartiste, algo está mal en lo que hiciste.",
+          "porQueImporta": "Es el reverso: si llega a pasar que el resultado queda más chico que el inicio, sabes que ese número no puede ser lo que se reparte. Es la bandera roja para cachar el error de leerlo como tres punto ocho.",
+          "comoSuenaDicha": "El resultado no puede ser más grande que lo que empecé a repartir.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque tres es más chico que ocho.",
+          "queLaDelata": "Nombra cuál número es más chico, pero no dice qué significa que sea más chico. Con cinco octavos la idea falla: cinco es más grande que ocho, pero la fracción sigue siendo menor que uno.",
+          "queLeFalta": "Que diga qué quiere decir que sea más chico: que se reparte poco entre muchas partes."
+        },
+        {
+          "respuesta": "Porque la división de un número chico entre un número grande siempre da un decimal chico.",
+          "queLaDelata": "Nombra la operación pero sin ver qué mide. No dice qué es lo que se está repartiendo ni entre cuántas partes, así que tampoco sabría si dividir tres entre dos daría algo chico.",
+          "queLeFalta": "Que diga que lo de arriba es lo que se reparte y lo de abajo es en cuántas partes iguales."
+        },
+        {
+          "respuesta": "Porque cuando divides un número entre otro más grande, el cociente es decimal y los decimales son chicos.",
+          "queLaDelata": "Confunde decimal con chico. Hay decimales chicos (0.1) y decimales grandes (9.8). Y hay fracciones propias menores que uno (3/8) y fracciones impropias mayores que uno (8/3).",
+          "queLeFalta": "Que diga que el resultado depende de si repartes poco o mucho, no de si es decimal o fracción."
+        },
+        {
+          "respuesta": "Porque divido el numerador entre el denominador y siempre que divido un número más chico entre uno más grande me sale un decimal menor que uno.",
+          "queLaDelata": "Atiende el error típico y lo detecta, pero al revés: piensa que la razón es que siempre pasa, sin ver por qué pasa aquí. Con 0.5 como resultado de un décimo entre dos, la regla sigue funcionando, pero no por la razón que dio.",
+          "queLeFalta": "Que vea que es porque se está repartiendo el numerador en el denominador de partes, no porque exista una regla general."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Pero si es tres punto ocho, ¿no es que arriba va el tres y abajo el ocho?",
+          "seLeContesta": "Si fuera tres punto ocho, sería casi el cuádruple de lo que tienes. Tienes tres octavos, que es menos de medio. ¿De dónde salen esos cuatro octavos que le faltan para llegar a tres punto ocho?",
+          "aDondeLoEmpuja": "A que vea que la idea imprescindible no es un juego de números: cuando el numerador es chico, el resultado es chico."
+        },
+        {
+          "siDice": "Pero el resultado tiene que ser chico porque el numerador es más chico que el denominador.",
+          "seLeContesta": "Eso es cierto. Pero no es porque sea más chico. Es porque al dividir lo chico entre lo grande queda un pedazo de lo que repartiste. Dime qué queda si repartes tres metros entre ocho personas. ¿Es más o menos de tres metros?",
+          "aDondeLoEmpuja": "A que entienda que el resultado es más chico porque es lo que toca a cada parte, no porque exista una regla sobre el tamaño de los números."
+        },
+        {
+          "siDice": "Sí entendí, nada más no sé cómo escribirlo con números.",
+          "seLeContesta": "No hace falta escribirlo con números. Si lo entendiste, contesta sin números: qué queda cuando repartes lo de arriba entre lo de abajo, ¿todo lo que repartiste o un pedazo?",
+          "aDondeLoEmpuja": "A que vea que ya tiene la idea y lo que falta es decirla sin esconder el pensamiento detrás de símbolos."
+        }
+      ],
+      "ejemploQueSiCuenta": "Cuando reparto tres en ocho partes, cada parte es un pedazo de los tres, no tres enteros. Si tuviera cero punto tres es prácticamente nada, pero cero punto trescientos setenta y cinco es casi la mitad de uno, y tiene sentido porque reparto tres entre ocho y eso es menos de la mitad.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras fracción, división, numerador ni denominador: si dice qué queda cuando reparte lo de arriba entre lo de abajo, ya dijo la idea.",
+        "Que no escriba ni símbolos ni números: la idea cuenta si explica el pensamiento."
+      ]
+    },
+    "noSePuede": null
+  }
 }

@@ -644,7 +644,195 @@
       "queHagoConEsto": "Cambiar la pregunta: pedir el número que sale después de poner el signo (paso 3 y 4 combinados, resultado final +6), o dejar este hueco fuera de la estación 3 porque necesita otra presentación."
     }
   },
-  "escalera": null,
+  "escalera": {
+    "temaNumero": 17,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En el banco cuentas tus deudas: debes 2 pesos a tu hermana y 3 pesos más al tendero. ¿Cuál es tu deuda total?",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "(−2) ×"
+          },
+          {
+            "tipo": "texto",
+            "valor": "(−3) ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el resultado de multiplicar estos dos números negativos?",
+        "respuesta": {
+          "tecleado": "6",
+          "aceptaTambien": [],
+          "comoSeLee": "más seis"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Tienes dos números negativos que se multiplican. Lo primero es contar cuántos negativos hay."
+          },
+          {
+            "orden": 2,
+            "texto": "Hay dos números negativos: un número par. Por eso el resultado es positivo."
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": false
+      },
+      {
+        "situacion": "En un videojuego pierdes 4 puntos cada vez que caes. Al cabo de 3 caídas, ¿cuántos puntos perdiste?",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "(−4) ×"
+          },
+          {
+            "tipo": "texto",
+            "valor": "3 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el resultado de esta multiplicación con signos?",
+        "respuesta": {
+          "tecleado": "12",
+          "aceptaTambien": [],
+          "comoSeLee": "menos doce"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí tienes un número negativo y uno positivo. Cuentas los números negativos."
+          },
+          {
+            "orden": 2,
+            "texto": "Hay un número negativo: un número impar. Por eso el resultado es negativo."
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un buzo baja 6 metros cada minuto durante 4 minutos. ¿A cuántos metros bajo el nivel del mar llegó?",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "(−6) ×"
+          },
+          {
+            "tipo": "texto",
+            "valor": "4 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el resultado de esta multiplicación?",
+        "respuesta": {
+          "tecleado": "24",
+          "aceptaTambien": [],
+          "comoSeLee": "menos veinticuatro"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "El buzo baja: movimiento hacia abajo significa un número negativo."
+          },
+          {
+            "orden": 2,
+            "texto": "Hay un número negativo: impar. El resultado es negativo. Multiplicas 6 por 4."
+          },
+          {
+            "orden": 3,
+            "texto": "Seis por cuatro son veinticuatro. Le pones el signo negativo."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "Dividiste tus 20 pesos entre tres amigos. Un amigo recibió 4 pesos. ¿Cuántos se llevaron los otros dos?",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "20 ÷"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 4"
+          }
+        ],
+        "pregunta": "¿Entre cuántos amigos dividiste los pesos?",
+        "respuesta": {
+          "tecleado": "5",
+          "aceptaTambien": [],
+          "comoSeLee": "cinco"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí ya tienes el resultado. Lo que falta es uno de los números que se dividió."
+          },
+          {
+            "orden": 2,
+            "texto": "Si 20 entre algo da 4, necesitas el número que multiplicado por 4 te da 20."
+          },
+          {
+            "orden": 3,
+            "texto": "Busca: cuatro por qué te da veinte."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": true
+      },
+      {
+        "situacion": "La temperatura bajó 3 grados cada hora durante 5 horas. Al terminar ese tiempo, ¿cuántos grados bajó?",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "(−3) ×"
+          },
+          {
+            "tipo": "texto",
+            "valor": "(−5) ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el resultado?",
+        "respuesta": {
+          "tecleado": "15",
+          "aceptaTambien": [],
+          "comoSeLee": "más quince"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Tienes dos números negativos. Cuentas: ¿cuántos negativos hay en total?"
+          },
+          {
+            "orden": 2,
+            "texto": "Dos números negativos: un número par. Eso te dice que el resultado es positivo."
+          },
+          {
+            "orden": 3,
+            "texto": "Ahora multiplicas los números sin el signo: tres por cinco son quince. Le pones el signo positivo."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      }
+    ],
+    "noSePuede": null
+  },
   "error": {
     "temaNumero": 17,
     "materia": "matematicas",

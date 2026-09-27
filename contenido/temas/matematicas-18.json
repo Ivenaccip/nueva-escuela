@@ -209,7 +209,64 @@
     },
     "noSePuede": null
   },
-  "ver": null,
+  "ver": {
+    "temaNumero": 18,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué el orden en que resuelves cambia el resultado?",
+    "resumen": "Cada operación tiene su turno: paréntesis, potencias, multiplicaciones y divisiones, sumas y restas. Si saltas el orden, el resultado cambia porque algunas operaciones son más fuertes que otras.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué se respeta un orden de operaciones y no se resuelve todo de izquierda a derecha: muestra que el orden cambia el resultado con un ejemplo.",
+        "Está en español de México o de América Latina. Es del nivel de 1º secundaria: operaciones combinadas con paréntesis y potencias.",
+        "Llega al ejemplo antes del minuto uno, sin intro larga ni pedida de suscripción.",
+        "Dice explícitamente que la potencia solo afecta al número, no al signo que está al lado.",
+        "Muestra por qué multiplicación y división se hacen de izquierda a derecha, y por qué sumas y restas van al final."
+      ],
+      "descarta": [
+        "Enseña a resolver de izquierda a derecha como si fuera el método correcto.",
+        "Dice que −3² = 9 sin aclarar que el exponente solo afecta al 3.",
+        "Es un examen resuelto o una lista de operaciones sin explicar el por qué.",
+        "Dura más de cinco minutos para explicar un tema de 1º secundaria."
+      ],
+      "consulta": "video explicación \"Jerarquía de operaciones\" matemáticas 1º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "tnskLiLMwCc",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el primer resultado cuando se busca jerarquía de operaciones para 1º secundaria. El título dice directamente de qué se trata, el canal es oficial de México, y empieza con ejemplos sin intro larga. Explica por qué el orden importa.",
+      "url": "https://www.youtube.com/watch?v=tnskLiLMwCc",
+      "titulo": "1° Secundaria » Matemáticas » Jerarquía de operaciones",
+      "canal": "@prende_mx",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "n6Bztb0OzTI",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. El título dice jerarquía de operaciones y matemáticas básicas. El canal es del mismo calibre. Falla en que es más lento al llegar al ejemplo y da menos énfasis al por qué cambia el resultado.",
+        "url": "https://www.youtube.com/watch?v=n6Bztb0OzTI",
+        "titulo": "¿JERARQUÍA DE OPERACIONES? Matemáticas Básicas",
+        "canal": "Matemáticas con Juan",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "q41lqLs4_vc",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": true,
+        "porQueEste": "Tercer respaldo. El título menciona operaciones combinadas y potenciación. Aparece si los dos de arriba se caen, aunque no se alcanza a oír bien el español del canal.",
+        "url": "https://www.youtube.com/watch?v=q41lqLs4_vc",
+        "titulo": "Operaciones Combinadas#profesor#matemáticas#foryou#math#operacionescombinadas#potenciacion#radicació",
+        "canal": "Matemática inspiradora",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "La URL y el título salieron literales en la búsqueda. El canal es oficial de México, el video explica el por qué del orden de operaciones, llega al ejemplo rápido y toca el tema de la potencia sin confundir el signo. Los dos respaldos también existen y están en español de América Latina o sin identificación clara, pero ambos son menores en calidad de explicación.",
+    "noSePuede": null
+  },
   "contacto": {
     "temaNumero": 18,
     "materia": "matematicas",

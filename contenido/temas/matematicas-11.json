@@ -217,7 +217,348 @@
     "porQueEsaConfianza": "El video elegido salió en la búsqueda y su título dice que es para niños de primaria y que suma y resta decimales. Explica el por qué, así que cumple el criterio mayor. Es media y no alta por una razón: el español es de España, no de México ni de América Latina. Los títulos de los tres videos están copiados tal cual de la lista, sin correcciones.",
     "noSePuede": null
   },
-  "contacto": null,
+  "contacto": {
+    "materia": "matematicas",
+    "temaNumero": 11,
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cómo se escribe"
+          },
+          {
+            "tipo": "texto",
+            "valor": "5.4 + 12.35"
+          },
+          {
+            "tipo": "texto",
+            "valor": "antes de sumar?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "alineado por el punto"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Alineaste por el punto para que las unidades, décimas y demás queden en columnas del mismo valor.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "alineado por la derecha"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Estás alineando por la derecha como en la resta de enteros. El punto es especial: sus dígitos tienen otros valores según dónde estén del punto, no del lado derecho.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "uno debajo del otro"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Alineaste, pero sin decir por dónde: «uno debajo del otro» en general no funciona con decimales porque el punto los mueve de lugar.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "con los números juntos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Si los escribes juntos en un renglón, eres tú el que después tiene que vigilar que no se crucen los valores, y eso es donde se cuela el error.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Para qué rellenas con ceros en"
+          },
+          {
+            "tipo": "texto",
+            "valor": "7.2 + 3.45?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "para que todas las columnas"
+              },
+              {
+                "tipo": "texto",
+                "valor": "tengan dígito"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Rellenaste para que ninguna columna quedara vacía y quien suma pueda anotar algo en cada una.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "para cambiar el valor"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los ceros de relleno no cambian nada: 7.2 y 7.20 son el mismo número escrito de dos formas.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "porque la regla lo pide"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No es una regla caprichosa: tienes una razón, que es que las columnas del lado del punto no queden incompletas.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "para que el punto quede"
+              },
+              {
+                "tipo": "texto",
+                "valor": "en el mismo lugar"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El punto sigue en el mismo lugar aunque no rellenes: el relleno es para que el sumador tenga un dígito donde escribir la respuesta.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿De qué lado comienzas en"
+          },
+          {
+            "tipo": "texto",
+            "valor": "8.6 − 2.4?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "del punto"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El punto es la línea vertical que divide: no se suma ni se resta. Comienzas en la columna más a la derecha, que es la de las décimas.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "de la derecha"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Empezaste por las décimas, donde está la columna más a la derecha, igual que en los números sin decimales.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "de la izquierda"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Si empiezas por la izquierda puede haber acarreos que terminen en las décimas, y ahí se te puede perder llevadas.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "del lugar que quieras"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El orden importa si hay llevadas: empezar siempre por la derecha te salva de olvidarte de algunas.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Dónde pones el punto en la respuesta de"
+          },
+          {
+            "tipo": "texto",
+            "valor": "9.3 + 4.8?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "donde sale en la columna"
+              },
+              {
+                "tipo": "texto",
+                "valor": "de las décimas"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Bajaste el punto donde estaba en los números de arriba, separando las unidades de las décimas.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "a la derecha de todo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Si lo pones a la derecha, tu respuesta dice 141 en vez de 14.1, y el tamaño del número cambió a uno 10 veces más grande.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "donde queda algún dígito"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El lugar donde el punto va no es al azar: tiene que estar en la misma columna donde estaba arriba, donde comienzan las décimas.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "no importa mucho"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El punto marca qué vale qué: 14.1 es catorce con un décimo, y 141 es ciento cuarenta y uno. No es lo mismo.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué esperas que tu respuesta"
+          },
+          {
+            "tipo": "texto",
+            "valor": "esté cerca de en"
+          },
+          {
+            "tipo": "texto",
+            "valor": "6.2 + 5.8?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "6 más 6"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Redondeaste: 6.2 se redondea a 6 y 5.8 se redondea a 6, así que esperas una respuesta cerca de 12.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "12.0"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No redondeas a un número exacto primero: redondeas a la unidad más cercana, y después sumas eso. Así atrapa los errores la estimación.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "más o menos 11"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estimaste bajo: 6.2 no redondea a 5, sino a 6 porque está más cerca de 6 que de 5. El estimado debe estar cercano al resultado.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "más o menos 13"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estimaste alto: 5.8 redondea a 6, no a 7. Redondear es ir al número entero más cercano, no al siguiente.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": {
     "temaNumero": 11,
     "materia": "matematicas",
@@ -394,5 +735,75 @@
     ],
     "noSePuede": null
   },
-  "explicar": null
+  "explicar": {
+    "temaNumero": 11,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué alineas los números por el punto y no por la derecha.",
+    "aclaracion": "Con tus palabras, sin escribir la fórmula ni los pasos. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El punto decimal marca dónde terminan las unidades y dónde empiezan las décimas, así que los números tienen que estar alineados en ese punto para que las columnas de valor coincidan.",
+          "porQueImporta": "Si alineas por la derecha, las décimas se suman con las unidades y el resultado sale mal. El punto es la brújula que te dice dónde está cada lugar de valor.",
+          "comoSuenaDicha": "El punto marca dónde cambia el valor, así que tiene que estar alineado para sumar lo correcto con lo correcto.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Cuando alineas por la derecha como en los números enteros, pones las decenas de un número con las décimas del otro, y eso cambia lo que significan.",
+          "porQueImporta": "Quien no ve esto cree que el punto es una etiqueta que se pega al final, y que siempre alineamos por la derecha. Sin esta idea sigue cometiendo el error.",
+          "comoSuenaDicha": "Si alineas por la derecha, los números se desplazan y terminas sumando decenas con décimas.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "En los decimales, el lugar de cada cifra determina su valor, y por eso alinear por el punto es la única forma de mantener ese valor correcto.",
+          "porQueImporta": "Es la razón de fondo: en cualquier número, el lugar importa. Los decimales no son una excepción, sólo tienen un punto que marca el cambio de lugar.",
+          "comoSuenaDicha": "El lugar donde está cada número decide cuánto vale, así que tiene que alinearse donde corresponde.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque el punto decimal está en la alineación y hay que alinearse por él.",
+          "queLaDelata": "Repite la instrucción con otras palabras. No dice por qué eso hace que el resultado sea correcto ni qué pasaría si no lo hicieras.",
+          "queLeFalta": "Que diga qué le pasaría al resultado o a los valores de las cifras si alinearas por la derecha."
+        },
+        {
+          "respuesta": "Porque así es la regla, y así me sale bien en los ejercicios.",
+          "queLaDelata": "La respuesta es de dónde viene el procedimiento, no qué lo hace correcto. Es lo que aprendió de memoria sin ver la razón de fondo.",
+          "queLeFalta": "Que diga qué significa el punto o qué pasaría con los valores si cambiara la alineación."
+        },
+        {
+          "respuesta": "Porque si no alineas por el punto, te sale un número entero y pierdes los decimales.",
+          "queLaDelata": "Ve que algo sale mal, pero no dice qué. Cree que los decimales se pierden de la nada, sin entender que es porque sumó lugares que no corresponden.",
+          "queLeFalta": "Que diga qué está sumando con qué cuando alinea mal: en qué orden cambian los valores."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "En los números enteros siempre alineamos por la derecha, así que en los decimales tendría que ser igual.",
+          "seLeContesta": "Verdad: en los enteros alineamos por la derecha. Pero aquí cambió algo: ahora hay un punto que divide en dos partes. En 12.75 el 1 es decena, pero en 3.5 el 5 ya no es decena, es décima. ¿Qué pasaría si pusieras una décima bajo una decena?",
+          "aDondeLoEmpuja": "A que vea que el punto cambia los lugares de valor, que es la segunda idea de la lista."
+        },
+        {
+          "siDice": "Entendí, pero no sé cómo explicarlo con palabras.",
+          "seLeContesta": "Entonces dilo corto: cuando alineas por la derecha, ¿qué cifras terminan en la misma columna? ¿Tienen el mismo valor? Si no, ¿el resultado sale bien o sale mal?",
+          "aDondeLoEmpuja": "A poner en palabras la relación entre alineación y valor, que es la idea principal."
+        },
+        {
+          "siDice": "Porque en los decimales el punto es más importante que alinear por la derecha.",
+          "seLeContesta": "El punto es importante, cierto. Pero ¿por qué? ¿Qué hace el punto ahí? Si lo tiras y dejas sólo los números, ¿siguen valiendo lo mismo o cambia?",
+          "aDondeLoEmpuja": "A decir que el punto marca el lugar de valor de cada cifra, que es lo que sostiene toda la alineación."
+        }
+      ],
+      "ejemploQueSiCuenta": "El punto decimal marca dónde cambia el valor de las cifras: antes está las unidades y después las décimas. Si alineas 12.75 + 3.5 por la derecha, la décima del 5 cae bajo la unidad del 5, y terminas sumando un lugar de valor incorrecto con otro. Por eso hay que alinear donde dice el punto: para que cada lugar se sume con su mismo lugar.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras punto, decimal ni alinear: si dice que mantiene los valores correctos o que el punto marca dónde cambia el valor, ya está.",
+        "Que no escriba ningún número: la idea cuenta sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  }
 }

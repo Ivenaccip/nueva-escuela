@@ -592,5 +592,80 @@
     ],
     "noSePuede": null
   },
-  "explicar": null
+  "explicar": {
+    "temaNumero": 12,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué 0.3 × 0.4 sale 0.12 y no 1.2",
+    "aclaracion": "Con tus palabras, sin escribir la fórmula. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Cuando multiplicas dos números decimales menores que 1, el resultado es más chico que ambos números porque estás tomando una parte de una parte.",
+          "porQueImporta": "Sin esta idea, el estudiante cree que cualquier multiplicación debe tener un resultado cercano al tamaño de los números originales. Con ella, ve por qué 0.12 es más chico que 0.3 y que 0.4.",
+          "comoSuenaDicha": "Estoy tomando 0.4 de 0.3, que es un pedazo de un pedazo, así que sale mucho más chico.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Cada número decimal trae sus cifras después del punto, y la cantidad total de cifras decimales en el resultado es la suma de las cifras decimales de los dos números que multiplicas.",
+          "porQueImporta": "Sin esta idea, el estudiante cuenta mal los decimales del resultado y no sabe cómo de colocar el punto. Contarlas bien es lo que garantiza que 0.3 × 0.4 = 0.12 y no 1.2.",
+          "comoSuenaDicha": "El 0.3 tiene una cifra después del punto y el 0.4 también tiene una, así que el resultado debe tener dos cifras después del punto.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Primero ignoras los puntos y multiplicas como si fueran números enteros, luego cuentas dónde debe ir el punto en el resultado.",
+          "porQueImporta": "Es el método que garantiza que el resultado es correcto. Sin él, el estudiante intenta adivinar dónde va el punto o cuenta solo una cifra decimal.",
+          "comoSuenaDicha": "Multiplico 3 por 4 para obtener 12, y después cuento hacia atrás dos espacios para poner el punto.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque hay que contar las cifras decimales de los dos números y sumarlas.",
+          "queLaDelata": "Nombra el procedimiento sin decir por qué funciona. Solo dice qué hacer, no entiende que la razón es que el resultado debe tener todos esos decimales.",
+          "queLeFalta": "Que diga por qué sucede que cuando multiplicas dos números con decimales, el resultado trae la suma de esos decimales: que es porque estás multiplicando décimas por décimas, y eso te da centésimas."
+        },
+        {
+          "respuesta": "Porque el 3 por el 4 da 12, y como hay dos decimales, pongo el punto para obtener 0.12.",
+          "queLaDelata": "Describe los pasos del procedimiento pero no entiende por qué tiene que haber dos decimales en el resultado.",
+          "queLeFalta": "Que diga que el número pequeño por el número pequeño da un número todavía más pequeño, no un número grande."
+        },
+        {
+          "respuesta": "Porque el punto se mueve dos lugares hacia la izquierda en el 12 para que salga 0.12.",
+          "queLaDelata": "Trata el punto como algo que se mueve sin razón, una regla que hay que seguir sin entender qué significa.",
+          "queLeFalta": "Que diga que el punto se mueve porque necesitas el número de decimales correcto: si 0.3 tiene un decimal y 0.4 tiene uno, el resultado debe tener dos, no uno."
+        },
+        {
+          "respuesta": "Porque los números son chiquitos así que el resultado tiene que ser chiquito también.",
+          "queLaDelata": "Es una intuición, no una razón. Funciona con este ejemplo pero se cae cuando cambias los números.",
+          "queLeFalta": "Que diga que cuando multiplicas un número menor que 1 por otro menor que 1, el resultado es más chico que ambos porque estás tomando una parte de una parte."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Yo conté solo un decimal porque solo hay un 1 en 3 × 4 = 12, así que el resultado tiene un decimal.",
+          "seLeContesta": "Cierto que solo hay un 1 en el resultado de 3 × 4. Pero el 3 viene de 0.3 y el 4 viene de 0.4. El 0.3 tiene un decimal, el 0.4 tiene otro decimal. ¿Cuántos decimales traen los dos juntos?",
+          "aDondeLoEmpuja": "A que cuente los decimales de los números que multiplica, no los decimales que ve en el resultado de 3 × 4."
+        },
+        {
+          "siDice": "Un número chico por otro número chico da un número chico, así que tiene que ser más pequeño.",
+          "seLeContesta": "Exacto. 0.3 es chico, 0.4 es chico, y 0.12 es más chico que ambos. Ahora dime: ¿cuántos decimales tiene 0.3? ¿Y cuántos tiene 0.4? ¿Cuántos debería tener un número que es 0.3 de 0.4?",
+          "aDondeLoEmpuja": "A que vea que contar los decimales no es opcional: es la única forma de saber dónde va el punto cuando el resultado es más chico."
+        },
+        {
+          "siDice": "Entendí que el resultado sale chico, pero no sé por qué exactamente dos decimales.",
+          "seLeContesta": "Entonces prueba esto: si 0.3 trae un decimal, significa que representa tres décimas. Si 0.4 trae un decimal, representa cuatro décimas. Una décima por una décima, ¿qué representa?",
+          "aDondeLoEmpuja": "A ver que multiplicar décimas por décimas da centésimas, que es lo que significa tener dos decimales."
+        }
+      ],
+      "ejemploQueSiCuenta": "Cuando multiplico 0.3 por 0.4 estoy buscando qué tanto es 0.4 de 0.3, es decir, tomo 0.4 de algo que ya es chico. Primero hago 3 por 4 igual a 12, pero necesito poner el punto en el lugar correcto. El 0.3 trae un decimal y el 0.4 trae otro, eso es dos decimales totales. Entonces el punto tiene que ir dos lugares a la izquierda en el 12, y me da 0.12. Por eso sale más chico, no más grande.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras cifra decimal o decimal: si dice que tiene un punto o que hay números después del punto, ya dijo la idea.",
+        "Que no escriba ningún número: la idea cuenta sin hacer la cuenta. Aunque escriba números, la idea se califica igual."
+      ]
+    },
+    "noSePuede": null
+  }
 }

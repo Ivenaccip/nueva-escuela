@@ -811,5 +811,80 @@
     ],
     "noSePuede": null
   },
-  "explicar": null
+  "explicar": {
+    "temaNumero": 2,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué tienes que seguir probando números primos hasta llegar a 1.",
+    "aclaracion": "Con tus palabras, sin escribir la tabla ni los primos. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Si dejas de probar números primos antes de llegar a 1, se quedó sin dividir una parte del número, y la descomposición está incompleta.",
+          "porQueImporta": "Quien no lo ve cree que si un número no se divide entre 2, 3 o 5, ya es primo y se puede dejar. Con números como 51 o 77 eso es falso: tienen otros factores que no viste.",
+          "comoSuenaDicha": "Si paro antes de llegar a 1, el número no quedó partido de verdad.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "El 1 es la señal de que terminaste: cuando en la izquierda te queda 1, significa que ya no hay más números primos que saquen factores.",
+          "porQueImporta": "Es la única forma de saber cuándo dejar de probar sin adivinar. Sin ella, alguien para a mitad de camino y pasa por válido.",
+          "comoSuenaDicha": "Cuando llego a 1 en la izquierda, terminé.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Cuando multiplicas los factores de regreso y no te da el número de donde empezaste, te avisa que algo quedó sin dividir.",
+          "porQueImporta": "Es la red de seguridad: si no pruebas todos los primos y verificas al final, nadie se da cuenta de que falta algo.",
+          "comoSuenaDicha": "La multiplicación de regreso me muestra si me faltó dividir.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque la descomposición en factores primos es así, se hace hasta 1.",
+          "queLaDelata": "Nombra la regla y se detiene ahí. No dice qué pasaría si no llegaras a 1, así que no explicó por qué es importante.",
+          "queLeFalta": "Que diga qué le falta al número si dejas de dividir antes de tiempo."
+        },
+        {
+          "respuesta": "Porque 51 es primo y no se puede dividir más, así que con 360 = 2 al cubo por 3 al cuadrado por 5 ya está.",
+          "queLaDelata": "Dice que 51 es primo sin probar si se divide entre 3 o entre 7. Ve uno o dos números primos y cree que ya agotó todos.",
+          "queLeFalta": "Que diga que aunque un número no sea par ni acabe en 5, todavía hay más primos que probar."
+        },
+        {
+          "respuesta": "Porque si paras antes, el resultado es más chico que el número que empezaste.",
+          "queLaDelata": "Es verdad que sale más chico, pero eso no es la razón. Con 360 = 2 al cubo por 3 al cuadrado por 5, el resultado es 8 por 9 por 5 = 360, perfecto.",
+          "queLeFalta": "Que diga que el número no quedó partido completo, que te faltó sacar factores."
+        },
+        {
+          "respuesta": "Porque así lo hicimos en clase y así la descomposición sale bien.",
+          "queLaDelata": "La razón que da es de dónde viene el procedimiento, no por qué funciona. Es lo que aprendió de memoria sin entender.",
+          "queLeFalta": "Que diga qué sucede si no llegas a 1 en la descomposición."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "No es primo si no es par, no acaba en 5 y no se divide entre 3. Si pasa esas tres pruebas, ya acabé.",
+          "seLeContesta": "Tres pruebas es muy pocas. Toma el 51: no es par, no acaba en 5. Suma sus cifras: 5 + 1 = 6. ¿Se divide 6 entre 3? Sí, así que 51 sí se divide entre 3. Pero hay más primos que 2, 3 y 5. ¿Qué hay entre el 5 y antes de llegar a 51?",
+          "aDondeLoEmpuja": "A entender que hay más primos que revisar, que es la razón de seguir probando."
+        },
+        {
+          "siDice": "Si el número que me queda es pequeño, ya es primo y paro.",
+          "seLeContesta": "Verdad que los números chicos se ven más claros. Pero en 360, cuando llegas a 5 en la izquierda, parece que ya no hay nada. Divide 5 entre 5 y mira qué te queda.",
+          "aDondeLoEmpuja": "A ver que el 1 es la meta verdadera, no el tamaño del número."
+        },
+        {
+          "siDice": "Sí entendí, nada más no sé cómo escribirlo.",
+          "seLeContesta": "Entonces escribe una sola cosa: qué falta cuando paras en 5 en vez de seguir hasta 1. Si ves qué se quedó sin dividir, ya lo explicaste.",
+          "aDondeLoEmpuja": "A que vea que la idea ya la tiene y solo le falta decirla."
+        }
+      ],
+      "ejemploQueSiCuenta": "Cuando descompones 360, tienes que seguir hasta que en la izquierda te queda 1. Si paras en 5 porque parece primo, no dividiste 5 entre 5 y el 5 se queda en la descomposición sin estar partido. Si multiplicas de regreso sin ese último paso, el resultado no te da 360, así que ves que falta algo.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras primo, factor o descomposición: si dice el número no quedó partido de verdad, ya dijo la idea.",
+        "Que no escriba ningún número: la idea cuenta sin hacer las divisiones."
+      ]
+    },
+    "noSePuede": null
+  }
 }

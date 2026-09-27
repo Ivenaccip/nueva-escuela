@@ -652,8 +652,302 @@
     ],
     "noSePuede": null
   },
-  "completar": null,
-  "escalera": null,
+  "completar": {
+    "temaNumero": 7,
+    "materia": "matematicas",
+    "pasoDelCanon": 3,
+    "queFalta": "el resultado de sumar los numeradores, con el denominador común en el de abajo",
+    "expresion": [
+      {
+        "tipo": "fraccion",
+        "arriba": 3,
+        "abajo": 6
+      },
+      {
+        "tipo": "texto",
+        "valor": "+ "
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 2,
+        "abajo": 6
+      },
+      {
+        "tipo": "texto",
+        "valor": "= "
+      },
+      {
+        "tipo": "hueco"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "5/6",
+      "aceptaTambien": [],
+      "comoSeLee": "cinco sextos"
+    },
+    "pistas": [
+      {
+        "texto": "Los denominadores ya son iguales: ambas fracciones tienen 6 en el de abajo. Ahora sumas los numeradores.",
+        "orden": 1
+      },
+      {
+        "texto": "Sumas los números de arriba. Los de abajo se quedan igual porque los pedazos ya son del mismo tamaño.",
+        "orden": 2
+      },
+      {
+        "texto": "3 + 2 = 5. El de abajo sigue siendo 6. Escribe 5/6.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "5/8",
+      "queSeLeDice": "Sumaste 3 + 2 = 5, bien. Pero los denominadores no se suman: ya son iguales y se quedan como están. El 6 no cambia. Vuelve al paso 3."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 7,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En la receta del pastel de la abuela salen dos moldes: uno llevas con 1/2 de taza de leche y otro con 1/3 de taza. Necesitas saber cuánta leche usas en total.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 2
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué fracción de taza usas en total?",
+        "respuesta": {
+          "tecleado": "5/6",
+          "aceptaTambien": [],
+          "comoSeLee": "cinco sextos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Los pedazos tienen que ser del mismo tamaño antes de sumarlos. Necesitas un tamaño que funcione para ambas fracciones."
+          },
+          {
+            "orden": 2,
+            "texto": "El mínimo común múltiplo de 2 y 3 es 6. Conviertes 1/2 a sextos y 1/3 a sextos."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la tiendita tienen botellas de aceite: una de 3/4 de litro y otra de 2/8 de litro. Quieren mezclarlas en un recipiente.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 8
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos litros de aceite tienen en total?",
+        "respuesta": {
+          "tecleado": "1",
+          "aceptaTambien": [
+            "8/8"
+          ],
+          "comoSeLee": "un litro"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí una de las fracciones se simplifica fácil: 2/8 es la misma que 1/4."
+          },
+          {
+            "orden": 2,
+            "texto": "Una vez simplificada, tienes 3/4 + 1/4. Busca el mínimo común múltiplo de los denominadores."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la obra del barrio cortaron un tubo: el lunes sacaron 5/6 de metro y el martes sacaron 7/12 de metro. Necesitan saber el largo total que cortaron.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 5,
+            "abajo": 6
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 7,
+            "abajo": 12
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos metros cortaron en total?",
+        "respuesta": {
+          "tecleado": "17/12",
+          "aceptaTambien": [],
+          "comoSeLee": "diecisiete doceavos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí sacaste datos de dos días distintos. Ahora los juntas en la misma operación."
+          },
+          {
+            "orden": 2,
+            "texto": "El mínimo común múltiplo de 6 y 12 es 12. Conviertes 5/6 a doceavos."
+          },
+          {
+            "orden": 3,
+            "texto": "5/6 son 10/12. Sumas 10/12 + 7/12."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un carpintero cortó una tabla: usó 3/8 de metro para una repisa. Al final le quedó 7/8 de metro sin usar. Necesita saber cuánto medía la tabla al inicio.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "−"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 8
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 7,
+            "abajo": 8
+          }
+        ],
+        "pregunta": "¿Cuántos metros medía la tabla al inicio?",
+        "respuesta": {
+          "tecleado": "10/8",
+          "aceptaTambien": [
+            "5/4"
+          ],
+          "comoSeLee": "diez octavos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí ya te dieron el resultado: lo que quedó sin usar. Falta el dato de entrada: lo que medía al inicio."
+          },
+          {
+            "orden": 2,
+            "texto": "Si restaste 3/8 a algo y te quedó 7/8, es porque el algo era 7/8 + 3/8."
+          },
+          {
+            "orden": 3,
+            "texto": "Como los denominadores son iguales, sumas los numeradores: 7 + 3 = 10, todo sobre 8."
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      },
+      {
+        "situacion": "El entrenador repartió el tiempo de la práctica: dedicó 2/5 de hora a calentamiento y el resto a ejercicios. Pero se le mojó la nota de cuánta hora fue la práctica total.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 5
+          }
+        ],
+        "pregunta": "¿Qué fracción de hora fue la práctica en ejercicios?",
+        "respuesta": {
+          "tecleado": "2/5",
+          "aceptaTambien": [],
+          "comoSeLee": "dos quintos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Te dieron la suma total y uno de los sumandos. Necesitas encontrar el otro sumando."
+          },
+          {
+            "orden": 2,
+            "texto": "Si sumaste 2/5 a algo y te quedó 4/5, el algo es 4/5 − 2/5."
+          },
+          {
+            "orden": 3,
+            "texto": "Los denominadores ya son iguales: restas los numeradores 4 − 2 = 2, todo sobre 5."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
   "error": {
     "temaNumero": 7,
     "materia": "matematicas",

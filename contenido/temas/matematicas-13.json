@@ -527,7 +527,171 @@
     },
     "noSePuede": null
   },
-  "escalera": null,
+  "escalera": {
+    "temaNumero": 13,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En la receta de un pastel dice que hay que agregar 7.5 tazas de harina y el molde se divide en porciones de 0.25 tazas cada una.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "7.5 ÷ 0.25 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas porciones salen?",
+        "respuesta": {
+          "tecleado": "30",
+          "aceptaTambien": [],
+          "comoSeLee": "treinta"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Tienes que convertir los dos números en enteros antes de dividir. Eso se hace recorriendo el punto decimal."
+          },
+          {
+            "orden": 2,
+            "texto": "En 0.25 hay 2 dígitos después del punto. Recorre el punto 2 lugares hacia la derecha en los dos números."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "El tendero tiene 4.8 metros de tela para hacer cintas de 0.2 metros cada una.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "4.8 ÷ 0.2 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas cintas salen?",
+        "respuesta": {
+          "tecleado": "24",
+          "aceptaTambien": [],
+          "comoSeLee": "veinticuatro"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "El divisor 0.2 tiene 1 dígito después del punto. Necesitas recorrer el punto 1 lugar en los dos números."
+          },
+          {
+            "orden": 2,
+            "texto": "Recorres el punto en el divisor: 0.2 → 2. Recorres el punto en el dividendo: 4.8 → 48."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "El carpintero cortó 12.5 metros de madera en tramos de 0.5 metros. Después multiplicó el resultado por 0.5 para comprobar.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "12.5 ÷ 0.5 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos tramos cortó?",
+        "respuesta": {
+          "tecleado": "25",
+          "aceptaTambien": [],
+          "comoSeLee": "veinticinco"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "La comprobación te dice que multiplicaste el resultado por el divisor original y te dio el dividendo original."
+          },
+          {
+            "orden": 2,
+            "texto": "Si 25 × 0.5 = 12.5, entonces es cierto que 12.5 ÷ 0.5 = 25. Eso que hiciste al final es exactamente el paso 5."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "La maestra apuntó que 9.6 litros de jugo divididos en vasos de 0.1 litros dieron cierto número de vasos, pero se borró.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "9.6 ÷ 0.1 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos vasos llenó?",
+        "respuesta": {
+          "tecleado": "96",
+          "aceptaTambien": [],
+          "comoSeLee": "noventa y seis"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí sabes los dos números originales. El resultado se perdió, así que tienes que calcularlo de cero."
+          },
+          {
+            "orden": 2,
+            "texto": "El divisor 0.1 tiene 1 dígito después del punto. Recorres el punto 1 lugar en los dos números: 9.6 → 96 y 0.1 → 1."
+          },
+          {
+            "orden": 3,
+            "texto": "Ahora divides 96 entre 1, que es igual a 96."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la clínica anotaron que 18 dosis de medicamento se distribuyeron en botellas con 0.2 litros cada una, pero se mojó la cantidad de botellas.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "18 ÷ 0.2 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas botellas se llenaron?",
+        "respuesta": {
+          "tecleado": "90",
+          "aceptaTambien": [],
+          "comoSeLee": "noventa"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "El divisor es un decimal: 0.2. Aunque el dividendo sea entero, tienes que recorrer el punto en los dos."
+          },
+          {
+            "orden": 2,
+            "texto": "En 0.2 hay 1 dígito después del punto. Recorres 1 lugar: 0.2 → 2 y 18 → 180."
+          },
+          {
+            "orden": 3,
+            "texto": "Ya con los dos enteros divides: 180 ÷ 2 = 90."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      }
+    ],
+    "noSePuede": null
+  },
   "error": {
     "temaNumero": 13,
     "materia": "matematicas",
@@ -628,5 +792,75 @@
     ],
     "noSePuede": null
   },
-  "explicar": null
+  "explicar": {
+    "temaNumero": 13,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué recorrer el punto en los dos números, y no nada más en el divisor.",
+    "aclaracion": "Con tus palabras, sin escribir la división. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Los dos números tienen que crecer en la misma proporción para que la división siga diciendo lo mismo.",
+          "porQueImporta": "Si sólo mueves el punto en un número, cambias cuántas veces cabe el divisor en el dividendo, y la respuesta sale equivocada.",
+          "comoSuenaDicha": "Si recorro el punto sólo en uno, los números crecen diferente y la división cambia.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Una división se puede ver como una razón: cuántas veces cabe el divisor en el dividendo. Si un número crece y el otro no, esa razón cambia.",
+          "porQueImporta": "Sin esta idea, el estudiante ve el recorrido como un truco sin motivo. Con ella, el recorrido es el único camino para que la razón se mantenga igual.",
+          "comoSuenaDicha": "Es como si pregunto cuántos trozos pequeños caben en algo grande. Si hago el trocito más grande pero no cambio lo grande, entra menos veces.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Si el resultado debería ser 30 pero te sale 0.3, algo se movió desigual en los dos números.",
+          "porQueImporta": "Es la forma de cachar el error sin volver a hacer la división: el resultado te dice si los números crecieron al mismo ritmo.",
+          "comoSuenaDicha": "El resultado más chico que lo que empezaste significa que moviste mal algo, porque dividir entre un número chiquito siempre da más grande.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque el divisor es el que cambia, no el dividendo.",
+          "queLaDelata": "Nombra qué número se mueve pero no por qué se mueve. Es una regla sobre cuál es cuál, no sobre qué le pasa a la división si sólo uno crece.",
+          "queLeFalta": "Que diga que si uno crece y el otro no, la división da una respuesta distinta."
+        },
+        {
+          "respuesta": "Porque recorrer el punto es convertir el decimal en entero, y lo haces en los dos para que quede bien.",
+          "queLaDelata": "Describe lo que se ve: recorrer, convertir. Pero no dice para qué sirve que queden bien, qué pasaría si no quedaran bien.",
+          "queLeFalta": "Que diga que si no lo haces igual en los dos, la división cambia y te da otro número."
+        },
+        {
+          "respuesta": "Porque así se hace en la división de decimales.",
+          "queLaDelata": "Es la respuesta de quien aprendió el procedimiento de memoria. Nombra qué se hace, no por qué.",
+          "queLeFalta": "Que diga qué le pasaría a la respuesta si recorrieras diferente en los dos números."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Sólo el divisor necesita ser entero, por eso sólo en él recorro el punto.",
+          "seLeContesta": "Tienes razón en que el divisor necesita ser entero. Pero una pregunta: en 7.5 ÷ 0.25, si mueves el punto en 0.25 para que sea 25, y dejas 7.5 igual, ¿cuántas veces cabe 25 en 7.5? Intenta y mira qué te sale.",
+          "aDondeLoEmpuja": "A ver que si un número crece y el otro no, la división no funciona igual, que es la primera idea."
+        },
+        {
+          "siDice": "Sí, si sólo cambio uno la respuesta sale mal. Nada más no sé por qué sale mal.",
+          "seLeContesta": "Bueno, entonces dime: si tienes 750 entre 25 ¿cuántas veces cabe 25 en 750? Y ahora: si tuvieras 7.5 entre 25, ¿cuántas veces cabe? ¿Son el mismo número de veces?",
+          "aDondeLoEmpuja": "A que vea que cambiar nada más el divisor cambia cuántas veces cabe, que es lo que hace que la división sea distinta."
+        },
+        {
+          "siDice": "Si el resultado sale más chico que el dividendo original, algo está mal.",
+          "seLeContesta": "Exacto. Entonces mira: si divides entre algo más chiquito que 1, ¿el resultado debería ser más grande o más chiquito que lo que empezaste? Eso te dice si moviste los puntos bien.",
+          "aDondeLoEmpuja": "A detectar el error sin rehacer la división, que es lo que dice la tercera idea."
+        }
+      ],
+      "ejemploQueSiCuenta": "Si recorro el punto nada más en 0.25 para que sea 25, pero dejo 7.5 igual, estoy dividiendo 7.5 entre 25. Pero si recorro el punto en los dos, divido 750 entre 25. Son divisiones diferentes, y claro que dan respuestas diferentes. Recorro en los dos para que la división siga siendo la misma, nada más con números enteros.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras dividendo, divisor ni recorrer: si dice que los números crecen diferente, ya dijo la idea.",
+        "Que no escriba ningún número: la idea cuenta sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  }
 }

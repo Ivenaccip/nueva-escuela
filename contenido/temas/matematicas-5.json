@@ -573,7 +573,227 @@
     },
     "noSePuede": null
   },
-  "escalera": null,
+  "escalera": {
+    "temaNumero": 5,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En la carpintería cortan una tabla de 18/24 de metro en pedazos más grandes. La simplificaron a 3/4 de metro.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 18,
+            "abajo": 24
+          },
+          {
+            "tipo": "texto",
+            "valor": "—"
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 4
+          }
+        ],
+        "pregunta": "¿Qué número dividió a 18 y a 24?",
+        "respuesta": {
+          "tecleado": "6",
+          "aceptaTambien": [],
+          "comoSeLee": "seis"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Busca un número que divida tanto a 18 como a 24."
+          },
+          {
+            "orden": 2,
+            "texto": "Ese número multiplicado por 3 te da 18. El mismo número multiplicado por 4 te da 24."
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": false
+      },
+      {
+        "situacion": "La panadería rebajó las porciones de pan: tenían 12/16 de kg y lo simplificaron.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 12,
+            "abajo": 16
+          },
+          {
+            "tipo": "texto",
+            "valor": "—"
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷4"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es la fracción simplificada?",
+        "respuesta": {
+          "tecleado": "3/4",
+          "aceptaTambien": [],
+          "comoSeLee": "tres cuartos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Ya sabes que divides arriba y abajo entre 4. Escribe la fracción que queda."
+          },
+          {
+            "orden": 2,
+            "texto": "¿Cuánto es 12 entre 4? ¿Cuánto es 16 entre 4?"
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la tiendita reducen medidas: 20/24 de litro de jugo. Dividen arriba y abajo entre 4.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 20,
+            "abajo": 24
+          },
+          {
+            "tipo": "texto",
+            "valor": "—"
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷4"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es la fracción ya simplificada?",
+        "respuesta": {
+          "tecleado": "5/6",
+          "aceptaTambien": [],
+          "comoSeLee": "cinco sextos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Tienes dos números: el de arriba se divide entre 4, y el de abajo también."
+          },
+          {
+            "orden": 2,
+            "texto": "20 entre 4 es 5. 24 entre 4 es 6. Eso que queda es la fracción simplificada."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En el taller revisaron si 10/15 está completamente simplificada. Dividieron entre 5 y quedó 2/3.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "—"
+          },
+          {
+            "tipo": "texto",
+            "valor": "¿Qué divide a 2 y a 3?"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué número es el único que divide a 2 y a 3?",
+        "respuesta": {
+          "tecleado": "1",
+          "aceptaTambien": [],
+          "comoSeLee": "uno"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Ya no hay otro número que divida a los dos. La fracción está en su mínima expresión."
+          },
+          {
+            "orden": 2,
+            "texto": "El 2 es par, el 3 es impar. No hay divisor común excepto el 1."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "El maestro escribió que 6/8 simplificada es 3/4, pero borró cuál era la fracción original antes de simplificar.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 4
+          }
+        ],
+        "pregunta": "¿Qué fracción simplificada da 3/4?",
+        "respuesta": {
+          "tecleado": "6/8",
+          "aceptaTambien": [
+            "12/16"
+          ],
+          "comoSeLee": "seis octavos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí ya tienes la fracción simplificada. Lo que falta es cómo se veía antes."
+          },
+          {
+            "orden": 2,
+            "texto": "Si multiplicas arriba y abajo por 2, obtienes una fracción equivalente a 3/4."
+          },
+          {
+            "orden": 3,
+            "texto": "3 por 2 es 6. 4 por 2 es 8."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
   "error": {
     "temaNumero": 5,
     "materia": "matematicas",
@@ -708,5 +928,80 @@
     ],
     "noSePuede": null
   },
-  "explicar": null
+  "explicar": {
+    "temaNumero": 5,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué divides arriba y abajo entre el mismo número en vez de restar.",
+    "aclaracion": "Con tus palabras, sin escribir ninguna fracción ni fórmula. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Cuando divides arriba y abajo entre el mismo número, la cantidad que representa la fracción no cambia, pero cuando restas lo mismo arriba y abajo, sí cambia.",
+          "porQueImporta": "Sin esta idea, el estudiante cree que cualquier operación que haga a los dos pisos por igual mantiene el valor. Pero restar no es lo mismo que dividir.",
+          "comoSuenaDicha": "Si divido los dos entre 2, sigue siendo lo mismo. Pero si resto 2 a los dos, ya no vale lo mismo.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Dividir entre un número es repartir en pedazos más grandes sin cambiar la cantidad total; restar es quitar cantidad de verdad.",
+          "porQueImporta": "Es lo que explica por qué el orden en que hagas la cuenta importa. Dividir es un cambio de tamaño, restar es un cambio de cantidad.",
+          "comoSuenaDicha": "Dividir es hacer los pedazos más grandes pero sigue siendo lo mismo. Restar es quitar de verdad.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Puedes comprobar que la fracción simplificada vale lo mismo multiplicando para volver atrás, o dividiendo los decimales de las dos fracciones.",
+          "porQueImporta": "Sin forma de comprobar, el estudiante sólo confía en el procedimiento. La comprobación es cómo sabe que dividir funciona y restar no.",
+          "comoSuenaDicha": "Si divido bien, puedo multiplicar de nuevo y llego a la fracción de antes.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque el procedimiento de simplificar es dividir arriba y abajo entre el mismo número.",
+          "queLaDelata": "Repite el nombre del procedimiento pero no dice por qué funciona. Es la respuesta de quien lo aprendió de memoria sin entender la razón.",
+          "queLeFalta": "Que explique qué pasa con la cantidad cuando divides entre el mismo número, o qué pasa cuando restas."
+        },
+        {
+          "respuesta": "Porque si restas lo mismo arriba y abajo la fracción se daña.",
+          "queLaDelata": "Llama daño a lo que está mal, pero no dice qué cambió. Podría estar repitiendo una regla sin verla.",
+          "queLeFalta": "Que diga qué se daña: que la cantidad que representa la fracción ya no es la misma."
+        },
+        {
+          "respuesta": "Porque restando a 18 y a 24 me da 16 y 22, y eso no es lo mismo que tres cuartos.",
+          "queLaDelata": "Compara el resultado numérico pero no dice por qué cambió. Está comprobando que no funciona sin decir por qué no funciona.",
+          "queLeFalta": "Que diga por qué cambió: porque restar quita cantidad de verdad, no es lo mismo que hacer los pedazos más grandes."
+        },
+        {
+          "respuesta": "Porque simplificar es hacer los números más chicos sin cambiar la fracción.",
+          "queLaDelata": "Describe qué se ve al final pero no dice cuál operación logra eso sin cambiar la fracción. Podría servir tanto para dividir como para restar.",
+          "queLeFalta": "Que diga cuál operación matemática (dividir entre el mismo número) logra hacer los números chicos sin cambiar la cantidad."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Si quito 2 a los dos pisos es igual que dividir entre 2 porque cambio ambos números.",
+          "seLeContesta": "Cambias ambos números, es cierto. Pero mira: dieciocho menos dos es dieciséis, y veinticuatro menos dos es veintidós. Ahora revisa si dieciséis entre seis divide exacto, o si dieciséis y veintidós tienen todavía números que los dividan a ambos. Es diferente a lo que pasó cuando dividiste.",
+          "aDondeLoEmpuja": "A que vea que restar y dividir no producen lo mismo en los dos pisos, que es la segunda idea de la lista."
+        },
+        {
+          "siDice": "Sí, entendí que restar no funciona, pero ¿por qué dividir sí?",
+          "seLeContesta": "Divide dieciocho entre seis y dígame cuánto te toca en cada grupo. Ahora divide veinticuatro entre seis. La fracción que tenías era dieciocho pedazos de tamaño veinticuatro. Cuando divides por seis, ahora tienes tres pedazos de tamaño cuatro. ¿Es la misma cantidad repartida de otra forma?",
+          "aDondeLoEmpuja": "A que descubra que dividir entre el mismo número no cambia la cantidad, sólo el tamaño del pedazo, que es la idea principal."
+        },
+        {
+          "siDice": "¿Y cómo sé que realmente es lo mismo si uso números diferentes?",
+          "seLeContesta": "Haz la cuenta de verdad: dieciocho entre veinticuatro como decimal, y tres entre cuatro como decimal. Si salen iguales, entonces es lo mismo. Eso es tu comprobación.",
+          "aDondeLoEmpuja": "A que use la comprobación como forma de verificar que dividir funciona, que es la tercera idea."
+        }
+      ],
+      "ejemploQueSiCuenta": "Cuando divido arriba y abajo entre el mismo número, la fracción no cambia de valor, sólo se escribe con números más chicos. Por ejemplo, dieciocho veinticuatravos es lo mismo que tres cuartos porque dividí los dos entre seis. Pero si resto dos a dieciocho y a veinticuatro me da dieciséis veintidós, y eso ya no es lo mismo. Restar quita cantidad de verdad, dividir sólo hace los pedazos más grandes.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba en minúsculas.",
+        "Que no use las palabras simplificar, equivalentes ni mínima expresión.",
+        "Que no escriba ningún número: la idea cuenta sin hacer la cuenta con números específicos."
+      ]
+    },
+    "noSePuede": null
+  }
 }

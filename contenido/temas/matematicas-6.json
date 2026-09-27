@@ -712,5 +712,69 @@
   },
   "escalera": null,
   "error": null,
-  "explicar": null
+  "explicar": {
+    "temaNumero": 6,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué un quinto es mayor que un octavo si 5 es menor que 8.",
+    "aclaracion": "Con tus palabras, sin escribir fracciones con diagonal ni usar fórmula. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El número de abajo decide en cuántos pedazos se corta el entero, y más pedazos significa que cada pedazo es más chico.",
+          "porQueImporta": "Sin esta idea, el denominador parece un número que sólo se compara con otros números, como los números enteros. Con ella, es un dato sobre el tamaño del pedazo.",
+          "comoSuenaDicha": "Entre más partes cortes el entero, cada parte se hace más chica.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Cuando los numeradores son iguales, la fracción con el denominador más pequeño es la más grande, porque sus pedazos son más grandes.",
+          "porQueImporta": "Es la razón por la que en esta comparación un quinto gana a un octavo, sin depender de memorizar cuál va dónde.",
+          "comoSuenaDicha": "Tengo un pedazo de cada uno, pero el quinto es más gordo que el octavo.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 1,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque 5 es menor que 8 y el número menor va arriba o es la fracción más grande.",
+          "queLaDelata": "Compara los números como si fueran números enteros normales. Trata el denominador como un dato que se compara de frente, sin pensar en qué significa.",
+          "queLeFalta": "Que diga que el número de abajo no es una cantidad que se compara contra otra cantidad, sino un dato que dice el tamaño del pedazo."
+        },
+        {
+          "respuesta": "Porque un quinto es mayor, como vimos en el ejercicio.",
+          "queLaDelata": "Repite el resultado sin explicar por qué. No dice nada de lo que significa cada número ni por qué ocurre.",
+          "queLeFalta": "Que diga qué hace que un quinto sea más grande: que sus pedazos sean más grandes porque se corta en menos partes."
+        },
+        {
+          "respuesta": "Porque llevamos los dos al mismo denominador y después se compara fácil.",
+          "queLaDelata": "Describe el procedimiento que ya hizo, pero no explica por qué funciona. Es saber cómo hacerlo sin entender qué hace.",
+          "queLeFalta": "Que diga por qué el procedimiento funciona: necesitamos pedazos del mismo tamaño para poder contar cuál tiene más."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "8 es mayor que 5, así que un octavo tiene que ser mayor que un quinto.",
+          "seLeContesta": "El número de abajo no dice cuál fracción es más grande. Dice en cuántos pedazos iguales se cortó el entero. Si cortas un pan en 8 pedazos en lugar de 5, cada pedazo es más chico, no más grande. ¿Qué es más: una de cinco rebanadas o una de ocho rebanadas?",
+          "aDondeLoEmpuja": "A que entienda que el número de abajo controla el tamaño del pedazo, que es la idea principal."
+        },
+        {
+          "siDice": "No entiendo por qué importa que los pedazos sean de distinto tamaño si tengo uno de cada uno.",
+          "seLeContesta": "Exacto: comparar un quinto contra un octavo tal como vienen es como comparar un trozo grande contra un trozo chico, sin medir con la misma regla. Por eso los llevamos al mismo denominador: necesitamos pedazos que midan lo mismo para poder decir «uno de éste versus uno de éste», y ahí sí sale cuál es más grande.",
+          "aDondeLoEmpuja": "A ver que sin igualar el denominador no se puede comparar en paridad, que es el piso para entender por qué el procedimiento funciona."
+        },
+        {
+          "siDice": "Sí entendí, nada más me es difícil escribirlo con palabras.",
+          "seLeContesta": "Entonces contesta una sola cosa: si cortas algo en 5 partes en lugar de 8, ¿cada parte es más grande o más chica? Si eso te sale claro, la idea ya la tienes y lo que falta es decirla.",
+          "aDondeLoEmpuja": "A que vea que ya domina el concepto y lo que le cuesta es la redacción, no el entendimiento."
+        }
+      ],
+      "ejemploQueSiCuenta": "El número de abajo dice en cuántas partes iguales cortas el entero. Un quinto es cortar en 5 pedazos, un octavo es cortar en 8. Si cortas en más pedazos, cada pedazo es más pequeño. Por eso un octavo es más chico que un quinto, aunque 8 sea un número más grande que 5.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras denominador ni numerador: si dice que el número de abajo decide el tamaño, ya lo dijo.",
+        "Que no mencione el común denominador ni el procedimiento: la idea cuenta sin repetir los pasos."
+      ]
+    },
+    "noSePuede": null
+  }
 }
