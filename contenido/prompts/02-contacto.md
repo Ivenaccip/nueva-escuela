@@ -147,6 +147,13 @@ ahí es donde el error se cae.
 Si `{{tema.errorTipico}}` describe dos confusiones, el canon ya escogió una en
 `error.creenciaDeAtras`. Ésa es la que lleva `esElErrorTipico` en `true`.
 
+**Antes de devolver, cuéntalas.** Recorre las opciones de las cuatro preguntas
+—son de doce a veinte— y cuenta cuántas llevan `esElErrorTipico` en `true`. Si
+no es exactamente una, está mal, y el llamador la rechaza y vuelve a pedirla.
+El de verdad se marca una sola vez; los de `erroresSecundarios` **no** se marcan,
+aunque también sean errores y aunque se parezcan. Ése es el error que se comete:
+marcar dos porque las dos son confusiones reales.
+
 **Cada entrada de `canon.erroresSecundarios` es obligatoriamente un distractor
 del bloque**, con `esElErrorTipico` en `false`. No es opcional. Son las
 confusiones que no cupieron en `error` y que ninguna otra estación puede recoger:

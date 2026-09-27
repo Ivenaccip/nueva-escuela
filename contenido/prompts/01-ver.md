@@ -92,8 +92,20 @@ se voltea la segunda?» es la pregunta.
   cual. Lo que necesite un subíndice, un exponente o una fracción se dice con
   palabras («el número de abajo», «el cloro se repite dos veces»). Un símbolo de
   elemento pelón sí se puede escribir: Ca, Cl, O.
-- Máximo 70 caracteres. Arriba de eso no cabe en la pantalla: se pinta a 27
-  puntos y sólo hay tres renglones.
+- **Máximo 70 caracteres, y está medido**: se pinta a 27 puntos con interlineado
+  de 33 en una pantalla de 390, y 70 es justo donde se acaba el tercer renglón.
+  En 71 se va al cuarto y empuja el video fuera de la pantalla. Cuéntalos.
+
+  Lo que hace que se pase es meter la respuesta en la pregunta. La pregunta
+  señala el hueco; no lo explica.
+
+  ```
+  [95] no   ¿Por qué cuando divides un número grande entre uno chico no siempre
+            el resultado es más grande?
+  [43] sí   ¿Dividir siempre achica el resultado?
+
+  [30] sí   ¿Por qué se voltea la segunda?     ← el del diseño, dos renglones
+  ```
 
 ## 2 · `resumen`
 
@@ -104,6 +116,9 @@ Dos frases debajo del video. Dicen **la idea**, no el procedimiento.
 - La primera frase dice de qué se trata; la segunda cierra. Nada más.
 - No repite la pregunta con otras palabras.
 - No usa los números del ejemplo del canon.
+- **Entre 60 y 220 caracteres, medido**: a 15 puntos con interlineado de 24, 220
+  es donde se acaba el quinto renglón. El del diseño tiene 100 y ocupa tres, que
+  es lo que conviene: dos frases cortas, no tres largas.
 - No promete lo que el video va a decir («en este video vas a ver…»). Dice lo
   que queda cuando el video se acaba.
 - Entre 60 y 200 caracteres. El de la pantalla de diseño tiene 101.

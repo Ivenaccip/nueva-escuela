@@ -32,7 +32,7 @@
       "type": "string",
       "description": "Dos frases debajo del video (app/estacion/ver.tsx:45-47). Dicen la IDEA que el video deja, no el procedimiento: si el resumen se puede seguir como receta, esta mal escrito. La primera frase dice de que se trata; la segunda cierra. Sin formulas, sin markdown, sin los numeros del ejemplo del canon.",
       "minLength": 60,
-      "maxLength": 200
+      "maxLength": 220
     },
     "busqueda": {
       "type": "object",

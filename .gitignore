@@ -58,3 +58,6 @@ contenido/temas/_tanda-*.json
 
 # Salidas rechazadas, para leer por que fallo un prompt. Se regeneran.
 contenido/temas/_rechazado-*.json
+
+# Bitacora de una corrida, no contenido.
+contenido/temas/_corrida.log

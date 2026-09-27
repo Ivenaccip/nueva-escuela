@@ -159,8 +159,221 @@
   },
   "ver": null,
   "contacto": null,
-  "completar": null,
+  "completar": {
+    "temaNumero": 1,
+    "materia": "matematicas",
+    "pasoDelCanon": 3,
+    "queFalta": "el número que multiplicado por 4 da el resultado más cercano a 27 sin pasarse",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "4 ×"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "= 24, que cabe en 27."
+      }
+    ],
+    "respuesta": {
+      "tecleado": "6",
+      "aceptaTambien": [],
+      "comoSeLee": "seis"
+    },
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "El paso dice que busques el número que multiplicado por 4 da un resultado que cabe en 27. Ya sabes que ese resultado es 24."
+      },
+      {
+        "orden": 2,
+        "texto": "Prueba multiplicando 4 por números distintos hasta encontrar cuál da 24."
+      },
+      {
+        "orden": 3,
+        "texto": "¿Cuántas veces entra el 4 en el 24? O dicho de otra forma: ¿4 por cuánto es 24?"
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "108",
+      "queSeLeDice": "Viste 27 ÷ 4 y multiplicaste los dos números. Pero aquí el paso es distinto: ya decidiste que la respuesta es 24, y lo que tienes que encontrar es qué número, multiplicado por 4, da 24. Vuelve al paso 3."
+    },
+    "noSePuede": null
+  },
   "escalera": null,
-  "error": null,
-  "explicar": null
+  "error": {
+    "temaNumero": 1,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien resolvió este problema: repartir 27 caramelos en bolsas de 4 caramelos cada una. Escribió 27 ÷ 4 y obtuvo un resultado. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Leo el problema: pregunta cuántas veces cabe 4 en 27."
+          }
+        ],
+        "siLoTocas": "Ese paso identifica bien qué pregunta hace el problema. Repartir en bolsas es preguntar cuántos grupos de un tamaño caben en lo que tengo."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Escribo la operación: 27 ÷ 4"
+          }
+        ],
+        "siLoTocas": "El dividendo 27 y el divisor 4 están en su lugar correcto. Escribir la división así no da error; después hay que resolverla."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Resuelvo la división: 27 × 4 = 108."
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que les pasa su número a los dos pasos que siguen."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Calculo el residuo: 108 − 4 = 104."
+          }
+        ],
+        "siLoTocas": "El cálculo del residuo está bien hecho como operación: el paso recibió dos números del paso 3 y los restó correctamente. El error no se inventó acá."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "La respuesta es: 27 ÷ 4 = 108 y sobran 104."
+          }
+        ],
+        "siLoTocas": "Ese paso repite el número que le llegó del paso 3. El formato está bien: escribe el cociente, el residuo y lo que significa. El número es el que le entregaron."
+      }
+    ],
+    "pasoMalo": 3,
+    "arrastre": "El 108 del paso 3 es el número grande con el que se hace el residuo en el paso 4, y de ahí sale en la respuesta del paso 5 como cociente y residuo. Los pasos 4 y 5 están bien construidos con ese número malo.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?\"",
+    "motivos": [
+      {
+        "texto": "Multiplicó los dos números en vez de dividir.",
+        "esElBueno": true,
+        "queRevela": "Es exactamente lo que pasó: donde tiene que buscar cuántas veces cabe 4 en 27, multiplicó. El resultado 108 es el producto 27 × 4, no cuántas veces cabe. Con una división bien hecha sería 6, un número mucho más pequeño que los dos que se operan. Aquí el resultado es más grande."
+      },
+      {
+        "texto": "Restó en vez de dividir.",
+        "esElBueno": false,
+        "queRevela": "Si restara, sería 27 − 4 = 23. Pero el renglón tiene un símbolo de multiplicación ×, no de resta. Quien escoge esto ve que algo distinto a dividir ocurrió, pero el símbolo del renglón ya lo muestra."
+      },
+      {
+        "texto": "Olvidó que la división busca cuántas veces cabe.",
+        "esElBueno": false,
+        "queRevela": "Es cierto que eso pasó: quien resolvió olvidó qué significaba dividir. Pero esto no explica por qué escribió un × en vez de un ÷, ni por qué el número salió tan grande."
+      },
+      {
+        "texto": "Usó el número grande primero.",
+        "esElBueno": false,
+        "queRevela": "El 27 va primero en ambas operaciones: en una división bien hecha y en la multiplicación que escribió. El orden de los números no es el problema."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "En un problema de repartir o de cuántas veces cabe, piensa qué debe ser más grande: ¿lo que repartes o cuántos grupos salen? Compara 27, el número de caramelos, con 108."
+      },
+      {
+        "orden": 2,
+        "texto": "Busca en los cinco renglones dónde está escrito un × y dónde está escrito un ÷. La división (÷) es la que contesta cuántas veces cabe."
+      },
+      {
+        "orden": 3,
+        "texto": "Si 4 cabe en 27, ¿cuántas veces: más de 20 veces, o entre 5 y 10 veces? Compara tu respuesta con lo que salió."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 1,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué el resultado de 27 ÷ 4 es 6 y no algo más grande.",
+    "aclaracion": "Con tus palabras, sin escribir cálculos. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Dividir pregunta cuántas veces cabe el número más chico en el más grande, no cuánto se agranda con la operación.",
+          "porQueImporta": "Quien cree que dividir siempre agranda el número espera un resultado más grande que 27. Sin esta idea, sigue multiplicando porque el resultado le parece más creíble que el cociente real.",
+          "comoSuenaDicha": "Dividir pregunta cuántas veces entra el 4 en el 27, no cuánto sube el número.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Cuando repartes o cuentas cuántas veces cabe algo, el resultado es más chico que lo que empezaste repartiendo, porque estás dividiendo eso en pedazos.",
+          "porQueImporta": "Es la prueba de que el resultado está bien: si el cociente es más grande que el dividendo, algo salió mal. Sin esta idea, el estudiante no sabe si su resultado tiene sentido o no.",
+          "comoSuenaDicha": "Si reparto algo en pedazos, me toca menos en cada pedazo de lo que tenía al principio.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "El residuo es lo que sobra después de contar cuántas veces cabe, y es parte de la respuesta, no un error.",
+          "porQueImporta": "Sin el residuo la respuesta es incompleta. Si alguien ignora el residuo o lo trata como un error, no resuelve bien los problemas que tienen sobra.",
+          "comoSuenaDicha": "Los 3 que sobran son parte de la respuesta, no algo que desaparece.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque la fórmula de la división es dividendo entre divisor.",
+          "queLaDelata": "Nombra cómo se hace la operación, no qué significa. No dice por qué el resultado tiene que ser más chico ni qué significan los números en el problema.",
+          "queLeFalta": "Que diga qué contesta la división: cuántas veces cabe el divisor en el dividendo."
+        },
+        {
+          "respuesta": "Porque 27 por 4 daría 108, y dividir es lo opuesto a multiplicar.",
+          "queLaDelata": "Compara los resultados de dos operaciones distintas, pero no dice qué significa cada uno. Confunde el tamaño de los números con lo que miden.",
+          "queLeFalta": "Que diga qué pregunta contesta dividir: cuántas veces cabe, no cuánto sube."
+        },
+        {
+          "respuesta": "Porque el 4 cabe 6 veces en 27 y después sobran 3.",
+          "queLaDelata": "Describe el resultado pero no explica por qué el resultado es más chico que 27. Suena como que entendió, pero no dice la razón.",
+          "queLeFalta": "Que diga por qué cuando repartes algo o cuentas cuántas veces cabe, el número que sale tiene que ser más chico."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Pero si multiplico 27 × 4 me sale 108, que es un número más grande. No entiendo por qué dividir no da algo parecido.",
+          "seLeContesta": "Porque multiplicar y dividir hacen lo opuesto. Multiplicar crea grupos: cuatro veces 27 son cuatro grupos de 27. Dividir hace lo contrario: parte lo que tienes en grupos. Si partes 27 en grupos de 4, te tocan menos en cada grupo, no más. ¿Cuántos grupos de 4 entran en 27?",
+          "aDondeLoEmpuja": "A ver que dividir pregunta cuántas veces cabe, no si el número se agranda."
+        },
+        {
+          "siDice": "No entiendo cómo 6 y 3 de sobra es la respuesta. Si repartí mal, ¿no tendría que salir otro número?",
+          "seLeContesta": "Salió bien. Mira: si metes 6 bolsas de 4 caramelos, usas 24. De 27 caramelos te sobran 3. Esos 3 contan en la respuesta: no desaparecen. La respuesta completa es '6 y sobran 3', no nada más 6.",
+          "aDondeLoEmpuja": "A ver que el residuo es parte de la respuesta, no un error o un detalle que se ignora."
+        },
+        {
+          "siDice": "Sí entendí, nada más no sé cómo escribirlo.",
+          "seLeContesta": "Entonces contesta esto: si repartes 27 caramelos en bolsas de 4, ¿te tocan más caramelos en cada bolsa de los que tenías al principio, o menos? Escribe nada más eso.",
+          "aDondeLoEmpuja": "A que vea que la idea ya la tiene y lo que falta es decirla corta."
+        }
+      ],
+      "ejemploQueSiCuenta": "Cuando divido, pregunto cuántas veces cabe el 4 en el 27. No es que el número se haga más grande, es que cuento cuántos 4 entran. Caben 6 veces exactas, y sobran 3. Si repartiera 27 caramelos en bolsas de 4, tendría 6 bolsas llenas, no más. El resultado es más chico que 27 porque estoy dividiendo en pedazos, no agrandando.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras dividendo, divisor, cociente ni residuo: si dice la idea con sus palabras, cuenta.",
+        "Que no escriba ningún número: la explicación cuenta sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  }
 }

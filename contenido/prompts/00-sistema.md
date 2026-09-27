@@ -86,16 +86,22 @@ bien  {"tipo":"fraccion","arriba":3,"abajo":5}
 bien  {"tipo":"fraccion","arriba":"velocidad final − inicial","abajo":"tiempo"}
 ```
 
-**Un renglón es siempre un arreglo de átomos**, aunque traiga uno solo. Nunca una
-cadena suelta, y nunca —esto pasa de verdad— el arreglo serializado como texto.
+**Ningún arreglo se devuelve serializado como texto.** Es el error que más caro
+sale de todos, y no es sólo de los renglones: le pasa a `escalones`, a `pasos`, a
+`motivos`, a `preguntas`, a cualquier campo que el esquema declare como arreglo.
+Un arreglo se devuelve como arreglo, con sus corchetes de JSON de verdad, sin
+comillas alrededor, sin comillas escapadas adentro y sin saltos de línea.
 
 ```
-mal   "3/5 ÷ 1/4"
-mal   "[{\"tipo\":\"texto\",\"valor\":\"Alguien dividió\"}]"
-bien  [{"tipo":"fraccion","arriba":3,"abajo":5},
-       {"tipo":"texto","valor":"÷"},
-       {"tipo":"fraccion","arriba":1,"abajo":4}]
+mal   "enunciado": "[{\"tipo\":\"texto\",\"valor\":\"Alguien dividió\"}]"
+mal   "escalones": "[\n  {\n    \"situacion\": \"En la tiendita...\"\n  }\n]"
+mal   "expresion": "3/5 ÷ 1/4"
+bien  "enunciado": [{"tipo":"texto","valor":"Alguien dividió"}]
+bien  "escalones": [{"situacion":"En la tiendita...", "expresion":[...]}]
 ```
+
+Si te descubres escribiendo `\"` dentro del valor de un campo, párate: estás
+metiendo JSON dentro de una cadena en vez de devolver la estructura.
 
 **Los `tipo` van en español, y son exactamente estos cuatro:** `texto`,
 `fraccion`, `simbolo`, `hueco`.
