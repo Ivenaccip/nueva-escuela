@@ -134,7 +134,7 @@
     },
     "textoCorto": {
       "type": "object",
-      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2. Medido en la pantalla de 390 despues de que la tarjeta paso de alto fijo a minHeight (app/estacion/contacto.tsx): hasta 30 caracteres la tarjeta mide los 64 del diseno en un renglon; de 40 a 60 se va a dos y mide 66, que no se nota; en 70 salta a tres y mide 89. El tope es 60. Corto sigue siendo mejor: las cuatro opciones se leen de un vistazo y tienen que verse parejas.",
       "properties": {
         "tipo": {
           "const": "texto"
@@ -142,7 +142,7 @@
         "valor": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 30
+          "maxLength": 60
         }
       },
       "required": [

@@ -68,14 +68,19 @@ bien  {"tipo":"simbolo","valor":"2","sup":"3"}        2³
 bien  {"tipo":"simbolo","valor":"v","sub":"f"}        v con f al pie
 ```
 
-**Cada átomo lleva su `tipo`.** Un objeto sin `tipo` no es un átomo: la pantalla
-lo dibuja como un recuadro vacío.
+**Cada átomo es un objeto y lleva su `tipo`.** Una cadena pelona no es un átomo, y
+un objeto sin `tipo` tampoco: la pantalla lo dibuja como un recuadro vacío.
 
 ```
+mal   "Escribes 24 y buscas sus divisores"
 mal   {"texto":"360 ="}
 mal   {"valor":"360 ="}
 bien  {"tipo":"texto","valor":"360 ="}
 ```
+
+Esto vale para **todos** los renglones, incluidos los de las opciones de la
+estación 2 y los pasos de la 5: un renglón es un arreglo de objetos, y cada
+elemento de ese arreglo es uno de los cuatro átomos, nunca una cadena.
 
 **Dentro de una fracción no caben átomos.** `arriba` y `abajo` son una sola
 cadena, de 40 caracteres o menos.

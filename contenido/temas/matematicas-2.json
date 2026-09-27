@@ -234,9 +234,100 @@
     },
     "noSePuede": null
   },
-  "ver": null,
+  "ver": {
+    "temaNumero": 2,
+    "materia": "matematicas",
+    "pregunta": "¿Cómo sabes si un número es primo o si lo puedes partir en factores?",
+    "resumen": "Todo número se puede escribir como producto de números primos. Para encontrar esos factores primos, pruebas divisiones sucesivas hasta llegar a 1, y así descubres de qué piezas está hecho el número.",
+    "busqueda": {
+      "consulta": "descomponer número factores primos divisiones sucesivas youtube",
+      "consultasAlternas": [
+        "número primo factorización explicación por qué youtube",
+        "cómo saber si un número es primo o compuesto método prueba divisores"
+      ],
+      "criterios": [
+        "Explica por qué el proceso de divisiones sucesivas funciona para encontrar los factores primos, no nada más los pasos del algoritmo.",
+        "Está en español de México o de América Latina, con acento claro.",
+        "Es del nivel de 6º primaria: números de dos y tres cifras, procedimiento directo sin tecnicismos extras.",
+        "Llega a un ejemplo concreto antes del minuto dos, mostrando la columna de divisiones.",
+        "Muestra que hay que probar todos los números primos (2, 3, 5, 7) hasta que no se divide más, no parar antes de llegar a 1."
+      ],
+      "descarta": [
+        "Enseña que si un número no es par ni termina en 5 ni se divide entre 3, entonces es primo sin seguir probando.",
+        "Es un examen o una lista de definiciones que no tiene ejemplo práctico.",
+        "Tiene introducción larga de más de un minuto antes de mostrar el método."
+      ]
+    },
+    "video": null,
+    "alternativas": [],
+    "confianza": "baja",
+    "porQueEsaConfianza": "La búsqueda en español no devolvió ningún video que explicara por qué funciona la descomposición en factores primos para el nivel de 6º primaria. Se encontraron videos que enseñaban el procedimiento, pero ninguno que explicara la razón de cada paso o que mostrara por qué es necesario probar todos los primos hasta llegar a 1.",
+    "noSePuede": {
+      "que": "No se encontró video en español que explique por qué la descomposición en factores primos funciona como funciona.",
+      "porQue": "Los resultados en español para este nivel o enseñaban solo el algoritmo sin la razón, o eran para grados más avanzados. La búsqueda incluyó variaciones con palabras del temario (número primo, factores, divisiones sucesivas) pero sin éxito.",
+      "queHagoConEsto": "Repetir la búsqueda con otras palabras o en otra lengua, o dejar el tema sin video de apertura. La estación 1 sin video se ve, pero con menos impacto."
+    }
+  },
   "contacto": null,
-  "completar": null,
+  "completar": {
+    "temaNumero": 2,
+    "materia": "matematicas",
+    "pasoDelCanon": 3,
+    "queFalta": "el número de divisiones restantes hasta llegar a 1, escribiendo cada división en una línea nueva",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "360 | 2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "180 | 2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "90 | 2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "45 | 3"
+      },
+      {
+        "tipo": "texto",
+        "valor": "15 | 3"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "1 |"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "5/5",
+      "aceptaTambien": [],
+      "comoSeLee": "cinco entre cinco"
+    },
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Después de dividir 15 entre 3, quedó 5. Ahora tienes que seguir probando si 5 se divide entre algún primo."
+      },
+      {
+        "orden": 2,
+        "texto": "Repites el proceso: escribes el número que quedó (5) y pruebas si se divide entre 2, entre 3, entre 5 o entre otros primos. Escribes el primo que lo divide y el resultado debajo."
+      },
+      {
+        "orden": 3,
+        "texto": "El 5 no es par ni se divide entre 3 (5 no es múltiplo de 3). Pero 5 sí se divide entre 5, y 5 ÷ 5 = 1. Escribe esa división."
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "5",
+      "queSeLeDice": "Escribiste solo el número, pero no la división. Recuerda que en esta columna escribes el número y a su lado el primo que lo divide. Después escribes el resultado debajo. Vuelve al paso de repetir las divisiones hasta llegar a 1."
+    },
+    "noSePuede": null
+  },
   "escalera": null,
   "error": null,
   "explicar": null

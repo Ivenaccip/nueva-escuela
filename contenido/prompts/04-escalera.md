@@ -249,6 +249,23 @@ letras, pero por contrato pide lo mismo que el teclado de doce teclas de la
 estación 3 (`app/estacion/completar.tsx:23-28`). Sin punto decimal, sin signo
 menos, sin letras, sin paréntesis, sin espacios.
 
+**Es UN número o UNA fracción, nunca una operación.** Éste es el error que más se
+comete en esta estación: la respuesta del tema es un producto o una suma, y se
+escribe con un `*` o un `×` que el teclado no tiene.
+
+```
+mal   "tecleado": "2/3*3/2*5"     la factorización 2³ × 3² × 5
+mal   "tecleado": "12 + 3"
+mal   "tecleado": "2^3"
+bien  "tecleado": "3"             ¿cuántas veces cabe el 2 en 360?
+bien  "tecleado": "12/5"
+```
+
+Si la respuesta natural del escalón es una operación, **cambia la pregunta** para
+que lo que falte sea uno de sus números: en vez de «escribe la factorización de
+360», pregunta «¿cuántas veces se repite el 2?». Si ni así se puede preguntar algo
+que quepa en un número, ese escalón no va, y si son varios, llena `noSePuede`.
+
 `aceptaTambien` son las otras formas que también das por buenas: `["6/8"]`
 cuando la buena es `3/4` y el tema todavía no enseña simplificar. Si el tema sí
 enseña simplificar, no aceptes la forma sin simplificar: déjalo vacío.

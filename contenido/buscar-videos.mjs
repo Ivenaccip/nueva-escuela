@@ -19,11 +19,25 @@
 const BASE = process.env.OPENAI_BASE_URL ?? 'https://api.openai.com/v1';
 
 /**
- * gpt-4.1-mini: documentado para la herramienta de búsqueda, y el más barato de
- * los que la sirven ($0.40 de entrada por millón contra $5 de gpt-5.5). Aquí no
- * se le pide razonar: sólo que busque. Quien decide es el modelo que escribe.
+ * gpt-5.5, y aquí el modelo sí importa. Medido sobre el mismo tema:
+ *
+ *   gpt-4.1-mini   1 búsqueda,  0 videos   — se rinde a la primera
+ *   gpt-4.1        1 búsqueda,  2 videos
+ *   gpt-5.5       39 búsquedas, 19 videos  — trabaja el problema
+ *
+ * Los videos de YouTube están mal representados en un índice de web, así que
+ * encontrarlos pide insistir con `site:youtube.com/watch` y con nombres de
+ * canales. Un modelo chico hace una consulta, ve resultados de sitios de tareas
+ * y contesta con eso; no es que busque mal, es que no insiste.
  */
-const MODELO = process.env.ANDAMIO_MODELO_BUSQUEDA ?? 'gpt-4.1-mini';
+const MODELO = process.env.ANDAMIO_MODELO_BUSQUEDA ?? 'gpt-5.5';
+
+/**
+ * Sin tope, gpt-5.5 hizo 39 búsquedas en un solo tema: a un centavo cada una más
+ * sus tokens de contenido, sale más caro que generar el tema entero. Con seis
+ * trae cinco videos en 24 segundos, y con uno basta (los otros son respaldo).
+ */
+const TOPE_BUSQUEDAS = Number(process.env.ANDAMIO_TOPE_BUSQUEDAS ?? 6);
 
 /** Cuántos candidatos se devuelven. La estación 1 usa uno y guarda los demás. */
 const TOPE = 6;
@@ -141,7 +155,11 @@ export async function buscarVideos(tema, materia) {
     {
       model: MODELO,
       tools: [{ type: 'web_search' }],
+      max_tool_calls: TOPE_BUSQUEDAS,
       include: ['web_search_call.action.sources'],
+      // Pedir la URL de `watch` con todas sus letras es lo que hace que el índice
+      // devuelva páginas de video. Sin esa frase el buscador contesta con
+      // help.youtube.com y music.youtube.com, y no sale ni un video: probado.
       input: [
         'Busca en YouTube videos en español que expliquen este tema a un estudiante de secundaria en México.',
         `Tema: ${tema.titulo}. Grado: ${tema.grado}.`,
@@ -149,9 +167,16 @@ export async function buscarVideos(tema, materia) {
         '',
         consultaDe(tema, materia),
         '',
-        'Haz al menos dos búsquedas distintas: una con las palabras que usaría el estudiante y otra más precisa.',
+        'Haz al menos tres búsquedas distintas: una con las palabras que usaría el estudiante,',
+        'otra más precisa, y otra con el nombre de un canal educativo mexicano o latinoamericano.',
         'Prefiere videos que expliquen POR QUÉ funciona y no sólo cómo se hace.',
-        'Al final lista los enlaces de los videos que encontraste.',
+        '',
+        'Busca dentro de youtube.com, no en sitios de tareas ni en blogs que hablen del tema.',
+        'Lo que necesito es la direccion de la pagina de cada video, no la del canal,',
+        'no un enlace de ayuda de YouTube y no una busqueda. Cinco a ocho videos.',
+        '',
+        'No escribas ninguna direccion que no hayas visto en los resultados. Si no encontraste',
+        'ninguna pagina de video, dilo: vale mas eso que una direccion armada.',
       ].join('\n'),
     },
     llave,

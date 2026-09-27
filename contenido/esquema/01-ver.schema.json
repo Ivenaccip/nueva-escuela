@@ -61,7 +61,7 @@
           "items": {
             "type": "string",
             "minLength": 15,
-            "maxLength": 240
+            "maxLength": 500
           },
           "minItems": 3,
           "maxItems": 6
@@ -72,7 +72,7 @@
           "items": {
             "type": "string",
             "minLength": 15,
-            "maxLength": 240
+            "maxLength": 500
           },
           "minItems": 2,
           "maxItems": 5
@@ -146,13 +146,13 @@
               "type": "string",
               "description": "Con cual de las consultas salio y como venia escrito en el resultado. Es la huella: si este campo no se puede escribir sin adornarlo, el video no aparecio en la busqueda y no se reporta.",
               "minLength": 20,
-              "maxLength": 300
+              "maxLength": 600
             },
             "porQueEste": {
               "type": "string",
               "description": "Por que este y no los otros, contra los criterios de arriba. Si el video falla un criterio, se dice cual falla: una pega declarada se puede revisar, una pega escondida no.",
               "minLength": 25,
-              "maxLength": 300
+              "maxLength": 600
             }
           },
           "required": [
@@ -226,13 +226,13 @@
             "type": "string",
             "description": "Con cual de las consultas salio y como venia escrito en el resultado. Es la huella del video.",
             "minLength": 20,
-            "maxLength": 300
+            "maxLength": 600
           },
           "porQueEste": {
             "type": "string",
             "description": "Por que sirve de respaldo y en que es peor que el elegido. Un respaldo que se vende como igual de bueno no es un respaldo, es una duda.",
             "minLength": 25,
-            "maxLength": 300
+            "maxLength": 600
           }
         },
         "required": [
@@ -263,7 +263,7 @@
       "type": "string",
       "description": "Que sostiene esa confianza y que no. Aqui se nombran las pegas: que no se pudo ver la duracion, que el canal es de España, que solo hubo una alternativa. Sin esto, media no le sirve a nadie.",
       "minLength": 25,
-      "maxLength": 400
+      "maxLength": 900
     },
     "noSePuede": {
       "$ref": "#/$defs/noSePuede",
@@ -294,7 +294,7 @@
         "valor": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 240
+          "maxLength": 500
         }
       },
       "required": [
@@ -493,19 +493,19 @@
               "type": "string",
               "description": "Que pedazo no se pudo escribir.",
               "minLength": 10,
-              "maxLength": 400
+              "maxLength": 900
             },
             "porQue": {
               "type": "string",
               "description": "Que atomo, que teclado o que dibujo hace falta.",
               "minLength": 10,
-              "maxLength": 400
+              "maxLength": 900
             },
             "queHagoConEsto": {
               "type": "string",
               "description": "Que sigue: cambiar la pregunta para que quepa, mandar el tema a otro prompt, o dejarlo fuera.",
               "minLength": 10,
-              "maxLength": 400
+              "maxLength": 900
             }
           },
           "required": [

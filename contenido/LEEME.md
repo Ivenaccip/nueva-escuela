@@ -90,6 +90,13 @@ busca con la API de OpenAI (`gpt-4.1-mini`, el más barato de los que sirven la
 herramienta `web_search`), y le pasa a Claude una lista de candidatos **ya
 comprobados**.
 
+**El modelo que busca importa más que el que escribe.** Medido sobre el mismo tema:
+`gpt-4.1-mini` hace una búsqueda y devuelve cero videos; `gpt-4.1`, dos; `gpt-5.5`,
+diecinueve. Los videos de YouTube están mal representados en un índice de web, así
+que encontrarlos pide insistir con `site:youtube.com/watch` y con nombres de canales,
+y un modelo chico no insiste. Va `gpt-5.5` con tope de seis búsquedas, porque sin
+tope hizo treinta y nueve en un solo tema y eso sale más caro que generar el tema.
+
 Lo que hace que esto no mienta: **los ids salen de `web_search_call.action.sources`,
 no del texto del modelo.** Un id inventado tiene once caracteres válidos y casi
 siempre existe —lleva a un video cualquiera— así que mirar la forma no prueba nada.
@@ -146,8 +153,8 @@ tamaños que `--seco` mide de verdad (un tema lineal):
 |---|---|---|
 | entrada, 7 llamadas | ≈ 80 000 tokens · $0.08 | $1.60 |
 | salida, 7 objetos JSON | ≈ 15 000 tokens · $0.08 | $1.50 |
-| búsqueda de OpenAI | 1 llamada · $0.01 + contenido | ≈ $0.30 |
-| **total** | **≈ $0.17** | **≈ $3.40** |
+| búsqueda de OpenAI (gpt-5.5) | ≈ 7 búsquedas · $0.21 | ≈ $4.20 |
+| **total** | **≈ $0.37** | **≈ $7.30** |
 
 Con Opus 5 los mismos 20 temas costarían del orden de **$40**. Ésa es la diferencia
 que compra el cambio de modelo, y lo que se paga por ella está más abajo.

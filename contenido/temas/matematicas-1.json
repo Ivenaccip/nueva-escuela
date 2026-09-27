@@ -158,7 +158,340 @@
     "noSePuede": null
   },
   "ver": null,
-  "contacto": null,
+  "contacto": {
+    "temaNumero": 1,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Un problema dice: repartir 32 caramelos en bolsas de 4. ¿Qué pregunta la división?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "cuántas bolsas salen"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Leíste que repartir en partes iguales pregunta cuántos grupos del mismo tamaño salen."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "cuánto sobra"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El residuo es parte de la respuesta, pero no es la pregunta principal. La pregunta es cuántos grupos salen."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "cuánto cabe"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Confundiste repartir con la otra pregunta de la división. Cuánto cabe es contar cuántas veces entra un número en otro."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "32 más 4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás sumando los números en vez de dividir. Repartir es dividir, no sumar."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cómo escribes la división de 18 entre 3?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "18"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste multiplicación en vez de división. El símbolo de dividir es ÷, no ×."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "18"
+              },
+              {
+                "tipo": "texto",
+                "valor": "÷"
+              },
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste la división con el dividendo primero, el símbolo ÷ en el medio, y el divisor al final."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3"
+              },
+              {
+                "tipo": "texto",
+                "valor": "÷"
+              },
+              {
+                "tipo": "texto",
+                "valor": "18"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Volteaste el dividendo y el divisor. El 18 es lo que se divide, va de primero."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "18"
+              },
+              {
+                "tipo": "texto",
+                "valor": "−"
+              },
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste una resta en vez de una división. Para dividir usas ÷, no el signo menos."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es el resultado de 28 ÷ 5?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "140"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Multiplicaste 28 × 5 porque esperabas un resultado más grande. La división no siempre agranda: busca cuántas veces cabe el divisor, y ese número es más chico que lo que empezaste dividiendo."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Buscaste cuántas veces cabe 5 en 28: 5 × 5 = 25, que cabe en 28."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "23"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste 28 − 5 en vez de dividir. La división busca cuántas veces cabe, no la diferencia."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "33"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste 28 + 5 en vez de dividir. Dividing busca cuántas veces cabe un número, no la suma."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Al dividir 35 entre 6, ¿cuál es el residuo?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "6"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El residuo es lo que sobra después de restar el resultado de la multiplicación del dividendo, no el divisor. 35 − 30 = 5."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Hay un residuo porque 6 no cabe exacto en 35. El residuo es lo que queda: 35 − 30 = 5, no cero."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste el producto del dividendo: 6 × 5 = 30, y 35 − 30 = 5. El residuo es lo que sobra."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "29"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás contando mal el residuo. El residuo es la diferencia entre el dividendo y el producto: 35 − 30 = 5, no 29."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Repartes 23 manzanas en canastas de 3. Completa: 23 ÷ 3 = "
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "7"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Diste solo el cociente. La respuesta completa es el cociente y lo que sobra: 7 y sobran 2."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "7 y sobran 2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste el cociente y el residuo: siete canastas llenas y dos manzanas que quedan."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "8"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El cociente no es 8. Prueba: 3 × 7 = 21, que cabe en 23, pero 3 × 8 = 24, que es más grande."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3 y sobra 1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Volteaste dividendo y divisor. Si divides 3 entre 23 da 0 y sobran 3; aquí es 23 entre 3."
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": {
     "temaNumero": 1,
     "materia": "matematicas",
