@@ -616,30 +616,48 @@ manda la suya. Ésos son los nombres, y no cambian:
 | `X3-respuesta-no-numerica.md` | `escribir_caso_teclado` | Elige el teclado del tema y escribe con él las respuestas de las estaciones 3 y 4. |
 | `X4-no-encaja.md` | `escribir_caso_absorbido` | Entrega el aporte de un tema que no aguanta seis estaciones, cosido a una estación de otro. |
 
+El modelo es **`claude-haiku-4-5`**. El id va sin sufijo de fecha
+(`claude-haiku-4-5-20251001` da 404). Haiku 4.5 **no sirve `output_config.effort`**
+—da error— y su pensamiento se pide con `budget_tokens`, no con `adaptive`.
+
 El `system` es `00-sistema.md` tal cual, en las 1 155 llamadas. El prompt de la
 estación, con los placeholders ya sustituidos, va como el único mensaje del
 usuario.
 
-### `tool_choice` forzado y búsqueda web son incompatibles
+### Las siete llamadas son iguales: forzadas y de un turno
 
-Es el error que cualquiera va a cometer, así que va escrito antes que nada.
+`tool_choice: {"type": "tool", "name": "..."}` y un solo turno, en las once.
+También `strict: true` en la herramienta, que hace que el servidor valide los
+argumentos; si algún esquema sale rechazado por el subconjunto de `strict`, el
+llamador lo apaga para toda la corrida y ajv sigue haciendo el trabajo.
 
-- **Las nueve llamadas sin búsqueda** (el canon, las estaciones 2 a 6 y los cuatro
-  casos aparte) van con `tool_choice: {"type": "tool", "name": "..."}` y un solo
-  turno. La salida estructurada queda garantizada.
-- **`01-ver` no.** Ahí van dos herramientas —la de búsqueda web del servidor y
-  `escribir_estacion_ver`— y `tool_choice: {"type": "auto"}`. Con
-  `tool_choice` forzado el modelo emite la herramienta de salida en el primer
-  turno y **nunca busca**: entonces §5 de `01-ver` («no reportas ninguna URL que no
-  haya aparecido literalmente en los resultados de búsqueda de esta llamada») pide
-  algo imposible, y las 165 llamadas salen con ids de once caracteres recordados.
-  La validación con oEmbed los tira casi todos, así que son 165 llamadas pagadas
-  que no producen nada.
+**Esto antes no era así.** `01-ver` era la excepción, porque forzar la herramienta
+y pedir búsqueda web del servidor son incompatibles: el modelo emitía la salida en
+el primer turno y nunca buscaba. Esa excepción se acabó cuando la búsqueda salió
+de la llamada.
 
-Con `auto`, el llamador itera los turnos: mete los `tool_result` de la búsqueda y
-vuelve a llamar hasta que aparezca el `tool_use` de `escribir_estacion_ver`. Si
-tras un tope de turnos no aparece, se reintenta la llamada entera. Si el modelo
-contesta en texto sin llamar la herramienta, se descarta.
+### El video se busca aparte, y no lo busca quien escribe
+
+La búsqueda de la estación 1 la hace **la API de OpenAI**, en
+`contenido/buscar-videos.mjs`, antes de la llamada a Claude. Modelo `gpt-4.1-mini`
+(documentado para la herramienta `web_search`, y el más barato que la sirve): aquí
+no se le pide razonar, sólo buscar.
+
+**Los ids de YouTube no se leen de lo que el modelo escribe.** Se leen de
+`web_search_call.action.sources` y de las anotaciones `url_citation`, que es lo
+único que el buscador visitó de verdad. Esto no es escrúpulo: un id inventado tiene
+once caracteres válidos y casi siempre existe, así que lleva a un video cualquiera
+y ninguna validación de forma lo caza. Después, cada id se comprueba contra el
+oEmbed de YouTube, que además da el título y el canal de verdad —ahí no hay nada
+que inventar— y prueba que el video es público y se deja incrustar.
+
+`01-ver.md` recibe esa lista ya comprobada en `{{resultadosDeBusqueda}}` y su
+trabajo es **escoger**, no encontrar. El llamador comprueba que el id que escogió
+esté en la lista que se le dio; si no está, el video se tira y el tema se guarda
+sin él.
+
+Una lista vacía es una respuesta legítima. Un tema sin video se arregla después; un
+video que no explica este tema se lo lleva el estudiante.
 
 ### Y el llamador comprueba, no confía
 

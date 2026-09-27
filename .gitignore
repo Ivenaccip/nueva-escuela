@@ -31,6 +31,10 @@ yarn-error.*
 *.pem
 
 # local env files
+# Las llaves de API viven aqui y nunca se suben.
+.env
+.env.*
+!.env.ejemplo
 .env*.local
 
 # typescript
@@ -42,3 +46,9 @@ yarn-error.*
 
 # Proyecto anterior, archivado para consulta
 _viejo/
+
+# Los ajustes locales de Claude Code, que pueden llevar llaves en su bloque env.
+# `.claude/settings.json` no va aqui: ya esta versionado a proposito y solo lleva
+# que plugins estan prendidos. Si alguna vez se le agrega un bloque `env`, las
+# llaves van en `.env`, no ahi.
+.claude/settings.local.json

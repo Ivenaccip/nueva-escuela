@@ -28,20 +28,47 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
 
+import { buscarVideos, candidatosComoTexto } from './buscar-videos.mjs';
+
 const aqui = dirname(fileURLToPath(import.meta.url));
 const dirEsquema = join(aqui, 'esquema');
 const dirPrompts = join(aqui, 'prompts');
 const dirTemarios = join(aqui, 'temarios');
 const dirTemas = join(aqui, 'temas');
 
-const MODELO = 'claude-opus-5';
+// Las llaves viven en `.env`, que .gitignore ignora. Lo que ya venga exportado en
+// el shell gana: esto no pisa una llave puesta a mano.
+try {
+  const antes = { ...process.env };
+  process.loadEnvFile(join(dirname(aqui), '.env'));
+  for (const clave of Object.keys(antes)) if (antes[clave]) process.env[clave] = antes[clave];
+} catch {
+  // Sin `.env` no pasa nada: las llaves pueden venir del entorno.
+}
+
+/**
+ * Haiku 4.5. El id va sin sufijo de fecha: `claude-haiku-4-5-20251001` da 404.
+ * Haiku no sirve `output_config.effort` (da error) y su pensamiento se pide con
+ * `budget_tokens`, no con `adaptive`.
+ */
+const MODELO = process.env.ANDAMIO_MODELO ?? 'claude-haiku-4-5';
 const MAX_TOKENS = 16000;
 
-/** La búsqueda web del servidor, en la variante que este modelo sirve. */
-const BUSQUEDA_WEB = { type: 'web_search_20260209', name: 'web_search', max_uses: 6 };
+/**
+ * El prefijo que se cachea es `tools` + `system`, en ese orden de render. Para una
+ * misma estación ese prefijo es idéntico en los 20 temas, así que del segundo tema
+ * en adelante se lee del caché. El mínimo cacheable de Haiku 4.5 son 4 096 tokens
+ * (no 1 024): el sistema solo no llega, pero con el esquema delante sí.
+ */
+const CACHEAR = { type: 'ephemeral' };
 
-/** Los turnos que se le dan a la estación 1 para buscar antes de rendirse. */
-const TOPE_TURNOS_BUSQUEDA = 8;
+/**
+ * `strict` obliga al servidor a validar los argumentos, pero su subconjunto de
+ * JSON Schema es más chico que el de ajv: un esquema que aquí vale puede salir
+ * rechazado allá. Si la primera llamada lo rechaza se apaga para toda la corrida
+ * y ajv sigue haciendo el trabajo, en vez de tirar las ciento cuarenta llamadas.
+ */
+let estricto = true;
 
 /** Reintentos por llamada, con espera que crece. */
 const REINTENTOS = 3;
@@ -57,7 +84,6 @@ const CANON = {
   herramienta: 'escribir_canon',
   descripcion:
     'Fija el canon del tema: los cinco pasos, el ejemplo y el error, que las seis estaciones comparten.',
-  busquedaWeb: false,
 };
 
 const ESTACIONES = [
@@ -67,11 +93,10 @@ const ESTACIONES = [
     esquema: '01-ver.schema.json',
     herramienta: 'escribir_estacion_ver',
     descripcion:
-      'Entrega la pregunta que abre el tema, el resumen y el video encontrado en la busqueda.',
-    // La unica con busqueda web, y por eso la unica que NO va con tool_choice
-    // forzado: con tool_choice forzado el modelo emite la salida en el primer
-    // turno y nunca busca (CONTRATO.md §8).
-    busquedaWeb: true,
+      'Entrega la pregunta que abre el tema, el resumen y el video escogido de la busqueda.',
+    // No busca ella: la busqueda la hace OpenAI antes (buscar-videos.mjs) y aqui
+    // solo llegan candidatos ya comprobados contra oEmbed.
+    necesitaVideos: true,
   },
   {
     clave: 'contacto',
@@ -79,7 +104,6 @@ const ESTACIONES = [
     esquema: '02-contacto.schema.json',
     herramienta: 'escribir_estacion_contacto',
     descripcion: 'Entrega el bloque de preguntas de cuatro opciones del primer contacto.',
-    busquedaWeb: false,
   },
   {
     clave: 'completar',
@@ -87,7 +111,6 @@ const ESTACIONES = [
     esquema: '03-completar.schema.json',
     herramienta: 'escribir_estacion_completar',
     descripcion: 'Entrega el renglon con un hueco, su respuesta y sus pistas.',
-    busquedaWeb: false,
   },
   {
     clave: 'escalera',
@@ -95,7 +118,6 @@ const ESTACIONES = [
     esquema: '04-escalera.schema.json',
     herramienta: 'escribir_estacion_escalera',
     descripcion: 'Entrega los escalones de la escalera, con su respuesta y sus pistas.',
-    busquedaWeb: false,
   },
   {
     clave: 'error',
@@ -103,7 +125,6 @@ const ESTACIONES = [
     esquema: '05-error.schema.json',
     herramienta: 'escribir_estacion_error',
     descripcion: 'Entrega el procedimiento con un paso mal, los motivos y las pistas.',
-    busquedaWeb: false,
   },
   {
     clave: 'explicar',
@@ -112,7 +133,6 @@ const ESTACIONES = [
     herramienta: 'escribir_estacion_explicar',
     descripcion:
       'Entrega los textos de la estacion de explicar y la rubrica con la que se califica.',
-    busquedaWeb: false,
   },
 ];
 
@@ -124,7 +144,6 @@ const CASOS_APARTE = {
     esquema: 'X1-tabla.schema.json',
     herramienta: 'escribir_caso_tabla',
     descripcion: 'Entrega las estaciones 2 a 5 de un tema que necesita rejilla.',
-    busquedaWeb: false,
     /** Sustituye a estas cuatro estaciones. */
     reemplaza: ['contacto', 'completar', 'escalera', 'error'],
   },
@@ -134,7 +153,6 @@ const CASOS_APARTE = {
     esquema: 'X2-figura.schema.json',
     herramienta: 'escribir_caso_figura',
     descripcion: 'Entrega la especificacion de la figura y el plan B lineal.',
-    busquedaWeb: false,
     reemplaza: ['completar', 'escalera'],
   },
   teclado: {
@@ -144,7 +162,6 @@ const CASOS_APARTE = {
     herramienta: 'escribir_caso_teclado',
     descripcion:
       'Elige el teclado del tema y escribe con el las respuestas de las estaciones 3 y 4.',
-    busquedaWeb: false,
     reemplaza: ['completar', 'escalera'],
   },
 };
@@ -323,6 +340,11 @@ async function pedir(cuerpo) {
   } catch (e) {
     if (e instanceof Anthropic.AuthenticationError) morir('La llave de ANTHROPIC_API_KEY no sirve.');
     if (e instanceof Anthropic.BadRequestError) {
+      if (estricto && /strict|schema/i.test(e.message)) {
+        estricto = false;
+        console.error('      el servidor rechazó `strict`; se apaga y valida sólo ajv. Reintento.');
+        return pedir({ ...cuerpo, tools: cuerpo.tools.map(({ strict, ...t }) => t) });
+      }
       throw new Rajada(`la API rechazó la petición: ${e.message}`);
     }
     if (e instanceof Anthropic.RateLimitError) throw new Rajada(`límite de tasa: ${e.message}`);
@@ -334,15 +356,15 @@ async function pedir(cuerpo) {
 }
 
 /**
- * Una llamada, con su herramienta y su política de `tool_choice`.
+ * Una llamada: `tool_choice` forzado, `strict: true` y un solo turno.
  *
- * Sin búsqueda web: `tool_choice` forzado y un solo turno, así la salida
- * estructurada queda garantizada.
+ * Las siete son iguales desde que la búsqueda salió de aquí. Antes la estación 1
+ * era la excepción porque forzar la herramienta y pedir búsqueda web son
+ * incompatibles; ahora busca OpenAI por su cuenta y esa excepción se acabó.
  *
- * Con búsqueda web: `tool_choice: auto` y los dos utensilios, y se iteran los
- * turnos hasta que aparezca el `tool_use` de salida. Forzar la herramienta y
- * pedir búsqueda son incompatibles: el modelo emitiría la salida en el primer
- * turno sin haber buscado (CONTRATO.md §8).
+ * `strict: true` hace que los argumentos de la herramienta validen contra el
+ * esquema en el servidor. No sustituye a ajv —el esquema completo no cabe en el
+ * subconjunto de strict— pero atrapa gratis la mitad de los errores de forma.
  */
 async function llamar({ paso, sistema, mensaje }) {
   const esquema = await cargarEsquema(paso.esquema);
@@ -350,26 +372,29 @@ async function llamar({ paso, sistema, mensaje }) {
     name: paso.herramienta,
     description: paso.descripcion,
     input_schema: esquema,
+    ...(estricto ? { strict: true } : {}),
   };
 
-  const utensilios = paso.busquedaWeb ? [BUSQUEDA_WEB, herramientaSalida] : [herramientaSalida];
-
-  const eleccion = paso.busquedaWeb
-    ? { type: 'auto' }
-    : { type: 'tool', name: paso.herramienta };
-
   const mensajes = [{ role: 'user', content: mensaje }];
-  const tope = paso.busquedaWeb ? TOPE_TURNOS_BUSQUEDA : 1;
+  const tope = 1;
 
   for (let turno = 1; turno <= tope; turno += 1) {
     const datos = await pedir({
       model: MODELO,
       max_tokens: MAX_TOKENS,
-      system: sistema,
-      tools: utensilios,
-      tool_choice: eleccion,
+      // El corte del caché va al final del sistema: lo de antes (el esquema y el
+      // sistema) es idéntico entre temas; el mensaje, que cambia, queda después.
+      system: [{ type: 'text', text: sistema, cache_control: CACHEAR }],
+      tools: [herramientaSalida],
+      tool_choice: { type: 'tool', name: paso.herramienta },
       messages: mensajes,
     });
+
+    if (datos.usage) {
+      const leido = datos.usage.cache_read_input_tokens ?? 0;
+      const escrito = datos.usage.cache_creation_input_tokens ?? 0;
+      if (leido || escrito) decir(`      caché: ${leido} leidos, ${escrito} escritos`);
+    }
 
     // Una negativa por política sale con 200 y stop_reason "refusal".
     if (datos.stop_reason === 'refusal') {
@@ -384,24 +409,12 @@ async function llamar({ paso, sistema, mensaje }) {
     );
     if (salida) return salida.input;
 
-    // Sin el tool_use de salida: si pidió buscar, se le contesta y se sigue.
-    const busquedas = (datos.content ?? []).filter((b) => b.type === 'server_tool_use');
-    if (busquedas.length === 0) {
-      throw new Rajada(
-        `${paso.clave}: contestó sin llamar a ${paso.herramienta} (stop_reason ${datos.stop_reason}). Se descarta.`,
-      );
-    }
-    decir(`      turno ${turno}: buscó ${busquedas.length} vez/veces, sigue`);
-    mensajes.push({ role: 'assistant', content: datos.content });
-    mensajes.push({
-      role: 'user',
-      content: `Ya buscaste. Ahora devuelve la llamada a ${paso.herramienta} con lo que encontraste, y nada más.`,
-    });
+    throw new Rajada(
+      `${paso.clave}: contestó sin llamar a ${paso.herramienta} (stop_reason ${datos.stop_reason}). Se descarta.`,
+    );
   }
 
-  throw new Rajada(
-    `${paso.clave}: ${tope} turnos y nunca llamó a ${paso.herramienta}. Se descarta y se reintenta.`,
-  );
+  throw new Rajada(`${paso.clave}: nunca llamó a ${paso.herramienta}. Se descarta y se reintenta.`);
 }
 
 /** La misma llamada, con reintentos y espera que crece. */
@@ -450,93 +463,6 @@ function comprobarTraza(paso, salida, temario, tema) {
   }
 }
 
-/**
- * El oEmbed de YouTube, que no pide llave. Atrapa la URL muerta y el video que
- * responde pero es otro; no atrapa un video vivo que no explica este tema.
- */
-async function validarVideo(video) {
-  if (!video) return { vive: false, porQue: 'no viene video' };
-
-  if (!/^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(video.url)) {
-    return { vive: false, porQue: `la url no tiene la forma de watch: ${video.url}` };
-  }
-  if (!video.url.endsWith(`v=${video.idDeYouTube}`)) {
-    return { vive: false, porQue: 'url e idDeYouTube no cuadran, así que el par es inventado' };
-  }
-
-  const endpoint = `https://www.youtube.com/oembed?url=${encodeURIComponent(video.url)}&format=json`;
-  let respuesta;
-  try {
-    respuesta = await fetch(endpoint);
-  } catch (e) {
-    return { vive: false, porQue: `no se pudo consultar el oEmbed: ${e.message}` };
-  }
-  if (!respuesta.ok) {
-    const porQue =
-      respuesta.status === 400
-        ? 'el id está mal formado'
-        : 'se borró, es privado o no deja incrustarse';
-    return { vive: false, porQue: `oEmbed ${respuesta.status}: ${porQue}` };
-  }
-
-  const datos = await respuesta.json();
-  const normalizar = (s) =>
-    String(s ?? '')
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[̀-ͯ]/g, '')
-      .replace(/[^a-z0-9]+/g, ' ')
-      .trim();
-
-  const tituloReal = normalizar(datos.title);
-  const tituloDicho = normalizar(video.titulo);
-  const canalReal = normalizar(datos.author_name);
-  const canalDicho = normalizar(video.canal);
-
-  if (tituloReal !== tituloDicho && !tituloReal.includes(tituloDicho)) {
-    return {
-      vive: false,
-      porQue: `responde pero es otro video: oEmbed dice "${datos.title}" y se reportó "${video.titulo}"`,
-    };
-  }
-  if (canalReal !== canalDicho && !canalReal.includes(canalDicho)) {
-    return {
-      vive: false,
-      porQue: `el canal no cuadra: oEmbed dice "${datos.author_name}" y se reportó "${video.canal}"`,
-    };
-  }
-  return { vive: true, titulo: datos.title, canal: datos.author_name };
-}
-
-/**
- * Deja en `video` el primero que de verdad exista, y guarda en
- * `videosDescartados` los que se cayeron y por qué. Si ninguno vive, `video`
- * queda en `null` y el tema abre con la tarjeta vacía: eso se puede ver en
- * pantalla, un video equivocado no.
- */
-async function acomodarVideos(salida) {
-  const candidatos = [salida.video, ...(salida.alternativas ?? [])].filter(Boolean);
-  const descartados = [];
-
-  for (const candidato of candidatos) {
-    const veredicto = await validarVideo(candidato);
-    if (veredicto.vive) {
-      decir(`      video vivo: ${candidato.idDeYouTube} · ${veredicto.canal}`);
-      return {
-        ...salida,
-        video: candidato,
-        alternativas: candidatos.filter((c) => c !== candidato),
-        videosDescartados: descartados,
-      };
-    }
-    decir(`      video descartado: ${candidato.idDeYouTube} · ${veredicto.porQue}`);
-    descartados.push({ idDeYouTube: candidato.idDeYouTube, porQue: veredicto.porQue });
-  }
-
-  decir('      ningun video sobrevivio al oEmbed: la tarjeta se queda vacia');
-  return { ...salida, video: null, alternativas: [], videosDescartados: descartados };
-}
-
 // ---------------------------------------------------------------------------
 // El archivo del tema, que se escribe después de cada llamada
 // ---------------------------------------------------------------------------
@@ -555,6 +481,24 @@ async function leerLoGuardado() {
 async function guardar(tema) {
   await mkdir(dirTemas, { recursive: true });
   await writeFile(rutaDelTema, JSON.stringify(tema, null, 2) + '\n', 'utf8');
+}
+
+/**
+ * El modelo tiene que escoger uno de los candidatos que OpenAI encontró, no
+ * escribir una URL suya. Un id inventado tiene once caracteres válidos y casi
+ * siempre existe —lleva a un video cualquiera— así que la forma no prueba nada:
+ * lo único que prueba algo es que el id esté en la lista que se le dio.
+ */
+function comprobarVideoEscogido(salida, candidatos) {
+  if (!salida.video) return;
+  const permitidos = new Set(candidatos.map((c) => c.idDeYouTube));
+  const escogido = salida.video.idDeYouTube ?? '';
+  if (permitidos.has(escogido)) return;
+  console.error(
+    `      video descartado: escogió "${escogido}", que no estaba entre los ${permitidos.size} ` +
+      'candidatos buscados. Se guarda el tema sin video.',
+  );
+  salida.video = null;
 }
 
 // ---------------------------------------------------------------------------
@@ -598,7 +542,7 @@ async function correr(paso, valores) {
     decir(
       `  ${paso.clave.padEnd(10)} ${paso.herramienta.padEnd(30)} ` +
         `mensaje ${String(mensaje.length).padStart(6)} car · esquema ${String(pesoEsquema).padStart(6)} car · ` +
-        `tool_choice ${paso.busquedaWeb ? 'auto + búsqueda web' : 'forzado'}`,
+        `tool_choice forzado${paso.necesitaVideos ? ' · con videos de OpenAI' : ''}`,
     );
     return null;
   }
@@ -609,7 +553,7 @@ async function correr(paso, valores) {
   comprobarEsquema(paso, resultado);
   comprobarTraza(paso, resultado, temario, tema);
 
-  if (paso.busquedaWeb) resultado = await acomodarVideos(resultado);
+  if (paso.necesitaVideos) comprobarVideoEscogido(resultado, valores.__candidatos ?? []);
 
   if (resultado.noSePuede) {
     decir(`      noSePuede lleno: ${resultado.noSePuede.que}`);
@@ -626,6 +570,7 @@ if (seco) {
   const valoresSecos = {
     ...valoresDelTema(temario, tema, ejemploCanon),
     ...valoresDelCanon(canonFalso),
+    resultadosDeBusqueda: '(en seco no se busca: aquí irían los candidatos de OpenAI)',
   };
   let rotos = 0;
   for (const paso of [CANON, ...ESTACIONES, ...Object.values(CASOS_APARTE)]) {
@@ -702,7 +647,18 @@ if (solo && solo !== 'canon' && porGenerar.length === 0) {
 let rajadas = 0;
 for (const paso of porGenerar) {
   try {
-    salida[paso.clave] = await correr(paso, valores);
+    const suyos = { ...valores };
+    if (paso.necesitaVideos) {
+      decir('\n  buscando el video con OpenAI...');
+      const hallazgo = await buscarVideos(tema, materia);
+      decir(
+        `      ${hallazgo.candidatos.length} candidato(s) de ${hallazgo.buscados} enlace(s) vistos` +
+          (hallazgo.descartados.length ? `, ${hallazgo.descartados.length} descartado(s)` : ''),
+      );
+      suyos.resultadosDeBusqueda = candidatosComoTexto(hallazgo);
+      suyos.__candidatos = hallazgo.candidatos;
+    }
+    salida[paso.clave] = await correr(paso, suyos);
     await guardar(salida);
     decir(`      ${paso.clave} guardado`);
   } catch (e) {

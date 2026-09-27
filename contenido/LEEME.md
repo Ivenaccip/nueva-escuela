@@ -53,7 +53,7 @@ placeholders ya sustituidos, va como el único mensaje del usuario.
 | # | Prompt | Herramienta | Entra | `tool_choice` |
 |---|---|---|---|---|
 | 0 | `00-canon.md` | `escribir_canon` | el tema del temario + `canon-ejemplo.json` | forzado |
-| 1 | `01-ver.md` | `escribir_estacion_ver` | tema + **canon** | **`auto`** + búsqueda web |
+| 1 | `01-ver.md` | `escribir_estacion_ver` | tema + canon + **videos ya buscados** | forzado |
 | 2 | `02-contacto.md` | `escribir_estacion_contacto` | tema + canon | forzado |
 | 3 | `03-completar.md` | `escribir_estacion_completar` | tema + canon | forzado |
 | 4 | `04-escalera.md` | `escribir_estacion_escalera` | tema + canon | forzado |
@@ -83,20 +83,24 @@ Es sustitución de cadena y nada más: sin condicionales, sin bucles, sin filtro
 sin valores por omisión. **Un placeholder que no se resuelve aborta la llamada**,
 no se manda la cadena vacía ni el literal.
 
-### `tool_choice` forzado y búsqueda web son incompatibles
+### El video lo busca OpenAI, no Claude
 
-Es el error que cualquiera comete, así que va dos veces.
+La estación 1 ya no sale a la web. Antes de su llamada, `contenido/buscar-videos.mjs`
+busca con la API de OpenAI (`gpt-4.1-mini`, el más barato de los que sirven la
+herramienta `web_search`), y le pasa a Claude una lista de candidatos **ya
+comprobados**.
 
-La estación 1 es la única que sale a la web. Si se fuerza la salida con
-`tool_choice: {"type": "tool", ...}`, el modelo emite la herramienta de salida en
-el primer turno y **nunca busca**: entonces reporta ids de YouTube recordados, el
-oEmbed los tira casi todos, y son 165 llamadas pagadas que no producen nada.
+Lo que hace que esto no mienta: **los ids salen de `web_search_call.action.sources`,
+no del texto del modelo.** Un id inventado tiene once caracteres válidos y casi
+siempre existe —lleva a un video cualquiera— así que mirar la forma no prueba nada.
+Luego cada id pasa por el oEmbed de YouTube, que confirma que el video existe, es
+público y se deja incrustar, y de paso da el título y el canal de verdad.
 
-Con `auto`, el llamador itera: mete los resultados de la búsqueda y vuelve a
-llamar hasta que aparezca el `tool_use` de `escribir_estacion_ver`. Si tras ocho
-turnos no aparece, se reintenta la llamada entera.
+Claude sólo **escoge** entre esa lista, y el llamador comprueba que lo que escogió
+estuviera en ella. Si no, el video se tira y el tema se guarda sin él.
 
-Las otras nueve llamadas van forzadas y en un solo turno.
+Necesitas `OPENAI_API_KEY` además de `ANTHROPIC_API_KEY`. Las dos van en `.env`,
+que `.gitignore` ignora; `generar.mjs` y `tanda.mjs` lo cargan solos.
 
 ---
 
@@ -135,40 +139,38 @@ explicación se escribe igual sea cual sea la notación.
 
 ## Cuánto cuesta
 
-Con `claude-opus-5` a $5 por millón de tokens de entrada y $25 de salida, y los
-tamaños que `--seco` mide de verdad (un tema lineal de Química):
+Con `claude-haiku-4-5` a $1 por millón de tokens de entrada y $5 de salida, y los
+tamaños que `--seco` mide de verdad (un tema lineal):
 
-| | caracteres | ≈ tokens |
+| | por tema | los 20 de Matemáticas |
 |---|---|---|
-| sistema, en las 7 llamadas | 22 900 | 6 500 |
-| los siete mensajes de usuario | 167 200 | 48 000 |
-| los siete esquemas, como `input_schema` | 87 000 | 25 000 |
-| **entrada, por tema** | **277 100** | **≈ 80 000** |
+| entrada, 7 llamadas | ≈ 80 000 tokens · $0.08 | $1.60 |
+| salida, 7 objetos JSON | ≈ 15 000 tokens · $0.08 | $1.50 |
+| búsqueda de OpenAI | 1 llamada · $0.01 + contenido | ≈ $0.30 |
+| **total** | **≈ $0.17** | **≈ $3.40** |
 
-La salida son siete objetos JSON, entre 1 y 6 KB cada uno, más los tokens de
-razonamiento, que se cobran como salida: **del orden de 40 000 a 60 000 tokens por
-tema**.
+Con Opus 5 los mismos 20 temas costarían del orden de **$40**. Ésa es la diferencia
+que compra el cambio de modelo, y lo que se paga por ella está más abajo.
 
-Con eso, **un tema sale entre $1.50 y $2.50**, y los 165 entre **$250 y $400**. La
-estación 1 es la más cara de las siete: la búsqueda web mete los resultados a la
-entrada y se cobran, y es la única que puede necesitar varios turnos.
+El caché ayuda de verdad aquí, y por una razón que no es obvia: el prefijo que se
+cachea es `tools` + `system`, y **para una misma estación ese prefijo es idéntico en
+los 20 temas**. Del segundo tema en adelante se lee del caché. El mínimo cacheable de
+Haiku 4.5 son 4 096 tokens, no 1 024: el sistema solo (≈ 970) no llegaría, pero con
+el esquema delante sí. `generar.mjs` imprime los tokens leídos y escritos de caché en
+cada llamada, así que si sale cero, algo rompió el prefijo.
 
-Tres cosas que mueven ese número:
-
-- **El sistema es idéntico en las 1 155 llamadas.** Cachearlo es la primera cosa
-  que vale la pena, y es gratis de implementar.
-- **Bajar `effort` a `medium`** en las estaciones 2 a 6 recorta la salida, que es
-  lo caro. Vale la pena medirlo en diez temas antes de decidirlo para 165.
-- **La API de lotes cuesta la mitad** y estas llamadas no son sensibles a la
-  latencia. Las seis estaciones de un tema son seis peticiones independientes con
-  el mismo canon: entran en un lote sin cambiar nada.
+La API de lotes cuesta la mitad y estas llamadas no tienen prisa.
 
 ---
 
 ## Cómo se corre
 
+Las llaves van en `.env` (ver `.env.ejemplo`), que `.gitignore` ignora. Los dos
+scripts lo cargan solos; no hace falta exportar nada.
+
 ```bash
-export ANTHROPIC_API_KEY=...            # nunca en un archivo del repo
+node contenido/tanda.mjs matematicas 1 20 --sondeo  # SOLO el canon de los 20
+node contenido/tanda.mjs matematicas 1 20           # los 20 completos
 
 node contenido/generar.mjs quimica 11            # un tema completo
 node contenido/generar.mjs quimica 11 --seco      # sin API: revisa los prompts

@@ -4,8 +4,10 @@
 cinco estaciones: no depende de ninguna.
 **Sistema:** `contenido/prompts/00-sistema.md`
 **Esquema:** `contenido/esquema/01-ver.schema.json`
-**Herramientas:** la búsqueda web va **prendida**. Sin búsqueda web esta llamada
-no se manda: la mitad del trabajo es encontrar un video que exista.
+**Herramientas:** ninguna aparte de la de salida. **Tú no buscas.** La búsqueda ya
+se hizo con la API de OpenAI (`contenido/buscar-videos.mjs`) y sus resultados
+llegan interpolados en `{{resultadosDeBusqueda}}`, ya comprobados contra el oEmbed
+de YouTube. Tu trabajo es **escoger** entre ellos, no encontrarlos.
 **Entra:** un tema del temario (`contenido/temarios/<materia>.json`) y el canon
 del tema (la salida del paso 0).
 **Sale:** la pregunta que abre el tema, el resumen de dos frases, la búsqueda con
@@ -106,22 +108,30 @@ Dos frases debajo del video. Dicen **la idea**, no el procedimiento.
   que queda cuando el video se acaba.
 - Entre 60 y 200 caracteres. El de la pantalla de diseño tiene 101.
 
-## 3 · La búsqueda
+## 3 · Los videos que ya se buscaron
 
-Usa la herramienta de búsqueda web. **Al menos dos búsquedas:**
+```
+{{resultadosDeBusqueda}}
+```
 
-- Una general, con las palabras que un estudiante de {{tema.grado}} usaría.
-- Una limitada a `youtube.com`.
-- Si las dos vuelven flojas, una tercera con las palabras del temario
-  ({{tema.titulo}}, {{tema.familia}}) en lugar de las del canon.
+**Ésta es la única fuente de URLs que tienes.** Cada una de esas ya se comprobó:
+el video existe, es público y se deja incrustar; el título y el canal vienen de
+YouTube, no de un modelo.
 
-Busca en español. Un video en inglés queda fuera aunque sea mejor: el estudiante
-está solo con su teléfono y nadie le va a traducir.
+La regla que no se negocia: **copia la URL de uno de los de arriba, carácter por
+carácter.** No escribas ninguna otra. Un id de YouTube inventado tiene once
+caracteres válidos y casi siempre existe —lleva a un video cualquiera, de
+cualquier tema— así que ni tú ni nadie puede cacharlo mirando la forma. Lo único
+que prueba algo es que el id esté en esa lista. Quien llama lo comprueba y tira
+el video si no está.
 
-En `busqueda` guardas la consulta que sí funcionó, las alternas, los criterios
-con los que decidiste y qué descarta un video. Eso se guarda para el día en que
-el video muera y alguien tenga que repetir la búsqueda sin volver a pensarlo
-todo.
+Si la lista viene vacía, o si ninguno de los que trae sirve de verdad para este
+tema, deja `video` en `null` y llena `noSePuede`. Un tema sin video se puede
+arreglar después; un video que no explica este tema se lo lleva el estudiante.
+
+En `busqueda` guardas con qué palabras buscarías tú este tema y qué criterio usaste
+para escoger. Eso se guarda para el día en que el video muera y alguien tenga que
+repetir la búsqueda sin volver a pensarlo todo.
 
 Los `criterios` se pueden revisar mirando el video. «Que sea de buena calidad»
 no es un criterio; «que diga por qué se cruzan las valencias y no nada más cómo»
@@ -315,8 +325,8 @@ porque la búsqueda salió bien.
    qué?
 2. ¿Cabe en 70 caracteres y no lleva fórmulas?
 3. ¿El `resumen` dice la idea y no se puede seguir como receta?
-4. ¿Usaste la búsqueda web de verdad, al menos dos veces?
-5. ¿Las tres URL aparecieron literalmente en esos resultados?
+4. ¿La URL que escogiste está, carácter por carácter, en la lista de arriba?
+5. ¿No inventaste ninguna otra URL, ni «corregiste» un id para que se viera bien?
 6. ¿Cada `url` casa con su `idDeYouTube`, carácter por carácter?
 7. ¿Cada `titulo` y cada `canal` están copiados como venían?
 8. ¿Omitiste `duracion` donde el tiempo no venía escrito?
