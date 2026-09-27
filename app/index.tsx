@@ -10,7 +10,7 @@ import {
   Marco,
   Pie,
 } from '../src/componentes';
-import { perfil, tema } from '../src/contenido/demo';
+import { perfil, tema } from '../src/contenido/actual';
 import type { Estacion } from '../src/contenido/tipos';
 import { colores, espacio, fuentes, radios } from '../src/tema';
 

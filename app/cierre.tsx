@@ -11,7 +11,7 @@ import {
   Pie,
   Tarjeta,
 } from '../src/componentes';
-import { tema } from '../src/contenido/demo';
+import { tema } from '../src/contenido/actual';
 import { colores, espacio, fuentes } from '../src/tema';
 
 const LADO = 160;

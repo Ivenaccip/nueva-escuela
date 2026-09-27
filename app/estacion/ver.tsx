@@ -10,7 +10,7 @@ import {
   Pie,
   Tarjeta,
 } from '../../src/componentes';
-import { tema } from '../../src/contenido/demo';
+import { tema } from '../../src/contenido/actual';
 import { colores, espacio, fuentes, TOCABLE } from '../../src/tema';
 
 /** A dónde lleva esta estación, tanto por el botón como por el atajo. */
@@ -43,9 +43,14 @@ export default function VerElVideo() {
               <IconoReproducir />
             </Pressable>
 
-            <View style={estilos.duracion}>
-              <Text style={estilos.duracionTexto}>{tema.ver.duracion}</Text>
-            </View>
+            {/* Sin duración no se pinta la píldora: una vacía sobre el video se
+                ve como un error de la app, y la duración sólo existe si venía
+                escrita en el resultado de la búsqueda. */}
+            {tema.ver.duracion ? (
+              <View style={estilos.duracion}>
+                <Text style={estilos.duracionTexto}>{tema.ver.duracion}</Text>
+              </View>
+            ) : null}
           </Tarjeta>
         </View>
 

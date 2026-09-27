@@ -11,7 +11,7 @@ import {
   Marco,
   Pie,
 } from '../../src/componentes';
-import { tema } from '../../src/contenido/demo';
+import { tema } from '../../src/contenido/actual';
 import { colores, espacio, fuentes, radios } from '../../src/tema';
 
 /**

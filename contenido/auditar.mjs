@@ -121,6 +121,33 @@ const REGLAS = [
     },
   },
   {
+    clave: 'fracción escrita en línea',
+    mira: (t) => {
+      // AGENTS.md: «Las fracciones se escriben apiladas, con Fraccion o
+      // Expresion, nunca como "3/5" en una línea». En los campos que son cadena
+      // —la situación de la escalera, la pregunta, la aclaración— el modelo no
+      // tiene átomos a mano y las escribe en línea. Se ve distinto al resto de
+      // la app y enseña la notación equivocada.
+      const avisos = [];
+      const enLinea = /\b\d+\/\d+\b/;
+      const caminar = (v, ruta) => {
+        if (typeof v === 'string') {
+          const m = enLinea.exec(v);
+          // Una respuesta tecleada SÍ es "12/5": eso es lo que da el teclado.
+          if (m && !/tecleado|aceptaTambien|comoSeLee|url|idDeYouTube/.test(ruta)) {
+            avisos.push(`${ruta}: "${m[0]}" va en línea y debería ir apilada`);
+          }
+          return;
+        }
+        if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) caminar(x, `${ruta}.${k}`);
+      };
+      for (const clave of ['contacto', 'completar', 'escalera', 'error', 'explicar']) {
+        if (t[clave]) caminar(t[clave], clave);
+      }
+      return avisos;
+    },
+  },
+  {
     clave: 'la voz prohibida',
     mira: (t) => {
       const prohibido = /¡|excelente|muy bien|genial|es f[áa]cil|es sencillo|obviamente|simplemente|basta con/i;

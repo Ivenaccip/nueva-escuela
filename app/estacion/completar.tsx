@@ -13,7 +13,7 @@ import {
   Pie,
   Tarjeta,
 } from '../../src/componentes';
-import { tema } from '../../src/contenido/demo';
+import { tema } from '../../src/contenido/actual';
 import { colores, espacio, fuentes, radios } from '../../src/tema';
 
 /** La tecla que borra en vez de escribir. */

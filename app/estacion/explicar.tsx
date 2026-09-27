@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { BarraEstacion, BotonPrincipal, Cuerpo, Marco, Pie } from '../../src/componentes';
-import { tema } from '../../src/contenido/demo';
+import { tema } from '../../src/contenido/actual';
 import { colores, espacio, fuentes, radios } from '../../src/tema';
 
 /**

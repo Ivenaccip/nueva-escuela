@@ -50,9 +50,15 @@ export type ParteMat =
 /** Estación 1 · ver el video. */
 export type ContenidoVer = {
   pregunta: string;
-  /** Lo que dura, tal cual se muestra sobre el video. */
-  duracion: string;
+  /**
+   * Lo que dura, tal cual se muestra sobre el video. Es opcional porque sólo se
+   * sabe si venía escrita en el resultado de la búsqueda: estimarla es
+   * inventarla. Sin ella la píldora no se pinta, en vez de pintarse vacía.
+   */
+  duracion?: string;
   resumen: string;
+  /** El video que se encontró, ya comprobado contra el oEmbed de YouTube. */
+  video?: { url: string; titulo: string; canal: string };
 };
 
 /** Estación 2 · primer contacto, sin penalización. */
