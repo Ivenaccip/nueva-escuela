@@ -213,17 +213,22 @@ cada uno:
 
 `porQue` es la pregunta corta que aparece cuando el paso ya está marcado.
 
-`motivos` son de dos a cuatro, exactamente uno con `esElBueno` en `true`:
+Los `motivos` son exactamente DOS, uno con `esElBueno` en `true` y uno en `false`.
+No son tres ni cuatro: la estación 5 es la única de las seis sin holgura —el
+espaciador mide 49 px y cada motivo cuesta 57— así que con tres la pantalla ya se
+desplaza. El diseño trae dos.
 
 - El bueno describe el error del canon, no una versión suavizada.
-- Los malos salen de `canon.error.creenciaDeAtras` y de confusiones reales del
+- El malo sale de `canon.error.creenciaDeAtras` y de las confusiones reales del
   tema: cambiar el orden de una resta, mirar el número de abajo en vez del de
-  arriba, quedarse con el dato más grande. Tienen que sonar razonables, porque un
-  motivo que nadie escogería no diagnostica nada.
+  arriba, quedarse con el dato más grande. Con un solo distractor, escoge el que
+  esté MÁS cerca del bueno: el que se cae por absurdo no diagnostica nada.
 - `queRevela` de un motivo malo dice qué cree el estudiante que lo trae ahí, y
   cuál es la señal concreta de los renglones que ese motivo no explica. El del
   bueno dice por qué sí es ése, contra lo que se ve en los renglones.
-- Cada motivo es de una frase: el botón es angosto.
+- Cada motivo es de una frase de hasta 81 caracteres: el botón mide 314 px a 15
+  px, así que 44 caracteres es un renglón y 81 son dos. Los dos del diseño miden
+  25 y 29.
 
 ### 7. `pistas`
 
@@ -259,6 +264,7 @@ enseña, entonces sí: `noSePuede`.
 - No repites la misma frase de `siLoTocas` en dos pasos, ni escribes un «no, ese
   no» genérico.
 - No pones dos motivos que digan lo mismo con otras palabras.
+- No pones tres motivos ni cuatro. Son dos.
 - No pones un motivo malo que se caiga por absurdo («sumó dos números al azar»).
 - No adelantas la respuesta en `porQue` ni en las pistas.
 - No usas sinónimos de las palabras de `canon.vocabulario`.
@@ -339,7 +345,8 @@ Y la salida:
     {
       "numero": 5,
       "partes": [
-        { "tipo": "texto", "valor": "Sale positiva, así que gana velocidad: a = 5 m/" },
+        { "tipo": "texto", "valor": "Sale positiva: gana velocidad." },
+        { "tipo": "texto", "valor": "a = 5 m/" },
         { "tipo": "simbolo", "valor": "s", "sup": "2" }
       ],
       "siLoTocas": "Leer el signo es lo último y ese paso lo lee bien: positiva significa que el coche iba ganando velocidad. Ese renglón repite el número que le llegó."
@@ -358,16 +365,6 @@ Y la salida:
       "texto": "Restó al revés: la inicial menos la final.",
       "esElBueno": false,
       "queRevela": "Quien escoge esto ya sabe que ahí va una resta y sólo duda del orden. Pero al revés sería 4 menos 20, y eso deja un número negativo. La resta está en el orden bueno; lo que está mal es el segundo número."
-    },
-    {
-      "texto": "Dividió entre la velocidad en vez de entre el tiempo.",
-      "esElBueno": false,
-      "queRevela": "Detrás de esto está creer que la aceleración se mide contra la rapidez. Abajo de la fracción del paso 4 están los 4 s, con su unidad de tiempo: esa división sí se hizo entre el tiempo."
-    },
-    {
-      "texto": "Se le olvidó anotar el tiempo.",
-      "esElBueno": false,
-      "queRevela": "El tiempo sí se usó: son los 4 s que están abajo en el paso 4. Lo que no aparece en ninguna cuenta es la velocidad del arranque."
     }
   ],
   "pistas": [
@@ -414,7 +411,14 @@ números no se distingue cuál es.
 11. ¿Cada átomo lleva su `tipo` y su `valor` completos, sin abreviar?
 12. ¿Los cinco `siLoTocas` son distintos entre sí, y cada uno sólo le queda a su
     paso?
-13. ¿Exactamente un motivo tiene `esElBueno` en `true`, y los otros suenan
-    razonables?
-14. ¿`temaNumero` y `materia` son los del canon, copiados sin cambiarlos?
-15. ¿`noSePuede` viaja, aunque sea en `null`?
+13. ¿Son exactamente dos motivos, uno con `esElBueno` en `true`, y el malo suena
+    razonable en vez de caerse por absurdo?
+14. ¿`noSePuede` viaja, aunque sea en `null`?
+15. **La lista, campo por campo.** Tacha uno por uno: `enunciado`, `pasos`,
+    `pasoMalo`, `arrastre`, `porQue`, `motivos`, `pistas` y `noSePuede`. Adentro:
+    cada paso lleva `partes` y `siLoTocas` —los cinco pasos, los dos campos—; cada
+    motivo lleva `texto`, `esElBueno` y `queRevela`; cada pista lleva su `texto`.
+    `arrastre` es el que se va: va en medio del objeto, es una sola frase y el
+    punto 5 se contesta en la cabeza sin escribirlo. Escríbelo antes de los
+    `motivos`, no al final. El `numero` de cada paso y el `orden` de cada pista no
+    van en esta lista: los pone quien llama.

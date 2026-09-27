@@ -35,23 +35,22 @@
         "properties": {
           "numero": {
             "type": "integer",
-            "description": "La posicion del paso, del 1 al 5. Es la misma numeracion del canon: no se reordena.",
+            "description": "La posicion del paso, del 1 al 5. Es la misma numeracion del canon: no se reordena. NO LO ESCRIBAS TU: es la posicion del paso en el arreglo, del 1 al 5, y los pasos no se reordenan. Lo rellena quien llama (contenido/generar.mjs, sellarIndices/sellarTraza) antes de validar, y si viene y no cuadra con la posicion, se rechaza. Sigue en properties nada mas para que el ejemplo de este prompt sea un objeto completo.",
             "minimum": 1,
             "maximum": 5
           },
           "partes": {
-            "$ref": "#/$defs/renglon",
-            "description": "El paso escrito con atomos, en la voz de quien resolvio: primera persona corta ('Volteo la segunda:', 'Divido entre el tiempo:') y enseguida la cuenta. Sin huecos: aqui no se llena nada. Cabe en dos renglones de un telefono de 390; si necesita tres, sobra explicacion. El paso malo se ve exactamente igual que los otros cuatro: ni mas corto, ni con comillas, ni con una marca que lo delate."
+            "$ref": "#/$defs/renglonDePaso",
+            "description": "El paso escrito con atomos cortos, en la voz de quien resolvio: primera persona corta (\"Volteo la segunda:\", \"Divido entre el tiempo:\") y enseguida la cuenta. Sin huecos: aqui no se llena nada. MEDIDO en app/estacion/error.tsx:64-70: la caja mide 276 px (350 menos 32 de padding, 4 de borde, 24 de insignia y 14 de hueco) y escribe a 17 px. Un renglon son 33 caracteres y la tarjeta mide los 58 del diseno; de 34 a 68 son dos y mide 73; a partir de 104 la pantalla se desplaza. Y son CINCO pasos en una pantalla con 49 px de holgura: con los cinco a dos renglones son 75 px de mas. El paso cabe en UN renglon de 33 caracteres. Hasta 6 atomos; en el diseno lleva de uno a cuatro. El paso malo se ve exactamente igual que los otros cuatro: ni mas corto, ni con comillas, ni con una marca que lo delate."
           },
           "siLoTocas": {
             "type": "string",
-            "description": "Lo que la app contesta si el estudiante acusa ESTE paso. En un paso que esta bien, di que hace bien este paso en concreto, nombrando su cuenta o sus numeros, de modo que la respuesta no le quede a ningun otro paso: nunca un 'no, ese no' generico y nunca la misma frase en dos pasos. En un paso que arrastra el error, la cuenta si esta bien hecha: dilo, y di que ese paso recibio sus numeros en vez de inventarlos, sin nombrar el paso malo ni el numero corrompido. En el paso malo, confirma la acusacion sin decir todavia que se hizo mal: eso se pregunta en porQue y se contesta en motivos.",
+            "description": "Lo que la app contesta si el estudiante acusa ESTE paso. En un paso que esta bien, di que hace bien este paso en concreto, nombrando su cuenta o sus numeros, de modo que la respuesta no le quede a ningun otro paso: nunca un 'no, ese no' generico y nunca la misma frase en dos pasos. En un paso que arrastra el error, la cuenta si esta bien hecha: dilo, y di que ese paso recibio sus numeros en vez de inventarlos, sin nombrar el paso malo ni el numero corrompido. En el paso malo, confirma la acusacion sin decir todavia que se hizo mal: eso se pregunta en porQue y se contesta en motivos. SIN MEDIDA DE PANTALLA: hoy ningun .tsx pinta este campo, asi que su tope no puede proteger nada y solo puede tirar la llamada. El 400 es uniforme para todos los campos de prosa sin pantalla de los once esquemas (CONTRATO.md §6): antes cada archivo traia un numero distinto sin motivo. Cuando exista la superficie que lo pinte, se mide contra ella y se aprieta, como se hizo con los diecisiete campos que si se pintan.",
             "minLength": 30,
-            "maxLength": 260
+            "maxLength": 400
           }
         },
         "required": [
-          "numero",
           "partes",
           "siLoTocas"
         ],
@@ -66,29 +65,29 @@
     },
     "arrastre": {
       "type": "string",
-      "description": "Que numeros de los pasos posteriores al malo vienen del error, dichos por su paso: 'el 20 del paso 3 es el 20 de arriba de la division del paso 4, y de ahi sale el 5 del paso 5'. La app lo muestra al cerrar la estacion, cuando el estudiante ya acuso y ya eligio motivo. Tambien es la prueba del ejercicio: si no puedes nombrar que arrastro el error, tus pasos posteriores no lo arrastran y la estacion se volvio un juego de buscar el renglon raro. Cuando pasoMalo es 5 no hay nada despues que arrastrar: dilo asi, y di cual es entonces la señal que lo delata.",
+      "description": "Que numeros de los pasos posteriores al malo vienen del error, dichos por su paso: \"el 20 del paso 3 es el 20 de arriba de la division del paso 4, y de ahi sale el 5 del paso 5\". HOY NO SE PINTA EN NINGUNA PANTALLA: no lo lee error.tsx, ni app/cierre.tsx, ni src/contenido/calificar.ts, ni src/contenido/tipos.ts, y la regla de contenido/auditar.mjs:108 que lleva su nombre no lee el campo, lo re-deriva de los numeros de los pasos. Se escribe porque es la prueba de que el ejercicio no es trivial: si no puedes nombrar que arrastro el error, tus pasos posteriores no lo arrastran y la estacion se volvio un juego de buscar el renglon raro. Cuando pasoMalo es 5 no hay nada despues que arrastrar: dilo asi, y di cual es entonces la señal que lo delata.",
       "minLength": 40,
       "maxLength": 400
     },
     "porQue": {
       "type": "string",
-      "description": "La pregunta que aparece una vez que el paso esta marcado, antes de los motivos: 'Y que hizo mal en ese paso'. Una sola pregunta corta. No adelanta el motivo bueno ni repite el renglon.",
+      "description": "La pregunta que aparece una vez que el paso esta marcado, antes de los motivos: \"Y que hizo mal en ese paso\". Una sola pregunta corta. No adelanta el motivo bueno ni repite el renglon. MEDIDO en app/estacion/error.tsx:77: 350 px de ancho (la pantalla menos el margen ancho), 15 px de letra, interlineado 19. Un renglon llega a 49 caracteres; de 50 a 100 son dos; de 101 a 152 son tres; a 153 la pantalla se desplaza (708 contra 700). El tope es 100: dos renglones. El ejemplo de aqui arriba mide 26 caracteres, y el del diseno tambien: uno.",
       "minLength": 10,
-      "maxLength": 160
+      "maxLength": 100
     },
     "motivos": {
       "type": "array",
-      "description": "Los motivos que se ofrecen despues de acusar el paso. Exactamente uno tiene esElBueno en true. Los malos salen de canon.error.creenciaDeAtras y de confusiones reales del tema: tienen que sonar razonables, porque un motivo que nadie escogeria no diagnostica nada. Ninguno dice lo mismo que otro con otras palabras.",
+      "description": "Los motivos que se ofrecen despues de acusar el paso. Exactamente DOS, y exactamente uno tiene esElBueno en true. El malo sale de canon.error.creenciaDeAtras y de confusiones reales del tema: tiene que sonar razonable, porque un motivo que nadie escogeria no diagnostica nada. No dice lo mismo que el otro con otras palabras. DOS Y NO MAS, medido: la estacion 5 es la unica de las seis que no tiene holgura. En 390x844 el espaciador flex:1 de app/estacion/error.tsx:213-215 mide 49 px, y cada motivo cuesta 57 (48 de alto en error.tsx:188-197 mas 9 de gap en error.tsx:185-187). Con 2 motivos de un renglon el ScrollView queda justo (700 contra 700); con 3 ya se desplaza (708); con 4, 765; con 4 a dos renglones, 837. El diseno trae dos. Si algun dia se quieren cuatro, se rediseña la pantalla 5, no se afloja esto.",
       "minItems": 2,
-      "maxItems": 4,
+      "maxItems": 2,
       "items": {
         "type": "object",
         "properties": {
           "texto": {
             "type": "string",
-            "description": "El motivo como se lee en el boton: una frase en tercera persona sobre lo que hizo quien resolvio ('Sumo en vez de multiplicar', 'Volteo la fraccion equivocada'). Corta, sin numeros de paso adentro.",
+            "description": "El motivo como se lee en el boton: una frase en tercera persona sobre lo que hizo quien resolvio (\"Sumo en vez de multiplicar\", \"Volteo la fraccion equivocada\"). Corta, sin numeros de paso adentro. MEDIDO en app/estacion/error.tsx:95-97: el texto vive en una caja de 314 px (350 menos 32 de padding y 4 de borde) y escribe a 15 px con interlineado 19. Un renglon llega a 44 caracteres y la tarjeta mide los 48 del diseno; de 45 a 81 son dos renglones y mide 66; de 82 a 127 son tres y mide 85; a 128 la pantalla se desplaza. El tope es 81: el ultimo valor que cabe en los dos renglones que esta descripcion promete. Los dos motivos del diseno miden 25 y 29 caracteres, o sea un renglon.",
             "minLength": 10,
-            "maxLength": 120
+            "maxLength": 81
           },
           "esElBueno": {
             "type": "boolean",
@@ -96,9 +95,9 @@
           },
           "queRevela": {
             "type": "string",
-            "description": "Lo que delata elegir este motivo. En un motivo malo: que cree el estudiante que lo trae aqui, y la señal concreta de los renglones que ese motivo no explica. En el motivo bueno: por que si es ese, dicho contra lo que se ve en los renglones. Se describe, no se regaña.",
+            "description": "Lo que delata elegir este motivo. En un motivo malo: que cree el estudiante que lo trae aqui, y la señal concreta de los renglones que ese motivo no explica. En el motivo bueno: por que si es ese, dicho contra lo que se ve en los renglones. Se describe, no se regaña. SIN MEDIDA DE PANTALLA: hoy ningun .tsx pinta este campo, asi que su tope no puede proteger nada y solo puede tirar la llamada. El 400 es uniforme para todos los campos de prosa sin pantalla de los once esquemas (CONTRATO.md §6): antes cada archivo traia un numero distinto sin motivo. Cuando exista la superficie que lo pinte, se mide contra ella y se aprieta, como se hizo con los diecisiete campos que si se pintan.",
             "minLength": 20,
-            "maxLength": 320
+            "maxLength": 400
           }
         },
         "required": [
@@ -119,19 +118,18 @@
         "properties": {
           "orden": {
             "type": "integer",
-            "description": "En que lugar va esta pista, empezando en 1. Es el orden del contenido, no cuantas quedan.",
+            "description": "En que lugar va esta pista, empezando en 1. Es el orden del contenido, no cuantas quedan. NO LO ESCRIBAS TU: es la posicion de la pista en el arreglo, empezando en 1. Lo rellena quien llama (contenido/generar.mjs, sellarIndices/sellarTraza) antes de validar, y si viene y no cuadra con la posicion, se rechaza. Sigue en properties nada mas para que el ejemplo de este prompt sea un objeto completo.",
             "minimum": 1,
             "maximum": 3
           },
           "texto": {
             "type": "string",
-            "description": "La pista. Ni da el numero del paso malo ni nombra el motivo bueno.",
+            "description": "La pista. Ni da el numero del paso malo ni nombra el motivo bueno. SIN MEDIDA DE PANTALLA: hoy ningun .tsx pinta este campo, asi que su tope no puede proteger nada y solo puede tirar la llamada. El 400 es uniforme para todos los campos de prosa sin pantalla de los once esquemas (CONTRATO.md §6): antes cada archivo traia un numero distinto sin motivo. Cuando exista la superficie que lo pinte, se mide contra ella y se aprieta, como se hizo con los diecisiete campos que si se pintan.",
             "minLength": 20,
-            "maxLength": 280
+            "maxLength": 400
           }
         },
         "required": [
-          "orden",
           "texto"
         ],
         "additionalProperties": false
@@ -158,7 +156,7 @@
   "$defs": {
     "texto": {
       "type": "object",
-      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion. El tope de 90 sale de la tarjeta mas angosta que pinta un renglon: la de la estacion 3 (app/estacion/completar.tsx:60-68) mide 308 px de ancho y escribe a 30 px, o sea unos 20 caracteres por renglon. Medido en 390x844 clonando un solo atomo: 20 caracteres = 39 px de alto, 60 = 183, 90 = el ultimo valor en el que la tarjeta todavia cabe, 120 = 327 px y el ScrollView ya se desplaza (500 contra 430). A 240 el atomo medía 663 px de alto en una pantalla de 844. Un atomo no es un parrafo: si no cabe en 90, no es un renglon, es prosa, y va en otro campo.",
       "properties": {
         "tipo": {
           "const": "texto"
@@ -166,7 +164,7 @@
         "valor": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 240
+          "maxLength": 90
         }
       },
       "required": [
@@ -177,7 +175,7 @@
     },
     "textoCorto": {
       "type": "object",
-      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 (app/estacion/contacto.tsx:70-77). Medido en 390x844: la caja del texto mide 270 px (350 de la tarjeta menos 36 de padding, 4 de borde, 26 de insignia y 14 de hueco) y escribe a 20 px. Hasta 29 caracteres es un renglon y la tarjeta mide los 64 del diseno; de 30 a 57 son dos renglones y mide 80; de 58 a 85 son tres y mide 113; a 86 la pantalla se desplaza (760 contra 700). El tope es 57: el ultimo valor que deja la tarjeta en dos renglones. La tarjeta NO es de alto fijo, es minHeight 64 y si se parte (contacto.tsx:120-131, y el comentario de contacto.tsx:69-70 dice por que). Ojo: el tope es POR ATOMO, y la opcion admite cuatro, asi que cuatro atomos largos son cuatro veces esto.",
       "properties": {
         "tipo": {
           "const": "texto"
@@ -185,7 +183,7 @@
         "valor": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 30
+          "maxLength": 57
         }
       },
       "required": [
@@ -196,7 +194,7 @@
     },
     "fraccion": {
       "type": "object",
-      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son UN solo renglon corto cada uno, de hasta 26 caracteres: \"velocidad final − inicial\" y \"masa de la disolucion\" caben, un parrafo no, y una cifra de veinte digitos tampoco porque Fraccion.tsx no parte renglon. No se anida una fraccion dentro de otra.",
       "properties": {
         "tipo": {
           "const": "fraccion"
@@ -206,7 +204,8 @@
             {
               "type": "string",
               "minLength": 1,
-              "maxLength": 40
+              "maxLength": 26,
+              "description": "Hasta 26 caracteres, y ojo con QUE caracteres. src/componentes/Fraccion.tsx:40-42 dibuja arriba y abajo como un solo <Text> en columna: NO parte renglon, asi que lo que no quepa no se acomoda, se sale de la tarjeta. Medido en la tarjeta mas angosta que pinta una fraccion, la de la estacion 3 (app/estacion/completar.tsx:60-68, 308 px a tamano 30, o sea cifras de 23 px): 26 caracteres de palabra caben (~296 px) y \"velocidad final − inicial\" es el caso limite; en DIGITOS, que son mucho mas anchos, 10 ya miden 148 px y 20 miden 286, asi que un numerador numerico se queda en 3 o 4 cifras. Y aunque quepa, ensancha: con 3 digitos la fila mide los 58 px del diseno y con 4 salta a 121, porque la fraccion ancha empuja los demas atomos a otro renglon."
             },
             {
               "type": "number"
@@ -218,7 +217,8 @@
             {
               "type": "string",
               "minLength": 1,
-              "maxLength": 40
+              "maxLength": 26,
+              "description": "Hasta 26 caracteres, y ojo con QUE caracteres. src/componentes/Fraccion.tsx:40-42 dibuja arriba y abajo como un solo <Text> en columna: NO parte renglon, asi que lo que no quepa no se acomoda, se sale de la tarjeta. Medido en la tarjeta mas angosta que pinta una fraccion, la de la estacion 3 (app/estacion/completar.tsx:60-68, 308 px a tamano 30, o sea cifras de 23 px): 26 caracteres de palabra caben (~296 px) y \"velocidad final − inicial\" es el caso limite; en DIGITOS, que son mucho mas anchos, 10 ya miden 148 px y 20 miden 286, asi que un numerador numerico se queda en 3 o 4 cifras. Y aunque quepa, ensancha: con 3 digitos la fila mide los 58 px del diseno y con 4 salta a 121, porque la fraccion ancha empuja los demas atomos a otro renglon."
             },
             {
               "type": "number"
@@ -305,7 +305,7 @@
       ]
     },
     "parteMatCorta": {
-      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 57 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de minHeight 64 y se parte en dos renglones.",
       "oneOf": [
         {
           "$ref": "#/$defs/textoCorto"
@@ -348,7 +348,7 @@
     },
     "tecleado": {
       "type": "string",
-      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28, doce teclas: 1-9, 0, / y borrar). Sin punto decimal, sin signo menos, sin letras, sin parentesis, sin exponente, sin x de multiplicar, sin dos puntos. LA DIAGONAL ES LA RAYA DE UNA FRACCION Y NADA MAS: \"a/b\" se dibuja apilado como la fraccion a sobre b (src/componentes/Expresion.tsx:171 y 193) y el lector de pantalla lo dicta \"a entre b\" (Expresion.tsx:54-55). Nunca es \"por\", ni \"y sobran\", ni \"a\", ni \"con\", ni un separador de factores. Si la respuesta son dos numeros que no son numerador y denominador, la pregunta esta mal planteada: se parte en dos escalones.",
       "pattern": "^[0-9]+(/[0-9]+)?$",
       "maxLength": 9
     },
@@ -388,6 +388,53 @@
           "additionalProperties": false
         }
       ]
+    },
+    "textoDePaso": {
+      "type": "object",
+      "description": "Palabras y signos para la tarjeta de paso de la estacion 5 (app/estacion/error.tsx:64-70). Medido en 390x844: la caja mide 276 px (350 menos 32 de padding, 4 de borde, 24 de insignia y 14 de hueco) y escribe a 17 px. Un renglon son 33 caracteres y la tarjeta mide los 58 del diseno; de 34 a 68 son dos renglones y mide 73; de 69 a 103 son tres y mide 100; a 104 la pantalla se desplaza. Y son CINCO pasos: con los cinco a dos renglones son 75 px de mas contra los 49 de holgura que tiene esa pantalla. El tope es 33: un paso cabe en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 33
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "parteMatDePaso": {
+      "description": "Un atomo del renglon de un paso de la estacion 5: lo mismo que parteMat pero con el texto acotado a 33 caracteres y sin hueco.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoDePaso"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglonDePaso": {
+      "type": "array",
+      "description": "El renglon de un paso de la estacion 5, escrito con atomos cortos. SIN huecos. Hasta 6 atomos: en el diseno el paso lleva de uno a cuatro, la caja mide 276 px a 17 px (app/estacion/error.tsx:64-70) y a partir de 104 caracteres la pantalla se desplaza. Son cinco pasos y esa pantalla es la mas apretada de las seis: 49 px de holgura.",
+      "items": {
+        "$ref": "#/$defs/parteMatDePaso"
+      },
+      "minItems": 1,
+      "maxItems": 6,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
     }
   }
 }

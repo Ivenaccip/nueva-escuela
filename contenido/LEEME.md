@@ -121,10 +121,12 @@ explicación se escribe igual sea cual sea la notación.
 |---|---|---|---|---|
 | `lineal` | `numero` | `02-contacto` | `03-completar` + `04-escalera` | `05-error` |
 | `lineal` | `fraccion` | `02-contacto` | `03-completar` + `04-escalera` | `05-error` |
+| `lineal` | `expresion` | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `palabra` | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `trazo` | `02-contacto` | `X2-figura` | `05-error` |
 | `tabla` | `numero` | `X1-tabla` | `X1-tabla` | `X1-tabla` |
 | `tabla` | `fraccion` | `X1-tabla` | `X1-tabla` | `X1-tabla` |
+| `tabla` | `expresion` | `X1-tabla` | `X1-tabla` | `X1-tabla` |
 | `tabla` | `palabra` | `X1-tabla` | `X1-tabla` | `X1-tabla` |
 | `tabla` | `trazo` | `X1-tabla` | `X2-figura` | `X1-tabla` |
 | `figura` | cualquiera | `02-contacto` | `X2-figura` | `05-error` |
@@ -141,6 +143,47 @@ explicación se escribe igual sea cual sea la notación.
 - **Los tres casos aparte piden componentes de UI que hoy no existen.** Su salida
   se puede generar y guardar, pero no se puede pintar. `generar.mjs` los nombra y
   no los llama.
+- **`expresion` es el renglón que más pesa, y el que faltaba.** Es la respuesta que
+  necesita un carácter que el teclado no tiene. Sin ese renglón, la factorización del
+  tema 2 se fue a la escalera, ésta pidió `2³ × 3² × 5` y `$defs.tecleado` la rechazó
+  tres veces: el tope tenía razón, el ruteo no.
+
+### Dos listas que no hay que confundir al contar reintentos
+
+De los veinte primeros temas de matemáticas, **doce** no pueden recorrer las
+estaciones 3 y 4 tal como está escrito su canon, y salen por dos puertas distintas:
+
+- **Salen por `notacion`, no por teclado — 2 temas:** el **4** (la fracción en la
+  recta, `figura`) y el **20** (proporcionalidad, `tabla`). Sus respuestas se teclean
+  bien: `3/4` y `90`, con el `kg` en el enunciado. Lo que los bloquea es el dibujo y
+  la rejilla, y ya tienen su ruta: `X2-figura` y `X1-tabla`.
+- **Salen por el teclado — 10 temas:** el **1** (el cociente y el residuo son dos
+  números), el **2** (exponente y `×`), el **6** y el **10** (`<`, `>`, `=`), el **11**,
+  el **12** y el **14** (punto decimal), el **15**, el **16** y la mitad del **17**
+  (signo menos). Los temas **10**, **15** y **16** están en las dos listas: su canon es
+  `figura` *y* su respuesta no se teclea.
+
+Encajan limpios ocho: **3, 5, 7, 8, 9, 13, 18** y el **19** —éste último sólo desde que
+el prompt prohíbe el `:` y pide la razón escrita como fracción.
+
+Dos cosas que ese conteo enseña:
+
+- **Seis de los diez necesitan UN carácter** que el teclado no tiene: el punto (11, 12,
+  14) o el menos (15, 16, 17). Dos más necesitan los tres de comparación (6, 10). Sólo
+  el 1 y el 2 seguirían necesitando reformularse aunque el teclado creciera, porque su
+  respuesta son dos números o un producto. `FILAS` es una constante de doce teclas en
+  un archivo (`app/estacion/completar.tsx:23-28`) y el temario pide catorce o quince:
+  vale la pena medir cuánto cuesta una cuarta y una quinta fila **antes** de escribir
+  diez reformulaciones que mueven la pregunta lejos de la habilidad que el tema promete.
+- **`X3-respuesta-no-numerica` no salva a ninguno de los diez hoy.** De sus cuatro
+  teclados sólo corre `digitos` (`CONTRATO.md §5`), así que X3 los documenta; no los
+  arregla. Lo que sí hace, y no es poco, es sacarlos de `04-escalera` para que no
+  cobren tres reintentos cada uno.
+- **La reformulación casi siempre existe, y a veces sale mejor.** El caso del **12** es
+  el ejemplo: «¿cuántas cifras decimales lleva el resultado?», con `"2"`, es
+  exactamente el error típico del tema convertido en un dígito. El que **no** se salva
+  bien es el **11**: preguntado en centésimos desaparece el punto, y con él la
+  posibilidad de desalinear, que es el único error que ese tema existe para curar.
 
 ---
 
@@ -196,11 +239,22 @@ La API **no** valida el `tool_use` contra el `input_schema`: lo que devuelve el
 modelo puede no casar con el esquema que se le mandó. El esquema sólo sirve si
 alguien lo corre.
 
-1. **Contra el esquema**, con ajv 2020-12.
-2. **`temaNumero` y `materia`** contra el tema que se pidió. Los siete esquemas los
-   traen por esto: un reintento que se cruza o una tanda que se reanuda a medias se
-   caza aquí, y no con un tema cuya estación 5 acusa un paso de otro tema.
-3. **Las tres URL de la estación 1**, contra el oEmbed de YouTube, que no pide
+Y el orden importa: **primero se sella lo que el llamador sabe, después se valida.**
+Un campo que nadie tenía que adivinar no puede tirar la llamada entera.
+
+1. **Se sella** lo que el llamador sabe con certeza: `temaNumero`, `materia` y el
+   `titulo` de raíz (`sellarTraza`); la `letra` de cada opción, el `orden` de cada
+   pista y el `numero` de cada paso, que son el índice del arreglo (`sellarIndices`);
+   `faltaCodigo` y `comoSeCompara` del caso X3 (`sellarTeclado`); y la `url`, el
+   `titulo`, el `canal`, `dondeSalio` y la `consulta` del video, que salen del
+   candidato (`sellarVideo`). La tabla completa está en `CONTRATO.md §6bis`.
+2. **Contra el esquema**, con ajv 2020-12.
+3. **`temaNumero`, `materia` y el `titulo`** contra el tema que se pidió, y **cada
+   índice contra su posición** (`comprobarTraza`, `comprobarIndices`). Sellar no es
+   dejar de comprobar: un reintento que se cruza, o una tanda que se reanuda a
+   medias, se caza aquí y no con un tema cuya estación 5 acusa un paso de otro. Y una
+   `letra: "C"` en el primer lugar cambiaría cuál opción se marca como correcta.
+4. **Las tres URL de la estación 1**, contra el oEmbed de YouTube, que no pide
    llave. Un **200** con `title` y `author_name` quiere decir que el video existe,
    es público y se puede incrustar; **401, 403 o 404** que se borró, es privado o
    no deja incrustarse; **400** que el id está mal formado. Y el `title` y el

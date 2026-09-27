@@ -307,7 +307,21 @@ escritos en el renglón. Y el aporte del tema absorbido no está en la cuenta
     distintos de los que el anfitrión ya tenía?
 12. ¿`queSeRescata` se puede leer sin repetir el título del tema absorbido? Si no
     se puede, no hay nada que absorber: `entraPor` es `fuera`.
-
+13. **La lista, campo por campo.** Tacha uno por uno: `temaAbsorbido`,
+    `queSeRescata`, `entraPor`, `porQueAhi`, `costura` y `noSePuede`. `anfitrion`
+    viaja siempre salvo el caso único del tema que el temario manda fuera sin
+    nombrar anfitrión, y lleva `numero` y `titulo`. `aporte` viaja salvo cuando
+    `entraPor` es `fuera`, y lleva **exactamente una** de las cuatro llaves, la que
+    nombra `entraPor`:
+    - `video`: `pregunta`, `resumen`, `consultaDeBusqueda` y `criterios`.
+    - `contacto`: `preguntas`, y cada una `enunciado` y `opciones`; cada opción
+      `partes`, `esCorrecta` y `queRevela`.
+    - `escalera`: `escalones`, y cada uno `situacion`, `expresion`, `pregunta`,
+      `respuesta` (con `tecleado`, `aceptaTambien` y `comoSeLee`) y `pistas`.
+    - `motivos`: `motivos`, y cada uno `texto`, `esElBueno` y `queRevela`.
+    `costura` es la que se va, y es la que dice dónde se pega todo esto: lleva
+    `donde`, `reemplazaOAgrega` y `queNoDuplica`. Escríbela antes del `aporte`, no
+    después.
 ---
 
 ## Apéndice · no va en la llamada

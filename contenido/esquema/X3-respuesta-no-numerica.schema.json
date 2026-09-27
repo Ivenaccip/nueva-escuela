@@ -23,7 +23,7 @@
     },
     "titulo": {
       "type": "string",
-      "description": "El titulo del tema, copiado del temario sin cambiarlo.",
+      "description": "El titulo del tema, copiado del temario sin cambiarlo. NO LO ESCRIBAS TU: sale del temario sin cambiarlo, y generar.mjs:649 ya lo tiene guardado en el archivo del tema antes de la primera llamada. Lo rellena sellarTraza antes de validar, y si viene y no es el del temario, es una respuesta cruzada y se rechaza.",
       "minLength": 3,
       "maxLength": 120
     },
@@ -110,22 +110,18 @@
       "properties": {
         "ignoraMayusculas": {
           "type": "boolean",
-          "description": "true si 'Mitosis' y 'mitosis' cuentan igual. En quimica va en false: Co es cobalto y CO es monoxido de carbono."
+          "description": "true si 'Mitosis' y 'mitosis' cuentan igual. En quimica va en false: Co es cobalto y CO es monoxido de carbono. Solo hay algo que decidir cuando `teclado` es \"texto\". Con digitos, fichas u opciones el teclado solo puede escribir lo que trae pintado, la comparacion es exacta y generar.mjs pone los tres en false por ti antes de validar."
         },
         "ignoraAcentos": {
           "type": "boolean",
-          "description": "true si 'osmosis' cuenta igual que 'osmosis' con acento."
+          "description": "true si 'osmosis' cuenta igual que 'osmosis' con acento. Solo hay algo que decidir cuando `teclado` es \"texto\". Con digitos, fichas u opciones el teclado solo puede escribir lo que trae pintado, la comparacion es exacta y generar.mjs pone los tres en false por ti antes de validar."
         },
         "ignoraEspaciosDeMas": {
           "type": "boolean",
-          "description": "true si sobra o falta un espacio y la respuesta sigue contando."
+          "description": "true si sobra o falta un espacio y la respuesta sigue contando. Solo hay algo que decidir cuando `teclado` es \"texto\". Con digitos, fichas u opciones el teclado solo puede escribir lo que trae pintado, la comparacion es exacta y generar.mjs pone los tres en false por ti antes de validar."
         }
       },
-      "required": [
-        "ignoraMayusculas",
-        "ignoraAcentos",
-        "ignoraEspaciosDeMas"
-      ],
+      "required": [],
       "additionalProperties": false
     },
     "completar": {
@@ -226,7 +222,7 @@
             "properties": {
               "orden": {
                 "type": "integer",
-                "description": "1 reencuadra la pregunta sin dar dato. 2 nombra el paso del canon donde esta la respuesta. 3 casi la da: deja un solo movimiento por hacer.",
+                "description": "1 reencuadra la pregunta sin dar dato. 2 nombra el paso del canon donde esta la respuesta. 3 casi la da: deja un solo movimiento por hacer. NO LO ESCRIBAS TU: es la posicion de la pista en el arreglo, empezando en 1. Lo rellena quien llama (contenido/generar.mjs, sellarIndices/sellarTraza) antes de validar, y si viene y no cuadra con la posicion, se rechaza. Sigue en properties nada mas para que el ejemplo de este prompt sea un objeto completo.",
                 "minimum": 1,
                 "maximum": 3
               },
@@ -238,7 +234,6 @@
               }
             },
             "required": [
-              "orden",
               "texto"
             ],
             "additionalProperties": false
@@ -361,7 +356,7 @@
               "properties": {
                 "orden": {
                   "type": "integer",
-                  "description": "1 reencuadra, 2 nombra el paso del canon, 3 casi da la respuesta.",
+                  "description": "1 reencuadra, 2 nombra el paso del canon, 3 casi da la respuesta. NO LO ESCRIBAS TU: es la posicion de la pista en el arreglo, empezando en 1. Lo rellena quien llama (contenido/generar.mjs, sellarIndices/sellarTraza) antes de validar, y si viene y no cuadra con la posicion, se rechaza. Sigue en properties nada mas para que el ejemplo de este prompt sea un objeto completo.",
                   "minimum": 1,
                   "maximum": 3
                 },
@@ -373,7 +368,6 @@
                 }
               },
               "required": [
-                "orden",
                 "texto"
               ],
               "additionalProperties": false
@@ -396,7 +390,7 @@
     },
     "faltaCodigo": {
       "type": "boolean",
-      "description": "true cuando el teclado elegido no es \"digitos\", o sea siempre que haga falta codigo que hoy no existe: \"fichas\" pide que FILAS salga del contenido, \"opciones\" pide una fila de opciones donde va el teclado, \"texto\" pide un TextInput en la estacion 3. Solo \"digitos\" corre con el codigo de hoy (app/estacion/completar.tsx:23-28). Cuando esto va en true, noSePuede va lleno y nombra el teclado que falta: el llamador filtra por noSePuede y no publica un tema donde el estudiante veria el teclado de digitos y una respuesta que necesita letras."
+      "description": "true cuando el teclado elegido no es \"digitos\", o sea siempre que haga falta codigo que hoy no existe: \"fichas\" pide que FILAS salga del contenido, \"opciones\" pide una fila de opciones donde va el teclado, \"texto\" pide un TextInput en la estacion 3. Solo \"digitos\" corre con el codigo de hoy (app/estacion/completar.tsx:23-28). Cuando esto va en true, noSePuede va lleno y nombra el teclado que falta: el llamador filtra por noSePuede y no publica un tema donde el estudiante veria el teclado de digitos y una respuesta que necesita letras. NO LO ESCRIBAS TU: es exactamente `teclado !== \"digitos\"`, una funcion de otro campo de esta misma salida. Lo deriva generar.mjs antes de validar. Pedirtelo era pedirte que calcularas un !== y gastar dos puntos del revisate en vigilar que salga bien."
     },
     "planB": {
       "type": "object",
@@ -430,7 +424,6 @@
   "required": [
     "temaNumero",
     "materia",
-    "titulo",
     "teclado",
     "porQueEseTeclado",
     "tecladosDescartados",
@@ -439,14 +432,13 @@
     "completar",
     "escalera",
     "noSePuede",
-    "faltaCodigo",
     "planB"
   ],
   "additionalProperties": false,
   "$defs": {
     "texto": {
       "type": "object",
-      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion.",
+      "description": "Palabras corrientes y signos sueltos. Los signos de operacion y las flechas van aqui: +, -, x, ÷, =, <, >, →, ≈. El menos es el signo menos (U+2212), no un guion. El tope de 90 sale de la tarjeta mas angosta que pinta un renglon: la de la estacion 3 (app/estacion/completar.tsx:60-68) mide 308 px de ancho y escribe a 30 px, o sea unos 20 caracteres por renglon. Medido en 390x844 clonando un solo atomo: 20 caracteres = 39 px de alto, 60 = 183, 90 = el ultimo valor en el que la tarjeta todavia cabe, 120 = 327 px y el ScrollView ya se desplaza (500 contra 430). A 240 el atomo medía 663 px de alto en una pantalla de 844. Un atomo no es un parrafo: si no cabe en 90, no es un renglon, es prosa, y va en otro campo.",
       "properties": {
         "tipo": {
           "const": "texto"
@@ -454,7 +446,7 @@
         "valor": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 240
+          "maxLength": 90
         }
       },
       "required": [
@@ -465,7 +457,7 @@
     },
     "textoCorto": {
       "type": "object",
-      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 mide 64 de alto y no se parte. A 20 px, en los ~350 de la tarjeta menos la insignia de 26 y los paddings de 36, caben unos 30 caracteres en un renglon.",
+      "description": "Palabras y signos para un espacio angosto: la tarjeta de opcion de la estacion 2 (app/estacion/contacto.tsx:70-77). Medido en 390x844: la caja del texto mide 270 px (350 de la tarjeta menos 36 de padding, 4 de borde, 26 de insignia y 14 de hueco) y escribe a 20 px. Hasta 29 caracteres es un renglon y la tarjeta mide los 64 del diseno; de 30 a 57 son dos renglones y mide 80; de 58 a 85 son tres y mide 113; a 86 la pantalla se desplaza (760 contra 700). El tope es 57: el ultimo valor que deja la tarjeta en dos renglones. La tarjeta NO es de alto fijo, es minHeight 64 y si se parte (contacto.tsx:120-131, y el comentario de contacto.tsx:69-70 dice por que). Ojo: el tope es POR ATOMO, y la opcion admite cuatro, asi que cuatro atomos largos son cuatro veces esto.",
       "properties": {
         "tipo": {
           "const": "texto"
@@ -473,7 +465,7 @@
         "valor": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 30
+          "maxLength": 57
         }
       },
       "required": [
@@ -484,7 +476,7 @@
     },
     "fraccion": {
       "type": "object",
-      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son un solo renglon corto cada uno, de hasta 40 caracteres: 'velocidad final - inicial' y 'masa de la disolucion' caben, un parrafo no. No se anida una fraccion dentro de otra.",
+      "description": "Fraccion apilada de verdad: numerador, raya, denominador. Nunca se escribe 3/5 en un renglon. Arriba y abajo son UN solo renglon corto cada uno, de hasta 26 caracteres: \"velocidad final − inicial\" y \"masa de la disolucion\" caben, un parrafo no, y una cifra de veinte digitos tampoco porque Fraccion.tsx no parte renglon. No se anida una fraccion dentro de otra.",
       "properties": {
         "tipo": {
           "const": "fraccion"
@@ -494,7 +486,8 @@
             {
               "type": "string",
               "minLength": 1,
-              "maxLength": 40
+              "maxLength": 26,
+              "description": "Hasta 26 caracteres, y ojo con QUE caracteres. src/componentes/Fraccion.tsx:40-42 dibuja arriba y abajo como un solo <Text> en columna: NO parte renglon, asi que lo que no quepa no se acomoda, se sale de la tarjeta. Medido en la tarjeta mas angosta que pinta una fraccion, la de la estacion 3 (app/estacion/completar.tsx:60-68, 308 px a tamano 30, o sea cifras de 23 px): 26 caracteres de palabra caben (~296 px) y \"velocidad final − inicial\" es el caso limite; en DIGITOS, que son mucho mas anchos, 10 ya miden 148 px y 20 miden 286, asi que un numerador numerico se queda en 3 o 4 cifras. Y aunque quepa, ensancha: con 3 digitos la fila mide los 58 px del diseno y con 4 salta a 121, porque la fraccion ancha empuja los demas atomos a otro renglon."
             },
             {
               "type": "number"
@@ -506,7 +499,8 @@
             {
               "type": "string",
               "minLength": 1,
-              "maxLength": 40
+              "maxLength": 26,
+              "description": "Hasta 26 caracteres, y ojo con QUE caracteres. src/componentes/Fraccion.tsx:40-42 dibuja arriba y abajo como un solo <Text> en columna: NO parte renglon, asi que lo que no quepa no se acomoda, se sale de la tarjeta. Medido en la tarjeta mas angosta que pinta una fraccion, la de la estacion 3 (app/estacion/completar.tsx:60-68, 308 px a tamano 30, o sea cifras de 23 px): 26 caracteres de palabra caben (~296 px) y \"velocidad final − inicial\" es el caso limite; en DIGITOS, que son mucho mas anchos, 10 ya miden 148 px y 20 miden 286, asi que un numerador numerico se queda en 3 o 4 cifras. Y aunque quepa, ensancha: con 3 digitos la fila mide los 58 px del diseno y con 4 salta a 121, porque la fraccion ancha empuja los demas atomos a otro renglon."
             },
             {
               "type": "number"
@@ -593,7 +587,7 @@
       ]
     },
     "parteMatCorta": {
-      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 30 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de un solo renglon.",
+      "description": "Un atomo para un espacio angosto: lo mismo que parteMat pero con el texto acotado a 57 caracteres y sin hueco. Se usa en la tarjeta de opcion de la estacion 2, que es de minHeight 64 y se parte en dos renglones.",
       "oneOf": [
         {
           "$ref": "#/$defs/textoCorto"
@@ -636,7 +630,7 @@
     },
     "tecleado": {
       "type": "string",
-      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28). Sin punto decimal, sin signo menos, sin letras, sin parentesis.",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28, doce teclas: 1-9, 0, / y borrar). Sin punto decimal, sin signo menos, sin letras, sin parentesis, sin exponente, sin x de multiplicar, sin dos puntos. LA DIAGONAL ES LA RAYA DE UNA FRACCION Y NADA MAS: \"a/b\" se dibuja apilado como la fraccion a sobre b (src/componentes/Expresion.tsx:171 y 193) y el lector de pantalla lo dicta \"a entre b\" (Expresion.tsx:54-55). Nunca es \"por\", ni \"y sobran\", ni \"a\", ni \"con\", ni un separador de factores. Si la respuesta son dos numeros que no son numerador y denominador, la pregunta esta mal planteada: se parte en dos escalones.",
       "pattern": "^[0-9]+(/[0-9]+)?$",
       "maxLength": 9
     },
@@ -676,6 +670,53 @@
           "additionalProperties": false
         }
       ]
+    },
+    "textoDePaso": {
+      "type": "object",
+      "description": "Palabras y signos para la tarjeta de paso de la estacion 5 (app/estacion/error.tsx:64-70). Medido en 390x844: la caja mide 276 px (350 menos 32 de padding, 4 de borde, 24 de insignia y 14 de hueco) y escribe a 17 px. Un renglon son 33 caracteres y la tarjeta mide los 58 del diseno; de 34 a 68 son dos renglones y mide 73; de 69 a 103 son tres y mide 100; a 104 la pantalla se desplaza. Y son CINCO pasos: con los cinco a dos renglones son 75 px de mas contra los 49 de holgura que tiene esa pantalla. El tope es 33: un paso cabe en un renglon.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 33
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "parteMatDePaso": {
+      "description": "Un atomo del renglon de un paso de la estacion 5: lo mismo que parteMat pero con el texto acotado a 33 caracteres y sin hueco.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoDePaso"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        }
+      ]
+    },
+    "renglonDePaso": {
+      "type": "array",
+      "description": "El renglon de un paso de la estacion 5, escrito con atomos cortos. SIN huecos. Hasta 6 atomos: en el diseno el paso lleva de uno a cuatro, la caja mide 276 px a 17 px (app/estacion/error.tsx:64-70) y a partir de 104 caracteres la pantalla se desplaza. Son cinco pasos y esa pantalla es la mas apretada de las seis: 49 px de holgura.",
+      "items": {
+        "$ref": "#/$defs/parteMatDePaso"
+      },
+      "minItems": 1,
+      "maxItems": 6,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
     }
   },
   "if": {

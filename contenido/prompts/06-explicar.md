@@ -431,6 +431,15 @@ Tres cosas de ese ejemplo:
    `contraargumento` sale de `erroresSecundarios[0]`?
 10. ¿La `nota` promete algo que los `contraargumentos` sí pueden cumplir?
 11. ¿Ningún campo trae una fracción con diagonal, un subíndice o un superíndice?
-12. ¿`temaNumero` y `materia` son los del canon, copiados sin cambiarlos?
-13. ¿Cero campos de estado: ni `borrador`, ni pistas, ni puntaje, ni monedas?
-14. ¿`noSePuede` viaja, aunque sea `null`?
+12. ¿Cero campos de estado: ni `borrador`, ni pistas, ni puntaje, ni monedas?
+13. ¿`noSePuede` viaja, aunque sea `null`?
+14. **La lista, campo por campo.** Tacha uno por uno: `titulo`,
+    `aclaracion`, `nota`, `rubrica` y `noSePuede`. Los tres primeros son los que la
+    pantalla pinta y van los tres, no dos. `rubrica` lleva los seis:
+    `ideasQueCuentan`, `minimoParaContar`, `suenanBienYNoDicen`,
+    `contraargumentos`, `ejemploQueSiCuenta` y `noCuentaEnContra`. Adentro: cada
+    idea lleva `idea`, `porQueImporta`, `comoSuenaDicha` y `esImprescindible`; cada
+    `suenanBienYNoDicen` lleva `respuesta`, `queLaDelata` y `queLeFalta`; cada
+    contraargumento lleva `siDice`, `seLeContesta` y `aDondeLoEmpuja`. Los dos que
+    se van son `ejemploQueSiCuenta` y `noCuentaEnContra`: cierran la rúbrica, que
+    ya es larga, y para entonces la atención se fue en los contraargumentos.

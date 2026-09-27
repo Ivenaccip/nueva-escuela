@@ -350,3 +350,12 @@ porque la búsqueda salió bien.
 11. ¿Cero campos de estado? Aquí no van monedas, ni pistas, ni el número de la
     estación, ni si ya está hecha.
 12. ¿Cero emoji, cero signos de admiración, cero festejo?
+13. **La lista, campo por campo.** Tacha uno por uno: `pregunta`, `resumen`,
+    `busqueda`, `video`, `alternativas`, `confianza`, `porQueEsaConfianza`,
+    `noSePuede`. Adentro: `busqueda` lleva `criterios` y `descarta`. `video` va en
+    `null` o lleva los cuatro: `idDeYouTube`, `variedadDeEspanol`,
+    `explicaElPorQue` y `porQueEste`. Cada entrada de `alternativas` lleva esos
+    mismos cuatro. Lo que se olvida no es lo difícil sino lo corto:
+    `explicaElPorQue` es un booleano de una palabra y tira la llamada igual que el
+    resumen. La `url`, el `titulo`, el `canal`, `dondeSalio`, la `consulta` y la
+    `duracion` NO van en esta lista: los pone quien llama, del candidato.

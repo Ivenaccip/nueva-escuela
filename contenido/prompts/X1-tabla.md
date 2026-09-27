@@ -512,7 +512,7 @@ revés.
         ],
         "planB": {
           "comoSeReformula": "La rejilla mal llenada se cuenta en el enunciado, y las cuatro opciones se quedan igual.",
-          "enunciado": [{ "tipo": "texto", "valor": "Alguien escribió Aa arriba de cada columna y Aa junto a cada renglón, y le salieron cuatro casillas Aa. ¿Qué está mal?" }],
+          "enunciado": [{ "tipo": "texto", "valor": "Alguien puso Aa arriba y Aa al lado, y le salieron cuatro casillas Aa. ¿Qué está mal?" }],
           "queSePierde": "Sin ver las orillas repetidas, el error se vuelve una frase que hay que creer en vez de algo que se cacha mirando."
         }
       },
@@ -910,3 +910,28 @@ revés.
 11. ¿Cero campos de estado, cero «N de M», cero estilo?
 12. ¿`noSePuede` está lleno, con el componente que falta y el plan B con el que
     el tema corre mientras tanto?
+13. **La lista, campo por campo.** Ésta es la llamada más grande de las once:
+    cuatro estaciones en una. Tacha uno por uno: `rejilla`, `contacto`,
+    `completar`, `escalera`, `error` y `noSePuede`.
+    - `rejilla`: `deQueEs`, `porQueNoCabeEnUnRenglon`, `reglaDeLaCelda`,
+      `comoSeLlena` (`banco` es opcional).
+    - cada `tabla`, la haya donde la haya: `deQueEs`, `columnas`, `filas`; cada
+      fila `rotulo` y `celdas`; y **cada celda, columna y rótulo** lleva `tipo` y
+      `deDondeSale`, más `partes` si es texto o `respuesta` y `comoSeLee` si es un
+      hueco. `deDondeSale` es el que se va: es corto, va al final de la celda y hay
+      docenas.
+    - `contacto`: `preguntas`, y cada una `tabla`, `pregunta`, `opciones` y
+      `planB`; cada opción `partes`, `esCorrecta` y `queRevela`; el `planB` de
+      contacto y el de error, `comoSeReformula`, `enunciado` y `queSePierde`.
+    - `completar`: `pasoDelCanon`, `tabla`, `pistas` y `planB` con
+      `comoSeReformula`, `expresion`, `respuesta`, `comoSeLee` y `queSePierde`.
+    - `escalera`: `escalones`, y cada uno `situacion`, `tabla`, `pregunta`,
+      `pistas` y `planB` (los cinco del planB de completar).
+    - `error`: `enunciado`, `tabla`, `pasos` (cada uno con sus `partes`),
+      `pasoMalo`, `loQueEstaMal` con `donde`, `queDice` y `queDeberiaDecir`
+      (`columna` y `fila` son opcionales), `porQue`, `motivos` (cada uno `texto`,
+      `esElBueno` y `queRevela`) y `planB`.
+    Recórrelo estación por estación, no de corrido: lo que se olvida está al final
+    de cada una, y una estación incompleta tira las cuatro. El `titulo`, la
+    `letra` de cada opción, el `orden` de cada pista y el `numero` de cada paso no
+    van en esta lista: los pone quien llama.

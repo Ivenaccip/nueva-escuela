@@ -268,7 +268,349 @@
       "queHagoConEsto": "Repetir la búsqueda con otras palabras o en otra lengua, o dejar el tema sin video de apertura. La estación 1 sin video se ve, pero con menos impacto."
     }
   },
-  "contacto": null,
+  "contacto": {
+    "temaNumero": 2,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué va a la derecha de la raya vertical cuando descompones 48?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Los números primos que lo dividen"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Entendiste que la raya separa el número (izquierda) de los divisores primos que usas (derecha)."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Los resultados de cada división"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los resultados de cada división van en la izquierda, cayendo hacia abajo. La derecha lleva los primos que dividen."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Todos los divisores de 48"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "A la derecha van nada más los primos. El 4 y el 6 dividen a 48, pero no son primos."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Los múltiplos de 48"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "En la factorización descompones, no multiplicas hacia arriba. La derecha de la raya lleva los números que dividen."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Por cuál número pruebas primero si 120 se divide?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por el 3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Empiezas con el menor primo. 120 acaba en cifra par, así que primero pruebas el 2."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por el 2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Empezaste por el menor primo. Como 120 termina en cifra par, se divide entre 2 sin más cuentas."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por el 5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El 5 divide a 120, pero no es el primero. Pruebas primero con los menores, y 2 es el menor primo."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por el 7"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El 7 no divide a 120. Además, empiezas con los primos menores, no con los mayores."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Por qué 51 es primo?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "No es primo, se divide entre 3"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste las cifras: 5 + 1 = 6, y 6 se divide entre 3, así que 51 también."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "No es par, no acaba en 5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Probaste que no se divide entre 2 ni entre 5, y diste la factorización por terminada. Pero hay que seguir probando otros primos, como el 3."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Solo se divide entre 1 y entre sí mismo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "51 sí se divide entre otros números además de 1 y 51: prueba dividir entre 3."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Está en la tabla del 7"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "51 no está en la tabla del 7. Pero aunque no estuviera en las tablas que memorizaste, hay que probar dividiendo."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cómo escribes 24 = 2 × 2 × 2 × 3 con superíndices?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "24 = "
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "× 3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste mal cuántas veces aparece el 2. El 2 se multiplica tres veces, no dos."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "24 = "
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "3"
+              },
+              {
+                "tipo": "texto",
+                "valor": "× "
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "3",
+                "sup": "1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Agrupaste bien, pero el 3 aparece una sola vez: no se escribe con superíndice. Escribes 3 sin nada."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "24 = "
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "6",
+                "sup": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "× 3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El superíndice se pone en cada primo de la lista, no en un número nuevo. Los primos de 24 son 2 y 3."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "24 = "
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "3"
+              },
+              {
+                "tipo": "texto",
+                "valor": "× 3"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Agrupaste los tres 2 en 2³ y dejaste el 3 solo. El superíndice muestra cuántas veces cada primo aparece."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Descompusiste 30 en 2 × 3 × 5. ¿Cómo verificas que no te equivocaste?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Viendo si 2, 3 y 5 son primos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Que los factores sean primos es lo que hace correcta la descomposición, pero no te dice si llegaste a 30."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Multiplicando los primos de regreso"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 2 × 3 × 5 para ver si da 30. Si el resultado es el número inicial, la factorización es correcta."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sumando los primos que encontraste"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La verificación es multiplicar, no sumar. La suma de los primos no tiene que ver con si la factorización es correcta."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Contando cuántos primos hay"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Cuántos factores haya no te dice si el producto es el número original. Hay que multiplicar para verificar."
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": {
     "temaNumero": 2,
     "materia": "matematicas",

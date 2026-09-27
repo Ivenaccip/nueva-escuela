@@ -153,6 +153,11 @@ dos puntos:
 
 El patrón que sirve: **quién y qué se perdió, dos puntos, los datos que quedan.**
 
+**Apunta a 100 caracteres, no a 125.** El tope es 125 y el escalón inverso se pasa
+una y otra vez por escribirlo justo en el límite. Si al contar te sale más de 100,
+quítale la parte que explica qué hay que calcular: eso lo dice la pregunta, no la
+situación. Los cinco ejemplos de arriba que sí caben miden entre 99 y 118.
+
 Mexicana y ordinaria: la tiendita, el camión, el tinaco, la receta,
 el recibo de luz, la cancha, la libreta donde se apuntan los pendientes.
 
@@ -257,9 +262,43 @@ escribe con un `*` o un `×` que el teclado no tiene.
 mal   "tecleado": "2/3*3/2*5"     la factorización 2³ × 3² × 5
 mal   "tecleado": "12 + 3"
 mal   "tecleado": "2^3"
-bien  "tecleado": "3"             ¿cuántas veces cabe el 2 en 360?
+bien  "tecleado": "3"             ¿cuántas veces se repite el 2 en la
+                                factorización de 360?
 bien  "tecleado": "12/5"
 ```
+
+### La diagonal es la raya de UNA fracción, y nada más
+
+`a/b` se dibuja **apilado**, como la fracción a sobre b
+(`src/componentes/Expresion.tsx:171` y `193`), y el lector de pantalla lo dicta
+«a entre b» (`Expresion.tsx:54-55`). Nunca significa «por», ni «y sobran», ni
+«a», ni «con», ni separa factores.
+
+```
+mal   "tecleado": "6/3"     para «6 cajas y sobran 3 pelotas»
+                            pasa la expresión regular, pasa ajv, y la pantalla
+                            dibuja seis tercios. Éste es el fallo peor: se publica.
+mal   "tecleado": "2/3/3"   para «2³ × 3²», usando la diagonal de separador
+mal   "tecleado": "3/2"     para la razón «3 a 2», si lo que se quiere es 3:2
+bien  "tecleado": "3/2"     para la fracción tres medios, y para una razón
+                            simplificada cuando la pregunta pide «escrita como
+                            fracción»
+```
+
+**Si tu respuesta son dos números que no son numerador y denominador, la pregunta
+está mal planteada.** Pártela en dos: un escalón que pregunte por el primero y
+otro por el segundo. Para 33 ÷ 5 = 6 y sobran 3, un escalón lleva
+`[{"tipo":"texto","valor":"33 ÷ 5 = 6 y sobran"},{"tipo":"hueco"}]` con
+«¿Cuántas pelotas sobran?» y `"3"`, y el otro lleva el hueco en el 6 con
+«¿Cuántas cajas se llenan?».
+
+### El hueco no cabe dentro de un superíndice
+
+`$defs.simbolo.sup` es una cadena, no un átomo, así que un `hueco` no valida ahí
+y `Expresion.tsx:150` lo pinta como `<Text>`, no como átomo. Lo mismo para `sub` y
+para los dos lados de una `fraccion`. Si lo que falta es un exponente, el hueco va
+suelto en el renglón y la pregunta lo nombra: «¿cuántas veces se repite el 2?»,
+con el renglón mostrando la división sucesiva, no la potencia.
 
 Si la respuesta natural del escalón es una operación, **cambia la pregunta** para
 que lo que falte sea uno de sus números: en vez de «escribe la factorización de
@@ -574,7 +613,14 @@ Lo que este ejemplo hace bien, y que se te va a olvidar:
 10. ¿Ninguna pista escribe la respuesta, ni sus dígitos, ni la suma o el producto
     que la arma? ¿Ninguna dice el número de un paso del canon?
 11. ¿Cada átomo lleva su `tipo` y su `valor` completos, sin abreviar?
-12. ¿`temaNumero` y `materia` son los del canon, copiados sin cambiarlos?
-13. ¿Cero campos de estado: ni en cuál escalón va, ni cuántas pistas quedan, ni
+12. ¿Cero campos de estado: ni en cuál escalón va, ni cuántas pistas quedan, ni
     lo que trae tecleado?
-14. ¿`noSePuede` viaja, aunque sea en `null`?
+13. ¿`noSePuede` viaja, aunque sea en `null`?
+14. **La lista, campo por campo.** Tacha uno por uno: `escalones` y
+    `noSePuede`. Cada escalón lleva los siete: `situacion`, `expresion`,
+    `pregunta`, `respuesta`, `pistas`, `pasoDelCanon` y `esInverso`. Y cada
+    `respuesta` lleva `tecleado`, `aceptaTambien` y `comoSeLee`; cada pista, su
+    `texto`. Con cinco escalones son treinta y cinco campos más las pistas:
+    cuéntalos escalón por escalón, no de corrido. Los que se van son `pregunta`
+    —que la pantalla pinta debajo de la tarjeta—, `comoSeLee` y `aceptaTambien`,
+    que puede ir vacío pero tiene que viajar.

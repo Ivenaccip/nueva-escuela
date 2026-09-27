@@ -183,7 +183,8 @@ export async function buscarVideos(tema, materia) {
   );
 
   const vistos = idsQueElBuscadorVio(datos.output);
-  if (vistos.size === 0) return { candidatos: [], buscados: 0, descartados: [] };
+  if (vistos.size === 0)
+    return { candidatos: [], buscados: 0, descartados: [], consulta: consultaDe(tema, materia) };
 
   const candidatos = [];
   const descartados = [];
@@ -203,7 +204,9 @@ export async function buscarVideos(tema, materia) {
     });
   }
 
-  return { candidatos, buscados: vistos.size, descartados };
+  // La consulta viaja para que el llamador la guarde en busqueda.consulta. El
+  // modelo nunca la ve: la lista de candidatos trae titulo, canal, url e id.
+  return { candidatos, buscados: vistos.size, descartados, consulta: consultaDe(tema, materia) };
 }
 
 /** Los candidatos como texto, que es lo que se interpola en el prompt de la estación 1. */

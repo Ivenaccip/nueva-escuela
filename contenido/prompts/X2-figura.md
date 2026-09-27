@@ -359,7 +359,7 @@ contestar cualquier cosa menos 80.
     "datosEnPalabras": [
       {
         "tipo": "texto",
-        "valor": "A los 4 s el camión llevaba 20 m. A los 8 s llevaba 80 m. De los 8 s a los 12 s no se movió."
+        "valor": "A los 4 s llevaba 20 m. A los 8 s llevaba 80 m. De los 8 s a los 12 s no se movió."
       }
     ],
     "completar": {
@@ -489,3 +489,17 @@ contestar cualquier cosa menos 80.
    lista con orden y texto, no un número?
 10. ¿`noSePuede` viene lleno, con el componente que falta y el archivo que lo
     demuestra?
+11. **La lista, campo por campo.** Tacha uno por uno: `figura`, `planB` y
+    `noSePuede`. `figura` va en `null` o lleva los cinco: `titulo`, `queSeLee`,
+    `leerEnVozAlta`, `datos` y `hueco`; el `hueco` lleva `que`, `donde` y
+    `respuestaEnPalabras` (`respuesta` es opcional); los `datos` llevan `clase` más
+    lo que esa clase pida, y cada marca, punto, elemento, sustancia o flecha lleva
+    su `falta`.
+    `planB` es el único pedazo que la app puede correr hoy, y viaja completo:
+    `queSobrevive`, `queSePierde`, `datosEnPalabras`, `completar` y `escalones`.
+    `completar` lleva `pasoDelCanon`, `expresion`, `respuesta` (con `tecleado`,
+    `aceptaTambien` y `comoSeLee`) y `pistas`; cada escalón lleva `situacion`,
+    `expresion`, `pregunta`, `respuesta` y `pistas`.
+    Lo que se va es el final del plan B, después de haber gastado la atención en la
+    figura: `datosEnPalabras`, `comoSeLee` y `aceptaTambien`. El `titulo` de raíz y
+    el `orden` de cada pista no van en esta lista: los pone quien llama.

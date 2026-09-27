@@ -508,24 +508,40 @@ sin subíndice, un subíndice, dos subíndices, y hay que simplificar.
 
 1. ¿Elegiste el teclado más barato que sirve, y probaste antes reformular para
    quedarte en `digitos`?
-2. ¿`faltaCodigo` es `true` si el teclado no es `digitos`, y `false` si sí lo es?
-3. ¿Si `faltaCodigo` es `true`, `noSePuede` va **lleno** y nombra el teclado que
-   falta?
-4. ¿`planB` viaja, con `sirveHoy` dicho de verdad y con el hueco de la 3 y los
+2. ¿Si `teclado` no es `digitos`, `noSePuede` va **lleno** y nombra el teclado que
+   falta? (`faltaCodigo` no lo escribes tú: es `teclado !== "digitos"` y lo deriva
+   quien llama.)
+3. ¿`planB` viaja, con `sirveHoy` dicho de verdad y con el hueco de la 3 y los
    escalones de la 4 reescritos para el teclado de dígitos?
-5. ¿`tecladosDescartados` trae `digitos` con su motivo, si no lo elegiste?
-6. ¿`fichas` tiene de 3 a 11 cuando el teclado es `fichas`, y está vacío en los
+4. ¿`tecladosDescartados` trae `digitos` con su motivo, si no lo elegiste?
+5. ¿`fichas` tiene de 3 a 11 cuando el teclado es `fichas`, y está vacío en los
    otros tres casos?
-7. ¿Cada `correcta` se arma juntando etiquetas que sí existen en `fichas`, sin
+6. ¿Cada `correcta` se arma juntando etiquetas que sí existen en `fichas`, sin
    sobrar ni faltar un carácter?
-8. ¿Con las fichas que pusiste se puede escribir el error típico del canon?
-9. ¿`opciones` está vacío salvo con teclado `opciones`, y ahí trae de 2 a 4 con
+7. ¿Con las fichas que pusiste se puede escribir el error típico del canon?
+8. ¿`opciones` está vacío salvo con teclado `opciones`, y ahí trae de 2 a 4 con
    una sola `esCorrecta` en `true` y con la etiqueta igual a `correcta`?
-10. ¿Cada `expresion` tiene exactamente un hueco?
-11. ¿Cada átomo lleva su `tipo` y su `valor` completos, sin abreviar?
-12. ¿Ningún `simbolo` va sin `sub` ni `sup`? ¿Ninguna `fraccion` con átomos
+9. ¿Cada `expresion` tiene exactamente un hueco?
+10. ¿Cada átomo lleva su `tipo` y su `valor` completos, sin abreviar?
+11. ¿Ningún `simbolo` va sin `sub` ni `sup`? ¿Ninguna `fraccion` con átomos
     adentro? ¿Ningún `"3/5"` en un renglón?
-13. ¿Los escalones son de tres a cinco, sin salirse de las cotas y sin pedir una
+12. ¿Los escalones son de tres a cinco, sin salirse de las cotas y sin pedir una
     ficha que no esté en el juego?
-14. ¿`temaNumero` y `materia` son los del canon, copiados sin cambiarlos?
-15. ¿Cero campos de estado, y `noSePuede` presente aunque vaya en `null`?
+13. ¿Cero campos de estado, y `noSePuede` presente aunque vaya en `null`?
+14. **La lista, campo por campo.** Es la llamada con más campos en la raíz.
+    Tacha uno por uno: `teclado`, `porQueEseTeclado`, `tecladosDescartados`,
+    `fichas`, `comoSeCompara`, `completar`, `escalera`, `planB` y `noSePuede`.
+    Adentro:
+    - cada `tecladosDescartados` lleva `teclado` y `porQue`; cada ficha, `etiqueta`
+      y `comoSeLee`. `fichas` va vacío cuando el teclado no es `fichas`, pero viaja.
+    - `completar` lleva `pasoDelCanon`, `expresion`, `respuesta` y `pistas`; y cada
+      `respuesta`, los cinco: `correcta`, `enAtomos`, `comoSeLee`, `aceptaTambien` y
+      `opciones` (cada opción con `etiqueta`, `esCorrecta` y `queRevela`).
+    - cada escalón de `escalera` lleva `situacion`, `expresion`, `pregunta`,
+      `respuesta` (los mismos cinco) y `pistas`.
+    - `planB` lleva `sirveHoy`, `comoQuedaria` y `queSePierde`, y viaja incluso
+      cuando el teclado ya es `digitos`.
+    Lo que se va es el final de cada `respuesta`: `enAtomos`, `comoSeLee` y
+    `aceptaTambien` son cortos y vienen después de lo largo. El `titulo`,
+    `faltaCodigo`, los tres booleanos de `comoSeCompara` cuando el teclado no es
+    `texto`, y el `orden` de cada pista no van en esta lista: los pone quien llama.

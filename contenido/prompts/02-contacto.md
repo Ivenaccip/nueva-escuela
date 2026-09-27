@@ -108,10 +108,15 @@ bien la anterior: el estudiante puede fallar la primera y seguir.
 - **La correcta cambia de lugar.** Si en la primera pregunta la correcta es la
   C, en la segunda no es la C. En el bloque completo no la pongas dos veces
   seguidas en la misma letra, ni repartas todas en una sola.
-- **Cada opción cabe en un renglón.** La tarjeta mide 64 de alto
-  (`app/estacion/contacto.tsx:114`) y una opción larga se parte en dos renglones y
-  desbalancea el bloque. El esquema lo aprieta: **hasta cuatro átomos, y el texto
-  de cada uno hasta 30 caracteres.** Una fracción, una fórmula, un número, una
+- **Cada opción cabe en uno o dos renglones.** La tarjeta es `minHeight: 64`
+  (`app/estacion/contacto.tsx:120-131`), no alto fijo: una opción larga **se parte**
+  en vez de desbordarse, y eso está puesto a propósito. Aun así desbalancea el
+  bloque, y una opción más larga se elige por larga y no por cierta. Medido en
+  390x844: la caja del texto son 270 px a 20 px, así que 29 caracteres es un renglón
+  y la tarjeta mide los 64 del diseño; 57 son dos y mide 80; 85 son tres y mide 113;
+  a 86 la pantalla se desplaza. El esquema lo aprieta ahí: **hasta cuatro átomos, y
+  el texto de cada uno hasta 57 caracteres — por átomo, así que cuatro átomos largos
+  se multiplican por cuatro.** Una fracción, una fórmula, un número, una
   operación corta, o una frase de tres o cuatro palabras. Nunca una oración
   completa ni un párrafo. Lo largo va en el `enunciado`, que sí se envuelve.
 - **Los distractores son confusiones de verdad.** Cada uno es a dónde llega un
@@ -497,8 +502,8 @@ Fíjate en cuatro cosas de ese ejemplo:
    las dos confusiones del `errorTipico` se quedó fuera del bloque.
 4. Las cinco preguntas tocan los pasos 1, 4, 3, 4 y 2. El paso que se repite es
    el del error.
-5. Ninguna opción pasa de cuatro átomos ni de 30 caracteres de texto: la más
-   larga es «cuánto pesa cada molécula», de 25.
+5. Ninguna opción pasa de cuatro átomos ni de 57 caracteres de texto por átomo, y
+   ninguna llega a dos renglones: la más larga es «cuánto pesa cada molécula», de 25.
 
 ### Cuándo llenas `noSePuede`
 
@@ -526,8 +531,11 @@ tema enseña, entonces sí llena `noSePuede` y di qué hace falta.
    {{canon.error.pasoQueCorrompe}}?
 5. ¿Cada entrada de `canon.erroresSecundarios` entró como distractor en alguna
    pregunta, con `esElErrorTipico` en `false`?
-6. ¿Las cuatro opciones de cada pregunta son parejas en forma y en largo, y cada
-   una cabe en un renglón: hasta cuatro átomos y hasta 30 caracteres de texto?
+6. ¿Las cuatro opciones de cada pregunta son parejas en forma y en largo? Hasta
+   cuatro átomos, y hasta 57 caracteres de texto POR ÁTOMO: la tarjeta mide 270 px
+   a 20 px, así que 29 caracteres es un renglón y 57 son dos. El tope se
+   multiplica por cuatro, así que cuatro átomos largos no caben aunque cada uno
+   cumpla.
 7. ¿Los tres distractores de cada pregunta revelan tres cosas distintas, y cada
    uno es una confusión que alguien comete de verdad?
 8. ¿`queRevela` está en las cuatro, en segunda persona, sin felicitar y sin
@@ -539,6 +547,12 @@ tema enseña, entonces sí llena `noSePuede` y di qué hace falta.
 12. ¿Cada `pasoDelCanon` es un paso que el canon sí tiene, y el bloque toca más
     de uno?
 13. ¿Ningún número se salió de {{canon.cotas.numeros}}?
-14. ¿`temaNumero` y `materia` son los del canon, copiados sin cambiarlos?
-15. ¿Cero emoji, cero signos de admiración, cero «es fácil», cero campos de
+14. ¿Cero emoji, cero signos de admiración, cero «es fácil», cero campos de
     estado?
+15. **La lista, campo por campo.** Tacha uno por uno: `preguntas` y
+    `noSePuede`. Cada pregunta lleva `enunciado`, `pasoDelCanon` y `opciones`, y
+    cada opción lleva los cuatro: `partes`, `esCorrecta`, `esElErrorTipico` y
+    `queRevela`. Con cinco preguntas son veinte opciones de cuatro campos cada
+    una: la que se queda a medias tira las cinco preguntas. `esElErrorTipico` va
+    en las veinte, en `false` donde no toca; no se omite. La `letra` no va en esta
+    lista: es la posición en el arreglo y la pone quien llama.

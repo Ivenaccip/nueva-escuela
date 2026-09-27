@@ -291,10 +291,12 @@ qué pasa con las estaciones 2, 3, 4 y 5.
 |---|---|---|---|---|
 | `lineal` | `numero` | `02-contacto` | `03-completar` + `04-escalera` | `05-error` |
 | `lineal` | `fraccion` | `02-contacto` | `03-completar` + `04-escalera` | `05-error` |
+| `lineal` | `expresion` | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `palabra` | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `trazo` | `02-contacto` | `X2-figura` | `05-error` |
 | `tabla` | `numero` | `X1-tabla` | `X1-tabla` | `X1-tabla` |
 | `tabla` | `fraccion` | `X1-tabla` | `X1-tabla` | `X1-tabla` |
+| `tabla` | `expresion` | `X1-tabla` | `X1-tabla` | `X1-tabla` |
 | `tabla` | `palabra` | `X1-tabla` | `X1-tabla` | `X1-tabla` |
 | `tabla` | `trazo` | `X1-tabla` | `X2-figura` | `X1-tabla` |
 | `figura` | cualquiera | `02-contacto` | `X2-figura` | `05-error` |
@@ -305,6 +307,13 @@ Tres cosas que la tabla no dice sola:
   tarjeta. Un tema con respuesta de `palabra` sí puede tener su estación 2 normal.
 - **`X1-tabla` es una sola llamada** que devuelve las cuatro estaciones juntas,
   porque el canon fija el procedimiento y no la forma de la rejilla.
+- **`expresion` es el renglón que faltaba, y es el que más pesa.** Es la respuesta
+  que necesita un carácter que el teclado no tiene: el punto decimal, el signo menos,
+  un exponente, la `×`, los dos puntos de una razón, o `<`/`>`/`=`. Sin ese renglón,
+  la factorización del tema 2 se fue a `04-escalera`, la escalera pidió `2³ × 3² × 5`
+  y `$defs.tecleado` la rechazó tres veces seguidas: el tope tenía razón, lo que
+  estaba mal era el ruteo. De los veinte primeros temas de matemáticas, **diez** están
+  en ese caso (ver `LEEME.md`), así que no es un caso raro: es la mitad del temario.
 - **`X4-no-encaja` no está en la tabla.** No se rutea por notación: se llama una
   vez por cada entrada de `noEncajan[]`, después de que el anfitrión ya tiene sus
   seis estaciones.
@@ -419,6 +428,23 @@ Lo que esto mata: `0.8 g/cm³` como respuesta, `−25 m`, `NaCl`, `se hunde`,
 `(a+b)²`. Las unidades **nunca** se teclean: van en el enunciado, y el hueco
 recibe sólo el número.
 
+**La diagonal es la raya de UNA fracción y nada más.** `a/b` se dibuja apilado como
+a sobre b (`src/componentes/Expresion.tsx:171` y `193`) y el lector de pantalla lo
+dicta «a entre b» (`Expresion.tsx:54-55`). No es «por», ni «y sobran», ni «a», ni un
+separador de factores.
+
+Esto importa más que el resto de la sección, porque es el único fallo del juego que
+**no deja rastro**: un `"6/3"` escrito para «6 cajas y sobran 3 pelotas» pasa la
+expresión regular, pasa ajv, pasa la auditoría, y la pantalla dibuja seis tercios. Se
+publica. Si la respuesta son dos números que no son numerador y denominador, la
+pregunta está mal planteada y se parte en dos escalones.
+
+**El hueco no cabe dentro de un superíndice, de un subíndice ni de una fracción.**
+`$defs.simbolo.sup` es una cadena, no un átomo, y `Expresion.tsx:150` lo pinta como
+`<Text>`. Si lo que falta es un exponente, el hueco va suelto en el renglón y la
+pregunta lo nombra. Y no hay átomo de raya de periodo: nada va encima de una cifra,
+así que un decimal periódico no se puede ni dibujar.
+
 ### Un solo hueco por renglón
 
 `src/componentes/Expresion.tsx:104`
@@ -445,15 +471,25 @@ concéntricos. El único SVG del proyecto es el círculo del cierre
 (`app/cierre.tsx:46-64`) y el de los iconos. Esos temas llegan con
 `notacion: "figura"`.
 
-### La opción de la estación 2 es de un solo renglón
+### La opción de la estación 2 cabe en dos renglones
 
-`app/estacion/contacto.tsx` — la tarjeta mide 64 y ya usa `minHeight`, así que una
-opción de dos renglones crece en vez de desbordarse. Aun así el bloque se ve mal
-cuando una de las cuatro es el doble de alta que las otras, y una opción más larga
-se elige por larga, no por cierta. Por eso el esquema la aprieta: **hasta cuatro
-átomos, y hasta 30 caracteres de texto en cada uno** (`parteMatCorta` en
-`partes.json`). Una fracción, una fórmula, un número, una operación, una frase de
-tres o cuatro palabras. Lo largo va en el `enunciado`, que sí se envuelve.
+`app/estacion/contacto.tsx:120-131` — la tarjeta es `minHeight: 64`, no alto fijo, y
+el envoltorio `flex: 1` de `contacto.tsx:70-77` está puesto a propósito para que una
+opción larga **se parta** en vez de desbordarse. Aun así el bloque se ve mal cuando
+una de las cuatro es el doble de alta que las otras, y una opción más larga se elige
+por larga, no por cierta.
+
+Medido en 390x844: la caja del texto son 270 px a 20 px, así que 29 caracteres es un
+renglón y la tarjeta mide los 64 del diseño; 57 son dos renglones y mide 80; 85 son
+tres y mide 113; a 86 la pantalla se desplaza. De ahí el tope: **hasta cuatro átomos,
+y hasta 57 caracteres de texto en cada uno** (`textoCorto` en `partes.json`). Ese
+tope es POR ÁTOMO y se multiplica: con las cuatro opciones a cuatro átomos de 57, las
+tarjetas se van a 344 px cada una. Lo largo va en el `enunciado`, que es más ancho.
+
+Los tres esquemas que pintan esa misma tarjeta la rutean por `parteMatCorta`:
+`02-contacto`, `X1-tabla` y `X4-no-encaja`. Los dos últimos la rutaban por
+`$defs.renglon` —24 átomos de 90— y era un tope treinta veces más flojo por la puerta
+de atrás para la misma tarjeta de 64.
 
 ### El video no se reproduce
 
@@ -543,6 +579,63 @@ sale de `src/tema`. El contenido no trae estilo: ni color, ni tamaño, ni peso.
 
 ---
 
+### De dónde sale cada tope, y cuáles no salen de ninguna parte
+
+Los once esquemas traen del orden de 840 líneas de `minLength`, `maxLength`,
+`minItems` y `maxItems`. De todo eso, **diecisiete campos se pintan en una pantalla**,
+y son los únicos que se pueden medir:
+
+| Campo | Se pinta en |
+|---|---|
+| `ver.pregunta`, `ver.duracion`, `ver.resumen` | `ver.tsx:33`, `:47`, `:53` |
+| `contacto.preguntas[].enunciado`, `opciones[].partes` | `contacto.tsx:41`, `:72-76` |
+| `completar.expresion` | `completar.tsx:62-67` |
+| `escalera.situacion`, `expresion`, `pregunta`, `respuesta` | `escalera.tsx:68`, `:74`, `:79`, `:86-95` |
+| `error.enunciado`, `pasos[].partes`, `porQue`, `motivos[].texto` | `error.tsx:37`, `:65-69`, `:77`, `:95-97` |
+| `explicar.titulo`, `aclaracion`, `nota` | `explicar.tsx:31`, `:32`, `:53` |
+
+**La regla: un tope de un campo pintado lleva su medida escrita en la
+`description`** — la pantalla, el ancho de la caja, el tamaño de letra, el
+interlineado y en qué carácter cambia de renglón. Un tope sin su medida se vuelve a
+poner a ojo dentro de seis meses, y así se pusieron casi todos los que había.
+
+Tres cosas que conviene saber antes de medir el siguiente:
+
+- **La estación 5 aprieta cinco veces más que las demás.** Su espaciador `flex: 1`
+  mide 49 px; la 1 tiene 226, la 3 tiene 199 y la 4 tiene 259. Ahí es donde hay que
+  medir primero, y es la razón de que `motivos` sean dos y de que el paso de la 5
+  tenga su propio átomo de 33 caracteres (`renglonDePaso`).
+- **Todo lo que va dentro de `Cuerpo` vive en un `ScrollView`**
+  (`src/componentes/Cuerpo.tsx:14-24`), así que desbordar se paga en desplazamiento,
+  no en recorte. Con una excepción que importa: `explicar.nota` vive en el `Pie`
+  (`explicar.tsx:51-55`), fuera del scroll, y cada renglón que crece le quita 20 px
+  al campo de escribir.
+- **Los topes se multiplican.** Un tope por átomo con `maxItems` al lado no es el
+  tope de la tarjeta: es el tope dividido entre el número de átomos.
+
+**Los campos de prosa que ninguna pantalla pinta llevan `maxLength: 400`, uniforme
+en los once esquemas.** Son `queRevela`, `siLoTocas`, `arrastre`, `comoSeLee`,
+`queSeLeDice`, `pistas[].texto` y toda la `rubrica`. No pueden proteger nada —la
+barra sólo dibuja el contador de pistas (`BarraEstacion.tsx:65-70`), no el texto— así
+que un tope apretado ahí sólo compra reintentos. Antes la misma pista valía 200 en la
+3, 160 en la 4 y 280 en la 5, sin ningún motivo. Cuando exista la superficie que los
+pinte, se miden contra ella y se aprietan.
+
+Lo mismo, pero más flojo, para la **bitácora de la estación 1** (`busqueda.criterios`,
+`descarta`, `porQueEste`, `porQueEsaConfianza`): nada las lee, ya están en 500, 600 y
+900, y ahí se quedan.
+
+**Los topes de los cuatro esquemas aparte son provisionales.** X1, X2, X3 y X4 traen
+casi quinientos topes sobre pantallas que **no existen**: ningún `.tsx` dibuja una
+rejilla, una figura ni un teclado de fichas. No se aprieta ni uno hasta que la
+pantalla exista, porque no hay contra qué medirlo. Las únicas excepciones medibles
+hoy son las que reusan una pantalla que sí está: las opciones de la estación 2 (arriba)
+y `X3.fichas` —`maxItems: 11` y `etiqueta` de 4— que reusa la rejilla de
+`completar.tsx:23-28`: la tecla mide 110x56 y cuatro caracteres a 22 px son ~52 px.
+Ése está medido y sale bien; no se toca.
+
+---
+
 ## 6. La salida de emergencia
 
 Todos los esquemas llevan `noSePuede`, y siempre viaja:
@@ -563,6 +656,42 @@ o
 
 Vale más un tema con `noSePuede` lleno que un ejercicio que la pantalla no puede
 dibujar: ahí el estudiante se traba y cree que el que está mal es él.
+
+---
+
+## 6bis. Lo que el llamador sabe, el modelo no lo escribe
+
+Un campo obligatorio que el llamador ya sabe con certeza no protege nada: sólo agrega
+una manera de tirar la llamada entera. Son los campos más cortos y los más del final
+de cada objeto, que es justo lo que se le va a un modelo chico en una salida larga.
+
+Éstos salen del `required` y los rellena `contenido/generar.mjs` **antes** de validar,
+así que ni faltando ni mal escritos pueden tirar la llamada. Siguen en `properties`
+para que el ejemplo de cada prompt sea un objeto completo:
+
+| Campo | De dónde sale | Quién lo pone |
+|---|---|---|
+| `temaNumero`, `materia` | el temario | `sellarTraza` |
+| `titulo` de raíz en 00-canon, X1, X2, X3 | el temario, «copiado sin cambiarlo» | `sellarTraza` |
+| `opciones[].letra` | la posición: `'ABCD'[i]` | `sellarIndices` |
+| `pistas[].orden`, `pasos[].numero` | la posición: `i + 1` | `sellarIndices` |
+| `video.url`, `.titulo`, `.canal`, `.dondeSalio` (y en `alternativas`) | el oEmbed de YouTube y el campo `deDonde` del candidato (`buscar-videos.mjs:108-115`) | `sellarVideo` |
+| `busqueda.consulta`, `.consultasAlternas` | `buscar-videos.mjs:137-143` la compone | `sellarVideo` |
+| `faltaCodigo` en X3 | es `teclado !== 'digitos'` | `sellarTeclado` |
+| `comoSeCompara.*` en X3 cuando el teclado no es `texto` | los tres van en `false` | `sellarTeclado` |
+
+**Rellenar no es dejar de comprobar.** `comprobarTraza` y `comprobarIndices` corren
+después: si el campo vino y no cuadra con su posición o con el temario, eso es una
+respuesta cruzada y se rechaza. Rellenar quita la forma de fallar que no enseñaba
+nada; la comprobación se queda con la que sí.
+
+El `titulo` de `06-explicar` **no** está en esa lista: ése es la petición que la
+pantalla pinta en grande, otra cosa con el mismo nombre. `TITULO_DEL_TEMARIO` en
+`generar.mjs` es la lista de los cuatro pasos donde sí se sella.
+
+Y el `idDeYouTube` tampoco: ése es la elección del modelo, es el único campo de
+identidad del video que escribe, y con él el llamador rellena los otros cuatro.
+`comprobarVideoEscogido` comprueba que esté en la lista de candidatos.
 
 ---
 

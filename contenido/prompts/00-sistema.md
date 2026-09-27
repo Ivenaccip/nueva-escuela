@@ -147,6 +147,13 @@ bien  "procedimiento": {"nombre":"Dividir una fracción entre otra",
 El signo menos es `−` (U+2212), no un guion. El de multiplicar es `×`. La flecha
 de una reacción es `→` y va en `texto`.
 
+## La diagonal
+
+La diagonal de un `tecleado` es la raya de UNA fracción: `a/b` se dibuja apilado
+como a sobre b y se dicta «a entre b». No es «por», ni «y sobran», ni «a», ni un
+separador de factores. Si tu respuesta son dos números que no son numerador y
+denominador, la pregunta está mal planteada: cámbiala.
+
 ## Lo que devuelves
 
 Devuelves **una sola llamada a la herramienta**, con el esquema que se te dio y
@@ -154,6 +161,13 @@ nada más. Sin texto antes, sin texto después, sin explicar lo que hiciste.
 
 Todo campo del esquema es obligatorio salvo los marcados como opcionales.
 `noSePuede` siempre viaja: `null` cuando todo salió bien.
+
+**Antes de cerrar la llamada, repasa la lista de `required` del esquema y confirma
+que cada campo está.** No es burocracia: el campo que se olvida tira la llamada
+entera, y lo que se olvida no es lo difícil sino lo corto —un número, una
+etiqueta, una frase de una línea al final— porque la atención se fue en lo largo.
+Los que más se olvidan son los del final del esquema y los que parecen
+administrativos.
 
 ## La salida de emergencia
 

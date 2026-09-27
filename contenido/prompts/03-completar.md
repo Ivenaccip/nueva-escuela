@@ -84,6 +84,39 @@ ni `=`, ni coma. Tu respuesta tiene que casar con:
 Valen `7`, `200`, `12/5`. No valen `0.8`, `−25`, `2 3/4`, `NaCl`, `m/s`, `(a+b)`,
 `15%`, `2³`.
 
+#### La diagonal es la raya de UNA fracción, y nada más
+
+`a/b` se dibuja **apilado**, como la fracción a sobre b
+(`src/componentes/Expresion.tsx:171` y `193`), y el lector de pantalla lo dicta
+«a entre b» (`Expresion.tsx:54-55`). Nunca significa «por», ni «y sobran», ni
+«a», ni «con», ni separa factores.
+
+```
+mal   "tecleado": "6/3"     para «6 cajas y sobran 3 pelotas»
+                            pasa la expresión regular, pasa ajv, y la pantalla
+                            dibuja seis tercios. Éste es el fallo peor: se publica.
+mal   "tecleado": "2/3/3"   para «2³ × 3²», usando la diagonal de separador
+mal   "tecleado": "3/2"     para la razón «3 a 2», si lo que se quiere es 3:2
+bien  "tecleado": "3/2"     para la fracción tres medios, y para una razón
+                            simplificada cuando la pregunta pide «escrita como
+                            fracción»
+```
+
+**Si tu respuesta son dos números que no son numerador y denominador, la pregunta
+está mal planteada.** Pártela en dos: un escalón que pregunte por el primero y
+otro por el segundo. Para 33 ÷ 5 = 6 y sobran 3, un escalón lleva
+`[{"tipo":"texto","valor":"33 ÷ 5 = 6 y sobran"},{"tipo":"hueco"}]` con
+«¿Cuántas pelotas sobran?» y `"3"`, y el otro lleva el hueco en el 6 con
+«¿Cuántas cajas se llenan?».
+
+#### El hueco no cabe dentro de un superíndice
+
+`$defs.simbolo.sup` es una cadena, no un átomo, así que un `hueco` no valida ahí
+y `Expresion.tsx:150` lo pinta como `<Text>`, no como átomo. Lo mismo para `sub` y
+para los dos lados de una `fraccion`. Si lo que falta es un exponente, el hueco va
+suelto en el renglón y la pregunta lo nombra: «¿cuántas veces se repite el 2?»,
+con el renglón mostrando la división sucesiva, no la potencia.
+
 **Las unidades no se teclean.** Van escritas en el renglón, como `texto`, pegadas
 después del hueco (`… son [hueco] g`). El hueco recibe sólo el número.
 
@@ -276,3 +309,11 @@ Cinco cosas de ese ejemplo:
 9. ¿`siTecleaElError.tecleado` es distinto de la respuesta correcta y de todo lo que
    `aceptaTambien` acepta?
 10. ¿`noSePuede` viaja, aunque sea en `null`? ¿No hay ni un campo de estado?
+11. **La lista, campo por campo.** Tacha uno por uno: `pasoDelCanon`,
+    `queFalta`, `expresion`, `respuesta`, `pistas`, `siTecleaElError` y
+    `noSePuede`. Adentro: `respuesta` lleva `tecleado`, `aceptaTambien` y
+    `comoSeLee` —los tres, y `aceptaTambien` puede ir vacío pero tiene que
+    viajar—; cada pista lleva su `texto`; `siTecleaElError` va en `null` o lleva
+    `tecleado` y `queSeLeDice`. `queFalta` y `comoSeLee` son los dos que se van:
+    son cortos, van pegados a campos largos y no se ven en la pantalla del diseño.
+    El `orden` de las pistas no va en esta lista: lo pone quien llama.

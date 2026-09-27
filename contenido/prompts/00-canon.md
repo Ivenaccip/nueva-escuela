@@ -194,6 +194,13 @@ Los límites: qué números puede usar el tema, qué unidades, y qué símbolos 
 escritos con átomos. Esto evita que la estación 4 se vaya a números de cuatro
 cifras cuando la 3 usó números de una.
 
+**Si `formaDeRespuesta` es `numero` y el tema trae decimales, las cotas tienen que
+garantizar que el resultado sea entero.** Los decimales viven en el enunciado, como
+`texto` dentro del renglón, y eso es legal; lo que no cabe en el hueco es el punto.
+Así está escrito el tema 13 —«divisores decimales, siempre 0.1, 0.2, 0.25, 0.5;
+resultado entero del 1 al 100»— y es lo único que lo salva de caer donde cayó el 11.
+Es la misma regla que ya rige para las unidades: van en el renglón, nunca en el hueco.
+
 ### 6. `notacion` y `formaDeRespuesta`
 
 Aquí decides a qué prompt se manda el tema. Lee `{{tema.notacion}}` y elige:
@@ -206,14 +213,36 @@ Aquí decides a qué prompt se manda el tema. Lee `{{tema.notacion}}` y elige:
   recta numérica, diagrama de Lewis, esquema de fuerzas con flechas, probeta,
   escala de pH, círculos concéntricos.
 
-Y `formaDeRespuesta`, que es qué teclea el estudiante en las estaciones 3 y 4:
+Y `formaDeRespuesta`, que es qué teclea el estudiante en las estaciones 3 y 4.
+Míralo contra el teclado de verdad, que tiene DOCE teclas y nada más
+(`app/estacion/completar.tsx:23-28`): `1`-`9`, `0`, `/` y borrar.
 
 - `numero` — un entero. Se puede teclear.
 - `fraccion` — algo como `12/5`. Se puede teclear.
+- `expresion` — la respuesta necesita un carácter que el teclado **no tiene**: el
+  punto decimal (`16.25`), el signo menos (`−2`), un exponente (`2³`), la `×` de
+  multiplicar, los dos puntos de una razón (`3:2`), o `<`, `>` y `=`.
 - `palabra` — una palabra o un nombre. **No se puede teclear** con el teclado
   de hoy.
 - `trazo` — un dibujo, un punto en un plano, una flecha. **No se puede
   teclear**.
+
+**Escribe el resultado del ejemplo y míralo carácter por carácter contra esas doce
+teclas antes de contestar.** Es la mitad del temario de matemáticas la que no pasa:
+si el resultado lleva un carácter que no está, es `expresion`, no `numero`. Cuando
+dices `numero` y no lo es, el tema se va a la estación 4, la escalera pide una
+respuesta intecleable y el esquema la rechaza tantas veces como reintentos haya —y
+tiene razón cada vez. Con `expresion` el tema sale por otro prompt y no cobra nada.
+
+Antes de declarar `expresion`, prueba UNA reformulación que deje la respuesta en un
+entero y que siga preguntando lo que el tema enseña. Casi siempre existe, y a veces
+sale mejor que la original: para `0.3 × 0.4 = 0.12`, el escalón
+`[{"tipo":"texto","valor":"0.3 × 0.4 → 3 × 4 = 12, con"},{"tipo":"hueco"},{"tipo":"texto","valor":"cifras decimales."}]`
+con «¿cuántas cifras decimales lleva el resultado?» y `"2"` pregunta exactamente el
+error típico del tema. Lo que NO vale es una reformulación que borre el error que el
+tema existe para curar: si sumar decimales se pregunta en centésimos, desaparece el
+punto y con él la posibilidad de desalinear, que era todo el tema. Ahí se declara
+`expresion` y se dice en `noSePuede` qué tecla falta.
 
 ### 7. `noSePuede`
 
@@ -221,9 +250,12 @@ Y `formaDeRespuesta`, que es qué teclea el estudiante en las estaciones 3 y 4:
 
 Llénalo cuando:
 
-- `formaDeRespuesta` es `palabra` o `trazo`, o
-- el resultado del ejemplo necesita un punto decimal o un signo negativo (el
-  teclado no los tiene), o
+- `formaDeRespuesta` es `expresion`, `palabra` o `trazo` —y entonces `noSePuede`
+  **nombra la tecla o el átomo que falta**, no «el teclado»: el punto decimal, el
+  signo menos, el exponente, la `×`, los dos puntos, `<`/`>`/`=`, o la raya de
+  periodo, que tampoco existe como átomo (los cuatro son `texto`, `fraccion`,
+  `simbolo` con `sub`/`sup`, y `hueco`: no hay nada que vaya encima de una cifra),
+  o
 - alguno de los cinco pasos no se puede escribir con los cuatro átomos.
 
 Antes de llenarlo, intenta una vez reformular: si el resultado es `0.8`, tal
@@ -275,3 +307,18 @@ Cuatro cosas de ese ejemplo:
 10. ¿Ningún renglón del canon lleva `hueco`? El canon no tiene huecos: los
     huecos los pone cada estación, y el esquema los rechaza aquí.
 11. ¿Cero emoji, cero signos de admiración, cero «es fácil»?
+12. **La lista, campo por campo.** El campo que falta tira la llamada entera y
+    con ella el canon, que es de quien cuelgan las otras seis. Tacha uno por uno:
+    `notacion`, `formaDeRespuesta`, `procedimiento`, `ejemplo`, `error`,
+    `erroresSecundarios`, `vocabulario`, `cotas`, `noSePuede`. Adentro:
+    `procedimiento` lleva `nombre` y `pasos`, y cada paso `queSeHace`, `renglon` y
+    `porQue`; `ejemplo` lleva `deQueVa`, `planteamiento`, `resultado` y
+    `resultadoEnPalabras`; `error` lleva `enUnaFrase`, `creenciaDeAtras`,
+    `pasoQueCorrompe`, `renglonMalo`, `resultadoMalo` y `comoSeCacha`; cada
+    `erroresSecundarios` lleva `enUnaFrase` y `creenciaDeAtras`; cada
+    `vocabulario` lleva `palabra`, `queEs` y `noEsLoMismoQue`; `cotas` lleva
+    `numeros`, `unidades` y `simbolos`. `notacion` y `formaDeRespuesta` son los dos
+    que deciden a qué prompts va el tema: sin ellos no hay estaciones que generar,
+    y con ellos mal puestos el tema va a pedir una respuesta que el teclado no
+    puede escribir. El `titulo` y el `numero` de cada paso no van en esta lista:
+    los pone quien llama.

@@ -562,10 +562,125 @@ function comprobarEsquema(paso, salida) {
 }
 
 /**
- * `temaNumero` y `materia` contra el tema que se pidió. Es lo que caza un
- * reintento que se cruza o una tanda que se reanuda a medias: sin esto, la
- * estación 5 de un tema puede acabar acusando un paso de otro.
+ * Los cuatro pasos cuyo `titulo` de raíz es el del temario, «copiado sin
+ * cambiarlo». El `titulo` de 06-explicar NO está aquí: ése es la petición que la
+ * pantalla pinta en grande, otra cosa con el mismo nombre.
  */
+const TITULO_DEL_TEMARIO = new Set(['canon', 'X1-tabla', 'X2-figura', 'X3-teclado']);
+
+/**
+ * `temaNumero`, `materia` y el `titulo` los sabe el llamador con certeza, así que
+ * pedírselos al modelo sólo agrega una manera de fallar: los olvida y se tira la
+ * llamada entera por campos que nadie tenía que adivinar. Se rellenan cuando faltan.
+ *
+ * Lo que sí vale la pena sigue vivo en `comprobarTraza`: si vienen y no cuadran, eso
+ * es una respuesta cruzada —un reintento que se cruzó, una tanda que se reanudó a
+ * medias— y se rechaza, para que la estación 5 de un tema no acuse un paso de otro.
+ */
+function sellarTraza(paso, salida, temario, tema) {
+  if (!salida || typeof salida !== 'object') return;
+  if (!('temaNumero' in salida)) salida.temaNumero = tema.numero;
+  if (!('materia' in salida)) salida.materia = temario.clave;
+  if (TITULO_DEL_TEMARIO.has(paso.clave) && !('titulo' in salida)) salida.titulo = tema.titulo;
+}
+
+/**
+ * Los índices del arreglo, escritos a mano. `letra` es 'ABCD'[i], `orden` es i+1
+ * y `numero` es i+1: más de cincuenta campos obligatorios por tema que nadie
+ * tenía que adivinar, y cada uno tiraba la llamada entera si faltaba. Son los más
+ * cortos y los más del final de cada objeto, que es justo lo que se le va a un
+ * modelo chico en una salida larga.
+ *
+ * Recorre la salida entera en vez de nombrar rutas: así cubre igual las seis
+ * estaciones, el canon y los cuatro casos aparte, donde los mismos arreglos
+ * viven anidados tres o cuatro niveles más abajo.
+ */
+function sellarIndices(salida) {
+  const andar = (nodo) => {
+    if (Array.isArray(nodo)) return nodo.forEach(andar);
+    if (!nodo || typeof nodo !== 'object') return;
+    for (const [llave, valor] of Object.entries(nodo)) {
+      if (Array.isArray(valor)) {
+        valor.forEach((item, i) => {
+          if (!item || typeof item !== 'object' || Array.isArray(item)) return;
+          const cual = indiceDe(llave, item);
+          if (cual && !(cual.campo in item)) item[cual.campo] = cual.valor(i);
+        });
+      }
+      andar(valor);
+    }
+  };
+  andar(salida);
+}
+
+/**
+ * Qué índice le toca a un objeto, si le toca alguno. El nombre del arreglo no basta:
+ * `respuesta.opciones` de X3 también se llama `opciones` y sus entradas llevan
+ * `etiqueta`, no `letra`. Meterle una `letra` la tiraría, porque los esquemas van con
+ * `additionalProperties: false`. Por eso se mira también la forma del objeto.
+ */
+function indiceDe(llave, item) {
+  if (llave === 'opciones' && 'partes' in item) {
+    return { campo: 'letra', valor: (i) => 'ABCD'[i] };
+  }
+  if (llave === 'pistas' && 'texto' in item) {
+    return { campo: 'orden', valor: (i) => i + 1 };
+  }
+  if (llave === 'pasos' && ('partes' in item || 'queSeHace' in item)) {
+    return { campo: 'numero', valor: (i) => i + 1 };
+  }
+  return null;
+}
+
+/**
+ * Los índices que sí vinieron tienen que cuadrar con su posición. Es lo mismo que
+ * `comprobarTraza` hace con `temaNumero`: rellenar lo que falta no puede tapar una
+ * salida descuadrada, porque un `letra: "C"` en el primer lugar cambia cuál opción
+ * se marca como correcta.
+ */
+function comprobarIndices(paso, salida) {
+  const mal = [];
+  const andar = (nodo, ruta) => {
+    if (Array.isArray(nodo)) return nodo.forEach((v, i) => andar(v, `${ruta}[${i}]`));
+    if (!nodo || typeof nodo !== 'object') return;
+    for (const [llave, valor] of Object.entries(nodo)) {
+      if (Array.isArray(valor)) {
+        valor.forEach((item, i) => {
+          if (!item || typeof item !== 'object' || Array.isArray(item)) return;
+          const cual = indiceDe(llave, item);
+          if (!cual || !(cual.campo in item)) return;
+          const esperado = cual.valor(i);
+          if (item[cual.campo] === esperado) return;
+          mal.push(
+            `${ruta}.${llave}[${i}].${cual.campo}: dice ${JSON.stringify(item[cual.campo])} ` +
+              `y va ${JSON.stringify(esperado)}`,
+          );
+        });
+      }
+      andar(valor, `${ruta}.${llave}`);
+    }
+  };
+  andar(salida, '');
+  if (mal.length === 0) return;
+  throw new Rajada(`${paso.clave}: un índice no cuadra con su posición\n    ${mal.join('\n    ')}`);
+}
+
+/**
+ * Lo que el llamador sabe del caso X3: `faltaCodigo` es `teclado !== 'digitos'`,
+ * y los tres booleanos de `comoSeCompara` sólo tienen algo que decidir cuando el
+ * teclado es de texto. Con los otros tres teclados sólo se puede escribir lo que
+ * viene pintado, así que la comparación es exacta.
+ */
+function sellarTeclado(paso, salida) {
+  if (paso.clave !== 'X3-teclado' || !salida || typeof salida !== 'object') return;
+  if (!('faltaCodigo' in salida)) salida.faltaCodigo = salida.teclado !== 'digitos';
+  if (salida.teclado === 'texto') return;
+  salida.comoSeCompara ??= {};
+  for (const b of ['ignoraMayusculas', 'ignoraAcentos', 'ignoraEspaciosDeMas']) {
+    if (!(b in salida.comoSeCompara)) salida.comoSeCompara[b] = false;
+  }
+}
+
 function comprobarTraza(paso, salida, temario, tema) {
   if ('temaNumero' in salida && salida.temaNumero !== tema.numero) {
     throw new Rajada(
@@ -575,6 +690,11 @@ function comprobarTraza(paso, salida, temario, tema) {
   if ('materia' in salida && salida.materia !== temario.clave) {
     throw new Rajada(
       `${paso.clave}: devolvió materia "${salida.materia}" y se pidió "${temario.clave}".`,
+    );
+  }
+  if (TITULO_DEL_TEMARIO.has(paso.clave) && 'titulo' in salida && salida.titulo !== tema.titulo) {
+    throw new Rajada(
+      `${paso.clave}: devolvió titulo "${salida.titulo}" y el del temario es "${tema.titulo}".`,
     );
   }
 }
@@ -615,6 +735,42 @@ function comprobarVideoEscogido(salida, candidatos) {
       'candidatos buscados. Se guarda el tema sin video.',
   );
   salida.video = null;
+}
+
+/**
+ * Los cuatro campos de identidad del video los sabe el llamador con certeza: la
+ * URL, el título y el canal salen del oEmbed de YouTube (buscar-videos.mjs:108-115,
+ * y la línea 14 de ese archivo dice que salen de ahí «no del modelo»), y
+ * `dondeSalio` es el campo `deDonde` del candidato. Pedírselos al modelo era
+ * pedirle dieciséis transcripciones literales por llamada —dos de ellas cadenas de
+ * longitud exacta, 43 y 11— y cuatro puntos del revísate para vigilarlas.
+ *
+ * Se sella ANTES de validar: así una URL mal copiada no puede tirar la llamada.
+ * Lo que sigue siendo del modelo es el `idDeYouTube`, que es la elección, y su
+ * juicio. Un id que no esté en la lista lo caza `comprobarVideoEscogido` después.
+ */
+function sellarVideo(salida, candidatos, consulta) {
+  if (!salida || typeof salida !== 'object') return;
+
+  if (salida.busqueda && typeof salida.busqueda === 'object' && consulta) {
+    // La consulta la compuso el llamador y nunca se le mostró al modelo, así que
+    // pedírsela era pedirle que se la inventara. Ahora sí se guarda la de verdad.
+    salida.busqueda.consulta = consulta;
+    salida.busqueda.consultasAlternas = [];
+  }
+
+  const porId = new Map(candidatos.map((c) => [c.idDeYouTube, c]));
+  const sellarUno = (v) => {
+    if (!v || typeof v !== 'object') return;
+    const c = porId.get(v.idDeYouTube);
+    if (!c) return; // id de fuera de la lista: no hay de dónde copiar, y se caza aparte
+    v.url = c.url;
+    v.titulo = c.titulo;
+    v.canal = c.canal;
+    v.dondeSalio = `De donde lo vio el buscador: ${c.deDonde}.`;
+  };
+  sellarUno(salida.video);
+  if (Array.isArray(salida.alternativas)) salida.alternativas.forEach(sellarUno);
 }
 
 // ---------------------------------------------------------------------------
@@ -666,8 +822,16 @@ async function correr(paso, valores) {
   decir(`\n  ${paso.clave} · ${paso.herramienta}`);
   let resultado = await llamarConReintentos({ paso, sistema, mensaje });
 
+  // Todo lo que el llamador sabe con certeza se rellena ANTES de validar: un campo
+  // que nadie tenía que adivinar no puede tirar la llamada entera.
+  sellarTraza(paso, resultado, temario, tema);
+  sellarIndices(resultado);
+  sellarTeclado(paso, resultado);
+  if (paso.necesitaVideos) sellarVideo(resultado, valores.__candidatos ?? [], valores.__consulta);
+
   comprobarEsquema(paso, resultado);
   comprobarTraza(paso, resultado, temario, tema);
+  comprobarIndices(paso, resultado);
   comprobarUnoSolo(paso, resultado);
 
   if (paso.necesitaVideos) comprobarVideoEscogido(resultado, valores.__candidatos ?? []);
@@ -730,12 +894,20 @@ const valores = {
 };
 
 // El ruteo: qué prompts le tocan a este tema (CONTRATO.md §3).
+//
+// `expresion` entró aquí por lo que pasó con el tema 2. La factorización de 360 se
+// escribe 2³ × 3² × 5, y el teclado no tiene ni exponente ni la x de multiplicar:
+// la estación 4 se pidió igual y $defs.tecleado rechazó «2/3*3/2*5» tres veces
+// seguidas. El tope hizo su trabajo; lo que falló fue mandar ese tema a la
+// escalera. La mitad del temario de matemáticas está en el mismo caso (la respuesta
+// necesita el punto decimal, el signo menos o un símbolo de comparación), así que
+// el canon declara `expresion` y el tema sale por aquí en vez de cobrar reintentos.
 const caso =
   canon.notacion === 'tabla'
     ? CASOS_APARTE.tabla
     : canon.notacion === 'figura'
       ? CASOS_APARTE.figura
-      : canon.formaDeRespuesta === 'palabra'
+      : canon.formaDeRespuesta === 'palabra' || canon.formaDeRespuesta === 'expresion'
         ? CASOS_APARTE.teclado
         : canon.formaDeRespuesta === 'trazo'
           ? CASOS_APARTE.figura
@@ -774,6 +946,7 @@ for (const paso of porGenerar) {
       );
       suyos.resultadosDeBusqueda = candidatosComoTexto(hallazgo);
       suyos.__candidatos = hallazgo.candidatos;
+      suyos.__consulta = hallazgo.consulta;
     }
     salida[paso.clave] = await correr(paso, suyos);
     await guardar(salida);
