@@ -671,6 +671,145 @@
     "noSePuede": null
   },
   "escalera": null,
-  "error": null,
+  "error": {
+    "temaNumero": 2,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien descompuso 360 en factores primos y llegó a"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "2",
+        "sup": "3"
+      },
+      {
+        "tipo": "texto",
+        "valor": "×"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "3",
+        "sup": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "× 5. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Trazo la raya: 360 |"
+          }
+        ],
+        "siLoTocas": "Ese paso sólo dibuja el número y la raya que separa lo que se descompone de los primos que lo dividen. Los números 360 estaban en el problema, y la raya es el formato."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "360 es par, se divide entre 2:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "360 | 2 / 180 |"
+          }
+        ],
+        "siLoTocas": "Ese paso prueba con el menor primo. 360 termina en cifra par, así que se divide entre 2 sin hacer cuentas. El resultado 180 está bien."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Repito: 360 | 2 / 180 | 2 / 90 | 2 / 45 | 3 / 15 | 3 / 5 | (primo)"
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que manda el número primo a los pasos siguientes."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Junto los primos:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "2 × 2 × 2 × 3 × 3 × 5 ="
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "2",
+            "sup": "3"
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "3",
+            "sup": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 5"
+          }
+        ],
+        "siLoTocas": "La multiplicación está bien hecha y los factores primos salen de arriba. El paso recibió un 5 y lo escribió con los otros: si ese 5 viniera de otro lugar, este paso estaría mal inventado."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Compruebo:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "8 × 9 × 5 = 360"
+          }
+        ],
+        "siLoTocas": "La multiplicación de regreso da exactamente 360. Ese renglón está bien hecho con los números que recibió, sin inventar nada."
+      }
+    ],
+    "pasoMalo": 3,
+    "arrastre": "El 5 marcado como primo en el paso 3 fluye al paso 4, donde aparece en la lista de factores y en el resultado con superíndice. De ahí sube al paso 5, donde el 5 entra en la multiplicación de comprobación. Sin ese número escrito así, los pasos 4 y 5 no salen.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Paró la división antes de probar todos los primos.",
+        "esElBueno": true,
+        "queRevela": "Escribir 5 como primo sin dividir es parar sin haber llegado a 1. El 5 es primo de verdad, pero la factorización por divisiones sucesivas tiene que terminar en 1, dividiendo 5 entre 5. El renglón debería tener un paso más con 1 |."
+      },
+      {
+        "texto": "No sumó las cifras del 5 para probar si se divide entre 3.",
+        "esElBueno": false,
+        "queRevela": "Quien escoge esto sabe que hay que seguir probando primos. Pero el 5 ya pasó el 3: en un renglón anterior quedó 15, y ahí sí se sumaron las cifras (1+5=6, divisible entre 3). El 5 no se divide entre 3 porque 5 es primo de verdad, así que ese motivo no explica por qué paró."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "La factorización por divisiones tiene que terminar siempre en 1, dividiendo hasta que no se pueda más. Cuando llegas a un número primo, todavía tienes que dividirlo entre sí mismo."
+      },
+      {
+        "orden": 2,
+        "texto": "Mira el paso 3. Cuenta dónde termina: busca el número 1, que es la señal de que todas las divisiones están completas."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara el paso 3 que hizo con el paso 3 del procedimiento correcto: uno termina en 1 y el otro termina en un número que no es 1."
+      }
+    ],
+    "noSePuede": null
+  },
   "explicar": null
 }

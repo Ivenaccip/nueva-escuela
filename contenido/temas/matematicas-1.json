@@ -157,7 +157,54 @@
     },
     "noSePuede": null
   },
-  "ver": null,
+  "ver": {
+    "temaNumero": 1,
+    "materia": "matematicas",
+    "pregunta": "¿Dividir siempre achica el resultado?",
+    "resumen": "Dividir contesta dos preguntas distintas: repartir algo en partes iguales o contar cuántas veces cabe un número en otro. El resultado no siempre achica: si preguntas cuántas veces cabe un número chico en uno grande, el resultado crece.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué dividir no siempre achica el resultado, no nada más cómo se divide.",
+        "Distingue las dos preguntas que contesta la división: repartir en partes iguales y cuántas veces cabe.",
+        "Es del nivel de sexto de primaria: números enteros pequeños, sin decimales ni fracciones.",
+        "Llega rápido a un ejemplo concreto, sin presentación larga del canal.",
+        "Interpreta el residuo como lo que sobra, no como un error o un detalle sin importancia."
+      ],
+      "descarta": [
+        "Enseña que multiplicar y dividir siempre hacen lo opuesto, sin aclarar que dividir contesta dos preguntas distintas.",
+        "Ignora el residuo o lo trata como si no contara en la respuesta.",
+        "Es un examen resuelto o una lista de divisiones para memorizar sin explicar el significado.",
+        "Confunde repartir con cuántas veces cabe, o los muestra como si fueran lo mismo."
+      ],
+      "consulta": "video explicación \"Qué significa dividir\" matemáticas 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "iA0fP4tL67s",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "Explica que dividir contesta dos preguntas diferentes y muestra ejemplos claros de cada una. El canal es reconocible, con contenido educativo consistente, y llega rápido al punto sin rodeos.",
+      "url": "https://www.youtube.com/watch?v=iA0fP4tL67s",
+      "titulo": "APRENDIENDO A DIVIDIR. LA DIVISIÓN | Videos Educativos para Niños",
+      "canal": "Happy Learning Español",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "tT066zDxZgU",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Explica la división de forma sencilla y directa, con ejemplos visuales. Es segundo respaldo: no distingue tan claro entre repartir y cuántas veces cabe, pero llega al punto sin demoras.",
+        "url": "https://www.youtube.com/watch?v=tT066zDxZgU",
+        "titulo": "⭐ APRENDE A DIVIDIR DE FORMA FACIL ✅ LA DIVISIÓN 🥇 Videos Educativos para Niños | MundoKids",
+        "canal": "MundoKids",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "media",
+    "porQueEsaConfianza": "Las dos URL y sus títulos salieron literales en la búsqueda. El elegido explica el por qué y distingue las dos preguntas. Confianza media porque el primer video tiene acento de América Latina (se prefiere México, aunque este es válido), y no se pudo determinar la duración de ninguno de los resultados para pintarla sobre el video.",
+    "noSePuede": null
+  },
   "contacto": {
     "temaNumero": 1,
     "materia": "matematicas",
@@ -535,7 +582,179 @@
     },
     "noSePuede": null
   },
-  "escalera": null,
+  "escalera": {
+    "temaNumero": 1,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En la tiendita reparten 24 caramelos en bolsas de 4 caramelos cada una.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "24 ÷ 4 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas bolsas se llenan?",
+        "respuesta": {
+          "tecleado": "6",
+          "aceptaTambien": [],
+          "comoSeLee": "seis bolsas"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Es un problema de repartir: los 24 caramelos se dividen en grupos de 4."
+          },
+          {
+            "orden": 2,
+            "texto": "Buscas el número que multiplicado por 4 te da 24."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la escuela cortan un listón de 15 cm en pedazos de 3 cm cada uno para los moños.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "15 ÷ 3 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos pedazos salen?",
+        "respuesta": {
+          "tecleado": "5",
+          "aceptaTambien": [],
+          "comoSeLee": "cinco pedazos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Pregunta cuántos pedazos de 3 cm caben en 15 cm."
+          },
+          {
+            "orden": 2,
+            "texto": "Buscas el número que multiplicado por 3 te da 15."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Hay 20 personas esperando en la fila y se sientan de 3 en 3 en unas bancas.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "20 ÷ 3 = 6 y sobran"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas personas sobran de pie?",
+        "respuesta": {
+          "tecleado": "2",
+          "aceptaTambien": [],
+          "comoSeLee": "dos personas"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí no todo se reparte en grupos iguales. Algunos datos se reparten, pero otros quedan fuera."
+          },
+          {
+            "orden": 2,
+            "texto": "Buscas cuánta diferencia hay entre 20 y el 18 que cabe en las 6 bancas de 3."
+          },
+          {
+            "orden": 3,
+            "texto": "Restas: 20 menos 18."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "Hay un paquete con 32 galletas. Se empacan en cajas con 5 galletas cada una.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "32 ÷ 5 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas cajas se llenan completas?",
+        "respuesta": {
+          "tecleado": "6",
+          "aceptaTambien": [],
+          "comoSeLee": "seis cajas"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Se pregunta por los grupos completos, no por lo que sobra."
+          },
+          {
+            "orden": 2,
+            "texto": "Buscas el número que multiplicado por 5 se acerca más a 32 sin pasarse."
+          },
+          {
+            "orden": 3,
+            "texto": "5 por 6 son 30, que cabe en 32."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "El electricista dice que cortó 36 metros de cable en un número igual de pedazos sin sobrar nada.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "36 ÷"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 4"
+          }
+        ],
+        "pregunta": "¿De cuántos metros era cada pedazo?",
+        "respuesta": {
+          "tecleado": "9",
+          "aceptaTambien": [],
+          "comoSeLee": "nueve metros"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí sabes el cociente: 4 pedazos. Lo que falta es el tamaño de cada uno."
+          },
+          {
+            "orden": 2,
+            "texto": "Es el número que multiplicado por 4 te da 36."
+          },
+          {
+            "orden": 3,
+            "texto": "Prueba: 4 por 9 son 36."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
   "error": {
     "temaNumero": 1,
     "materia": "matematicas",

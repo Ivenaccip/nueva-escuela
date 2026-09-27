@@ -217,10 +217,691 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
+  "ver": {
+    "temaNumero": 7,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué los denominadores no se suman?",
+    "resumen": "Cuando sumas fracciones, los de abajo dicen el tamaño de los pedazos, no cuántos pedazos tienes. Para sumar manzanas con naranjas, primero haces que sean del mismo tamaño.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué los denominadores no se suman cuando se suman fracciones, no nada más el algoritmo de encontrar el mcm y convertir.",
+        "Es del nivel de sexto de primaria: suma de dos fracciones con denominadores pequeños, sin números negativos ni decimales.",
+        "Español de México o de América Latina.",
+        "Llega rápido al ejemplo sin presentación larga del canal.",
+        "Dice o muestra que el resultado debe tener sentido: no puede ser más pequeño que una de las fracciones que se sumaron."
+      ],
+      "descarta": [
+        "Suma numeradores y denominadores en línea recta (1/2 + 1/3 = 2/5) como si fuera el método correcto, o no atrapa que ese resultado no tiene sentido.",
+        "Explica solo el algoritmo del mcm sin decir por qué el denominador se queda igual.",
+        "Es un examen resuelto de otro nivel o tiene más de diez minutos de introducción."
+      ],
+      "consulta": "video explicación \"Suma y resta de fracciones\" matemáticas 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "Ab5g5psN87c",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el video que mejor explica por qué los denominadores se quedan iguales. El título nombra el procedimiento con distinto denominador, lo que es justo el tema. La BiBlioTHeKa es un canal con trayectoria en educación primaria.",
+      "url": "https://www.youtube.com/watch?v=Ab5g5psN87c",
+      "titulo": "SUMAR y RESTAR FRACCIONES con DISTINTO DENOMINADOR para niños ✔👩‍🏫 PRIMARIA",
+      "canal": "La BiBlioTHeKa",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "u2HGmr-bN7k",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. math2me explica también por qué se busca el denominador común. Es peor porque es más largo y el elegido es más directo al punto para sexto de primaria.",
+        "url": "https://www.youtube.com/watch?v=u2HGmr-bN7k",
+        "titulo": "Suma y resta de fracciones con diferente denominador | Versión 2011",
+        "canal": "math2me",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "qSe4X6eyd-g",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "Tercer respaldo. Aula365 lo enseña bien, pero es un poco más genérico. Entra si los otros dos se caen.",
+        "url": "https://www.youtube.com/watch?v=qSe4X6eyd-g",
+        "titulo": "¿Cómo Sumar y Restar Fracciones? | Videos Educativos Aula365",
+        "canal": "FlexFlix Kids en Español",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "La URL y el título salieron literales en la búsqueda. El canal es mexicano y tiene presencia en educación primaria. El video explica por qué los denominadores no se suman, no nada más el algoritmo. Los dos respaldos son fuertes.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 7,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es el mcm de los denominadores en"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 6
+          },
+          {
+            "tipo": "texto",
+            "valor": "?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "10"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste los denominadores en vez de buscar el menor número en que ambos caben exacto.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "12"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Encontraste el número más pequeño donde caben exacto los dos: 4 cabe 3 veces y 6 cabe 2 veces.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "24"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste los denominadores. Ese número sí funciona como denominador común, pero no es el mínimo.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Buscaste un divisor común en vez de un múltiplo. El mcm es el número común más chico, no el más grande.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿A cuál fracción equivalente se convierte"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "si cambias su denominador a 9?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 6,
+                "abajo": 9
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste numerador y denominador por 3. Así ambos por el mismo número mantienen el valor igual.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 2,
+                "abajo": 9
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Cambiaste el denominador pero olvidaste cambiar el numerador. Si el de abajo se multiplica por 3, el de arriba también.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 5,
+                "abajo": 9
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste el numerador con el cambio del denominador. La fracción equivalente se hace multiplicando, no sumando.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 3,
+                "abajo": 9
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste el numerador por 1 y medio en vez de por 3. El factor por el que multiplicas es el que el denominador necesita.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 6
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 5,
+                "abajo": 12
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Convertiste a doce en el denominador, sumaste los numeradores y dejaste el de abajo igual.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 2,
+                "abajo": 10
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Sumaste numerador con numerador y denominador con denominador en línea recta. Por eso el resultado salió más chico que 1/4, una de las que sumaste.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 2,
+                "abajo": 12
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Convertiste el denominador a 12, pero sumaste solo los números que tenía arriba cada fracción original, no los equivalentes.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 1,
+                "abajo": 12
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dejaste los numeradores sin sumar. Si el denominador se convierte a 12, tienes que convertir los numeradores también.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿La fracción"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 12
+          },
+          {
+            "tipo": "texto",
+            "valor": "está en su forma más simple?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "No, es 1/3"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste arriba y abajo entre 4. Así encuentras la misma fracción escrita con números más chicos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, ya está simplificada"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "4 y 12 sí comparten divisores. Si ambos números se dividen entre lo mismo, la fracción se puede simplificar.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "No, es 2/6"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste entre 2, y eso es un paso hacia la forma simple. Pero 2 y 6 aún comparten otro divisor común.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "No, es 4/8"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste 4 a ambos números en vez de dividir. Para simplificar, multiplica o divide, nunca sumes ni restes.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Un estudiante sumó"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 2
+          },
+          {
+            "tipo": "texto",
+            "valor": "y obtuvo 2/5. ¿Por qué ese resultado está mal?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Porque 2/5 es mayor que 1/2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Comparaste con uno de los sumandos. Pero 2/5 sí es más pequeño que 1/2, así que tienes razón a medias.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Porque 2/5 es menor que 1/2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Comparaste con uno de los sumandos: 2/5 es más chico que 1/2, una de las fracciones que se sumaron. Una suma nunca da más chico que una de sus partes.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Porque los numeradores no se suman"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los numeradores sí se suman, pero solo si tienen el mismo denominador. El verdadero problema es que no hizo común denominador primero.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Porque debió restar en vez de sumar"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El enunciado dice que sumó, así que la operación está clara. El error no está en qué operación hacer, sino en cómo hacerla.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": null,
   "escalera": null,
-  "error": null,
-  "explicar": null
+  "error": {
+    "temaNumero": 7,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien sumó dos fracciones:"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 1,
+        "abajo": 2
+      },
+      {
+        "tipo": "texto",
+        "valor": "+"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 1,
+        "abajo": 3
+      },
+      {
+        "tipo": "texto",
+        "valor": ". Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Busco el mcm de los denominadores:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "2 y 3. El mcm es 6."
+          }
+        ],
+        "siLoTocas": "Ese paso busca el denominador común de 2 y 3, que es 6. Los números vienen del problema y están correctos."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Convierto a denominador común:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 2
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 6
+          },
+          {
+            "tipo": "texto",
+            "valor": ","
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 6
+          }
+        ],
+        "siLoTocas": "Las dos fracciones se escriben equivalentes con denominador 6. La cuenta de conversión está bien: 1/2 vale 3/6 y 1/3 vale 2/6."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Sumo los numeradores:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 2
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 5
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que les pasa su número a los dos pasos que siguen."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Simplifico:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 5
+          }
+        ],
+        "siLoTocas": "La simplificación está bien hecha: 2 y 5 no se dividen entre el mismo número, así que la fracción ya está en su forma más corta. Ese paso recibió su número y no lo inventó."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Compruebo: 1/2 ≈ 0.5, 1/3 ≈ 0.33, suma ≈ 0.83. El resultado 2/5 = 0.4 es menor que 1/2."
+          }
+        ],
+        "siLoTocas": "La revisión está bien hecha, pero detecta el error: el resultado no puede ser más chico que una de las fracciones que se sumaron."
+      }
+    ],
+    "pasoMalo": 3,
+    "arrastre": "El 2/5 del paso 3 aparece sin cambios en el paso 4 como la fracción que se simplifica, y en el paso 5 como el resultado que se comprueba. Los pasos 4 y 5 están bien hechos con una fracción mala: la comparación del paso 5 es lo que delata el error, porque el resultado sale más chico que 1/2.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?\"",
+    "motivos": [
+      {
+        "texto": "Sumó numeradores y denominadores como si ambos se operaran igual.",
+        "esElBueno": true,
+        "queRevela": "Es lo que pasó: sumó 1 + 1 = 2 arriba y 2 + 3 = 5 abajo, sin convertir a denominador común primero. El paso dice que suma, pero suma números que no se pueden sumar directamente porque los pedazos no son del mismo tamaño."
+      },
+      {
+        "texto": "Olvidó convertir una de las dos fracciones antes de sumar.",
+        "esElBueno": false,
+        "queRevela": "El paso 2 sí convierte ambas fracciones a denominador 6. Si hubiera olvidado la conversión, habría que sumar 3/6 + 1/3 o 1/2 + 2/6, pero el paso 3 usa los denominadores originales sin tocarlos, así que no volvió al paso 2 para traer las equivalentes."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Cuatro de los cinco pasos están bien. El error no está en una cuenta mal hecha: es un número que salió sin hacer lo que el paso anterior preparó."
+      },
+      {
+        "orden": 2,
+        "texto": "El paso 2 escribe dos fracciones con denominador 6. El paso 3 suma, pero mira bien qué números usa para sumar."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara los denominadores que salen del paso 2 con los que entran al paso 3. ¿Son los mismos?"
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 7,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué los denominadores no se suman.",
+    "aclaracion": "Con tus palabras, sin escribir fracciones con barra. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Los denominadores son el tamaño de los pedazos, y para sumar tienes que contar pedazos del mismo tamaño. Si cambias el tamaño, cambias el número de pedazos que tienes, no sumas más.",
+          "porQueImporta": "Sin esta idea, sumar denominadores parece lógico: si sumas dos números, sumas todas sus partes. Con ella, ves que el tamaño del pedazo no es parte de lo que cuentas.",
+          "comoSuenaDicha": "El de abajo es el tamaño del pedazo. Si los tamaños no son iguales, no puedo contar cuántos pedazos tengo en total.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Cuando haces las fracciones equivalentes, los numeradores cambian porque el pedazo cambió de tamaño. Los denominadores se quedan igual precisamente para poder sumar.",
+          "porQueImporta": "Es lo que detiene el error antes de que pase: quien ve que los numeradores cambian ve que es por eso que el denominador se queda fijo.",
+          "comoSuenaDicha": "Al hacer equivalentes, el de arriba cambia pero el de abajo tiene que quedar igual para poder sumarlas.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Si sumaras los denominadores obtendrías un número que no significa nada: no sería el tamaño del pedazo ni cuántos pedazos tienes.",
+          "porQueImporta": "Explica por qué el error no produce solo un número equivocado, sino un número que no es ni siquiera una fracción sensata.",
+          "comoSuenaDicha": "Si sumo los de abajo obtengo algo que no sirve para nada, ni es un tamaño de pedazo ni es lo que cuento.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque la regla de sumar fracciones es que los denominadores se quedan igual.",
+          "queLaDelata": "Repite la regla sin explicar la razón. Cualquiera que memoriza el procedimiento puede decir esto, sin entender por qué funciona.",
+          "queLeFalta": "Que explique qué representan los denominadores y por qué tienen que ser iguales antes de contar."
+        },
+        {
+          "respuesta": "Porque si sumas los de abajo te sale una fracción mal que es menor que una de las que sumaste.",
+          "queLaDelata": "Ve que el error se detecta porque el resultado no tiene sentido, pero confunde la detección del error con la razón de por qué ocurre.",
+          "queLeFalta": "Que explique qué es el denominador y por qué contar pedazos de tamaños diferentes no funciona."
+        },
+        {
+          "respuesta": "Porque todas las partes de una operación no se operan igual, los denominadores son diferentes.",
+          "queLaDelata": "Nombra la regla sin decir qué hace que sea diferente. Es memorizar una excepción sin entender la excepción.",
+          "queLeFalta": "Que diga qué es lo que hace diferente a los denominadores: que son el tamaño del pedazo, no algo que se cuenta."
+        },
+        {
+          "respuesta": "Porque los denominadores no se suman ni se restan, sólo se suman los numeradores.",
+          "queLaDelata": "Vuelve a decir el procedimiento con otras palabras, pero no explica por qué. Sigue siendo la regla, no la razón.",
+          "queLeFalta": "Que explique por qué sólo los numeradores se suman: qué es cada uno en la fracción."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Yo creo que sí se pueden sumar porque es una suma y todo lo que hay se suma.",
+          "seLeContesta": "En una suma de dinero, ¿sumas los pesos con los centavos? No, sumas pesos con pesos y centavos con centavos. Aquí es igual: tienes sextos y necesitas sumar sextos con sextos, no sextos con tercios. Por eso antes de sumar tienes que hacer que todos sean del mismo tamaño.",
+          "aDondeLoEmpuja": "A entender que el denominador es la unidad de medida, no un número que entra en la suma."
+        },
+        {
+          "siDice": "Si los denominadores se quedan igual, entonces no cambió nada en esa fracción.",
+          "seLeContesta": "Cambió el numerador. Mira el ejemplo: un medio se vuelve tres sextos. El de abajo sigue siendo el tamaño del pedazo, que es sextos. Pero ahora tienes 3 pedazos en vez de 1, porque el pedazo es más chico. Contesta esto: ¿por qué subió el de arriba de 1 a 3 si son la misma fracción?",
+          "aDondeLoEmpuja": "A ver que cambiar el tamaño del pedazo cambia cuántos pedazos necesitas contar, y eso es exactamente por qué el de abajo tiene que quedarse igual."
+        },
+        {
+          "siDice": "Entiendo, solo que no sé cómo decirlo.",
+          "seLeContesta": "Entonces contesta una sola cosa: en una fracción, ¿qué es el número de abajo? Dicho en una frase, sin usar la palabra denominador.",
+          "aDondeLoEmpuja": "A que vea que la idea de qué es el de abajo ya la tiene, y por ahí empieza la explicación."
+        }
+      ],
+      "ejemploQueSiCuenta": "Los denominadores son el tamaño de los pedazos. Cuando tengo un medio y un tercio, los pedazos no son del mismo tamaño, así que no los puedo contar juntos. Primero los hago del mismo tamaño: un medio se vuelve tres sextos y un tercio se vuelve dos sextos. Ahora sí puedo contar: tengo 3 más 2, son 5 sextos. El de abajo se queda en 6 porque es el tamaño del pedazo, no es parte de lo que cuento.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba en minúsculas.",
+        "Que no use la palabra denominador, numerador ni equivalentes: si dice el de arriba, el de abajo y que los hace del mismo tamaño, ya lo dijo.",
+        "Que no escriba ningún número ni ninguna fracción: la idea cuenta sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  }
 }

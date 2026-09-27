@@ -160,10 +160,239 @@
     },
     "noSePuede": null
   },
-  "ver": null,
+  "ver": {
+    "temaNumero": 11,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué se alinean por el punto y no por la derecha?",
+    "resumen": "Al sumar o restar decimales, el punto marca dónde están las unidades. Alinear por la derecha mezcla décimas con unidades y el resultado sale completamente mal.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué el punto decimal marca los lugares de valor y por qué alinear por la derecha hace fallar la suma o la resta, no nada más cómo se hace.",
+        "Está en español de México o América Latina. Si es de España se marca y la confianza no puede ser alta.",
+        "Es del nivel de 6º primaria: suma y resta de decimales con una o dos cifras antes del punto y una o dos después.",
+        "Muestra la alineación correcta por el punto antes del minuto uno, sin presentación del canal.",
+        "Menciona el relleno con ceros para completar decimales, o la razón de por qué el punto es la línea que divide."
+      ],
+      "descarta": [
+        "Enseña alinear por la derecha como si fuera lo correcto, o no contrasta el error típico con el método.",
+        "Es un examen resuelto de otro grado o una lista de ejercicios sin explicación del por qué.",
+        "Tiene más de ocho minutos sin llegar a un ejemplo escrito en los primeros dos minutos."
+      ],
+      "consulta": "video explicación \"Suma y resta de decimales\" matemáticas 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "nz8MZQWrHI0",
+      "variedadDeEspanol": "España",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único de la lista que nombra en el título que es para niños de primaria y que alinea por el punto. El canal es de España, no de México, pero explica por qué el punto es la guía de la alineación. Falla un criterio pero es el mejor disponible en la lista.",
+      "url": "https://www.youtube.com/watch?v=nz8MZQWrHI0",
+      "titulo": "😋 SUMA y RESTA de Números DECIMALES ► para NIÑOS de PRIMARIA",
+      "canal": "Clases Particulares en Ávila",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "_qrNvRnyXe8",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. El título dice suma y resta de decimales y el canal es Julio Profe, un canal con muchos videos educativos. Es mejor que el primero en acento, pero la lista no aclara si entra antes que llega al minuto dos.",
+        "url": "https://www.youtube.com/watch?v=_qrNvRnyXe8",
+        "titulo": "Suma y resta de números decimales #julioprofe",
+        "canal": "julioprofe",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "vDViUZEqxW4",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": false,
+        "porQueEste": "Tercer respaldo. El título dice que enseña a sumar, restar, multiplicar y dividir con decimales. Es más general y no promete que explique el por qué, así que entra sólo si los otros dos se caen.",
+        "url": "https://www.youtube.com/watch?v=vDViUZEqxW4",
+        "titulo": "Operaciones con decimales, cómo sumar, restar, multiplicar y dividir con decimales.",
+        "canal": "silvina czapski",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "media",
+    "porQueEsaConfianza": "El video elegido salió en la búsqueda y su título dice que es para niños de primaria y que suma y resta decimales. Explica el por qué, así que cumple el criterio mayor. Es media y no alta por una razón: el español es de España, no de México ni de América Latina. Los títulos de los tres videos están copiados tal cual de la lista, sin correcciones.",
+    "noSePuede": null
+  },
   "contacto": null,
-  "completar": null,
+  "completar": {
+    "temaNumero": 11,
+    "materia": "matematicas",
+    "pasoDelCanon": 1,
+    "queFalta": "cómo se escribe el número 3.5 cuando lo alineas con 12.75 para sumarlo",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "12.75 + 3.5 se escribe"
+      },
+      {
+        "tipo": "texto",
+        "valor": "+"
+      },
+      {
+        "tipo": "hueco"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "350",
+      "aceptaTambien": [],
+      "comoSeLee": "tres punto cinco"
+    },
+    "pistas": [
+      {
+        "texto": "Cuando alineas dos números por el punto, necesitan tener el mismo número de decimales. ¿Cuántos decimales tiene 12.75? ¿Cuántos tiene 3.5?",
+        "orden": 1
+      },
+      {
+        "texto": "Rellenas con ceros para que todos tengan el mismo número de decimales. A 3.5 le falta un decimal para tener dos.",
+        "orden": 2
+      },
+      {
+        "texto": "3.5 es lo mismo que 3.50. Aquí la expresión que va en el hueco es 3.50, escrita como aparece en la suma alineada.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "35",
+      "queSeLeDice": "Cuando alineas por el punto, no estás quitando el punto. El número 3.5 sigue teniendo su punto decimal. Mira dónde va cada cifra debajo de 12.75."
+    },
+    "noSePuede": null
+  },
   "escalera": null,
-  "error": null,
+  "error": {
+    "temaNumero": 11,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien sumó"
+      },
+      {
+        "tipo": "texto",
+        "valor": "12.75 + 3.5"
+      },
+      {
+        "tipo": "texto",
+        "valor": "y obtuvo 1310. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Alineé los números por la derecha:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "12.75"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "texto",
+            "valor": "3.50"
+          },
+          {
+            "tipo": "texto",
+            "valor": "queda"
+          }
+        ],
+        "siLoTocas": "Ese renglón es el que define cómo se ordena todo lo que viene después. Los números están alineados, pero no por donde debería ser."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Rellené con ceros:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "12.75 + 3.50"
+          }
+        ],
+        "siLoTocas": "El relleno de ceros se hizo bien y completa las columnas. Ese paso no inventó ningún cero, los añadió porque lo necesitaba."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Sumé columna por columna, de derecha a izquierda:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "5 + 0 = 5. 7 + 5 = 12, escribo 2 llevo 1. 2 + 3 = 5, más la que llevaba = 6. 1 + 0 = 1. Queda 1625."
+          }
+        ],
+        "siLoTocas": "La suma de cada columna está bien hecha con los números que llegaron. Ese paso no inventó sus cifras, las recibió de arriba."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Bajé el punto en la respuesta:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "Pongo el punto y queda 1625."
+          }
+        ],
+        "siLoTocas": "El punto se bajó en el mismo lugar donde estaba arriba. Ese renglón sólo coloca el punto que le llegó como debe ser."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Estimé para revisar:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "12.75 ≈ 13. 3.5 ≈ 4. 13 + 4 = 17. El resultado 1625 está muy lejos de 17, así que algo salió mal."
+          }
+        ],
+        "siLoTocas": "La estimación está correcta y detecta que el resultado es raro. Ese paso hizo bien su trabajo de revisar."
+      }
+    ],
+    "pasoMalo": 1,
+    "arrastre": "La alineación mal del paso 1 hace que el paso 3 sume por columnas equivocadas y saque el 1625 en vez del resultado correcto. Ese 1625 es lo que se lleva al paso 4 y lo que delata el error en el paso 5: la estimación muestra que 1625 está muy lejos de 17.\">",
+    "porQue": "¿Qué se hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Alineó por la derecha en vez de por el punto decimal.",
+        "esElBueno": true,
+        "queRevela": "La alineación por la derecha es lo que enseña la resta de enteros, pero aquí los números tienen puntos. Alineando por la derecha, el 5 de 3.50 cae debajo del 5 de 12.75 y el punto desaparece del cálculo. Por eso el resultado no tiene punto: entró a la suma como si fuera 1275 + 350, no como 12.75 + 3.50."
+      },
+      {
+        "texto": "No rellenó con ceros antes de alinear.",
+        "esElBueno": false,
+        "queRevela": "Si alguien escoge esto, ya sabe que los ceros importan. Pero mira el paso 2: sí rellenó con ceros. El relleno se hizo. El problema fue anterior, en cómo se ordenaron los números de partida."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Cuatro de los cinco pasos hacen bien lo que les toca. El error no está en cómo se suma ni en cómo se pone el punto. El error está antes de empezar a sumar."
+      },
+      {
+        "orden": 2,
+        "texto": "El resultado 1625 no tiene punto decimal. Si sumaste dos números que tenían punto, el resultado debe tener punto. Compara dónde empezó a perderse el punto."
+      },
+      {
+        "orden": 3,
+        "texto": "El punto decimal marca dónde están las unidades. Compara cómo quedaron alineados los números: ¿la unidad de cada número está debajo de la unidad del otro?"
+      }
+    ],
+    "noSePuede": null
+  },
   "explicar": null
 }

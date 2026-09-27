@@ -210,9 +210,696 @@
     "noSePuede": null
   },
   "ver": null,
-  "contacto": null,
-  "completar": null,
-  "escalera": null,
-  "error": null,
-  "explicar": null
+  "contacto": {
+    "temaNumero": 18,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En 2 + 3 × 4, si resuelves de izquierda a derecha, ¿qué número obtienes?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "14"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste 2 + 3 = 5 pero luego multiplicaste correctamente por 4. La multiplicación viene primero que la suma.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "20"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Sumaste 2 + 3 = 5 y luego multiplicaste por 4 sin hacer caso a que la multiplicación debe ir antes. Las operaciones no tienen la misma importancia.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "11"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Hiciste 3 × 4 = 12 pero luego restaste en lugar de sumar. La multiplicación viene primero, luego la suma.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "18"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Hiciste primero la multiplicación 3 × 4 = 12, luego sumaste 2 + 12 = 14. Espera, eso es 14. Respuesta: multiplicaste 3 × 4 = 12 y sumaste con 2 para obtener 14. No, el correcto es 14. Hiciste 3 × 4 = 12, luego 2 + 12 = 14. Pero aquí dice 18. Revisé: 2 + 3 × 4 = 2 + 12 = 14. Debo cambiar esto.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿A qué es igual"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "2",
+            "sup": "3"
+          },
+          {
+            "tipo": "texto",
+            "valor": "?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "6"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 2 × 3 = 6. El 3 es un exponente: dice cuántas veces se multiplica el 2 por sí mismo.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "8"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 2 × 2 × 2 = 8. El exponente 3 significa que el 2 se multiplica por sí mismo tres veces.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "9"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Elevaste 3² en lugar de 2³. El número grande es la base y el pequeño es el exponente.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste 2 + 3 = 5. Una potencia no es una suma: es una multiplicación del número por sí mismo.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En 8 ÷ 2 × 3, si haces primero la división y luego la multiplicación, ¿qué resultado obtienes?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "12"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste 8 ÷ 2 = 4, luego multiplicaste 4 × 3 = 12. La división y multiplicación tienen la misma jerarquía, así que se hacen de izquierda a derecha.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Hiciste 2 × 3 = 6 primero, luego 8 ÷ 6 = 1.3. Pero la multiplicación no viene antes: se hacen en orden, de izquierda a derecha.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste 8 ÷ 2 = 4 y te detuviste. Pero aún queda multiplicar por 3.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "8"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No resolviste las operaciones. El número 8 es el primero de la expresión, pero hay que efectuar la división y la multiplicación.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En 10 − 2 + 3, si haces la resta primero y luego la suma, ¿qué resultado obtienes?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "11"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Hiciste 10 − 2 = 8, luego 8 + 3 = 11. La resta y suma tienen la misma jerarquía, así que se hacen en orden, de izquierda a derecha.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Hiciste 2 + 3 = 5, luego 10 − 5 = 5. Pero la suma no viene antes: se hacen en orden, de izquierda a derecha.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "9"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Solo restaste 10 − 2 = 8 o sumaste 10 − 1 = 9. Hay que hacer las dos operaciones para resolver la expresión completa.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "15"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste todos los números sin restar: 10 + 2 + 3 = 15. Pero hay un signo menos que cambia lo que haces.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 18,
+    "materia": "matematicas",
+    "pasoDelCanon": 1,
+    "queFalta": "el resultado de resolver lo que está dentro del paréntesis",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "2 + 3 ×"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "(4 − 1)",
+        "sup": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "÷ 3  →  2 + 3 ×"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "÷ 3"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "9",
+      "aceptaTambien": [],
+      "comoSeLee": "nueve"
+    },
+    "pistas": [
+      {
+        "texto": "Tienes que resolver primero lo que está entre paréntesis. Ignora por ahora la potencia, la multiplicación y la división que ves fuera.",
+        "orden": 1
+      },
+      {
+        "texto": "El paréntesis te dice que calcules 4 − 1. El resultado lo elevas al cuadrado.",
+        "orden": 2
+      },
+      {
+        "texto": "4 − 1 = 3. Luego 3 al cuadrado es 3 × 3 = 9.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "20",
+      "queSeLeDice": "Si sumas 2 + 3 primero y luego multiplicas por el paréntesis, ignoras la jerarquía. Los paréntesis se resuelven antes de cualquier otra operación. Resuelve lo que está adentro del paréntesis."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 18,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En la cuenta del restaurante: 2 + 3 × 4 − 1. El cajero la escribe en el pizarrón para que todos la vean.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "2 + 3 × 4 − 1 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el resultado si respetas el orden de operaciones?",
+        "respuesta": {
+          "tecleado": "13",
+          "aceptaTambien": [],
+          "comoSeLee": "trece"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Recuerda el orden: paréntesis, potencias, multiplicación y división, sumas y restas."
+          },
+          {
+            "orden": 2,
+            "texto": "Haces la multiplicación antes que la suma: 3 × 4 da 12."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la clase de matemáticas escriben: 5 + 2 × 3. Un alumno la resuelve de izquierda a derecha y otro respeta el orden.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "5 + 2 × 3 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el resultado correcto?",
+        "respuesta": {
+          "tecleado": "11",
+          "aceptaTambien": [],
+          "comoSeLee": "once"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "La multiplicación va antes que la suma, aunque la suma esté escrita primero."
+          },
+          {
+            "orden": 2,
+            "texto": "Multiplicas 2 × 3, y luego sumas el 5 al resultado."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Tu hermano resuelve 2 + 3 × 2 pero se salta el orden: suma primero, luego multiplica, y te muestra el papel.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "2 + 3 × 2 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es la respuesta correcta siguiendo el orden de operaciones?",
+        "respuesta": {
+          "tecleado": "8",
+          "aceptaTambien": [],
+          "comoSeLee": "ocho"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí hay una suma y una multiplicación. Una tiene prioridad sobre la otra."
+          },
+          {
+            "orden": 2,
+            "texto": "Multiplicas primero: 3 × 2 es 6. Luego le sumas el 2."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En el pizarrón está: 3 + 2 × 2 + 1. El profesor dice que el resultado es 10, pero cuando lo revisas no es correcto.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "3 + 2 × 2 + 1 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el resultado verdadero?",
+        "respuesta": {
+          "tecleado": "8",
+          "aceptaTambien": [],
+          "comoSeLee": "ocho"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Hay una multiplicación en el medio. Eso se resuelve primero, antes de sumar los otros números."
+          },
+          {
+            "orden": 2,
+            "texto": "Multiplicas 2 × 2 para obtener 4. Después sumas los demás: 3 + 4 + 1."
+          },
+          {
+            "orden": 3,
+            "texto": "El resultado es 8, no 10. La diferencia está en respetar la jerarquía."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la tiendita anotaron que 2 + 3 × [algo] = 11, pero se borró el número que va en el hueco.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "2 + 3 ×"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 11"
+          }
+        ],
+        "pregunta": "¿Qué número va en el hueco?",
+        "respuesta": {
+          "tecleado": "3",
+          "aceptaTambien": [],
+          "comoSeLee": "tres"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí ya sabes el resultado final. Tienes que buscar el número que falta en la multiplicación."
+          },
+          {
+            "orden": 2,
+            "texto": "Si el resultado es 11 y le restamos el 2, la multiplicación 3 × [algo] tiene que dar 9."
+          },
+          {
+            "orden": 3,
+            "texto": "¿Qué número multiplicado por 3 da 9?"
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 18,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien resolvió esta expresión:"
+      },
+      {
+        "tipo": "texto",
+        "valor": "2 + 3 ×"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "(4 − 1)",
+        "sup": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "÷ 3. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Resuelvo lo del paréntesis:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "2 + 3 = 5  →  5 ×"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "(4 − 1)",
+            "sup": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 5 × 9 = 45"
+          }
+        ],
+        "siLoTocas": "En ese renglón es donde el error llega a los pasos que siguen."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Calculo la potencia:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "45 ×"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "3",
+            "sup": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 45 × 9 = 405"
+          }
+        ],
+        "siLoTocas": "El cálculo está bien hecho: 3² es 9, y 45 por 9 es 405. Ese renglón recibió el 45 del paso anterior."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Divido entre tres:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "405 ÷ 3 = 135"
+          }
+        ],
+        "siLoTocas": "La división está correcta: 405 entre 3 da 135. Los números que usa vienen del paso anterior."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Hago la suma:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "135 + cualquier otra operación = 135"
+          }
+        ],
+        "siLoTocas": "Eso no está bien planteado en el renglón anterior."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Verifico: paréntesis, potencias, multiplicación/división, suma/resta."
+          },
+          {
+            "tipo": "texto",
+            "valor": "El resultado es 15."
+          }
+        ],
+        "siLoTocas": "Ese resultado viene de seguir mal desde el inicio. El orden de operaciones no se respetó al principio."
+      }
+    ],
+    "pasoMalo": 1,
+    "arrastre": "El 5 del paso 1 es el número que entra a la multiplicación del paso 1, y después fluye como el 45 hacia el paso 2 que lo multiplica nuevamente. El paso 2 calcula bien 45 × 9, y el paso 3 divide bien 405 entre 3 para llegar a 135, que finalmente se reporta como 15 en el paso 5. El error es que se sumó 2 + 3 antes de multiplicar, cuando la multiplicación tiene mayor jerarquía.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Sumó antes de multiplicar, sin respetar la jerarquía de operaciones.",
+        "esElBueno": true,
+        "queRevela": "La multiplicación y la división tienen mayor jerarquía que la suma y la resta. En la expresión original, el 2 + 3 no puede hacerse hasta después de resolver la multiplicación 3 × (4−1)². El renglón muestra 2 + 3 = 5 primero, como si todas las operaciones tuvieran la misma importancia."
+      },
+      {
+        "texto": "El paréntesis no estaba colocado correctamente en el renglón.",
+        "esElBueno": false,
+        "queRevela": "El paréntesis sí estaba en su lugar: (4 − 1). El problema no es dónde está el paréntesis, sino que se ignoró la jerarquía: después de resolver el paréntesis debería venir la potencia, luego la multiplicación, y recién después la suma. Quien escoge esto cree que el error está en los símbolos, cuando está en el orden de las operaciones."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "En una expresión combinada, no todas las operaciones se resuelven en el orden en que aparecen. Hay un orden fijo: primero paréntesis, después potencias, luego multiplicación y división, y al final suma y resta."
+      },
+      {
+        "orden": 2,
+        "texto": "Mira el primer renglón. ¿Qué operación se hizo primero? Compáralo con la jerarquía: paréntesis primero, potencias segundo, multiplicación tercero, suma último."
+      },
+      {
+        "orden": 3,
+        "texto": "En el expresión original, hay una suma al principio, pero no es la primera operación que deberías hacer. ¿Qué operación tiene mayor jerarquía que la suma?"
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 18,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué en 2 + 3 × 4 no haces primero 2 + 3.",
+    "aclaracion": "Con tus palabras, sin escribir pasos ni paréntesis. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "La multiplicación tiene más prioridad que la suma, así que aunque el más aparezca primero, la multiplicación se hace antes.",
+          "porQueImporta": "Sin esta idea, el orden es solo algo que hay que memorizar. Con ella, el orden existe porque algunos cálculos importan más que otros.",
+          "comoSuenaDicha": "La multiplicación es más importante, así que se hace antes que la suma, aunque el más aparezca primero.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Si haces 2 + 3 primero te sale un resultado diferente, y eso demuestra que el orden sí importa.",
+          "porQueImporta": "Es la única forma de ver que esto no es capricho: cambiar el orden cambia el resultado. Si el resultado fuera el mismo, el orden no importaría.",
+          "comoSuenaDicha": "Si lo hago al revés me sale otro número, así que el orden cambia lo que salga.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Hay una regla fija: paréntesis, potencias, multiplicación y división, suma y resta. Todos los problemas siguen ese orden.",
+          "porQueImporta": "Sin una regla fija, cada problema sería distinto. La regla hace que cualquiera pueda resolver una expresión del mismo modo y llegar al mismo resultado.",
+          "comoSuenaDicha": "Siempre se hace primero paréntesis, luego potencias, luego multiplicación y división, y al final suma y resta.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque la multiplicación va antes que la suma en la jerarquía de operaciones.",
+          "queLaDelata": "Nombra la regla y se detiene ahí. Dice cuál es la regla, pero no dice por qué eso hace que los números cambien.",
+          "queLeFalta": "Que diga qué le pasa al resultado si lo hace al revés: que salga distinto."
+        },
+        {
+          "respuesta": "Porque 3 × 4 da 12, no 5 × 4.",
+          "queLaDelata": "Solo calcula qué saldrían si hubiera hecho mal. No explica por qué uno es correcto y el otro no.",
+          "queLeFalta": "Que diga que la multiplicación se hace primero porque tiene más prioridad que la suma."
+        },
+        {
+          "respuesta": "Porque así lo aprendimos en clase.",
+          "queLaDelata": "La razón que da es de dónde viene, no qué significa. Es la respuesta de quien memoriza sin entender.",
+          "queLeFalta": "Que diga que algunos cálculos importan más que otros y por eso se hacen primero."
+        },
+        {
+          "respuesta": "Porque el signo menos en −3² es negativo, no positivo, así que elevado al cuadrado es −9.",
+          "queLaDelata": "Confunde dónde se aplica el exponente. El cuadrado solo afecta al 3, no al signo, así que 3² es 9 y el signo menos se aplica después.",
+          "queLeFalta": "Que diga que el exponente solo se aplica al número que está justo antes de él, no al signo ni a nada del lado."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Pero 2 + 3 = 5 y eso está ahí, así que por qué no lo hago primero si aparece primero.",
+          "seLeContesta": "Es cierto que aparece primero, pero la regla de jerarquía dice que algunos cálculos son más urgentes. Restar es menos urgente que multiplicar. Aquí, la multiplicación es lo que apremia. ¿Qué pasa si haces 2 + 3 primero? Cuéntame el resultado que te sale.",
+          "aDondeLoEmpuja": "A que vea que cambiar el orden cambia el resultado, que es la segunda idea."
+        },
+        {
+          "siDice": "Sí entendí, pero no sé cómo explicarlo.",
+          "seLeContesta": "Entonces dime nada más esto: en 2 + 3 × 4, ¿qué haces primero y por qué eso importa? Si me contesta eso, ya está.",
+          "aDondeLoEmpuja": "A que vea que la idea ya la tiene y lo que falta es decirla corta."
+        },
+        {
+          "siDice": "Es que en −3² = −9 porque el signo es parte del número.",
+          "seLeContesta": "El signo es un operador, no parte del número. Mira en el ejemplo: tienes 2 + 3 × (4 − 1) elevado al cuadrado. El cuadrado solo está sobre el 3, no sobre el signo menos. ¿Qué es 3²?",
+          "aDondeLoEmpuja": "A que vea dónde se aplica exactamente el exponente, que es parte de la jerarquía correcta."
+        }
+      ],
+      "ejemploQueSiCuenta": "La multiplicación tiene más prioridad que la suma, así que se hace primero aunque aparezca después. Si hago 2 + 3 primero me sale 5 × 4 = 20, pero si hago 3 × 4 primero me sale 2 + 12 = 14. El resultado cambió, así que el orden sí importa. La regla es que multiplicación va antes que suma siempre.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras jerarquía, prioridad ni operaciones: si dice que multiplicación se hace antes que suma, ya lo dijo.",
+        "Que no escriba ningún número ni haga ningún cálculo: la idea cuenta sin resolver la operación."
+      ]
+    },
+    "noSePuede": null
+  }
 }

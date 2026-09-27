@@ -190,10 +190,354 @@
     },
     "noSePuede": null
   },
-  "ver": null,
+  "ver": {
+    "temaNumero": 8,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué cuando multiplicas dos fracciones el resultado es más chico?",
+    "resumen": "Multiplicar por una fracción no es lo mismo que multiplicar por un número entero. Cuando multiplicas dos fracciones propias, tomas una parte de otra parte, así que el resultado se achica.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué al multiplicar dos fracciones propias el resultado es menor que los dos factores, no nada más cómo se multiplica.",
+        "Está en español. Se prefiere de México o de América Latina; si es de España se marca y la confianza no puede ser alta.",
+        "Es del nivel de 6º primaria: dos fracciones con numeradores y denominadores del 1 al 12, resultado siempre exacto y menor que cualquiera de los factores.",
+        "Llega al cálculo pronto, sin presentación larga del canal ni pedir suscripción antes de empezar.",
+        "Muestra que tomar una fracción de otra fracción achica el resultado, con un ejemplo visual o numérico claro."
+      ],
+      "descarta": [
+        "Busca denominador común antes de multiplicar, como si fuera suma: ese es el error típico de este tema enseñado como si fuera el método.",
+        "Espera que el resultado sea más grande que los dos factores, o da esa impresión en los ejemplos.",
+        "Es un examen resuelto de otro grado o una lista de pasos para memorizar sin explicación.",
+        "Los ejemplos que usa son fracciones impropias o mixtas, no fracciones propias."
+      ],
+      "consulta": "video explicación \"Multiplicación de fracciones\" matemáticas 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "VDTZG1aHiHc",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Explica claramente por qué el resultado es más chico cuando multiplicas dos fracciones propias, y usa ejemplos con números manejables del nivel de primaria. El canal es de México y llega al punto sin rodeos.",
+      "url": "https://www.youtube.com/watch?v=VDTZG1aHiHc",
+      "titulo": "MULTIPLICACION DE FRACCIONES Super facil",
+      "canal": "Daniel Carreón",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "oiZ9sOUqZU8",
+        "variedadDeEspanol": "España",
+        "explicaElPorQue": true,
+        "porQueEste": "Primer respaldo. Explica la fracción de una cantidad y por qué se achica, pero el acento es de España y lleva un poco más de presentación antes de entrar en materia.",
+        "url": "https://www.youtube.com/watch?v=oiZ9sOUqZU8",
+        "titulo": "🤓 FRACCION de un NUMERO para NIÑOS de PRIMARIA [TRUCO MUY FACIL]",
+        "canal": "Clases Particulares en Ávila",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "DiJkyaXJ-aQ",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. También explica la fracción de una cantidad de forma clara, con acento de América Latina. Es alternativa si los otros dos se caen.",
+        "url": "https://www.youtube.com/watch?v=DiJkyaXJ-aQ",
+        "titulo": "FRACCION DE UN NUMERO O  CANTIDAD  PARA NIÑOS  DE PRIMARIA | CALCULAR LA FRACCION DE UNA CANTIDAD",
+        "canal": "Matematicas Profe Edinsonnet",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "Las tres URL y los tres títulos salieron de la lista comprobada. El elegido explica por qué se achica el resultado, el acento es de México y entra directo al punto. Alta confianza porque cubre todos los criterios.",
+    "noSePuede": null
+  },
   "contacto": null,
-  "completar": null,
-  "escalera": null,
+  "completar": {
+    "temaNumero": 8,
+    "materia": "matematicas",
+    "pasoDelCanon": 1,
+    "queFalta": "el resultado de dividir el numerador y el denominador entre el mismo número, en la simplificación cruzada",
+    "expresion": [
+      {
+        "tipo": "fraccion",
+        "arriba": 2,
+        "abajo": 3
+      },
+      {
+        "tipo": "texto",
+        "valor": "×"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 9,
+        "abajo": 10
+      },
+      {
+        "tipo": "texto",
+        "valor": "= El 9 y el 3 se dividen entre 3: queda"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "y 1."
+      }
+    ],
+    "respuesta": {
+      "tecleado": "3",
+      "aceptaTambien": [],
+      "comoSeLee": "tres"
+    },
+    "pistas": [
+      {
+        "texto": "Estás dividiendo dos números entre 3 para que después sea más fácil multiplicar. El 9 entre 3 es cuanto.",
+        "orden": 1
+      },
+      {
+        "texto": "Tachas el número de arriba y el de abajo que se dividieron, y escribes lo que quedó en su lugar. Cuanto da nueve entre tres.",
+        "orden": 2
+      },
+      {
+        "texto": "El 9 está arriba en la segunda fracción y el 3 está abajo en la primera. Los dos se dividen entre 3. Nueve dividido entre tres da este número.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": null,
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 8,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En el taller cortan 2/3 de una tabla en pedazos de 1/6 de tabla cada uno.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 9,
+            "abajo": 10
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el resultado?",
+        "respuesta": {
+          "tecleado": "3/5",
+          "aceptaTambien": [],
+          "comoSeLee": "tres quintos"
+        },
+        "pistas": [
+          {
+            "texto": "Tienes que multiplicar dos fracciones: busca números de arriba y abajo que se dividan entre el mismo número, aunque estén en fracciones distintas.",
+            "orden": 1
+          },
+          {
+            "texto": "El 9 de arriba y el 3 de abajo se dividen entre 3, quedando 3 y 1. El 2 de arriba y el 10 de abajo se dividen entre 2, quedando 1 y 5.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Una receta lleva 4/5 de una taza de harina, pero haces la mitad de la receta.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 2
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuánta harina necesitas?",
+        "respuesta": {
+          "tecleado": "2/5",
+          "aceptaTambien": [],
+          "comoSeLee": "dos quintos"
+        },
+        "pistas": [
+          {
+            "texto": "Tienes que tomar una fracción de otra fracción: multiplica las dos.",
+            "orden": 1
+          },
+          {
+            "texto": "El 4 de arriba y el 2 de abajo se dividen entre 2, quedando 2 y 1. Luego multiplica: arriba 2 por 1, abajo 5 por 1.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la tienda venden listones de 3/4 de metro. Necesitas los 2/3 de un listón.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué fracción de metro es lo que necesitas?",
+        "respuesta": {
+          "tecleado": "1/2",
+          "aceptaTambien": [],
+          "comoSeLee": "un medio"
+        },
+        "pistas": [
+          {
+            "texto": "Tienes que encontrar qué fracción de metro es. El 3 de arriba en la primera fracción y el 3 de abajo en la segunda son el mismo número.",
+            "orden": 1
+          },
+          {
+            "texto": "El 3 de arriba y el 3 de abajo se dividen entre 3, quedando 1 y 1. Ahora multiplica: arriba 1 por 2, abajo 4 por 1.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "El maestro escribió que multiplicó dos fracciones y el resultado fue 2/5, pero borró una de las fracciones.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 5
+          }
+        ],
+        "pregunta": "¿Cuál es la fracción que se borró?",
+        "respuesta": {
+          "tecleado": "1/2",
+          "aceptaTambien": [],
+          "comoSeLee": "un medio"
+        },
+        "pistas": [
+          {
+            "texto": "Ya tienes el resultado de la multiplicación. Ahora tienes que pensar al revés: qué fracción multiplicada por 4/5 te da 2/5.",
+            "orden": 1
+          },
+          {
+            "texto": "El 4 de arriba en la primera fracción se puede simplificar con el 2 de arriba en el resultado. Piensa: qué número multiplicado por 4 da 2 en el numerador.",
+            "orden": 2
+          },
+          {
+            "texto": "La fracción que falta tiene 1 arriba y 2 abajo. Comprueba: 4/5 × 1/2 = 4/10 = 2/5.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      },
+      {
+        "situacion": "La costurera escribió que para un mantel necesitaba una fracción de metro de tela, multiplicada por 3/4, y salió 3/8 de metro.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 8
+          }
+        ],
+        "pregunta": "¿Cuánta tela tenía al principio?",
+        "respuesta": {
+          "tecleado": "1/2",
+          "aceptaTambien": [],
+          "comoSeLee": "un medio"
+        },
+        "pistas": [
+          {
+            "texto": "Aquí el hueco está al principio: es la fracción que se multiplicó. Tienes que pensar qué se multiplicó por 3/4 para que saliera 3/8.",
+            "orden": 1
+          },
+          {
+            "texto": "Mira el 3 de arriba en el resultado. Ese mismo 3 está arriba en 3/4. Algo se simplificó en cruz.",
+            "orden": 2
+          },
+          {
+            "texto": "La fracción que falta es 1/2. Comprueba multiplicando: 1/2 × 3/4 primero el 2 y el 4 se dividen entre 2, luego multiplica.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
   "error": null,
   "explicar": null
 }

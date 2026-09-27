@@ -148,10 +148,449 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
-  "completar": null,
+  "ver": {
+    "temaNumero": 12,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué 0.3 × 0.4 sale más chico que cada número?",
+    "resumen": "Cuando multiplicas decimales, el resultado trae más cifras después del punto porque cada decimal es una fracción. Sumar los decimales de los dos números te dice dónde va el punto en el resultado.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué multiplicar dos decimales da un resultado más pequeño que los números originales, no nada más cómo se cuenta el punto.",
+        "Muestra que el punto va donde se suma el total de cifras decimales de los dos números.",
+        "Es del nivel de sexto de primaria: números decimales menores que 1 con una o dos cifras decimales.",
+        "Llega al ejemplo y explica la regla antes del minuto uno, sin introducción larga.",
+        "El español es de México o de América Latina."
+      ],
+      "descarta": [
+        "Cuenta mal los decimales o coloca el punto sin explicar por qué: enseña el error típico como si fuera el método.",
+        "Es un repaso de operaciones sin enfoque en decimales, o mezcla multiplicación con división.",
+        "Presenta tablas o listas de reglas sin ningún ejemplo o explicación visual."
+      ],
+      "consulta": "video explicación \"Multiplicación de decimales\" matemáticas 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "U0ZTl556Eio",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "El título dice explícitamente que es para niños y trata multiplicación de decimales. El canal Math2me Kids produce contenido estructurado para primaria. Explica la regla del punto sin saltar pasos.",
+      "url": "https://www.youtube.com/watch?v=U0ZTl556Eio",
+      "titulo": "🔴Multiplicación de decimales | para niños",
+      "canal": "Math2me Kids",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "ohE17YJnPsk",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo del mismo canal confiable. Trata multiplicación con punto decimal a nivel de quinto de primaria, muy cercano al tema. Usa ejemplos claros del conteo de decimales.",
+        "url": "https://www.youtube.com/watch?v=ohE17YJnPsk",
+        "titulo": "Multiplicación con punto decimal | 5to de primaria",
+        "canal": "Math2me Kids",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "h0J6vJUc5E4",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Tercer respaldo. Muestra un segundo ejemplo de multiplicación con decimales, lo que refuerza la regla del conteo del punto. Si los dos primeros fallan, este cierra la cadena.",
+        "url": "https://www.youtube.com/watch?v=h0J6vJUc5E4",
+        "titulo": "Multiplicación con punto decimal ejemplo 2 de 3 | Aritmética - Alfa MatFis",
+        "canal": "Vitual Primaria",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "Las tres URLs salieron de la búsqueda en YouTube, los títulos y canales son literales del resultado, y el elegido está en español de México producido por Math2me Kids, un canal de educación primaria establecido. Explica por qué el resultado es más pequeño, no nada más el procedimiento. Las dos alternativas vienen del mismo canal confiable o de productores reconocidos en América Latina.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 12,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Cuando multiplicas 0.5 × 0.6, ignoras los puntos. ¿Cuál es la multiplicación que haces?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5 × 6 = 30"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Ignoraste los puntos y multiplicaste los números enteros: 5 por 6."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.5 × 0.6 = 0.30"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No ignoraste los puntos: multiplicaste los decimales directamente. El primer paso es quitarlos de la mente y ver solo los números."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "50 × 60 = 3000"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste mal. El 0.5 es 5 décimos, que es el número 5; el 0.6 es 6 décimos, que es el número 6."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "55 × 66 = 3630"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Duplicaste las cifras. Cuando ignoras un punto, el número se queda tal cual: 0.5 es solo 5, no 55."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En 0.2 × 0.7, ¿cuántas cifras hay después del punto en 0.2?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El punto sí está en 0.2. La cifra después del punto es el 2."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "1"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste bien: después del punto de 0.2 hay un número, el 2."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste el 2, pero no cuentas qué es el 2: cuentas cuántas cifras hay después del punto. Hay una cifra, que es el 2."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste el 0, el punto y el 2 como si los tres fueran cifras. Solo el 2 está después del punto."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Multiplicas 3 × 4 y te da 12. En 0.3 × 0.4, una tiene 1 decimal y la otra tiene 1 decimal. ¿Cuántos decimales lleva 0.3 × 0.4?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Contaste un solo decimal porque viste un 1 en el resultado de 3 × 4. Pero tienes dos números decimales al multiplicar, así que debes sumar sus decimales: 1 + 1 = 2."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste los decimales de los dos números: 1 + 1 = 2 decimales en el resultado."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste 0.3 como si tuviera tres decimales, o sumaste 1 + 1 + 1. Los dos números solo traen un decimal cada uno."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El 12 tiene dos cifras, pero no son decimales. Los decimales vienen del punto, no de cuántos números tiene el resultado."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En 0.4 × 0.9, multiplicas 4 × 9 = 36 y sumas 1 + 1 = 2 decimales. ¿Dónde pones el punto?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3.6"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Moviste el punto solo una posición. Necesitas mover dos posiciones a la izquierda porque el resultado lleva 2 decimales."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.36"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Moviste el punto dos posiciones a la izquierda. Con 2 decimales, 36 se convierte en 0.36."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "36"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No moviste el punto. El resultado sin punto es el paso 1. El paso 5 es colocar el punto en la posición correcta."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.036"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Moviste el punto tres posiciones. Contar mal los decimales te puede llevar aquí, pero el resultado tiene 2 decimales, no 3."
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 12,
+    "materia": "matematicas",
+    "pasoDelCanon": 4,
+    "queFalta": "la cantidad de cifras decimales que debe tener el resultado",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "En 0.3 hay 1, en 0.4 hay 1. Sumas:"
+      },
+      {
+        "tipo": "texto",
+        "valor": "1 + 1 ="
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "cifras decimales en el resultado"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "2",
+      "aceptaTambien": [],
+      "comoSeLee": "dos"
+    },
+    "pistas": [
+      {
+        "texto": "Contar las cifras decimales es lo que te permite colocar el punto en el lugar correcto del resultado. ¿Cuántas cifras hay después del punto en cada número?",
+        "orden": 1
+      },
+      {
+        "texto": "Sumas las cifras decimales de los dos números. El 0.3 aporta sus decimales, y el 0.4 aporta los suyos.",
+        "orden": 2
+      },
+      {
+        "texto": "El primer número trae 1 cifra después del punto, el segundo también trae 1. Cuando sumas esos dos números de decimales, ¿qué te da?",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "1",
+      "queSeLeDice": "Volviste a contar solo el decimal de un número. Pero ambos números tienen decimales: el 0.3 tiene su cifra decimal, y el 0.4 también. Tienes que sumar lo que aporta cada uno."
+    },
+    "noSePuede": null
+  },
   "escalera": null,
-  "error": null,
+  "error": {
+    "temaNumero": 12,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien multiplicó: 0.3 × 0.4 ="
+      },
+      {
+        "tipo": "texto",
+        "valor": "Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Ignoro los puntos: 3 × 4 = 12"
+          }
+        ],
+        "siLoTocas": "Ese paso multiplica sin los puntos como corresponde. Los 3 y el 4 vienen del 0.3 y el 0.4 del problema, así que la multiplicación está bien."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "En 0.3 hay 1 cifra después del punto"
+          }
+        ],
+        "siLoTocas": "Ese paso cuenta bien: el 0.3 trae un 3 después del punto, así que es 1 cifra decimal. El conteo está correcto."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "En 0.4 hay 1 cifra después del punto"
+          }
+        ],
+        "siLoTocas": "Ese paso también cuenta bien: el 0.4 trae un 4 después del punto, así que es 1 cifra decimal. El conteo del segundo número está correcto."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "1 cifra decimal en el resultado"
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que le pasa su número a los pasos siguientes."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Pongo el punto una posición a la izquierda: 1.2"
+          }
+        ],
+        "siLoTocas": "La operación está bien hecha con lo que llegó: si el resultado tuviera 1 cifra decimal, entonces el punto iría una posición a la izquierda del 12 y daría 1.2. Ese paso no inventó su número, lo recibió."
+      }
+    ],
+    "pasoMalo": 4,
+    "arrastre": "El 1 del paso 4 es el que el paso 5 usa para poner el punto en 12. Con un decimal el punto queda después de la posición equivocada, y por eso el resultado queda 1.2 en vez de 0.12. El paso 5 está bien hecho con un número malo.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "No sumó los decimales de los dos números.",
+        "esElBueno": true,
+        "queRevela": "El paso 4 debería sumar 1 + 1 = 2, porque el resultado lleva todos los decimales de los dos números juntos. En cambio pone 1 como si fuera solo. En 0.3 × 0.4 los dos números traen decimales y los dos tienen que contar."
+      },
+      {
+        "texto": "Contó el número de cifras en el resultado 12 en lugar del total.",
+        "esElBueno": false,
+        "queRevela": "Quien escoge esto está confundiendo dónde se cuentan los decimales: en los números originales, no en la respuesta. El 12 tiene un 1 y un 2, pero el conteo de decimales no es sobre los dígitos de 12. Es sobre los dígitos después del punto en 0.3 y 0.4."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Cuatro de los cinco pasos hacen bien lo que les toca. El error no es una cuenta mal hecha: es un número que no debería estar donde está."
+      },
+      {
+        "orden": 2,
+        "texto": "Los primeros tres pasos cuentan y multiplican. Uno de esos tres pasos cuenta un dato, y ese dato aparece sin ser sumado con el otro dato que también se contó."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara lo que los pasos 2 y 3 encontraron: ¿qué debería pasar con esos dos números en el paso 4?"
+      }
+    ],
+    "noSePuede": null
+  },
   "explicar": null
 }

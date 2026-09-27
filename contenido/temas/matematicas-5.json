@@ -193,10 +193,520 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
-  "completar": null,
+  "ver": {
+    "temaNumero": 5,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué si restas lo mismo arriba y abajo no queda lo mismo?",
+    "resumen": "Cambiar el numerador y el denominador por el mismo camino—restar o dividir—sólo conserva el valor de la fracción si divides. Restar la misma cantidad arriba y abajo la rompe: 18/24 menos 2 arriba y abajo no es lo mismo que 3/4.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué dividir arriba y abajo entre el mismo número conserva el valor de la fracción, no nada más cómo se hace.",
+        "Es del nivel de sexto de primaria: fracciones simples con numeradores y denominadores entre 1 y 24.",
+        "Está en español de México o de América Latina.",
+        "Llega a un ejemplo simplificando una fracción antes del minuto dos, sin presentación larga del canal.",
+        "Muestra que restar lo mismo arriba y abajo NO funciona, o contrasta restar contra dividir para que quede claro por qué uno funciona y el otro no."
+      ],
+      "descarta": [
+        "Enseña simplificar restando lo mismo arriba y abajo, como si fuera el método correcto.",
+        "Es un examen de sexto o un video de otra materia que toca fracciones de paso.",
+        "Sólo amplifica fracciones (multiplica arriba y abajo) sin tocar simplificación.",
+        "No explica el por qué: sólo da pasos de cómo hacerlo."
+      ],
+      "consulta": "video explicación \"Fracciones equivalentes y simplificar\" matemáticas 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "LGg-pMlLWBg",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "El video de Julio Profe abre con un ejemplo donde amplifica y simplifica fracciones equivalentes. Explica por qué al multiplicar o dividir arriba y abajo entre el mismo número se obtiene una fracción que vale lo mismo. Cumple todos los criterios: es corto, va al punto, está en español de América Latina, muestra el por qué y no cae en el error de restar.",
+      "url": "https://www.youtube.com/watch?v=LGg-pMlLWBg",
+      "titulo": "🎖️ Amplificación y simplificación de fracciones #julioprofe",
+      "canal": "julioprofe",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "Q-No2nejY-o",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Primer respaldo. Marcos Primera explica amplificación y simplificación paso a paso y contrasta ambas. Es peor que el elegido porque tarda más en llegar al ejemplo, pero si el primero se cae, este sostiene el tema.",
+        "url": "https://www.youtube.com/watch?v=Q-No2nejY-o",
+        "titulo": "Fracciones equivalentes: Amplificación y simplificación paso a paso.",
+        "canal": "Marcos Primera - Profesor de Matemáticas",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "23YET1BYsXk",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. El Profe Matemático simplifica fracciones y explica el concepto de equivalencia. Va directo al punto y el nivel es el correcto. Es segundo porque el elegido abre con amplificación, que prepara mejor para entender por qué la división también funciona.",
+        "url": "https://www.youtube.com/watch?v=23YET1BYsXk",
+        "titulo": "Simplificación de fracciones | Fracciones equivalentes | Clases de Matemáticas",
+        "canal": "El Profe Matemático",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "Las tres URL salieron literales de la lista proporcionada. El video elegido explica el por qué, no sólo cómo. El español es de América Latina, el canal es reconocido, el video es corto y va al punto. No hay pegas: la confianza es alta.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "materia": "matematicas",
+    "temaNumero": 5,
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué número divide tanto a 12 como a 18?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El 2 divide a los dos, pero no es el único. Busca un número más grande que también los divida a ambos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "6"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Encontraste un número que divide exactamente a 12 y a 18. Con éste o con otro que funcione, simplificas la fracción.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El 3 divide a los dos, pero hay otro número más grande que también los divide a ambos.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "36"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 12 por 3 en lugar de buscar un número que divida a ambos. El divisor tiene que ser más pequeño que los números originales.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Si simplificas"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 20,
+            "abajo": 30
+          },
+          {
+            "tipo": "texto",
+            "valor": "dividiendo entre 10, ¿qué pasa con el 20?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Se resta, queda 10"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Restaste 10 del 20 y obtuviste 10. Cuando restas la misma cantidad arriba y abajo, la fracción cambia de valor. Tienes que dividir, no restar.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Se divide, queda 2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste 20 entre 10 y obtuviste 2. Dividir arriba y abajo entre el mismo número no cambia lo que la fracción vale.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Se multiplica por 2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicas cuando comparas fracciones. Aquí necesitas dividir ambos pisos de la fracción entre el mismo número.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Se queda en 20"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Si no cambias el 20, entonces no estás simplificando. Tienes que dividirlo entre 10 junto con el 30.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Simplifica"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 14,
+            "abajo": 21
+          },
+          {
+            "tipo": "texto",
+            "valor": "dividiendo entre 7."
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 7,
+                "abajo": 14
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste el 14 entre 2 en lugar de entre 7. Recuerda: el número que escoges tiene que dividir a los dos pisos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 2,
+                "abajo": 3
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste 14 entre 7 y obtuviste 2; dividiste 21 entre 7 y obtuviste 3. La fracción simplificada es dos tercios.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 12,
+                "abajo": 14
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste 2 del 14 y 7 del 21. Simplificar es dividir los dos pisos entre el mismo número, no restar.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 21,
+                "abajo": 14
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Invertiste la fracción. Después de simplificar, conserva el orden: lo que estaba arriba sigue arriba.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": ", ¿hay otro número que divida a los dos?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, el 3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El 3 divide al 3, pero no divide al 5. Necesitas un número que divida a ambos pisos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, el 5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El 5 divide al 5, pero no divide al 3. Necesitas un número que divida a ambos pisos.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "No, nada más el 1"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Verdad. Cuando solo el 1 divide a los dos números, la fracción ya está en su forma más simple.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, el 15"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 3 por 5. El divisor tiene que ser más pequeño que ambos números, no mayor.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 5,
+    "materia": "matematicas",
+    "pasoDelCanon": 2,
+    "queFalta": "el resultado de dividir 18 entre 6",
+    "expresion": [
+      {
+        "tipo": "fraccion",
+        "arriba": 18,
+        "abajo": 24
+      },
+      {
+        "tipo": "texto",
+        "valor": "—÷6→"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "/4"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "3",
+      "aceptaTambien": [],
+      "comoSeLee": "tres"
+    },
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Divides el número de arriba de la fracción entre 6. ¿Cuánto es 18 ÷ 6?"
+      },
+      {
+        "orden": 2,
+        "texto": "Divides el de arriba entre ese número. El de arriba es 18, y lo divides entre 6."
+      },
+      {
+        "orden": 3,
+        "texto": "18 ÷ 6 da el número que va en el espacio. Cuéntalo: 6 + 6 + 6 = 18, entonces 18 ÷ 6 = 3."
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "16",
+      "queSeLeDice": "Restaste 2 de 18 y sacaste 16. Pero aquí no restas: divides 18 entre 6. Multiplica 6 por el número que pusiste: 6 × 16 = 96, no 18. En cambio, 6 × 3 = 18. Vuelve al paso de dividir el de arriba entre ese número."
+    },
+    "noSePuede": null
+  },
   "escalera": null,
-  "error": null,
+  "error": {
+    "temaNumero": 5,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien simplificó la fracción"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 18,
+        "abajo": 24
+      },
+      {
+        "tipo": "texto",
+        "valor": "Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Busco un número que divida a 18 y a 24: el 6."
+          }
+        ],
+        "siLoTocas": "Ese paso identifica cuál es el número que sirve para dividir arriba y abajo. El 6 los divide a los dos exactamente. No es el error."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "fraccion",
+            "arriba": 18,
+            "abajo": 24
+          },
+          {
+            "tipo": "texto",
+            "valor": "—"
+          },
+          {
+            "tipo": "texto",
+            "valor": "−2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 16,
+            "abajo": 22
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese paso es el que les pasa sus números a los dos pasos que vienen después."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Dejo la fracción en su forma más simple: "
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 14,
+            "abajo": 20
+          }
+        ],
+        "siLoTocas": "La resta de 18 menos 2 da 16, no 14. Pero ese paso no inventó el 16: lo recibió del paso de arriba y lo usó bien. Lo que está mal es de donde vino."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Reviso que 14 y 20 no tengan otro divisor: sólo el 1."
+          }
+        ],
+        "siLoTocas": "La cuenta está bien: si el 14 y el 20 vinieron de arriba, ese paso los revisa bien. El problema no empezó acá."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "fraccion",
+            "arriba": 18,
+            "abajo": 24
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 14,
+            "abajo": 20
+          }
+        ],
+        "siLoTocas": "Comprueba que la fracción original vale lo mismo que la simplificada. Ese paso repite los números que recibió, pero los números no son iguales: 18/24 no vale lo mismo que 14/20."
+      }
+    ],
+    "pasoMalo": 2,
+    "arrastre": "El −2 y la fracción 16/22 del paso 2 son lo que genera el 14/20 del paso 3. El paso 3 resta mal porque partió de un número incorrecto, y el 14 y el 20 siguen bajando al paso 4 donde se revisan, y al paso 5 donde se comparan. Si sólo buscas el renglón raro, no lo encuentras: todos hacen bien lo que les toca.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Restó en vez de dividir los dos números.",
+        "esElBueno": true,
+        "queRevela": "En el paso 1 identifica que el 6 es el número que divide a los dos. Pero en el paso 2 en vez de dividir arriba entre 6 y abajo entre 6, restó 2 a cada uno. Dividir arriba y abajo entre el mismo número deja la fracción con el mismo valor; restar la misma cantidad cambia cuánto representa."
+      },
+      {
+        "texto": "Restó en vez de encontrar el máximo común divisor.",
+        "esElBueno": false,
+        "queRevela": "Quien escoge esto ya sabe que hay que hacer algo con un número que divide a los dos. Pero el error no es no buscar el MCD: lo buscó en el paso 1 y lo encontró. El error es qué operación hizo una vez que lo encontró."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Cuatro de los cinco pasos hacen bien lo que prometen hacer. El error no es una operación mal ejecutada: es una operación equivocada."
+      },
+      {
+        "orden": 2,
+        "texto": "El paso 1 busca un número que divida a 18 y a 24, y lo encuentra. Mira qué operación debería usar con ese número en el paso 2."
+      },
+      {
+        "orden": 3,
+        "texto": "La fracción original 18/24 vale tres cuartos. Compara: ¿cuánto vale 16/22? ¿Cuánto vale 3/4? ¿Son iguales?"
+      }
+    ],
+    "noSePuede": null
+  },
   "explicar": null
 }

@@ -169,10 +169,621 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
+  "ver": {
+    "temaNumero": 14,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué tres octavos no es tres punto ocho?",
+    "resumen": "Una fracción es una división: el número de arriba va dentro, el de abajo va afuera. Cuando divides, el resultado puede terminar exacto o seguir repitiendo la misma cifra para siempre.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué una fracción es una división y no una forma de escribir dos números separados.",
+        "Enseña a dividir el numerador entre el denominador con la galera, paso a paso.",
+        "Distingue entre decimales exactos que terminan y decimales periódicos que repiten una cifra.",
+        "Es del nivel de primero de secundaria: fracciones simples, sin números complicados.",
+        "Llega al ejemplo y la división antes del minuto dos, sin presentaciones largas."
+      ],
+      "descarta": [
+        "Lee una fracción como dos números sueltos: por ejemplo, 3/8 como tres punto ocho.",
+        "Divide el denominador entre el numerador en vez del numerador entre el denominador.",
+        "Es un examen resuelto de otro nivel o una lista de reglas sin ejemplos."
+      ],
+      "consulta": "video explicación \"De fracción a decimal y de vuelta\" matemáticas 1º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "3t7fQ2cPjxw",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Enseña que una fracción es una división (numerador entre denominador) y lleva paso a paso la galera. El profesor explica por qué el resultado empieza en cero cuando el numerador es más chico que el denominador, no sólo cómo se hace.",
+      "url": "https://www.youtube.com/watch?v=3t7fQ2cPjxw",
+      "titulo": "Convertir fracción en decimal",
+      "canal": "Matemáticas profe Alex",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "iq_71Nkoev0",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "Primer respaldo del mismo canal. Muestra un ejemplo adicional con la división paso a paso. Es más corto y directo, pero toca decimales exactos sin profundizar en los periódicos.",
+        "url": "https://www.youtube.com/watch?v=iq_71Nkoev0",
+        "titulo": "Convertir fracciones a decimales | Ejemplo 2",
+        "canal": "Matemáticas profe Alex",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "I5VwrdBxXnQ",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Va hacia los decimales periódicos y las fracciones generatrices, así que toca el tema desde la otra dirección. Falla un criterio: es más para cuando ya sabes convertir de fracción a decimal y quieres regresar.",
+        "url": "https://www.youtube.com/watch?v=I5VwrdBxXnQ",
+        "titulo": "Conversión de decimales periódicos a fracciones SECUNDARIA 1° GRADO",
+        "canal": "Memito numerito",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "La URL y el título del video elegido salieron literales en la búsqueda. El canal es Matemáticas profe Alex, reconocible y con muchos videos. El video explica el por qué (que una fracción es una división) y no sólo el procedimiento. El español es de México. Los dos respaldos existen y tienen criterios claros de cuándo usarlos.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 14,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿A qué decimal equivale"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 4
+          }
+        ],
+        "pasoDelCanon": 1,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "1.4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Leíste el numerador antes del punto y el denominador después, así que 1/4 te dio 1.4. Pero tienes que dividir el numerador entre el denominador: 1 ÷ 4.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.25"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste el numerador entre el denominador: 1 ÷ 4 = 0.25.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste el denominador entre el numerador al revés: 4 ÷ 1 = 4, pero escribiste 0.4. Acuérdate de hacer numerador entre denominador.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "4.1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Leíste el denominador antes del punto y el numerador después. La fracción se lee numerador entre denominador, no al revés.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es el primer paso para pasar"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": "a decimal?"
+          }
+        ],
+        "pasoDelCanon": 1,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Plantear 5 ÷ 3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Invertiste numerador y denominador. Una fracción es siempre numerador entre denominador.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Plantear 3 ÷ 5"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Plantaste la división correcta: el numerador se divide entre el denominador.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Escribir 3.5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás saltando el cálculo y leyendo directo la fracción como si fuera un decimal. Tienes que hacer la división paso a paso.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Multiplicar 3 × 5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás multiplicando donde deberías dividir. Una fracción es una división, no una multiplicación.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En la división 2 ÷ 8, ¿qué pasa después de que pones un cero al residuo?"
+          }
+        ],
+        "pasoDelCanon": 3,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sumas un decimal"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No sumas: lo que haces es agregar un lugar decimal al cociente para que la división avance.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Continúas dividiendo"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Seguiste el proceso: agregas un cero al residuo y buscas cuántas veces cabe el divisor en ese número nuevo.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Detienes la operación"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Si aún hay residuo, no paras: sigues agregando ceros y dividiendo hasta que el residuo sea cero o empiece a repetirse.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Multiplicas por 10"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Agregar un cero al residuo no es lo mismo que multiplicar. Es una forma de seguir dividiendo cuando el cociente es más chico.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué diferencia hay entre 0.5 y 0.555...?"
+          }
+        ],
+        "pasoDelCanon": 5,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Uno termina, otro repite"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Viste que 0.5 es exacto y 0.555... repite el 5 para siempre. Eso vuelve uno periódico y otro exacto.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Uno es más grande"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "En valor, 0.555... es más grande que 0.5, pero eso no es lo que los diferencia. La diferencia está en si el decimal termina o se repite.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Tienen distinto numerador"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los decimales no tienen numerador ni denominador por escrito. Vienen de dividir: la diferencia está en cómo termina esa división.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Uno es fracción, otro no"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los dos pueden ser fracciones. 0.5 es 1/2 y 0.555... es 5/9. Lo que cambia es si el decimal es exacto o periódico.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": null,
-  "escalera": null,
-  "error": null,
+  "escalera": {
+    "temaNumero": 14,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En la tiendita cortan 3/8 de metro de cinta para un moño. Necesitan saber qué decimal es.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 8
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué número decimal representa 3/8?",
+        "respuesta": {
+          "tecleado": "375",
+          "aceptaTambien": [],
+          "comoSeLee": "cero punto trescientos setenta y cinco"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Una fracción es una división: el número de arriba entre el de abajo."
+          },
+          {
+            "orden": 2,
+            "texto": "Divides 3 entre 8 como hacías en primaria: 3 no cabe en 8, así que usas decimales."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un pastel se parte en 4 porciones iguales y venden 1 porción. Quieren anotarla como decimal.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué número decimal es 1/4?",
+        "respuesta": {
+          "tecleado": "25",
+          "aceptaTambien": [],
+          "comoSeLee": "cero punto veinticinco"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Un cuarto es la mitad de la mitad: divide 1 entre 4."
+          },
+          {
+            "orden": 2,
+            "texto": "Haces la división: 1 no cabe en 4, bajas ceros. 10 entre 4 cabe 2 veces, sobran 2."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "En una receta de un refresco mezclan 2/3 de litro de jugo con agua. Anotarán el jugo como decimal.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué número decimal da 2/3?",
+        "respuesta": {
+          "tecleado": "666",
+          "aceptaTambien": [
+            "66"
+          ],
+          "comoSeLee": "cero punto seis periódico"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí el decimal no termina: el 6 se repite para siempre."
+          },
+          {
+            "orden": 2,
+            "texto": "Divides 2 entre 3: 2 no cabe, bajas ceros. 20 entre 3 cabe 6 veces, sobran 2. Vuelves a bajar un cero y te toca 6 otra vez."
+          },
+          {
+            "orden": 3,
+            "texto": "Cuando en el residuo ves el mismo número dos veces, ya sabes que va a repetirse siempre: es un decimal periódico."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "Alguien escribió que cierto decimal es 0.5, pero borró cuál era la fracción original.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 0.5"
+          }
+        ],
+        "pregunta": "¿Qué fracción es 0.5?",
+        "respuesta": {
+          "tecleado": "1/2",
+          "aceptaTambien": [],
+          "comoSeLee": "un medio"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí tienes el decimal y falta la fracción: es lo contrario de lo que hacías antes."
+          },
+          {
+            "orden": 2,
+            "texto": "0.5 tiene un dígito después del punto, así que en el denominador va 10. El numerador es 5."
+          },
+          {
+            "orden": 3,
+            "texto": "Te queda 5/10, pero eso se simplifica a la mitad."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": true
+      },
+      {
+        "situacion": "El médico apuntó que cierto decimales 0.875, pero se le borrró la fracción que midió.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 0.875"
+          }
+        ],
+        "pregunta": "¿Qué fracción corresponde a 0.875?",
+        "respuesta": {
+          "tecleado": "7/8",
+          "aceptaTambien": [],
+          "comoSeLee": "siete octavos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "0.875 tiene tres dígitos después del punto, así que el denominador lleva tres ceros: 1000."
+          },
+          {
+            "orden": 2,
+            "texto": "El numerador es 875. Te queda 875/1000."
+          },
+          {
+            "orden": 3,
+            "texto": "Simplifica dividiendo arriba y abajo por 125 para llegar a la fracción más corta."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 14,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien convirtió"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 3,
+        "abajo": 8
+      },
+      {
+        "tipo": "texto",
+        "valor": "a decimal. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Planteo la división:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 8
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 3.8"
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que les pasa su número a los pasos que siguen."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "El 3 no cabe en el 8, así que empiezo con 0.8"
+          }
+        ],
+        "siLoTocas": "La explicación de qué pasa cuando el numerador es más chico que el denominador está bien. Ese paso no inventó ninguno de sus números."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Subo un cero al residuo: 30 ÷ 8 = 3, quedan 6."
+          }
+        ],
+        "siLoTocas": "La división avanza bien: eso es lo que pasa cuando agregas un cero para seguir. Ese paso recibió el número del que vino arriba y lo usó."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Repito: 60 ÷ 8 = 7, quedan 4. Luego 40 ÷ 8 = 5, quedan 0."
+          }
+        ],
+        "siLoTocas": "La división está bien hecha hasta el final: 7 y 5 salen de las cuentas. Ese paso no inventó nada, sólo siguió el proceso."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 8
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 3.8 es exacto."
+          }
+        ],
+        "siLoTocas": "El resultado repite el número que recibió del paso 1: sigue siendo 3.8 aunque la división debería haber dado otro decimal."
+      }
+    ],
+    "pasoMalo": 1,
+    "arrastre": "El 3.8 del paso 1 reaparece en el paso 5 como resultado final. Tres octavos es menor que uno, así que el decimal tiene que empezar con 0, no con 3. El resultado es más grande que la fracción de la que empezaste: eso delata el error.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Leyó la fracción como si el numerador fuera antes del punto decimal.",
+        "esElBueno": true,
+        "queRevela": "Es exacto: escribe 3/8 como 3.8, confundiendo el símbolo de fracción con un punto decimal. La fracción es una división que no está hecha todavía; el numerador no es un número que viene antes de nada. Tres octavos es menor que uno, así que el decimal debe empezar con 0."
+      },
+      {
+        "texto": "Sumó el numerador y el denominador.",
+        "esElBueno": false,
+        "queRevela": "Si sumara 3 + 8 tendría 11, no 3.8. Quien escoge esto piensa que en el paso 1 se hace alguna operación con los dos números, pero no ve cuál. El resultado sí tiene ambos números dentro, sólo que en el orden equivocado."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Una fracción es una división sin hacer. El paso 1 tiene que escribir esa división antes de hacerla, no un resultado que ya parece un decimal."
+      },
+      {
+        "orden": 2,
+        "texto": "El 3 del problema es más chico que el 8. Busca dónde en los renglones aparece un número que no cabe en este rango: más pequeño que 1."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara cada renglón con la fracción del enunciado. En uno de ellos aparece un número que parece un decimal, pero las fracciones no se leen así."
+      }
+    ],
+    "noSePuede": null
+  },
   "explicar": null
 }

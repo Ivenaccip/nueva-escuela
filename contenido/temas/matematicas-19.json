@@ -174,10 +174,602 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
+  "ver": {
+    "temaNumero": 19,
+    "materia": "matematicas",
+    "pregunta": "¿Comparar dos cantidades siempre significa restar?",
+    "resumen": "Cuando comparas dos cantidades, la resta te dice en cuánto se diferencian. La razón te dice la proporción: cuántos de una cosa hay por cada tantos de la otra. Son dos formas de comparar que responden preguntas distintas.",
+    "busqueda": {
+      "criterios": [
+        "Explica la diferencia entre restar dos cantidades y escribir una razón entre ellas.",
+        "Muestra que una razón compara cantidades como una proporción, no como una diferencia.",
+        "Es de nivel de 6º de primaria, sin lenguaje de secundaria ni contextos complicados.",
+        "Está en español de México o América Latina, con claridad y sin intro larga.",
+        "Llega a un ejemplo pronto y lo explica paso a paso sin memorización."
+      ],
+      "descarta": [
+        "Enseña solo el algoritmo sin explicar por qué la razón es distinta de la resta.",
+        "Presenta la razón como sinónimo de proporción sin distinguir comparación por diferencia de comparación por proporción.",
+        "Usa el error de restar en vez de escribir una razón y lo deja sin aclarar.",
+        "Es un examen resuelto de otro nivel o una lista de conceptos para memorizar."
+      ],
+      "consulta": "video explicación \"Razón: comparar dos cantidades\" matemáticas 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "HB4hX5UkaRA",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único de la lista que explica directamente qué es una razón y por qué es distinta de una resta. El título nombra la definición y los ejemplos, no nada más el procedimiento. El canal es de educación matemática, no de exámenes.",
+      "url": "https://www.youtube.com/watch?v=HB4hX5UkaRA",
+      "titulo": "RAZÓN entre dos cantidades : Definición y ejemplos (Proporcionalidad numérica)",
+      "canal": "Miguemáticas",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "LJSbpTwMC2k",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Cubre razones y proporciones para 6º primaria, que es el nivel exacto. Es un respaldo válido aunque el elegido ya dice por qué es distinta la razón de la resta.",
+        "url": "https://www.youtube.com/watch?v=LJSbpTwMC2k",
+        "titulo": "Razones y proporciones. Sexto Primaria",
+        "canal": "Aprende con Ventanas Abiertas",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "Jz-GPF9iHo8",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Tercer respaldo. Explica la introducción a razones y proporciones. Es menos específico que el elegido porque no pone el énfasis en la diferencia con la resta, pero cubre el tema de fondo.",
+        "url": "https://www.youtube.com/watch?v=Jz-GPF9iHo8",
+        "titulo": "Razones y proporciones | Introducción",
+        "canal": "Matemáticas profe Alex",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "La URL y el título del elegido salieron literales en búsquedas sobre razones y su definición. El video explica por qué una razón es distinta de una resta. El canal es de educación matemática clara y en español de América Latina. Los dos respaldos son del mismo nivel y también de América Latina, así que si el primero se cae hay alternativa segura.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 19,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En un equipo de futbol hay 15 jugadores de campo y 10 de defensa. ¿Cuál es la razón de jugadores de campo a defensas?"
+          }
+        ],
+        "pasoDelCanon": 1,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 15,
+                "abajo": 10
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste las dos cantidades y las escribiste en forma de fracción: la primera arriba, la segunda abajo.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 10,
+                "abajo": 15
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Invertiste el orden: pusiste los defensas arriba y los de campo abajo. La razón quedaría volteada.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste las dos cantidades. La diferencia es 5, pero una razón no es una resta.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "25"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste las dos cantidades. Una razón compara dos números, no los junta en uno.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En una caja hay 18 caramelos de fresa y 12 de menta. ¿Cuál es la razón entre los caramelos de fresa y los de menta?"
+          }
+        ],
+        "pasoDelCanon": 2,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Hay 6 más"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Restaste los dos números y respondiste con la diferencia. Una razón dice la proporción, no en cuánto se diferencian.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "18 : 12"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste la razón con dos puntos: 18 por cada 12. Los dos puntos significan que comparas sin restar ni sumar.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "18 − 12"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Planteaste una resta. El signo menos no compara dos cantidades en una razón: eso es lo que hace el signo de dos puntos.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "18 + 12"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste los dos números. Una razón los compara por separado, no los juntas en uno.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "La razón 20 : 8 se simplifica dividiendo entre 4. ¿Cuál es la razón simplificada?"
+          }
+        ],
+        "pasoDelCanon": 3,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5 : 2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste los dos números entre 4: 20 ÷ 4 = 5 y 8 ÷ 4 = 2. La razón simplificada usa números más chicos pero significa lo mismo.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 20,
+                "abajo": 8
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste la razón como fracción sin simplificar. La pregunta pidió que simplificaras primero.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "16 : 4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste 4 a cada número: 20 − 4 = 16 y 8 − 4 = 4. Una simplificación divide, no resta.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5 : 8"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste solo el primer número entre 4 y dejaste el segundo igual. Tienes que dividir los dos entre el mismo número.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué significa leer en voz alta la razón 4 : 3?"
+          }
+        ],
+        "pasoDelCanon": 5,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Cuatro por cada tres"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Leíste la razón como la proporción que se repite: por cada grupo de 4 hay un grupo de 3.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Cuatro y tres"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Nombraste los números por separado. Una razón no es una lista, es una comparación con significado.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Cuatro entre tres"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Leíste la razón como una división. En matemáticas puede funcionar como fracción, pero la forma de leerla es «por cada».",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Hay uno más"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste los dos números: 4 − 3 = 1. Una razón no describe diferencias, describe proporciones.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En un vivero hay 14 plantas de tomate y 10 de chile. La razón simplificada es 7 : 5. ¿Qué significa esa razón?"
+          }
+        ],
+        "pasoDelCanon": 4,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por cada 7 tomates, 5 chiles"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Leíste la razón simplificada con su verdadero significado: el patrón que se repite entre las dos cantidades.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 7,
+                "abajo": 5
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste la razón como fracción. Es válido, pero la pregunta pidió el significado leído en palabras.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "7 plantas más"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Interpretaste la razón como una diferencia: 7 − 5 = 2, no 7. Una razón dice la proporción, no cuánto falta.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Hay 14 y 10"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Diste los números originales, no la razón simplificada. La simplificación cambia los números pero mantiene el significado.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": null,
-  "escalera": null,
+  "escalera": {
+    "temaNumero": 19,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En un grupo de 6º hay 12 niñas y 8 niños.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "12 : 8 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es la razón simplificada?",
+        "respuesta": {
+          "tecleado": "3/2",
+          "aceptaTambien": [],
+          "comoSeLee": "tres por cada dos"
+        },
+        "pistas": [
+          {
+            "texto": "Buscas un número que divida a los dos: ¿cuál divide a 12 y a 8?",
+            "orden": 1
+          },
+          {
+            "texto": "Divide ambos entre 4: 12 entre 4 da 3, y 8 entre 4 da 2.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la tiendita hay 15 camisas azules y 10 camisas rojas.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "15 : 10 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es la razón simplificada?",
+        "respuesta": {
+          "tecleado": "3/2",
+          "aceptaTambien": [],
+          "comoSeLee": "tres por cada dos"
+        },
+        "pistas": [
+          {
+            "texto": "Necesitas un número que sea divisor de 15 y de 10 a la vez.",
+            "orden": 1
+          },
+          {
+            "texto": "El 5 divide a los dos: 15 entre 5 son 3, y 10 entre 5 son 2.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En un tinaco hay 18 litros de agua limpia y 6 litros de agua para usar en el riego.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "18 : 6 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es la razón simplificada?",
+        "respuesta": {
+          "tecleado": "3/1",
+          "aceptaTambien": [],
+          "comoSeLee": "tres por cada uno"
+        },
+        "pistas": [
+          {
+            "texto": "La razón compara los dos números dividiéndolos entre un divisor común.",
+            "orden": 1
+          },
+          {
+            "texto": "El 6 divide a 18 y a 6: 18 entre 6 son 3, y 6 entre 6 es 1.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la cancha el equipo rojo anotó 16 goles y el equipo azul 12 goles. La razón simplificada es 4 por cada 3.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "16 : 12 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es esa razón como fracción?",
+        "respuesta": {
+          "tecleado": "4/3",
+          "aceptaTambien": [],
+          "comoSeLee": "cuatro tercios"
+        },
+        "pistas": [
+          {
+            "texto": "Ya tienes la razón simplificada: 4 por cada 3. Aquí la escribes como fracción apilada.",
+            "orden": 1
+          },
+          {
+            "texto": "La fracción tiene 4 arriba y 3 abajo.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la receta se mezclan dos ingredientes en razón 5:4. Si usas 20 partes del primero, ¿cuántas partes del segundo necesitas?",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "5 : 4 = 20 :"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas partes del segundo ingrediente?",
+        "respuesta": {
+          "tecleado": "16",
+          "aceptaTambien": [],
+          "comoSeLee": "dieciséis"
+        },
+        "pistas": [
+          {
+            "texto": "La razón 5:4 se repite: por cada 5 del primero, 4 del segundo.",
+            "orden": 1
+          },
+          {
+            "texto": "Si usas 20 del primero, ¿cuántas veces se repite el patrón de 5? Después multiplica ese número por 4.",
+            "orden": 2
+          },
+          {
+            "texto": "20 dividido entre 5 da 4. El patrón se repite 4 veces. Multiplica 4 por 4.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      }
+    ],
+    "noSePuede": null
+  },
   "error": null,
-  "explicar": null
+  "explicar": {
+    "temaNumero": 19,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué escribes 12 : 8 en vez de calcular 12 − 8.",
+    "aclaracion": "Con tus palabras, sin escribir símbolos que no uses. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Una razón dice cuántos de una cosa por cada cuántos de otra, no en cuánto se diferencian. Cuando restas desaparece la idea de que se repiten los dos números juntos.",
+          "porQueImporta": "Si crees que comparar siempre significa ver la diferencia, confundes una razón con una resta, y por eso en un examen pregunta una y tú das la otra.",
+          "comoSuenaDicha": "Una razón me dice cuántos por cada cuántos, no la diferencia. Si digo que hay 4 más, eso no me sirve para saber la proporción de niñas a niños.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "La razón simplificada muestra el patrón que se repite: por cada 3 niñas hay 2 niños, y ese patrón es el mismo si hay 6 niñas y 4 niños. La resta cambiaría.",
+          "porQueImporta": "Si alguien ve la razón como una diferencia, nunca nota que el patrón se repite, y queda sin herramienta para predecir cuántas niñas hay si sabe que hay 10 niños.",
+          "comoSuenaDicha": "Con la razón veo el patrón que se repite: 3 por cada 2. Si sé que hay 10 niños, sé que hay 15 niñas porque el patrón es el mismo.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "La razón con dos puntos responde la pregunta de proporción, y la resta responde una pregunta distinta. No es que una esté mal y otra bien: es que contestan preguntas diferentes.",
+          "porQueImporta": "Alguien que cree que el orden es lo único que cambia no ve que restar y escribir una razón son operaciones completamente distintas. Cuando el problema cambia y pide proporción, no sabe cuál usar.",
+          "comoSuenaDicha": "Si la pregunta es cuántas más hay, resto. Si me pregunta la proporción, escribo la razón. Son preguntas distintas.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque la razón se escribe con dos puntos, no como una resta.",
+          "queLaDelata": "Nombra el formato y se detiene ahí. No explica qué es lo que distingue una razón de una resta, así que si preguntaran en otra forma no sabría cuál operación usar.",
+          "queLeFalta": "Que diga qué mide una razón: la proporción o el patrón, no la diferencia."
+        },
+        {
+          "respuesta": "Porque con la razón ves los números más chicos y claros.",
+          "queLaDelata": "Habla del tamaño de los números, no de qué mide cada cosa. Con 7 niñas y 6 niños la razón simplificada sería muy parecida al original y no explica por qué es razón y no resta.",
+          "queLeFalta": "Que diga que una razón te dice cuántos de una cosa por cada cuántos de otra, y por eso no es una resta."
+        },
+        {
+          "respuesta": "Porque si restas no ves cuántas niñas hay por cada niño.",
+          "queLaDelata": "Lo dice, pero hace falta el siguiente paso: no es nada más que no lo ves con la resta. Es que la resta ni siquiera contesta esa pregunta, contesta otra.",
+          "queLeFalta": "Que diga que una resta y una razón son dos cosas completamente distintas que responden preguntas distintas."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Pero 12 − 8 = 4, así que hay 4 más. Eso también es comparar.",
+          "seLeContesta": "Sí, eso también es una comparación. Pero fíjate: si ahora hay 9 niñas y 6 niños, ¿cuántas hay de más? Todavía 3. La diferencia es la misma. Pero ¿la proporción de niñas a niños es la misma en los dos grupos?",
+          "aDondeLoEmpuja": "A ver que la razón y la resta contestan preguntas distintas, que es la idea imprescindible."
+        },
+        {
+          "siDice": "No entendí bien cuándo usar cada una.",
+          "seLeContesta": "Mira el ejemplo otra vez: si la pregunta es cuántas niñas hay por cada niño, haces una razón. Si la pregunta es cuántas niñas hay de más que niños, restas. Una dice proporción, otra dice diferencia. ¿En el enunciado que te dieron, qué pregunta hacían?",
+          "aDondeLoEmpuja": "A que él mismo vea que en el enunciado pedían la razón, no la diferencia, y por eso no podía ser una resta."
+        },
+        {
+          "siDice": "Entonces la razón siempre es una fracción.",
+          "seLeContesta": "Una razón se puede escribir de dos formas que significan lo mismo: con dos puntos, como 3 : 2, o como fracción apilada. Las dos dicen tres por cada dos. Pero lo que importa es que es una proporción, no una resta.",
+          "aDondeLoEmpuja": "A entender que el símbolo que uses es lo de menos. La idea es que una razón y una resta son cosas completamente distintas."
+        }
+      ],
+      "ejemploQueSiCuenta": "Una razón no es una resta. Cuando digo 12 : 8 o simplificado 3 : 2, estoy diciendo que por cada 3 niñas hay 2 niños. Eso es una proporción, un patrón que se repite. Si resto 12 − 8 = 4, digo que hay 4 niñas más, pero eso no me dice en qué proporción están. Son dos cosas distintas para responder preguntas distintas.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba en minúsculas o mayúsculas.",
+        "Que no use las palabras razón, proporción ni patrón: si dice que uno es una comparación de cuántos por cada cuántos y otro de cuántos más, la idea está ahí.",
+        "Que no escriba ningún número: la idea cuenta sin hacer la operación."
+      ]
+    },
+    "noSePuede": null
+  }
 }

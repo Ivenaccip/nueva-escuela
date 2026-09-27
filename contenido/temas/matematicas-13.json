@@ -139,10 +139,494 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
-  "completar": null,
+  "ver": {
+    "temaNumero": 13,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué dividir entre un decimal da un resultado más grande?",
+    "resumen": "Cuando divides entre un número menor que 1, el resultado crece en vez de achicarse. Recorrer el punto en los dos números por igual mantiene esa proporción.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué dividir entre un número menor que 1 aumenta el resultado, no nada más el paso de mover el punto.",
+        "Es del nivel de primero de secundaria: divide decimales menores que 1 entre decimales, sin usar conceptos de fracciones equivalentes.",
+        "El español es de México o de América Latina.",
+        "Llega al ejemplo antes del minuto uno, sin presentación larga del canal.",
+        "Muestra cómo recorrer el punto en los dos números, no nada más en el divisor."
+      ],
+      "descarta": [
+        "Recorre el punto sólo en el divisor y deja el dividendo igual: ese es el error típico del tema enseñado como si fuera el método.",
+        "Es un examen resuelto o una lista de ejercicios sin explicación.",
+        "Solo enseña el algoritmo sin decir por qué funciona."
+      ],
+      "consulta": "video explicación \"Dividir entre un decimal\" matemáticas 1º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "1F0BysuI_K8",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único resultado que explica por qué dividir entre decimales da un número más grande. El canal es mexicano y llega rápido al ejemplo sin presentación.",
+      "url": "https://www.youtube.com/watch?v=1F0BysuI_K8",
+      "titulo": "División de números decimales",
+      "canal": "Matemáticas profe Alex",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "-zeSfrJ53F4",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Primer respaldo. Explica la razón de recorrer el punto en los dos números y el resultado es mayor. Es de América Latina, no de México.",
+        "url": "https://www.youtube.com/watch?v=-zeSfrJ53F4",
+        "titulo": "¿Cómo dividir decimales? | Videos educativos Aula365",
+        "canal": "FlexFlix Kids en Español",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "La URL y el título salieron literales en la búsqueda, el canal es mexicano, explica el por qué y muestra cómo recorrer el punto en los dos números. El elegido cumple los criterios. El primer respaldo también explica el por qué, pero es de América Latina.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 13,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En 6.4 ÷ 0.2, ¿cuántos dígitos hay después del punto en el divisor?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "1"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste bien: el 0.2 tiene un dígito después del punto, el 2.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste el punto como si fuera un dígito. El punto es el separador, no un número.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Viste un cero antes del punto y lo contaste como dígitos después. El primer cero es la parte entera, viene antes del punto.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste todos los números: el cero de antes del punto, el punto y el dos de después. Nada más cuentan los números después del punto.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Cuando recorres el punto en 0.5 hacia la derecha hasta que desaparezca, ¿qué número queda?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Moviste el punto un lugar a la derecha y desapareció, dejando solo el 5.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No moviste el punto. Tienes que recorrerlo hacia la derecha hasta que no haya dígitos después.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "50"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Moviste el punto dos lugares en vez de uno. Con un dígito después del punto, recorres uno solo.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.05"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Moviste el punto hacia la izquierda en vez de a la derecha. A la derecha significa que los números crecen.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En 9.6 ÷ 0.2, si en el divisor el punto se corre un lugar, ¿cuántos lugares se corre en el dividendo?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "uno"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste bien: los dos números tienen que recorrer el punto igual número de lugares.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "ninguno"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Dejaste el dividendo igual. Crees que solo el divisor necesita cambiar porque es el que divide, pero si mueves el punto en uno solo, la respuesta sale distinta.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "dos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Moviste el punto dos lugares en el dividendo. Tienes que mover exactamente lo mismo que en el divisor: un lugar en los dos.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "según el número"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El recorrido no depende del número. Depende de cuántos dígitos contaste después del punto en el divisor al principio.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Después de recorrer puntos en 3.2 ÷ 0.4, queda 32 ÷ 4. ¿Cuál es el resultado?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "8"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste 32 entre 4 como si fueran enteros, que es lo que son después del recorrido.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.8"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Hiciste la división pero le pusiste un punto como si los decimales del problema original se conservaran. El recorrido ya los quitó.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3.2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Copiaste el dividendo original. Después de recorrer, el dividendo cambió a 32, así que tienes que dividir esos números nuevos.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "80"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste 32 entre 4, pero algo salió mal en la cuenta o le agregaste un cero de más.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Para comprobar que 2.4 ÷ 0.6 = 4, ¿qué multiplicación haces?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "4 × 0.6 = 2.4"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste el resultado por el divisor original y tiene que salir el dividendo original. Es lo opuesto a la división.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "4 × 6 = 24"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Usaste los números después del recorrido. La comprobación tiene que usar los números originales del problema.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2.4 × 0.6"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste dividendo por divisor. La comprobación es resultado por divisor, para ver si te da el dividendo.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.6 ÷ 4 = 2.4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Invertiste la operación pero dividiste en vez de multiplicar. La opuesta de ÷ es ×, no otra división.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 13,
+    "materia": "matematicas",
+    "pasoDelCanon": 3,
+    "queFalta": "el dividendo después de recorrer el punto dos lugares hacia la derecha",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "7.5 →"
+      },
+      {
+        "tipo": "hueco"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "750",
+      "aceptaTambien": [],
+      "comoSeLee": "setecientos cincuenta"
+    },
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Tienes que recorrer el punto en el dividendo hacia la derecha, el mismo número de lugares que el divisor."
+      },
+      {
+        "orden": 2,
+        "texto": "Recorres el punto del dividendo dos lugares hacia la derecha, como hiciste con el divisor."
+      },
+      {
+        "orden": 3,
+        "texto": "7.5 tiene el punto después del 7. Si lo recorres dos lugares a la derecha, pasa después del 5 y tienes que agregar un cero. Queda 750."
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "75",
+      "queSeLeDice": "75 es recorrer el punto nada más un lugar. Recuerda que el divisor 0.25 tiene dos dígitos después del punto, así que tienes que recorrer el punto del dividendo dos lugares también. Los dos números crecen igual o la división no tiene sentido."
+    },
+    "noSePuede": null
+  },
   "escalera": null,
-  "error": null,
+  "error": {
+    "temaNumero": 13,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien dividió"
+      },
+      {
+        "tipo": "texto",
+        "valor": "7.5 ÷ 0.25"
+      },
+      {
+        "tipo": "texto",
+        "valor": ". Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Cuento los dígitos después del punto en el divisor: 0.25 tiene 2 dígitos"
+          }
+        ],
+        "siLoTocas": "Ese paso cuenta bien: 0.25 sí tiene dos lugares después del punto decimal. El conteo es lo que te dice cuántos pasos va a tener el recorrido después."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Recorro el punto en el divisor: 0.25 → 25"
+          }
+        ],
+        "siLoTocas": "La conversión está hecha: el divisor pasó de 0.25 a 25, recorriendo dos lugares. Ese paso no inventó nada, usó el conteo anterior."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Recorro el punto en el dividendo: 7.5 → 7.5"
+          }
+        ],
+        "siLoTocas": "Ahí está el error. Ese renglón no recorre nada en el dividendo."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Divido: 7.5 ÷ 25 = 0.3"
+          }
+        ],
+        "siLoTocas": "La división está bien hecha con lo que recibió: 7.5 entre 25 da 0.3. Ese paso no lo inventó, lo recibió del paso anterior."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Compruebo: 0.3 × 0.25 = 0.075"
+          }
+        ],
+        "siLoTocas": "La multiplicación está bien hecha: 0.3 por 0.25 sí da 0.075. Ese paso no inventó nada, repite lo que el paso anterior entregó."
+      }
+    ],
+    "pasoMalo": 3,
+    "arrastre": "El 7.5 sin recorrer del paso 3 es el dividendo que divide en el paso 4, y de ahí sale el 0.3 del paso 4, que después aparece en la comprobación del paso 5. Si buscaras solo un renglón raro, no lo encontrarías: los pasos 4 y 5 están bien hechos con un número que no debería estar ahí.\">",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Recorrió el punto nada más en el divisor, no en el dividendo.",
+        "esElBueno": true,
+        "queRevela": "En el paso 2 el divisor se transformó de 0.25 a 25: dos lugares recorridos. El paso 3 tenía que recorrer el dividendo exactamente esos mismos dos lugares, de 7.5 a 750. Pero el dividendo se quedó en 7.5, así que los dos números no crecieron igual. Por eso el resultado sale chiquito."
+      },
+      {
+        "texto": "Pensó que solo el divisor necesitaba cambiar porque es el que divide.",
+        "esElBueno": false,
+        "queRevela": "Este es el error: quien escoge esto cree que el divisor es el único número que necesita transformarse. Pero cuando recorres el punto en un número y no en el otro, cambias la proporción entre los dos, y la respuesta no sale correcta. Los dos tienen que recorrer el punto igual para mantener la proporción."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "En los cinco pasos, todo está hecho correctamente excepto un recorrido que no sucedió. Los pasos que vienen después sólo usan lo que recibieron."
+      },
+      {
+        "orden": 2,
+        "texto": "El paso 1 contó dos lugares. El paso 2 recorrió dos lugares. El paso 3 tenía que recorrer dos lugares en otro número."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara el paso 2 con el paso 3: uno recorre el punto del divisor, el otro debería recorrer el punto del dividendo el mismo número de lugares."
+      }
+    ],
+    "noSePuede": null
+  },
   "explicar": null
 }

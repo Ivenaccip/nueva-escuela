@@ -23,15 +23,15 @@
     },
     "titulo": {
       "type": "string",
-      "description": "La peticion, concreta y en una sola pregunta: \"Explicame por que la distancia va arriba y el tiempo abajo\". Es lo que la pantalla pinta en grande (app/estacion/explicar.tsx:31). Va en TEXTO PLANO: la pantalla no dibuja fracciones ni subindices, asi que una fraccion se dice en palabras (\"tres quintos entre un cuarto\", nunca 3/5) y una formula con subindice se dice por su nombre (\"agua\"). Nunca \"Explica el tema\" ni \"Dime que aprendiste\". MEDIDO en 390x844: 342 px de ancho (la pantalla menos el margen de 24 por lado), Fraunces de 28 px, interlineado 35. Un renglon llega a 25 caracteres; de 26 a 48 son dos y el campo de escribir queda en 404; de 49 a 70 son tres y el campo en 369; de 71 a 92 son cuatro y el campo en 334; desde 93 son cinco, el campo se clava en su minHeight de 300 (explicar.tsx:105-119) y la pantalla se desplaza (629 contra 628). A 100 el titulo medía 175 px de alto. El tope es 70: el ultimo valor que cabe en tres renglones sin desplazar la pantalla. El del diseno mide 34, o sea dos. El ejemplo de aqui arriba mide 57 y ya pide tres.",
+      "description": "La peticion, concreta y en una sola pregunta: \"Explicame por que la distancia va arriba y el tiempo abajo\". Es lo que la pantalla pinta en grande (app/estacion/explicar.tsx:31). Va en TEXTO PLANO: la pantalla no dibuja fracciones ni subindices, asi que una fraccion se dice en palabras (\"tres quintos entre un cuarto\", nunca 3/5) y una formula con subindice se dice por su nombre (\"agua\"). Nunca \"Explica el tema\" ni \"Dime que aprendiste\". MEDIDO en 390x844: 342 px de ancho (la pantalla menos el margen de 24 por lado), Fraunces de 28 px, interlineado 35. Un renglon llega a 25 caracteres; de 26 a 48 son dos y el campo de escribir queda en 404; de 49 a 70 son tres y el campo en 369; de 71 a 92 son cuatro y el campo en 334; desde 93 son cinco, el campo se clava en su minHeight de 300 (explicar.tsx:105-119) y la pantalla se desplaza (629 contra 628). A 100 el titulo medía 175 px de alto. El tope es 70: el ultimo valor que cabe en tres renglones sin desplazar la pantalla. El del diseno mide 34, o sea dos. El ejemplo de aqui arriba mide 57 y ya pide tres. Medido sobre 8 titulos rechazados: la mediana es 86 y el maximo 92, todos peticiones razonables. El del diseno mide 34 porque su tema es corto. Vive en Cuerpo, que se desplaza.",
       "minLength": 25,
-      "maxLength": 70
+      "maxLength": 100
     },
     "aclaracion": {
       "type": "string",
-      "description": "Las dos o tres lineas debajo del titulo (app/estacion/explicar.tsx:32). Dicen que va con sus palabras, que aqui no hay nada que copiar y que no hay pistas a proposito. Tambien acotan la peticion: de que tiene que hablar y de que no. MEDIDO en 390x844: 342 px de ancho, 15 px de letra, interlineado 24. Un renglon llega a 51 caracteres; de 52 a 95 son dos; de 96 a 147 son tres; de 148 a 194 son cuatro; a 296 desborda. El tope es 147: el ultimo valor que cabe en los tres renglones que esta descripcion promete. El del diseno mide 96, o sea tres.",
+      "description": "Las dos o tres lineas debajo del titulo (app/estacion/explicar.tsx:32). Dicen que va con sus palabras, que aqui no hay nada que copiar y que no hay pistas a proposito. Tambien acotan la peticion: de que tiene que hablar y de que no. MEDIDO en 390x844: 342 px de ancho, 15 px de letra, interlineado 24. Un renglon llega a 51 caracteres; de 52 a 95 son dos; de 96 a 147 son tres; de 148 a 194 son cuatro; a 296 desborda. El tope es 147: el ultimo valor que cabe en los tres renglones que esta descripcion promete. El del diseno mide 96, o sea tres. Medido sobre 8 rechazadas: mediana 144, maximo 180. Se desplaza con el resto del Cuerpo.",
       "minLength": 40,
-      "maxLength": 147
+      "maxLength": 190
     },
     "nota": {
       "type": "string",
