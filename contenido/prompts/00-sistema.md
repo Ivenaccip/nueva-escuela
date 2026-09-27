@@ -86,15 +86,43 @@ bien  {"tipo":"fraccion","arriba":3,"abajo":5}
 bien  {"tipo":"fraccion","arriba":"velocidad final − inicial","abajo":"tiempo"}
 ```
 
-**Un renglón es siempre un arreglo de átomos**, aunque traiga uno solo, y nunca
-una cadena suelta.
+**Un renglón es siempre un arreglo de átomos**, aunque traiga uno solo. Nunca una
+cadena suelta, y nunca —esto pasa de verdad— el arreglo serializado como texto.
 
 ```
 mal   "3/5 ÷ 1/4"
+mal   "[{\"tipo\":\"texto\",\"valor\":\"Alguien dividió\"}]"
 bien  [{"tipo":"fraccion","arriba":3,"abajo":5},
        {"tipo":"texto","valor":"÷"},
        {"tipo":"fraccion","arriba":1,"abajo":4}]
 ```
+
+**Los `tipo` van en español, y son exactamente estos cuatro:** `texto`,
+`fraccion`, `simbolo`, `hueco`.
+
+```
+mal   {"tipo":"text","valor":"Volteas"}
+mal   {"tipo":"fraction","arriba":3,"abajo":5}
+bien  {"tipo":"texto","valor":"Volteas"}
+```
+
+**El hueco nunca va dentro de una fracción.** Si lo que falta es una fracción
+entera, el hueco ocupa el lugar de toda la fracción: el estudiante teclea `12/5`
+con la tecla `/` y la pantalla lo apila sola.
+
+```
+mal   {"tipo":"fraccion","arriba":{"tipo":"hueco"},"abajo":5}
+mal   {"tipo":"fraccion","arriba":"[hueco]","abajo":5}
+bien  [{"tipo":"fraccion","arriba":3,"abajo":5},
+       {"tipo":"texto","valor":"×"},
+       {"tipo":"fraccion","arriba":4,"abajo":1},
+       {"tipo":"texto","valor":"="},
+       {"tipo":"hueco"}]
+```
+
+Si lo que falta es sólo el numerador y el denominador tiene que quedar a la
+vista, no se puede: cambia la pregunta para que lo que falte sea la fracción
+completa, o llena `noSePuede`.
 
 **Un objeto del esquema es un objeto, no el arreglo que lleva dentro.** Si un
 campo pide `{"nombre": ..., "pasos": [...]}`, no devuelvas los pasos pelones.

@@ -200,10 +200,838 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
-  "completar": null,
-  "escalera": null,
-  "error": null,
-  "explicar": null
+  "ver": {
+    "temaNumero": 9,
+    "materia": "matematicas",
+    "pregunta": "¿Por qué se voltea la segunda fracción y no la primera?",
+    "resumen": "Dividir entre una fracción es preguntar cuántas veces cabe esa fracción en lo que tienes. Voltear la segunda cambia la división en una multiplicación que responde esa pregunta.",
+    "busqueda": {
+      "consulta": "división de fracciones por qué se voltea la segunda fracción explicación",
+      "consultasAlternas": [
+        "multiplicación y división de fracciones explicación por qué voltear",
+        "dividir fracciones método del inverso multiplicativo explicación"
+      ],
+      "criterios": [
+        "Explica por qué se voltea la segunda fracción, no nada más cómo se hace el procedimiento.",
+        "Está en español de México o América Latina.",
+        "Es del nivel de primero de secundaria: usa fracciones simples sin simplificación compleja.",
+        "Llega al procedimiento antes del minuto dos, sin presentación larga del canal.",
+        "Muestra que dividir entre una fracción es lo mismo que multiplicar por su inverso."
+      ],
+      "descarta": [
+        "Enseña a multiplicar los numeradores y sumar los denominadores, o voltea la primera fracción en vez de la segunda.",
+        "Es un examen de un grado superior o una lista de ejercicios sin explicación.",
+        "Solo memoriza el procedimiento sin decir por qué funciona."
+      ]
+    },
+    "video": {
+      "url": "https://www.youtube.com/watch?v=awbZN9zaaVI",
+      "idDeYouTube": "awbZN9zaaVI",
+      "titulo": "Multiplicacion y división de fracciones SECUNDARIA (1ºESO) matematicas",
+      "canal": "unicoos",
+      "variedadDeEspanol": "España",
+      "explicaElPorQue": true,
+      "dondeSalio": "Salió en la búsqueda de división de fracciones con explicación. El título aparece literalmente en los resultados.",
+      "porQueEste": "Es el único video disponible que explica por qué se voltea la segunda fracción en una división. Cubre el tema de primero de secundaria y muestra el procedimiento completo con claridad."
+    },
+    "alternativas": [],
+    "confianza": "baja",
+    "porQueEsaConfianza": "El video encontrado es de España, no de México o América Latina, lo que limita su alineación con el acento preferido. Además, no hay alternativas disponibles de la búsqueda que cumplan los criterios de explicar el por qué con el nivel y acento requeridos. La confianza es baja porque el espacio de búsqueda resultó muy limitado.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 9,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 7
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": ", ¿cuál es la que se reparte?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 3,
+                "abajo": 5
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Está tocando la segunda fracción. La que se reparte es la primera, la que está antes del signo de dividir."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 2,
+                "abajo": 7
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste que la fracción que se reparte es la primera, la que está antes del dividir."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "las dos fracciones"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "En una división, los dos lugares no valen lo mismo. Una es lo que tienes, la otra es el tamaño del pedazo. No son lo mismo."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "ninguna, es el símbolo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El signo de dividir es el que separa las dos fracciones, pero no es lo que se reparte. Lo que se reparte es una de las fracciones."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Voltear"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 9
+          },
+          {
+            "tipo": "texto",
+            "valor": "da"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 9,
+                "abajo": 4
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Pasaste el de abajo arriba y el de arriba abajo, sin cambiar ninguno de los dos números."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 4,
+                "abajo": 9
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Eso es la fracción sin voltear. Voltear significa que los números cambien de piso."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 5,
+                "abajo": 9
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás restándole uno a lo de arriba. Voltear no es restarle ni sumarle nada a los números, nada más cambiarlos de piso."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 9,
+                "abajo": 5
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Cambiaste uno de los números. Voltear una fracción es cambiar los dos de piso: el que estaba arriba baja, el que estaba abajo sube, sin tocarles nada."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Cuando volteas la que divide, ¿qué signo pones en su lugar?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "÷"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dejaste el signo de dividir. Voltear la fracción convierte la división en una multiplicación."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "×"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Pusiste el signo de multiplicar. Dividir entre una fracción es lo mismo que multiplicar por su volteo."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "="
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El igual va al final, cuando ya tienes el resultado. Después de voltear, todavía estás en medio del cálculo."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "nada, lo quitas"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Necesitas un signo de operación para conectar las dos fracciones. No desaparece, se convierte en multiplicar."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es el resultado de"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 5,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 10,
+                "abajo": 12
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste arriba por arriba y abajo por abajo. Después podría simplificarse, pero esta respuesta es correcta."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 10,
+                "abajo": 7
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Multiplicaste los de arriba entre sí, pero sumaste los de abajo. En la multiplicación de fracciones, los dos pisos se multiplican por separado, igual que en la división."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 7,
+                "abajo": 12
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste los de arriba en vez de multiplicarlos. En multiplicación de fracciones, ambos pisos se multiplican."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 3,
+                "abajo": 4
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Está pareciendo que restaste los números. Multiplica arriba por arriba y abajo por abajo, sin restar nada."
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 9,
+    "materia": "matematicas",
+    "pasoDelCanon": 4,
+    "queFalta": "el resultado de multiplicar los números de abajo de las dos fracciones",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "Arriba 3 × 4 = 12. Abajo 5 × 1 ="
+      },
+      {
+        "tipo": "hueco"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "5",
+      "aceptaTambien": [],
+      "comoSeLee": "cinco"
+    },
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Tienes que multiplicar los números de abajo de las dos fracciones. Arriba ya está: 3 × 4 = 12."
+      },
+      {
+        "orden": 2,
+        "texto": "Multiplicas los de abajo entre sí. El primero es 5 y el segundo es 1."
+      },
+      {
+        "orden": 3,
+        "texto": "Cinco por uno es cinco. El uno no cambia ningún número."
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "6",
+      "queSeLeDice": "En la suma de fracciones, el número de abajo se queda igual. Aquí es una multiplicación, no una suma. Los dos pisos se multiplican por separado, arriba y abajo. Vuelve al paso 4 y multiplica los de abajo."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 9,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En el taller cortan 2/3 de una tabla en pedazos de 1/4 de tabla cada uno. Necesitan saber cuántos pedazos salen.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué fracción representa cuántos pedazos salen?",
+        "respuesta": {
+          "tecleado": "8/3",
+          "aceptaTambien": [],
+          "comoSeLee": "ocho tercios"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "La pregunta es: cuántos pedazos de 1/4 caben en 2/3. Cada vez que se reparte algo, se divide."
+          },
+          {
+            "orden": 2,
+            "texto": "Volteas la que divide: la fracción 1/4 se vuelve 4/1. Después cambias el ÷ por ×."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la receta dicen que 3/4 de taza de harina se divide en porciones de 1/8 de taza cada una. ¿Cuántas porciones salen?",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 8
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué fracción o número representa cuántas porciones?",
+        "respuesta": {
+          "tecleado": "6",
+          "aceptaTambien": [],
+          "comoSeLee": "seis"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí preguntan cuántos pedazos de 1/8 caben en 3/4. Es el mismo tipo de división."
+          },
+          {
+            "orden": 2,
+            "texto": "Multiplicas los números de arriba: 3 × 8 = 24. Multiplicas los de abajo: 4 × 1 = 4."
+          },
+          {
+            "orden": 3,
+            "texto": "El resultado 24/4 se puede simplificar dividiendo arriba y abajo entre 4."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un costurero tiene 5/6 de metro de cinta roja y la corta en pedazos de 1/12 de metro. ¿Cuántos pedazos obtiene?",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 5,
+            "abajo": 6
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 12
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué fracción o número de pedazos salen?",
+        "respuesta": {
+          "tecleado": "10",
+          "aceptaTambien": [],
+          "comoSeLee": "diez"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Necesitas saber cuántas veces cabe 1/12 en 5/6. Se divide, y al dividir volteas la segunda fracción."
+          },
+          {
+            "orden": 2,
+            "texto": "Conviertes la división en multiplicación: 5/6 × 12/1."
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un panadero anotó que dividió 4/5 de kilo de masa en porciones, y salieron 8/3 de porción, pero borró de qué tamaño eran.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 8,
+            "abajo": 3
+          }
+        ],
+        "pregunta": "¿Qué fracción era el tamaño de cada porción?",
+        "respuesta": {
+          "tecleado": "3/10",
+          "aceptaTambien": [],
+          "comoSeLee": "tres décimos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí tienes el resultado ya dado. Lo que buscas es la segunda fracción, la que divide."
+          },
+          {
+            "orden": 2,
+            "texto": "En el paso donde se voltea la segunda fracción, ahora tú tienes que adivinar cuál era antes de voltear."
+          },
+          {
+            "orden": 3,
+            "texto": "Si 4/5 ÷ algo = 8/3, entonces el algo es 4/5 × 3/8, simplificado."
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": true
+      },
+      {
+        "situacion": "Al vendedor de la tiendita se le mojó el apunte: dividió cierta cantidad en partes de 2/9 y le salieron 9/2 de parte.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 2,
+            "abajo": 9
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 9,
+            "abajo": 2
+          }
+        ],
+        "pregunta": "¿Qué fracción era la cantidad que se dividió?",
+        "respuesta": {
+          "tecleado": "1",
+          "aceptaTambien": [],
+          "comoSeLee": "uno"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí buscas la primera fracción, la que se reparte. El resultado y la segunda fracción ya los tienes."
+          },
+          {
+            "orden": 2,
+            "texto": "En el primer paso se separan las dos fracciones. Ahora tú tienes que reconstruir la primera."
+          },
+          {
+            "orden": 3,
+            "texto": "Multiplica el resultado por la segunda fracción voltada: 9/2 × 9/2."
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 9,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien dividió"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 3,
+        "abajo": 5
+      },
+      {
+        "tipo": "texto",
+        "valor": "÷"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": 1,
+        "abajo": 4
+      },
+      {
+        "tipo": "texto",
+        "valor": ". Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Separo: se reparte"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": ". Divide"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 4
+          }
+        ],
+        "siLoTocas": "Ese paso identifica cuál es la primera fracción y cuál es la segunda. Los dos lugares en una división no valen lo mismo, y nombrarlo bien es el primer paso."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 4
+          },
+          {
+            "tipo": "texto",
+            "valor": "volteada es"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 1
+          }
+        ],
+        "siLoTocas": "Ese paso voltea la que divide, como manda. El 1 bajó y el 4 subió, sin cambiar ninguno de los dos números."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "fraccion",
+            "arriba": 3,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 1
+          }
+        ],
+        "siLoTocas": "Después de voltear, el signo cambia de dividir a multiplicar. Los tres primeros pasos van bien."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Arriba 3 × 4 = 12. Abajo 5 + 1 = 6."
+          }
+        ],
+        "siLoTocas": "Ahí está el error. Ese renglón es el que les pasa sus números a los dos pasos que siguen."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 12,
+            "abajo": 6
+          }
+        ],
+        "siLoTocas": "Ese paso recibió el 12 de arriba y el 6 de abajo del paso 4, y los usó para escribir la fracción. La operación del paso 4 fue lo que cambió."
+      }
+    ],
+    "pasoMalo": 4,
+    "arrastre": "El 6 del paso 4 es el 6 que aparece abajo en la fracción del paso 5. Los dos pisos del paso 4 tienen que usar la misma operación, y aquí usa dos: arriba multiplica y abajo suma. Eso delata el error.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Multiplicó los de arriba pero sumó los de abajo.",
+        "esElBueno": true,
+        "queRevela": "Es exactamente lo que pasó: arriba dice 3 × 4 = 12, pero abajo dice 5 + 1 = 6. Un paso de división tiene que multiplicar arriba y abajo, o no multiplicar en ningún piso. Acá hace dos operaciones distintas en el mismo renglón."
+      },
+      {
+        "texto": "Se le olvidó multiplicar abajo.",
+        "esElBueno": false,
+        "queRevela": "Ahí hay una operación abajo, pero es una suma. El número 6 que aparece en el paso 5 vino de sumar 5 + 1. Si se hubiera olvidado de operar, habría dejado abajo el mismo 1 del paso 3."
+      },
+      {
+        "texto": "Confundió este paso con el de sumar fracciones.",
+        "esElBueno": false,
+        "queRevela": "En sumar fracciones el de abajo se queda igual, pero aquí abajo no se queda igual: aparece un 6 que es 5 + 1. Si de verdad hubiera confundido los dos procedimientos, abajo estaría el 5 sin cambiar."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Lee los cinco renglones en orden. Cuatro hacen bien lo que les toca. El error no está en copiar números ni en leer un resultado: está en una operación."
+      },
+      {
+        "orden": 2,
+        "texto": "Mira el paso 4. Ese renglón hace dos cosas a la vez: una con los de arriba y otra cosa con los de abajo."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara el paso 3 con el paso 4. En el paso 3, el símbolo entre las dos fracciones es ×. En el paso 4, ¿qué símbolos aparecen entre los números de arriba, y qué símbolo aparece entre los números de abajo?"
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 9,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué el resultado salió más grande que con las dos fracciones que empezaste.",
+    "aclaracion": "Con tus palabras, sin escribir fracciones ni procedimiento. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Dividir entre una fracción chica es preguntar cuántos de esos pedazos chicos caben en lo que tienes, y la respuesta es más grande que lo que empezaste.",
+          "porQueImporta": "Sin esta idea, que el resultado sea más grande parece un error o una magia. Con ella, es la única respuesta posible: si repartes algo en pedazos chicos, salen más pedazos que si lo repartes en pedazos grandes.",
+          "comoSuenaDicha": "Al dividir entre un cuarto pregunto cuántos cuartos caben, y caben más de lo que tenía.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Voltear la fracción que divide convierte dividir entre un cuarto en multiplicar por cuatro, y multiplicar siempre da un número más grande que lo que tenías.",
+          "porQueImporta": "Es lo que conecta el truco de voltear con la razón de que salga más grande. Sin esto, voltear es un paso que se memoriza.",
+          "comoSuenaDicha": "Cuando volteo la fracción se convierte en multiplicación, y multiplicar por un número mayor que uno siempre da más grande.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 1,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque hay que voltear la segunda fracción y después multiplicar, y así sale más grande.",
+          "queLaDelata": "Nombra el procedimiento: voltear y multiplicar. Pero no dice por qué ese procedimiento hace que salga más grande, así que no explicó nada, nada más repitió los pasos.",
+          "queLeFalta": "Que diga qué significa multiplicar por la fracción volteada, y por qué eso da un número mayor."
+        },
+        {
+          "respuesta": "Porque cuando multiplicas dos números que no son uno, el resultado siempre es más grande.",
+          "queLaDelata": "Eso es cierto si los dos números son mayores que uno, pero si multiplicas un cuarto por dos quintos te sale un número más chico. La regla se cae cuando cambian los números.",
+          "queLeFalta": "Que diga que multiplicamos por la fracción volteada, que es cuatro entre uno, un número que sí es mayor que uno."
+        },
+        {
+          "respuesta": "Porque dos quintos es muy chiquito, así que cuando divides te sale más grande.",
+          "queLaDelata": "La razón apunta en la dirección correcta pero es demasiado vaga. No explica qué quiere decir dividir entre algo chiquito ni por qué eso hace que salga más grande.",
+          "queLeFalta": "Que diga que dividir entre un número chiquito es preguntar cuántos de esos pedazos chicos caben, y siempre caben más."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "El piso de abajo se suma, no se multiplica, porque eso se hace con fracciones.",
+          "seLeContesta": "Con sumas de fracciones el piso de abajo se queda igual, es verdad. Pero aquí no sumamos, multiplicamos: estamos contando cuántos cuartos caben en tres quintos. Cuando multiplicas el piso de abajo, cuenta. Mira el ejemplo: cinco por uno es cinco, no cinco.",
+          "aDondeLoEmpuja": "A ver que los dos pisos se multiplican por separado en la multiplicación, distinto a como funciona en suma."
+        },
+        {
+          "siDice": "Voltea la primera fracción en vez de la segunda y sale más grande igual.",
+          "seLeContesta": "Cierto, si volteas la primera también sale más grande. Pero volteando la primera estás preguntando algo distinto: cuántos tres quintos caben en un cuarto, y eso da un número diferente. En el mismo ejemplo, sale cinco doceavos, que es más chico que doce quintos. Voltear la que divide es lo que contesta la pregunta que el problema hace.",
+          "aDondeLoEmpuja": "A ver que los dos lugares de la división no valen lo mismo, y voltear el que no es hace que la respuesta sea distinta."
+        },
+        {
+          "siDice": "Sí entendí, nada más no sé cómo escribirlo sin escribir números.",
+          "seLeContesta": "Entonces cuéntame una sola cosa: si divides algo entre un pedazo muy chiquito, ¿salen más pedazos o menos? Eso es todo lo que falta.",
+          "aDondeLoEmpuja": "A que entienda que dividir entre algo chiquito siempre da un número más grande, que es la idea principal."
+        }
+      ],
+      "ejemploQueSiCuenta": "Dividir entre un cuarto es preguntar cuántos cuartos caben en tres quintos. Como el cuarto es un pedazo chiquito, caben muchos, así que sale más grande que tres quintos. Cuando volteo la fracción que divide, el cuarto se convierte en cuatro, y multiplicar por cuatro hace que todo se haga más grande.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba en minúsculas.",
+        "Que no use las palabras dividir, multiplicar, fracción, pedazo ni voltear: si describe la idea con sus palabras, cuenta.",
+        "Que no escriba ningún número ni ninguna fracción."
+      ]
+    },
+    "noSePuede": null
+  }
 }

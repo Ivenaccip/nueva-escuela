@@ -464,7 +464,82 @@ async function llamarConReintentos(opciones) {
 // Las comprobaciones de antes de guardar
 // ---------------------------------------------------------------------------
 
+/**
+ * Un renglón que llegó como cadena en vez de arreglo. Haiku lo hace seguido: el
+ * arreglo es correcto, pero serializado, con sus comillas escapadas adentro. Se
+ * repara en vez de tirar la llamada, porque un reintento cuesta lo mismo que la
+ * llamada entera y lo que devolvería es esto mismo.
+ *
+ * El aviso sale ruidoso a propósito: si empieza a salir en todas las llamadas,
+ * lo que hay que arreglar es el prompt, no seguir remendando aquí.
+ */
+function repararArreglosSerializados(valor, ruta = '') {
+  if (Array.isArray(valor)) {
+    valor.forEach((v, i) => repararArreglosSerializados(v, `${ruta}/${i}`));
+    return valor;
+  }
+  if (!valor || typeof valor !== 'object') return valor;
+  for (const [clave, v] of Object.entries(valor)) {
+    if (typeof v === 'string' && v.trimStart().startsWith('[') && v.trimEnd().endsWith(']')) {
+      try {
+        const abierto = JSON.parse(v);
+        if (Array.isArray(abierto)) {
+          valor[clave] = abierto;
+          console.error(`      reparado: ${ruta}/${clave} venía como cadena, era un arreglo`);
+          repararArreglosSerializados(abierto, `${ruta}/${clave}`);
+          continue;
+        }
+      } catch {
+        // No era JSON: es texto que de casualidad empieza con corchete. Se deja.
+      }
+    }
+    repararArreglosSerializados(v, `${ruta}/${clave}`);
+  }
+  return valor;
+}
+
+/**
+ * Los «exactamente uno» que el esquema no puede expresar. Contar a uno sobre una
+ * salida larga es justo lo que se le va a un modelo chico, y la salida valida
+ * perfecto: sin esto, una estación 5 sin motivo bueno o con dos se guarda igual y
+ * el estudiante se topa con una pregunta que no tiene respuesta.
+ */
+const UNO_SOLO = {
+  error: (s) => [['motivos', (s.motivos ?? []).filter((m) => m.esElBueno).length, 'esElBueno']],
+  contacto: (s) => [
+    ...(s.preguntas ?? []).map((p, i) => [
+      `preguntas[${i}].opciones`,
+      (p.opciones ?? []).filter((o) => o.esCorrecta).length,
+      'esCorrecta',
+    ]),
+    [
+      'todo el bloque',
+      (s.preguntas ?? []).flatMap((p) => p.opciones ?? []).filter((o) => o.esElErrorTipico).length,
+      'esElErrorTipico',
+    ],
+  ],
+  explicar: (s) => [
+    [
+      'rubrica.ideasQueCuentan',
+      (s.rubrica?.ideasQueCuentan ?? []).filter((i) => i.esImprescindible).length,
+      'esImprescindible',
+    ],
+  ],
+};
+
+function comprobarUnoSolo(paso, salida) {
+  const mirar = UNO_SOLO[paso.clave];
+  if (!mirar) return;
+  const mal = mirar(salida).filter(([, cuantos]) => cuantos !== 1);
+  if (mal.length === 0) return;
+  throw new Rajada(
+    `${paso.clave}: tiene que haber exactamente uno y no lo hay\n` +
+      mal.map(([donde, cuantos, campo]) => `    ${donde}: ${cuantos} con ${campo}`).join('\n'),
+  );
+}
+
 function comprobarEsquema(paso, salida) {
+  repararArreglosSerializados(salida);
   const validar = validadores.get(paso.esquema);
   if (!validar(salida)) {
     // Se guarda lo rechazado. Un prompt no se arregla adivinando qué devolvió el
@@ -593,6 +668,7 @@ async function correr(paso, valores) {
 
   comprobarEsquema(paso, resultado);
   comprobarTraza(paso, resultado, temario, tema);
+  comprobarUnoSolo(paso, resultado);
 
   if (paso.necesitaVideos) comprobarVideoEscogido(resultado, valores.__candidatos ?? []);
 

@@ -113,7 +113,47 @@ enseñó, el escalón está mal.
 
 ## Las situaciones
 
-Una frase. Mexicana y ordinaria: la tiendita, el camión, el tinaco, la receta,
+**Una frase, y el esquema la corta a 125 caracteres.** Ese número está medido en
+la pantalla, no puesto a ojo: son los cuatro renglones que caben antes de que la
+tarjeta del ejercicio se empiece a ir para abajo. Unas veinte palabras.
+Cuéntalas. Es el límite que más se rompe, y se rompe por escribir dos oraciones
+donde cabe una.
+
+```
+[112] sí   En el taller cortan 2/3 de una tabla en pedazos de 1/6 de tabla cada
+           uno. Necesitan saber cuántos pedazos salen.
+
+[164] no   Un jardinero repartió 4/5 de litro de agua entre 2/3 de litro que cada
+           maceta necesita. El apunte se manchó y no se leyó cuántos litros se
+           repartieron al principio.
+[118] sí   Al jardinero se le manchó el apunte: dio 2/3 de litro a cada maceta y
+           ya no se lee con cuántos empezó.
+```
+
+Lo que sobra casi siempre es la segunda oración explicando qué hay que hacer.
+Eso no va aquí: la pregunta lo dice.
+
+**Los escalones inversos son los que se pasan.** Como hay que decir qué se sabe y
+qué se borró, sale la tentación de contarlo en dos oraciones. Cabe en una, con
+dos puntos:
+
+```
+[167] no   El maestro escribió que en el mercado dividieron 3/4 de un paquete de
+           azúcar entre porciones, y salieron 9/2 de porciones. Pero borró de qué
+           tamaño eran las porciones.
+[103] sí   Al maestro se le borró el tamaño de las porciones: de 3/4 de paquete
+           salieron 9/2 de porción.
+
+[176] no   Una costurera apuntó que dividió un trozo de cinta entre porciones de
+           2/9 de metro, y le salieron 6 porciones. Se le mojó el apunte donde
+           venía cuánta cinta tenía al principio.
+[ 99] sí   A la costurera se le mojó el apunte: de su cinta salieron 6 porciones
+           de 2/9 de metro cada una.
+```
+
+El patrón que sirve: **quién y qué se perdió, dos puntos, los datos que quedan.**
+
+Mexicana y ordinaria: la tiendita, el camión, el tinaco, la receta,
 el recibo de luz, la cancha, la libreta donde se apuntan los pendientes.
 
 La situación pone los datos y la escena, y nada más. No explica el

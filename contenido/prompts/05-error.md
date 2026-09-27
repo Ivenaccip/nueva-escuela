@@ -120,6 +120,19 @@ ejemplo del canon escritos con átomos, y que cierre avisando que hay exactament
 un paso mal y que hay que tocarlo. Los mismos números de `canon.ejemplo`: no
 cambias ninguno.
 
+**Es un arreglo de objetos, no una cadena.** Éste es el campo que más se devuelve
+mal en esta llamada: llega el arreglo correcto pero convertido en texto, con sus
+comillas escapadas y sus saltos de línea adentro. Eso no es un renglón, es una
+cadena que la pantalla pinta tal cual, con llaves y comillas a la vista.
+
+```
+mal   "enunciado": "[\n  {\"tipo\":\"texto\",\"valor\":\"Alguien dividió\"},\n ...]"
+bien  "enunciado": [{"tipo":"texto","valor":"Alguien dividió"},
+                    {"tipo":"fraccion","arriba":3,"abajo":5}]
+```
+
+Tampoco lleva ningún `hueco`: aquí no se teclea nada, se toca un paso.
+
 ### 2. `pasos`
 
 Cinco pasos, numerados del 1 al 5, en la voz de quien resolvió: primera persona

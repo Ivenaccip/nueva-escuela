@@ -32,9 +32,9 @@
         "properties": {
           "situacion": {
             "type": "string",
-            "description": "Una frase que pone la escena y los datos. Mexicana y ordinaria: la tiendita, el camion, el tinaco, la receta, el recibo de luz, la cancha. No explica el procedimiento (eso ya paso en la estacion 3) y no repite la situacion de otro escalon. Prohibido 'Juan tiene 3 manzanas', prohibido el problema de libro, prohibido inventar un dato verificable (una distancia real, un precio, una marca). Cabe en dos renglones a 21 px.",
+            "description": "Una frase que pone la escena y los datos. Mexicana y ordinaria: la tiendita, el camion, el tinaco, la receta, el recibo de luz, la cancha. No explica el procedimiento (eso ya paso en la estacion 3) y no repite la situacion de otro escalon. Prohibido 'Juan tiene 3 manzanas', prohibido el problema de libro, prohibido inventar un dato verificable (una distancia real, un precio, una marca). El tope esta medido en la pantalla de 390: a 21 px con interlineado de 29, el cuarto renglon se acaba entre 125 y 129 caracteres y en 130 salta al quinto, que empuja la tarjeta del ejercicio hacia abajo. 125 es el ultimo valor que cabe en cuatro renglones pase lo que pase con el corte de palabras.",
             "minLength": 25,
-            "maxLength": 120
+            "maxLength": 125
           },
           "expresion": {
             "$ref": "#/$defs/renglonConHueco",
