@@ -230,10 +230,787 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
-  "completar": null,
-  "escalera": null,
-  "error": null,
-  "explicar": null
+  "ver": {
+    "temaNumero": 3,
+    "materia": "matematicas",
+    "pregunta": "¿Cuándo das el MCD y cuándo el mcm sin adivinar?",
+    "resumen": "El MCD y el mcm resuelven preguntas distintas sobre los mismos números. Leer qué pide el problema te dice cuál calcular.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué se usa el MCD en un problema y el mcm en otro, no nada más cómo se calculan.",
+        "Aclara que el MCD es lo que divide exacto en ambos números, y el mcm es lo que ambos números dividen exacto.",
+        "Muestra problemas reales donde se piden MCD y mcm por separado, y dice qué palabras del problema indican cuál usar.",
+        "Es del nivel de primero de secundaria, sin polinomios ni conceptos de bachillerato.",
+        "Está en español de México o de América Latina."
+      ],
+      "descarta": [
+        "Enseña el error de confundir MCD con mcm en un problema de coincidencia de eventos (dos camiones, dos luces que parpadean) como si fuera correcto.",
+        "Nada más enseña el algoritmo para calcular, sin explicar qué pregunta resuelve cada uno.",
+        "Sobrepasa los cinco minutos antes de mostrar un problema de aplicación."
+      ],
+      "consulta": "video explicación \"MCD y mcm: cuál sirve para qué\" matemáticas 1º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "IMDwFpRvUjc",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único video de la lista que trata ambos MCD y mcm juntos, explica por qué se usa cada uno en un problema distinto, y es de nivel de primero de secundaria. El título promete exactamente esto: 'Máximo Común Divisor y Mínimo Común Múltiplo'.",
+      "url": "https://www.youtube.com/watch?v=IMDwFpRvUjc",
+      "titulo": "Semana 6: Máximo Común Divisor y Mínimo Común Múltiplo/1ro Secundaria(Aritmética)",
+      "canal": "Consultora Franklyn",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "Hxkb3i85qDw",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "Primer respaldo de Matemáticas profe Alex, que es el acento más cercano. Falla porque se enfoca en el mcm: explica bien por qué funciona, pero no contrasta con el MCD ni trata problemas donde los dos se confundan.",
+        "url": "https://www.youtube.com/watch?v=Hxkb3i85qDw",
+        "titulo": "Mínimo común múltiplo MCM explicación completa",
+        "canal": "Matemáticas profe Alex",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "mbvPFHRhLVk",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. El título promete 'MCM Y MCD' y 'PROBLEMAS RESUELTOS', así que cubre ambos. Es más largo y más denso que el elegido, pero sirve si el primero cae.",
+        "url": "https://www.youtube.com/watch?v=mbvPFHRhLVk",
+        "titulo": "Mínimo Común Múltiplo y Máximo Común Divisor (PROBLEMAS RESUELTOS PASO A PASO) (MCM Y MCD)[TRUCO]",
+        "canal": "Todo Matemática",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "media",
+    "porQueEsaConfianza": "El video elegido existe en la lista y su título promete tratar MCD y mcm para primero de secundaria. La confianza es media y no alta porque el video viene de una cantera más lejana y no se pudo confirmar de oído que el acento sea de América Latina, aunque el canal y el contexto lo sugieren. Ningún resultado traía duración escrita.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 3,
+    "materia": "matematicas",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Descompón 20 en factores primos con exponentes."
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2 × 10"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Descompusiste en factores, pero 10 no es primo. Tienes que seguir hasta que todos sean primos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "× 5"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste todos los factores primos con su exponente. Así ves de un vistazo cuántas veces sale cada uno.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "1"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "5",
+                "sup": "1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste los exponentes como 1, pero dos al uno es solo dos. El exponente 2 resume que 2 aparece dos veces.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "4 × 5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Descompusiste en factores, pero 4 no es primo. Tienesnque ir hasta los números que no se pueden descomponer.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Para el MCD de 24 y 36, ¿cuáles factores tomas?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Todos los que salieron"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Tomaste todos los factores. Para el MCD tomas nada más los que aparecen en los dos números.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Los que aparecen en ambos"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Reconociste que el MCD solo usa los factores compartidos. Es lo que entra exacto en los dos.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "El factor más grande"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Confundiste MCD con el número más grande. El MCD es el divisor más grande, no el factor más alto.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Los con el exponente más chico"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Anotaste una regla correcta pero la aplicaste sola. Primero escoges qué factores, luego escoges el exponente.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Para el mcm de 15 y 20, ¿qué haces con los factores?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Tomas los comunes con el menor exponente"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Describiste el MCD, no el mcm. El mcm necesita factores más grandes, no más chicos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Tomas todos con el mayor exponente"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dijiste exacto: mcm usa todos los factores que salieron, cada uno con su exponente más grande.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Tomas los mayores nada más"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Confundiste exponente con tamaño del número. Necesitas todos los factores distintos, no los que sean grandes.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sumas los exponentes que tienes"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los exponentes no se suman. Tomas cada factor con su exponente más grande y luego multiplicas.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Dos autobuses pasan cada 12 y cada 18 minutos. ¿Cuándo coinciden de nuevo? ¿MCD o mcm?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "MCD: 6 minutos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Escogiste el MCD porque 6 es más chico. Pero los buses no pueden volver juntos antes de sus propios ciclos. El mcm es siempre más grande que los números.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "mcm: 36 minutos"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Usaste el mcm porque el problema pregunta cuándo vuelven a coincidir. Es un tiempo futuro, no algo que comparten ahora.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "MCD: 12 minutos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Tomaste uno de los números dados. El MCD busca lo que divide exacto en ambos; para coincidencias de tiempo va el mcm.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "mcm: 60 minutos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Escogiste mcm, que es correcto, pero tu resultado está fuera del rango. Revisa la descomposición de 12 y 18.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 3,
+    "materia": "matematicas",
+    "pasoDelCanon": 5,
+    "queFalta": "cuál es el MCM en un problema que pide cuándo coinciden dos eventos que suceden a ritmos distintos",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "Problema: dos camiones pasan cada 12 y 18 minutos. Cuándo coinciden. Respuesta:"
+      },
+      {
+        "tipo": "hueco"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "36",
+      "aceptaTambien": [],
+      "comoSeLee": "treinta y seis"
+    },
+    "pistas": [
+      {
+        "texto": "En un problema que pide 'cuándo coinciden', buscas el número más chico que contiene a ambos, no el que comparten. Los camiones vuelven a pasar juntos en un momento futuro, no ahora.",
+        "orden": 1
+      },
+      {
+        "texto": "Tomas TODOS los factores de la descomposición, con el exponente más grande. Eso te da el número que buscas.",
+        "orden": 2
+      },
+      {
+        "texto": "Ambos números entran exacto en el resultado. Cuenta: 36 ÷ 12 = 3 y 36 ÷ 18 = 2. El resultado tiene que ser más grande que los dos números, no más chico.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "6",
+      "queSeLeDice": "6 es el MCD, lo que comparten. Pero 'coinciden' significa que pasan juntos en el futuro, no ahora. Un camión que pasa cada 12 minutos no puede volver a pasar en 6. Vuelve al paso 5: lees bien qué pide el problema."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 3,
+    "materia": "matematicas",
+    "escalones": [
+      {
+        "situacion": "En la tiendita venden cajas de 12 huevos y cajas de 18 huevos. Quieren armar paquetes iguales sin mezclar y sin que sobre nada.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "MCD(12, 18) ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos huevos van en cada paquete?",
+        "respuesta": {
+          "tecleado": "6",
+          "aceptaTambien": [],
+          "comoSeLee": "seis"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Necesitas el número más grande que divide exacto en 12 y en 18. Algo que reparta sin sobrar."
+          },
+          {
+            "orden": 2,
+            "texto": "Descompones: 12 = 2² × 3 y 18 = 2¹ × 3². Tomas los factores en ambos con el exponente más chico."
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": false
+      },
+      {
+        "situacion": "Dos autobuses salen del terminal: uno pasa cada 8 minutos y otro cada 12 minutos. Quieren saber cuándo coinciden en la parada.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "mcm(8, 12) ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿En cuántos minutos vuelven a pasar juntos?",
+        "respuesta": {
+          "tecleado": "24",
+          "aceptaTambien": [],
+          "comoSeLee": "veinticuatro"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Necesitas el número más chico en el que ambos autobuses pasan exacto. Algo donde coinciden en el tiempo."
+          },
+          {
+            "orden": 2,
+            "texto": "Descompones: 8 = 2³ y 12 = 2² × 3. Tomas todos los factores con el exponente más grande."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la escuela quieren dividir 20 libros y 30 cuadernos en lotes idénticos para las aulas, sin mezclar y sin sobrar.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "MCD(20, 30) ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos lotes iguales se hacen?",
+        "respuesta": {
+          "tecleado": "10",
+          "aceptaTambien": [],
+          "comoSeLee": "diez"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Buscas lo que se puede repartir entre 20 y 30 sin que sobre nada. Lo que entra exacto en los dos."
+          },
+          {
+            "orden": 2,
+            "texto": "20 = 2² × 5 y 30 = 2 × 3 × 5. Los factores comunes con su exponente menor."
+          },
+          {
+            "orden": 3,
+            "texto": "2 a la 1 por 5 a la 1: eso es 2 × 5."
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": false
+      },
+      {
+        "situacion": "Dos máquinas hacen señales: una cada 15 segundos y otra cada 25 segundos. Los técnicos necesitan cuándo suceden las dos juntas.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "mcm(15, 25) ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿En cuántos segundos se sincronizan las señales?",
+        "respuesta": {
+          "tecleado": "75",
+          "aceptaTambien": [],
+          "comoSeLee": "setenta y cinco"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Quieren saber cuándo los dos eventos ocurren a la vez. El número donde ambos números dividen exacto."
+          },
+          {
+            "orden": 2,
+            "texto": "15 = 3 × 5 y 25 = 5². Todos los factores con su exponente más grande."
+          },
+          {
+            "orden": 3,
+            "texto": "El 3 aparece una vez, el 5 aparece al cuadrado. Multiplicas 3 × 5²."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un maestro escribió que el mcm(14, 21) es 42, pero borró cuál es el MCD de esos dos números sin querer.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "MCD(14, 21) ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es el máximo común divisor?",
+        "respuesta": {
+          "tecleado": "7",
+          "aceptaTambien": [],
+          "comoSeLee": "siete"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Ya tienes el mcm. Ahora necesitas lo opuesto: el número más grande que divide exacto en ambos."
+          },
+          {
+            "orden": 2,
+            "texto": "14 = 2 × 7 y 21 = 3 × 7. El factor que está en los dos es el 7."
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 3,
+    "materia": "matematicas",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien halló el MCD y el mcm de 12 y 18:"
+      },
+      {
+        "tipo": "texto",
+        "valor": "12 ="
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "2",
+        "sup": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "× 3  ;  18 ="
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "2",
+        "sup": "1"
+      },
+      {
+        "tipo": "texto",
+        "valor": "×"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "3",
+        "sup": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": ". Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Descompongo ambos números:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "12 ="
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "2",
+            "sup": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 3  ;  18 ="
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "2",
+            "sup": "1"
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "3",
+            "sup": "2"
+          }
+        ],
+        "siLoTocas": "Ese paso escribe la descomposición de los dos números en factores primos con sus exponentes. Los datos 12 y 18 vinieron del enunciado y están bien descompuestos."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Para el MCD tomo factores comunes, menor exponente:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "MCD(12, 18) ="
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "2",
+            "sup": "1"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 3 = 6"
+          }
+        ],
+        "siLoTocas": "La regla es correcta: tomar sólo los factores que están en ambos números, con el exponente más chico. El cálculo está bien: 2 a la 1 por 3 es 6."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Para el mcm tomo todos los factores, mayor exponente:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "mcm(12, 18) ="
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "2",
+            "sup": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "×"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "3",
+            "sup": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 36"
+          }
+        ],
+        "siLoTocas": "La regla está bien: todos los factores con el exponente más grande. El cálculo también: 2 al cuadrado por 3 al cuadrado da 36. Los números 4 y 9 vinieron del paso 1."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Compruebo que 12 y 18 dividen exacto en 36:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "36 ÷ 12 = 3  ;  36 ÷ 18 = 2"
+          }
+        ],
+        "siLoTocas": "Ambas divisiones dan exacto. El 36 que llegó a este paso viene del paso 3, y el paso 4 lo divide bien entre los dos números originales."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Problema: dos camiones pasan cada 12 y 18 minutos. Cuándo coinciden."
+          },
+          {
+            "tipo": "texto",
+            "valor": "Respuesta: 6"
+          }
+        ],
+        "siLoTocas": "Ahí está el error. Ese paso toma el MCD cuando el problema pide el mcm."
+      }
+    ],
+    "pasoMalo": 5,
+    "arrastre": "El paso 5 es el último, así que no hay pasos posteriores que arrastren el error. La señal que lo delata es que el 6 es más chico que los dos números (12 y 18), pero un camión que pasa cada 12 minutos no puede volver a pasar en 6 minutos. El resultado tiene que ser más grande que ambos números, no más chico.\"",
+    "porQue": "¿Y qué hizo mal en ese paso?\"",
+    "motivos": [
+      {
+        "texto": "Confundió el MCD con el mcm y tomó lo que comparten en vez de cuándo coinciden.",
+        "esElBueno": true,
+        "queRevela": "El paso anterior acababa de calcular ambos: MCD = 6 y mcm = 36. Pero 'coinciden' en el problema habla de tiempo futuro, cuando los dos camiones llegan al mismo punto otra vez. Eso es el mcm, no el MCD. El MCD sería si preguntara cómo repartir algo entre los dos camiones."
+      },
+      {
+        "texto": "Tomó el número más chico entre los dos resultados.",
+        "esElBueno": false,
+        "queRevela": "Quien escoge esto cree que 'mínimo' en mcm significa que la respuesta tiene que ser el número más pequeño. Pero mínimo se refiere a lo más pequeño que cumple la condición —contener a ambos números exacto—, no a escoger entre dos respuestas. El mcm de 12 y 18 es 36, mayor que el MCD, porque necesita que ambos números lo dividan exacto."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Los cuatro pasos anteriores siguen la regla del MCD o del mcm correctamente. El error no está en cómo se calculan: está en cuál escogiste."
+      },
+      {
+        "orden": 2,
+        "texto": "El paso 3 calculó dos números distintos: 6 y 36. Lee qué pide el problema: ¿pide 'a la vez', 'repartiendo' o 'coinciden', 'de nuevo'?"
+      },
+      {
+        "orden": 3,
+        "texto": "'Coinciden' habla de un momento futuro cuando los dos camiones se encuentran. Compara con 'repartir 12 chocolates y 18 caramelos': uno usa el MCD y otro usa el mcm."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 3,
+    "materia": "matematicas",
+    "titulo": "Explícame por qué en este problema sirve el mcm y no el MCD.",
+    "aclaracion": "Con tus palabras, sin escribir el procedimiento. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El mcm te dice cuándo dos cosas que pasan cada cierto tiempo vuelven a ocurrir al mismo tiempo, en el futuro.",
+          "porQueImporta": "Sin esta idea, los dos parecen números que se comparten entre 12 y 18, y entonces el MCD también sirve. Con ella se ve que uno cuenta cuándo vuelven a coincidir, no qué tienen en común ahora.",
+          "comoSuenaDicha": "Es para saber cuándo pasan juntos de nuevo, en el futuro.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "El resultado del mcm tiene que ser más grande que ambos números, porque si fuera más chico, uno de los camiones ya habría pasado ahí.",
+          "porQueImporta": "Es la forma más rápida de cachar cuándo usaste MCD en vez de mcm: si el resultado es más pequeño que los dos números, no puede ser cuándo coinciden.",
+          "comoSuenaDicha": "El resultado tiene que ser más grande que los dos números.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "El MCD te dice qué comparten ahora: qué entra exacto en ambos. El mcm te dice cuándo los dos lo dividen exacto, cuándo vuelven a ocurrir juntos.",
+          "porQueImporta": "Distinguir entre compartir ahora y ocurrir juntos después es lo que decide si lees un problema bien. Es el paso 5 del procedimiento.",
+          "comoSuenaDicha": "Uno es lo que comparten, el otro es cuándo pasan juntos otra vez.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque el mcm es lo que comparten en común los dos números.",
+          "queLaDelata": "Mezcla el significado del MCD con el nombre del mcm. Es lo que comparten, pero 'común múltiplo' no significa compartir ahora: significa que ambos lo dividen exacto, y con eso vuelven a ocurrir juntos.",
+          "queLeFalta": "Que diga que es para saber cuándo pasan juntos de nuevo, no qué tienen en común hoy."
+        },
+        {
+          "respuesta": "Porque siempre el mcm es el que sirve para los problemas de coincidir.",
+          "queLaDelata": "Es una regla memorizada sin entender por qué funciona. Si alguien pregunta por qué esta regla es así, no tiene respuesta.",
+          "queLeFalta": "Que diga qué significa coincidir en el tiempo y por qué eso está ligado a un número que ambos dividen exacto."
+        },
+        {
+          "respuesta": "Porque el mcm es más grande y el MCD es más pequeño, así que este sí.",
+          "queLaDelata": "Confunde el tamaño de los números con el significado de lo que calculan. Es el error secundario: cree que 'mínimo' en mcm significa el número más chico.",
+          "queLeFalta": "Que diga qué cuenta cada uno: uno cuándo ocurren juntos y el otro qué entra en ambos."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Pero los dos camiones comparten que pasan cada 12 y 18 minutos, así que es lo que comparten.",
+          "seLeContesta": "Los dos tienen eso en común ahora, es verdad. Pero 'coinciden' no pregunta por lo que comparten: pregunta cuándo vuelven a pasar al mismo tiempo. El 6 entra en ambos, pero un camión que pasa cada 12 minutos no vuelve a pasar en 6. Pregunta al revés: si pasó uno en el minuto 6, ¿pasó el otro?",
+          "aDondeLoEmpuja": "A ver que coinciden en el tiempo significa ocurrir juntos en el futuro, no compartir algo ahora."
+        },
+        {
+          "siDice": "No me acuerdo cuál es cuál, pero sé que hay que descomponer en factores.",
+          "seLeContesta": "Está bien no acordarse del nombre. Lee el resultado: ¿12 y 18 dividen exacto en 6, o 6 divide exacto en 12 y 18? La respuesta te va a decir cuál de los dos cálculos hiciste.",
+          "aDondeLoEmpuja": "A ver que el resultado habla: si es más chico que ambos es una cosa, si los contiene es la otra."
+        },
+        {
+          "siDice": "Entiendo, nada más no encuentro las palabras.",
+          "seLeContesta": "Entonces contesta esto: en el minuto 36, ¿pasó el camión de 12 minutos? ¿Pasó el de 18? Si pasaron los dos, ya está explicado.",
+          "aDondeLoEmpuja": "A que vea que la idea ya está ahí, y lo que falta es escribirla."
+        }
+      ],
+      "ejemploQueSiCuenta": "El mcm me dice cuándo los camiones pasan juntos de nuevo. El camión de 12 minutos pasa en los minutos 12, 24, 36. El de 18 pasa en 18, 36. Coinciden en el 36, que es más grande que ambos. El MCD es 6, que entra en los dos, pero eso no quiere decir que pasen juntos ahí.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use los números 12, 18 ni 36 del ejemplo, o que use otros números distintos.",
+        "Que no use las palabras MCD ni mcm si puede decir qué calcula cada uno, o si las usa sin explicar qué miden."
+      ]
+    },
+    "noSePuede": null
+  }
 }

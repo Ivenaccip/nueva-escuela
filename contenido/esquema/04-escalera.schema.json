@@ -386,7 +386,8 @@
         "valor": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 33
+          "maxLength": 100,
+          "description": "Los pasos de la estacion 5 tienen minHeight 58 (app/estacion/error.tsx:136) y se parten. El 33 salia de suponer un renglon, y el diseno mide 17 porque su tema es una division de fracciones; los pasos de MCD y mcm miden de 54 a 88 caracteres y son legitimos: \"Para el MCD tomo los comunes, menor exponente: MCD(12, 18) = 2 x 3 = 6\" mide 70. 100 son unas tres lineas a 17 px en los 276 utiles. El tope NO es de dibujo: la tarjeta usa minHeight (no height) y vive en el Cuerpo, que es un ScrollView, y Expresion parte el texto en palabras y lo hace fluir. Sirve para que no divague."
         }
       },
       "required": [
@@ -411,12 +412,62 @@
     },
     "renglonDePaso": {
       "type": "array",
-      "description": "El renglon de un paso de la estacion 5, escrito con atomos cortos. SIN huecos. Hasta 6 atomos: en el diseno el paso lleva de uno a cuatro, la caja mide 276 px a 17 px (app/estacion/error.tsx:64-70) y a partir de 104 caracteres la pantalla se desplaza. Son cinco pasos y esa pantalla es la mas apretada de las seis: 49 px de holgura.",
+      "description": "El renglon de un paso de la estacion 5, escrito con atomos cortos. SIN huecos. Hasta 6 atomos: en el diseno el paso lleva de uno a cuatro, la caja mide 276 px a 17 px (app/estacion/error.tsx:64-70) y a partir de 104 caracteres la pantalla se desplaza. Son cinco pasos y esa pantalla es la mas apretada de las seis: 49 px de holgura. Un paso que mezcla texto y dos fracciones pasa de seis atomos sin ser largo.",
       "items": {
         "$ref": "#/$defs/parteMatDePaso"
       },
       "minItems": 1,
-      "maxItems": 6,
+      "maxItems": 8,
+      "not": {
+        "contains": {
+          "$ref": "#/$defs/hueco"
+        }
+      }
+    },
+    "textoDeEnunciado": {
+      "type": "object",
+      "description": "Palabras y signos dentro de un enunciado. El enunciado se parte en palabras y fluye dentro del Cuerpo, que es un ScrollView, asi que aqui el tope NO es de dibujo sino de no divagar. 140 caracteres dan para un problema de dos frases: \"Dos autobuses salen juntos. Uno pasa cada 15 minutos y otro cada 20. Cuando vuelven a coincidir?\" mide 97, y \"Tienes 18 caramelos y 24 chocolates para hacer bolsas iguales sin que sobre nada. Cuantas bolsas puedes hacer?\" mide 111: los dos son problemas legitimos que el tope de 90 tiraba. Ese 90 sale de la tarjeta de la estacion 3, que es otra caja y si tiene alto fijo.",
+      "properties": {
+        "tipo": {
+          "const": "texto"
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 140
+        }
+      },
+      "required": [
+        "tipo",
+        "valor"
+      ],
+      "additionalProperties": false
+    },
+    "parteMatDeEnunciado": {
+      "description": "Un atomo del renglon. Son cuatro y no hay mas.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textoDeEnunciado"
+        },
+        {
+          "$ref": "#/$defs/fraccion"
+        },
+        {
+          "$ref": "#/$defs/simbolo"
+        },
+        {
+          "$ref": "#/$defs/hueco"
+        }
+      ]
+    },
+    "renglonDeEnunciado": {
+      "type": "array",
+      "description": "Un renglon de enunciado: como renglon, pero con el texto mas suelto porque fluye en vez de caber en una tarjeta.",
+      "items": {
+        "$ref": "#/$defs/parteMatDeEnunciado"
+      },
+      "minItems": 1,
+      "maxItems": 24,
       "not": {
         "contains": {
           "$ref": "#/$defs/hueco"

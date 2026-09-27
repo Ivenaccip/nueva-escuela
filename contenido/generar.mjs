@@ -424,6 +424,18 @@ async function llamar({ paso, sistema, mensaje }) {
       if (leido || escrito) decir(`      caché: ${leido} leidos, ${escrito} escritos`);
     }
 
+    // Una salida cortada por el tope sale con 200 y un `tool_use` a medias, así
+    // que sin esto el síntoma es «faltan cuatro campos obligatorios» y uno se va
+    // a buscar el error al prompt. Pasó en la estación 5 del tema 3: el modelo
+    // mandó `pasos` como una cadena de 3 545 caracteres —serializar un arreglo
+    // gasta el doble— y se quedó sin espacio para los últimos cuatro campos.
+    if (datos.stop_reason === 'max_tokens') {
+      throw new Rajada(
+        `${paso.clave}: la salida se cortó en el tope de ${MAX_TOKENS} tokens y llegó incompleta. ` +
+          'Casi siempre es porque devolvió algún arreglo serializado como cadena, que gasta el doble.',
+      );
+    }
+
     // Una negativa por política sale con 200 y stop_reason "refusal".
     if (datos.stop_reason === 'refusal') {
       throw new Rajada(
