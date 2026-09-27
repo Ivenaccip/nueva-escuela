@@ -304,16 +304,31 @@ for (const { n, t, e } of filas) {
     decir(`  ${String(n).padStart(3)}  ${'no se corrio'.padEnd(22)} ${t.titulo}`);
     continue;
   }
-  const marca = seco ? '' : e.pintable ? 'SE PINTA' : 'NO SE PINTA';
+  // En sondeo las seis estaciones no se pidieron nunca, asi que contar cuantas
+  // faltan no dice nada y asusta de balde: lo que se sondeo es el RUTEO.
+  const aparte = e.caso || e.estado === 'canon-dice-no';
+  const marca = seco
+    ? ''
+    : sondeo
+      ? !e.notacion
+        ? 'SIN CANON'
+        : aparte
+          ? 'CASO APARTE'
+          : 'CAMINO NORMAL'
+      : e.pintable
+        ? 'SE PINTA'
+        : 'NO SE PINTA';
   const detalle = [
     e.notacion ? `${e.notacion}/${e.forma}` : null,
-    e.hechas !== undefined ? `${e.hechas}/6 estaciones` : null,
-    e.faltan && e.faltan.length ? `faltan ${e.faltan.join(',')}` : null,
+    sondeo ? (e.caso ? `va a ${e.caso}` : null) : null,
+    sondeo || e.hechas === undefined ? null : `${e.hechas}/6 estaciones`,
+    sondeo || !(e.faltan && e.faltan.length) ? null : `faltan ${e.faltan.join(',')}`,
     e.conNoSePuede && e.conNoSePuede.length ? `noSePuede en ${e.conNoSePuede.join(',')}` : null,
   ]
     .filter(Boolean)
     .join(' · ');
-  decir(`  ${String(n).padStart(3)}  ${marca.padEnd(11)} ${e.estado.padEnd(18)} ${t.titulo}`);
+  const estado = sondeo ? (e.notacion ? 'canon listo' : e.estado) : e.estado;
+  decir(`  ${String(n).padStart(3)}  ${marca.padEnd(13)} ${estado.padEnd(18)} ${t.titulo}`);
   if (detalle) decir(`       ${detalle}`);
 }
 

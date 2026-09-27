@@ -1,0 +1,156 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 4,
+  "titulo": "La fracción: parte, reparto y recta",
+  "generadoEn": "2026-09-27T03:22:12.491Z",
+  "canon": {
+    "temaNumero": 4,
+    "materia": "matematicas",
+    "titulo": "La fracción: parte, reparto y recta",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Ubicar una fracción en la recta numérica",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas cuál es la unidad: el segmento entre el 0 y el 1.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La unidad es de 0 a 1"
+            }
+          ],
+          "porQue": "Una fracción divide la unidad en pedazos iguales. Si divides 0 a 2 en cuartos, no sabes cuánto vale cada pedazo porque no sabes cuál es la medida que se está dividiendo."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Divides la unidad (el segmento de 0 a 1) en tantas partes como dice el denominador.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Divido la unidad en 4 partes iguales"
+            }
+          ],
+          "porQue": "El denominador 4 te dice que cada unidad se corta en 4 pedazos. Si divides toda la recta, los pedazos no son del mismo tamaño y pierdes el concepto de fracción."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Cuentas tantos pedazos como dice el numerador, partiendo desde el 0.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Cuento 3 pedazos desde el 0"
+            }
+          ],
+          "porQue": "El numerador 3 te dice cuántos pedazos necesitas contar. Cada pedazo tiene el mismo tamaño porque todos vinieron de partir la unidad igual."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Marcas el punto donde termina de contar.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Hago una marca en el tercer punto"
+            }
+          ],
+          "porQue": "Ese punto es donde vive la fracción 3/4 en la recta. Es la distancia que hay entre el 0 y ese punto."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Compruebas que el punto esté entre 0 y 1, y que falte menos para llegar a 1 que lo que ya avanzaste.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "3/4 está entre 0 y 1. 3 es mayor que 1, así que está más cerca del 1 que del 0"
+            }
+          ],
+          "porQue": "Si 3/4 saliera del segmento 0-1 o estuviera en la mitad cuando debería estar más allá, la ubicación fue mal desde el paso 1 o 2."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "ubicar tres cuartos en una recta numérica que va de 0 a 1",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Ubica"
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 3,
+          "abajo": 4
+        },
+        {
+          "tipo": "texto",
+          "valor": "en la recta"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "La marca está a 3/4 del camino entre 0 y 1"
+        }
+      ],
+      "resultadoEnPalabras": "tres cuartos está ubicado en la recta numérica entre cero y uno"
+    },
+    "error": {
+      "enUnaFrase": "Divide toda la recta en cuatro partes iguales en vez de dividir solo el segmento del 0 al 1.",
+      "creenciaDeAtras": "cree que una fracción en la recta significa «dividir todo lo que ves en el dibujo», sin distinguir cuál es la unidad que se está fraccionando",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Divido toda la recta de 0 a 2 en 4 partes iguales"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Pongo la marca en 1½ (al final del segundo segmento)"
+        }
+      ],
+      "comoSeCacha": "El resultado queda entre 1 y 2 cuando 3/4 es menor que 1. Si la fracción fuera mayor que 1, estaría más allá del 1, pero 3/4 no lo es."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "la unidad",
+        "queEs": "El segmento que va de 0 a 1 en la recta numérica. Es lo que se divide en pedazos iguales.",
+        "noEsLoMismoQue": "toda la recta o todo lo que ves en el dibujo"
+      },
+      {
+        "palabra": "denominador",
+        "queEs": "El número de abajo de la fracción. Te dice en cuántas partes iguales se corta la unidad.",
+        "noEsLoMismoQue": "numerador, que es el número de arriba"
+      },
+      {
+        "palabra": "numerador",
+        "queEs": "El número de arriba de la fracción. Te dice cuántos pedazos necesitas contar desde el 0.",
+        "noEsLoMismoQue": "denominador, que es el número de abajo"
+      },
+      {
+        "palabra": "fracción",
+        "queEs": "Una división que muestra cuántas partes iguales tomas de un todo. Se escribe con un número arriba y otro abajo."
+      }
+    ],
+    "cotas": {
+      "numeros": "numeradores y denominadores enteros del 1 al 12; fracciones menores que 1; las rectas van de 0 a 2 máximo",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "fraccion",
+          "arriba": "a",
+          "abajo": "b"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

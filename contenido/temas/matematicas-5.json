@@ -1,0 +1,202 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 5,
+  "titulo": "Fracciones equivalentes y simplificar",
+  "generadoEn": "2026-09-27T03:22:30.576Z",
+  "canon": {
+    "temaNumero": 5,
+    "materia": "matematicas",
+    "titulo": "Fracciones equivalentes y simplificar",
+    "notacion": "lineal",
+    "formaDeRespuesta": "fraccion",
+    "procedimiento": {
+      "nombre": "Simplificar una fracción a su mínima expresión",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Buscas un número que divida tanto el de arriba como el de abajo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "¿Qué divide a 18 y a 24? El 6."
+            }
+          ],
+          "porQue": "Los dos pisos de una fracción tienen que cambiar por el mismo número, o la fracción cambia de valor. Si divides arriba y abajo entre el mismo número, obtienes la misma cantidad repartida en pedazos más grandes."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Divides el de arriba entre ese número.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 18,
+              "abajo": 24
+            },
+            {
+              "tipo": "texto",
+              "valor": "—"
+            },
+            {
+              "tipo": "texto",
+              "valor": "÷6"
+            },
+            {
+              "tipo": "texto",
+              "valor": "→"
+            }
+          ],
+          "porQue": "El de arriba es la cantidad de pedazos que tienes. Si los pedazos se hacen más grandes, tienes menos pedazos."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Divides el de abajo entre ese mismo número.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 4
+            }
+          ],
+          "porQue": "El de abajo es el tamaño de cada pedazo. Si divides por 6, cada pedazo es 6 veces más grande."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Revisas que arriba y abajo no tengan otro número que los divida a los dos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "¿Qué divide a 3 y a 4? Nada más que el 1."
+            }
+          ],
+          "porQue": "Si aún hay un número que divide a los dos, la fracción se puede hacer más simple todavía. Cuando sólo el 1 los divide, ya llegaste al final."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Compruebas que la fracción simplificada vale lo mismo que la original.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 18,
+              "abajo": 24
+            },
+            {
+              "tipo": "texto",
+              "valor": "="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 4
+            }
+          ],
+          "porQue": "Dividir arriba y abajo entre el mismo número no cambia lo que la fracción representa: sigue siendo la misma cantidad, sólo que escrita con números más chicos."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una fracción con números que se pueden reducir",
+      "planteamiento": [
+        {
+          "tipo": "fraccion",
+          "arriba": 18,
+          "abajo": 24
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "fraccion",
+          "arriba": 3,
+          "abajo": 4
+        }
+      ],
+      "resultadoEnPalabras": "tres cuartos"
+    },
+    "error": {
+      "enUnaFrase": "Simplifica restando lo mismo arriba y abajo en vez de dividir.",
+      "creenciaDeAtras": "cree que si quitas la misma cantidad de los dos pisos, la fracción sigue valiendo lo mismo, porque «lo quité de los dos»",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "fraccion",
+          "arriba": 18,
+          "abajo": 24
+        },
+        {
+          "tipo": "texto",
+          "valor": "—"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 16,
+          "abajo": 22
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "fraccion",
+          "arriba": 16,
+          "abajo": 22
+        }
+      ],
+      "comoSeCacha": "Cuando restas la misma cantidad arriba y abajo, la fracción cambia: 18/24 es tres cuartos, pero 16/22 no es lo mismo. En cambio, cuando divides arriba y abajo entre el mismo número, el valor no cambia."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que simplificar es solo restar números, sin verificar que ambos se dividan entre el mismo divisor.",
+        "creenciaDeAtras": "cree que simplificar es hacer los números más chicos por cualquier medio, no cambiar la cantidad que representa la fracción"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "equivalentes",
+        "queEs": "Dos fracciones que valen lo mismo pero están escritas con números distintos.",
+        "noEsLoMismoQue": "simplificadas, que es cuando ya no se pueden hacer más simples"
+      },
+      {
+        "palabra": "simplificar",
+        "queEs": "Dividir el de arriba y el de abajo entre el mismo número para escribir la fracción con números más chicos sin cambiar su valor."
+      },
+      {
+        "palabra": "mínima expresión",
+        "queEs": "La forma de escribir una fracción con los números más chicos posibles, cuando ya no hay ningún número que divida a los dos."
+      },
+      {
+        "palabra": "máximo común divisor",
+        "queEs": "El número más grande que divide exactamente tanto al de arriba como al de abajo."
+      }
+    ],
+    "cotas": {
+      "numeros": "numeradores y denominadores enteros del 1 al 24; los dividendos son pares; el máximo común divisor está entre 2 y 6; el resultado siempre es una fracción propia o impropia con números entre 1 y 12",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

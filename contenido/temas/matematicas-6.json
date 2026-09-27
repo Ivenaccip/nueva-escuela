@@ -1,0 +1,282 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 6,
+  "titulo": "Comparar y ordenar fracciones",
+  "generadoEn": "2026-09-27T03:22:50.992Z",
+  "canon": {
+    "temaNumero": 6,
+    "materia": "matematicas",
+    "titulo": "Comparar y ordenar fracciones",
+    "notacion": "lineal",
+    "formaDeRespuesta": "fraccion",
+    "procedimiento": {
+      "nombre": "Comparar dos fracciones llevándolas a denominador común",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Decides si las dos fracciones ya tienen el mismo denominador.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "¿"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 5
+            },
+            {
+              "tipo": "texto",
+              "valor": "y"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 8
+            },
+            {
+              "tipo": "texto",
+              "valor": "tienen el mismo número abajo?"
+            }
+          ],
+          "porQue": "Si el denominador es el mismo, los pedazos tienen el mismo tamaño, y sólo tienes que contar cuál fracción tiene más pedazos. Si no son iguales, los pedazos tienen distinto tamaño y no puedes comparar sin pasar uno a la forma del otro."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Busca un número que sea múltiplo de los dos denominadores.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El 40 es múltiplo de 5 y de 8."
+            }
+          ],
+          "porQue": "Si reescribes las dos fracciones con ese número como denominador, los pedazos tendrán el mismo tamaño y podrás compararlas."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Conviertes cada fracción a esa forma usando multiplicación.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 5
+            },
+            {
+              "tipo": "texto",
+              "valor": "×"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 8,
+              "abajo": 8
+            },
+            {
+              "tipo": "texto",
+              "valor": "="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 8,
+              "abajo": 40
+            },
+            {
+              "tipo": "texto",
+              "valor": "  ;  "
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 8
+            },
+            {
+              "tipo": "texto",
+              "valor": "×"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 5,
+              "abajo": 5
+            },
+            {
+              "tipo": "texto",
+              "valor": "="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 5,
+              "abajo": 40
+            }
+          ],
+          "porQue": "Multiplicar arriba y abajo por el mismo número no cambia cuánto vale la fracción, sólo cambia su cara. Ahora los dos denominadores son iguales."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Compara los numeradores: cuál es mayor o menor.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 8,
+              "abajo": 40
+            },
+            {
+              "tipo": "texto",
+              "valor": ">"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 5,
+              "abajo": 40
+            }
+          ],
+          "porQue": "Si el denominador es el mismo, la fracción con el numerador más grande es la más grande, porque tiene más pedazos del mismo tamaño."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Escribe la respuesta usando las fracciones originales.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 5
+            },
+            {
+              "tipo": "texto",
+              "valor": ">"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 8
+            }
+          ],
+          "porQue": "Ya sabes cuál es mayor, y ahora dejas escrito con los números que el problema te dio, no con los que inventaste para comparar."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "comparar dos fracciones con el mismo numerador pero diferente denominador",
+      "planteamiento": [
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 5
+        },
+        {
+          "tipo": "texto",
+          "valor": "¿es mayor, menor o igual a"
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 8
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 5
+        },
+        {
+          "tipo": "texto",
+          "valor": ">"
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 8
+        }
+      ],
+      "resultadoEnPalabras": "un quinto es mayor que un octavo"
+    },
+    "error": {
+      "enUnaFrase": "Cree que un octavo es mayor que un quinto porque 8 es mayor que 5.",
+      "creenciaDeAtras": "Cree que el denominador es un número cualquiera que se compara como los números enteros, sin darse cuenta de que el denominador decide el tamaño del pedazo.",
+      "pasoQueCorrompe": 4,
+      "renglonMalo": [
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 5
+        },
+        {
+          "tipo": "texto",
+          "valor": "<"
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 8
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 5
+        },
+        {
+          "tipo": "texto",
+          "valor": "<"
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 8
+        }
+      ],
+      "comoSeCacha": "Compara 1 contra 1 en los numeradores, ve que son iguales, y luego compara 5 contra 8 sin darse cuenta de que números más grandes en el denominador significan pedazos más chicos, no más grandes."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "No busca denominador común y compara directamente los números que ve.",
+        "creenciaDeAtras": "Cree que las fracciones se pueden comparar tal como vienen, sin transformarlas, como si fueran números enteros."
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "denominador",
+        "queEs": "El número de abajo de la fracción, que dice en cuántos pedazos iguales se cortó el entero.",
+        "noEsLoMismoQue": "numerador, que es el de arriba y dice cuántos pedazos tienes"
+      },
+      {
+        "palabra": "numerador",
+        "queEs": "El número de arriba de la fracción, que dice cuántos de los pedazos tienes.",
+        "noEsLoMismoQue": "denominador, que es el de abajo y dice de qué tamaño son los pedazos"
+      },
+      {
+        "palabra": "denominador común",
+        "queEs": "Un número que es denominador en las dos fracciones a la vez, para que los pedazos tengan el mismo tamaño."
+      },
+      {
+        "palabra": "múltiplo",
+        "queEs": "Un número que sale de multiplicar otro número por un entero. El 40 es múltiplo de 5 porque 5 × 8 = 40."
+      }
+    ],
+    "cotas": {
+      "numeros": "numeradores 1 o 2; denominadores del 2 al 10; los denominadores comunes no pasan de 100",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": ">"
+        },
+        {
+          "tipo": "texto",
+          "valor": "<"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

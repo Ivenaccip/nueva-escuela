@@ -62,13 +62,6 @@ const MAX_TOKENS = 16000;
  */
 const CACHEAR = { type: 'ephemeral' };
 
-/**
- * `strict` obliga al servidor a validar los argumentos, pero su subconjunto de
- * JSON Schema es más chico que el de ajv: un esquema que aquí vale puede salir
- * rechazado allá. Si la primera llamada lo rechaza se apaga para toda la corrida
- * y ajv sigue haciendo el trabajo, en vez de tirar las ciento cuarenta llamadas.
- */
-let estricto = true;
 
 /** Reintentos por llamada, con espera que crece. */
 const REINTENTOS = 3;
@@ -213,6 +206,18 @@ if (!MATERIAS.includes(materia)) {
 }
 
 const seco = banderas.has('--seco');
+
+/**
+ * `strict` haría que el servidor validara los argumentos, pero su subconjunto de
+ * JSON Schema es más chico que el de ajv y **estos esquemas no caben**: el sondeo
+ * de los trece primeros temas de Matemáticas lo rechazó en las trece llamadas.
+ * Va apagado, entonces, para no gastar un viaje rechazado por proceso; con
+ * `--estricto` se vuelve a probar, y si lo rechaza se apaga solo y sigue.
+ *
+ * Que esté apagado no deja nada sin validar: ajv comprueba cada respuesta contra
+ * el esquema completo antes de guardarla, y ahí sí caben todas las palabras.
+ */
+let estricto = banderas.has('--estricto');
 
 // El SDK lee ANTHROPIC_API_KEY del entorno por su cuenta. La llave no se copia
 // a ninguna variable de aquí y no se imprime en ningún mensaje.
@@ -363,7 +368,8 @@ async function pedir(cuerpo) {
     if (e instanceof Anthropic.BadRequestError) {
       if (estricto && /strict|schema/i.test(e.message)) {
         estricto = false;
-        console.error('      el servidor rechazó `strict`; se apaga y valida sólo ajv. Reintento.');
+        console.error(`      el servidor rechazó \`strict\`: ${e.message}`);
+        console.error('      se apaga y valida sólo ajv, que comprueba lo mismo. Reintento.');
         return pedir({ ...cuerpo, tools: cuerpo.tools.map(({ strict, ...t }) => t) });
       }
       throw new Rajada(`la API rechazó la petición: ${e.message}`);

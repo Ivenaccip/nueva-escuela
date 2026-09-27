@@ -1,0 +1,166 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 1,
+  "titulo": "Qué significa dividir",
+  "generadoEn": "2026-09-27T03:21:02.232Z",
+  "canon": {
+    "temaNumero": 1,
+    "materia": "matematicas",
+    "titulo": "Qué significa dividir",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Decidir qué hace la división y resolver",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Lees el problema y decides si pregunta repartir en partes iguales o cuántas veces cabe.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El problema pregunta cuántas veces cabe 4 en 27."
+            }
+          ],
+          "porQue": "Dividir contesta dos preguntas distintas y tienes que saber cuál es. En ambas se usa división, pero interpretas el resultado de forma diferente."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Escribes la división con el símbolo ÷ o con la galera.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "27 ÷ 4"
+            }
+          ],
+          "porQue": "Escribir la operación te deja ver qué es el dividendo y qué es el divisor. No se confunden si está escrito claro."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Resuelves la división: buscas el número que multiplicado por el divisor se acerca más sin pasarse.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "4 × 6 = 24, que cabe en 27."
+            }
+          ],
+          "porQue": "Dividir es buscar cuántas veces exactas o completas cabe el divisor, multiplicando. Pruebas números hasta encontrar el que sirve."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Calculas el residuo restando el resultado de la multiplicación del dividendo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "27 − 24 = 3."
+            }
+          ],
+          "porQue": "El residuo es lo que sobra: la diferencia entre lo que tienes y lo que se llevó la división. No desaparece, cuenta en la respuesta."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Escribes la respuesta con el cociente, el residuo y la interpretación según el tipo de pregunta.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "27 ÷ 4 = 6 y sobran 3"
+            }
+          ],
+          "porQue": "La respuesta completa tiene tres partes: cuántas veces cabe, cuánto sobra, y qué significa en el problema. El residuo no se ignora."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "repartir 27 caramelos en bolsas de 4 caramelos cada una",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "27 ÷ 4"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "6 y sobran 3"
+        }
+      ],
+      "resultadoEnPalabras": "seis bolsas llenas y sobran tres caramelos"
+    },
+    "error": {
+      "enUnaFrase": "Multiplica los dos números en vez de dividir.",
+      "creenciaDeAtras": "cree que un número grande entre un número chico tiene que dar un número mayor, porque suma y multiplicación agrandan. Cuando ve 27 ÷ 4, espera 108 o algo parecido, no 6, así que multiplica porque el resultado le parece más creíble.",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "27 × 4 = 108."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "108"
+        }
+      ],
+      "comoSeCacha": "El resultado es mucho más grande que cualquiera de los dos números del planteamiento. En un problema de repartir o de cuántas veces cabe, el resultado no puede ser más grande que lo que empezaste repartiendo."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Ignora el residuo o lo trata como parte del número.",
+        "creenciaDeAtras": "cree que el residuo es un error o un detalle sin importancia. Como la división en problemas escolares casi siempre toca exacto, supone que si hay residuo, algo salió mal o no cuenta."
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "dividendo",
+        "queEs": "El número que se reparte o del que se pregunta cuántas veces cabe otro número. Va arriba en la galera o a la izquierda del símbolo ÷."
+      },
+      {
+        "palabra": "divisor",
+        "queEs": "El número entre el que divides, el que marca el tamaño de los pedazos o cuántas veces preguntas si cabe. Va abajo en la galera o a la derecha del símbolo ÷."
+      },
+      {
+        "palabra": "cociente",
+        "queEs": "El resultado de la división: cuántas veces cabe, o cuántos pedazos si repartes."
+      },
+      {
+        "palabra": "residuo",
+        "queEs": "Lo que sobra cuando repartes o cuando contas cuántas veces cabe. No desaparece: forma parte de la respuesta."
+      },
+      {
+        "palabra": "repartir en partes iguales",
+        "queEs": "Una de las dos preguntas que contesta la división: dividir algo en grupos del mismo tamaño y contar cuántos grupos salen.",
+        "noEsLoMismoQue": "cuántas veces cabe, que es dividir contando cuántos grupos de un tamaño caben en lo que tengo"
+      },
+      {
+        "palabra": "cuántas veces cabe",
+        "queEs": "La otra pregunta que contesta la división: preguntar cuántos grupos de un tamaño determinado entran en lo que tengo.",
+        "noEsLoMismoQue": "repartir en partes iguales, que es dividir algo en un número fijo de grupos"
+      }
+    ],
+    "cotas": {
+      "numeros": "dividendos del 10 al 50, divisores del 2 al 10, cociente del 2 al 12, residuos del 0 al 9; todos enteros, todos positivos",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "×"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

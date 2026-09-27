@@ -1,0 +1,243 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 2,
+  "titulo": "Divisores, primos y factorización",
+  "generadoEn": "2026-09-27T03:21:24.957Z",
+  "canon": {
+    "temaNumero": 2,
+    "materia": "matematicas",
+    "titulo": "Divisores, primos y factorización",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Descomponer un número en factores primos",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Escribes el número y trazas una raya vertical a su derecha.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "360 |"
+            }
+          ],
+          "porQue": "La raya separa el número que descompones (izquierda) de los números primos que lo dividen (derecha). Cada paso será una división, y los resultados van cayendo hacia abajo en la izquierda."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Pruebas si el número se divide entre 2. Si se divide, escribes el 2 a la derecha de la raya y el resultado debajo del número.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "360 | 2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "180 |"
+            }
+          ],
+          "porQue": "Empiezas con el menor primo. Si el número termina en cifra par, se divide entre 2 sin hacer más cuentas."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Repites: pruebas si el nuevo número se divide entre 2, entre 3, entre 5, entre 7 o entre otros primos, hasta que no se divide más. Escribes cada primo que divide y el resultado debajo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "360 | 2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "180 | 2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "90 | 2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "45 | 3"
+            },
+            {
+              "tipo": "texto",
+              "valor": "15 | 3"
+            },
+            {
+              "tipo": "texto",
+              "valor": "5 | 5"
+            },
+            {
+              "tipo": "texto",
+              "valor": "1 |"
+            }
+          ],
+          "porQue": "Cada división genera un número nuevo en la izquierda. Cuando el número es impar, no se divide entre 2. Pruebas entonces el 3 sumando sus cifras: si la suma se divide entre 3, el número también. Continúas hasta llegar a 1."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Juntas todos los primos que están a la derecha de la raya, multiplicando. Agrupas los repetidos con superíndice.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "360 = 2 × 2 × 2 × 3 × 3 × 5 = "
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "2",
+              "sup": "3"
+            },
+            {
+              "tipo": "texto",
+              "valor": "× "
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "3",
+              "sup": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "× 5"
+            }
+          ],
+          "porQue": "El superíndice abrevia: en vez de escribir 2 × 2 × 2, escribes 2³. Esto muestra cuántas veces aparece cada primo en la descomposición."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Multiplicas los factores primos agrupados de regreso y verificas que da el número original.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2³ × 3² × 5 = 8 × 9 × 5 = 360"
+            }
+          ],
+          "porQue": "La multiplicación de regreso te asegura que no cometiste error en las divisiones. Si el resultado no es el número inicial, hay un fallo en los pasos anteriores."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un número que se descompone en sus factores primos por divisiones sucesivas",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "360"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "simbolo",
+          "valor": "2",
+          "sup": "3"
+        },
+        {
+          "tipo": "texto",
+          "valor": "× "
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "3",
+          "sup": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "× 5"
+        }
+      ],
+      "resultadoEnPalabras": "dos al cubo por tres al cuadrado por cinco"
+    },
+    "error": {
+      "enUnaFrase": "No prueba todos los números primos que podrían dividir, solo algunos, y da por terminada la factorización sin llegar a 1.",
+      "creenciaDeAtras": "cree que si un número no es par, no acaba en 5 y no se divide entre 3 (por sumar cifras), entonces ya es primo y no hay que seguir probando",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "360 | 2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "180 | 2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "90 | 2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "45 | 3"
+        },
+        {
+          "tipo": "texto",
+          "valor": "15 | 3"
+        },
+        {
+          "tipo": "texto",
+          "valor": "5 | (primo)"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "simbolo",
+          "valor": "2",
+          "sup": "3"
+        },
+        {
+          "tipo": "texto",
+          "valor": "× "
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "3",
+          "sup": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "× 5"
+        }
+      ],
+      "comoSeCacha": "Al multiplicar de regreso el resultado no da 360: 2³ × 3² × 5 = 8 × 9 × 5 = 360 es correcto, pero el error vive arriba: el 5 quedó escrito como 'primo' sin dividir entre sí mismo."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "número primo",
+        "queEs": "Un número mayor que 1 que solo se divide entre 1 y entre sí mismo, sin dejar residuo.",
+        "noEsLoMismoQue": "número impar, que es un número que no se divide entre 2"
+      },
+      {
+        "palabra": "factor",
+        "queEs": "Uno de los números que se multiplican. Si 2 × 3 = 6, entonces 2 y 3 son factores de 6."
+      },
+      {
+        "palabra": "divisor",
+        "queEs": "Un número que divide a otro exactamente, sin dejar residuo. Los divisores de 12 son 1, 2, 3, 4, 6 y 12.",
+        "noEsLoMismoQue": "múltiplo, que es lo opuesto: 12 es múltiplo de 2, pero 2 es divisor de 12"
+      },
+      {
+        "palabra": "descomponer en factores primos",
+        "queEs": "Escribir un número como el producto de números primos. 12 se descompone en 2² × 3."
+      },
+      {
+        "palabra": "suma de cifras",
+        "queEs": "Sumar los dígitos de un número. Si el resultado se divide entre 3, el número original también se divide entre 3. Por ejemplo, 45 tiene cifras 4 y 5; 4 + 5 = 9, y 9 se divide entre 3."
+      }
+    ],
+    "cotas": {
+      "numeros": "números enteros de dos y tres cifras, del 10 al 500; todos con descomposición en primos de una a cinco factores; sin decimales ni negativos",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "×"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

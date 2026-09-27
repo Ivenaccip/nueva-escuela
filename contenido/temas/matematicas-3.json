@@ -1,0 +1,239 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 3,
+  "titulo": "MCD y mcm: cuál sirve para qué",
+  "generadoEn": "2026-09-27T03:21:49.691Z",
+  "canon": {
+    "temaNumero": 3,
+    "materia": "matematicas",
+    "titulo": "MCD y mcm: cuál sirve para qué",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Hallar el MCD y el mcm de dos números, y decidir cuál necesitas",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Descompones ambos números en factores primos, escritos cada uno con su exponente.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "12 ="
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "2",
+              "sup": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "× 3   ;   18 ="
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "2",
+              "sup": "1"
+            },
+            {
+              "tipo": "texto",
+              "valor": "×"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "3",
+              "sup": "2"
+            }
+          ],
+          "porQue": "Los factores primos son lo que todos los números tienen en común o no. Si los escribes con su exponente ves de un vistazo cuál número tiene más de cada factor."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Para el MCD tomas los factores que aparecen en AMBOS números, con el exponente más chico.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "MCD(12, 18) ="
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "2",
+              "sup": "1"
+            },
+            {
+              "tipo": "texto",
+              "valor": "× 3 = 6"
+            }
+          ],
+          "porQue": "El MCD es lo que entra exacto en los dos. Si tomas un factor que no está en ambos, no entra exacto en uno de ellos. Si tomas el exponente más grande, no entra exacto en el que tiene menos."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Para el mcm tomas TODOS los factores, con el exponente más grande.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "mcm(12, 18) ="
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "2",
+              "sup": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "×"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "3",
+              "sup": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 36"
+            }
+          ],
+          "porQue": "El mcm es el más chico que contiene a ambos números exacto. Necesitas todos los factores que salieron en la descomposición, porque si dejas uno afuera, alguno de los números no divide exacto."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Compruebas que el MCD divide exacto en ambos números, y que ambos números dividen exacto en el mcm.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "12 ÷ 6 = 2 ;  18 ÷ 6 = 3  ;  36 ÷ 12 = 3  ;  36 ÷ 18 = 2"
+            }
+          ],
+          "porQue": "La prueba del MCD es que divide exacto en los dos. La del mcm es que los dos lo dividen exacto. Si alguna división sobra residuo, los cálculos no salieron bien."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Lees qué pide el problema: si dice 'a la vez' o 'todos juntos', es MCD; si dice 'de nuevo' o 'coinciden', es mcm.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Problema: dos camiones pasan cada 12 y 18 minutos. Cuándo coinciden."
+            }
+          ],
+          "porQue": "El MCD cuenta cosas que se repartirán o se compartirán en un mismo momento. El mcm cuenta cuándo dos eventos que suceden a ritmos distintos vuelven a ocurrir juntos. Las palabras te dicen cuál pregunta hace el problema."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "dos números: 12 y 18, y saber si coinciden en el tiempo o si se reparten",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "12 ="
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "2",
+          "sup": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "× 3  ;  18 ="
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "2",
+          "sup": "1"
+        },
+        {
+          "tipo": "texto",
+          "valor": "×"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "3",
+          "sup": "2"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "mcm(12, 18) = 36"
+        }
+      ],
+      "resultadoEnPalabras": "treinta y seis"
+    },
+    "error": {
+      "enUnaFrase": "Contesta con el MCD en un problema que pide el mcm, porque toma el número más chico.",
+      "creenciaDeAtras": "cree que 'coinciden' significa 'comparten algo', y el MCD es lo que comparten; no se da cuenta de que coinciden en el TIEMPO, en un momento futuro, no en lo que tienen ahora",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Problema: dos camiones pasan cada 12 y 18 minutos. Cuándo coinciden."
+        },
+        {
+          "tipo": "texto",
+          "valor": "Respuesta: 6"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "mcm(12, 18) = 6"
+        }
+      ],
+      "comoSeCacha": "El 6 es más chico que 12 y 18, pero un camión que pasa cada 12 minutos no puede volver a pasar en 6 minutos. El resultado tiene que ser más grande que los dos números, no más chico."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que el mcm siempre es más grande que el MCD, y que eso tiene que ser así en cualquier problema.",
+        "creenciaDeAtras": "confunde el orden de magnitud de los números con el significado de lo que calcula; cree que 'mínimo' en el nombre mcm significa el número más chico que sale"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "MCD",
+        "queEs": "Máximo común divisor: el número más grande que divide exacto en ambos números.",
+        "noEsLoMismoQue": "mcm, que es el más chico que ambos números dividen exacto"
+      },
+      {
+        "palabra": "mcm",
+        "queEs": "Mínimo común múltiplo: el número más chico que ambos números dividen exacto.",
+        "noEsLoMismoQue": "MCD, que es el más grande que divide exacto en ambos"
+      },
+      {
+        "palabra": "factor primo",
+        "queEs": "Un número primo que forma parte de otro número cuando lo descompones en la multiplicación más simple."
+      },
+      {
+        "palabra": "exponente",
+        "queEs": "El número pequeño que va arriba a la derecha de un número, y dice cuántas veces se multiplica ese número por sí mismo."
+      },
+      {
+        "palabra": "descomponer en factores primos",
+        "queEs": "Escribir un número como una multiplicación de números primos, cada uno con su exponente."
+      }
+    ],
+    "cotas": {
+      "numeros": "dos números enteros de 6 a 60, sus factores primos de 2 a 7, exponentes del 1 al 3; MCD y mcm entre 2 y 60",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "×"
+        },
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

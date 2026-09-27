@@ -1,0 +1,226 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 7,
+  "titulo": "Suma y resta de fracciones",
+  "generadoEn": "2026-09-27T03:23:10.512Z",
+  "canon": {
+    "temaNumero": 7,
+    "materia": "matematicas",
+    "titulo": "Suma y resta de fracciones",
+    "notacion": "lineal",
+    "formaDeRespuesta": "fraccion",
+    "procedimiento": {
+      "nombre": "Sumar y restar fracciones de distinto denominador",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Busca el mínimo común múltiplo de los denominadores.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Denominadores: 2 y 3. El mcm es 6."
+            }
+          ],
+          "porQue": "Para sumar fracciones, los pedazos tienen que ser del mismo tamaño. El mcm es el primer tamaño donde los dos denominadores caben exacto."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Conviertes cada fracción a su equivalente con el mcm como denominador.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 2
+            },
+            {
+              "tipo": "texto",
+              "valor": "= "
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 6
+            },
+            {
+              "tipo": "texto",
+              "valor": ". "
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 3
+            },
+            {
+              "tipo": "texto",
+              "valor": "= "
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 2,
+              "abajo": 6
+            }
+          ],
+          "porQue": "Cada fracción se hace equivalente multiplicando arriba y abajo por el mismo número. Así todas miden con la misma regla."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Sumas o restas los numeradores. Los denominadores se quedan igual.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 6
+            },
+            {
+              "tipo": "texto",
+              "valor": "+ "
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 2,
+              "abajo": 6
+            },
+            {
+              "tipo": "texto",
+              "valor": "= "
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 5,
+              "abajo": 6
+            }
+          ],
+          "porQue": "El de abajo no se toca porque los pedazos ya son del mismo tamaño. Sólo cuentas cuántos pedazos tienes en total."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Simplificas si arriba y abajo se dividen entre el mismo número.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 5,
+              "abajo": 6
+            }
+          ],
+          "porQue": "Cinco y seis no se dividen entre el mismo número, así que la fracción ya está en su forma más corta."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Compruebas que el resultado tiene sentido: debe estar entre cero y la fracción mayor, o entre la mayor y la suma de ambas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "1/2 = 0.5, 1/3 ≈ 0.33, suma ≈ 0.83. El resultado 5/6 ≈ 0.83 es correcto."
+            }
+          ],
+          "porQue": "Si el resultado es más chico que una de las fracciones que sumaste, algo salió mal. Esta revisión atrapa el error de sumar en línea recta."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "sumar dos fracciones de distinto denominador",
+      "planteamiento": [
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 2
+        },
+        {
+          "tipo": "texto",
+          "valor": "+ "
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 3
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "fraccion",
+          "arriba": 5,
+          "abajo": 6
+        }
+      ],
+      "resultadoEnPalabras": "cinco sextos"
+    },
+    "error": {
+      "enUnaFrase": "Suma numeradores y denominadores de forma directa sin buscar el denominador común.",
+      "creenciaDeAtras": "cree que los denominadores también se suman porque cree que todas las partes de una suma se operan igual",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 2
+        },
+        {
+          "tipo": "texto",
+          "valor": "+ "
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 1,
+          "abajo": 3
+        },
+        {
+          "tipo": "texto",
+          "valor": "= "
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 2,
+          "abajo": 5
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "fraccion",
+          "arriba": 2,
+          "abajo": 5
+        }
+      ],
+      "comoSeCacha": "El resultado 2/5 es más chico que 1/2, una de las fracciones que se sumaron. Una suma nunca da más chico que lo que se puso adentro."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "denominador común",
+        "queEs": "Un número en el que caben exactos los dos denominadores. El más chico de todos es el mínimo común múltiplo."
+      },
+      {
+        "palabra": "mínimo común múltiplo",
+        "queEs": "El número más chico que es múltiplo de dos o más números. Es el denominador común que elige el cálculo más corto."
+      },
+      {
+        "palabra": "fracciones equivalentes",
+        "queEs": "Fracciones distintas que valen exactamente lo mismo. Se hacen multiplicando o dividiendo arriba y abajo por el mismo número."
+      },
+      {
+        "palabra": "simplificar",
+        "queEs": "Dividir arriba y abajo entre el mismo número para escribir la misma fracción con números más chicos."
+      }
+    ],
+    "cotas": {
+      "numeros": "numeradores y denominadores enteros del 1 al 12; el resultado siempre sale exacto como fracción, nunca con punto decimal y nunca negativo",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

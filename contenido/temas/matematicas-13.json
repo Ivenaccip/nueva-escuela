@@ -1,0 +1,148 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 13,
+  "titulo": "Dividir entre un decimal",
+  "generadoEn": "2026-09-27T03:25:18.146Z",
+  "canon": {
+    "temaNumero": 13,
+    "materia": "matematicas",
+    "titulo": "Dividir entre un decimal",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Dividir entre un número decimal",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Cuentas cuántos dígitos hay después del punto en el divisor.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "0.25 tiene 2 dígitos después del punto"
+            }
+          ],
+          "porQue": "El número de dígitos te dice cuántos lugares a la derecha tienes que recorrer el punto en los dos números. Si no cuentas bien, los dos recorridos salen de tamaños distintos."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Recorres el punto en el divisor hacia la derecha hasta que desaparezca.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "0.25 → 25"
+            }
+          ],
+          "porQue": "Para convertir un decimal en entero necesitas mover el punto, y tienes que hacerlo exactamente el mismo número de lugares que contaste en el paso anterior."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Recorres el punto en el dividendo el mismo número de lugares, hacia la derecha.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "7.5 → 750"
+            }
+          ],
+          "porQue": "Si sólo recorres el punto en un número, cambias cuántas veces cabe el divisor en el dividendo, y la respuesta sale equivocada. Los dos números tienen que crecer proporcionalmente."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Divides el dividendo ya modificado entre el divisor ya modificado, como si fueran enteros.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "750 ÷ 25 = 30"
+            }
+          ],
+          "porQue": "Una vez que los dos números son enteros, es una división que ya sabes hacer. El resultado es el mismo que hubiera salido con los decimales, porque recorriste el punto la misma cantidad en los dos."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Compruebas multiplicando el resultado por el divisor original. Tiene que salir el dividendo original.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "30 × 0.25 = 7.5"
+            }
+          ],
+          "porQue": "Una división y una multiplicación son lo opuesto. Si 30 por 0.25 te da 7.5, entonces 7.5 dividido entre 0.25 es 30. Sin esta comprobación no sabes si el resultado tiene sentido."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un recorrido de 7.5 km repartido en tramos de 0.25 km",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "7.5 ÷ 0.25"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "30"
+        }
+      ],
+      "resultadoEnPalabras": "treinta"
+    },
+    "error": {
+      "enUnaFrase": "Recorre el punto nada más en el divisor y deja el dividendo igual.",
+      "creenciaDeAtras": "cree que sólo el número entre el que se divide es el que necesita cambiar, porque es el que está haciendo la división",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "7.5 → 7.5"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "0.3"
+        }
+      ],
+      "comoSeCacha": "El resultado sale más chico que el dividendo original, cuando dividir entre algo menor que 1 siempre da un resultado mayor. 0.3 es menos que 7.5, así que algo está mal sin necesidad de rehacer la división."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "dividendo",
+        "queEs": "El número que se divide. Es el primero, el que va a la izquierda del signo de dividir."
+      },
+      {
+        "palabra": "divisor",
+        "queEs": "El número entre el que se divide. Es el segundo, el que va a la derecha del signo de dividir."
+      },
+      {
+        "palabra": "recorrer el punto",
+        "queEs": "Mover el punto decimal de un número hacia la derecha o hacia la izquierda, contando las posiciones."
+      },
+      {
+        "palabra": "decimal",
+        "queEs": "Un número que tiene un punto y dígitos después del punto, como 0.25 o 7.5.",
+        "noEsLoMismoQue": "entero, que no tiene punto decimal"
+      }
+    ],
+    "cotas": {
+      "numeros": "dividendos decimales de una o dos cifras enteras, cero a dos dígitos después del punto; divisores decimales de una cifra entera, uno o dos dígitos después del punto; siempre 0.1, 0.2, 0.25, 0.5; resultado entero del 1 al 100",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

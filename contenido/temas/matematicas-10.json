@@ -1,0 +1,164 @@
+{
+  "materia": "matematicas",
+  "temaNumero": 10,
+  "titulo": "Decimales: qué vale cada lugar",
+  "generadoEn": "2026-09-27T03:24:13.735Z",
+  "canon": {
+    "temaNumero": 10,
+    "materia": "matematicas",
+    "titulo": "Decimales: qué vale cada lugar",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Comparar dos números decimales",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Escribes los dos números y alineas el punto decimal, agrégales ceros a la derecha si hace falta para que tengan la misma cantidad de cifras.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "0.65 y 0.70"
+            }
+          ],
+          "porQue": "El punto decimal marca dónde termina el lugar de los enteros. Si no alineas el punto, comparas decenas con décimos, y los números no son lo que parecen."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Comparas los décimos: el número que tiene el décimo más grande es el mayor.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Décimos: 6 y 7"
+            }
+          ],
+          "porQue": "El primer lugar después del punto vale diez veces más que el siguiente. Si los décimos son distintos, ya sabes cuál número es mayor sin mirar el resto."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Si los décimos son iguales, comparas los centésimos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "6 = 6, entonces miras centésimos"
+            }
+          ],
+          "porQue": "Sólo importa el centésimo si los décimos están empatados. Si uno es más chico que el otro en los décimos, los centésimos no importan."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Si los centésimos también son iguales, comparas los milésimos, y así sigues hasta encontrar dónde se diferencian.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Continúas con el siguiente lugar hasta encontrar cifras distintas"
+            }
+          ],
+          "porQue": "Cada lugar vale diez veces menos que el anterior, pero sigue importando. Cuando encuentras la primera posición en que difieren, descubres cuál número es mayor."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Escribes el símbolo de comparación entre los dos números: > si el primero es mayor, < si el segundo es mayor, = si son iguales.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "0.65 < 0.7"
+            }
+          ],
+          "porQue": "El símbolo resume la comparación. Lees de izquierda a derecha: si ves un siete en los décimos y un seis, el siete gana, así que 0.7 es más grande."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "dos números decimales, 0.65 y 0.7, para saber cuál es mayor",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Compara 0.65 y 0.7"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "0.65 < 0.7"
+        }
+      ],
+      "resultadoEnPalabras": "cero coma sesenta y cinco es menor que cero coma siete"
+    },
+    "error": {
+      "enUnaFrase": "Compara cuántas cifras decimales tiene cada número, y dice que el que tiene más cifras es el mayor.",
+      "creenciaDeAtras": "cree que un número con más dígitos siempre es más grande, como en los enteros: 65 es mayor que 7 porque tiene dos dígitos y 7 tiene uno",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "0.65 tiene dos cifras y 0.7 tiene una, entonces 0.65 es mayor"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "0.65 > 0.7"
+        }
+      ],
+      "comoSeCacha": "El resultado está al revés: 0.7 es más de tres cuartos y 0.65 es menos que tres cuartos. Un número no puede ser mayor si es más pequeño en los décimos."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Ignora el punto decimal y compara como si fueran números enteros.",
+        "creenciaDeAtras": "cree que el punto decimal es sólo un separador visual y no cambia el valor de cada lugar: 65 comparado con 7 da 65 > 7 sin importar el punto"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "lugar decimal",
+        "queEs": "Cada posición después del punto decimal: décimos, centésimos, milésimos. El lugar que ocupes después del punto define cuánto vale esa cifra."
+      },
+      {
+        "palabra": "décimo",
+        "queEs": "El primer lugar después del punto decimal. Vale una de las diez partes iguales en que se divide un entero."
+      },
+      {
+        "palabra": "centésimo",
+        "queEs": "El segundo lugar después del punto decimal. Vale una de las cien partes iguales en que se divide un entero."
+      },
+      {
+        "palabra": "alinear el punto",
+        "queEs": "Poner los puntos decimales uno debajo del otro en la misma columna para comparar lugar por lugar correctamente."
+      },
+      {
+        "palabra": "cifras significativas",
+        "queEs": "Los dígitos que de verdad aportan información en un número. En 0.70 y 0.7 son lo mismo porque agregar un cero a la derecha no cambia el valor."
+      }
+    ],
+    "cotas": {
+      "numeros": "números decimales entre 0 y 1 con una a dos cifras decimales; numeradores y denominadores para explicar en fracciones hasta 100",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "<"
+        },
+        {
+          "tipo": "texto",
+          "valor": ">"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema necesita una recta numérica con un hueco para que el estudiante ubique un decimal, y la pantalla de Andamio no dibuja figuras ni rectas numeradas con precisión.",
+      "porQue": "La notación dice 'recta numérica con hueco', que requiere un dibujo exacto de una línea con marcas, números de referencia y un espacio donde el estudiante señale o escriba la posición. Los cuatro átomos (texto, fracción, símbolo, hueco) no permiten dibujar figuras ni trazos.",
+      "queHagoConEsto": "Este tema debe mandarse a un prompt especializado que dibuje figuras y rectas, no al prompt lineal de texto y fracciones. La comparación de decimales cabe sin problemas, pero la ubicación en la recta no, así que el tema necesita un prompt distinto o reformularse sin la recta."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}
