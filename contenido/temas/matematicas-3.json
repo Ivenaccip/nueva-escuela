@@ -913,7 +913,7 @@
     ],
     "pasoMalo": 5,
     "arrastre": "El paso 5 es el último, así que no hay pasos posteriores que arrastren el error. La señal que lo delata es que el 6 es más chico que los dos números (12 y 18), pero un camión que pasa cada 12 minutos no puede volver a pasar en 6 minutos. El resultado tiene que ser más grande que ambos números, no más chico.\"",
-    "porQue": "¿Y qué hizo mal en ese paso?\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
         "texto": "Confundió el MCD con el mcm y tomó lo que comparten en vez de cuándo coinciden.",

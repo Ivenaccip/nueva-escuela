@@ -4,16 +4,19 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import {
   BarraEstacion,
+  BloqueRespuesta,
+  BotonPista,
   BotonPrincipal,
   Cuerpo,
   Expresion,
   IconoBorrar,
-  IconoPista,
   Marco,
   Pie,
   Tarjeta,
 } from '../../src/componentes';
-import { tema } from '../../src/contenido/actual';
+import { respuestaDeCompletar, type Respuesta } from '../../src/contenido/calificar';
+import { Guardia, useAndamio } from '../../src/estado/Andamio';
+import { SEGUNDOS_PARA_PISTA } from '../../src/estado/modelo';
 import { colores, espacio, fuentes, radios } from '../../src/tema';
 
 /** La tecla que borra en vez de escribir. */
@@ -27,32 +30,46 @@ const FILAS = [
   ['/', '0', BORRAR],
 ];
 
-/** El único radio del diseño que el tema no lleva; el resto sí sale de `radios`. */
-const RADIO_PISTA = 13;
-
-/** Lo que el diseño muestra a medio teclear. Es contenido, así que vive en demo. */
-const HUECO = tema.completar.expresion.find((parte) => parte.tipo === 'hueco');
-
 /**
  * Estación 3 · completar el paso. El enunciado ya está resuelto casi entero y
  * falta un pedazo: el estudiante lo teclea abajo y lo ve aparecer en el hueco.
- *
- * Aquí nadie revisa si está bien. Comprobar sólo avanza; la evaluación llega
- * junto con el contenido de verdad.
  */
 export default function Completar() {
-  const [escrito, setEscrito] = useState(HUECO?.valor ?? '');
+  return (
+    <Guardia clave="completar">
+      <Estacion />
+    </Guardia>
+  );
+}
+
+function Estacion() {
+  const { tema, redactado, avance, marcarHecha, gastarPista } = useAndamio();
+  const contenido = redactado.completar;
+
+  const [escrito, setEscrito] = useState('');
+  const [respuesta, setRespuesta] = useState<Respuesta | null>(null);
+  const acertada = respuesta?.bien === true;
 
   const teclear = (tecla: string) => {
+    if (acertada) return;
+    // Lo que se contestó era sobre lo que había escrito antes: al cambiarlo, deja de valer.
+    setRespuesta(null);
     if (tecla === BORRAR) return setEscrito((antes) => antes.slice(0, -1));
     setEscrito((antes) => antes + tecla);
+  };
+
+  const comprobar = () => setRespuesta(respuestaDeCompletar(escrito, contenido));
+
+  const seguir = () => {
+    marcarHecha('completar');
+    router.replace('/estacion/escalera');
   };
 
   return (
     <Marco>
       <BarraEstacion estacion={3} pistas={tema.completar.pistas} />
 
-      <Cuerpo>
+      <Cuerpo desplazarCuando={respuesta}>
         <View style={estilos.etiqueta}>
           <Text style={estilos.etiquetaTexto}>estación 3 · completar el paso</Text>
         </View>
@@ -68,15 +85,24 @@ export default function Completar() {
           </Tarjeta>
         </View>
 
+        {respuesta ? (
+          <BloqueRespuesta
+            bien={respuesta.bien}
+            titulo={respuesta.bien ? 'Eso es' : 'Todavía no'}
+            texto={
+              respuesta.bien ? null : (respuesta.texto ?? 'Prueba otra vez, o pide una pista.')
+            }
+          />
+        ) : null}
+
         <View style={estilos.zonaPista}>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={`Pedir una pista, disponible en ${tema.completar.pistaEn}`}
-            style={({ pressed }) => [estilos.pista, pressed && estilos.pistaPresionada]}
-          >
-            <IconoPista tamano={16} />
-            <Text style={estilos.pistaTexto}>una pista en {tema.completar.pistaEn}</Text>
-          </Pressable>
+          <BotonPista
+            pistas={contenido.pistas}
+            liberadas={avance.pistasLiberadas.completar ?? 0}
+            restantes={avance.pistasRestantes}
+            alGastar={() => gastarPista('completar')}
+            espera={SEGUNDOS_PARA_PISTA}
+          />
         </View>
 
         <View style={estilos.espaciador} />
@@ -109,7 +135,12 @@ export default function Completar() {
           ))}
         </View>
 
-        <BotonPrincipal onPress={() => router.push('/estacion/escalera')}>comprobar</BotonPrincipal>
+        <BotonPrincipal
+          desactivado={!acertada && escrito === ''}
+          onPress={acertada ? seguir : comprobar}
+        >
+          {acertada ? 'seguir' : 'comprobar'}
+        </BotonPrincipal>
       </Pie>
     </Marco>
   );
@@ -136,25 +167,6 @@ const estilos = StyleSheet.create({
   zonaPista: {
     paddingHorizontal: espacio.margenAncho,
     paddingTop: 16,
-  },
-  pista: {
-    height: 46,
-    borderRadius: RADIO_PISTA,
-    backgroundColor: 'transparent',
-    borderWidth: 1,
-    borderColor: colores.borde,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-  },
-  pistaPresionada: {
-    backgroundColor: colores.superficie,
-  },
-  pistaTexto: {
-    fontFamily: fuentes.cuerpo,
-    fontSize: 14,
-    color: colores.textoTenue,
   },
   // Empuja el teclado al fondo sin fijarle una altura a lo de arriba.
   espaciador: {

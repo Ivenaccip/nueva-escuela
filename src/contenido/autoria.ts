@@ -10,15 +10,13 @@
  * cuántas le quedan, `escalon: 4` es en cuál va, `indice` es qué tema de la
  * materia. Nada de eso lo escribe la IA (`contenido/CONTRATO.md` §4).
  *
- * FALTA EL ADAPTADOR. Entre este archivo y `tipos.ts` tiene que vivir
- * `src/contenido/adaptar.ts`: la única puerta que recibe el `TemaRedactado` de
- * las siete llamadas más el estado del estudiante y devuelve el `Tema` que las
- * pantallas ya saben pintar. Ahí y sólo ahí se derivan `escalon`, `escalones`
- * como número, `indice`, `total`, `pistas` como contador, `pistaEn` y
- * `estaciones[].estado`; ahí se aplana `escalones[i]` al escalón en curso y
- * `preguntas[i]` a la pregunta en curso; y ahí se arma el `cierre`, que no lo
- * escribe la IA. Mientras ese archivo no exista, el contenido generado se puede
- * guardar y validar, pero ninguna pantalla lo lee: siguen leyendo `demo.ts`.
+ * Entre este archivo y `tipos.ts` vive `src/contenido/adaptar.ts`: la única puerta
+ * que recibe el `TemaRedactado` de las siete llamadas más el avance del estudiante
+ * y devuelve el `Tema` que las pantallas ya saben pintar. Ahí y sólo ahí se derivan
+ * `escalon`, `escalones` como número, `indice`, `total`, `pistas` como contador,
+ * `pistaEn` y `estaciones[].estado`; ahí se aplana `escalones[i]` al escalón en
+ * curso y `preguntas[i]` a la pregunta en curso; y ahí se arma el `cierre`, que no
+ * lo escribe la IA.
  */
 
 import type { ParteMat } from './tipos';

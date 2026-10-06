@@ -818,7 +818,7 @@
     ],
     "pasoMalo": 3,
     "arrastre": "El 108 del paso 3 es el número grande con el que se hace el residuo en el paso 4, y de ahí sale en la respuesta del paso 5 como cociente y residuo. Los pasos 4 y 5 están bien construidos con ese número malo.\"",
-    "porQue": "¿Y qué hizo mal en ese paso?\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
         "texto": "Multiplicó los dos números en vez de dividir.",

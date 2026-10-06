@@ -10,20 +10,29 @@ import {
   Marco,
   Pie,
 } from '../src/componentes';
-import { perfil, tema } from '../src/contenido/actual';
 import type { Estacion } from '../src/contenido/tipos';
-import { colores, espacio, fuentes, radios } from '../src/tema';
+import { useAndamio } from '../src/estado/Andamio';
+import { colores, espacio, fuentes, radios, TOCABLE } from '../src/tema';
 
 /**
  * El círculo del tema. Es la pantalla a la que se vuelve siempre: dice en qué
- * estación va y deja entrar a cualquiera de las seis.
+ * estación va y deja entrar a las que ya llegó. Las de más adelante siguen
+ * cerradas: el círculo se recorre en orden.
  */
 export default function Circulo() {
-  const actual = tema.estaciones.find((e) => e.estado === 'actual') ?? tema.estaciones[0];
+  const { tema, perfil, materias, materia, repasarEstacion, repasarTema } = useAndamio();
+
+  // Sin ninguna «actual», las seis están hechas: el círculo está cerrado.
+  const actual = tema.estaciones.find((e) => e.estado === 'actual');
 
   const entrar = (estacion: Estacion) => {
+    if (estacion.estado === 'cerrada') return;
+    // Volver a una estación hecha la empieza de nuevo, no la deja en su último paso.
+    if (estacion.estado === 'hecha') repasarEstacion(estacion.clave);
     router.push(`/estacion/${estacion.clave}`);
   };
+
+  const elegirTema = () => router.push({ pathname: '/temas', params: { materia } });
 
   return (
     <Marco>
@@ -33,6 +42,14 @@ export default function Circulo() {
             <IconoLlama />
             <Text style={estilos.cifra}>{perfil.racha}</Text>
           </View>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Cambiar de tema"
+            onPress={elegirTema}
+            style={estilos.cambiar}
+          >
+            <Text style={estilos.cambiarTexto}>cambiar tema</Text>
+          </Pressable>
           <View style={estilos.cuenta}>
             <IconoMoneda />
             <Text style={estilos.cifra}>{perfil.monedas}</Text>
@@ -45,18 +62,22 @@ export default function Circulo() {
           style={estilos.materias}
           contentContainerStyle={estilos.materiasContenido}
         >
-          {perfil.materias.map((materia) => {
-            const activa = materia === perfil.materiaActiva;
+          {materias.map((m) => {
+            const activa = m.clave === materia;
             return (
               <Pressable
-                key={materia}
+                key={m.clave}
                 accessibilityRole="tab"
+                accessibilityLabel={`${m.nombre}, ${m.abribles} temas listos`}
                 accessibilityState={{ selected: activa }}
                 aria-selected={activa}
+                onPress={() => router.push({ pathname: '/temas', params: { materia: m.clave } })}
+                // La píldora del diseño mide ~33; el área tocable llega a 44 sin cambiarla.
+                hitSlop={{ top: 6, bottom: 6 }}
                 style={[estilos.materia, activa ? estilos.materiaActiva : estilos.materiaQuieta]}
               >
                 <Text style={activa ? estilos.materiaTextoActivo : estilos.materiaTexto}>
-                  {materia}
+                  {m.nombre}
                 </Text>
               </Pressable>
             );
@@ -76,7 +97,15 @@ export default function Circulo() {
       </Cuerpo>
 
       <Pie>
-        <BotonPrincipal onPress={() => entrar(actual)}>seguir donde me quedé</BotonPrincipal>
+        {actual ? (
+          <BotonPrincipal onPress={() => entrar(actual)}>
+            {tema.estaciones.some((e) => e.estado === 'hecha')
+              ? 'seguir donde me quedé'
+              : 'empezar el tema'}
+          </BotonPrincipal>
+        ) : (
+          <BotonPrincipal onPress={repasarTema}>repasar este tema</BotonPrincipal>
+        )}
       </Pie>
     </Marco>
   );
@@ -103,8 +132,12 @@ const estilos = StyleSheet.create({
   materias: {
     flexGrow: 0,
   },
+  // Los 6 de arriba y de abajo son el área tocable de las píldoras (mide 33, la
+  // regla pide 44); se descuentan del `paddingTop` del encabezado para que el
+  // título no se mueva del diseño.
   materiasContenido: {
     paddingHorizontal: espacio.margenAncho,
+    paddingVertical: 6,
     gap: 8,
   },
   materia: {
@@ -130,12 +163,25 @@ const estilos = StyleSheet.create({
   },
   encabezado: {
     paddingHorizontal: espacio.margenAncho,
-    paddingTop: 22,
+    paddingTop: 10,
   },
   migaja: {
     fontFamily: fuentes.cuerpo,
     fontSize: 12,
     color: colores.textoTenue,
+  },
+  // Va en la fila de arriba, que ya mide 56: ahí cabe un botón de 44 sin mover
+  // nada del diseño.
+  cambiar: {
+    minHeight: TOCABLE,
+    paddingHorizontal: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cambiarTexto: {
+    fontFamily: fuentes.cuerpoMedio,
+    fontSize: 13,
+    color: colores.acento,
   },
   titulo: {
     marginTop: 6,

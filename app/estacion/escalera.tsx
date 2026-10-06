@@ -4,6 +4,8 @@ import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, View } fro
 
 import {
   BarraEstacion,
+  BloqueRespuesta,
+  BotonPista,
   BotonPrincipal,
   Cuerpo,
   Expresion,
@@ -11,22 +13,59 @@ import {
   Pie,
   Tarjeta,
 } from '../../src/componentes';
-import { tema } from '../../src/contenido/actual';
+import { respuestaDeEscalon, type Respuesta } from '../../src/contenido/calificar';
+import { Guardia, useAndamio } from '../../src/estado/Andamio';
+import { SEGUNDOS_PARA_PISTA } from '../../src/estado/modelo';
 import { colores, espacio, fuentes, radios } from '../../src/tema';
 
 /** Amarra la etiqueta con el campo para quien navega con lector de pantalla. */
 const ID_CAMPO = 'respuesta-escalera';
 
 /**
- * Estación 4 · escalera. La misma división de siempre, pero de cabeza: se ve el
- * resultado y falta el divisor. Aquí el estudiante escribe la fracción con sus
- * dedos; si acertó o no se decide cuando llegue el contenido de verdad.
+ * Estación 4 · escalera. El mismo procedimiento en cinco situaciones cada vez
+ * más difíciles: cada escalón se sube sólo si se contesta bien, y al último se
+ * cierra la estación.
  */
 export default function Escalera() {
+  const { tema } = useAndamio();
+  // Cada escalón es una pantalla nueva: con `key` se monta limpio, sin la
+  // respuesta ni el comentario del anterior.
+  return (
+    <Guardia clave="escalera">
+      <Escalon key={tema.escalera.escalon} />
+    </Guardia>
+  );
+}
+
+function Escalon() {
+  const { tema, redactado, avance, marcarHecha, gastarPista, siguienteEscalon } = useAndamio();
   const escalera = tema.escalera;
   const numero = tema.estaciones.find((e) => e.clave === 'escalera')?.numero ?? 4;
-  // Arranca con lo que el diseño muestra ya tecleado; se borra a mano.
-  const [respuesta, setRespuesta] = useState(escalera.respuestaInicial ?? '');
+  const contenido = redactado.escalera.escalones[escalera.escalon - 1];
+  const llave = `escalera-${escalera.escalon}`;
+  const esElUltimo = escalera.escalon >= escalera.escalones;
+
+  const [respuesta, setRespuesta] = useState('');
+  const [resultado, setResultado] = useState<Respuesta | null>(null);
+  const acertado = resultado?.bien === true;
+
+  // El campo es del sistema y acepta letras, pero la estación 3 sólo teclea
+  // dígitos y diagonal, y el contrato pide lo mismo aquí: se filtra al escribir.
+  const cambiar = (texto: string) => {
+    if (acertado) return;
+    setRespuesta(texto.replace(/[^0-9/]/g, ''));
+    setResultado(null);
+  };
+
+  const comprobar = () => {
+    if (respuesta !== '') setResultado(respuestaDeEscalon(respuesta, contenido));
+  };
+
+  const seguir = () => {
+    if (!esElUltimo) return siguienteEscalon();
+    marcarHecha('escalera');
+    router.replace('/estacion/error');
+  };
 
   return (
     <Marco>
@@ -36,7 +75,7 @@ export default function Escalera() {
         style={estilos.cuerpo}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
-        <Cuerpo>
+        <Cuerpo desplazarCuando={resultado}>
           <View style={estilos.cabecera}>
             <View style={estilos.filaCabecera}>
               <Text style={estilos.migaja}>estación {numero} · escalera</Text>
@@ -85,13 +124,37 @@ export default function Escalera() {
             </Text>
             <TextInput
               value={respuesta}
-              onChangeText={setRespuesta}
+              onChangeText={cambiar}
+              editable={!acertado}
               accessibilityLabel="tu respuesta"
               accessibilityLabelledBy={ID_CAMPO}
               autoCapitalize="none"
               autoCorrect={false}
+              keyboardType="numbers-and-punctuation"
+              returnKeyType="done"
+              onSubmitEditing={acertado ? seguir : comprobar}
               selectionColor={colores.acento}
-              style={estilos.campo}
+              style={[estilos.campo, resultado && !resultado.bien && estilos.campoFallado]}
+            />
+          </View>
+
+          {resultado ? (
+            <BloqueRespuesta
+              bien={resultado.bien}
+              titulo={resultado.bien ? 'Eso es' : 'Todavía no'}
+              texto={
+                resultado.bien ? null : (resultado.texto ?? 'Prueba otra vez, o pide una pista.')
+              }
+            />
+          ) : null}
+
+          <View style={estilos.zonaPista}>
+            <BotonPista
+              pistas={contenido.pistas}
+              liberadas={avance.pistasLiberadas[llave] ?? 0}
+              restantes={avance.pistasRestantes}
+              alGastar={() => gastarPista(llave)}
+              espera={SEGUNDOS_PARA_PISTA}
             />
           </View>
 
@@ -99,7 +162,12 @@ export default function Escalera() {
         </Cuerpo>
 
         <Pie>
-          <BotonPrincipal onPress={() => router.push('/estacion/error')}>comprobar</BotonPrincipal>
+          <BotonPrincipal
+            desactivado={!acertado && respuesta === ''}
+            onPress={acertado ? seguir : comprobar}
+          >
+            {!acertado ? 'comprobar' : esElUltimo ? 'seguir' : 'subir al siguiente'}
+          </BotonPrincipal>
         </Pie>
       </KeyboardAvoidingView>
     </Marco>
@@ -193,6 +261,13 @@ const estilos = StyleSheet.create({
     fontFamily: fuentes.cuerpo,
     fontSize: 24,
     color: colores.texto,
+  },
+  campoFallado: {
+    borderColor: colores.error,
+  },
+  zonaPista: {
+    paddingHorizontal: espacio.margenAncho,
+    paddingTop: 16,
   },
   espaciador: {
     flex: 1,

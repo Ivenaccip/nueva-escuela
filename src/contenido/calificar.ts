@@ -2,14 +2,12 @@
  * Comparar lo tecleado con la respuesta. Funciones puras, sin React y sin
  * estado: es lo único de la calificación que no necesita que la UI exista.
  *
- * Hoy ninguna pantalla las llama. Los tres botones de «comprobar» y el «es ese»
- * hacen `router.push` sin condición (`app/estacion/completar.tsx:113`,
- * `escalera.tsx:106`, `error.tsx:112`, `contacto.tsx:85`), así que el contenido
- * que la API genera —`respuesta.tecleado`, `aceptaTambien`, `siTecleaElError`,
- * `opciones[].queRevela`, `motivos[].esElBueno`, `pasos[].siLoTocas`— se
- * guarda y nadie lo lee. Lo que falta es UI, no lógica: un bloque de respuesta
- * debajo de la tarjeta que pinte el texto que estas funciones devuelven, y que
- * `BotonPrincipal` avance sólo cuando `esCorrecta` da `true`.
+ * Las llaman las cuatro estaciones que tienen respuesta (`contacto`, `completar`,
+ * `escalera` y `error`). Reciben el contenido **redactado** —el que sí trae
+ * `respuesta.tecleado`, `esCorrecta`, `esElBueno`—, que la pantalla saca de
+ * `useAndamio().redactado`: el `Tema` que pinta `adaptar` no lo lleva a propósito.
+ * Devuelven qué decir (`siTecleaElError.queSeLeDice`, `queRevela`, `siLoTocas`) y
+ * si se puede avanzar.
  */
 
 import type {

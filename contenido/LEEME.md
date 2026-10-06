@@ -172,7 +172,7 @@ Dos cosas que ese conteo enseña:
   14) o el menos (15, 16, 17). Dos más necesitan los tres de comparación (6, 10). Sólo
   el 1 y el 2 seguirían necesitando reformularse aunque el teclado creciera, porque su
   respuesta son dos números o un producto. `FILAS` es una constante de doce teclas en
-  un archivo (`app/estacion/completar.tsx:23-28`) y el temario pide catorce o quince:
+  un archivo (`app/estacion/completar.tsx:26-31`) y el temario pide catorce o quince:
   vale la pena medir cuánto cuesta una cuarta y una quinta fila **antes** de escribir
   diez reformulaciones que mueven la pregunta lejos de la habilidad que el tema promete.
 - **`X3-respuesta-no-numerica` no salva a ninguno de los diez hoy.** De sus cuatro
@@ -226,7 +226,15 @@ node contenido/generar.mjs quimica 11            # un tema completo
 node contenido/generar.mjs quimica 11 --seco      # sin API: revisa los prompts
 node contenido/generar.mjs fisica 4 --solo ver    # una sola llamada
 node contenido/generar.mjs matematicas 9 --rehacer # tira lo guardado y de cero
+
+node contenido/indexar.mjs                         # mete en la app los temas que ya se pueden abrir
+node contenido/indexar.mjs --revisar               # dice cuáles entran y cuáles no, sin escribir
 ```
+
+**Generar un tema no lo mete en la app.** La app sólo abre lo que está en
+`src/contenido/catalogo.ts`, y ese archivo lo escribe `indexar.mjs`: deja entrar
+los temas con las seis estaciones y sin `noSePuede` lleno de la 2 a la 6. Hay que
+correrlo después de cada tanda y subir el archivo que escribe.
 
 La salida se escribe en `contenido/temas/<materia>-<numero>.json` **después de
 cada llamada**, así que una corrida interrumpida se reanuda sola: al volver a
@@ -312,23 +320,19 @@ Así que no hay `07-cierre.md` y no hace falta.
 
 ---
 
-## Lo que falta antes de que esto se vea en pantalla
+## Qué hay en pantalla hoy y qué falta
 
-El contenido generado se puede guardar y validar hoy. **Ninguna pantalla lo lee
-todavía**: siguen leyendo `src/contenido/demo.ts`. Lo que falta es código, no
-contenido, y está enumerado con su archivo y su línea en `CONTRATO.md` §4 y §5. En
-orden de cuántos temas desbloquea:
+El contenido generado ya se recorre completo: las seis estaciones, la calificación,
+las pistas, el cierre, y el progreso se guarda entre sesiones (ver `CONTRATO.md` §4 y
+§5 para cómo quedó cada pieza).
 
-1. **`src/contenido/adaptar.ts`** — la puerta que junta el contenido redactado con
-   el estado del estudiante y produce las formas de `src/contenido/tipos.ts`. Sin
-   esto, ninguna pantalla lee nada. Desbloquea los 165.
-2. **`src/componentes/HojaPista.tsx`** — hoy el texto de las pistas no tiene dónde
-   leerse en ninguna de las tres estaciones que lo generan. Son hasta quince pistas
-   por tema, unas 2 500 en total, hoy invisibles.
-3. **El bloque de respuesta y el botón condicionado** — la lógica ya está en
-   `src/contenido/calificar.ts`; falta que las cuatro pantallas la llamen y pinten
-   lo que devuelve. Sin esto no se califica nada.
-4. **`src/componentes/Tabla.tsx`** — desbloquea los temas de `X1-tabla`.
-5. **El teclado de fichas** (que `FILAS` salga del contenido) — desbloquea los
-   temas de `X3`.
-6. **Los componentes de figura** — desbloquea los 36 temas de `X2-figura`.
+Lo que sigue sin existir, en orden de cuántos temas desbloquea:
+
+1. **El teclado de fichas** (que `FILAS` salga del contenido) — desbloquea los temas
+   de `X3` y, con punto, menos y paréntesis, la mitad del temario de Matemáticas.
+2. **`src/componentes/Tabla.tsx`** — desbloquea los temas de `X1-tabla`.
+3. **Los componentes de figura** — desbloquea los temas de `X2-figura`.
+4. **Calificar la estación 6** — una segunda llamada a la API con la `rubrica`. Hoy se
+   muestra como autoevaluación. Necesita la llave en un servidor, nunca en la app.
+5. **Que el tema vuelva más adelante**, como promete el cierre. Hoy se guarda cuándo
+   se cerró; falta quien decida cuándo sacarlo otra vez.

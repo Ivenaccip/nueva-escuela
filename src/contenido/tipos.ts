@@ -16,6 +16,11 @@ export const ORDEN_ESTACIONES: ClaveEstacion[] = [
   'explicar',
 ];
 
+/** La llave con la que se guarda el progreso de un tema: `matematicas-9`. */
+export function llaveDe(materia: string, numero: number): string {
+  return `${materia}-${numero}`;
+}
+
 export type EstadoEstacion = 'hecha' | 'actual' | 'cerrada';
 
 export type Estacion = {

@@ -597,6 +597,38 @@ function sellarTraza(paso, salida, temario, tema) {
 }
 
 /**
+ * Quita la comilla recta que cierra un texto sin haber abierto nada. Los campos
+ * son texto plano, así que una `"` suelta en el borde no es contenido: es el
+ * cierre del JSON que se coló dentro del valor. Medido sobre los nueve temas
+ * jugables, le pasó a `error.porQue` en tres —y ése se pinta en pantalla, con la
+ * comilla— y a `error.arrastre` en nueve. Con una cantidad par no se toca nada, y
+ * una comilla en medio de una frase tampoco: sólo la del borde.
+ */
+function sellarComillasSueltas(salida) {
+  const limpiar = (texto) => {
+    if ((texto.match(/"/g) ?? []).length % 2 === 0) return texto;
+    if (texto.endsWith('"')) return texto.slice(0, -1);
+    if (texto.startsWith('"')) return texto.slice(1);
+    return texto;
+  };
+  const andar = (nodo) => {
+    if (Array.isArray(nodo)) {
+      nodo.forEach((valor, i) => {
+        if (typeof valor === 'string') nodo[i] = limpiar(valor);
+        else andar(valor);
+      });
+      return;
+    }
+    if (!nodo || typeof nodo !== 'object') return;
+    for (const [llave, valor] of Object.entries(nodo)) {
+      if (typeof valor === 'string') nodo[llave] = limpiar(valor);
+      else andar(valor);
+    }
+  };
+  andar(salida);
+}
+
+/**
  * Los índices del arreglo, escritos a mano. `letra` es 'ABCD'[i], `orden` es i+1
  * y `numero` es i+1: más de cincuenta campos obligatorios por tema que nadie
  * tenía que adivinar, y cada uno tiraba la llamada entera si faltaba. Son los más
@@ -838,6 +870,7 @@ async function correr(paso, valores) {
   // que nadie tenía que adivinar no puede tirar la llamada entera.
   sellarTraza(paso, resultado, temario, tema);
   sellarIndices(resultado);
+  sellarComillasSueltas(resultado);
   sellarTeclado(paso, resultado);
   if (paso.necesitaVideos) sellarVideo(resultado, valores.__candidatos ?? [], valores.__consulta);
 
