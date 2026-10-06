@@ -67,3 +67,6 @@ contenido/temas/_gasto.json
 
 # Candidatos de video ya buscados: cuestan, y reintentar una estacion no debe pagarlos otra vez.
 contenido/temas/_videos-*.json
+
+# Capturas de las corridas de prueba en el navegador.
+vista/

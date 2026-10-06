@@ -7,6 +7,8 @@
 import type { Materia, TemaRedactado } from './autoria';
 
 import temario_matematicas from '../../contenido/temarios/matematicas.json';
+import temario_biologia from '../../contenido/temarios/biologia.json';
+import temario_quimica from '../../contenido/temarios/quimica.json';
 
 import matematicas_1 from '../../contenido/temas/matematicas-1.json';
 import matematicas_3 from '../../contenido/temas/matematicas-3.json';
@@ -17,6 +19,9 @@ import matematicas_9 from '../../contenido/temas/matematicas-9.json';
 import matematicas_13 from '../../contenido/temas/matematicas-13.json';
 import matematicas_14 from '../../contenido/temas/matematicas-14.json';
 import matematicas_18 from '../../contenido/temas/matematicas-18.json';
+import biologia_24 from '../../contenido/temas/biologia-24.json';
+import quimica_1 from '../../contenido/temas/quimica-1.json';
+import quimica_11 from '../../contenido/temas/quimica-11.json';
 
 /** Lo que el temario sabe de un tema y la IA no repite. */
 export type EntradaDelTemario = {
@@ -51,6 +56,23 @@ export const CATALOGO: Partial<Record<Materia, MateriaDelCatalogo>> = {
       matematicas_13 as unknown as TemaRedactado,
       matematicas_14 as unknown as TemaRedactado,
       matematicas_18 as unknown as TemaRedactado,
+    ],
+  },
+  biologia: {
+    nombre: temario_biologia.nombre,
+    totalTemas: temario_biologia.totalTemas,
+    temario: temario_biologia.temas as unknown as EntradaDelTemario[],
+    redactados: [
+      biologia_24 as unknown as TemaRedactado,
+    ],
+  },
+  quimica: {
+    nombre: temario_quimica.nombre,
+    totalTemas: temario_quimica.totalTemas,
+    temario: temario_quimica.temas as unknown as EntradaDelTemario[],
+    redactados: [
+      quimica_1 as unknown as TemaRedactado,
+      quimica_11 as unknown as TemaRedactado,
     ],
   },
 };
