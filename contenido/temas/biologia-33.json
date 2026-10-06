@@ -242,24 +242,24 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "5120 kcal"
+                "valor": "5832 kcal"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": true,
-            "queRevela": "Estás creyendo que el 90% pasa al siguiente nivel. Usaste 90% tres veces: 8000 de 90% = 7200, luego 6480, luego 5832. La energía se disipa en calor y movimiento, no se recicla como la materia.",
+            "queRevela": "Estás creyendo que el 90% pasa al siguiente nivel. Usaste 90% tres veces: 90% de 8000 = 7200, luego 6480, luego 5832. La energía se disipa en calor y movimiento, no se recicla como la materia.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "2667 kcal"
+                "valor": "800 kcal"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Dividiste 8000 entre 3 en vez de aplicar el 10% tres veces. El 10% no es lo mismo que dividir en tres partes iguales.",
+            "queRevela": "Aplicaste el 10% una sola vez: 8000 → 800. Faltan dos pasos más para llegar al nivel 4: del 2 al 3 y del 3 al 4.",
             "letra": "C"
           },
           {
@@ -306,7 +306,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estás confundiendo la causa con una consecuencia. Es verdad que los depredadores suelen ser más grandes, pero eso ocurre porque hay poca energía, no al revés.",
+            "queRevela": "El tamaño de los animales no explica por qué llega menos energía. La pérdida ocurre en cada paso de nivel aunque los animales fueran del mismo tamaño: casi toda se gasta en calor y movimiento.",
             "letra": "B"
           },
           {
@@ -365,7 +365,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Eso es una consecuencia de la forma, no la razón. Hay menos depredadores porque les llega poca energía, no porque no haya depredadores naturales.",
+            "queRevela": "Eso describe cómo se ve la pirámide, pero no explica por qué es así. Hay menos depredadores porque a cada nivel le llega mucha menos energía.",
             "letra": "B"
           },
           {
@@ -431,12 +431,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "9720 kcal"
+                "valor": "3252 kcal"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Usaste el 90% tres veces. Si así fuera, 2880 kcal llegarían al nivel 4. La regla es 10%, no 90%: casi toda la energía se pierde.",
+            "queRevela": "Usaste el 90% tres veces: 12000 → 10800 → 9720 → 8748. Así perderías solo 3252 kcal. La regla es 10%, no 90%: casi toda la energía se pierde.",
             "letra": "C"
           },
           {
@@ -486,16 +486,16 @@
       },
       {
         "orden": 2,
-        "texto": "Calculas el 10% y escribes la energía que pasa al siguiente nivel."
+        "texto": "De cada 10 kcal que recibe un nivel, solo 1 pasa al siguiente. ¿Con qué operación sacas esa parte de los 10000 kcal?"
       },
       {
         "orden": 3,
-        "texto": "El 10% de 10000 es una décima parte. Divide 10000 entre 10 o multiplica 10000 por 0.1 en tu cabeza: 10000 ÷ 10 = 1000."
+        "texto": "El 10% de una cantidad es su décima parte: la divides entre 10. Aplícalo a los 10000 kcal."
       }
     ],
     "siTecleaElError": {
       "tecleado": "9000",
-      "queSeLeDice": "En cada paso, se pierde casi toda la energía, no casi nada. Solo el 10% pasa al siguiente nivel. El otro 90% se disipa en calor y movimiento. Con 9000 kcal, la pirámide no se angostaría. Vuelve al paso: calcula el 10%, no el 90%."
+      "queSeLeDice": "En cada paso, se pierde casi toda la energía, no casi nada. Solo el 10% pasa al siguiente nivel. El otro 90% se disipa en calor y movimiento. Con 9000 kcal solo se perdería una décima parte y la pirámide casi no se angostaría. Vuelve al paso: calcula el 10%, no el 90%."
     },
     "noSePuede": null
   },
@@ -504,11 +504,11 @@
     "materia": "biologia",
     "escalones": [
       {
-        "situacion": "En un bosque, las plantas producen 10000 kcal de energía. El hueco es lo que pasa al nivel siguiente.",
+        "situacion": "En un bosque, las plantas producen 5000 kcal de energía. El hueco es lo que pasa al nivel siguiente.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "10000 kcal →"
+            "valor": "5000 kcal →"
           },
           {
             "tipo": "hueco"
@@ -520,9 +520,9 @@
         ],
         "pregunta": "¿Cuántas kcal llegan al nivel 2?",
         "respuesta": {
-          "tecleado": "1000",
+          "tecleado": "500",
           "aceptaTambien": [],
-          "comoSeLee": "mil kilocalorías"
+          "comoSeLee": "quinientas kilocalorías"
         },
         "pistas": [
           {
@@ -531,7 +531,7 @@
           },
           {
             "orden": 2,
-            "texto": "Calculas el 10% de 10000 kcal: es el 10% de lo que comió el nivel 1."
+            "texto": "Calculas el 10% de 5000 kcal: es el 10% de lo que producen las plantas."
           }
         ],
         "pasoDelCanon": 2,
@@ -637,7 +637,7 @@
           }
         ],
         "pasoDelCanon": 5,
-        "esInverso": true
+        "esInverso": false
       },
       {
         "situacion": "En un río, el nivel 4 tiene 6 kcal. El nivel 3 tuvo 60, el nivel 2 tuvo 600. ¿Cuánta energía produjeron los productores?",
@@ -678,7 +678,7 @@
     "enunciado": [
       {
         "tipo": "texto",
-        "valor": "Alguien calculó la energía de un bosque: 10000 kcal en el nivel 1. ¿Cuántas llegan al nivel 4? Hay exactamente un paso mal. Tócalo."
+        "valor": "Alguien calculó la energía de un bosque: 10000 kcal en el nivel 1. ¿Cuántas llegan al nivel 4? Hay un paso donde empieza el error. Tócalo."
       }
     ],
     "pasos": [
@@ -697,7 +697,7 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Calculo el 10% que pasa: 90% de 10000 = 9000 kcal"
+            "valor": "Calculo lo que pasa al nivel 2: 90% de 10000 = 9000 kcal"
           }
         ],
         "siLoTocas": "Ahí está. En ese renglón aparece un porcentaje que cambia el resultado."
@@ -710,7 +710,7 @@
             "valor": "Repito el cálculo: 90% de 9000 = 8100 kcal"
           }
         ],
-        "siLoTocas": "La cuenta está bien con el 9000 que recibió. Ese paso no inventó su número."
+        "siLoTocas": "Aquí el error se repite, pero no empieza: la cuenta sale bien con el 9000 que recibió y con el porcentaje que ya traía. Ese paso no inventó su número."
       },
       {
         "numero": 4,
@@ -720,27 +720,27 @@
             "valor": "Aplico la regla otra vez: 90% de 8100 = 7290 kcal"
           }
         ],
-        "siLoTocas": "El cálculo es correcto. El paso recibió 8100 del anterior y lo multiplicó bien."
+        "siLoTocas": "El error sigue en este renglón, pero no nace aquí: recibió 8100 del anterior y lo multiplicó bien por el mismo porcentaje de antes."
       },
       {
         "numero": 5,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Nivel 4: 7290 kcal. La energía casi no baja."
+            "valor": "Nivel 4: 7290 kcal de 10000. La energía casi no baja."
           }
         ],
-        "siLoTocas": "Reportas el resultado del paso 4. Ese renglón no inventa nada: repite lo que llegó."
+        "siLoTocas": "Reportas el resultado del paso 4 junto a los 10000 del inicio. Ese renglón no inventa nada: repite lo que llegó."
       }
     ],
     "pasoMalo": 2,
     "arrastre": "El 9000 del paso 2 va al paso 3, luego 8100 va al paso 4, y 7290 termina en el paso 5. Cada paso multiplica por 90% en cadena.",
-    "porQue": "¿Qu\\u00e9 hizo mal en ese paso?",
+    "porQue": "¿Qué hizo mal en ese paso?",
     "motivos": [
       {
         "texto": "Calculó el 90% que pasa, en vez del 10%.",
         "esElBueno": true,
-        "queRevela": "Es lo que pasó: usó 90% cuando la regla dice 10%. Con 90%, el nivel 4 recibe 7290 de 10000, casi 73%. La pirámide no se angostaría: la energía casi no desaparece."
+        "queRevela": "Es lo que pasó: usó 90% cuando la regla dice 10%. Con 90%, el nivel 4 recibe 7290 de 10000, casi 73%. La pirámide casi no se angostaría: la energía apenas se pierde."
       },
       {
         "texto": "Sumó el porcentaje en lugar de multiplicar.",
@@ -751,15 +751,15 @@
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro pasos siguen la regla de los niveles tróficos. El error es un número que cambia el porcentaje usado."
+        "texto": "Lee cada renglón y pregúntate si la energía que pasa de un nivel al siguiente es la que debería pasar."
       },
       {
         "orden": 2,
-        "texto": "La regla del 10% dice que sólo el 10% pasa al siguiente nivel. Busca dónde aparece ese porcentaje."
+        "texto": "La regla del 10% dice que solo el 10% de la energía pasa al siguiente nivel. Compara esa regla con cada renglón en que se cambia de nivel."
       },
       {
         "orden": 3,
-        "texto": "En un paso aparece 90%, y los demás pasos usan otra cantidad. Compara el porcentaje de cada renglón."
+        "texto": "Varios renglones se salen de la regla, pero el error empieza en uno solo: el primero donde la energía no baja como debería. Los siguientes parten de un número que ya venía torcido."
       }
     ],
     "noSePuede": null
@@ -768,19 +768,19 @@
     "temaNumero": 33,
     "materia": "biologia",
     "titulo": "Explícame por qué el nivel 4 recibe solo 10 kcal si el nivel 1 tiene 10000.",
-    "aclaracion": "Con tus palabras, sin escribir los números ni la regla del 10%. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas tu.",
+    "aclaracion": "Con tus palabras, sin escribir los números ni la regla del 10%. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas tú.",
     "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
     "rubrica": {
       "ideasQueCuentan": [
         {
           "idea": "La energía se pierde en casi su totalidad cuando pasa de un nivel al siguiente, así que cada nivel tiene mucho menos que el anterior.",
-          "porQueImporta": "Sin esta idea, el estudiante cree que casi toda la energía se recicla y pasa, como la materia, así que la pirámide no se angostará tanto ni se detiene en el nivel 4.",
+          "porQueImporta": "Sin esta idea, el estudiante cree que casi toda la energía se recicla y pasa, como la materia, así que piensa que la pirámide casi no se angosta y que podría tener muchos niveles más.",
           "comoSuenaDicha": "En cada paso se pierde casi toda la energía, así que cada nivel queda con mucho menos.",
           "esImprescindible": true
         },
         {
           "idea": "La pérdida de energía se repite en cada eslabón: no es que se pierda una vez y ya, sino que en cada transición de nivel pasa lo mismo.",
-          "porQueImporta": "Quien cree que la energía se pierde solo una vez, o solo al inicio, no entiende por qué la cifra baja tan rápido de 10000 a 10 en cuatro pasos.",
+          "porQueImporta": "Quien cree que la energía se pierde solo una vez, o solo al inicio, no entiende por qué la cifra baja tan rápido de 10000 a 10 en tres pasos.",
           "comoSuenaDicha": "Cada vez que sube de nivel pierde casi toda, y esto pasa una y otra vez.",
           "esImprescindible": false
         },
@@ -817,12 +817,12 @@
         },
         {
           "siDice": "La materia se recicla, ¿por qué la energía no?",
-          "seLeContesta": "La materia de un animal muerto vuelve al suelo, las plantas la toman, y así da vueltas. La energía es distinto: no viaja en los átomos. Si un venado come pasto y se calienta, ese calor se pierde al aire, no vuelve a estar en el pasto, y el puma que coma al venado no puede usar ese calor que ya se fue.",
+          "seLeContesta": "La materia de un animal muerto vuelve al suelo, las plantas la toman, y así da vueltas: los átomos se reutilizan. La energía que traía el alimento se va gastando y se escapa como calor. Si un venado come pasto y se calienta, ese calor se pierde al aire, no vuelve a estar en el pasto, y el puma que coma al venado no puede usar ese calor que ya se fue.",
           "aDondeLoEmpuja": "A separar qué pasa con la materia y qué pasa con la energía: la materia se recicla, la energía se disipa."
         },
         {
           "siDice": "Entonces, ¿si empezamos con más energía en el nivel 1, el nivel 4 también podría tener 10000 kcal?",
-          "seLeContesta": "No. Aunque el nivel 1 tuviera 100000 kcal, el nivel 4 recibiría solo el 10% del 10% del 10% de eso. Es decir, el 0.1% del original. Sí, más grande, pero la regla es la que es.",
+          "seLeContesta": "Solo si el nivel 1 tuviera diez millones de kcal, y aun así el nivel 4 tendría mil veces menos que el nivel 1. Con 100000 kcal en el nivel 1, el nivel 4 recibiría solo el 10% del 10% del 10% de eso, el 0.1%: 100 kcal. La pirámide se angosta sin importar cuánta energía empiece.",
           "aDondeLoEmpuja": "A ver que la pirámide se angosta siempre, sin importar el tamaño del nivel 1, porque la regla de la pérdida es lo que define la forma."
         }
       ],

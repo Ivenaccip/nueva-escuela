@@ -662,6 +662,33 @@ function sellarTraza(paso, salida, temario, tema) {
 }
 
 /**
+ * Caracteres que no se ven y sí cuentan: guion blando (U+00AD), espacios de ancho
+ * cero y la marca de orden de bytes. Haiku los mete a veces dentro de una palabra
+ * («só\u00ADlo») o entre todas («error.arrastre» del tema 13 de Química llevaba 29).
+ * En pantalla no se ven, pero parten palabras a medio renglón, rompen la búsqueda
+ * del texto y suman caracteres al tope. No son contenido: se quitan.
+ */
+const INVISIBLES = /[\u00AD\u200B-\u200D\uFEFF]/g;
+
+function sellarInvisibles(salida) {
+  const andar = (nodo) => {
+    if (Array.isArray(nodo)) {
+      nodo.forEach((valor, i) => {
+        if (typeof valor === 'string') nodo[i] = valor.replace(INVISIBLES, '');
+        else andar(valor);
+      });
+      return;
+    }
+    if (!nodo || typeof nodo !== 'object') return;
+    for (const [llave, valor] of Object.entries(nodo)) {
+      if (typeof valor === 'string') nodo[llave] = valor.replace(INVISIBLES, '');
+      else andar(valor);
+    }
+  };
+  andar(salida);
+}
+
+/**
  * Quita la comilla recta que cierra un texto sin haber abierto nada. Los campos
  * son texto plano, así que una `"` suelta en el borde no es contenido: es el
  * cierre del JSON que se coló dentro del valor. Medido sobre los nueve temas
@@ -936,6 +963,7 @@ async function correr(paso, valores) {
     // que nadie tenía que adivinar no puede tirar la llamada entera.
     sellarTraza(paso, r, temario, tema);
     sellarIndices(r);
+    sellarInvisibles(r);
     sellarComillasSueltas(r);
     sellarTeclado(paso, r);
     if (paso.necesitaVideos) sellarVideo(r, valores.__candidatos ?? [], valores.__consulta);

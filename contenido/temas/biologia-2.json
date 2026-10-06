@@ -154,8 +154,8 @@
   "ver": {
     "temaNumero": 2,
     "materia": "biologia",
-    "pregunta": "¿Por qué un elefante es más grande que un ratón si sus células miden igual?",
-    "resumen": "El tamaño de un animal no depende del tamaño de sus células sino de cuántas tiene. Un elefante es grande porque tiene muchísimas más células que un ratón, no porque cada una sea enorme.",
+    "pregunta": "¿Por qué un elefante es más grande que un ratón con células casi iguales?",
+    "resumen": "Todo ser vivo está hecho de células, la unidad más chica de lo vivo. El tamaño de un animal depende de cuántas células tiene, no de qué tan grande es cada una: el elefante tiene muchísimas más que un ratón.",
     "busqueda": {
       "criterios": [
         "Explica por qué los animales grandes tienen más células y no células más grandes, no nada más muestra qué son las células.",
@@ -230,7 +230,7 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Usaste el microscopio como el canon te enseñó: las células de un mismo tejido miden decenas de μm, no importa si el animal es grande o chico.",
+            "queRevela": "Usaste el microscopio para medir: las células de un mismo tejido miden decenas de μm, sin importar si el animal es grande o chico.",
             "letra": "A"
           },
           {
@@ -249,12 +249,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Igual que una de ratón"
+                "valor": "Entre 10 y 50 mm"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Es verdad que las células de piel del elefante y del ratón miden casi lo mismo. Pero la pregunta pide el número con unidad, no una comparación.",
+            "queRevela": "Estás leyendo la unidad como si fuera mm. Entre 10 y 50 mm serían de uno a cinco centímetros, y una célula así se vería sin microscopio. Las células se miden en μm, que son mil veces más chicos que un mm.",
             "letra": "C"
           },
           {
@@ -284,7 +284,7 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Porque la célula mide en μm"
+                "valor": "Para tener las dos medidas en la misma unidad"
               }
             ],
             "esCorrecta": true,
@@ -308,24 +308,24 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Porque el microscopio mide en μm"
+                "valor": "Porque los μm son más grandes que los mm"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El microscopio mide cosas chiquitas, pero eso no es razón para convertir la muestra. Lo que importa es que la célula está medida en μm.",
+            "queRevela": "Estás tomando el μm por la unidad más grande, y es al revés: 1 mm son 1000 μm, así que el μm es más chico. Convertir sirve para igualar las unidades, no por cuál es más grande.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Porque 1 mm no es lo mismo que 1 μm"
+                "valor": "Porque el microscopio sólo acepta números grandes"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Cierto que son distintos, pero eso explica qué es el problema, no por qué lo resuelves convirtiendo. La solución es igualar las unidades.",
+            "queRevela": "El microscopio no pide ningún número ni tiene que ver con convertir. La muestra se pasa a μm para que quede en la misma unidad que la célula, y así se puedan dividir.",
             "letra": "D"
           }
         ]
@@ -396,7 +396,7 @@
             "valor": "¿Qué hace que un elefante sea más grande que un ratón?"
           }
         ],
-        "pasoDelCanon": 1,
+        "pasoDelCanon": 2,
         "opciones": [
           {
             "partes": [
@@ -419,14 +419,14 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Si sus células fueran mucho más grandes que las del ratón, podrían caber menos en el mismo volumen. Ambas miden decenas de μm.",
+            "queRevela": "Las células de la piel miden casi lo mismo en los dos animales, unas decenas de μm. El elefante es más grande porque tiene muchas más.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Sus órganos no son células"
+                "valor": "Sus órganos no tienen células"
               }
             ],
             "esCorrecta": false,
@@ -454,44 +454,41 @@
   "completar": {
     "temaNumero": 2,
     "materia": "biologia",
-    "pasoDelCanon": 2,
-    "queFalta": "el tamaño de una célula de piel, en micrón",
+    "pasoDelCanon": 4,
+    "queFalta": "cuántas células caben en una fila a lo largo de la muestra",
     "expresion": [
       {
         "tipo": "texto",
-        "valor": "Una célula de la piel mide"
+        "valor": "2000 μm ÷ 20 μm ="
       },
       {
         "tipo": "hueco"
       },
       {
         "tipo": "texto",
-        "valor": "μm."
+        "valor": "células en línea"
       }
     ],
     "respuesta": {
-      "tecleado": "20",
+      "tecleado": "100",
       "aceptaTambien": [],
-      "comoSeLee": "veinte"
+      "comoSeLee": "cien"
     },
     "pistas": [
       {
-        "texto": "Para saber cuántas células caben en la muestra, necesitas medir una sola célula al microscopio. El tamaño de esa célula te dice cuánto espacio ocupa en la muestra.",
+        "texto": "Lo que falta es un conteo: cuántas células de ese tamaño caben una junto a otra a lo largo de la muestra.",
         "orden": 1
       },
       {
-        "texto": "Miras al microscopio cuánto mide una sola célula. La mayoría de las células de la piel tienen un tamaño parecido.",
+        "texto": "Divides lo que mide el largo de la muestra entre lo que mide una célula. Las dos medidas ya están en micrones.",
         "orden": 2
       },
       {
-        "texto": "Las células del mismo tipo miden casi igual en un elefante que en un ratón. El tamaño que ves en el microscopio de la piel es el que usas para toda la muestra.",
+        "texto": "La cuenta ya está planteada: ¿cuántas veces cabe 20 en 2000?",
         "orden": 3
       }
     ],
-    "siTecleaElError": {
-      "tecleado": "100",
-      "queSeLeDice": "Una célula de piel de elefante no es mucho más grande que una de ratón. Las células se miden en el microscopio, no se adivinan por el tamaño del animal. El elefante es grande porque tiene muchísimas más células del mismo tamaño, no porque cada una sea enorme. Vuelve a medir al microscopio."
-    },
+    "siTecleaElError": null,
     "noSePuede": null
   },
   "escalera": {
@@ -518,7 +515,7 @@
         "pistas": [
           {
             "orden": 1,
-            "texto": "Ya hiciste las cuentas de arriba: te dieron que en el largo caben 100 células y en el ancho también caben 100. Ahora necesitas el total."
+            "texto": "En el largo caben 100 células de 20 μm, y en el ancho también caben 100. Ahora necesitas el total de toda la muestra."
           },
           {
             "orden": 2,
@@ -529,7 +526,7 @@
         "esInverso": false
       },
       {
-        "situacion": "Observas al microscopio un trozo de mejilla de 3 mm × 3 mm. Cada célula del tejido mide 25 μm de largo.",
+        "situacion": "Observas al microscopio un trozo de tejido de 3 mm × 3 mm. Cada célula mide 25 μm de largo.",
         "expresion": [
           {
             "tipo": "texto",
@@ -559,7 +556,7 @@
         "esInverso": false
       },
       {
-        "situacion": "Te dan una foto de un tejido con la escala apuntada: 1 mm de la foto mide lo mismo que 50 μm de verdad. En la foto la muestra mide 2 mm de lado.",
+        "situacion": "Te dan una foto de un tejido con la escala apuntada: 1 mm de la foto mide lo mismo que 50 μm de verdad. En la foto la muestra mide 40 mm de lado.",
         "expresion": [
           {
             "tipo": "texto",
@@ -582,18 +579,18 @@
           },
           {
             "orden": 2,
-            "texto": "Si 1 mm de foto = 50 μm de verdad, entonces 2 mm de foto = 100 μm de verdad. Luego divides entre lo que mide la célula."
+            "texto": "Si 1 mm de foto = 50 μm de verdad, entonces 40 mm de foto = 40 × 50 μm = 2000 μm de verdad. Luego divides entre lo que mide la célula."
           },
           {
             "orden": 3,
-            "texto": "100 μm dividido entre 50 μm da 2 células en línea, y en toda la muestra 2 por 2."
+            "texto": "2000 μm dividido entre 50 μm da 40 células en línea. Con eso ya puedes completar la cuenta del renglón."
           }
         ],
         "pasoDelCanon": 3,
         "esInverso": false
       },
       {
-        "situacion": "Encontraste anotado que en una muestra de 2 mm × 2 mm de sangre caben 40000 células, y se te olvidó cuánto mide una sola célula de sangre.",
+        "situacion": "Encontraste anotado que en una muestra de tejido de 2 mm × 2 mm caben 10000 células, y se te olvidó cuánto mide una sola célula.",
         "expresion": [
           {
             "tipo": "texto",
@@ -607,11 +604,11 @@
             "valor": "= 100"
           }
         ],
-        "pregunta": "¿Cuántos micrón mide una célula de sangre?",
+        "pregunta": "¿Cuántos micrones mide una célula de la muestra?",
         "respuesta": {
           "tecleado": "20",
           "aceptaTambien": [],
-          "comoSeLee": "veinte micrón"
+          "comoSeLee": "veinte micrones"
         },
         "pistas": [
           {
@@ -620,7 +617,7 @@
           },
           {
             "orden": 2,
-            "texto": "Sabes que 2 mm = 2000 μm. Sabes que caben 100 células en el largo. El tamaño de la célula es el número que divide a 2000 y da 100."
+            "texto": "Sabes que 2 mm = 2000 μm. Como 100 × 100 = 10000, caben 100 células en el largo. El tamaño de la célula es el número que divide a 2000 y da 100."
           },
           {
             "orden": 3,
@@ -631,7 +628,7 @@
         "esInverso": true
       },
       {
-        "situacion": "Midieron que cada célula del hígado mide 10 μm y contaron que en una muestra caben 90000 células. Se borraron las medidas del lado de la muestra en milímetros.",
+        "situacion": "Midieron que cada célula de un tejido mide 10 μm y contaron que en una muestra cuadrada caben 90000 células. Se borró cuánto mide el lado de la muestra.",
         "expresion": [
           {
             "tipo": "hueco"
@@ -641,11 +638,11 @@
             "valor": "÷ 10 = 300"
           }
         ],
-        "pregunta": "¿Cuántos micrón mide el lado de la muestra?",
+        "pregunta": "¿Cuántos micrones mide el lado de la muestra?",
         "respuesta": {
           "tecleado": "3000",
           "aceptaTambien": [],
-          "comoSeLee": "tres mil micrón"
+          "comoSeLee": "tres mil micrones"
         },
         "pistas": [
           {
@@ -658,7 +655,7 @@
           },
           {
             "orden": 3,
-            "texto": "Es el número que multiplicado por 10 da 3000."
+            "texto": "Imagina el lado partido en pedazos de 10 μm, y salen 300 pedazos. ¿Cuánto mide el lado completo juntándolos todos?"
           }
         ],
         "pasoDelCanon": 1,
@@ -695,7 +692,7 @@
             "valor": "Miro al microscopio cuánto mide una célula: 100 μm."
           }
         ],
-        "siLoTocas": "Ahí está el error. Ese renglón es el que les pasa su número a todos los pasos que siguen."
+        "siLoTocas": "Ahí está el error. De ese renglón sale el número con el que se divide después, y de ahí viene el resultado final."
       },
       {
         "numero": 3,
@@ -715,21 +712,21 @@
             "valor": "Divido el largo entre lo que mide una célula: 2000 μm ÷ 100 μm = 20 células en línea."
           }
         ],
-        "siLoTocas": "La división está bien hecha: 2000 entre 100 da 20. Ese paso no inventó ninguno de sus números, los recibió del paso anterior."
+        "siLoTocas": "La división está bien hecha: 2000 entre 100 da 20. Ese paso no inventó ninguno de sus dos números, los recibió de renglones anteriores."
       },
       {
         "numero": 5,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Repito con el ancho y multiplico: 20 × 20 = 400 células en la muestra."
+            "valor": "Repito con el ancho (2000 ÷ 100 = 20) y multiplico: 20 × 20 = 400 células."
           }
         ],
-        "siLoTocas": "La multiplicación está bien: 20 por 20 da 400. Ese paso sigue el mismo razonamiento que los anteriores y repite el número que le llegó."
+        "siLoTocas": "La cuenta está bien: 2000 entre 100 da 20 también en el ancho, y 20 por 20 da 400. Ese paso repite el número que le llegó, no lo inventa."
       }
     ],
     "pasoMalo": 2,
-    "arrastre": "El 100 del paso 2 es el 100 que divide en el paso 4, y de ahí salen los 20 de la línea. El 20 del paso 4 se multiplica en el paso 5, dando 400 en vez de 10000. Los pasos 3, 4 y 5 están bien hechos con un número malo: si buscas el renglón raro, no encontrarás ninguno porque todos usan el 100 μm.",
+    "arrastre": "El 100 del paso 2 es el que divide en el paso 4, y de ahí salen los 20 de la línea. Esos 20 llegan al paso 5, donde el ancho también se divide entre 100 y se multiplica 20 × 20 = 400, en vez de 10000. Los pasos 4 y 5 están bien hechos con un número malo, así que no hay ningún renglón raro. El paso 3 no depende del 100 y también está bien.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
@@ -738,9 +735,9 @@
         "queRevela": "Las células del mismo tipo miden casi igual en un elefante y en un ratón: unas decenas de μm. El renglón pone 100 μm como si eso fuera lo que vería al microscopio, pero es una suposición sobre el tamaño del animal, no una medida real. El error es creer que un cuerpo grande está hecho de células enormes, cuando en verdad está hecho de muchísimas más células del mismo tamaño."
       },
       {
-        "texto": "Olvidó convertir milímetros a micrón en el paso 3.",
+        "texto": "Anotó la célula en μm cuando se mide en mm.",
         "esElBueno": false,
-        "queRevela": "Quien escoge esto cree que el error está en la unidad. Pero el paso 3 sí convierte: dice 2 mm = 2000 μm, y eso es correcto. El problema no es una conversión olvidada, es el número que entró a dividir en el paso 4."
+        "queRevela": "Quien escoge esto cree que el error está en la unidad de la célula. Pero la célula se mide en μm, y la conversión de la muestra la deja en μm, igual que ella. Lo raro no es la unidad sino el número: ninguna célula de piel mide 100 μm."
       }
     ],
     "pistas": [
@@ -750,11 +747,11 @@
       },
       {
         "orden": 2,
-        "texto": "Hay un número que aparece en el paso 2 sin haber sido medido al microscopio. Compara el tamaño que dice ese paso con el rango de medidas reales de las células."
+        "texto": "Mira qué renglones salen de una cuenta y cuál trae una medida que se dice tomada con el microscopio. Compara esa medida con lo que miden las células de verdad."
       },
       {
         "orden": 3,
-        "texto": "Las células de la piel miden típicamente entre 10 y 50 μm. Compara ese rango con el número del paso 2."
+        "texto": "Las células de la piel miden típicamente entre 10 y 50 μm. Compara ese rango con la medida de la célula que se usa en los renglones."
       }
     ],
     "noSePuede": null
@@ -768,7 +765,7 @@
     "rubrica": {
       "ideasQueCuentan": [
         {
-          "idea": "Las células son todas del mismo tamaño aproximado en los animales. El elefante es grande porque tiene muchísimas más células, no porque cada una sea más grande.",
+          "idea": "Las células del mismo tipo, por ejemplo las de piel, miden casi lo mismo en un animal grande y en uno chico. El elefante es grande porque tiene muchísimas más células, no porque cada una sea más grande.",
           "porQueImporta": "Sin esta idea, crees que el tamaño del animal viene de células más grandes, y te pones a adivinar el tamaño de la célula por el tamaño del animal en lugar de medirlo.",
           "comoSuenaDicha": "El elefante tiene muchísimas más células que el ratón, pero las células miden casi lo mismo en los dos.",
           "esImprescindible": true
@@ -780,9 +777,9 @@
           "esImprescindible": false
         },
         {
-          "idea": "Una célula de piel de elefante y una de piel de ratón caben en el mismo microscopio y se parecen en tamaño.",
+          "idea": "Si comparas al microscopio células del mismo tejido de un animal grande y uno chico, el tamaño de cada célula es parecido.",
           "porQueImporta": "Es lo que le permite al estudiante pasar de la idea general a algo que puede verificar, y es lo que falta cuando dice que un elefante tiene células enormes.",
-          "comoSuenaDicha": "La piel de un elefante y la de un ratón se ven parecidas al microscopio.",
+          "comoSuenaDicha": "Las células de la piel de un elefante y de un ratón miden casi lo mismo.",
           "esImprescindible": false
         }
       ],
@@ -790,8 +787,8 @@
       "suenanBienYNoDicen": [
         {
           "respuesta": "Porque el elefante es grande pero las células son las mismas en todo animal.",
-          "queLaDelata": "Dice que las células son iguales en todo animal, lo que no es cierto. Las células del elefante y del ratón son parecidas en tamaño, pero no son las mismas: una de piel no es igual a una de sangre.",
-          "queLeFalta": "Que diga que en un tejido de piel el tamaño es parecido entre animales, no que todas las células de todo animal sean idénticas."
+          "queLaDelata": "Sólo dice que las células son las mismas en todo animal, y eso exagera: son parecidas, no idénticas. Tampoco explica por qué el elefante sí es más grande.",
+          "queLeFalta": "Que diga que el elefante es más grande porque tiene muchísimas más células, no porque las suyas sean mayores."
         },
         {
           "respuesta": "Porque el microscopio hace que parezcan igual.",
@@ -801,7 +798,7 @@
         {
           "respuesta": "Porque la sangre y el hueso del elefante no son células, entonces el elefante no tiene más células que el ratón.",
           "queLaDelata": "Cree que solo la piel o el músculo son células, y que la sangre y el hueso son otra cosa que va por dentro. Es confundir qué es célula con cuáles células vimos al microscopio.",
-          "queLeFalta": "Que diga que todo en el cuerpo está hecho de células: la sangre, el hueso, el músculo, todo. El elefante tiene más porque es más grande, no porque sus células sean más grandes."
+          "queLeFalta": "Que diga que la sangre, el hueso y el músculo son tejidos hechos de células, y que el elefante es más grande porque tiene más células, no porque las suyas sean más grandes."
         }
       ],
       "contraargumentos": [
@@ -812,16 +809,16 @@
         },
         {
           "siDice": "Sí, pero yo pensé que con un microscopio fuerte veías que son más grandes.",
-          "seLeContesta": "El microscopio no lo decide: vos lo puedes usar. En el paso 2 del procedimiento mediste una célula de piel y te salió 20 micrón, ¿cierto? Eso es lo que mide de verdad. Una célula de piel de elefante mide 20, una de ratón mide 20: iguales.",
-          "aDondeLoEmpuja": "A que se apoye en lo que midió, no en lo que imagina, que es la segunda idea."
+          "seLeContesta": "Con un microscopio más potente la imagen se ve más grande, pero la célula sigue midiendo lo mismo. Por eso se mide con una escala y no por lo grande que se ve. Con esa escala, una célula de piel de elefante y una de ratón miden casi lo mismo.",
+          "aDondeLoEmpuja": "A que se apoye en lo que se mide con la escala, no en lo que imagina, que es la segunda idea."
         },
         {
           "siDice": "Entonces la sangre del elefante también tiene células, y las células de sangre son todas iguales en todos los animales.",
-          "seLeContesta": "Correcto: la sangre de un elefante y la de un ratón tienen células. Las células de sangre del elefante son parecidas a las del ratón. Pero eso es en el tejido de sangre. Las de piel son distintas a las de sangre, en cualquier animal.",
+          "seLeContesta": "Sí, la sangre tiene células, y las de un mismo tipo se parecen entre un elefante y un ratón. Pero parecidas no es iguales: ni siquiera todas las células de la sangre son iguales entre sí, y las de piel son distintas a las de sangre.",
           "aDondeLoEmpuja": "A que vea que una célula es una unidad chica, todas del tamaño aproximado dentro de un tejido, y que por eso los animales grandes tienen más, no células más grandes."
         }
       ],
-      "ejemploQueSiCuenta": "El elefante es grande porque tiene muchas más células que el ratón, no porque cada célula sea más grande. Cuando miras una célula de piel de elefante al microscopio, mide lo mismo que la de un ratón, unos veinte micrón. Por eso el elefante sigue teniendo piel chiquita en cada célula, pero tiene millones y millones de ellas. El tamaño de la célula lo ves en el microscopio, no lo adivinas mirando al animal.",
+      "ejemploQueSiCuenta": "El elefante es grande porque tiene muchísimas más células que el ratón, no porque cada célula sea más grande. Si miras al microscopio una célula de piel de elefante y una de ratón, miden casi lo mismo: las dos son chiquitas. El elefante sólo tiene muchísimas más. El tamaño de la célula se mide al microscopio, no se adivina mirando al animal.",
       "noCuentaEnContra": [
         "La ortografía y los acentos.",
         "Que no escriba la palabra célula: si dice unidades chiquitas o bloques que forman el cuerpo, ya está.",

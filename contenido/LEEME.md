@@ -409,6 +409,8 @@ Lo que sigue sin existir, en orden de cuántos temas desbloquea:
 
 1. **El teclado de fichas** (que `FILAS` salga del contenido) — desbloquea los temas
    de `X3` y, con punto, menos y paréntesis, la mitad del temario de Matemáticas.
+   Con el teclado de hoy, de 35 temas Biología tiene 5 jugables y Química 11; con
+   fichas se abrirían unos 11 de Biología que hoy contestan con una palabra.
 2. **`src/componentes/Tabla.tsx`** — desbloquea los temas de `X1-tabla`.
 3. **Los componentes de figura** — desbloquea los temas de `X2-figura`.
 4. **Calificar la estación 6** — una segunda llamada a la API con la `rubrica`. Hoy se

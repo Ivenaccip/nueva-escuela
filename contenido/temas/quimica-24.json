@@ -304,7 +304,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Ese es el número del hidrógeno, no el del oxígeno. El oxígeno y el hidrógeno son los únicos que tienen valores fijos.",
+            "queRevela": "Ese es el número del hidrógeno, no el del oxígeno. El oxígeno casi siempre vale −2 en sus compuestos.",
             "letra": "C"
           },
           {
@@ -316,7 +316,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El oxígeno casi siempre vale −2 en los compuestos. Tiene un valor fijo que usas para empezar el cálculo.",
+            "queRevela": "El oxígeno casi siempre vale −2 en los compuestos, y por eso lo usas para empezar el cálculo.",
             "letra": "D"
           }
         ]
@@ -336,7 +336,7 @@
           {
             "tipo": "simbolo",
             "valor": "O",
-            "sub": "5"
+            "sub": "3"
           },
           {
             "tipo": "texto",
@@ -353,14 +353,14 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": true,
-            "queRevela": "Leíste nada más el número de oxidación del oxígeno. Hay cinco átomos de oxígeno, así que debes multiplicar: (−2) × 5 = −10.",
+            "queRevela": "Leíste nada más el número de oxidación del oxígeno. Hay tres átomos de oxígeno, así que debes multiplicar: (−2) × 3 = −6.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "−5"
+                "valor": "−3"
               }
             ],
             "esCorrecta": false,
@@ -372,24 +372,24 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "−10"
+                "valor": "−6"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Multiplicaste el número de oxidación por el subíndice: (−2) × 5 = −10. Esa es la aportación total de los cinco oxígenos.",
+            "queRevela": "Multiplicaste el número de oxidación por el subíndice: (−2) × 3 = −6. Esa es la aportación total de los tres oxígenos.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "+10"
+                "valor": "+6"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Multiplicaste bien, pero invertiste el signo. El oxígeno vale −2, así que cinco oxígenos aportan −10, no +10.",
+            "queRevela": "Multiplicaste bien, pero invertiste el signo. El oxígeno vale −2, así que tres oxígenos aportan −6, no +6.",
             "letra": "D"
           }
         ]
@@ -409,11 +409,11 @@
           {
             "tipo": "simbolo",
             "valor": "O",
-            "sub": "5"
+            "sub": "3"
           },
           {
             "tipo": "texto",
-            "valor": ", ¿qué plantea la ecuación para hallar el número del fósforo?"
+            "valor": ", ¿qué ecuación plantea que todo suma cero, con x lo que aportan los fósforos?"
           }
         ],
         "opciones": [
@@ -421,48 +421,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "2 × x + (−2) × 5 = 0"
+                "valor": "x + (−2) × 3 = 0"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Plantaste que dos fósforos sumados a cinco oxígenos dan cero. La suma de todos los números es cero porque el compuesto es neutro.",
+            "queRevela": "Plantaste que lo que aportan los fósforos más lo que aportan los tres oxígenos da cero. La suma de todos los números es cero porque el compuesto es neutro.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "x + (−2) × 5 = 0"
+                "valor": "x + 3 = 0"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Olvidaste multiplicar el número del fósforo por su subíndice. Hay dos átomos de fósforo, así que es 2 × x, no nada más x.",
+            "queRevela": "Estás usando el subíndice del oxígeno como si fuera su número de oxidación. El oxígeno vale −2 en cada átomo, no +3.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "2 × x − 10 = 0"
+                "valor": "x + (−2) + 3 = 0"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Hiciste bien la ecuación, pero dejaste el cálculo de −2 × 5 sin escribir. Para evitar errores, es mejor escribir (−2) × 5 y luego calcular.",
+            "queRevela": "Sumaste el subíndice al −2 en vez de multiplicarlos. Cada oxígeno aporta −2, y hay que contar lo que aportan todos los oxígenos juntos.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "2 × x + 5 = 0"
+                "valor": "x + (−2) × 3 = 6"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estás usando el subíndice del oxígeno como si fuera su número de oxidación. El oxígeno vale −2, no +5.",
+            "queRevela": "Igualaste a 6. En un compuesto neutro la suma de todos los números de oxidación es cero, no otro número.",
             "letra": "D"
           }
         ]
@@ -472,7 +472,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Despeja x de: 3x + (−2)(2) = 0"
+            "valor": "Despeja x de: x + (−2)(2) = 0"
           }
         ],
         "opciones": [
@@ -485,8 +485,20 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Pasaste el −4 hacia el otro lado sin cambiar el signo. Si 3x − 4 = 0, entonces 3x = 4.",
+            "queRevela": "Pasaste el −4 al otro lado sin cambiarle el signo. Si x − 4 = 0, entonces x = 4.",
             "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "x = 2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste el 4 entre el 2 del oxígeno. Despejar es pasar el −4 al otro lado; dividir entre un subíndice es otro paso y viene después.",
+            "letra": "B"
           },
           {
             "partes": [
@@ -495,35 +507,21 @@
                 "valor": "x = 4"
               }
             ],
-            "esCorrecta": false,
-            "esElErrorTipico": false,
-            "queRevela": "Hallaste bien el valor de 3x, pero no dividiste entre 3. Todavía te falta un paso.",
-            "letra": "B"
-          },
-          {
-            "partes": [
-              {
-                "tipo": "fraccion",
-                "arriba": "4",
-                "abajo": "3"
-              }
-            ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Despejaste el 3 dividiendo: 3x = 4, entonces x = 4/3. Ese es el número que buscas antes de dividir entre el subíndice.",
+            "queRevela": "Pasaste el −4 sumando al otro lado: x − 4 = 0, entonces x = 4. Ese es el total que aportan los átomos del elemento que buscas, antes de dividir entre su subíndice.",
             "letra": "C"
           },
           {
             "partes": [
               {
-                "tipo": "fraccion",
-                "arriba": "2",
-                "abajo": "3"
+                "tipo": "texto",
+                "valor": "x = 0"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Usaste el 2 del paréntesis en vez del 4. El valor de (−2)(2) es −4, así que 3x = 4.",
+            "queRevela": "Leíste el = 0 como si fuera la respuesta. El cero es a lo que debe sumar todo; x es lo que falta para llegar a ese cero.",
             "letra": "D"
           }
         ]
@@ -533,16 +531,21 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Si despejaste x = 4 en un compuesto con"
+            "valor": "Si x = 6 es lo que aportan en total los nitrógenos de"
           },
           {
             "tipo": "simbolo",
-            "valor": "C",
+            "valor": "N",
             "sub": "2"
           },
           {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "3"
+          },
+          {
             "tipo": "texto",
-            "valor": ", ¿cuál es el número de oxidación del carbono?"
+            "valor": ", ¿cuál es el número de oxidación de cada nitrógeno?"
           }
         ],
         "opciones": [
@@ -550,48 +553,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "+2"
+                "valor": "+3"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Dividiste la aportación total entre el subíndice: 4 ÷ 2 = +2. Ese es el número de oxidación de un solo carbono.",
+            "queRevela": "Dividiste la aportación total entre el subíndice: 6 ÷ 2 = +3. Ese es el número de oxidación de un solo nitrógeno.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "+4"
+                "valor": "+6"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Tomaste el resultado de despejar sin dividir entre el subíndice. El x = 4 es la aportación total, no el número de un solo átomo.",
+            "queRevela": "Tomaste el resultado de despejar sin dividir entre el subíndice. El x = 6 es la aportación total, no el número de un solo átomo.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "−2"
+                "valor": "−3"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Invertiste el signo. Si 2x = 4, entonces x es positivo. Revisa el despeje.",
+            "queRevela": "Invertiste el signo. La aportación total, 6, es positiva, así que cada nitrógeno también lo es. Revisa el despeje.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "−4"
+                "valor": "−6"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Invertiste el signo y además no dividiste entre 2. El resultado del despeje es 4, y 4 ÷ 2 = +2.",
+            "queRevela": "Invertiste el signo y además no dividiste entre 2. El resultado del despeje es 6, y 6 ÷ 2 = +3.",
             "letra": "D"
           }
         ]
@@ -603,7 +606,7 @@
     "temaNumero": 24,
     "materia": "quimica",
     "pasoDelCanon": 2,
-    "queFalta": "el aporte total del oxígeno a la suma, multiplicando su número de oxidación por cuántos átomos hay",
+    "queFalta": "el aporte total de los átomos de oxígeno, sin el signo menos, que ya está escrito antes del recuadro",
     "expresion": [
       {
         "tipo": "texto",
@@ -616,7 +619,7 @@
       },
       {
         "tipo": "texto",
-        "valor": "="
+        "valor": "= −"
       },
       {
         "tipo": "hueco"
@@ -631,7 +634,7 @@
     },
     "pistas": [
       {
-        "texto": "El oxígeno vale −2, pero hay 2 átomos de oxígeno en SO₂. Debes contar cuánto aportan los dos juntos.",
+        "texto": "El oxígeno vale −2 en cada átomo, pero en SO₂ hay más de uno. El recuadro pide cuánto aportan todos juntos: el signo menos ya está escrito.",
         "orden": 1
       },
       {
@@ -639,13 +642,13 @@
         "orden": 2
       },
       {
-        "texto": "Dos átomos de oxígeno, cada uno con número de oxidación −2. La multiplicación es (−2) × 2.",
+        "texto": "Piensa en lo que aporta un solo oxígeno y en cuántos oxígenos hay. Junta la aportación de todos.",
         "orden": 3
       }
     ],
     "siTecleaElError": {
       "tecleado": "2",
-      "queSeLeDice": "El −2 es el número de oxidación de cada oxígeno, pero hay dos átomos de oxígeno en SO₂. No basta con el número de abajo: debes multiplicar el número de oxidación por el subíndice para saber cuánto aportan todos los oxígenos juntos."
+      "queSeLeDice": "Ese 2 es lo que aporta un solo oxígeno (−2). Pero en SO₂ hay dos oxígenos: para saber cuánto aportan juntos, multiplicas el número de oxidación por el subíndice."
     },
     "noSePuede": null
   },
@@ -654,11 +657,50 @@
     "materia": "quimica",
     "escalones": [
       {
-        "situacion": "Un tanque tiene una solución de H₂O. Necesitas saber cuál es el número de oxidación del hidrógeno.",
+        "situacion": "En la fábrica de refrescos usan CO₂ para las burbujas. Se busca el número de oxidación del carbono.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "C"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→ C ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué número de oxidación positivo tiene el carbono en CO₂?",
+        "respuesta": {
+          "tecleado": "4",
+          "aceptaTambien": [],
+          "comoSeLee": "más cuatro"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "El oxígeno casi siempre vale −2. Con eso sacas cuánto tiene que aportar el carbono para que todo sume cero."
+          },
+          {
+            "orden": 2,
+            "texto": "Multiplicas el −2 por los átomos de oxígeno que muestra la fórmula. El carbono tiene que aportar lo contrario para que todo sume cero."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "En el consultorio del dentista hay un tanque de N₂O. Se busca el número de oxidación de cada nitrógeno.",
         "expresion": [
           {
             "tipo": "simbolo",
-            "valor": "H",
+            "valor": "N",
             "sub": "2"
           },
           {
@@ -667,13 +709,13 @@
           },
           {
             "tipo": "texto",
-            "valor": "="
+            "valor": "→ N ="
           },
           {
             "tipo": "hueco"
           }
         ],
-        "pregunta": "¿Cuál es el número de oxidación del hidrógeno en H₂O?",
+        "pregunta": "¿Qué número de oxidación positivo tiene cada nitrógeno en N₂O?",
         "respuesta": {
           "tecleado": "1",
           "aceptaTambien": [],
@@ -682,95 +724,62 @@
         "pistas": [
           {
             "orden": 1,
-            "texto": "El oxígeno en los compuestos vale −2. Usas eso para hallar lo que vale el hidrógeno."
+            "texto": "El oxígeno casi siempre vale −2. Con eso sacas cuánto tienen que aportar los nitrógenos para que todo sume cero."
           },
           {
             "orden": 2,
-            "texto": "Multiplicas −2 por 1, porque hay un oxígeno. Luego planteas que todo suma cero: 2x + (−2)(1) = 0."
+            "texto": "Ese total es de todos los nitrógenos juntos, no de un solo átomo. Repártelo entre los átomos de nitrógeno que muestra la fórmula."
           }
         ],
         "pasoDelCanon": 5,
         "esInverso": false
       },
       {
-        "situacion": "En el laboratorio preparan NH₃ (amoníaco). Necesitas hallar el número de oxidación del nitrógeno.",
+        "situacion": "En la obra, una varilla se oxida y deja un polvo rojizo de Fe₂O₃. Se busca el número de oxidación del hierro.",
         "expresion": [
           {
-            "tipo": "texto",
-            "valor": "Nitrógeno:"
+            "tipo": "simbolo",
+            "valor": "Fe",
+            "sub": "2"
           },
           {
             "tipo": "simbolo",
-            "valor": "N",
-            "sup": "?"
+            "valor": "O",
+            "sub": "3"
           },
           {
             "tipo": "texto",
-            "valor": "en NH₃"
+            "valor": "→ Fe ="
           },
           {
             "tipo": "hueco"
           }
         ],
-        "pregunta": "¿Cuál es el número de oxidación del nitrógeno?",
+        "pregunta": "¿Qué número de oxidación positivo tiene cada hierro en Fe₂O₃?",
         "respuesta": {
           "tecleado": "3",
           "aceptaTambien": [],
-          "comoSeLee": "menos tres"
+          "comoSeLee": "más tres"
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "El hidrógeno en los compuestos vale +1. El nitrógeno es lo que falta para que todo sume cero."
+            "texto": "El oxígeno casi siempre vale −2. Junta lo que aportan todos los oxígenos: los hierros tienen que aportar lo contrario."
           },
           {
             "orden": 2,
-            "texto": "Hay 3 átomos de hidrógeno, cada uno aporta +1. Multiplicas: (+1)(3) = +3."
+            "texto": "Los hierros aportan ese total entre todos. Para el número de un solo hierro, ese total se reparte entre cuántos hierros hay."
           }
         ],
         "pasoDelCanon": 5,
         "esInverso": false
       },
       {
-        "situacion": "Te dan la fórmula P₂O₅ (pentóxido de difósforo). Debes calcular el número de oxidación del fósforo.",
+        "situacion": "A la etiqueta de un frasco se le borró el subíndice del oxígeno: SO[?], y el azufre vale +6.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "x + (−2)(5) = 0"
-          },
-          {
-            "tipo": "texto",
-            "valor": "→"
-          },
-          {
-            "tipo": "hueco"
-          }
-        ],
-        "pregunta": "¿Cuál es el número de oxidación de cada fósforo en P₂O₅?",
-        "respuesta": {
-          "tecleado": "5",
-          "aceptaTambien": [],
-          "comoSeLee": "más cinco"
-        },
-        "pistas": [
-          {
-            "orden": 1,
-            "texto": "Cinco oxígenos aportan (−2)(5) = −10. El fósforo debe aportar +10 para que sume cero."
-          },
-          {
-            "orden": 2,
-            "texto": "Pero hay 2 átomos de fósforo. Divides +10 entre 2 para el número de oxidación de uno solo."
-          }
-        ],
-        "pasoDelCanon": 5,
-        "esInverso": false
-      },
-      {
-        "situacion": "Un compuesto tiene cloro y oxígeno. Te dicen que el oxígeno vale −2 y todo suma cero, pero se borraron cuántos oxígenos hay: la fórmula es Cl [?] O.",
-        "expresion": [
-          {
-            "tipo": "texto",
-            "valor": "x + (−2)"
+            "valor": "(+6) + (−2) ×"
           },
           {
             "tipo": "hueco"
@@ -780,50 +789,59 @@
             "valor": "= 0"
           }
         ],
-        "pregunta": "¿Cuántos oxígenos hay en la fórmula?",
+        "pregunta": "¿Cuántos átomos de oxígeno hay en la fórmula?",
         "respuesta": {
-          "tecleado": "1",
+          "tecleado": "3",
           "aceptaTambien": [],
-          "comoSeLee": "uno"
+          "comoSeLee": "tres"
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "Aquí ya sabes el número de oxidación del cloro: +1. Con eso y que todo suma cero, sacas cuántos oxígenos había."
+            "texto": "Aquí el azufre ya está dado: lo que se borró es cuántos oxígenos hay. Cada oxígeno aporta −2."
           },
           {
             "orden": 2,
-            "texto": "Si el cloro aporta +1 y necesitas que todo sume cero, los oxígenos juntos deben aportar −1."
+            "texto": "Los oxígenos juntos tienen que aportar lo contrario de lo que aporta el azufre. ¿Cuántos oxígenos hacen falta para llegar a esa cantidad?"
           }
         ],
         "pasoDelCanon": 2,
         "esInverso": true
       },
       {
-        "situacion": "En MgO (óxido de magnesio) sabes que todo suma cero y que hay 1 oxígeno con −2. Se borró cuántos magnesios había, pero deduces que uno.",
+        "situacion": "En la lija de la ferretería, cada aluminio de Al₂O₃ vale +3. Se borró lo que aportan todos juntos.",
         "expresion": [
           {
             "tipo": "hueco"
           },
           {
             "tipo": "texto",
-            "valor": "÷ 1 = 2"
+            "valor": "÷"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "Al",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= +3"
           }
         ],
-        "pregunta": "¿Cuál era la aportación total del magnesio?",
+        "pregunta": "¿Cuánto aportan juntos los aluminios de la fórmula?",
         "respuesta": {
-          "tecleado": "2",
+          "tecleado": "6",
           "aceptaTambien": [],
-          "comoSeLee": "dos"
+          "comoSeLee": "seis"
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "El hueco está en lo que despejas antes de dividir entre el subíndice."
+            "texto": "Aquí el resultado ya está dado: el número de cada aluminio. Lo que falta es el total que se dividió entre los átomos."
           },
           {
             "orden": 2,
-            "texto": "El oxígeno aporta (−2)(1) = −2. Para que sume cero, el magnesio debe aportar +2."
+            "texto": "Dividir entre el subíndice repartió el total entre los aluminios. Piensa qué operación te regresa de ese reparto al total."
           }
         ],
         "pasoDelCanon": 4,
@@ -843,7 +861,7 @@
       {
         "tipo": "simbolo",
         "valor": "S",
-        "sup": "+4"
+        "sup": "+2"
       },
       {
         "tipo": "simbolo",
@@ -892,7 +910,7 @@
             "valor": "= −2"
           }
         ],
-        "siLoTocas": "Ese renglón es el que les pasa su número a los dos pasos que siguen."
+        "siLoTocas": "Sí, ahí está el error: esa cuenta no está bien hecha. Ahora toca decir qué falló en ese renglón."
       },
       {
         "numero": 3,
@@ -903,10 +921,10 @@
           },
           {
             "tipo": "texto",
-            "valor": "x + (−2)(2) = 0"
+            "valor": "x + (−2) = 0"
           }
         ],
-        "siLoTocas": "La ecuación está bien planteada: enuncia que todo suma cero. Ese paso recibió el −2 del paso 2 y lo usó correctamente en su cuenta."
+        "siLoTocas": "La ecuación está bien armada: dice que todos los números de oxidación suman cero y usa los números que traía. No inventó ninguno."
       },
       {
         "numero": 4,
@@ -917,7 +935,7 @@
           },
           {
             "tipo": "texto",
-            "valor": "x − 4 = 0"
+            "valor": "x − 2 = 0"
           },
           {
             "tipo": "texto",
@@ -925,10 +943,10 @@
           },
           {
             "tipo": "texto",
-            "valor": "x = 4"
+            "valor": "x = 2"
           }
         ],
-        "siLoTocas": "La resta y el despeje están bien hechos. El paso recibió el −4 del paso 3 y lo convirtió en positivo al pasar del otro lado del igual. No inventó ninguno de sus números."
+        "siLoTocas": "El despeje está bien hecho: pasó el número al otro lado del igual y le cambió el signo. No inventó ninguno de sus números."
       },
       {
         "numero": 5,
@@ -939,7 +957,7 @@
           },
           {
             "tipo": "texto",
-            "valor": "4 ÷"
+            "valor": "2 ÷"
           },
           {
             "tipo": "simbolo",
@@ -948,31 +966,31 @@
           },
           {
             "tipo": "texto",
-            "valor": "= +4"
+            "valor": "= +2"
           }
         ],
-        "siLoTocas": "La división es correcta: 4 entre 1 da 4. El paso repite el número que le llegó del paso anterior y lo convierte en el número de oxidación del azufre."
+        "siLoTocas": "La división es correcta: cualquier número entre 1 queda igual. El paso toma el número que le llegó del paso anterior y lo convierte en el número de oxidación del azufre."
       }
     ],
     "pasoMalo": 2,
-    "arrastre": "El −2 del paso 2 es el que entra al paso 3 en (−2)(2), lo que da −4. Ese −4 pasa al paso 4 y se convierte en positivo +4 al despejar. El +4 final del paso 5 viene de ahí. Sin la multiplicación correcta en el paso 2, todo lo que sigue usa un número equivocado.",
+    "arrastre": "El −2 del paso 2 es lo único que el paso 3 suma a x. De ahí salen x − 2 = 0 y x = 2 en el paso 4, y el +2 del paso 5, aunque cada paso esté bien hecho con lo que recibió.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
         "texto": "Olvidó multiplicar el −2 por el subíndice 2.",
         "esElBueno": true,
-        "queRevela": "En ese renglón multiplica el −2 por el O, pero después escribe = −2 en lugar de = −4. El oxígeno son dos átomos y cada uno aporta −2, así que juntos aportan −4. Al No multiplicar, el paso siguiente recibe −2 cuando debería recibir −4, y todo lo demás se construye sobre ese número equivocado."
+        "queRevela": "En ese renglón escribe = −2, pero hay dos oxígenos y cada uno aporta −2, así que juntos aportan (−2)(2) = −4. Se quedó con la aportación de un solo oxígeno, y los pasos siguientes heredan ese −2: la ecuación queda x + (−2) = 0 y da x = 2 en lugar de 4."
       },
       {
-        "texto": "Confundió el número de oxidación del oxígeno con su subíndice.",
+        "texto": "Escribió mal el valor del oxígeno: no vale −2.",
         "esElBueno": false,
-        "queRevela": "Quien escoge esto cree que el −2 de arriba y el 2 de abajo del oxígeno son la misma cosa. Pero el renglón sí multiplica: usa (−2) × O₂. Lo que falla no es confundirlos, sino no terminar la multiplicación: la hace a mitad de camino."
+        "queRevela": "El −2 del oxígeno está bien, ya estaba en el paso 1. Lo que falla es el resultado de la multiplicación: quedó −2 en lugar de −4."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro de los cinco pasos usan un número que deberían recibir del anterior. El que está mal es el único que recibe un número pero no lo usa para calcular lo que sigue."
+        "texto": "Hay un solo paso con la cuenta mal hecha. Revisa los renglones de uno en uno: ¿la cuenta de cada uno está bien con los números que ya traía?"
       },
       {
         "orden": 2,
@@ -980,7 +998,7 @@
       },
       {
         "orden": 3,
-        "texto": "Compara lo que multiplica con lo que usa el paso siguiente. Si (−2) multiplica O₂ en el paso 2, ¿qué número debería llegar al paso 3?"
+        "texto": "Haz tú cada multiplicación que aparece en los renglones: el número de oxidación por los átomos que muestra el símbolo. Compara tu resultado con el que quedó escrito."
       }
     ],
     "noSePuede": null
@@ -1001,7 +1019,7 @@
         },
         {
           "idea": "El número de oxidación que está arriba del símbolo es distinto del subíndice que está abajo: uno dice qué carga tiene cada átomo y el otro dice cuántos hay.",
-          "porQueImporta": "Si confundes los dos, tomas el subíndice como si fuera el número de oxidación, y la suma nunca te da cero. Es la diferencia entre qué tiene un átomo y cuántos hay.",
+          "porQueImporta": "Si confundes los dos, tomas el subíndice como si fuera el número de oxidación, y la suma casi nunca te da cero. Es la diferencia entre qué tiene un átomo y cuántos hay.",
           "comoSuenaDicha": "El −2 es lo que cada oxígeno aporta, pero el 2 de abajo es que hay dos oxígenos, no son lo mismo.",
           "esImprescindible": false
         },
@@ -1033,7 +1051,7 @@
       "contraargumentos": [
         {
           "siDice": "El subíndice dos también es un número, así que es lo mismo que el número de oxidación.",
-          "seLeContesta": "Son números distintos en lugares distintos y significan cosas distintas. El −2 está arriba del símbolo y dice cuánta carga tiene un solo oxígeno. El 2 está abajo y dice cuántos oxígenos hay en la fórmula. Si una dieta es de dos gramos al día, eso no es lo mismo que dos días de dieta, ¿verdad?",
+          "seLeContesta": "Son números distintos en lugares distintos y significan cosas distintas. El −2 está arriba del símbolo y dice cuánta carga tiene un solo oxígeno. El 2 está abajo y dice cuántos oxígenos hay en la fórmula. Piensa en cajas con manzanas: si cada caja trae 2 manzanas y hay 3 cajas, el 2 y el 3 dicen cosas distintas, ¿verdad?",
           "aDondeLoEmpuja": "A que vea la diferencia entre qué tiene uno y cuántos hay, que es la segunda idea de la lista."
         },
         {
@@ -1043,7 +1061,7 @@
         },
         {
           "siDice": "Ya entiendo, solo que no sé cómo explicarlo sin decir el procedimiento.",
-          "seLeContesta": "Entonces piénsalo así: en la fórmula hay dos oxígenos. ¿Cuánta carga aporta uno solo? ¿Cuánta aportan los dos juntos? Escribe esa diferencia y ya está.",
+          "seLeContesta": "Entonces piénsalo así: en la fórmula hay dos oxígenos. Dime con tus palabras cuánta carga aporta uno solo y cuánta aportan los dos juntos.",
           "aDondeLoEmpuja": "A que vea que la idea ya la tiene: dos átomos aportan dos veces, y eso es lo único que hace falta decir."
         }
       ],

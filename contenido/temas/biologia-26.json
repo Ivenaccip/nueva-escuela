@@ -195,7 +195,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Una población tiene 30 individuos claros y 20 oscuros. Un depredador llega y caza mejor a los claros. ¿Qué observas?"
+            "valor": "Una población tiene 30 individuos claros y 20 oscuros. Un depredador llega y caza mejor a los claros. ¿Qué concluyes?"
           }
         ],
         "pasoDelCanon": 1,
@@ -334,12 +334,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Las grandes crecieron"
+                "valor": "Cada semilla grande se hizo más grande"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Confundiste al individuo con la población. Una semilla que crece no cambia de tamaño genético. Lo que cambió es cuántas grandes hay.",
+            "queRevela": "Estás hablando de lo que le pasa a una semilla durante su vida. Lo que cambió es cuántas semillas grandes y pequeñas hay en la población.",
             "letra": "B"
           },
           {
@@ -363,7 +363,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Hay dos tamaños todavía. Pero la proporción cambió: 60 y 40 es distinto a lo que hay en gen 2.",
+            "queRevela": "Sí cambió: en la generación 1 las pequeñas eran 40 de 100, o sea 40%. Las aves se las comieron y la generación 2 viene de las grandes, así que ese porcentaje bajó.",
             "letra": "D"
           }
         ]
@@ -372,10 +372,10 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Un rasgo aprendido durante la vida, ¿aparece en las crías?"
+            "valor": "Un rasgo que el animal aprendió durante su vida, ¿lo heredan sus crías por los genes?"
           }
         ],
-        "pasoDelCanon": 2,
+        "pasoDelCanon": 3,
         "opciones": [
           {
             "partes": [
@@ -386,7 +386,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Piensas que el esfuerzo marca los genes. Aparece en las crías solo si ya venía en los genes del padre o madre.",
+            "queRevela": "Piensas que el esfuerzo marca los genes. Lo que un animal aprende o entrena no cambia los genes que les pasa a sus crías.",
             "letra": "A"
           },
           {
@@ -438,14 +438,14 @@
     "expresion": [
       {
         "tipo": "texto",
-        "valor": "Generación 2: 15 claros y"
+        "valor": "Generación 1: 40 claros y 10 oscuros. Generación 2: 15 claros y"
       },
       {
         "tipo": "hueco"
       },
       {
         "tipo": "texto",
-        "valor": "oscuros"
+        "valor": "oscuros. Total: 50."
       }
     ],
     "respuesta": {
@@ -455,7 +455,7 @@
     },
     "pistas": [
       {
-        "texto": "Generación 1 tenía 10 oscuros. Los oscuros se camuflaban mejor en los árboles sucios y dejaron más crías. El total sigue siendo 50. ¿Cuántos tienen que ser oscuros para que los claros sean 15?",
+        "texto": "Ojo con qué generación te piden: no es la de antes, es la de las crías. En el renglón ya están el otro tipo y el total.",
         "orden": 1
       },
       {
@@ -463,13 +463,13 @@
         "orden": 2
       },
       {
-        "texto": "El total es 50. Si 15 son claros, el resto son oscuros: 50 menos 15 igual a 35.",
+        "texto": "Los claros y los oscuros juntos tienen que dar el total de la generación. Ya tienes los claros: ¿cuántos faltan para llegar al total?",
         "orden": 3
       }
     ],
     "siTecleaElError": {
       "tecleado": "10",
-      "queSeLeDice": "En la generación 1 había 10 oscuros. Pero ahora es la generación 2: los oscuros se reprodujeron porque se camuflaban mejor. Sus crías son más: vuelve al paso 4, a contar en la siguiente generación."
+      "queSeLeDice": "10 era la cantidad de oscuros antes de reproducirse. Ahora cuentas las crías, la siguiente generación, y los oscuros dejaron más crías porque se camuflaban mejor: vuelve al paso 4."
     },
     "noSePuede": null
   },
@@ -512,11 +512,11 @@
         "esInverso": false
       },
       {
-        "situacion": "Los árboles se ensuciaron por contaminación. Las polillas oscuras se camuflan mejor y dejan más crías. En la siguiente generación hay 15 claras y 35 oscuras.",
+        "situacion": "En una milpa las aves cazan más chapulines verdes. En la generación 2 hay 10 verdes y 15 cafés.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Generación 2: 15 claras y 35 oscuras = 50 total. Porcentaje de claras:"
+            "valor": "Generación 2: 10 verdes + 15 cafés. Porcentaje de cafés:"
           },
           {
             "tipo": "hueco"
@@ -526,31 +526,31 @@
             "valor": "%"
           }
         ],
-        "pregunta": "¿Qué porcentaje de la nueva población son claras?",
+        "pregunta": "¿Qué porcentaje de la generación 2 son chapulines cafés?",
         "respuesta": {
-          "tecleado": "30",
+          "tecleado": "60",
           "aceptaTambien": [],
-          "comoSeLee": "treinta por ciento"
+          "comoSeLee": "sesenta por ciento"
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "Ahora tienes 15 claras de un total de 50 polillas en la generación 2. Calcula su porcentaje."
+            "texto": "El total no viene escrito: sale de juntar todos los chapulines de la generación. Después ves qué parte son los cafés."
           },
           {
             "orden": 2,
-            "texto": "Divides las claras entre el total: 15 entre 50. Multiplica por 100 para el porcentaje."
+            "texto": "Sumas los verdes y los cafés para tener el total. Luego divides los 15 cafés entre ese total y multiplicas por 100."
           }
         ],
         "pasoDelCanon": 5,
         "esInverso": false
       },
       {
-        "situacion": "Una población de escarabajos tiene 60 claros y 40 oscuros. El ambiente cambia: los claros se ven más. Los oscuros sobreviven mejor y dejan más crías.",
+        "situacion": "Los escarabajos oscuros sobreviven mejor. En la generación 2 hay 10 claros y 40 oscuros.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Generación 2: 20 claros y 80 oscuros = 100 total. Porcentaje oscuros:"
+            "valor": "Generación 2: 10 claros y 40 oscuros = 50 total. Porcentaje de claros:"
           },
           {
             "tipo": "hueco"
@@ -560,27 +560,27 @@
             "valor": "%"
           }
         ],
-        "pregunta": "¿Qué porcentaje de la segunda generación son oscuros?",
+        "pregunta": "¿Qué porcentaje de la generación 2 son claros?",
         "respuesta": {
-          "tecleado": "80",
+          "tecleado": "20",
           "aceptaTambien": [],
-          "comoSeLee": "ochenta por ciento"
+          "comoSeLee": "veinte por ciento"
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "Compara la proporción de oscuros ahora: eran 40% de 100 individuos, ahora son más."
+            "texto": "Aquí piden los claros, no los oscuros. Necesitas qué parte del total son, expresada como porcentaje."
           },
           {
             "orden": 2,
-            "texto": "Divides el número de oscuros entre el total: 80 entre 100. Multiplica por 100."
+            "texto": "Divides los claros entre el total: 10 entre 50. Multiplica por 100."
           }
         ],
         "pasoDelCanon": 5,
         "esInverso": false
       },
       {
-        "situacion": "En una población de mariposas oscuras pasaban de 25 a 75 en dos generaciones. La segunda generación tiene 100 individuos totales.",
+        "situacion": "Al biólogo se le borró el total de la generación 2: sus 75 mariposas oscuras son el 75% de la población.",
         "expresion": [
           {
             "tipo": "texto",
@@ -607,37 +607,37 @@
           },
           {
             "orden": 2,
-            "texto": "Si 75 oscuras son el 75% del total, ¿cuál es el número de individuos completo?"
+            "texto": "Si 75 oscuras son tres cuartas partes del total, ¿cuántas hay en una cuarta parte? Con las cuatro cuartas armas la población completa."
           }
         ],
         "pasoDelCanon": 4,
         "esInverso": true
       },
       {
-        "situacion": "Un biólogo escribió que los aves verdes subieron a 60 en la generación 2, que es 75% del total. Pero borró cuántos había al inicio.",
+        "situacion": "Se le mojó el apunte a la bióloga: al inicio eran 50 aves en total y 10 no eran verdes.",
         "expresion": [
           {
             "tipo": "hueco"
           },
           {
             "tipo": "texto",
-            "valor": "verdes al inicio → 60 verdes generación 2"
+            "valor": "verdes + 10 no verdes = 50 total"
           }
         ],
-        "pregunta": "¿Cuántos aves verdes había si la población es siempre 80?",
+        "pregunta": "¿Cuántas aves verdes había al inicio?",
         "respuesta": {
-          "tecleado": "45",
+          "tecleado": "40",
           "aceptaTambien": [],
-          "comoSeLee": "cuarenta y cinco aves verdes"
+          "comoSeLee": "cuarenta aves verdes"
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "Aquí tienes el resultado: 60 verdes en generación 2. Lo que no sabes es cuántos había antes."
+            "texto": "El total ya está dado. Lo que falta es una de las dos partes en que se reparte: las verdes."
           },
           {
             "orden": 2,
-            "texto": "La generación inicial tenía 80 aves. Observa: ahora hay 60 verdes y 20 no-verdes después."
+            "texto": "Las verdes y las que no son verdes juntas forman toda la población. Si conoces el total y una parte, la otra se obtiene quitando."
           }
         ],
         "pasoDelCanon": 1,
@@ -679,7 +679,7 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "La presión del ambiente: los árboles se ensuciaron."
+            "valor": "Identifico la presión del ambiente: los árboles se ensuciaron."
           }
         ],
         "siLoTocas": "Ese paso identifica qué cambió en el ambiente. Sin cambio externo, las proporciones no se mueven."
@@ -689,7 +689,7 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Las polillas oscuras se esforzaron por camuflarse mejor."
+            "valor": "Determino cuál sobrevive mejor: las polillas oscuras se esforzaron por camuflarse mejor."
           }
         ],
         "siLoTocas": "Ahí está. Ese renglón es el que no cuadra con los conteos del antes y el después."
@@ -702,21 +702,21 @@
             "valor": "Cuento las crías de cada tipo: 15 claros, 35 oscuros, total 50."
           }
         ],
-        "siLoTocas": "La cuenta está bien hecha: ahora hay más oscuros que claros. Ese paso no inventó sus números, los recibió."
+        "siLoTocas": "La cuenta está bien hecha: 15 y 35 suman 50, y esos conteos vienen del problema. Contar las crías de cada tipo no es el error."
       },
       {
         "numero": 5,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Comparo frecuencias: antes 80% claros, ahora 30% claros. Cambió."
+            "valor": "Comparo frecuencias: antes 80% claros, ahora 30%. Por eso sus crías nacieron más oscuras."
           }
         ],
-        "siLoTocas": "Ese paso lee bien el cambio en la proporción. El porcentaje es lo que demuestra que algo pasó. Ese renglón repite el número que le llegó."
+        "siLoTocas": "La comparación está bien leída: de 80% a 30% de claros es un cambio real en la proporción. Lo que ese renglón concluye al final se lo trajo de antes: no lo inventó aquí."
       }
     ],
     "pasoMalo": 3,
-    "arrastre": "El paso 3 malo no trae un n\\u00famero que arrastre a los siguientes porque es una frase sin conteo. La se\\u00f1al que lo delata es contradictoria: el paso 1 muestra que los oscuros eran 10 de partida, as\\u00ed que no pudieron adquirir camuflaje mejor durante sus vidas. El rasgo tiene que heredarse de antemano.",
+    "arrastre": "El paso 5 termina en «Por eso sus crías nacieron más oscuras», la conclusión que sólo se sostiene si el esfuerzo del paso 3 se heredara. Las cuentas de los pasos 4 y 5 (15 + 35 = 50; de 80% a 30%) están bien hechas y vienen del problema, así que no delatan nada. La señal que sí delata el error: en el paso 1 ya había 10 oscuros, así que no pudieron adquirir el camuflaje durante sus vidas.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
@@ -725,9 +725,9 @@
         "queRevela": "El paso 1 prueba que ya había polillas oscuras al principio: eran 10 de 50. Si un rasgo se hereda, existe de antemano. Lo que hace un individuo durante su vida no se pasa a los hijos. Las crías oscuras del paso 4 lo son porque heredaron genes, no por esfuerzo."
       },
       {
-        "texto": "No contó bien a los individuos de la generación 2.",
+        "texto": "Confundió quién sobrevive con cuántas crías tiene cada tipo.",
         "esElBueno": false,
-        "queRevela": "Pero la cuenta del paso 4 sí suma bien: 15 + 35 = 50. Si el conteo fallara, los números no cuadrarían. El problema no es cuántos hay, es cómo explica por qué."
+        "queRevela": "Quien escoge esto cree que el renglón mezcla vivir con reproducirse. Pero ese renglón no cuenta ni compara crías: habla de un esfuerzo de las polillas oscuras. Las crías se cuentan en el paso 4, 15 claros y 35 oscuros, y esa cuenta está bien hecha. Lo que no cuadra con la generación 1, donde ya había 10 oscuros, es que alguien se esforzara para tener un rasgo que ya tenía."
       }
     ],
     "pistas": [
@@ -737,11 +737,11 @@
       },
       {
         "orden": 2,
-        "texto": "La herencia es lo que pasan los padres a los hijos por los genes. Busca un paso donde aparezca la idea de que el esfuerzo de un individuo se transmite a sus crías."
+        "texto": "Lee cada paso preguntándote si dice cómo cambió la población o qué le pasó a un solo animal durante su vida."
       },
       {
         "orden": 3,
-        "texto": "Compara la generación 1 con la explicación del paso malo. Si la variación oscura ya estaba en el 10, ¿dónde vino el esfuerzo de camuflaje?"
+        "texto": "Compara lo que dice cada paso con el conteo de la generación 1: ¿cuál habla de algo que el conteo no puede mostrar?"
       }
     ],
     "noSePuede": null
@@ -749,7 +749,7 @@
   "explicar": {
     "temaNumero": 26,
     "materia": "biologia",
-    "titulo": "Explícame por qué las oscuras dejaron más crías, sin decir que se esforzaron.",
+    "titulo": "Explícame por qué las polillas oscuras dejaron más crías, sin decir que se esforzaron.",
     "aclaracion": "Con tus palabras, sin copiar los pasos ni la definición de selección natural. No hay pistas aquí a propósito: quiero leer cómo lo piensas tú, sin que te diga qué decir.",
     "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
     "rubrica": {
@@ -767,8 +767,8 @@
           "esImprescindible": false
         },
         {
-          "idea": "El conteo muestra que de los 40 claros sólo 15 dejaron crías, pero de los 10 oscuros dejaron 35. Cada oscuro dejó más crías que cada claro, por eso la proporción cambió.",
-          "porQueImporta": "El conteo es lo que prueba que no fue un esfuerzo o una acostumbranza: es la supervivencia diferencial. Si todos tuvieran la misma cantidad de crías, nada cambiaría. El cambio en la población viene del cambio en cuántos hijos tuvo cada variante.",
+          "idea": "Los 40 claros dejaron en total sólo 15 crías, y los 10 oscuros dejaron 35: cada oscuro dejó más crías que cada claro, y por eso cambió la proporción.",
+          "porQueImporta": "El conteo muestra la supervivencia diferencial: si todos tuvieran la misma cantidad de crías, nada cambiaría. El cambio en la población viene del cambio en cuántos hijos tuvo cada variante.",
           "comoSuenaDicha": "Había menos oscuros al principio, pero dejaron más hijos, así que hay más en la siguiente generación.",
           "esImprescindible": false
         }
@@ -794,7 +794,7 @@
       "contraargumentos": [
         {
           "siDice": "Las polillas oscuras se acostumbraron al bosque sucio y por eso dejaron más crías.",
-          "seLeContesta": "Si se hubieran acostumbrado durante la vida, el cambio habría alcanzado sólo a los adultos que vivieron en el bosque sucio, no a sus hijos. Mira el conteo: 10 oscuros dejaron 35 crías oscuras. Si el bosque sucio los hizo oscuros durante su vida, ¿de dónde sacaron los genes oscuros para pasarle a sus hijos? Los genes no cambian por acostumbranza.",
+          "seLeContesta": "Si se hubieran acostumbrado durante la vida, el cambio habría alcanzado sólo a los adultos que vivieron en el bosque sucio, no a sus hijos. Mira el conteo: 10 oscuros dejaron 35 crías oscuras. Si el bosque sucio los hizo oscuros durante su vida, ¿de dónde sacaron los genes oscuros para pasarle a sus hijos? Los genes no cambian por acostumbrarse.",
           "aDondeLoEmpuja": "A ver que la variación ya estaba en la generación 1, así que no fue creada por el ambiente sucio."
         },
         {
@@ -804,8 +804,8 @@
         },
         {
           "siDice": "Lo que digo es que los oscuros dejaron más crías porque tenían mejor camuflaje, y ahí está explicado.",
-          "seLeContesta": "El camuflaje explica que sobrevivieran más, de acuerdo. Pero explica la supervivencia, no el cambio en la generación siguiente. La pregunta es por qué dejaron más crías. Contéstala en dos partes: qué hace que sobrevivan más, y por qué eso se hereda en la siguiente generación.",
-          "aDondeLoEmpuja": "A que vea que necesita tanto sobrevivencia como herencia, y que la herencia es lo que la estación pidió."
+          "seLeContesta": "Sí, el camuflaje explica que sobrevivieran más, y quien sobrevive deja más crías. Ahora: ¿ya eran oscuras antes de que el bosque se ensuciara, o el bosque las oscureció?",
+          "aDondeLoEmpuja": "A la primera idea de la lista: la variación ya estaba en la generación 1, antes de que el bosque cambiara."
         }
       ],
       "ejemploQueSiCuenta": "Las polillas oscuras ya estaban ahí en el bosque limpio, sólo que eran pocas. Cuando el bosque se ensució, los oscuros se camuflaban mejor y más de ellos vivieron. Sólo los que viven dejan crías, y como más oscuros vivieron, dejaron más crías. Los hijos de padres oscuros nacen oscuros porque heredan los genes, así que en la generación 2 hay más oscuros. El cambio vino de quién sobrevivió, no de que alguien se esforzara.",

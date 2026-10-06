@@ -193,7 +193,7 @@
     "temaNumero": 15,
     "materia": "quimica",
     "pregunta": "¿Por qué ganar electrones da carga negativa?",
-    "resumen": "Un átomo gana o pierde electrones y deja de ser neutro. Más electrones que protones significa carga negativa; menos electrones que protones significa carga positiva.",
+    "resumen": "Un átomo que gana o pierde electrones deja de ser neutro y se vuelve un ion. El electrón es negativo y el protón positivo: con más electrones que protones sobra carga negativa; con menos, sobra carga positiva.",
     "busqueda": {
       "consulta": "video explicación \"Iones: cationes y aniones\" química 3º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
       "consultasAlternas": [],
@@ -263,7 +263,7 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "protones tiene"
+                "valor": "protones hay en el núcleo"
               }
             ],
             "esCorrecta": true,
@@ -275,19 +275,19 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "electrones tiene"
+                "valor": "electrones hay en el núcleo"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El número atómico dice cuántos protones hay. Un átomo neutro tiene el mismo número de electrones que de protones, pero cuando se forma un ion, los electrones cambian.",
+            "queRevela": "Los electrones no están en el núcleo, sino alrededor de él. Sólo en el átomo neutro hay tantos como protones; en un ion ya no coinciden.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "nucleones tiene"
+                "valor": "nucleones hay en el núcleo"
               }
             ],
             "esCorrecta": false,
@@ -299,12 +299,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "de cada elemento"
+                "valor": "neutrones hay en el núcleo"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El número atómico es uno solo por elemento. No cuenta cantidad de elementos sino que identifica cuál es.",
+            "queRevela": "Dos átomos del mismo elemento pueden tener distinto número de neutrones. El número atómico sólo cuenta los protones.",
             "letra": "D"
           }
         ]
@@ -395,12 +395,12 @@
               {
                 "tipo": "simbolo",
                 "valor": "Cl",
-                "sup": "−"
+                "sup": "2−"
               }
             ],
-            "esCorrecta": true,
+            "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Restaste 17 protones de 18 electrones: sobra 1 electrón, así que la carga es 1 negativa.",
+            "queRevela": "Ganó un solo electrón, no dos. La carga es 1 negativa, no 2 negativa. El número va solamente cuando la carga es 2 o mayor.",
             "letra": "B"
           },
           {
@@ -420,12 +420,12 @@
               {
                 "tipo": "simbolo",
                 "valor": "Cl",
-                "sup": "2−"
+                "sup": "−"
               }
             ],
-            "esCorrecta": false,
+            "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Ganó un solo electrón, no dos. La carga es 1 negativa, no 2 negativa. El número va solamente cuando la carga es 2 o mayor.",
+            "queRevela": "Restaste 17 protones de 18 electrones: sobra 1 electrón, así que la carga es 1 negativa.",
             "letra": "D"
           }
         ]
@@ -448,20 +448,8 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Un catión tiene carga positiva porque perdió electrones. El oxígeno ganó, así que no es catión. Es anión, y termina en -ido porque es no metal que ganó electrones.",
+            "queRevela": "Un catión tiene carga positiva porque perdió electrones. El oxígeno ganó 2, así que es un anión; el anión del oxígeno se llama óxido.",
             "letra": "A"
-          },
-          {
-            "partes": [
-              {
-                "tipo": "texto",
-                "valor": "anión óxido"
-              }
-            ],
-            "esCorrecta": true,
-            "esElErrorTipico": false,
-            "queRevela": "Anión porque la carga es negativa, óxido porque es el oxígeno que ganó electrones.",
-            "letra": "B"
           },
           {
             "partes": [
@@ -473,6 +461,18 @@
             "esCorrecta": false,
             "esElErrorTipico": false,
             "queRevela": "Un ion neutro no existe por definición: un ion tiene carga. Si la carga es negativa, el ion es un anión.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "anión óxido"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Anión porque la carga es negativa; el anión del oxígeno se llama óxido.",
             "letra": "C"
           },
           {
@@ -490,7 +490,7 @@
         ]
       },
       {
-        "pasoDelCanon": 3,
+        "pasoDelCanon": 2,
         "enunciado": [
           {
             "tipo": "texto",
@@ -543,7 +543,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Los protones nunca cambian cuando se forma un ion. Si crees que pierde electrones porque tiene más protones, estás confundiendo causa y efecto: los protones son iguales desde el inicio.",
+            "queRevela": "Aquí cambiaron los protones, de 11 a 12, y eso lo vuelve otro elemento: el número de protones define cuál es. Al formar un ion sólo cambian los electrones.",
             "letra": "D"
           }
         ]
@@ -555,7 +555,7 @@
     "temaNumero": 15,
     "materia": "quimica",
     "pasoDelCanon": 2,
-    "queFalta": "el número de electrones que quedan en el ion cloro",
+    "queFalta": "el número de electrones que quedan en el ion cloruro",
     "expresion": [
       {
         "tipo": "texto",
@@ -576,7 +576,7 @@
     },
     "pistas": [
       {
-        "texto": "El cloro neutro tiene 17 electrones. Si gana uno, suma.",
+        "texto": "El hueco pide los electrones que tiene el ion ya con el electrón que ganó, no los que tenía el átomo neutro.",
         "orden": 1
       },
       {
@@ -584,13 +584,13 @@
         "orden": 2
       },
       {
-        "texto": "17 electrones que tenía, más 1 que gana. El resultado es lo que va en el hueco.",
+        "texto": "Piensa en el total de electrones que hay ahora en el ion: los que ya tenía y el que llegó. Ese total va en el hueco.",
         "orden": 3
       }
     ],
     "siTecleaElError": {
       "tecleado": "17",
-      "queSeLeDice": "17 es lo que el cloro tenía neutro. Pero el enunciado dice que gana un electrón. Cuando sumas, no te quedas con lo que tenías. Vuelve al paso 2 y cuenta los electrones después de ganar uno."
+      "queSeLeDice": "17 es lo que el cloro tenía neutro. Si gana un electrón, los electrones cambian: los protones son los que no se mueven. Cuenta cuántos electrones hay después de ganar uno."
     },
     "noSePuede": null
   },
@@ -599,7 +599,7 @@
     "materia": "quimica",
     "escalones": [
       {
-        "situacion": "El cloro tiene 17 protones. Si gana 1 electrón, cuántos tiene ahora el ion cloruro.",
+        "situacion": "El cloro tiene 17 protones. Si gana 1 electrón, cuántos electrones tiene ahora el ion cloruro.",
         "expresion": [
           {
             "tipo": "texto",
@@ -669,7 +669,7 @@
             "orden": 1
           },
           {
-            "texto": "Sumas los 2 electrones que ganó a los 8 que ya tenía.",
+            "texto": "Al oxígeno neutro le agregas los electrones que ganó: cuenta cuántos hay en total ahora.",
             "orden": 2
           }
         ],
@@ -708,7 +708,7 @@
             "orden": 1
           },
           {
-            "texto": "Restas el 1 electrón que perdió de los 11 que tenía.",
+            "texto": "Al sodio neutro le quitas el electrón que perdió: cuenta cuántos quedan.",
             "orden": 2
           }
         ],
@@ -716,7 +716,7 @@
         "esInverso": false
       },
       {
-        "situacion": "El calcio tiene 20 protones. Si pierde 2 electrones, cuántos tiene el ion calcio.",
+        "situacion": "El calcio tiene 20 protones. Si pierde 2 electrones, cuántos electrones tiene el ion calcio.",
         "expresion": [
           {
             "tipo": "texto",
@@ -747,7 +747,7 @@
             "orden": 1
           },
           {
-            "texto": "Restas los 2 electrones que perdió de los 20 que empezó con ellos.",
+            "texto": "Al calcio neutro le quitas los electrones que perdió: cuenta cuántos quedan.",
             "orden": 2
           }
         ],
@@ -759,10 +759,7 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Cl: 17 protones,"
-          },
-          {
-            "tipo": "hueco"
+            "valor": "Cl: 17"
           },
           {
             "tipo": "simbolo",
@@ -771,10 +768,22 @@
           },
           {
             "tipo": "texto",
-            "valor": "→ 18 e"
+            "valor": "+"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 18"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "e",
+            "sup": "−"
           }
         ],
-        "pregunta": "¿Cuántos electrones ganó el cloro para tener 18?",
+        "pregunta": "¿Cuántos electrones ganó o perdió el cloro para tener 18?",
         "respuesta": {
           "tecleado": "1",
           "aceptaTambien": [],
@@ -790,7 +799,7 @@
             "orden": 2
           },
           {
-            "texto": "Es la diferencia entre 18 y 17. Cuántos faltan o cuántos sobran.",
+            "texto": "Compara los electrones que tiene ahora con los que tiene el cloro neutro: ¿cuántos más o cuántos menos? Eso es lo que ganó o perdió.",
             "orden": 3
           }
         ],
@@ -870,7 +879,7 @@
             "sup": "+"
           }
         ],
-        "siLoTocas": "Ahí está el error. Ese renglón es el que pasa su número a lo que sigue."
+        "siLoTocas": "Sí, ahí está el error: este es el paso que está mal."
       },
       {
         "numero": 5,
@@ -889,11 +898,11 @@
             "valor": "con 18 electrones, catión"
           }
         ],
-        "siLoTocas": "La lógica del paso es correcta: si dice que la carga es positiva, lo nombra como catión. Ese renglón repite el signo que le llegó del paso 4, no lo inventó."
+        "siLoTocas": "La lógica del paso es correcta: si la carga que le llega es positiva, el ion se nombra catión. Ese renglón usó lo que recibió, no inventó nada."
       }
     ],
     "pasoMalo": 4,
-    "arrastre": "El + del paso 4 es lo que aparece en el paso 5 cuando se nombra al ion como catión. Si sólo buscaras un renglón que se vea raro, no lo encontrarías: cuatro pasos restan, dividen o nombran bien; uno escribe un signo. Son todos iguales en forma, así que la señal es la carga misma: ganar electrones es sumar algo negativo, no positivo.",
+    "arrastre": "El + del paso 4 reaparece en el paso 5, donde el ion se nombra catión. Si sólo buscaras un renglón que se vea raro, no lo encontrarías: los pasos 1 a 3 buscan, cuentan y restan bien, el 4 escribe el signo contrario al que corresponde y el 5 nombra bien con el signo que recibió. La señal es la carga misma: ganar electrones es sumar algo negativo, no positivo.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
@@ -904,17 +913,17 @@
       {
         "texto": "Confundió el número de protones con el de electrones.",
         "esElBueno": false,
-        "queRevela": "Quien escoge esto está viendo que el paso 3 saca un 1, y cree que ese 1 viene de restar 17 − 18 en otro orden. Pero si fuera así, daría un número negativo. El número 1 es correcto; lo que está mal es el signo."
+        "queRevela": "Quien escoge esto piensa que se intercambiaron protones y electrones. Pero los pasos 2 y 3 sí los distinguen bien: 18 electrones, 17 protones, sobra un electrón. Lo que falla es el signo que se le pone a lo que sobra."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro de los cinco pasos llevan bien su cuenta. El error no es un cálculo equivocado: es un signo que no corresponde."
+        "texto": "Lee los cinco pasos en orden y comprueba que cada uno salga de lo que ya estaba contado."
       },
       {
         "orden": 2,
-        "texto": "El paso 3 saca que hay 1 electrón de más. Mira el paso 4: ¿cuándo hay más electrones que protones, la carga es positiva o negativa?"
+        "texto": "Revisa cada renglón contra el anterior. Fíjate sobre todo en el que ya no cuenta ni resta, sino que escribe un símbolo."
       }
     ],
     "noSePuede": null
@@ -928,9 +937,9 @@
     "rubrica": {
       "ideasQueCuentan": [
         {
-          "idea": "Un electrón es negativo, así que ganar algo negativo no puede hacer que la carga suba: tienes más carga negativa, la carga baja.",
+          "idea": "Un electrón es negativo, así que ganar algo negativo no puede hacer que la carga suba: tienes más carga negativa, la carga baja. Es lo mismo si lo dices por lo que sobra: si sobran electrones, que son negativos, la carga queda negativa.",
           "porQueImporta": "Sin esta idea, ganar parece que suma y la carga sube. Con ella, el signo de lo que ganas decide si la carga sube o baja, y ganar un electrón solo puede bajarla.",
-          "comoSuenaDicha": "Gano algo negativo, así que la carga se vuelve negativa.",
+          "comoSuenaDicha": "Gano algo negativo, así que la carga se vuelve negativa. O también: lo que sobra son electrones, que son negativos, y por eso la carga es negativa.",
           "esImprescindible": true
         },
         {
@@ -943,9 +952,9 @@
       "minimoParaContar": 1,
       "suenanBienYNoDicen": [
         {
-          "respuesta": "Porque los electrones son negativos y si ganas electrones ganas carga negativa.",
-          "queLaDelata": "Repite que los electrones son negativos pero no explica por qué sumar algo negativo baja la carga en vez de subirla. Es el truco del paso 4 dicho con otras palabras.",
-          "queLeFalta": "Que diga qué pasa cuando sumas algo negativo, por qué no sube la carga igual que cuando sumas algo positivo."
+          "respuesta": "Porque ganar electrones vuelve negativo al átomo; así es la regla de los aniones.",
+          "queLaDelata": "Afirma el resultado y lo apoya en una regla, pero nunca dice que el electrón es negativo. Es repetir la conclusión como si fuera la razón.",
+          "queLeFalta": "Que diga qué tiene de negativo lo que se gana, para que eso explique el signo de la carga."
         },
         {
           "respuesta": "Porque el cloro gana un electrón y la fórmula del ion es Cl con menos arriba.",

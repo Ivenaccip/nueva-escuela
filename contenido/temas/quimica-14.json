@@ -273,19 +273,19 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Eso es el número de masa, no el número atómico. El número atómico es mucho más pequeño."
+            "queRevela": "El número atómico no es una masa: solo cuenta protones. En la masa del átomo pesan también los neutrones."
           },
           {
             "letra": "D",
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "cuántos electrones tiene"
+                "valor": "cuántos protones más neutrones tiene"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "En un átomo neutro los electrones igualan los protones, pero el número atómico define los protones, no los electrones."
+            "queRevela": "Eso es el número de masa. El número atómico solo cuenta protones."
           }
         ]
       },
@@ -339,12 +339,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "52"
+                "valor": "34"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Sumaste el número atómico con el número de masa. El número de masa ya incluye los protones."
+            "queRevela": "Sumaste protones y electrones: 17 + 17 = 34. Los electrones no están en el núcleo y no forman parte del número de masa."
           }
         ]
       },
@@ -403,7 +403,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Sumaste protones y electrones. Los electrones no están en el núcleo, así que no cuenta ese número."
+            "queRevela": "Sumaste el número de masa y el número atómico: 23 + 11 = 34. Los protones ya están dentro del 23, así que hay que quitarlos, no sumarlos."
           }
         ]
       },
@@ -490,7 +490,7 @@
     },
     "pistas": [
       {
-        "texto": "Tienes el número de masa (23) y el número atómico (11). Necesitas el número de neutrones, que es lo que queda cuando restas los protones del total de nucleones.",
+        "texto": "Tienes el número de masa (23) y el número atómico (11). Necesitas el número de neutrones, que es lo que queda cuando, del total de protones y neutrones juntos, quitas los protones.",
         "orden": 1
       },
       {
@@ -504,7 +504,7 @@
     ],
     "siTecleaElError": {
       "tecleado": "23",
-      "queSeLeDice": "23 es el número de masa A, no el de neutrones. A cuenta protones y neutrones juntos. Para sacar solo los neutrones, tienes que restar el número atómico: A − Z. Vuelve al paso donde restas."
+      "queSeLeDice": "23 es el número de masa A, no el de neutrones. A cuenta protones y neutrones juntos, así que para sacar solo los neutrones hay que quitarle los protones. Haz la resta que ves: al número de masa le quitas el número atómico."
     },
     "noSePuede": null
   },
@@ -577,7 +577,7 @@
         },
         "pistas": [
           {
-            "texto": "Dos datos: cuántos protones tiene (el número atómico) y cuántos nucleones en total (el número de masa).",
+            "texto": "Dos datos: cuántos protones tiene (el número atómico) y cuántos protones y neutrones hay juntos (el número de masa).",
             "orden": 1
           },
           {
@@ -589,15 +589,15 @@
         "esInverso": false
       },
       {
-        "situacion": "En la tabla ven que el oxígeno tiene Z = 8 y masa atómica 15.999.",
+        "situacion": "En la tabla ven que el flúor tiene Z = 9 y masa atómica 18.998.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Z = 8"
+            "valor": "Z = 9"
           },
           {
             "tipo": "texto",
-            "valor": ", A = 16"
+            "valor": ", A = 19"
           },
           {
             "tipo": "texto",
@@ -607,19 +607,19 @@
             "tipo": "hueco"
           }
         ],
-        "pregunta": "¿Cuántos neutrones hay en un núcleo de oxígeno?",
+        "pregunta": "¿Cuántos neutrones hay en un núcleo de flúor?",
         "respuesta": {
-          "tecleado": "8",
+          "tecleado": "10",
           "aceptaTambien": [],
-          "comoSeLee": "ocho neutrones"
+          "comoSeLee": "diez neutrones"
         },
         "pistas": [
           {
-            "texto": "Aquí el número de masa y el número atómico son casi iguales. Pero la resta sigue siendo la misma.",
+            "texto": "Ya tienes el número de masa y el número atómico. Antes de operar, fíjate qué cuenta cada uno.",
             "orden": 1
           },
           {
-            "texto": "A menos Z: 16 menos 8.",
+            "texto": "A menos Z: 19 menos 9.",
             "orden": 2
           }
         ],
@@ -627,15 +627,15 @@
         "esInverso": false
       },
       {
-        "situacion": "Un átomo tiene 6 protones. La tabla dice que su masa atómica es 12.01, así que A = 12.",
+        "situacion": "Un átomo tiene 3 protones. La tabla dice que su masa atómica es 6.94, así que A = 7.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Z = 6"
+            "valor": "Z = 3"
           },
           {
             "tipo": "texto",
-            "valor": ", A = 12"
+            "valor": ", A = 7"
           },
           {
             "tipo": "texto",
@@ -647,17 +647,17 @@
         ],
         "pregunta": "¿Cuántos neutrones contiene?",
         "respuesta": {
-          "tecleado": "6",
+          "tecleado": "4",
           "aceptaTambien": [],
-          "comoSeLee": "seis neutrones"
+          "comoSeLee": "cuatro neutrones"
         },
         "pistas": [
           {
-            "texto": "Aquí sucede que el número de protones (Z) y el resultado (neutrones) coinciden.",
+            "texto": "Te dan cuántos protones hay y cuántas partículas hay en el núcleo en total. Piensa qué parte del total no son protones.",
             "orden": 1
           },
           {
-            "texto": "Restas A menos Z: 12 menos 6.",
+            "texto": "Restas A menos Z: 7 menos 3.",
             "orden": 2
           }
         ],
@@ -665,15 +665,15 @@
         "esInverso": false
       },
       {
-        "situacion": "Se sabe que un elemento tiene 8 neutrones en su núcleo. En la tabla dice que Z = 7, así que A = 15.",
+        "situacion": "Un átomo tiene 14 neutrones en su núcleo. En la tabla dice que su número atómico es 13.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Z = 7"
+            "valor": "Z = 13"
           },
           {
             "tipo": "texto",
-            "valor": ", neutrones = 8"
+            "valor": ", neutrones = 14"
           },
           {
             "tipo": "texto",
@@ -685,9 +685,9 @@
         ],
         "pregunta": "¿Cuál es el número de masa?",
         "respuesta": {
-          "tecleado": "15",
+          "tecleado": "27",
           "aceptaTambien": [],
-          "comoSeLee": "quince"
+          "comoSeLee": "veintisiete"
         },
         "pistas": [
           {
@@ -695,11 +695,11 @@
             "orden": 1
           },
           {
-            "texto": "El número de masa es la suma: protones más neutrones, Z más el número de neutrones, 7 más 8.",
+            "texto": "El número de masa es la suma: protones más neutrones. Los protones los da el número atómico.",
             "orden": 2
           },
           {
-            "texto": "Sumas en lugar de restar: 7 más 8 te da el total de nucleones.",
+            "texto": "Sumas en lugar de restar: 13 más 14.",
             "orden": 3
           }
         ],
@@ -781,7 +781,7 @@
             "valor": "A − Z = 23 − 0 = 23"
           }
         ],
-        "siLoTocas": "Ahí está. Ese renglón es el que pasa su resultado a los pasos que siguen."
+        "siLoTocas": "Ahí está. Ese renglón es el que pasa su resultado al paso que sigue."
       },
       {
         "numero": 5,
@@ -795,36 +795,36 @@
             "valor": "Neutrones = 23"
           }
         ],
-        "siLoTocas": "Esta cuenta está bien hecha con lo que llegó del paso 4. Ese paso no inventó nada, lo recibió."
+        "siLoTocas": "Este paso solo escribe como neutrones el número que le llegó, y lo hace bien: no inventó nada, lo recibió."
       }
     ],
     "pasoMalo": 4,
-    "arrastre": "El 23 del paso 4 reaparece como neutrones en el paso 5. Los dos pasos posteriores están bien hechos con un número malo: no se caza por verlo raro.",
+    "arrastre": "El 23 del paso 4 reaparece como neutrones en el paso 5. El paso 5 está bien hecho con un número malo: no se caza por verlo raro.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
-        "texto": "Restó el número de masa de 0 en vez de del número atómico.",
+        "texto": "No restó el número atómico: le restó 0 al número de masa.",
         "esElBueno": true,
-        "queRevela": "La resta está, pero restó 0: el Z = 11 del paso 1 desapareció. Usó A − Z pero como A − 0. Los 11 nunca entran en la cuenta."
+        "queRevela": "Es lo que pasó: el renglón sí resta, pero resta 0, así que el 11 del paso 1 nunca entra en la cuenta. Por eso el número de masa pasa entero como neutrones: 23 − 0 = 23."
       },
       {
-        "texto": "Confundió A con el número de neutrones.",
+        "texto": "Sumó el número atómico en vez de restarlo.",
         "esElBueno": false,
-        "queRevela": "Quien elige esto piensa que el número de masa YA es el de neutrones y no hay que restar. Pero el renglón sí resta, así que ese no es el error. Lo que está mal es el segundo número."
+        "queRevela": "Quien elige esto cree que el renglón suma. Pero dice 23 − 0: hay una resta, no una suma, y si hubiera sumado 11 saldría 34. Lo que está mal es el número que se resta."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro pasos hacen bien su tarea. El error no es olvidar una fórmula: es un número que debería entrar en una cuenta pero no entra."
+        "texto": "Cuatro de los cinco pasos hacen bien lo que les toca. Revisa de dónde sale cada número que aparece en los renglones."
       },
       {
         "orden": 2,
-        "texto": "El paso 1 saca 11 protones. Busca dónde debería entrar ese número en los pasos que siguen. ¿Entra?"
+        "texto": "Hay una igualdad que debe cumplirse siempre: protones + neutrones = número de masa."
       },
       {
         "orden": 3,
-        "texto": "Comprueba si protones + neutrones = A. Con cada renglón: ¿11 + resultado del paso 4 = 23?"
+        "texto": "Prueba esa igualdad con los neutrones que salen en los renglones y fíjate en cuál empieza a fallar."
       }
     ],
     "noSePuede": null
@@ -851,8 +851,8 @@
         },
         {
           "idea": "Si usas el número de masa como si fuera directamente el número de neutrones, te sale un valor que es demasiado grande: los nucleones del núcleo serían más que lo que cuenta el número de masa.",
-          "porQueImporta": "Es la única forma de cachar el error sin hacer el procedimiento de nuevo, y es la comprobación que la estación 5 va a pedir.",
-          "comoSuenaDicha": "Si el número de masa fuera los neutrones, tendría protones y neutrones sumados mal, más de lo que dice el número de masa.",
+          "porQueImporta": "Es una forma de cachar el error sin hacer el procedimiento de nuevo, y es la comprobación que la estación 5 va a pedir.",
+          "comoSuenaDicha": "Si el número de masa fueran solo neutrones, al sumarles los protones saldrían más partículas de las que dice el número de masa.",
           "esImprescindible": false
         }
       ],
@@ -869,20 +869,20 @@
           "queLeFalta": "Que diga qué pasa en la resta: quitas los protones de la suma total de nucleones."
         },
         {
-          "respuesta": "Porque la suma de protones y neutrones es el número de masa, así que restas.",
-          "queLaDelata": "Dice la relación inversa pero no dice por qué esta es la operación correcta. Si suma es protones más neutrones, ¿por qué la operación es restar y no sumar protones?",
-          "queLeFalta": "Que diga cuál de los números ya tiene los protones contados y cuál trae la suma, y que por eso tiene que quitar uno del otro."
+          "respuesta": "Porque el número de masa es la suma de protones y neutrones.",
+          "queLaDelata": "Dice qué cuenta el número de masa, pero se queda ahí: no conecta esa suma con la resta ni dice qué se le quita a qué.",
+          "queLeFalta": "Que diga que el número atómico ya da los protones, y que por eso se los quita al total para que sobren los neutrones."
         },
         {
-          "respuesta": "Porque el número de masa lo necesitas dividir entre el número atómico para sacar los neutrones.",
-          "queLaDelata": "Es la suma secundaria del canon: cree que el número de masa es algo que se busca a través de protones. Divide en vez de restar, confundiendo lo que hace cada número.",
-          "queLeFalta": "Que diga que protones más neutrones es igual a número de masa, no dividido, y que ya tiene los protones por el número atómico."
+          "respuesta": "Porque el número de masa es la suma de protones y electrones, así que quito los protones.",
+          "queLaDelata": "Es el error secundario del canon: suma electrones al número de masa, pero están fuera del núcleo y no cuentan ahí. Suena bien porque habla de sumar y de quitar los protones, pero parte de una suma equivocada.",
+          "queLeFalta": "Que diga que el número de masa suma protones y neutrones, las partículas del núcleo, y que los electrones no entran en esa suma."
         }
       ],
       "contraargumentos": [
         {
           "siDice": "El número de masa es directamente los neutrones, así que no hay que restar nada.",
-          "seLeContesta": "El número de masa de un átomo suma protones y neutrones. Si es 23 y el sodio tiene 11 protones, y los neutrones fueran 23, entonces el núcleo tendría 11 más 23 igual a 34 nucleones. Pero la tabla dice que el número de masa es 23, no 34. ¿De dónde saldrían esos nucleones de más?",
+          "seLeContesta": "El número de masa de un átomo suma protones y neutrones. Si es 23 y el sodio tiene 11 protones, y los neutrones fueran 23, entonces el núcleo tendría 11 más 23 igual a 34 partículas. Pero el número de masa del sodio es 23 (la masa de la tabla, 22.99, redondeada), no 34. ¿De dónde saldrían esas partículas de más?",
           "aDondeLoEmpuja": "A que vea que el número de masa cuenta protones y neutrones sumados, que es la primera idea de la lista."
         },
         {

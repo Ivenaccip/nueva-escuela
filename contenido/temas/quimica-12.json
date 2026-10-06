@@ -80,7 +80,7 @@
               "valor": "5 ppm es menor que 10 ppm permitido. El agua se puede beber."
             }
           ],
-          "porQue": "Calcular ppm sin saber si supera el límite no sirve. La cifra só­lo tiene sentido cuando la comparas con la norma que fija si es seguro o no."
+          "porQue": "Calcular ppm sin saber si supera el límite no sirve. La cifra sólo tiene sentido cuando la comparas con la norma que fija si es seguro o no."
         }
       ]
     },
