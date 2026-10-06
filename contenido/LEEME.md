@@ -248,6 +248,48 @@ diagonal). En Biología y Química la mayoría de las respuestas son palabras o
 fórmulas, así que **muchos temas irán a un caso aparte** y se pagarían a medias sin
 poder abrirse. Por eso se sondea primero.
 
+**Lo que se midió al hacerlo con Biología y Química (35 temas cada una):**
+
+| | Biología | Química |
+|---|---|---|
+| Canon a la primera | 15 de 35 | 19 de 35 |
+| «Camino normal» según el sondeo | 4 (3 eran `FORMA DUDOSA`: resultado en frase) | 9 |
+| Canon recuperado tras aclarar el prompt y reintentar | 6 (4 de camino normal) | 3 (2 de camino normal) |
+| **Candidatos con respuesta numérica de verdad** | **5 de 35** | **11 de 35** |
+
+- **`formaDeRespuesta: "numero"` no basta.** El modelo la declaraba con un resultado
+  que era una frase. `contenido/forma.mjs` lo caza (no hay ni una cifra en
+  `ejemplo.resultado`), `generar.mjs` para antes de pagar las estaciones y `tanda.mjs`
+  lo informa como `FORMA DUDOSA`.
+- **Los canon rechazados eran casi todos prosa en un renglón.** Un átomo de `texto`
+  mide 90 caracteres como máximo; el modelo escribía el enunciado del problema ahí.
+  `00-canon.md` ya dice que el enunciado va en `deQueVa` y el renglón es lo que se
+  escribiría en la libreta.
+- **Reintentar a ciegas no arregla un rechazo de longitud.** Por eso `generar.mjs`
+  hace una vuelta de corrección: devuelve al modelo su propia salida con los errores
+  de ajv y pide corregir sólo esos campos.
+- **Todos los canon candidatos traían errores de contenido** (cuentas que no cerraban,
+  unidades duplicadas, errores típicos falsos, resultados no tecleables) aunque
+  validaran perfecto. Antes de pagar las estaciones se revisan con un revisor de ciencia
+  y otro de cuentas independientes, y se arreglan.
+- **`node contenido/auditar.mjs <materia> <n>`** señala lo que el esquema no ve: pistas
+  que regalan la respuesta, fracciones en línea, la voz de «es fácil», signos de JSON
+  sueltos. Se corre sobre cada tema generado.
+
+### Correr contra las APIs desde el contenedor de la nube
+
+El `fetch` de Node 22 **no usa** `HTTPS_PROXY`. Sin `NODE_USE_ENV_PROXY=1` la búsqueda
+de video de OpenAI contesta `403 Host not in allowlist` aunque `curl` funcione:
+
+```bash
+NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt node contenido/tanda.mjs quimica 11
+```
+
+El contenedor se pausa cuando no hay actividad y se llevan los procesos en segundo
+plano con él: una tanda larga se corta y hay que relanzarla (retoma por archivo). La
+búsqueda de video ya buscada se guarda en `temas/_videos-<materia>-<n>.json`, así que
+reanudar no la paga otra vez.
+
 ---
 
 ## Cómo se corre

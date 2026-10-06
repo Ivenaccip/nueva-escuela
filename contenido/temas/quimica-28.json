@@ -272,7 +272,63 @@
     },
     "noSePuede": null
   },
-  "ver": null,
+  "ver": {
+    "temaNumero": 28,
+    "materia": "quimica",
+    "pregunta": "¿El número chico es cuántas moléculas o cuántos átomos?",
+    "resumen": "Un número grande adelante y un número chico al pie dicen cosas distintas. El grande cuenta moléculas, el chico cuenta cuántos átomos de ese elemento hay en una. Confundirlos es el error más común al leer una ecuación química.",
+    "busqueda": {
+      "criterios": [
+        "Explica la diferencia entre coeficiente y subíndice: por qué uno multiplica la molécula entera y el otro sólo ese elemento.",
+        "Está en español de México o de América Latina.",
+        "Es del nivel de tercero de secundaria: ecuaciones químicas simples sin balanceo complejo.",
+        "Llega a ejemplos concretos antes del minuto dos, sin presentación larga del canal.",
+        "Aclara que confundir el número chico con el número grande es el error más común en este tema."
+      ],
+      "descarta": [
+        "Enseña a cambiar un subíndice ya escrito para que cuadren los átomos: ese es el error típico del tema enseñado como si fuera correcto.",
+        "Usa el signo igual = en lugar de la flecha → como si una ecuación química fuera una igualdad de matemáticas.",
+        "Es un examen de bachillerato o un video de más de diez minutos que no llega al punto antes del minuto dos."
+      ],
+      "consulta": "video explicación \"La ecuación química\" química 3º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "JFM72AzFN-M",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "El título nombra directamente el tema: coeficiente estequiométrico contra subíndice. Explica la diferencia y llega a ejemplos en los primeros minutos sin presentación larga. Es el único video de la lista que afronta de frente la confusión entre los dos números.",
+      "url": "https://www.youtube.com/watch?v=JFM72AzFN-M",
+      "titulo": "Coeficiente Estequiometrico y Subindice (Episodio 2)",
+      "canal": "LA LEYENDA EN CIENCIAS",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "ChF2BDoKd5Y",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Es de México y usa la flecha → correctamente. Falla porque el título no dice de frente que hable de coeficiente contra subíndice: viene como una pregunta más general sobre cómo representar reacciones químicas.",
+        "url": "https://www.youtube.com/watch?v=ChF2BDoKd5Y",
+        "titulo": "3° Secundaria » Ciencias. Química » ¿Cómo represento las reacciones químicas?",
+        "canal": "@prende_mx",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "Slf2Z4xdt0o",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": true,
+        "porQueEste": "Tercer respaldo. El título dice reacciones químicas y coeficientes contra subíndices, que es justo lo que se necesita. No se pudo determinar el acento del español. Va de tercera opción por claridad menor en el título.",
+        "url": "https://www.youtube.com/watch?v=Slf2Z4xdt0o",
+        "titulo": "Reacciones químicas: Coeficientes y subíndices.",
+        "canal": "DYDiCi",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "media",
+    "porQueEsaConfianza": "El video elegido explica de frente la diferencia entre coeficiente y subíndice, que es el corazón del tema, pero el acento es de América Latina, no de México. Los tres videos de la lista que sirven están disponibles y abordan el tema; se eligió el que más directamente enfrenta la confusión típica del estudiante.",
+    "noSePuede": null
+  },
   "contacto": null,
   "completar": null,
   "escalera": null,
