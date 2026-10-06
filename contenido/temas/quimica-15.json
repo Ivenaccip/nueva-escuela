@@ -10,24 +10,15 @@
     "notacion": "lineal",
     "formaDeRespuesta": "numero",
     "procedimiento": {
-      "nombre": "Escribir la carga de un ion",
+      "nombre": "Escribir la carga de un ion y contar sus electrones",
       "pasos": [
         {
           "numero": 1,
-          "queSeHace": "Cuentas los protones que tiene el átomo original.",
+          "queSeHace": "Buscas el número atómico en la tabla periódica: es el número de protones del átomo.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Cloro:"
-            },
-            {
-              "tipo": "simbolo",
-              "valor": "Cl",
-              "sup": "0"
-            },
-            {
-              "tipo": "texto",
-              "valor": "tiene 17 protones"
+              "valor": "Cloro (Cl): número atómico 17, tiene 17 protones"
             }
           ],
           "porQue": "Los protones nunca cambian cuando se forma un ion. El número de protones define qué elemento es, y si cambias eso, ya no es cloro."
@@ -38,10 +29,10 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Si gana 1 e⁻, quedan 17 + 1 = 18 electrones"
+              "valor": "Átomo neutro: 17 electrones. Si gana 1 e⁻, 17 + 1 = 18 electrones"
             }
           ],
-          "porQue": "Los protones no se mueven. Lo que cambia es el número de electrones. Si pierdes un electrón tienes un protón más que electrones; si ganas uno tienes un electrón más que protones."
+          "porQue": "El átomo neutro tiene tantos electrones como protones, por eso empiezas con 17. Los protones no se mueven: sólo cambian los electrones. Si pierdes uno te queda un protón de más; si ganas uno te queda un electrón de más."
         },
         {
           "numero": 3,
@@ -52,11 +43,11 @@
               "valor": "18 electrones − 17 protones = 1"
             }
           ],
-          "porQue": "La resta dice cuántas cargas sobran: 1. El signo no sale de la resta, lo dice quién sobra: si sobran electrones la carga es negativa, si sobran protones es positiva."
+          "porQue": "Cada protón aporta una carga positiva y cada electrón una negativa: lo que sobra de uno de los dos es la carga. La resta dice cuántas sobran (1); quién sobra lo decide el paso siguiente."
         },
         {
           "numero": 4,
-          "queSeHace": "Escribes la carga con su signo como superíndice; si es 1, sólo va el signo.",
+          "queSeHace": "Escribes la carga como superíndice: − si sobran electrones, + si sobran protones; si el número es 1, sólo va el signo.",
           "renglon": [
             {
               "tipo": "simbolo",
@@ -64,15 +55,15 @@
               "sup": "−"
             }
           ],
-          "porQue": "El signo lo pone quien sobra: más electrones que protones, negativo; al revés, positivo. El número va antes del signo (Ca²⁺, O²⁻) y cuando la carga es 1 no se escribe el 1: Na⁺, Cl⁻."
+          "porQue": "Los electrones son negativos: si sobran, la carga es negativa, y ganar electrones nunca la sube. El número va antes del signo (Ca²⁺, O²⁻) y cuando la carga es 1 no se escribe el 1: Na⁺, Cl⁻."
         },
         {
           "numero": 5,
-          "queSeHace": "Nombras el ion: si la carga es negativa es anión, si es positiva es catión.",
+          "queSeHace": "Nombras el ion por su signo (negativo, anión; positivo, catión) y anotas con cuántos electrones queda.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Carga negativa"
+              "valor": "Carga negativa:"
             },
             {
               "tipo": "simbolo",
@@ -81,19 +72,28 @@
             },
             {
               "tipo": "texto",
-              "valor": "= anión cloruro"
+              "valor": "con 18 electrones, anión cloruro"
             }
           ],
-          "porQue": "Más electrones que protones: carga negativa, anión. Menos: carga positiva, catión. Al anión de un solo elemento se le cambia el final a -uro (cloro, cloruro; azufre, sulfuro; oxígeno, óxido). El catión conserva el nombre: Na⁺, ion sodio."
+          "porQue": "Más electrones que protones: carga negativa, anión; menos: carga positiva, catión. Anotar los electrones cierra la cuenta: los 18 son más que los 17 protones. El anión de un solo elemento termina en -uro (cloruro, sulfuro); el del oxígeno es óxido. El catión conserva el nombre: ion sodio."
         }
       ]
     },
     "ejemplo": {
-      "deQueVa": "un átomo de cloro que gana un electrón",
+      "deQueVa": "un átomo de cloro que gana un electrón y se vuelve ion: se pide cuántos electrones tiene, y en el camino salen su carga y su nombre",
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "Cloro gana 1 electrón"
+          "valor": "Cl + 1"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "e",
+          "sup": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→ ion"
         }
       ],
       "resultado": [
@@ -101,9 +101,13 @@
           "tipo": "simbolo",
           "valor": "Cl",
           "sup": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "con 18 electrones, anión cloruro"
         }
       ],
-      "resultadoEnPalabras": "cloruro, anión con carga −1"
+      "resultadoEnPalabras": "cloruro, un anión con dieciocho electrones y carga uno negativa"
     },
     "error": {
       "enUnaFrase": "Cree que ganar un electrón deja al átomo con carga positiva y escribe Cl⁺ en lugar de Cl⁻.",
@@ -121,6 +125,10 @@
           "tipo": "simbolo",
           "valor": "Cl",
           "sup": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "con 18 electrones, catión"
         }
       ],
       "comoSeCacha": "Ganar un electrón suma algo negativo, así que el átomo no puede quedar positivo. Compara: ¿hay más protones (17) o más electrones (18)? Hay más electrones, así que la carga es negativa: Cl⁻."
@@ -132,6 +140,11 @@
       }
     ],
     "vocabulario": [
+      {
+        "palabra": "ion",
+        "queEs": "Un átomo que ganó o perdió electrones y por eso tiene carga eléctrica.",
+        "noEsLoMismoQue": "átomo neutro, que tiene tantos electrones como protones y carga cero"
+      },
       {
         "palabra": "protón",
         "queEs": "La partícula cargada positivamente que vive en el núcleo del átomo. El número de protones nunca cambia cuando se forma un ion.",
@@ -157,7 +170,7 @@
       }
     ],
     "cotas": {
-      "numeros": "Sólo iones reales de 8 a 20 protones: Na⁺ (11), Mg²⁺ (12), Al³⁺ (13), K⁺ (19), Ca²⁺ (20), F⁻ (9), O²⁻ (8), S²⁻ (16), Cl⁻ (17); los metales pierden electrones y los no metales ganan. Se teclean enteros sin signo: protones, electrones (10 o 18) o carga (1 a 3); el signo va en el enunciado.",
+      "numeros": "Sólo iones reales de 8 a 20 protones: Na⁺ (11), Mg²⁺ (12), Al³⁺ (13), K⁺ (19), Ca²⁺ (20), F⁻ (9), O²⁻ (8), S²⁻ (16), Cl⁻ (17); metales pierden, no metales ganan. Se pide un entero sin signo: protones, electrones del ion (10 o 18) o cuántos ganó o perdió (1 a 3); la carga nunca se teclea.",
       "unidades": [],
       "simbolos": [
         {

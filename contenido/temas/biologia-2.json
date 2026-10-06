@@ -43,7 +43,7 @@
               "valor": "2 mm = 2000 μm."
             }
           ],
-          "porQue": "No puedes dividir 2 mm entre 20 μm porque están en unidades distintas. Es como dividir 2 pizzas entre 20 rebanadas: necesitas contar pizzas en rebanadas o rebanadas en rebanadas."
+          "porQue": "No puedes dividir 2 mm entre 20 μm porque están en unidades distintas. Es como preguntar cuántas rebanadas caben en 2 pizzas: primero pasas las pizzas a rebanadas y luego cuentas."
         },
         {
           "numero": 4,
@@ -74,7 +74,7 @@
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "2 mm × 2 mm"
+          "valor": "Muestra de 2 mm × 2 mm, célula de 20 μm"
         }
       ],
       "resultado": [
@@ -133,7 +133,7 @@
       }
     ],
     "cotas": {
-      "numeros": "medidas de la muestra en milímetros enteros: 1 a 4 mm; medidas de la célula en micrón: sólo 10, 20, 25, 40 o 50 μm, para que dividan exacto la muestra en μm (1 mm = 1000 μm); resultado: número entero del 100 al 100000",
+      "numeros": "medidas de la muestra en milímetros enteros: 1 a 3 mm; medidas de la célula en micrón: sólo 10, 20, 25, 40 o 50 μm, para que dividan exacto la muestra en μm (1 mm = 1000 μm); resultado: número entero del 400 al 90000",
       "unidades": [
         "mm",
         "μm"

@@ -186,7 +186,37 @@
     },
     "noSePuede": null
   },
-  "ver": null,
+  "ver": {
+    "temaNumero": 1,
+    "materia": "quimica",
+    "pregunta": "¿Por qué restas el nivel inicial del agua del nivel final?",
+    "resumen": "Cuando un objeto se mete en agua, el agua sube porque el objeto ocupa espacio. La diferencia entre el nivel nuevo y el nivel de antes es exactamente el espacio que ocupa ese objeto.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué se resta el nivel inicial del nivel final, no nada más cómo se hace la medición.",
+        "Es del nivel de 6º de primaria: una piedra, una moneda o un objeto pequeño en una probeta con agua.",
+        "Está en español de México o de América Latina.",
+        "Llega rápido al ejemplo sin presentación larga del canal.",
+        "Dice claramente que el volumen del objeto es la diferencia entre los dos niveles, no el número final que marca la probeta."
+      ],
+      "descarta": [
+        "Reporta el nivel final de la probeta como si fuera el volumen del objeto, sin restar.",
+        "Lee la probeta desde arriba en lugar de a la altura del menisco.",
+        "Es un examen resuelto de otro grado o una lista de procedimientos sin explicación."
+      ],
+      "consulta": "video explicación \"Volumen por desplazamiento de agua\" química 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": null,
+    "alternativas": [],
+    "confianza": "baja",
+    "porQueEsaConfianza": "La búsqueda no devolvió ningún video que cumpla los criterios. Se necesita un video que explique por qué se resta (el por qué) y no nada más cómo se mide, en español de México o América Latina, para el nivel de 6º de primaria.",
+    "noSePuede": {
+      "que": "La búsqueda por videos que expliquen por qué se resta el nivel inicial del nivel final en la medición de volumen por desplazamiento de agua.",
+      "porQue": "No se encontraron resultados que cumplan los criterios: un video que explique la razón detrás de la resta (no nada más el procedimiento), en español de México o América Latina, al nivel de 6º de primaria, sin enseñar el error típico del tema.",
+      "queHagoConEsto": "Repetir la búsqueda con consultas reformuladas como 'por qué funciona el desplazamiento de agua para medir', o 'por qué se calcula la diferencia de niveles en agua', o buscar en fuentes específicas de educación en español de México. Si aún así no hay resultados, dejar el tema sin video hasta que la búsqueda se pueda expandir."
+    }
+  },
   "contacto": {
     "temaNumero": 1,
     "materia": "quimica",
