@@ -631,7 +631,211 @@
     },
     "noSePuede": null
   },
-  "escalera": null,
+  "escalera": {
+    "temaNumero": 11,
+    "materia": "quimica",
+    "escalones": [
+      {
+        "situacion": "En la cocina disolviste 15 g de sal en 85 g de agua para hacer salmuera.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "15 g",
+            "abajo": "100 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 100 ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
+          }
+        ],
+        "pregunta": "¿Qué porcentaje en masa es la sal?",
+        "respuesta": {
+          "tecleado": "15",
+          "aceptaTambien": [],
+          "comoSeLee": "quince por ciento"
+        },
+        "pistas": [
+          {
+            "texto": "El porcentaje dice cuántos gramos de soluto hay en cien gramos de disolución.",
+            "orden": 1
+          },
+          {
+            "texto": "Tienes 15 g de sal en 100 g de disolución. Multiplica 15 por 100 y divide entre 100.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "Tu hermana prepara té disolviendo 10 g de té en 90 g de agua caliente.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "10 g",
+            "abajo": "100 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 100 ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
+          }
+        ],
+        "pregunta": "¿Qué porcentaje en masa tiene el té?",
+        "respuesta": {
+          "tecleado": "10",
+          "aceptaTambien": [],
+          "comoSeLee": "diez por ciento"
+        },
+        "pistas": [
+          {
+            "texto": "Aquí el soluto es el té y la disolución pesa 100 g en total.",
+            "orden": 1
+          },
+          {
+            "texto": "Multiplicas 10 por 100 y divides entre 100 para sacar el porcentaje.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "En el laboratorio disolviste 20 g de azúcar en 130 g de agua para una bebida.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "20 g",
+            "abajo": "150 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 100 ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
+          }
+        ],
+        "pregunta": "¿Qué porcentaje en masa tiene el azúcar?",
+        "respuesta": {
+          "tecleado": "13",
+          "aceptaTambien": [],
+          "comoSeLee": "trece por ciento"
+        },
+        "pistas": [
+          {
+            "texto": "La disolución es azúcar más agua: 20 g + 130 g = 150 g en total.",
+            "orden": 1
+          },
+          {
+            "texto": "Divides el soluto entre la disolución completa: 20 entre 150, luego multiplicas por 100.",
+            "orden": 2
+          },
+          {
+            "texto": "Veinte entre ciento cincuenta te da un decimal; al multiplicar por cien sale un número entero.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un refresco tiene 8% en masa de azúcar. Disolviste azúcar en 92 g de agua.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷ 100 = 8%"
+          }
+        ],
+        "pregunta": "¿Cuántos gramos de azúcar usaste?",
+        "respuesta": {
+          "tecleado": "8",
+          "aceptaTambien": [],
+          "comoSeLee": "ocho gramos"
+        },
+        "pistas": [
+          {
+            "texto": "Aquí ya sabes el porcentaje. Lo que falta es el gramo de soluto.",
+            "orden": 1
+          },
+          {
+            "texto": "8% significa 8 g de soluto en cada 100 g de disolución.",
+            "orden": 2
+          },
+          {
+            "texto": "Si la disolución pesa 100 g y el porcentaje es 8, el soluto son 8 g.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      },
+      {
+        "situacion": "Disolviste 12 g de sal en agua. Después de pesar todo, tu balanza marcó 150 g, pero olvidaste anotar el porcentaje.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "12 g",
+            "abajo": "150 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 100 ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
+          }
+        ],
+        "pregunta": "¿Qué porcentaje en masa tiene la sal?",
+        "respuesta": {
+          "tecleado": "8",
+          "aceptaTambien": [],
+          "comoSeLee": "ocho por ciento"
+        },
+        "pistas": [
+          {
+            "texto": "Aquí la disolución no es 100 g, sino 150 g: eso es lo que marca la balanza.",
+            "orden": 1
+          },
+          {
+            "texto": "Divides 12 entre 150 para saber qué fracción de la disolución es sal, luego multiplicas por 100.",
+            "orden": 2
+          },
+          {
+            "texto": "12 entre 150 es 0.08; al multiplicar por 100 obtienes el porcentaje entero.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      }
+    ],
+    "noSePuede": null
+  },
   "error": {
     "temaNumero": 11,
     "materia": "quimica",

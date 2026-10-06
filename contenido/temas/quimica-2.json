@@ -272,10 +272,595 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
-  "completar": null,
-  "escalera": null,
+  "ver": {
+    "temaNumero": 2,
+    "materia": "quimica",
+    "pregunta": "¿Por qué un objeto pesado puede flotar en agua?",
+    "resumen": "Lo que importa para flotar no es el peso total, sino cuánto pesa cada centímetro cúbico: la densidad. Si cada centímetro cúbico pesa menos que el agua, el objeto flota aunque el total sea muy pesado.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué la densidad, no el peso total, decide si algo flota o se hunde en agua.",
+        "Está en español de México o de América Latina.",
+        "Es del nivel de segundo de secundaria: compara densidades y toma la del agua como referencia.",
+        "Llega a un ejemplo pronto, sin presentación larga del canal.",
+        "Muestra la relación entre masa, volumen y densidad antes de aplicarla al flotamiento."
+      ],
+      "descarta": [
+        "Dice que algo se hunde porque pesa mucho, sin mencionar la densidad ni compararla con la del agua.",
+        "Divide volumen entre masa en lugar de masa entre volumen, o enseña ese error como si fuera correcto.",
+        "Es un experimento sin explicación de por qué flota o se hunde.",
+        "Lleva más de ocho minutos de presentación antes del primer cálculo."
+      ],
+      "consulta": "video explicación \"Densidad: por qué flota o se hunde\" química 2º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "XKvL-T-Xk4Q",
+      "titulo": "¿Flota o se hunde?",
+      "canal": "fq-experimentos",
+      "url": "https://www.youtube.com/watch?v=XKvL-T-Xk4Q",
+      "variedadDeEspanol": "no se pudo determinar",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único de los dos que explica el concepto de densidad y por qué la densidad del objeto comparada con la del agua es lo que decide si flota o se hunde. El canal fq-experimentos produce contenido de física y química de forma clara y enfocada al por qué.",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "3HC2-43qHh0",
+        "titulo": "ACTI: Experimento de Física \"¿Flota o se hunde?\"",
+        "canal": "Editorial Acti",
+        "url": "https://www.youtube.com/watch?v=3HC2-43qHh0",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": false,
+        "porQueEste": "Segundo respaldo. Es un experimento de flotamiento, pero por el título da menos evidencia de que explique por qué la densidad es lo que importa en lugar de comparar pesos. Entra sólo si el elegido se cae.",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "media",
+    "porQueEsaConfianza": "Las dos URL y los títulos salieron literales en los resultados. El elegido explica el por qué de la densidad y el flotamiento. Media y no alta porque no se pudo determinar la variedad de español del audio, y porque sólo hay un respaldo, no dos: la búsqueda inicial de esta estación trajo sólo dos videos totales que cumplían criterios básicos.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "materia": "quimica",
+    "temaNumero": 2,
+    "preguntas": [
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Un objeto pesa 60 g y ocupa 100"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "cm",
+            "sup": "3"
+          },
+          {
+            "tipo": "texto",
+            "valor": ". ¿Cuál es su densidad?"
+          }
+        ],
+        "pasoDelCanon": 3,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 3,
+                "abajo": 5
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste la masa entre el volumen: 60 entre 100 simplificado es tres quintos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 5,
+                "abajo": 3
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Invertiste la fracción: pusiste el volumen arriba (100) y la masa abajo (60). Densidad es siempre masa entre volumen.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 1,
+                "abajo": 2
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste en lugar de dividir, o no simplificaste bien la división. Revisa el procedimiento del paso 3.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": 10,
+                "abajo": 6
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste sin simplificar la fracción. Siempre que puedas, reduce la fracción al mínimo.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Si algo tiene densidad de"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 4,
+            "abajo": 5
+          },
+          {
+            "tipo": "texto",
+            "valor": "g/"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "cm",
+            "sup": "3"
+          },
+          {
+            "tipo": "texto",
+            "valor": ", ¿flota o se hunde en agua?"
+          }
+        ],
+        "pasoDelCanon": 5,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Flota"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Comparaste con la densidad del agua (1 g/cm³) y viste que 4/5 es menor que 1, así que flota.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Se hunde"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás comparando el peso, no la densidad. Algo puede pesar mucho pero flotar si su densidad es menor que 1.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Está en el fondo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Eso solo pasa cuando se hunde. Y se hunde si la densidad es mayor que 1, no cuando es 4/5.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Falta información"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La densidad es el único dato que necesitas para decidir si flota. Compárala con 1 g/cm³ y ya.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué significa que la masa va arriba en la fórmula de densidad?"
+          }
+        ],
+        "pasoDelCanon": 1,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "es el dato más importante"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La masa es el primer dato que necesitas, pero no por ser \"importante\", sino porque es el numerador en la fórmula.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "es la primera cosa que anotas"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Exacto: anotas primero la masa porque va arriba en la fracción de densidad.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "pesa más que el volumen"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La masa y el volumen miden cosas distintas: masa es peso, volumen es espacio. No se comparan.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "siempre es un número grande"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La masa puede ser pequeña o grande. Arriba va en la fórmula de todos modos, aunque sea poquita.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Un objeto pesa 50 g y ocupa 100"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "cm",
+            "sup": "3"
+          },
+          {
+            "tipo": "texto",
+            "valor": ". ¿Qué unidad tiene su densidad?"
+          }
+        ],
+        "pasoDelCanon": 4,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "g/"
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "cm",
+                "sup": "3"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste gramos entre centímetros cúbicos y colocaste las unidades correctamente en la respuesta.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "g ×"
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "cm",
+                "sup": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste las unidades en lugar de dividirlas. En densidad divides masa entre volumen, así que divides sus unidades también.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "simbolo",
+                "valor": "cm",
+                "sup": "3"
+              },
+              {
+                "tipo": "texto",
+                "valor": "/g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Invertiste las unidades. Densidad siempre es masa entre volumen, nunca volumen entre masa.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Olvidaste el volumen en la unidad. Sin el centímetro cúbico abajo, la unidad no dice densidad.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 2,
+    "materia": "quimica",
+    "pasoDelCanon": 3,
+    "queFalta": "la densidad simplificada de la fracción, sin unidades",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "Densidad ="
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": "140 g",
+        "abajo": "200 cm³"
+      },
+      {
+        "tipo": "texto",
+        "valor": "="
+      },
+      {
+        "tipo": "hueco"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "7/10",
+      "aceptaTambien": [],
+      "comoSeLee": "siete décimos"
+    },
+    "pistas": [
+      {
+        "texto": "Necesitas dividir la masa entre el volumen para obtener la densidad. Luego simplifica la fracción para dejarla más corta.",
+        "orden": 1
+      },
+      {
+        "texto": "Divides 140 g entre 200 cm³. Después busca el número más grande que divide a los dos para simplificar.",
+        "orden": 2
+      },
+      {
+        "texto": "140 ÷ 20 = 7 arriba, y 200 ÷ 20 = 10 abajo. Esa es la fracción simplificada.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "10/7",
+      "queSeLeDice": "Acabas de dividir el volumen entre la masa. La densidad es al revés: masa entre volumen. Fíjate en cuál va arriba y cuál va abajo, vuelve al paso 3 y prueba de nuevo."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 2,
+    "materia": "quimica",
+    "escalones": [
+      {
+        "situacion": "En el taller cortan un trozo de madera que pesa 70 g y ocupa 100 cm³.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "70 g",
+            "abajo": "100 cm³"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es la densidad en forma simplificada?",
+        "respuesta": {
+          "tecleado": "7/10",
+          "aceptaTambien": [],
+          "comoSeLee": "siete décimos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "La densidad es la masa entre el volumen. Aquí ya te dieron los dos datos."
+          },
+          {
+            "orden": 2,
+            "texto": "Divides 70 entre 100 y simplificas buscando lo que divide a los dos números."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Una lata de aluminio tiene una masa de 27 g y un volumen de 10 cm³.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "27 g",
+            "abajo": "10 cm³"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuál es la densidad simplificada?",
+        "respuesta": {
+          "tecleado": "27/10",
+          "aceptaTambien": [],
+          "comoSeLee": "veintisiete décimos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Tienes que dividir la masa entre el volumen, como siempre."
+          },
+          {
+            "orden": 2,
+            "texto": "Con 27 entre 10 buscas si hay un número que divida a los dos. Aquí no lo hay."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un objeto flota en agua. Pesa 50 g, ocupa 100 cm³ y sabes que flota porque su densidad es menor que 1 g/cm³.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "50 g",
+            "abajo": "100 cm³"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "< 1"
+          }
+        ],
+        "pregunta": "¿Cuál es la densidad simplificada?",
+        "respuesta": {
+          "tecleado": "1/2",
+          "aceptaTambien": [],
+          "comoSeLee": "un medio"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Divides la masa entre el volumen: 50 entre 100."
+          },
+          {
+            "orden": 2,
+            "texto": "50 entre 100 se simplifica: busca qué número divide a los dos. Aquí es 50."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un tubo de cobre pesa 80 g, ocupa 20 cm³ y necesitas saber si se hunde en agua.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "80 g",
+            "abajo": "20 cm³"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "> 1"
+          }
+        ],
+        "pregunta": "¿Cuál es la densidad simplificada?",
+        "respuesta": {
+          "tecleado": "4/1",
+          "aceptaTambien": [
+            "4"
+          ],
+          "comoSeLee": "cuatro"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Divides 80 entre 20 para obtener la densidad."
+          },
+          {
+            "orden": 2,
+            "texto": "80 entre 20 se simplifica: el 20 divide a los dos números cuatro veces."
+          },
+          {
+            "orden": 3,
+            "texto": "El resultado es mayor que 1, así que el cobre se hunde en agua."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "Encontraste un objeto de plata que se hunde: su densidad es 10/1. El objeto ocupa exactamente 2 cm³.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "÷ 2 = 10"
+          }
+        ],
+        "pregunta": "¿Cuántos gramos pesa el objeto?",
+        "respuesta": {
+          "tecleado": "20",
+          "aceptaTambien": [],
+          "comoSeLee": "veinte gramos"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí tienes la densidad y el volumen. Necesitas encontrar la masa."
+          },
+          {
+            "orden": 2,
+            "texto": "La densidad es masa entre volumen. Si despejas, la masa es densidad por volumen."
+          },
+          {
+            "orden": 3,
+            "texto": "Multiplicas: 10 por 2 te da el peso."
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
   "error": null,
   "explicar": null
 }
