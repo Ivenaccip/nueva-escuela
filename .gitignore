@@ -61,3 +61,6 @@ contenido/temas/_rechazado-*.json
 
 # Bitacora de una corrida, no contenido.
 contenido/temas/_corrida.log
+
+# Cuanto se lleva gastado en la API: estado de tu cuenta, no contenido.
+contenido/temas/_gasto.json

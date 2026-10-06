@@ -30,6 +30,14 @@ import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
 
 import { buscarVideos, candidatosComoTexto } from './buscar-videos.mjs';
+import {
+  anotar,
+  CODIGO_DE_TOPE,
+  comprobarTope,
+  costoDeClaude,
+  resumenDelGasto,
+  TopeAlcanzado,
+} from './gasto.mjs';
 
 const aqui = dirname(fileURLToPath(import.meta.url));
 const dirEsquema = join(aqui, 'esquema');
@@ -170,6 +178,15 @@ const morir = (mensaje, detalle) => {
   console.error(`\n${mensaje}`);
   if (detalle) console.error(detalle);
   process.exit(1);
+};
+
+/**
+ * Parar porque se llegó al tope de gasto. Sale con un código propio para que
+ * `tanda.mjs` no siga con el tema siguiente: el tope es de toda la corrida.
+ */
+const pararPorTope = (e) => {
+  console.error(`\n${e.message}`);
+  process.exit(CODIGO_DE_TOPE);
 };
 
 const decir = (mensaje) => console.log(mensaje);
@@ -407,6 +424,7 @@ async function llamar({ paso, sistema, mensaje }) {
   const tope = 1;
 
   for (let turno = 1; turno <= tope; turno += 1) {
+    await comprobarTope('claude');
     const datos = await pedir({
       model: MODELO,
       max_tokens: MAX_TOKENS,
@@ -419,6 +437,8 @@ async function llamar({ paso, sistema, mensaje }) {
     });
 
     if (datos.usage) {
+      const { acumulado, tope: limite } = await anotar('claude', costoDeClaude(MODELO, datos.usage));
+      decir(`      gasto: $${acumulado.toFixed(3)} de $${limite.toFixed(2)}`);
       const leido = datos.usage.cache_read_input_tokens ?? 0;
       const escrito = datos.usage.cache_creation_input_tokens ?? 0;
       if (leido || escrito) decir(`      caché: ${leido} leidos, ${escrito} escritos`);
@@ -464,6 +484,8 @@ async function llamarConReintentos(opciones) {
     try {
       return await llamar(opciones);
     } catch (e) {
+      // Reintentar contra el tope sólo gastaría tiempo: la respuesta no va a cambiar.
+      if (e instanceof TopeAlcanzado) throw e;
       ultimo = e;
       console.error(`      intento ${intento} de ${REINTENTOS} falló: ${e.message}`);
       if (intento < REINTENTOS) await dormir(2000 * intento);
@@ -924,6 +946,7 @@ if (!salida.canon) {
   try {
     salida.canon = await correr(CANON, valoresDelTema(temario, tema, ejemploCanon));
   } catch (e) {
+    if (e instanceof TopeAlcanzado) pararPorTope(e);
     morir(`El canon no salió, así que no hay de dónde colgar las seis estaciones.`, e.message);
   }
   await guardar(salida);
@@ -997,6 +1020,7 @@ for (const paso of porGenerar) {
     await guardar(salida);
     decir(`      ${paso.clave} guardado`);
   } catch (e) {
+    if (e instanceof TopeAlcanzado) pararPorTope(e);
     rajadas += 1;
     console.error(`  ${paso.clave} NO SALIÓ: ${e.message}`);
     console.error('  Se sigue con las demás; vuelve a correr el script para retomar ésta.');
@@ -1022,6 +1046,8 @@ decir(
   '  El cierre no se genera: su frase es quedaSabiendo del temario y el resto es\n' +
     '  copy fijo y estado de la app (CONTRATO.md §4).',
 );
+
+decir(`\n  Gasto acumulado (contenido/temas/_gasto.json):\n${await resumenDelGasto()}`);
 
 if (rajadas > 0) {
   console.error(`\n${rajadas} llamada(s) sin salir. El archivo quedó a medias, y se retoma.`);

@@ -19,6 +19,8 @@ import { spawn } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { CODIGO_DE_TOPE, resumenDelGasto } from './gasto.mjs';
+
 const aqui = dirname(fileURLToPath(import.meta.url));
 const raiz = dirname(aqui);
 const dirTemas = join(aqui, 'temas');
@@ -180,7 +182,7 @@ async function clasificar(numero) {
       ? 'X1-tabla'
       : notacion === 'figura'
         ? 'X2-figura'
-        : forma === 'palabra'
+        : forma === 'palabra' || forma === 'expresion'
           ? 'X3-teclado'
           : forma === 'trazo'
             ? 'X2-figura'
@@ -239,6 +241,7 @@ decir(
 );
 
 let cortado = false;
+let topeAlcanzado = false;
 process.on('SIGINT', () => {
   cortado = true;
   console.error('\nCtrl-C. Se termina el tema en curso y se guarda el estado.');
@@ -268,6 +271,8 @@ for (const [i, numero] of numeros.entries()) {
   for (let intento = 1; intento <= (seco ? 1 : REINTENTOS_TEMA); intento += 1) {
     resultado = await correrTema(numero);
     if (salioBien(resultado)) break;
+    // El tope es de toda la corrida: ni se reintenta este tema ni se sigue con otro.
+    if (resultado.codigo === CODIGO_DE_TOPE) break;
     if (intento < (seco ? 1 : REINTENTOS_TEMA)) {
       // El hijo reanuda desde su propio archivo, asi que un reintento solo vuelve a
       // pedir lo que falta. La espera larga es para el 429 y el 529, que son la causa
@@ -284,6 +289,11 @@ for (const [i, numero] of numeros.entries()) {
     await guardarEstado(estado);
   }
 
+  if (resultado.codigo === CODIGO_DE_TOPE) {
+    topeAlcanzado = true;
+    break;
+  }
+
   if (!cortado && i < numeros.length - 1) await dormir(salioBien(resultado) ? PAUSA_OK : PAUSA_MAL);
 }
 
@@ -296,6 +306,14 @@ if (!seco) await guardarEstado(estado);
 decir('\n' + '-'.repeat(78));
 decir(`${temario.nombre} · resumen de la tanda`);
 decir('-'.repeat(78));
+if (!seco) {
+  decir('Gasto acumulado:');
+  decir(await resumenDelGasto());
+  if (topeAlcanzado) {
+    decir('\n  PARADA POR EL TOPE DE GASTO. Los temas que siguen no se corrieron.');
+    decir('  Sube el tope en .env o borra contenido/temas/_gasto.json para seguir.\n');
+  }
+}
 
 const filas = numeros.map((n) => ({ n, t: temario.temas.find((x) => x.numero === n), e: estado[n] }));
 
@@ -359,7 +377,7 @@ if (sondeo) {
   decir('\n  Genera la tanda completa solo de los del camino normal. Los de arriba se');
   decir('  pagarian igual y la app no los puede abrir (CONTRATO.md §5).');
   decir('-'.repeat(78) + '\n');
-  process.exit(0);
+  process.exit(topeAlcanzado ? CODIGO_DE_TOPE : 0);
 }
 decir(`  se pintan hoy, con sus seis estaciones: ${pintables.length} de ${numeros.length}`);
 if (ruteados.length) {
@@ -376,4 +394,4 @@ decir('-'.repeat(78) + '\n');
 
 // Salir con 1 mientras no esten los 20 pintables: asi un `if ($?)` no da por buena
 // una tanda que dejo 12 temas que la app no puede abrir.
-process.exit(pintables.length === numeros.length ? 0 : 1);
+process.exit(topeAlcanzado ? CODIGO_DE_TOPE : pintables.length === numeros.length ? 0 : 1);

@@ -211,6 +211,41 @@ cada llamada, así que si sale cero, algo rompió el prefijo.
 
 La API de lotes cuesta la mitad y estas llamadas no tienen prisa.
 
+### El tope de gasto
+
+Generar cuesta dinero de verdad y antes nada lo contaba. Ahora cada llamada se anota
+en `contenido/temas/_gasto.json` (no se sube) y, **antes** de la siguiente, se mira
+si ya se llegó al tope. Al llegar, el proceso sale con el código 3 y `tanda.mjs` no
+sigue con el tema siguiente ni reintenta.
+
+| Variable | Por omisión | Qué cuenta |
+|---|---|---|
+| `ANDAMIO_TOPE_CLAUDE_USD` | 9 | tokens reales de cada respuesta, con caché a su precio |
+| `ANDAMIO_TOPE_OPENAI_USD` | 8 | **estimado**: búsquedas × `ANDAMIO_USD_POR_BUSQUEDA` (0.03) |
+
+El de OpenAI es una estimación con el precio que mide este mismo archivo (≈ 7
+búsquedas por $0.21), no la factura, y por eso su tope es más bajo. Lo que de verdad
+manda es el límite de gasto que se ponga en el panel de cada proveedor: esto sólo
+evita llegar a él. Un archivo de gasto ilegible también para la corrida, en vez de
+seguir sin contador; si cambias de presupuesto, borra el archivo o sube el tope.
+
+### Ampliar a una materia nueva, gastando lo menos posible
+
+El sondeo es 1 llamada por tema (≈ $0.03 de Claude, ninguna de OpenAI) y dice a qué
+prompt va a ir cada uno **antes** de pagar las seis estaciones:
+
+```bash
+node contenido/tanda.mjs biologia 1 35 --sondeo   # ≈ $1 las 35; mira "CAMINO NORMAL"
+node contenido/generar.mjs biologia 3             # sólo los de camino normal, uno a uno
+node contenido/indexar.mjs                        # y se meten en la app
+```
+
+Un tema sólo se puede abrir con las seis estaciones, y eso pide que la respuesta de
+las estaciones 3 y 4 sea un número o una fracción (el teclado sólo tiene dígitos y
+diagonal). En Biología y Química la mayoría de las respuestas son palabras o
+fórmulas, así que **muchos temas irán a un caso aparte** y se pagarían a medias sin
+poder abrirse. Por eso se sondea primero.
+
 ---
 
 ## Cómo se corre
