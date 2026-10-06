@@ -985,5 +985,75 @@
     ],
     "noSePuede": null
   },
-  "explicar": null
+  "explicar": {
+    "temaNumero": 24,
+    "materia": "quimica",
+    "titulo": "Explícame por qué multiplicaste el −2 por el 2 y no usaste el −2 solo.",
+    "aclaracion": "Con tus palabras, sin escribir fórmulas ni números. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Hay dos átomos de oxígeno en la fórmula, así que cada uno aporta su número de oxidación, y tienes que sumarlos.",
+          "porQueImporta": "Si tomas solo el −2, ignoras que hay dos átomos del mismo elemento. Con otros números o subíndices distintos, la suma sale mal y el resultado no es cero.",
+          "comoSuenaDicha": "Hay dos oxígenos, entonces el oxígeno aporta dos veces, son dos veces −2.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "El número de oxidación que está arriba del símbolo es distinto del subíndice que está abajo: uno dice qué carga tiene cada átomo y el otro dice cuántos hay.",
+          "porQueImporta": "Si confundes los dos, tomas el subíndice como si fuera el número de oxidación, y la suma nunca te da cero. Es la diferencia entre qué tiene un átomo y cuántos hay.",
+          "comoSuenaDicha": "El −2 es lo que cada oxígeno aporta, pero el 2 de abajo es que hay dos oxígenos, no son lo mismo.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "En un compuesto neutro, todos los números de oxidación sumados dan cero, así que tienes que contar la aportación de cada átomo para que la suma cierre.",
+          "porQueImporta": "Esa suma igual a cero es lo que te permite saber cuánto vale el elemento que buscas. Sin sumar todo, no tienes forma de despejar.",
+          "comoSuenaDicha": "Todo tiene que sumar cero, entonces sumo lo que aporta cada uno y veo qué le falta.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque el oxígeno vale −2 y hay que multiplicar por el subíndice.",
+          "queLaDelata": "Dice qué hacer sin decir por qué se hace: repite el paso como una regla. Alguien que memoriza sin entender escribiría exactamente eso.",
+          "queLeFalta": "Que diga para qué sirve multiplicar: contar cuánto aporta en total cuando hay varios átomos iguales."
+        },
+        {
+          "respuesta": "Porque si no multiplico no me da cero.",
+          "queLaDelata": "Es una razón de prueba y error: lo probé y funcionó. Pero no explica qué significa el −2, qué significa el 2 de abajo, ni por qué al juntarlos tiene que multiplicar.",
+          "queLeFalta": "Que diga qué representa cada número: cuánta carga tiene cada átomo y cuántos de esos átomos hay en la fórmula."
+        },
+        {
+          "respuesta": "Porque el número de oxidación no es el subíndice, así que multiplico.",
+          "queLaDelata": "Identifica que son distintos, pero no dice para qué sirve esa multiplicación ni qué mide cada uno. Es como un paso en el medio sin la razón que lo sostiene.",
+          "queLeFalta": "Que explique que hay varios átomos aportando carga, no uno solo, así que tienes que contar la aportación total de todos ellos juntos."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "El subíndice dos también es un número, así que es lo mismo que el número de oxidación.",
+          "seLeContesta": "Son números distintos en lugares distintos y significan cosas distintas. El −2 está arriba del símbolo y dice cuánta carga tiene un solo oxígeno. El 2 está abajo y dice cuántos oxígenos hay en la fórmula. Si una dieta es de dos gramos al día, eso no es lo mismo que dos días de dieta, ¿verdad?",
+          "aDondeLoEmpuja": "A que vea la diferencia entre qué tiene uno y cuántos hay, que es la segunda idea de la lista."
+        },
+        {
+          "siDice": "En el ejemplo anterior no había subíndice y funcionaba igual.",
+          "seLeContesta": "Cierto, cuando no hay subíndice es porque hay uno solo. Poner un 1 abajo sería lo mismo que no poner nada. En SO₂ hay dos oxígenos, así que el 2 sí cuenta. Si tomas solo el −2 sin multiplicar, estás contando la carga de un solo oxígeno, no de los dos que hay.",
+          "aDondeLoEmpuja": "A que entienda que aunque en un caso el subíndice no se vea, siempre está ahí: cuando no aparece es porque vale 1."
+        },
+        {
+          "siDice": "Ya entiendo, solo que no sé cómo explicarlo sin decir el procedimiento.",
+          "seLeContesta": "Entonces piénsalo así: en la fórmula hay dos oxígenos. ¿Cuánta carga aporta uno solo? ¿Cuánta aportan los dos juntos? Escribe esa diferencia y ya está.",
+          "aDondeLoEmpuja": "A que vea que la idea ya la tiene: dos átomos aportan dos veces, y eso es lo único que hace falta decir."
+        }
+      ],
+      "ejemploQueSiCuenta": "En el SO₂ hay dos átomos de oxígeno, no uno. Cada oxígeno aporta −2, entonces los dos juntos aportan −2 más −2, que es −4. Si usara solo el −2, estaría ignorando que hay dos, y cuando sumo todo para que dé cero no me funcionaría. Por eso multiplico: para contar la aportación total de todos los oxígenos que hay.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras número de oxidación, subíndice, multiplicar ni fórmula: si dice dos átomos aportan dos veces o algo similar, ya tiene la idea.",
+        "Que no escriba ningún número ni símbolo químico: la idea se ve sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  }
 }

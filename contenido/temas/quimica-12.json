@@ -198,8 +198,8 @@
   "ver": {
     "temaNumero": 12,
     "materia": "quimica",
-    "pregunta": "¿Por qué ppm no funciona como porcentaje?",
-    "resumen": "Partes por millón es un cociente que se multiplica por un millón, no por cien. Un millón de veces más grande que porcentaje: donde porcentaje usa 100, ppm usa 1 000 000.",
+    "pregunta": "¿Por qué ppm se multiplica por un millón y no por cien?",
+    "resumen": "Partes por millón es un cociente que se multiplica por un millón, no por cien. Un millón es 10 000 veces más grande que cien: donde porcentaje usa 100, ppm usa 1 000 000.",
     "busqueda": {
       "criterios": [
         "Explica por qué se multiplica por un millón y no por cien, señalando que ppm no es lo mismo que porcentaje.",
@@ -261,7 +261,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Tienes 25 mg de un contaminante. ¿En qué unidad necesitas expresarlo para calcular ppm?"
+            "valor": "Tienes 25 mg de un contaminante y la disolución ya está en miligramos. ¿En qué unidad pones el contaminante para calcular ppm?"
           }
         ],
         "opciones": [
@@ -274,7 +274,7 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Reconociste que los miligramos son la unidad de trabajo para el cálculo de ppm.",
+            "queRevela": "Reconociste que el contaminante tiene que estar en la misma unidad que la disolución, que ya está en miligramos.",
             "letra": "A"
           },
           {
@@ -298,7 +298,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Los microgramos hacen la fracción más pequeña, pero si la disolución está en miligramos, sigues sin emparejar las unidades.",
+            "queRevela": "Un microgramo es mil veces más chico que un miligramo, así que 25 mg serían 25 000 µg. Pero si la disolución sigue en miligramos, arriba y abajo no están en la misma unidad.",
             "letra": "C"
           },
           {
@@ -357,7 +357,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "No convertiste el kg. Si pones 2 mg abajo cuando el contaminante está en mg arriba, la fracción no tiene sentido.",
+            "queRevela": "Dejaste el 2 y sólo cambiaste la unidad: 2 mg no es lo mismo que 2 kg. Hay que convertir: 2 kg son 2 000 g, o sea 2 000 000 mg.",
             "letra": "C"
           },
           {
@@ -387,13 +387,13 @@
             "partes": [
               {
                 "tipo": "fraccion",
-                "arriba": "3",
-                "abajo": "3 000 000"
+                "arriba": "3 mg",
+                "abajo": "3 000 mg"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Pusiste los números sin pasar a miligramos abajo. El numerador está en mg pero el denominador sigue en kg.",
+            "queRevela": "3 kg son 3 000 g, no 3 000 mg. Te falta pasar de gramos a miligramos: 3 kg son 3 000 000 mg.",
             "letra": "A"
           },
           {
@@ -426,13 +426,13 @@
             "partes": [
               {
                 "tipo": "fraccion",
-                "arriba": "1",
-                "abajo": "1 000 000"
+                "arriba": "3 000 000 mg",
+                "abajo": "3 mg"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Ignoraste los números del problema. Toda disolución de cualquier masa es 1 entre un millón sólo si la fracción sin simplificar es exactamente 1 mg en 1 kg.",
+            "queRevela": "Pusiste la disolución arriba y el contaminante abajo, al revés. Arriba va la parte que te interesa, el contaminante, y abajo el total con el que la comparas.",
             "letra": "D"
           }
         ]
@@ -442,7 +442,16 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Calculas la fracción 4 mg entre 1 000 000 mg. ¿Por cuánto multiplicas para obtener ppm?"
+            "valor": "Calculaste la fracción"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": "4 mg",
+            "abajo": "1 000 000 mg"
+          },
+          {
+            "tipo": "texto",
+            "valor": "¿Por cuánto la multiplicas para obtener ppm?"
           }
         ],
         "opciones": [
@@ -456,7 +465,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": true,
-            "queRevela": "Estás creyendo que ppm funciona como porcentaje: un tanto por ciento es de cada cien, así que un tanto por millón sería de cada cien. Pero ppm es de cada un millón, no de cada cien.",
+            "queRevela": "Estás pensando que ppm funciona como porcentaje y usas 100. Pero porcentaje es partes de cada cien y ppm es partes de cada millón; con 100 te saldría 0.0004 ppm, diez mil veces menos de lo que debe.",
             "letra": "A"
           },
           {
@@ -469,7 +478,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "10 a la 3 es mil. Multiplicar por mil te daría 4 000 ppm. Necesitas el número que convierte la fracción a partes de cada millón.",
+            "queRevela": "10 a la 3 es mil. Multiplicar 4 entre 1 000 000 por mil da 0.004 ppm, mil veces menos de lo que debe. Necesitas el número que convierte la fracción en partes de cada millón.",
             "letra": "B"
           },
           {
@@ -488,13 +497,14 @@
           {
             "partes": [
               {
-                "tipo": "texto",
-                "valor": "100"
+                "tipo": "simbolo",
+                "valor": "10",
+                "sup": "9"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Confundiste ppm con porcentaje y pensaste en 100. El porcentaje es partes de cada 100; ppm es partes de cada millón.",
+            "queRevela": "10 a la 9 es mil millones. Multiplicar 4 entre 1 000 000 por mil millones da 4 000 ppm: te pasaste tres ceros de más. Un millón es 10 a la 6.",
             "letra": "D"
           }
         ]
@@ -524,7 +534,7 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Es segura beberla"
+                "valor": "Es segura para beberla"
               }
             ],
             "esCorrecta": true,
@@ -536,12 +546,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Es exactamente segura"
+                "valor": "Sólo es segura si llega a 15 ppm"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "No existe eso de «exactamente segura». El límite es un tope: mientras no lo superes, es segura.",
+            "queRevela": "El límite es un tope, no una meta que haya que alcanzar. Lo que pasa de 15 ppm no es seguro; 8 ppm queda por debajo del tope, así que el agua sí se puede beber.",
             "letra": "C"
           },
           {
@@ -608,7 +618,7 @@
         "orden": 2
       },
       {
-        "texto": "5 dividido entre 1 millón es una cantidad muy pequeña. Cuando la multiplicas por 1 millón, recuperas el numerador: 5 ppm.",
+        "texto": "El millón de abajo y el millón por el que multiplicas se cancelan entre sí. ¿Qué número te queda del numerador?",
         "orden": 3
       }
     ],
@@ -620,11 +630,11 @@
     "materia": "quimica",
     "escalones": [
       {
-        "situacion": "El agua del pozo cerca de tu casa tiene 5 mg de arsénico en cada kilogramo de agua.",
+        "situacion": "El agua del pozo cerca de tu casa tiene 7 mg de arsénico en cada kilogramo de agua.",
         "expresion": [
           {
             "tipo": "fraccion",
-            "arriba": "5 mg",
+            "arriba": "7 mg",
             "abajo": "1 000 000 mg"
           },
           {
@@ -646,9 +656,9 @@
         ],
         "pregunta": "¿Cuántos ppm de arsénico hay en el agua?",
         "respuesta": {
-          "tecleado": "5",
+          "tecleado": "7",
           "aceptaTambien": [],
-          "comoSeLee": "cinco partes por millón"
+          "comoSeLee": "siete partes por millón"
         },
         "pistas": [
           {
@@ -656,7 +666,7 @@
             "orden": 1
           },
           {
-            "texto": "Multiplicas 5 entre 1 000 000 por 1 000 000. Eso se simplifica: 5 por 1.",
+            "texto": "El millón de abajo y el millón por el que multiplicas se cancelan. ¿Qué queda del numerador?",
             "orden": 2
           }
         ],
@@ -664,7 +674,7 @@
         "esInverso": false
       },
       {
-        "situacion": "El agua del río contiene 12 mg de fertilizante. En 1 kg de esa agua hay 12 ppm de fertilizante.",
+        "situacion": "El agua del río contiene 12 mg de fertilizante en cada kilogramo de agua.",
         "expresion": [
           {
             "tipo": "fraccion",
@@ -700,7 +710,7 @@
             "orden": 1
           },
           {
-            "texto": "Multiplicas 12 entre 1 000 000 por 1 000 000: la cuenta queda 12 por 1.",
+            "texto": "El millón de abajo se cancela con el millón por el que multiplicas. ¿Qué queda del numerador?",
             "orden": 2
           }
         ],
@@ -708,7 +718,7 @@
         "esInverso": false
       },
       {
-        "situacion": "En la cisterna de la escuela hay 2 kg de agua. El análisis encontró 8 mg de cloro disuelto.",
+        "situacion": "De la cisterna de la escuela tomaron una muestra de 2 kg de agua. El análisis encontró 8 mg de cloro disuelto.",
         "expresion": [
           {
             "tipo": "fraccion",
@@ -748,7 +758,7 @@
             "orden": 2
           },
           {
-            "texto": "La fracción es 8 entre 2 000 000, multiplicada por un millón. Eso da 8 entre 2.",
+            "texto": "El millón por el que multiplicas se compensa con los seis ceros del 2 000 000 de abajo. Haz la división que te queda con el numerador.",
             "orden": 3
           }
         ],
@@ -756,14 +766,14 @@
         "esInverso": false
       },
       {
-        "situacion": "El laboratorio reportó que el agua tiene 3 ppm de plomo. En 1 kg de esa agua hay 3 mg de plomo, pero falta en el reporte cuánto pesaba la muestra.",
+        "situacion": "El laboratorio reportó 3 ppm de plomo en una muestra de 2 kg de agua (2 000 000 mg), pero no anotó cuántos miligramos de plomo había.",
         "expresion": [
           {
             "tipo": "hueco"
           },
           {
             "tipo": "texto",
-            "valor": "÷ 1 000 000 mg ×"
+            "valor": "÷ 2 000 000 mg ×"
           },
           {
             "tipo": "simbolo",
@@ -777,9 +787,9 @@
         ],
         "pregunta": "¿Cuántos miligramos de plomo había en la muestra?",
         "respuesta": {
-          "tecleado": "3",
+          "tecleado": "6",
           "aceptaTambien": [],
-          "comoSeLee": "tres miligramos"
+          "comoSeLee": "seis miligramos"
         },
         "pistas": [
           {
@@ -787,11 +797,11 @@
             "orden": 1
           },
           {
-            "texto": "La operación inversa de multiplicar por un millón es dividir entre un millón. Pero esos millones se cancelan con los del hueco.",
+            "texto": "El millón de abajo y el millón por el que multiplicas se compensan. Lo que queda es el hueco repartido entre los 2 kg de agua, y eso tiene que dar el resultado del reporte.",
             "orden": 2
           },
           {
-            "texto": "El número que dividido entre 1 000 000 y multiplicado por 1 000 000 da 3, es el 3 mismo.",
+            "texto": "Recuerda que 1 ppm es 1 mg de contaminante en cada kg de disolución. Con 3 ppm y una muestra de 2 kg, ¿cuántos mg de plomo tiene que haber en total?",
             "orden": 3
           }
         ],
@@ -834,11 +844,11 @@
             "orden": 1
           },
           {
-            "texto": "Si la masa del contaminante es 24 mg y el resultado es 24 ppm, entonces la masa de la disolución tiene que ser 1 millón de miligramos, o sea 1 kg.",
+            "texto": "El resultado en ppm (24) es igual a los mg de arriba (24). Eso sólo pasa con una masa de disolución muy especial: la que define 1 ppm.",
             "orden": 2
           },
           {
-            "texto": "El número que hace verdadera la ecuación es 1 000 000, que es lo mismo que escribir 10 a la 6 en miligramos.",
+            "texto": "Recuerda que 1 ppm es 1 mg de contaminante en 1 kg de disolución. Pasa ese kg a miligramos.",
             "orden": 3
           }
         ],
@@ -942,8 +952,8 @@
       }
     ],
     "pasoMalo": 4,
-    "arrastre": "El 0.0005 del paso 4 es lo que llega al paso 5 para comparar. El paso 5 est\\u00e1 bien hecho con ese n\\u00famero malo: si solo buscaras lo raro visualmente, no encontrar\\u00edas nada, porque ambos pasos se ven igual de bien escritos.",
-    "porQue": "¿Qu\\u00e9 multiplicador us\\u00f3 en ese paso?",
+    "arrastre": "El 0.0005 del paso 4 es lo que llega al paso 5 para comparar. El paso 5 está bien hecho con ese número malo: si sólo buscaras lo raro a simple vista, no encontrarías nada, porque ambos pasos se ven igual de bien escritos.",
+    "porQue": "¿Qué multiplicador usó en ese paso?",
     "motivos": [
       {
         "texto": "Multiplicó por 100 creyendo que ppm es como porcentaje.",
@@ -953,13 +963,13 @@
       {
         "texto": "Dividió en vez de multiplicar por olvido del signo.",
         "esElBueno": false,
-        "queRevela": "Si dividiera 5 entre 1 000 000 tendría que escribir la división, no el signo de multiplicar. Y 5 dividido entre un millón da 0.000005, no 0.0005. El renglón muestra multiplicación, y el resultado tiene el tamaño de multiplicar."
+        "queRevela": "El renglón muestra una multiplicación, no una división. Además, 5 mg en 1 kg no pueden dar menos de 1 ppm, y 0.0005 es justo lo que sale de multiplicar por 100 en vez de por un millón."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro de los cinco pasos están bien. El error es un multiplicador con potencia de diez que no es el correcto para ppm."
+        "texto": "Cuatro de los cinco pasos están bien. Revisa si el tamaño de cada resultado tiene sentido para lo que son los ppm."
       },
       {
         "orden": 2,
@@ -987,9 +997,9 @@
           "esImprescindible": true
         },
         {
-          "idea": "El denominador tiene que ser un millón de miligramos, que es lo mismo que 1 kilogramo. Cuando divides una masa de contaminante en miligramos entre un millón de miligramos, obtienes las partes por millón.",
-          "porQueImporta": "Sin esta idea, el estudiante mezcla unidades o confunde qué va arriba y qué va abajo. Es la razón de por qué el denominador vale exactamente un millón.",
-          "comoSuenaDicha": "Un kilogramo son un millón de miligramos, así que divido entre un millón.",
+          "idea": "El denominador es la masa total de la disolución, pasada a la misma unidad que el contaminante: 1 kg son 1 000 000 mg, 2 kg son 2 000 000 mg. Por eso 1 ppm equivale a 1 mg de contaminante en 1 kg de disolución.",
+          "porQueImporta": "Sin esta idea, el estudiante mezcla unidades o confunde qué va arriba y qué va abajo, y la fracción no compara partes iguales.",
+          "comoSuenaDicha": "Abajo pongo la masa de toda la disolución, en miligramos igual que arriba; si son 2 kg, abajo van 2 millones de miligramos.",
           "esImprescindible": false
         },
         {
@@ -1009,32 +1019,32 @@
         {
           "respuesta": "Porque ppm tiene un millón en el nombre.",
           "queLaDelata": "Es cierto, pero es nada más la observación. No dice qué quiere decir que sea un millón, ni por qué el nombre es así y no de otra forma.",
-          "queLeFalta": "Que diga por qué comparar con un millón: porque un kilogramo tiene un millón de miligramos."
+          "queLeFalta": "Que diga qué significa ese millón: ppm son partes de contaminante por cada millón de partes de disolución, y por eso se multiplica por un millón y no por cien."
         },
         {
           "respuesta": "Porque 1 kilogramo son 1 000 000 miligramos y hay que pasar eso a partes por millón.",
-          "queLaDelata": "Trae los datos pero no la conexión. No dice qué tienen que ver los miligramos de la disolución con el multiplicador.",
-          "queLeFalta": "Que diga que divides entre ese millón de miligramos y luego multiplicas por un millón para obtener la razón en partes por millón."
+          "queLaDelata": "Trae los datos pero confunde dos cosas: pasar kg a mg, que sirve para el denominador, y el millón por el que se multiplica, que sale de lo que significa ppm.",
+          "queLeFalta": "Que separe las dos cosas: 1 000 000 mg es la masa de la disolución que va abajo, y se multiplica por un millón porque ppm cuenta partes por cada millón."
         }
       ],
       "contraargumentos": [
         {
           "siDice": "Ppm es como porcentaje pero con millón, así que multiplicas por un millón como multiplicas por cien en porcentaje.",
-          "seLeContesta": "Ahí está la trampa. En porcentaje multiplicas por cien porque divides entre 100. En ppm multiplicas por un millón porque divides entre 1 000 000. La diferencia importa: si multiplicas por cien cuando deberías multiplicar por un millón, tu resultado sale 10 000 veces más chico. Revisa el ejemplo: 5 mg en 1 kg, ¿de verdad sale menor que 1 ppm?",
-          "aDondeLoEmpuja": "A ver que el denominador de la fracción define el multiplicador, que es la primera idea."
+          "seLeContesta": "Vas bien: ppm es como porcentaje, pero por cada millón en vez de por cada cien. Cuida que el factor sea 1 000 000 y no 100: con 100 el resultado sale 10 000 veces más chico. Revisa 5 mg en 1 kg: ¿de verdad sale menos de 1 ppm?",
+          "aDondeLoEmpuja": "A la primera idea: ppm es de cada millón, y por eso se multiplica por un millón."
         },
         {
           "siDice": "Mililitros, miligramos, kilo, mega, todo empieza con un prefijo, así que si ppm tiene millón en el nombre debo dividir y multiplicar.",
-          "seLeContesta": "Correcto que los prefijos son importantes. Pero fíjate cuál es el multiplicador: no es cualquiera. 1 kilogramo son exactamente 1 000 000 miligramos. Por eso multiplicas por 1 000 000 específicamente, y por eso en cada problema el denominador de la fracción vale eso: para que el multiplicador y el denominador coincidan.",
-          "aDondeLoEmpuja": "A entender que el denominador no es al azar sino que sale de convertir 1 kilogramo a miligramos, la segunda idea."
+          "seLeContesta": "Ojo con los prefijos: mili es una milésima, kilo es mil y mega es un millón. Aquí el millón viene del nombre: partes por cada millón. Y 1 kg = 1 000 000 mg es lo que hace que 1 ppm sea 1 mg en 1 kg.",
+          "aDondeLoEmpuja": "A separar el multiplicador, que es por millón, de la conversión de unidades del denominador."
         },
         {
           "siDice": "Entiendo que partes por millón significa eso, nada más no sé cómo escribirlo.",
-          "seLeContesta": "Entonces contesta una sola cosa: ¿por qué multiplico por un millón y no por otro número? Si la respuesta es porque la disolución pesa un millón de miligramos, ya está.",
-          "aDondeLoEmpuja": "A que escriba la conexión que ya tiene entre el denominador y el multiplicador."
+          "seLeContesta": "Entonces contesta una sola cosa: ¿por qué multiplico por un millón y no por otro número? Si dices que ppm es por cada millón de partes, ya está.",
+          "aDondeLoEmpuja": "A que escriba con sus palabras que ppm son partes por cada millón, la primera idea."
         }
       ],
-      "ejemploQueSiCuenta": "Partes por millón significa que cuento cuánto contaminante hay en un millón de partes de disolución. En el ejemplo tengo 5 mg de contaminante en 1 kg, y 1 kg son 1 000 000 mg, así que hago la fracción 5 entre 1 000 000 y luego multiplico por un millón para convertir eso en partes por millón. Por eso el multiplicador es exactamente un millón: porque es el número de miligramos en el denominador.",
+      "ejemploQueSiCuenta": "Partes por millón significa que cuento cuánto contaminante hay en un millón de partes de disolución. En el ejemplo tengo 5 mg de contaminante en 1 kg, y 1 kg son 1 000 000 mg, así que hago la fracción 5 entre 1 000 000. Luego multiplico por un millón porque ppm cuenta partes por cada millón, no por cada cien como el porcentaje. Y como 1 kg son un millón de miligramos, 1 ppm resulta ser 1 mg en 1 kg.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
         "Que no use las palabras partes, porcentaje ni denominador: si dice lo que cuenta y por qué, ya explicó la idea.",

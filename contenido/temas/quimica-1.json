@@ -270,12 +270,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Cuánta agua cabe en la probeta"
+                "valor": "Cuánta agua falta para llenarla"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Eso lo dice el tamaño de la probeta, no el nivel donde llegó el agua. Si llenas la probeta a la mitad, puedes llenarla más.",
+            "queRevela": "Ese 50 mL dice hasta dónde llegó el agua, no cuánta falta. Lo que falta para llenarla depende de la capacidad de la probeta, y el 50 no la dice.",
             "letra": "D"
           }
         ]
@@ -285,7 +285,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Metes un objeto en la probeta y ahora el agua marca 67 mL. ¿Qué mide ese número?"
+            "valor": "La probeta tenía 50 mL. Metes un objeto y ahora marca 67 mL. ¿Qué mide ese número?"
           }
         ],
         "opciones": [
@@ -297,7 +297,7 @@
               }
             ],
             "esCorrecta": false,
-            "esElErrorTipico": true,
+            "esElErrorTipico": false,
             "queRevela": "Ese 67 mL incluye el agua que ya estaba (50 mL) más el espacio del objeto. Si restas, encuentras qué ocupa nada más el objeto.",
             "letra": "A"
           },
@@ -356,7 +356,7 @@
               }
             ],
             "esCorrecta": false,
-            "esElErrorTipico": false,
+            "esElErrorTipico": true,
             "queRevela": "Reportaste el nivel final como si fuera el volumen. Ese número incluye los 45 mL de agua que ya había; el objeto ocupa menos.",
             "letra": "A"
           },
@@ -411,12 +411,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Para que la resta salga bien"
+                "valor": "Para que la resta dé un número más fácil"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "La operación de la resta es lo que sigue después. Aquí el punto es otro: que todo el objeto ocupe espacio en el agua.",
+            "queRevela": "Estás pensando en la cuenta, y la cuenta no cambia por eso. Lo que importa es que el agua suba con todo el espacio que ocupa el objeto.",
             "letra": "A"
           },
           {
@@ -452,7 +452,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El objeto no se va a escapar si lo sostenes. Lo que importa es que el agua toque todo lo que ocupa.",
+            "queRevela": "El objeto no se va a escapar si lo sostienes. Lo que importa es que el agua toque todo lo que ocupa.",
             "letra": "D"
           }
         ]
@@ -498,7 +498,7 @@
       },
       {
         "orden": 2,
-        "texto": "Restas el nivel inicial del nivel final: el número más grande menos el número más pequeño."
+        "texto": "Al nivel final le quitas el nivel inicial: así sabes cuánto subió el agua."
       },
       {
         "orden": 3,
@@ -507,7 +507,7 @@
     ],
     "siTecleaElError": {
       "tecleado": "85",
-      "queSeLeDice": "85 mL es lo que marca la probeta al final, pero esos 85 incluyen el agua que ya estaba. El objeto no puede ocupar tanto como todo lo que la probeta marca. Tienes que restar: ¿cuántos mL había al principio?"
+      "queSeLeDice": "Esos 85 mL son lo que marca la probeta al final, e incluyen el agua que ya estaba, así que el objeto no puede ocupar tanto. Mira la resta escrita: al 85 hay que quitarle el 60. ¿Cuánto queda?"
     },
     "noSePuede": null
   },
@@ -592,7 +592,7 @@
             "orden": 1
           },
           {
-            "texto": "Restas: el número más alto menos el más bajo.",
+            "texto": "Al nivel de después le quitas el nivel de antes: eso es lo que subió el agua.",
             "orden": 2
           }
         ],
@@ -600,11 +600,11 @@
         "esInverso": false
       },
       {
-        "situacion": "En la clase de química metes una tuerca en agua. La probeta marcaba 30 mL, y después marcó 38 mL.",
+        "situacion": "En la clase de química metes un trozo de metal en agua. La probeta marcaba 37 mL, y después marcó 82 mL.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "38 mL"
+            "valor": "82 mL"
           },
           {
             "tipo": "texto",
@@ -612,7 +612,7 @@
           },
           {
             "tipo": "texto",
-            "valor": "30 mL"
+            "valor": "37 mL"
           },
           {
             "tipo": "texto",
@@ -622,11 +622,11 @@
             "tipo": "hueco"
           }
         ],
-        "pregunta": "¿Cuál es el volumen de la tuerca?",
+        "pregunta": "¿Cuál es el volumen del trozo de metal?",
         "respuesta": {
-          "tecleado": "8",
+          "tecleado": "45",
           "aceptaTambien": [],
-          "comoSeLee": "ocho mililitros"
+          "comoSeLee": "cuarenta y cinco mililitros"
         },
         "pistas": [
           {
@@ -642,7 +642,7 @@
         "esInverso": false
       },
       {
-        "situacion": "Metes una canica en una probeta llena de agua. El nivel subió de 50 mL a 57 mL, pero olvidaste apuntar cuál era el nivel al principio.",
+        "situacion": "Metes una canica grande en una probeta con agua. El nivel final es 57 mL y la canica ocupa 7 mL, pero olvidaste el nivel inicial.",
         "expresion": [
           {
             "tipo": "texto",
@@ -657,7 +657,7 @@
           },
           {
             "tipo": "texto",
-            "valor": "= 7"
+            "valor": "= 7 mL"
           }
         ],
         "pregunta": "¿Cuál era el nivel inicial del agua?",
@@ -676,7 +676,7 @@
             "orden": 2
           },
           {
-            "texto": "57 menos qué número da 7. Busca: 50 más 7 son 57.",
+            "texto": "Para hallar el nivel inicial, al nivel final de 57 mL quítale los 7 mL que ocupa la canica. ¿Cuánto queda?",
             "orden": 3
           }
         ],
@@ -684,7 +684,7 @@
         "esInverso": true
       },
       {
-        "situacion": "Viertes agua en una probeta hasta los 40 mL. Metes una moneda de metal y el agua llega a 46 mL, pero el nivel final se borró cuando mojaste el cuaderno.",
+        "situacion": "Viertes agua en una probeta hasta los 40 mL. Metes una piedrita que ocupa 6 mL, pero se borró el nivel final que anotaste.",
         "expresion": [
           {
             "tipo": "hueco"
@@ -699,7 +699,7 @@
           },
           {
             "tipo": "texto",
-            "valor": "= 6"
+            "valor": "= 6 mL"
           }
         ],
         "pregunta": "¿Cuál era el nivel final del agua?",
@@ -743,7 +743,7 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Anoto con la que arrancó: 60 mL"
+            "valor": "Anoto el nivel inicial del agua: 60 mL"
           }
         ],
         "siLoTocas": "Ese paso sólo copia el nivel inicial de agua del problema, leyendo a la altura del menisco. Los 60 mL venían dados."
@@ -763,7 +763,7 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Anoto con la que subió: 85 mL"
+            "valor": "Anoto el nivel final del agua: 85 mL"
           }
         ],
         "siLoTocas": "Ese paso copia el nivel final del agua después de meter la piedra, nuevamente a la altura del menisco. Los 85 mL venían dados."
@@ -776,7 +776,7 @@
             "valor": "Resto para sacar el volumen: 85 mL − 0 mL = 85 mL"
           }
         ],
-        "siLoTocas": "Ahí está. Ese renglón es el que les pasa su número a los dos pasos que siguen."
+        "siLoTocas": "Ahí está. Ese renglón le pasa su resultado al paso que sigue, el 5, y por eso el error llega hasta el final."
       },
       {
         "numero": 5,
@@ -786,15 +786,15 @@
             "valor": "El objeto ocupa: 85 mL"
           }
         ],
-        "siLoTocas": "Ese paso toma el resultado de la resta y lo nombra como el volumen. El número que recibió (85 mL) es el que repite acá."
+        "siLoTocas": "Ese paso toma el resultado de la resta y lo nombra como el volumen. El número que recibió (85 mL) es el que repite aquí."
       }
     ],
     "pasoMalo": 4,
-    "arrastre": "El 85 mL del paso 4 es el único número de la resta: entra sin cambios al resultado del paso 5. Los pasos 3 y 5 están bien hechos con un número malo. El paso 4 debería usar el 60 mL que anotaste en el paso 1, pero usa 0 mL en su lugar.",
+    "arrastre": "Los pasos 1, 2 y 3 están bien: anotan datos correctos y meten la piedra. El paso 4 debía restar los 60 mL que anotaste en el paso 1 (85 mL − 60 mL = 25 mL), pero resta 0 mL. El paso 5 sólo repite el 85 mL que le llega del paso 4: su resultado sale mal por el error que arrastra.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
-        "texto": "No restó el nivel inicial: se lo restó a 0 en lugar de a 60 mL.",
+        "texto": "No restó el nivel inicial: al nivel final le restó 0 mL en lugar de los 60 mL.",
         "esElBueno": true,
         "queRevela": "Es exacto: el paso 4 trae una resta, pero le resta 0 al nivel final en vez de restarle los 60 mL que se anotaron en el paso 1. El nivel inicial desapareció de la cuenta. Por eso el resultado es 85 mL, que es todo lo que marca la probeta, sin descontar el agua que ya estaba."
       },
@@ -815,7 +815,7 @@
       },
       {
         "orden": 3,
-        "texto": "Compara el paso 4 con el paso 1. El paso 1 anotó un número. ¿Ese número aparece en la resta del paso 4, o aparece un 0 en su lugar?"
+        "texto": "Repasa los pasos de arriba abajo. En cada uno que use un dato del agua, pregúntate si escribió el número que le toca o si puso otro en su lugar."
       }
     ],
     "noSePuede": null
@@ -852,7 +852,7 @@
         {
           "respuesta": "Porque hay que hacer la resta final menos inicial, así es la operación.",
           "queLaDelata": "Nombra el orden de la operación pero no explica por qué ese orden. Es la regla de memoria, no la razón de la regla.",
-          "queLeFalta": "Que diga por qué ése es el único orden que funciona: porque el nivel final es mayor y porque lo que se resta es lo que ocupó el objeto."
+          "queLeFalta": "Que diga por qué ése es el único orden que funciona: porque el nivel final es mayor y porque al restar el agua que ya estaba lo que queda es lo que ocupó el objeto."
         },
         {
           "respuesta": "Porque el número más grande va primero en una resta.",
@@ -861,13 +861,13 @@
         },
         {
           "respuesta": "Porque si lo restas al revés te da negativo, y el volumen no puede ser negativo.",
-          "queLaDelata": "Es la forma de detectar el error, no la razón de por qué está mal. El estudiante sabe que −25 es imposible, pero no sabe qué significaría 60 menos 85 aunque saliera positivo.",
+          "queLaDelata": "Es una idea válida, pero sola no cuenta: sirve para detectar el error, no dice por qué está mal. El estudiante sabe que −25 es imposible, pero no sabe qué significaría 60 menos 85 aunque saliera positivo; le falta la idea imprescindible.",
           "queLeFalta": "Que diga qué mide cada número: el nivel inicial es cuánta agua había, el final es toda el agua después, y la diferencia es sólo el objeto."
         },
         {
           "respuesta": "Porque el nivel sube cuando metes el objeto, entonces le restas el de antes para saber cuánto subió.",
-          "queLaDelata": "Dice que el agua sube y que hay que restar, pero trata la resta como un truco para saber «cuánto subió», no como la medida del espacio que ocupó el objeto. Olvida que cuánto subió el agua es exactamente cuánto espacio ocupó el objeto.",
-          "queLeFalta": "Que diga que cuánto sube el agua es lo que mide el objeto: no es un número aparte, es el volumen."
+          "queLaDelata": "Dice que el nivel sube y que se resta para saber cuánto subió, pero se queda en el número: no liga ese «cuánto subió» con el espacio que ocupa el objeto ni con el volumen. Es la mecánica de la resta sin decir qué mide.",
+          "queLeFalta": "Que ligue lo que subió el agua con el espacio del objeto, o que diga que el volumen no es el nivel final porque ese nivel incluye el agua que ya estaba."
         }
       ],
       "contraargumentos": [
@@ -883,7 +883,7 @@
         },
         {
           "siDice": "Sí entendí, lo que no sé cómo explicarlo con palabras.",
-          "seLeContesta": "Entonces cuenta sólo esto: el nivel inicial era 60 y después subió a 85. ¿Cuánto fue lo que subió? Ese número es el volumen. Escribe eso.",
+          "seLeContesta": "Cuenta sólo lo que pasó: el agua estaba en 60 y subió a 85. ¿Qué te dice ese cambio sobre la piedra? Escríbelo con tus palabras.",
           "aDondeLoEmpuja": "A que vea que la idea ya la tiene: cuánto subió es cuánto ocupa el objeto."
         }
       ],
@@ -891,7 +891,7 @@
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
         "Que use números del ejemplo (60, 85, 25) o números distintos: la idea cuenta sin hacer la operación.",
-        "Que no use las palabras nivel, inicial, final, probeta: si dice cuánto espacio ocupó o cuánto subió el agua, ya dijo la idea."
+        "Que no use las palabras nivel, inicial, final, probeta: si dice cuánto espacio ocupó el objeto, o cuánto subió el agua ligándolo con ese espacio, ya dijo la idea."
       ]
     },
     "noSePuede": null

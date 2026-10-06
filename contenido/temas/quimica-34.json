@@ -308,10 +308,847 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
-  "completar": null,
-  "escalera": null,
-  "error": null,
-  "explicar": null
+  "ver": {
+    "temaNumero": 34,
+    "materia": "quimica",
+    "pregunta": "¿Qué queda cuando un ácido se mezcla con una base?",
+    "resumen": "Cuando un ácido reacciona con una base no desaparece todo: se forma una sal nueva hecha del metal de la base y del resto del ácido, y también agua. Ambas son productos de la neutralización.",
+    "busqueda": {
+      "criterios": [
+        "Explica qué es la neutralización y qué se forma cuando reaccionan un ácido y una base, no nada más los pasos del balanceo.",
+        "Deja claro que la sal y el agua son AMBOS productos de la reacción, no que el ácido desaparece sin dejar nada.",
+        "Muestra la fórmula completa de la reacción con sal y agua, balanceada o no.",
+        "Es del nivel de tercero de secundaria: usa ácidos como HCl o H₂SO₄ y bases como NaOH o Ca(OH)₂.",
+        "El español es de México o de América Latina."
+      ],
+      "descarta": [
+        "Enseña que neutralizar significa que el ácido desaparece del todo y solo queda agua.",
+        "No escribe la sal en los productos, solo muestra agua.",
+        "Es un examen resuelto o pide memorizar una tabla sin explicar la reacción.",
+        "Usa el hidrógeno del ácido para formar la sal en lugar del metal de la base."
+      ],
+      "consulta": "video explicación \"Neutralización: sal y agua\" química 3º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "g4N2hpAjy9A",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el video que mejor explica que la neutralización produce dos cosas: la sal y el agua. Muestra ácidos y bases reales, balanceia la ecuación completa con ambos productos visibles, y tiene el acento de México.",
+      "url": "https://www.youtube.com/watch?v=g4N2hpAjy9A",
+      "titulo": "Reacciones de Neutralización Ácido Base: Resuelve y balancea | Fácil ⚗️💧",
+      "canal": "Quimimática",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "qN-WxBB9ogA",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Explica que la reacción produce sal y agua, y muestra ecuaciones balanceadas. Es de América Latina, así que el acento queda más cerca. Es más lento al empezar y tarda más en llegar al ejemplo.",
+        "url": "https://www.youtube.com/watch?v=qN-WxBB9ogA",
+        "titulo": "Ácidos y Bases (Reacciones de neutralización)",
+        "canal": "Clases, ciencias y educación",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "Las dos URL y sus títulos salieron literales en los resultados. El elegido explica por qué se forman sal y agua, no nada más el algoritmo. El acento es de México. Hay un segundo respaldo que falla en velocidad, no en contenido.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "materia": "quimica",
+    "temaNumero": 34,
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En"
+          },
+          {
+            "tipo": "texto",
+            "valor": "HCl +"
+          },
+          {
+            "tipo": "texto",
+            "valor": "NaOH, ¿cuál es el ácido?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "HCl"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste que HCl aporta los hidrógenos, así que es el ácido.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "NaOH"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás confundiendo la base con el ácido. NaOH aporta el hidróxido, no el hidrógeno que define al ácido.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "ninguno de los dos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "En esta reacción ambas sustancias tienen un rol: una aporta hidrógeno (ácido) y otra aporta hidróxido (base).",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "los dos son ácido"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No toda sustancia que lleva H es ácido. NaOH es base porque lo que importa es que aporta hidróxido.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es el metal de la base en"
+          },
+          {
+            "tipo": "texto",
+            "valor": "H₂SO₄ + Ca(OH)₂?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Ca"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Encontraste el calcio como el metal que acompaña al hidróxido en la base.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "H"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El hidrógeno aparece en ambas sustancias, pero es parte del ácido y del hidróxido, no es el metal de la base.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "SO₄"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Eso es el resto del ácido, no el metal de la base. El metal está con el hidróxido.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "O"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El oxígeno forma parte del hidróxido, pero no es el metal que va en la sal.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Cuando reacciona HCl, ¿qué parte del ácido queda para la sal?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Cl"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Sacaste el H y quedó el cloro, que es el anión que forma la sal.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "H"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El hidrógeno del ácido no queda en la sal; se va al agua. Lo que queda es el cloro.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "nada"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Del ácido siempre queda algo en la sal. Lo que se va es el hidrógeno, pero el resto del ácido entra en la sal.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "todo el HCl"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El HCl se parte. El hidrógeno se separa del cloro: el cloro va a la sal y el hidrógeno al agua.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué escribes del lado de los productos en"
+          },
+          {
+            "tipo": "texto",
+            "valor": "HCl + NaOH → ?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "NaCl + H₂O"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste la sal que se forma y el agua, los dos productos de la neutralización.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "H₂O"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Escribiste solo agua y olvidaste la sal. Neutralizar no es que desaparezca todo; se forma una sal nueva.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "HCl y NaOH"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste lo que entra en la reacción. Los productos son lo que sale después de que reaccionan.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "HNaCl + O"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Armaste la sal con el hidrógeno del ácido en vez de con el sodio de la base. El hidrógeno se va al agua, no a la sal.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En la neutralización de"
+          },
+          {
+            "tipo": "texto",
+            "valor": "H₂SO₄ con NaOH, ¿qué sal se forma?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Na₂SO₄"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Cruzaste las valencias: Na⁺ con SO₄²⁻ necesita dos sodios para equilibrar.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "NaSO₄"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Solo usaste un sodio. El sulfato carga 2−, así que necesitas dos sodios de 1+ cada uno.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "H₂SO₄"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste el ácido, no la sal. La sal lleva el metal de la base, que es el sodio.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "HSO₄"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Armaste la sal con el hidrógeno del ácido. La sal se forma del metal de la base y del resto del ácido.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 34,
+    "materia": "quimica",
+    "pasoDelCanon": 5,
+    "queFalta": "el coeficiente del NaOH para balancear la ecuación",
+    "expresion": [
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "2"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "SO",
+        "sub": "4"
+      },
+      {
+        "tipo": "texto",
+        "valor": "+"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "NaOH →"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "Na",
+        "sub": "2"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "SO",
+        "sub": "4"
+      },
+      {
+        "tipo": "texto",
+        "valor": "+ 2"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "2",
+      "aceptaTambien": [],
+      "comoSeLee": "dos"
+    },
+    "pistas": [
+      {
+        "texto": "La ecuación muestra qué entra y qué sale. Para que sea correcta, tienes que contar que el mismo número de cada átomo aparece en ambos lados de la flecha.",
+        "orden": 1
+      },
+      {
+        "texto": "Del lado izquierdo cuentas los sodios que entran en el NaOH. Del lado derecho, la sal Na₂SO₄ trae dos sodios. Escribe el coeficiente que hace que cuadren.",
+        "orden": 2
+      },
+      {
+        "texto": "Del lado derecho salen dos sodios en la sal. Del lado izquierdo, si el coeficiente del NaOH es 2, entonces entran dos sodios. Con eso el hidrógeno también cuadra.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "1",
+      "queSeLeDice": "Si escribes 1, del lado izquierdo entra un sodio en el NaOH. Pero del lado derecho salen dos sodios en la sal Na₂SO₄. Los átomos no cuadran. Vuelve al paso 5 y cuenta cuántos sodios necesitas."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 34,
+    "materia": "quimica",
+    "escalones": [
+      {
+        "situacion": "En el laboratorio mezclan ácido clorhídrico con hidróxido de sodio para ver qué sale.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "HCl + NaOH → NaCl +"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Qué fórmula completa la ecuación?",
+        "respuesta": {
+          "tecleado": "1",
+          "aceptaTambien": [],
+          "comoSeLee": "una molécula de agua"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "De la neutralización quedan dos cosas: la sal y el agua. La sal ya está escrita; ahí falta lo segundo."
+          },
+          {
+            "orden": 2,
+            "texto": "El coeficiente del agua que equilibra HCl + NaOH → NaCl es 1."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "En el laboratorio mezclan ácido clorhídrico con hidróxido de calcio y escriben la sal.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "HCl + Ca(OH)₂ → CaCl₂ +"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas moléculas de agua salen?",
+        "respuesta": {
+          "tecleado": "2",
+          "aceptaTambien": [],
+          "comoSeLee": "dos moléculas de agua"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí el metal de la base es calcio. Ya escribiste la sal CaCl₂; ahora va el agua con su coeficiente."
+          },
+          {
+            "orden": 2,
+            "texto": "Ca(OH)₂ trae dos hidróxidos. Esos dos se combinan con dos hidrógenos del ácido para hacer 2 H₂O."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "La ecuación H₂SO₄ + 2 NaOH → Na₂SO₄ + 2 H₂O está balanceada. El maestro pregunta de qué está hecha la sal.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "Metal:"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": ", Resto: SO₄"
+          }
+        ],
+        "pregunta": "¿Cuál es el metal de la sal Na₂SO₄?",
+        "respuesta": {
+          "tecleado": "1",
+          "aceptaTambien": [],
+          "comoSeLee": "sodio"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Mira de dónde viene cada parte de la sal. El metal viene de la base, no del ácido."
+          },
+          {
+            "orden": 2,
+            "texto": "La base es 2 NaOH. El metal que trae es Na."
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": false
+      },
+      {
+        "situacion": "El maestro borró el ácido sin querer: solo quedó que neutralizó hidróxido de sodio y dejó cloruro de sodio y agua.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+ NaOH → NaCl + H₂O"
+          }
+        ],
+        "pregunta": "¿Cuál es el ácido que falta?",
+        "respuesta": {
+          "tecleado": "1",
+          "aceptaTambien": [],
+          "comoSeLee": "ácido clorhídrico"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Deduce de cuál ácido sale un cloro. Mira la sal: NaCl tiene Cl."
+          },
+          {
+            "orden": 2,
+            "texto": "Si el resto del ácido es Cl, el ácido completo es HCl."
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      },
+      {
+        "situacion": "El apunte se mojó: dice que ácido sulfúrico neutralizó algo y salió sulfato de sodio y 2 H₂O. Falta la base.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "H₂SO₄ +"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→ Na₂SO₄ + 2 H₂O"
+          }
+        ],
+        "pregunta": "¿Cuál es la base y su coeficiente?",
+        "respuesta": {
+          "tecleado": "1",
+          "aceptaTambien": [],
+          "comoSeLee": "dos hidróxido de sodio"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Tienes el ácido, la sal y el agua. Deduce cuál base falta por el sodio que hay en Na₂SO₄."
+          },
+          {
+            "orden": 2,
+            "texto": "Na₂SO₄ tiene dos sodios. NaOH trae un sodio cada una. Necesitas 2 NaOH para los dos sodios."
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 34,
+    "materia": "quimica",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien escribió la ecuación de neutralización entre"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "2"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "SO",
+        "sub": "4"
+      },
+      {
+        "tipo": "texto",
+        "valor": "y NaOH. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Identifico el ácido y la base:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "SO",
+            "sub": "4"
+          },
+          {
+            "tipo": "texto",
+            "valor": "es el ácido, NaOH es la base."
+          }
+        ],
+        "siLoTocas": "Ese paso identifica correctamente cuál compuesto tiene hidrógeno (el ácido) y cuál tiene hidróxido (la base). Nombrándolos bien es el primer paso."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Tomo el metal de la base: Na"
+          }
+        ],
+        "siLoTocas": "El metal Na del NaOH está bien identificado. Ese paso recibió su información del problema y la anotó en su lugar."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Tomo el resto del ácido:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "SO",
+            "sub": "4",
+            "sup": "2−"
+          }
+        ],
+        "siLoTocas": "El sulfato con su carga está bien extraído. Ese paso no inventó sus números, los sacó de la estructura del ácido."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "simbolo",
+            "valor": "Na",
+            "sup": "1+"
+          },
+          {
+            "tipo": "texto",
+            "valor": "y"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "SO",
+            "sub": "4",
+            "sup": "2−"
+          },
+          {
+            "tipo": "texto",
+            "valor": ": la sal es"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "Na",
+            "sub": "2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "SO",
+            "sub": "4"
+          }
+        ],
+        "siLoTocas": "El cruzamiento de valencias está bien hecho: Na⁺ con SO₄²⁻ produce Na₂SO₄. Los números vinieron de cruzar bien las cargas."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "SO",
+            "sub": "4"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+ NaOH →"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O"
+          }
+        ],
+        "siLoTocas": "Ahí está el error. Ese renglón es el que les pasa su falta a los pasos siguientes."
+      }
+    ],
+    "pasoMalo": 5,
+    "arrastre": "Del lado de los productos falta la sal Na₂SO₄. Los átomos que entraron en el ácido y la base (Na, S, O del azufre) no salen en ninguna fórmula; solo sale agua. Sin la sal, no hay balanceo que obligue a cambiar el coeficiente del NaOH: se queda en 1, y eso es lo que delata el error. Lo que entra tiene que salir, átomo por átomo.\"}]",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Se olvidó de escribir la sal entre los productos.",
+        "esElBueno": true,
+        "queRevela": "Escribió solo agua del lado derecho. La sal Na₂SO₄ que se armó en el paso 4 no aparece en la ecuación final. Quien resolvió cree que neutralizar significa que todo desaparece, pero la sal sí queda."
+      },
+      {
+        "texto": "Puso el NaOH del lado de los productos en vez de reactivos.",
+        "esElBueno": false,
+        "queRevela": "Quien escoge esto ve algo mal con el NaOH. Pero en el renglón el NaOH ya está a la izquierda, donde debe estar. Lo que está mal no es dónde va el NaOH: es lo que falta a la derecha."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Los pasos 1 a 4 construyen la sal Na₂SO₄. El paso 5 escribe la ecuación completa. Compara lo que arman los primeros cuatro con lo que escribe el quinto."
+      },
+      {
+        "orden": 2,
+        "texto": "En el lado izquierdo entran el ácido, la base y todos sus átomos. Busca en el lado derecho dónde van a parar el Na, el S y el O del azufre."
+      },
+      {
+        "orden": 3,
+        "texto": "El agua es un producto, pero no es el único. Mira qué más se forma en los pasos anteriores y que debería aparecer al final."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 34,
+    "materia": "quimica",
+    "titulo": "Explícame por qué en los productos aparecen dos cosas: la sal y el agua.",
+    "aclaracion": "Con tus palabras, sin escribir la fórmula ni copiar lo que viste. Aquí no hay pistas ni nada que memorizar, y eso es a propósito: quiero entender cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Cuando un ácido y una base se encuentran, juntos forman dos productos distintos: la sal, que lleva el metal de la base, y el agua.",
+          "porQueImporta": "Sin esta idea, alguien cree que neutralizar significa que no queda nada o que sólo queda agua. Eso lo lleva a escribir la ecuación incompleta y sin poder balancearla.",
+          "comoSuenaDicha": "De la reacción salen dos cosas: la sal y el agua, no sólo el agua.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "La sal está hecha del metal de la base y del resto del ácido sin sus hidrógenos. El metal de la base no desaparece, va en la sal.",
+          "porQueImporta": "Quien confunde cuál es el metal y cuál es el hidrógeno arma la sal con el componente equivocado, o piensa que el metal simplemente se evaporó.",
+          "comoSuenaDicha": "El metal que trae la base no se esfuma, entra en la sal.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "El hidrógeno del ácido no va en la sal: se va con el hidróxido de la base para hacer el agua.",
+          "porQueImporta": "Es lo que detiene el error de pensar que el hidrógeno del ácido es lo que queda en la sal porque el ácido es fuerte.",
+          "comoSuenaDicha": "El hidrógeno del ácido no entra en la sal, se va al agua.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque neutralizar significa que el ácido y la base se anulan, así que salen dos productos que se compensan.",
+          "queLaDelata": "Usa la palabra neutralizar pero no explica qué salen ni de dónde vienen. Es como decir que se compensan sin decir cómo ni qué queda.",
+          "queLeFalta": "Que nombre los dos productos que salen: la sal y el agua."
+        },
+        {
+          "respuesta": "Porque en la fórmula siempre van la sal y el agua cuando reaccionan un ácido y una base.",
+          "queLaDelata": "Nombra la fórmula pero no dice por qué. Es memorizar que así es, no entender que el metal de la base entra en la sal.",
+          "queLeFalta": "Que explique de dónde salen: el metal de la base entra en la sal, y el hidrógeno del ácido va al agua."
+        },
+        {
+          "respuesta": "El ácido tiene hidrógeno, la base tiene metal, entonces hacen agua y sal.",
+          "queLaDelata": "Empareja los componentes pero no dice qué pasa con ellos ni por qué se reparten así.",
+          "queLeFalta": "Que diga cuál componente va a dónde: el metal va a la sal, el hidrógeno va al agua."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Neutralizar quiere decir que no queda nada, que el ácido desaparece.",
+          "seLeContesta": "El ácido no desaparece: sus átomos se reorganizan. Algunos se van al agua (el hidrógeno) y otros se quedan en la sal (el azufre, en el caso del sulfúrico). Nada desaparece, sólo se mueven a otro lugar. Ahora, en la reacción del sulfúrico con el hidróxido de sodio, ¿a dónde va el sodio que traía la base?",
+          "aDondeLoEmpuja": "A la idea de que el metal de la base entra en la sal."
+        },
+        {
+          "siDice": "La base se disuelve en el ácido, por eso no se ve en la ecuación.",
+          "seLeContesta": "La base no desaparece, se disuelve, pero sus átomos siguen ahí. Cuando disuelves sal en agua la sal no se esfuma: sus átomos se distribuyen. Aquí es igual: el metal de la base sigue ahí, pero entra en otra sustancia. ¿Cuál es esa sustancia si no es ni el ácido ni la base?",
+          "aDondeLoEmpuja": "A que nombre los dos productos que salen y diga que uno de ellos contiene el metal de la base."
+        },
+        {
+          "siDice": "Entiendo que salen dos cosas, pero no sé de dónde viene cada una.",
+          "seLeContesta": "Entonces contesta una sola cosa: en la reacción del ácido sulfúrico con el hidróxido de sodio, el metal sodio entra en la sal o se esfuma?",
+          "aDondeLoEmpuja": "A ver que el metal no desaparece sino que va a la sal."
+        }
+      ],
+      "ejemploQueSiCuenta": "Cuando el ácido sulfúrico se encuentra con el hidróxido de sodio, sus átomos se reorganizan. El sodio de la base no se esfuma: entra en la sal sulfato de sodio. El hidrógeno del ácido se une con el hidróxido de la base y forman agua. Neutralizar no es desaparecer, es que el ácido y la base intercambian sus partes para formar dos cosas nuevas.",
+      "noCuentaEnContra": [
+        "La ortografía y los acentos.",
+        "Que no use las palabras neutralización, sal, ácido ni base: si dice que salen dos productos y que uno lleva el metal de la base, ya dijo la idea.",
+        "Que no escriba ninguna fórmula ni ningún número: la idea cuenta sin hacer la ecuación."
+      ]
+    },
+    "noSePuede": null
+  }
 }

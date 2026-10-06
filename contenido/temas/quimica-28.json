@@ -329,9 +329,854 @@
     "porQueEsaConfianza": "El video elegido explica de frente la diferencia entre coeficiente y subíndice, que es el corazón del tema, pero el acento es de América Latina, no de México. Los tres videos de la lista que sirven están disponibles y abordan el tema; se eligió el que más directamente enfrenta la confusión típica del estudiante.",
     "noSePuede": null
   },
-  "contacto": null,
-  "completar": null,
-  "escalera": null,
-  "error": null,
-  "explicar": null
+  "contacto": {
+    "temaNumero": 28,
+    "materia": "quimica",
+    "preguntas": [
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En"
+          },
+          {
+            "tipo": "texto",
+            "valor": "2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→"
+          },
+          {
+            "tipo": "texto",
+            "valor": "2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O, ¿cuál es un reactivo?"
+          }
+        ],
+        "pasoDelCanon": 2,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "simbolo",
+                "valor": "H",
+                "sub": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "O"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El agua está después de la flecha, así que es producto. Los reactivos son lo que entra a la reacción.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "simbolo",
+                "valor": "O",
+                "sub": "2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste el oxígeno, antes de la flecha. Los reactivos son las sustancias de ese lado.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "H",
+                "sub": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "O"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Leíste el lado del agua. Ése es el lado de los productos, lo que se forma en la reacción.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "la flecha"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La flecha es un símbolo que separa, no una sustancia. Las sustancias están a los lados.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuántos átomos de hidrógeno hay en"
+          },
+          {
+            "tipo": "texto",
+            "valor": "3"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          }
+        ],
+        "pasoDelCanon": 4,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Leíste solo el subíndice. El 3 de adelante es coeficiente: multiplica toda la sustancia. Hay 3 × 2 = 6 hidrógenos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste solo el coeficiente. El subíndice también cuenta: cada molécula tiene dos hidrógenos.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "6"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste coeficiente por subíndice: tres moléculas, dos hidrógenos cada una.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste el 3 y el 2. El coeficiente multiplica el subíndice, no lo suma.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O, ¿qué es el 2?"
+          }
+        ],
+        "pasoDelCanon": 3,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "un coeficiente"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El número pegado al símbolo es subíndice, no coeficiente. El coeficiente va adelante, suelto.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "cuántos átomos de H"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste el subíndice: número chico pegado que cuenta átomos de ese elemento en la molécula.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "cuántas moléculas de agua"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás confundiendo subíndice con coeficiente. El pegado cuenta átomos dentro de una molécula, no cuántas hay.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "el estado de la sustancia"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El estado va en paréntesis al final como (l) o (g). El número pegado cuenta átomos del elemento.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuántos átomos de oxígeno hay en"
+          },
+          {
+            "tipo": "texto",
+            "valor": "2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          }
+        ],
+        "pasoDelCanon": 4,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste solo el subíndice. El coeficiente también multiplica: dos moléculas, dos oxígenos cada una.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "4"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste coeficiente por subíndice: dos moléculas, dos oxígenos cada una.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste coeficiente y subíndice. Multiplica para contar todos los átomos.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "No contaste coeficiente ni subíndice. Los dos números dicen cuántos oxígenos hay en total.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 28,
+    "materia": "quimica",
+    "pasoDelCanon": 4,
+    "queFalta": "el número total de átomos de hidrógeno en 2H₂O, contando coeficiente por subíndice",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "En 2"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "O: el H aparece 2 ×"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "="
+      }
+    ],
+    "respuesta": {
+      "tecleado": "2",
+      "aceptaTambien": [],
+      "comoSeLee": "dos"
+    },
+    "pistas": [
+      {
+        "texto": "El subíndice te dice cuántos átomos de ese elemento hay en una sola molécula. Buscas el número pequeño al lado de la H.",
+        "orden": 1
+      },
+      {
+        "texto": "Multiplicas coeficiente por subíndice. El coeficiente 2 está adelante; el subíndice está pegado a la H.",
+        "orden": 2
+      },
+      {
+        "texto": "En una molécula de H₂O hay 2 átomos de hidrógeno. Ese es el número que multiplicas por el coeficiente 2 de afuera.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "1",
+      "queSeLeDice": "El subíndice en H₂ dice que hay 2 átomos de hidrógeno en cada molécula de agua, no 1. La H va acompañada de ese 2. Vuelve al paso 3 para distinguir dónde va cada número."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 28,
+    "materia": "quimica",
+    "escalones": [
+      {
+        "situacion": "En el laboratorio queman 2 moléculas de hidrógeno con 1 molécula de oxígeno y forman agua: 2H₂ + O₂ → 2H₂O.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "Átomos de H en 2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos átomos de hidrógeno hay en total en los reactivos?",
+        "respuesta": {
+          "tecleado": "4",
+          "aceptaTambien": [],
+          "comoSeLee": "cuatro átomos de hidrógeno"
+        },
+        "pistas": [
+          {
+            "texto": "El coeficiente 2 multiplica la molécula H₂ entera: hay 2 moléculas de hidrógeno. En cada molécula el subíndice 2 dice que hay 2 átomos de H.",
+            "orden": 1
+          },
+          {
+            "texto": "Multiplica el coeficiente por el subíndice: 2 moléculas por 2 átomos en cada una.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la reacción 3CH₄ + 2O₂ → CO₂ + 2H₂O, se quema metano con oxígeno y se produce dióxido de carbono y agua.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "Átomos de O en 2O"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos átomos de oxígeno hay en los reactivos?",
+        "respuesta": {
+          "tecleado": "4",
+          "aceptaTambien": [],
+          "comoSeLee": "cuatro átomos de oxígeno"
+        },
+        "pistas": [
+          {
+            "texto": "Tienes 2 moléculas de O₂ (el coeficiente es 2). Cada molécula de oxígeno tiene 2 átomos (el subíndice es 2).",
+            "orden": 1
+          },
+          {
+            "texto": "Cuentas los átomos multiplicando coeficiente por subíndice: 2 por 2.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "En la combustión 2C₂H₆ + 7O₂ → 4CO₂ + 6H₂O, se quema etano. Necesitan saber cuántos átomos de carbono están en los productos.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "Átomos de C en 4"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "C",
+            "sub": "O"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos átomos de carbono hay en los productos?",
+        "respuesta": {
+          "tecleado": "4",
+          "aceptaTambien": [],
+          "comoSeLee": "cuatro átomos de carbono"
+        },
+        "pistas": [
+          {
+            "texto": "En los productos hay CO₂: el coeficiente es 4 y el subíndice del carbono es 1 (no se escribe, pero está).",
+            "orden": 1
+          },
+          {
+            "texto": "Cada molécula de CO₂ tiene 1 carbono. Con 4 moléculas de CO₂ el total es 4 por 1.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 4,
+        "esInverso": false
+      },
+      {
+        "situacion": "Se quema propano: C₃H₈ + O₂ → 3CO₂ + 4H₂O. Al maestro se le borró cuántas moléculas de oxígeno entraron, pero salieron 3 carbonos.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→ 3CO₂ + 4H₂O"
+          }
+        ],
+        "pregunta": "¿Cuántas moléculas de O₂ reaccionaron?",
+        "respuesta": {
+          "tecleado": "5",
+          "aceptaTambien": [],
+          "comoSeLee": "cinco moléculas de oxígeno"
+        },
+        "pistas": [
+          {
+            "texto": "Aquí ya sabes qué pasó en los productos, pero te falta un dato de los reactivos: el coeficiente de O₂.",
+            "orden": 1
+          },
+          {
+            "texto": "En los productos hay 3 átomos de carbono en total (3CO₂). En los reactivos, 1 molécula de C₃H₈ tiene 3 carbonos. Busca cuántas moléculas de O₂ entraron.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": true
+      },
+      {
+        "situacion": "En la síntesis del amoniaco N₂ + 3H₂ → 2NH₃, se combinan nitrógeno e hidrógeno. Salieron 6 átomos de hidrógeno, pero se perdió cuánto hidrógeno entró.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "H"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "→ 2NH₃"
+          }
+        ],
+        "pregunta": "¿Cuántas moléculas de H₂ reaccionaron?",
+        "respuesta": {
+          "tecleado": "3",
+          "aceptaTambien": [],
+          "comoSeLee": "tres moléculas de hidrógeno"
+        },
+        "pistas": [
+          {
+            "texto": "En los productos hay 2 moléculas de NH₃. Cada una tiene 3 átomos de hidrógeno, así que en total son 6 átomos de H.",
+            "orden": 1
+          },
+          {
+            "texto": "Esos 6 átomos de H vinieron de las moléculas de H₂ que entraron. Si cada H₂ tiene 2 átomos de H, busca cuántas moléculas necesitas.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 28,
+    "materia": "quimica",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien leyó esta ecuación: 2"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "+"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "O",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "→ 2"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "O. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Antes: 2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": ". Después: 2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O."
+          }
+        ],
+        "siLoTocas": "Separa bien los reactivos de los productos. Los 2, 2 y 2 están en sus lugares: coeficiente, subíndice del H, subíndice del O."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "En 2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": ": 2 moléculas. En"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": ": 1 molécula."
+          }
+        ],
+        "siLoTocas": "Nombra cada reactivo con su cantidad de moléculas. Los pasos que vienen usan esa información correctamente."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "En 2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O: coeficiente 2, coeficiente 2 en H, nada en O."
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón confunde lo que es coeficiente y lo que es subíndice."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "En 2"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O: H aparece 2 × 2 = 4 átomos. O aparece 2 × 1 = 2 átomos."
+          }
+        ],
+        "siLoTocas": "La multiplicación es correcta con los números que recibió. Los 4 y 2 vienen del paso anterior."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "2 moléculas de"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "más 1 de"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "producen agua."
+          }
+        ],
+        "siLoTocas": "Lee que la flecha es una reacción, no una igualdad. Sigue el orden que recibió."
+      }
+    ],
+    "pasoMalo": 3,
+    "arrastre": "El paso 4 recibe el 2 confundido del paso 3 y lo usa en la multiplicaci\\u00f3n para contar \\u00e1tomos. El paso 3 dict\\u00f3 que hay 2 en lugar de 1, y el paso 4 lo multiplic\\u00f3: 2 \\u00d7 2 = 4.",
+    "porQue": "¿Qu\\u00e9 hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Llamó subíndice al número que multiplica toda la molécula.",
+        "esElBueno": true,
+        "queRevela": "Es lo que pasó: el 2 del coeficiente lo escribió como subíndice en H, cuando el coeficiente va adelante y multiplica la molécula entera. Uno dice cuántas moléculas; el otro, cuántos átomos de ese elemento hay en cada molécula."
+      },
+      {
+        "texto": "Contó mal los átomos de hidrógeno en cada molécula.",
+        "esElBueno": false,
+        "queRevela": "El paso 2 ya dijo que hay 2 átomos de H en cada H₂. El error no es el conteo dentro de una molécula, es no distinguir que el coeficiente 2 dice cuántas moléculas existen, no cuántos átomos hay en una."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "La ecuación escribe dos 2: uno adelante como coeficiente, otro pegado al H como subíndice. Mira dónde va cada uno en los cinco renglones."
+      },
+      {
+        "orden": 2,
+        "texto": "En un paso se escriben tres posiciones de números: coeficiente, subíndice en el H, subíndice en el O. Una de esas posiciones tiene el número equivocado."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara cómo el paso 2 nombra el coeficiente 2 de 2H₂ con cómo el paso 3 lo escribe. Uno de ellos aparece en el lugar equivocado."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 28,
+    "materia": "quimica",
+    "titulo": "Explícame por qué el 2 adelante y el 2 pegado a la H son cosas distintas.",
+    "aclaracion": "Con tus palabras, sin escribir la fórmula ni copiar la explicación. No hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas. Enfócate en qué cuenta cada número.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El número adelante cuenta moléculas enteras. El número pegado al símbolo cuenta átomos dentro de esa molécula.",
+          "porQueImporta": "Sin esta idea, los dos números parecen lo mismo y alguien que vea 2H₂O cree que hay dos de algo en cada lado. Con la idea clara, ve que son dos moléculas, cada una con dos hidrógenos.",
+          "comoSuenaDicha": "El adelante es cuántas moléculas hay. El pegado es cuántos átomos de ese elemento en cada molécula.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Multiplicar coeficiente por subíndice da el total de átomos. Si no multiplicas, cuentas mal.",
+          "porQueImporta": "Es lo que le cierra la puerta al error: quien multiplica 2 × 2 del ejemplo ve cuatro hidrógenos y no puede confundir el resultado.",
+          "comoSuenaDicha": "Tengo que multiplicarlos para contar cuántos átomos hay en total.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Un número pequeño pegado no quiere decir cuántas moléculas hay, quiere decir cuántos de ese elemento caben en una.",
+          "porQueImporta": "Desactiva la creencia de atrás: corta el contagio entre el coeficiente y el subíndice.",
+          "comoSuenaDicha": "El chiquito no cuenta moléculas, cuenta átomos dentro de la molécula.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque el adelante es el coeficiente y el pegado es el subíndice.",
+          "queLaDelata": "Nombra los términos técnicos pero no dice qué hace cada uno. No explica por qué importa la diferencia, sólo que tienen nombres diferentes.",
+          "queLeFalta": "Que diga cuál de los dos es el que cuenta moléculas y cuál el que cuenta átomos."
+        },
+        {
+          "respuesta": "El adelante va antes y el pegado va después del símbolo.",
+          "queLaDelata": "Describe dónde están, no qué significan. Es una regla de posición, pero no explica por qué la posición importa.",
+          "queLeFalta": "Que diga que están en lugares distintos porque cuentan cosas distintas."
+        },
+        {
+          "respuesta": "Porque el adelante es grande y el pegado es chiquito.",
+          "queLaDelata": "Nombra una característica física de cómo se ven, no lo que representan. El tamaño es una pista, pero no es la razón.",
+          "queLeFalta": "Que diga qué quiere decir cada número: uno cuenta moléculas, el otro cuenta átomos dentro."
+        },
+        {
+          "respuesta": "Porque si los confundes escribes el signo = en vez de →.",
+          "queLaDelata": "Mezcla dos errores distintos. El signo = es otro error, que sale de confundir una ecuación química con una igualdad de matemáticas, no de confundir coeficiente y subíndice.",
+          "queLeFalta": "Que diga qué cuenta cada número en la ecuación que sí escribió bien."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Los dos son números, los dos están adelante de la molécula, así que significan lo mismo.",
+          "seLeContesta": "El pegado no está adelante: está al lado del símbolo del hidrógeno, como si fuera parte de la letra. El adelante del 2, el que va antes de todo, ese sí es el que cuenta moléculas. Mira bien dónde está cada uno en 2H₂O.",
+          "aDondeLoEmpuja": "A que vea que uno está pegado al elemento y el otro va solo adelante, y eso va a llevar a entender que cuentan cosas distintas."
+        },
+        {
+          "siDice": "En 2H₂O hay dos hidrógenos, porque el 2 está ahí.",
+          "seLeContesta": "El 2 que ves pegado al H sí dice que hay dos hidrógenos, pero en una sola molécula de agua. Como hay dos moléculas de agua, el total es dos por dos, igual a cuatro. ¿Cuántos hidrógenos hay en total si son dos moléculas y en cada una hay dos?",
+          "aDondeLoEmpuja": "A que vea que tiene que multiplicar, que es la segunda idea: coeficiente por subíndice da el total."
+        },
+        {
+          "siDice": "Entiendo, nada más me cuesta escribirlo sin usar la palabra coeficiente.",
+          "seLeContesta": "No hace falta usar esa palabra. Dime qué cuenta el número que va antes de todo, y qué cuenta el que va pegado al símbolo. Si eso lo dices, ya está.",
+          "aDondeLoEmpuja": "A que deje ir la palabra técnica y confíe en sus propias palabras: es la mejor forma de saber que entendió."
+        }
+      ],
+      "ejemploQueSiCuenta": "En 2H₂O el 2 de adelante dice que hay dos moléculas de agua. El 2 que está pegado a la H dice que en cada molécula de agua hay dos átomos de hidrógeno. Si confundo los dos números, creo que hay sólo dos hidrógenos en total, cuando en realidad hay cuatro, porque dos moléculas por dos hidrógenos en cada una son cuatro.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras coeficiente ni subíndice: si dice el número de adelante y el número pegado, ya queda claro.",
+        "Que no escriba ningún número ni ninguna fórmula: la idea cuenta sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  }
 }

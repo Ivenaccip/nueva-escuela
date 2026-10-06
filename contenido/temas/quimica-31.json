@@ -160,10 +160,738 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
-  "completar": null,
-  "escalera": null,
-  "error": null,
-  "explicar": null
+  "ver": {
+    "temaNumero": 31,
+    "materia": "quimica",
+    "pregunta": "¿Por qué multiplicas la masa atómica por el subíndice?",
+    "resumen": "Cada subíndice dice cuántos átomos de ese elemento hay en la molécula, y cada uno aporta su masa. Por eso multiplicas la masa atómica por cuántas veces aparece el elemento, no los sumas sin contar.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué se multiplica la masa atómica por el subíndice, no nada más el paso de hacerlo.",
+        "Está en español de México o América Latina. Si es de España se marca y la confianza no puede ser alta.",
+        "Es del nivel de tercero de secundaria: compuestos simples de dos o tres elementos, sin estequiometría compleja.",
+        "Llega a calcular una masa molar con un ejemplo concreto antes del minuto dos, sin presentación larga del canal.",
+        "Distingue entre masa atómica (el valor en la tabla) y número atómico (el número de arriba a la izquierda)."
+      ],
+      "descarta": [
+        "Suma las masas atómicas sin multiplicar por el subíndice: ese es el error típico del tema enseñado como si fuera correcto.",
+        "Toma el número atómico en lugar de la masa atómica de la tabla periódica.",
+        "Es un examen o tarea de otro grado, o se enfoca en nomenclatura sin calcular la masa molar.",
+        "Confunde mol con gramo o no escribe la unidad g/mol en el resultado."
+      ],
+      "consulta": "video explicación \"El mol y la masa molar\" química 3º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "hC-G9mtWLtg",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único de la lista que nombra en el título masa molar y lo vincula con el mol. Explica el razonamiento detrás de la multiplicación: cada átomo suma su masa, así que si hay dos de un elemento, su masa se cuenta dos veces. El canal es de América Latina, cercano al español preferido.",
+      "url": "https://www.youtube.com/watch?v=hC-G9mtWLtg",
+      "titulo": "⚛️ Masa MOLAR y Masa MOLECULAR",
+      "canal": "Centro de Estudios Mayte López",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "jDxs3b0chtA",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Presenta el mol como concepto unificador entre átomos y gramos, y llega rápido al cálculo de masa molar. Es peor que el elegido porque le dedica más tiempo a qué es el mol (6.022 × 10²³) que a por qué se multiplica.",
+        "url": "https://www.youtube.com/watch?v=jDxs3b0chtA",
+        "titulo": "El mol: la unidad clave de la química",
+        "canal": "Bianca Brizuela ",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "ppMxHKeQM1c",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": false,
+        "porQueEste": "Tercer respaldo de emergencia. Toca masa molar y estequiometría pero desde un ángulo de examen, no de explicación conceptual. Le falta claridad en por qué se multiplica y no simplemente suma.",
+        "url": "https://www.youtube.com/watch?v=ppMxHKeQM1c",
+        "titulo": "PAES | Química | Estequiometría: Masa molar; El Mol",
+        "canal": "Puntaje Nacional Chile",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "La URL y el título del elegido salieron literales. El canal es de América Latina, explica por qué se multiplica (no nada más cómo), y el video llega al punto rápido. Hay dos alternativas válidas. No es más alta porque la duración no venía en la lista de candidatos y no se estimó.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 31,
+    "materia": "quimica",
+    "preguntas": [
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es la masa atómica del oxígeno en la tabla periódica?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "8"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Leíste el número atómico, que está arriba a la izquierda del recuadro. La masa atómica es el número de abajo.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "16"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Encontraste la masa atómica en la tabla periódica, que es el peso de un átomo de ese elemento.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "32"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Duplicaste la masa atómica. En la tabla, cada elemento aparece una sola vez con su masa.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "24"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Ese número no aparece en la tabla para el oxígeno. Confundiste el valor de este elemento con otro.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué escribes para encontrar la masa molar de NH"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "3",
+            "sup": "3"
+          },
+          {
+            "tipo": "texto",
+            "valor": "?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "(14 × 1) + (1 × 3)"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Sumaste las masas sin multiplicarlas por los subíndices. El nitrógeno se cuenta una vez y el hidrógeno tres veces.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "14 + 1 + 1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste las masas sin multiplicarlas por los subíndices. Hay tres hidrógenos, así que su masa se cuenta tres veces.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "(14 × 1) + (1 × 3)"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste cada masa atómica por su subíndice y escribiste la operación entre paréntesis.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "14 + 1"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste nada más dos de las masas atómicas. Olvidaste contar dos de los tres hidrógenos.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuánto da (1 × 2) + (32 × 1)?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "34"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste los tres números. Las multiplicaciones se resuelven primero, después se suma.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Encontraste solo el primer producto. Resuelve las dos multiplicaciones antes de sumar.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "34"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Resolviste primero las multiplicaciones y luego sumaste los productos.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "64"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 2 por 32 en vez de resolver cada multiplicación por separado.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es la masa molar de H"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "2",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "S?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "34 g/mol"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste las masas atómicas sin multiplicar el hidrógeno por dos: (1 + 1) + 32 ≠ (1 × 2) + 32.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "35 g/mol"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Falta multiplicar el hidrógeno por su subíndice. Con dos hidrógenos la cuenta es 2 + 32, no 1 + 32.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "66 g/mol"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste cada masa atómica por su subíndice, pero la suma está mal. (1 × 2) + 32 = 2 + 32 = 34, no 66.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "34 g/mol"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste cada masa atómica por su subíndice, resolviste y escribiste el resultado con la unidad g/mol.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 31,
+    "materia": "quimica",
+    "pasoDelCanon": 3,
+    "queFalta": "el resultado de multiplicar cada masa atómica por su subíndice, antes de sumar",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "(1 ×"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": ") + (16 × 1)"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "2",
+      "aceptaTambien": [],
+      "comoSeLee": "dos"
+    },
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Mira la fórmula del agua: H₂O. Ese número pequeño al lado de la H dice cuántas veces la cuentas en la multiplicación."
+      },
+      {
+        "orden": 2,
+        "texto": "Multiplicas cada masa atómica por su subíndice. El H tiene subíndice 2: ¿por cuánto multiplicas 1?"
+      },
+      {
+        "orden": 3,
+        "texto": "La fórmula es H₂O: dos átomos de H y uno de O. El H tiene subíndice 2, así que multiplicas su masa (1) por 2."
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "1",
+      "queSeLeDice": "El H₂ trae un 2 como subíndice. Eso dice que hay dos átomos de H en la molécula de agua, así que la masa del H se multiplica por 2, no por 1. Vuelve al paso 3."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 31,
+    "materia": "quimica",
+    "escalones": [
+      {
+        "situacion": "En el laboratorio necesitas saber cuánto pesa un mol de agua. Buscas en la tabla: H = 1, O = 16.",
+        "expresion": [
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O = (1 × 2) + (16 × 1) ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "g/mol"
+          }
+        ],
+        "pregunta": "¿Cuántos gramos por mol pesa el agua?",
+        "respuesta": {
+          "tecleado": "18",
+          "aceptaTambien": [],
+          "comoSeLee": "dieciocho gramos por mol"
+        },
+        "pistas": [
+          {
+            "texto": "La masa molar es la suma de todas las masas atómicas multiplicadas por sus subíndices. Aquí ya está hecho: multiplica los dos del H y el uno del O, después suma.",
+            "orden": 1
+          },
+          {
+            "texto": "Ya tienes (1 × 2) + (16 × 1). Resuelve las multiplicaciones: el primer paréntesis da 2, el segundo da 16. Después suma esos dos.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "Necesitas calcular la masa molar del gas metano. Buscas en la tabla periódica: C = 12, H = 1.",
+        "expresion": [
+          {
+            "tipo": "simbolo",
+            "valor": "C",
+            "sub": "H",
+            "sup": "4"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= (12 × 1) + (1 × 4) ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "g/mol"
+          }
+        ],
+        "pregunta": "¿Cuál es la masa molar del metano?",
+        "respuesta": {
+          "tecleado": "16",
+          "aceptaTambien": [],
+          "comoSeLee": "dieciséis gramos por mol"
+        },
+        "pistas": [
+          {
+            "texto": "Aquí el carbono no trae número visible en la fórmula, así que su subíndice es 1. El H trae un 4: hay cuatro átomos de hidrógeno.",
+            "orden": 1
+          },
+          {
+            "texto": "Multiplicas la masa del carbono por su subíndice (12 por 1) y la del hidrógeno por el suyo (1 por 4). Eso te da los productos que tienes que sumar.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "En clase calculan la masa molar del amoníaco. En la fórmula: N₃H, con N = 14 y H = 1.",
+        "expresion": [
+          {
+            "tipo": "simbolo",
+            "valor": "N",
+            "sub": "3"
+          },
+          {
+            "tipo": "texto",
+            "valor": "H = (14 × 3) + (1 × 1) ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "g/mol"
+          }
+        ],
+        "pregunta": "¿Cuál es la masa molar del amoníaco?",
+        "respuesta": {
+          "tecleado": "43",
+          "aceptaTambien": [],
+          "comoSeLee": "cuarenta y tres gramos por mol"
+        },
+        "pistas": [
+          {
+            "texto": "El nitrógeno trae un 3, así que multiplicas 14 por 3. El hidrógeno no trae número (subíndice 1), así que multiplicas 1 por 1.",
+            "orden": 1
+          },
+          {
+            "texto": "Resuelve las multiplicaciones: 14 × 3 = 42 y 1 × 1 = 1. Después suma esos dos resultados.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "Apuntaste la fórmula del sulfuro de hidrógeno (H₂S) con H = 1 y S = 32. La masa molar es 34 g/mol. Falta el subíndice del azufre.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "(1 × 2) + (32 ×"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": ") = 34 g/mol"
+          }
+        ],
+        "pregunta": "¿Por cuánto multiplicaste la masa del azufre?",
+        "respuesta": {
+          "tecleado": "1",
+          "aceptaTambien": [],
+          "comoSeLee": "uno"
+        },
+        "pistas": [
+          {
+            "texto": "El resultado es 34. Ya tienes 1 × 2 = 2. Así que (32 × ?) tiene que dar un número que sumado a 2 resulte 34.",
+            "orden": 1
+          },
+          {
+            "texto": "34 menos 2 es 32. Así que necesitas un número que multiplicado por 32 te dé 32. Ese número es el subíndice del azufre.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": true
+      },
+      {
+        "situacion": "El maestro escribió que la masa molar es 18 g/mol y la fórmula es H₂O. Buscas H = 1. Se le borró la masa del oxígeno.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "(1 × 2) + ("
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 1) = 18 g/mol"
+          }
+        ],
+        "pregunta": "¿Cuál es la masa atómica del oxígeno?",
+        "respuesta": {
+          "tecleado": "16",
+          "aceptaTambien": [],
+          "comoSeLee": "dieciséis"
+        },
+        "pistas": [
+          {
+            "texto": "Te dieron el resultado final (18 g/mol) y te falta la masa atómica del oxígeno. Usa el resultado para buscarla.",
+            "orden": 1
+          },
+          {
+            "texto": "1 × 2 = 2. Así que (? × 1) tiene que dar un número que sumado a 2 resulte 18. ¿Cuánto le falta a 2 para llegar a 18?",
+            "orden": 2
+          },
+          {
+            "texto": "Necesitas 16. Ese es el número que multiplicado por 1 te da 16, y sumado a 2 te da 18.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 2,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 31,
+    "materia": "quimica",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien calculó la masa molar del agua:"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "O. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Escribo la fórmula:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O"
+          }
+        ],
+        "siLoTocas": "Ese paso sólo anota la fórmula del agua con sus subíndices. Los dos átomos de hidrógeno y el uno de oxígeno están en su lugar. Anotar bien la fórmula no es el error."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Busco las masas atómicas: H = 1, O = 16"
+          }
+        ],
+        "siLoTocas": "Esos números vienen de la tabla periódica: 1 es la masa del hidrógeno y 16 es la del oxígeno. Ese paso no inventó ninguno, los sacó de la tabla."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Multiplico cada masa por su subíndice: (1 × 1) + (16 × 1)"
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que les pasa sus números a los dos pasos que siguen."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Resuelvo las multiplicaciones: 1 + 16"
+          }
+        ],
+        "siLoTocas": "Las cuentas salen bien: 1 por 1 da 1, y 16 por 1 da 16. Ese paso no inventó nada: sólo operó con los números que le llegaron del paso 3."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Sumo y escribo el resultado: = 17 g/mol"
+          }
+        ],
+        "siLoTocas": "La suma está bien hecha: 1 más 16 da 17. Ese paso sólo sumó lo que recibió del paso anterior y escribió la unidad."
+      }
+    ],
+    "pasoMalo": 3,
+    "arrastre": "El 1 del primer paréntesis del paso 3 debería ser 2, porque el hidrógeno tiene subíndice 2. Por eso el paso 4 suma 1 + 16 en vez de 2 + 16, y el paso 5 llega a 17 g/mol en vez de 18 g/mol. Los dos pasos posteriores están bien hechos con un número malo: hacen bien la suma y bien la anotación de unidad.\">",
+    "porQue": "¿Qué se hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Multiplicó el hidrógeno por 1 aunque su subíndice es 2.",
+        "esElBueno": true,
+        "queRevela": "El renglón escribe (1 × 1) cuando debería escribir (1 × 2). La fórmula del paso 1 dice claro que hay dos átomos de H, y el paso 3 se los cuenta como si fuera uno solo. El subíndice 2 no aparece en ninguna multiplicación."
+      },
+      {
+        "texto": "Invirtió el orden de la multiplicación: escribió masa por subíndice.",
+        "esElBueno": false,
+        "queRevela": "Quien escoge esto piensa que el orden importa. Pero la multiplicación es lo mismo en cualquier orden: 1 × 2 da lo mismo que 2 × 1. El problema real es que aparece un 1 donde debería aparecer un 2, no el orden."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Cuatro de los cinco pasos hacen bien lo que les toca. Uno repite un dato de forma que no suma con los demás."
+      },
+      {
+        "orden": 2,
+        "texto": "La fórmula del paso 1 dice cuántos átomos tiene cada elemento. Busca en el paso 3 si esos números aparecen en las multiplicaciones."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara el 2 del subíndice de la fórmula con los números que se multiplican en el paso 3. Uno de ellos no cuadra."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 31,
+    "materia": "quimica",
+    "titulo": "Explícame por qué cada masa atómica se multiplica por su subíndice y no por el número atómico.",
+    "aclaracion": "Con tus palabras, sin escribir la fórmula ni los números que ya hiciste. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El subíndice dice cuántos átomos de ese elemento hay en la molécula, y cada uno pesa lo que dice la masa atómica, así que el peso total de ese elemento es la masa atómica multiplicada por ese número de átomos.",
+          "porQueImporta": "Sin esta idea, el subíndice es solo un número que aparece en la fórmula, no el factor por el que tienes que multiplicar. Y el número atómico es algo diferente, que no te sirve aquí.",
+          "comoSuenaDicha": "El subíndice dice cuántos átomos hay, y si hay dos de H, cuento dos veces el peso de H.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "El número atómico está arriba a la izquierda en la tabla y dice cuántos protones tiene el núcleo. La masa atómica está abajo y dice cuánto pesa el átomo. No son lo mismo y tienes que usar la masa, no el número.",
+          "porQueImporta": "Quien confunde los dos toma el número del recuadro equivocado y la masa molar sale mal desde el principio. Es el segundo error más común.",
+          "comoSuenaDicha": "El número atómico te dice qué elemento es. La masa atómica te dice cuánto pesa. Para la masa molar necesitas el peso, no qué elemento es.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 1,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque la fórmula de la masa molar dice que hay que multiplicar cada masa atómica por el subíndice.",
+          "queLaDelata": "Nombra la fórmula y se detiene ahí. No explica de dónde sale esa multiplicación ni qué significa el subíndice.",
+          "queLeFalta": "Que diga qué es lo que el subíndice cuenta y por qué eso es lo que multiplica."
+        },
+        {
+          "respuesta": "Porque el subíndice es el número que aparece en la molécula y si no lo multiplicas te olvidas de los átomos que hay.",
+          "queLaDelata": "Dice que hay que acordarse de multiplicar, pero no dice por qué funciona. Es el procedimiento dicho con otras palabras.",
+          "queLeFalta": "Que diga que cada átomo pesa algo y si hay más de uno el peso total es más, ese peso repetido tantas veces como átomos haya."
+        },
+        {
+          "respuesta": "Porque el subíndice y la masa atómica son los dos números que necesitas, así que multiplicas uno por el otro.",
+          "queLaDelata": "Trata el subíndice y la masa atómica como números que están ahí y se multiplican porque sí, sin decir qué mide cada uno ni de dónde sale eso.",
+          "queLeFalta": "Que diga que el subíndice cuenta átomos y la masa atómica pesa átomos, y juntos dan el peso de todos los átomos de ese elemento."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Yo sumé las masas atómicas directas, sin multiplicar por el subíndice, y me salió 17.",
+          "seLeContesta": "Cierto que sale 17. Pero mira el agua: el H aparece dos veces en la fórmula. Si cada H pesa 1 y hay dos, ¿cuánto pesan los dos juntos? Ahora suma esos dos más el O.",
+          "aDondeLoEmpuja": "A ver que el subíndice cuenta átomos y si hay más de uno su peso se repite, que es la idea principal."
+        },
+        {
+          "siDice": "Usé el número atómico de la tabla en lugar de la masa atómica y por eso me salió mal.",
+          "seLeContesta": "Exacto, eso fue. En la tabla periódica cada elemento trae dos números: el que está arriba es el número atómico, y el que está debajo, más grande, es la masa atómica. Aquí necesitas el debajo.",
+          "aDondeLoEmpuja": "A saber cuál de los dos números de la tabla es el que sirve, que es la segunda idea."
+        },
+        {
+          "siDice": "Entendí, pero no sé cómo explicarlo sin repetir lo que hice en la cuenta.",
+          "seLeContesta": "Entonces contesta esto sin hacer la cuenta: si una molécula tiene dos átomos de hidrógeno, ¿el hidrógeno pesa más o lo mismo que si tuviera uno solo?",
+          "aDondeLoEmpuja": "A que vea que la idea ya la tiene y lo único que falta es decirla sin números."
+        }
+      ],
+      "ejemploQueSiCuenta": "El subíndice dice cuántos átomos iguales hay en la molécula. El agua tiene dos hidrógenos, así que si un hidrógeno pesa 1, dos hidrógenos pesan el doble. Eso es lo que hace la multiplicación: contar dos veces el peso del hidrógeno.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba en minúsculas.",
+        "Que no use las palabras subíndice, masa atómica ni número atómico: si dice cuántos átomos hay y cuánto pesan, ya dijo la idea.",
+        "Que no escriba ningún número ni ninguna fórmula química."
+      ]
+    },
+    "noSePuede": null
+  }
 }

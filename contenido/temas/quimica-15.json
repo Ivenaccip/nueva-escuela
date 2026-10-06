@@ -551,7 +551,49 @@
     ],
     "noSePuede": null
   },
-  "completar": null,
+  "completar": {
+    "temaNumero": 15,
+    "materia": "quimica",
+    "pasoDelCanon": 2,
+    "queFalta": "el número de electrones que quedan en el ion cloro",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "Cl (neutro): 17 electrones. Si gana 1 e⁻, le quedan"
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "electrones"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "18",
+      "aceptaTambien": [],
+      "comoSeLee": "dieciocho"
+    },
+    "pistas": [
+      {
+        "texto": "El cloro neutro tiene 17 electrones. Si gana uno, suma.",
+        "orden": 1
+      },
+      {
+        "texto": "Cuentas los electrones que quedan después de ganar o perder. El átomo neutro tiene tantos electrones como protones: 17. Entonces sumas.",
+        "orden": 2
+      },
+      {
+        "texto": "17 electrones que tenía, más 1 que gana. El resultado es lo que va en el hueco.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "17",
+      "queSeLeDice": "17 es lo que el cloro tenía neutro. Pero el enunciado dice que gana un electrón. Cuando sumas, no te quedas con lo que tenías. Vuelve al paso 2 y cuenta los electrones después de ganar uno."
+    },
+    "noSePuede": null
+  },
   "escalera": {
     "temaNumero": 15,
     "materia": "quimica",

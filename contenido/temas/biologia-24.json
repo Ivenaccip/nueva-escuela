@@ -178,7 +178,7 @@
     "temaNumero": 24,
     "materia": "biologia",
     "pregunta": "¿Por qué el siguiente embarazo no «debe» cumplir la proporción 3:1?",
-    "resumen": "La proporción 3:1 no es una cuota que se reparte entre los hijos: es la probabilidad que se repite en cada embarazo, sin importar lo que pasó antes. Cada hijo es un nuevo sorteo del cuadro de Punnett.",
+    "resumen": "La proporción 3:1 no es una cuota que se reparte entre los hijos: lo que se repite igual en cada embarazo es la probabilidad (75% sano, 25% enfermo). Cada hijo es un nuevo sorteo del cuadro de Punnett.",
     "busqueda": {
       "criterios": [
         "Explica por qué cada embarazo es independiente y la proporción 3:1 es un promedio, no una garantía de que después de tres sanos debe venir uno enfermo.",
@@ -279,7 +279,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Puede que restaste los enfermos de un total que no es cuatro, o contaste sólo un tipo de heterocigoto. Las casillas distintas que salen sanas son tres.",
+            "queRevela": "Quizá contaste sólo los genotipos distintos (AA y Aa), pero la pregunta es por casillas. Las casillas sanas son AA, Aa y Aa: tres.",
             "letra": "C"
           },
           {
@@ -328,7 +328,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Invertiste numerador y denominador. El numerador es cuántos sanos; el denominador es el total de casillas.",
+            "queRevela": "Copiaste la proporción 3:1 como fracción (3 sanos entre 1 enfermo). El denominador debe ser el total de casillas, cuatro, no sólo las enfermas.",
             "letra": "B"
           },
           {
@@ -394,7 +394,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Dividiste en vez de multiplicar, o dejaste el cero de adelante sin contar. La multiplicación por cien agranda el resultado.",
+            "queRevela": "Tomaste el numerador y le pusiste el signo de porcentaje, sin multiplicar la fracción por cien. Un cuarto de cien es veinticinco.",
             "letra": "B"
           },
           {
@@ -418,7 +418,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Escribiste el cien sin cambios. Cuando multiplicas una fracción por cien obtienes un porcentaje menor a cien, no cien.",
+            "queRevela": "Escribiste el cien sin cambios. Cuando multiplicas una fracción menor que 1 por cien obtienes menos de cien, no cien.",
             "letra": "D"
           }
         ]
@@ -428,7 +428,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Nacieron tres hijos sanos de una pareja Aa × Aa. ¿Cuál es la probabilidad de que el cuarto sea enfermo?"
+            "valor": "Nacieron tres hijos sanos de una pareja Aa × Aa con enfermedad recesiva (aa). ¿Cuál es la probabilidad de que el cuarto sea enfermo?"
           }
         ],
         "opciones": [
@@ -465,7 +465,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Si crees que es imposible estás diciendo que la proporción garantiza tres sanos. La probabilidad es veinticinco por ciento para cada hijo, sin excepción.",
+            "queRevela": "Si crees que es imposible, estás pensando que los tres sanos de antes cierran la puerta al enfermo. El cuadro no se acuerda de ellos: la probabilidad es veinticinco por ciento en cada hijo, sin excepción.",
             "letra": "C"
           },
           {
@@ -536,7 +536,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Con los datos que tienes ya es suficiente: nueve sanos de diez es posible, aunque raro. La proporción no promete un resultado exacto en cada familia.",
+            "queRevela": "Con los datos que tienes ya basta: nueve sanos de diez es un resultado perfectamente posible; pasa en cerca de una familia de cada cinco. La proporción no promete un resultado exacto en cada familia.",
             "letra": "D"
           }
         ]
@@ -559,14 +559,12 @@
       },
       {
         "tipo": "texto",
-        "valor": "% sano, 25% enfermo."
+        "valor": "% sano."
       }
     ],
     "respuesta": {
       "tecleado": "75",
-      "aceptaTambien": [
-        "3/4"
-      ],
+      "aceptaTambien": [],
       "comoSeLee": "setenta y cinco por ciento"
     },
     "pistas": [
@@ -575,17 +573,17 @@
         "orden": 1
       },
       {
-        "texto": "Tomas la fracción de sanos que sacaste en el paso 2 y la multiplicas por 100.",
+        "texto": "Tomas la fracción de sanos que ya escribiste y la multiplicas por 100.",
         "orden": 2
       },
       {
-        "texto": "La fracción de sanos es 3 de 4. Cuando multiplicas 3/4 por 100, ¿qué porcentaje obtienes?",
+        "texto": "La fracción de sanos es tres de cuatro. ¿Qué porcentaje obtienes al multiplicarla por 100?",
         "orden": 3
       }
     ],
     "siTecleaElError": {
       "tecleado": "25",
-      "queSeLeDice": "25% es la probabilidad del resultado enfermo. Cada embarazo es un nuevo sorteo con el mismo cuadro de Punnett: 3 casillas sanas y 1 enferma. La probabilidad de sano es 3 de 4, no 1 de 4. Vuelve al paso 3."
+      "queSeLeDice": "25% es la probabilidad del resultado enfermo, no la del sano. Cada embarazo es un nuevo sorteo con el mismo cuadro de Punnett: revisa qué fracción de sus casillas es sana y vuelve a pasarla a porcentaje."
     },
     "noSePuede": null
   },
@@ -594,11 +592,11 @@
     "materia": "biologia",
     "escalones": [
       {
-        "situacion": "Dos padres heterocigotos (Aa) cargan una enfermedad recesiva. El cuadro de Punnett da 3 hijos sanos y 1 enfermo.",
+        "situacion": "Dos padres heterocigotos (Aa) cargan una enfermedad recesiva. En el cuadro de Punnett, 3 casillas dan hijo sano y 1 da hijo enfermo.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Proporción 3:1 ="
+            "valor": "Probabilidad de sano:"
           },
           {
             "tipo": "fraccion",
@@ -611,9 +609,13 @@
           },
           {
             "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
           }
         ],
-        "pregunta": "¿Cuánto es 3/4 en porcentaje?",
+        "pregunta": "¿Cuánto es tres cuartos en porcentaje?",
         "respuesta": {
           "tecleado": "75",
           "aceptaTambien": [],
@@ -622,18 +624,18 @@
         "pistas": [
           {
             "orden": 1,
-            "texto": "La fracción 3/4 es lo que sale cuando cuentas los resultados del cuadro de Punnett. Ahora la conviertes a porcentaje."
+            "texto": "Tres cuartos es lo que sale cuando cuentas las casillas del cuadro de Punnett. Ahora lo conviertes a porcentaje."
           },
           {
             "orden": 2,
-            "texto": "Multiplicas la fracción por 100: 3/4 × 100."
+            "texto": "Multiplicas la fracción por 100: tres cuartos por cien."
           }
         ],
         "pasoDelCanon": 3,
         "esInverso": false
       },
       {
-        "situacion": "En otro cruzamiento Aa × Aa aparece la proporción 1:2:1 (1 homocigoto dominante, 2 heterocigotos, 1 homocigoto recesivo).",
+        "situacion": "En el mismo cruzamiento Aa × Aa, los genotipos salen en proporción 1:2:1 (1 homocigoto dominante, 2 heterocigotos, 1 recesivo).",
         "expresion": [
           {
             "tipo": "texto",
@@ -650,9 +652,13 @@
           },
           {
             "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
           }
         ],
-        "pregunta": "¿Cuánto es 1/4 en porcentaje?",
+        "pregunta": "¿Cuánto es un cuarto en porcentaje?",
         "respuesta": {
           "tecleado": "25",
           "aceptaTambien": [],
@@ -665,33 +671,28 @@
           },
           {
             "orden": 2,
-            "texto": "Multiplicas 1/4 por 100 para pasarlo a porcentaje."
+            "texto": "Multiplicas un cuarto por 100 para pasarlo a porcentaje."
           }
         ],
         "pasoDelCanon": 3,
         "esInverso": false
       },
       {
-        "situacion": "Una pareja heterocigota (Aa) ya tiene dos hijos sanos. Les preguntan cuál es la probabilidad de que el tercero sea sano.",
+        "situacion": "Una pareja Aa × Aa, con enfermedad recesiva (aa), ya tiene dos hijos sanos. Les preguntan por la probabilidad de que el tercero sea sano.",
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Los dos hijos previos no cambian nada. Probabilidad:"
-          },
-          {
-            "tipo": "fraccion",
-            "arriba": "3",
-            "abajo": "4"
-          },
-          {
-            "tipo": "texto",
-            "valor": "="
+            "valor": "Probabilidad de que el tercero sea sano:"
           },
           {
             "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
           }
         ],
-        "pregunta": "¿Cuánto es 3/4 en porcentaje para el tercero?",
+        "pregunta": "¿Qué porcentaje de probabilidad tiene el tercer hijo de ser sano?",
         "respuesta": {
           "tecleado": "75",
           "aceptaTambien": [],
@@ -704,18 +705,18 @@
           },
           {
             "orden": 2,
-            "texto": "La proporción 3:1 es un promedio que se repite en cada hijo, no un cupo que se agota."
+            "texto": "Es la misma probabilidad que para el primer hijo: no es un cupo que se agota."
           },
           {
             "orden": 3,
-            "texto": "Multiplicas 3/4 por 100 igual que en el escalón 1."
+            "texto": "Es la misma cuenta que con el primer hijo: casillas sanas sobre casillas totales, multiplicado por cien."
           }
         ],
         "pasoDelCanon": 4,
         "esInverso": false
       },
       {
-        "situacion": "Un genetista apunta que en una familia heterocigota (Aa) el 50% de los hijos llevan el alelo recesivo, pero se le perdió qué fracción es eso.",
+        "situacion": "Un genetista apunta que, en un cruzamiento Aa × Aa, el 50% de los hijos son heterocigotos (Aa), pero perdió qué fracción es eso.",
         "expresion": [
           {
             "tipo": "hueco"
@@ -729,7 +730,8 @@
         "respuesta": {
           "tecleado": "1/2",
           "aceptaTambien": [
-            "2/4"
+            "2/4",
+            "50/100"
           ],
           "comoSeLee": "uno entre dos"
         },
@@ -740,19 +742,23 @@
           },
           {
             "orden": 2,
-            "texto": "Piensa: ¿qué fracción multiplicada por 100 da 50? Busca el número que representa la mitad del total de casillas."
+            "texto": "Piensa: ¿qué fracción multiplicada por 100 da 50? Busca qué parte del total de casillas corresponde a ese 50%."
           },
           {
             "orden": 3,
-            "texto": "Un cuadro de Punnett siempre tiene 4 casillas. La mitad es 2, así que la fracción es 2/4, que se simplifica a 1/2."
+            "texto": "En el cuadro de Punnett hay 4 casillas. ¿Cuántas casillas tienen el genotipo Aa? Escribe esa cantidad sobre 4."
           }
         ],
         "pasoDelCanon": 2,
         "esInverso": true
       },
       {
-        "situacion": "En otra familia heterocigota (Aa), el 75% de los embarazos predichos resultan en hijo sano, pero falta cuántos de 8 planeados serán sanos.",
+        "situacion": "Otra familia Aa × Aa planea 8 embarazos. Cada uno tiene 75% de probabilidad de hijo sano y quieren saber cuántos sanos esperar.",
         "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "En promedio:"
+          },
           {
             "tipo": "fraccion",
             "arriba": "3",
@@ -766,7 +772,7 @@
             "tipo": "hueco"
           }
         ],
-        "pregunta": "¿Cuántos de 8 embarazos se espera que sean sanos?",
+        "pregunta": "¿Cuántos de 8 embarazos se espera que sean sanos, en promedio?",
         "respuesta": {
           "tecleado": "6",
           "aceptaTambien": [],
@@ -775,15 +781,15 @@
         "pistas": [
           {
             "orden": 1,
-            "texto": "El 75% de probabilidad se aplica a cada embarazo, pero aquí tienes varios. Necesitas contar cuántos de los 8 serán sanos en promedio."
+            "texto": "El 75% vale para cada embarazo, y aquí hay varios. Se pide el promedio: lo que se espera al repetir, no un resultado seguro en una sola familia."
           },
           {
             "orden": 2,
-            "texto": "Multiplicas la fracción 3/4 por el número de embarazos: 3/4 × 8."
+            "texto": "Multiplicas la fracción por el número de embarazos."
           },
           {
             "orden": 3,
-            "texto": "3 por 8 es 24, y 24 dividido entre 4 es 6."
+            "texto": "Primero multiplicas el numerador por el número de embarazos; luego repartes ese resultado entre el denominador."
           }
         ],
         "pasoDelCanon": 3,
@@ -806,7 +812,7 @@
       },
       {
         "tipo": "texto",
-        "valor": "de una enfermedad recesiva (aa): 3 sanos : 1 enfermo. Hay exactamente un paso mal. Tócalo."
+        "valor": "de una enfermedad recesiva (aa): 3 sanos : 1 enfermo. Hay un paso donde empieza el error. Tócalo."
       }
     ],
     "pasos": [
@@ -876,7 +882,11 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Después de 3 sanos, el 4.º debe ser enfermo para cumplir 3:1."
+            "valor": "Sigo con otro hijo:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "después de 3 sanos, el 4.º debe ser enfermo para cumplir 3:1."
           }
         ],
         "siLoTocas": "Ahí está el error. Ese renglón es el que los pasos siguientes repiten."
@@ -886,14 +896,18 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "El siguiente embarazo es seguro que sea enfermo."
+            "valor": "Concluyo:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "el siguiente embarazo es seguro que sea enfermo."
           }
         ],
-        "siLoTocas": "Ese paso no inventó esa conclusión. La recibió del paso 4. Está mal hecho, pero con un número malo que le llegó."
+        "siLoTocas": "Esa conclusión es coherente con lo que le llegó: no inventa nada, sólo lo sigue. Busca dónde se decidió algo que no sale de contar las casillas del cuadro de Punnett."
       }
     ],
     "pasoMalo": 4,
-    "arrastre": "La creencia de que el cuarto embarazo es seguro enfermo viene del paso 4. El paso 5 la repite como conclusión. Si no ves el error en los números, el paso 4 se caza porque es el único que habla de 'forzosamente' o 'debe ser', cuando los otros cuatro hablan de fracciones, porcentajes o probabilidades.",
+    "arrastre": "El paso 5 repite como conclusión lo que decidió el paso 4: de 'el 4.º debe ser enfermo' sale 'seguro que sea enfermo'. Los pasos 1 a 3 sólo cuentan casillas y calculan con lo que cuentan; el 4 es el primero que afirma lo que 'debe' pasar sin que salga de ninguna cuenta.",
     "porQue": "¿Qué está mal en ese paso?",
     "motivos": [
       {
@@ -902,23 +916,23 @@
         "queRevela": "Es eso. El renglón dice 'debe ser enfermo' como si los embarazos fueran casillas que se van llenando. Pero la proporción 3:1 es un promedio que se repite en cada embarazo nuevo, no un cupo de 3 sanos por familia. El cuarto embarazo tiene las mismas probabilidades que el primero."
       },
       {
-        "texto": "Confunde la proporción 3:1 con el número de hijos.",
+        "texto": "Cree que una racha de hijos sanos hace más probable otro sano.",
         "esElBueno": false,
-        "queRevela": "La proporción sí se escribe 3:1, pero eso no significa que en cada 4 hijos exactamente 3 sean sanos. Es el promedio de muchas familias. Una familia de 4 hijos puede tener 0, 1, 2, 3 o 4 sanos. El paso 4 sí leyó los números 3 y 1, así que no es eso."
+        "queRevela": "Ése es otro error de independencia, pero al revés: el renglón no dice que el siguiente vaya a ser sano, dice que debe ser enfermo, como si la proporción fuera un cupo que se llena. Eso es justo lo que este motivo no explica."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Los cuatro primeros pasos trabajan con números y probabilidades. El paso malo cambia a hablar de lo que 'debe' pasar. Ese cambio de lenguaje es la pista."
+        "texto": "Cada renglón afirma algo. Pregúntate cuáles salen de contar casillas del cuadro de Punnett y cuál no."
       },
       {
         "orden": 2,
-        "texto": "Compara lo que dicen los pasos 3 y 4. El paso 3 termina en porcentaje y probabilidad. El paso 4 dice que algo es seguro. Esos lenguajes no van juntos."
+        "texto": "Los renglones que sólo cuentan y calculan están bien. Fíjate en los que hablan de lo que 'debe' o es 'seguro' que pase."
       },
       {
         "orden": 3,
-        "texto": "La proporción 3:1 vale para cada embarazo por igual. Si te crees que el cuarto debe ser enfermo, estás sumando: 3 + 1 = 4. Eso no es cómo funciona la herencia."
+        "texto": "Pregúntate si el cuadro de Punnett de un embarazo nuevo sabe algo de los hijos que ya nacieron. Uno de esos renglones lo da por hecho primero."
       }
     ],
     "noSePuede": null
@@ -959,8 +973,8 @@
         },
         {
           "respuesta": "Porque es un evento independiente, cada embarazo es separado.",
-          "queLaDelata": "Usa la palabra correcta del vocabulario pero no dice qué significa para este caso. Es como escribir la fórmula sin hacer la cuenta.",
-          "queLeFalta": "Que diga qué es lo que no cambia de un embarazo al otro: el cuadro de Punnett o los papás."
+          "queLaDelata": "Usa la palabra correcta del vocabulario y dice que cada embarazo es «separado», pero se queda en la etiqueta: no dice qué consecuencia tiene, o sea que lo que pasó antes no cambia el siguiente. Es como escribir la fórmula sin hacer la cuenta.",
+          "queLeFalta": "Que diga qué es lo que no cambia de un embarazo al otro (el cuadro de Punnett o los papás) y que por eso lo anterior no afecta al siguiente."
         },
         {
           "respuesta": "Porque así me lo dijeron y así viene en el procedimiento.",
@@ -968,9 +982,9 @@
           "queLeFalta": "Que diga qué es lo que se repite en cada embarazo: las casillas del cuadro, los papás o la cuenta de probabilidad."
         },
         {
-          "respuesta": "Porque aunque haya nacido un hijo enfermo, los papás siguen siendo Aa.",
-          "queLaDelata": "Casi tiene la idea pero se queda a mitad de camino. Dice que los papás no cambian, pero no conecta eso con que el cuadro de Punnett tampoco cambia ni con que por eso la probabilidad se repite.",
-          "queLeFalta": "Que diga que si el cuadro no cambia, las casillas y la probabilidad siguen siendo las mismas."
+          "respuesta": "Porque los papás son los mismos.",
+          "queLaDelata": "Dice que los papás no cambian, pero se queda ahí: no conecta eso con que el cuadro de Punnett tampoco cambia ni con que por eso la probabilidad se repite.",
+          "queLeFalta": "Que diga que si los papás son los mismos, el cuadro de Punnett no cambia y la probabilidad se repite en cada embarazo."
         }
       ],
       "contraargumentos": [
@@ -993,7 +1007,7 @@
       "ejemploQueSiCuenta": "Cada embarazo es como un nuevo sorteo con el mismo cuadro de Punnett. Los papás siguen siendo Aa, así que el cuadro sigue siendo el mismo con las cuatro casillas: tres dan hijo sano y una da enfermo. Por eso el siguiente embarazo tiene 75% de probabilidad de ser sano, igual que el primero. No importa si ya nacieron tres sanos: el siguiente empieza de cero.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
-        "Que no use la palabra evento independiente si no la conoce: si dice que cada embarazo es nuevo y el anterior no lo afecta, ya está.",
+        "Que no use la palabra evento independiente si no la conoce: si dice con sus palabras que lo que pasó antes no cambia el siguiente embarazo, eso ya es la idea y cuenta.",
         "Que no escriba números ni fracciones: la idea cuenta sin hacer la cuenta."
       ]
     },
