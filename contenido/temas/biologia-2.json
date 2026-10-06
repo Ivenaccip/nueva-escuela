@@ -70,11 +70,11 @@
       ]
     },
     "ejemplo": {
-      "deQueVa": "un pedacito de piel observado al microscopio",
+      "deQueVa": "un pedacito de piel de elefante observado al microscopio",
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "¿Cuántas células caben en un cuadrado de 2 mm × 2 mm si cada célula mide 20 μm?"
+          "valor": "2 mm × 2 mm"
         }
       ],
       "resultado": [
@@ -92,7 +92,7 @@
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "Una célula de la piel de un elefante mide 100 μm."
+          "valor": "Una célula de la piel mide 100 μm."
         }
       ],
       "resultadoMalo": [

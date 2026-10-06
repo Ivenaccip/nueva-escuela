@@ -167,7 +167,357 @@
     "titulo": "Concentración en porcentaje en masa"
   },
   "ver": null,
-  "contacto": null,
+  "contacto": {
+    "materia": "quimica",
+    "temaNumero": 11,
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Tienes 15 g de sal disueltos en 90 g de agua. ¿Cuál es el primer dato que anotas?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Masa del soluto = 15 g"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Anotaste primero la masa de lo que se disuelve, el soluto, porque eso va en el numerador.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Masa del disolvente = 90 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Anotaste el disolvente. Es importante, pero es el segundo dato: primero vas la masa del soluto.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Masa de la disolución = 105 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Ya sumaste. Es lo que va en el denominador, pero eso es el segundo paso.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Porcentaje = 15 %"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Saltaste directamente al resultado. El procedimiento comienza anotando los gramos del soluto.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Soluto: 12 g. Disolvente: 60 g. ¿Cuál es la masa de la disolución?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "60 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Diste solo el disolvente. La disolución es soluto más disolvente: todo lo que queda al mezclar.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "72 g"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste los dos: 12 + 60 = 72 g. Esa suma es la masa de la disolución completa.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "48 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste en vez de sumar. La disolución no es lo que sobra del disolvente; es todo junto.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste el soluto entre el disolvente. Eso no te da la disolución; solo te dice una razón entre dos.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Soluto: 8 g. Disolvente: 72 g. ¿Cuál es la fracción que escribes?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": "masa del soluto",
+                "abajo": "masa del disolvente"
+              },
+              {
+                "tipo": "texto",
+                "valor": "="
+              },
+              {
+                "tipo": "fraccion",
+                "arriba": "8 g",
+                "abajo": "72 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Pusiste el disolvente abajo porque es el medio donde se disuelve. Lo que va abajo es la disolución completa, que es soluto más disolvente.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": "masa de la disolución",
+                "abajo": "masa del soluto"
+              },
+              {
+                "tipo": "texto",
+                "valor": "="
+              },
+              {
+                "tipo": "fraccion",
+                "arriba": "80 g",
+                "abajo": "8 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Invertiste la fracción. El soluto va arriba porque es lo que pregunta el porcentaje; la disolución va abajo.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": "masa del soluto",
+                "abajo": "masa de la disolución"
+              },
+              {
+                "tipo": "texto",
+                "valor": "="
+              },
+              {
+                "tipo": "fraccion",
+                "arriba": "8 g",
+                "abajo": "80 g"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste arriba el soluto y abajo la disolución completa: 8 g sobre 80 g, que es lo que pregunta el porcentaje.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": "masa del soluto",
+                "abajo": "masa de la disolución"
+              },
+              {
+                "tipo": "texto",
+                "valor": "="
+              },
+              {
+                "tipo": "fraccion",
+                "arriba": "8",
+                "abajo": "80"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La fracción está bien armada, pero le quitaste las unidades. Los gramos se quedan para ver de dónde vienen.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Hiciste la división:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": "25 g",
+            "abajo": "125 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "¿Qué decimal obtienes?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste 25 entre 125 y obtuviste 0.2. Ese decimal es el paso anterior a multiplicar por 100.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Ese resultado sale de dividir entre la mitad. Revisa tu cuenta: 25 ÷ 125 no da 0.5.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste al revés, el denominador entre el numerador, o simplemente restaste. Cuidado: arriba entre abajo.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "20"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste por 100 antes de hacer la división. Primero divide, luego multiplica.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Tienes el decimal 0.15 de la división. ¿Cuál es el porcentaje?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "15%"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 0.15 × 100 = 15 y le pegaste el signo %. Ese es el porcentaje en masa.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.15%"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Le pegaste el signo % pero no multiplicaste por 100. El porcentaje es cuántas partes de cien.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "1.5%"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste por 10 en vez de por 100. El porcentaje necesita dos ceros: multiplica por cien.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "85%"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste de 100. El porcentaje de soluto es lo que da la división, no lo que falta para llenar.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": null,
   "escalera": null,
   "error": null,

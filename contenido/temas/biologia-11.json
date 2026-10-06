@@ -146,7 +146,7 @@
     },
     "erroresSecundarios": [
       {
-        "enUnaFrase": "Cree que la sangre lleva aire, no oxígeno disuelto.",
+        "enUnaFrase": "Cree que la sangre lleva aire, no oxígeno unido a la hemoglobina.",
         "creenciaDeAtras": "confunde el aire que respira con el oxígeno que viaja en la sangre, como si la sangre tuviera burbujas de aire en lugar de oxígeno unido a la hemoglobina"
       },
       {

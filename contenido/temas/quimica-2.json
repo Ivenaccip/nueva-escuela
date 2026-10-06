@@ -29,7 +29,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Volumen = 200 cm"
+              "valor": "Volumen = 200"
             },
             {
               "tipo": "simbolo",
@@ -130,7 +130,7 @@
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "Masa = 140 g, volumen = 200 cm"
+          "valor": "Masa = 140 g, volumen = 200"
         },
         {
           "tipo": "simbolo",

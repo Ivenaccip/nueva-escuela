@@ -96,13 +96,13 @@
       "resultadoEnPalabras": "dieciocho gramos por mol"
     },
     "error": {
-      "enUnaFrase": "Sumas las masas atómicas sin multiplicarlas por el subíndice.",
+      "enUnaFrase": "Sumas las masas atómicas sin multiplicarlas por el subíndice: cada elemento se cuenta una sola vez, como si todos los subíndices fueran 1.",
       "creenciaDeAtras": "cree que el subíndice sólo indica la composición, no que el elemento se cuente varias veces en la multiplicación",
       "pasoQueCorrompe": 3,
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "1 + 16"
+          "valor": "(1 × 1) + (16 × 1)"
         }
       ],
       "resultadoMalo": [
@@ -111,7 +111,7 @@
           "valor": "= 17 g/mol"
         }
       ],
-      "comoSeCacha": "Cuenta los átomos de la fórmula: H₂O tiene tres (dos de H y uno de O), pero 1 + 16 sólo cuenta uno de cada elemento. Si el 2 del subíndice no aparece en la cuenta, el hidrógeno se contó una sola vez."
+      "comoSeCacha": "Cuenta los átomos de la fórmula: H₂O tiene tres (dos de H y uno de O), pero (1 × 1) + (16 × 1) sólo cuenta dos. El H se multiplicó por 1 aunque su subíndice es 2."
     },
     "erroresSecundarios": [
       {
