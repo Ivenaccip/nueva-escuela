@@ -40,14 +40,18 @@
         },
         {
           "numero": 3,
-          "queSeHace": "Lees el número de masa A en la tabla periódica: ese número dice cuántas partículas tienen carga o neutras hay en el núcleo.",
+          "queSeHace": "Lees la masa atómica del elemento en la tabla (sodio: 22.99) y la redondeas al entero más cercano: ese entero es el número de masa A.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "A = 23"
+              "valor": "22.99 ≈ 23"
+            },
+            {
+              "tipo": "texto",
+              "valor": ", A = 23"
             }
           ],
-          "porQue": "El número de masa es la suma de todos los nucleones del átomo: protones más neutrones."
+          "porQue": "El número de masa es la suma de todos los nucleones del átomo: protones más neutrones. Por eso es un entero, y la masa de la tabla, que trae decimales, se redondea para encontrarlo."
         },
         {
           "numero": 4,
@@ -74,7 +78,7 @@
       ]
     },
     "ejemplo": {
-      "deQueVa": "leer los números de un átomo de sodio en la tabla periódica y encontrar cuántos neutrones tiene",
+      "deQueVa": "leer el número atómico y la masa atómica de un átomo de sodio en la tabla periódica y encontrar cuántos neutrones tiene",
       "planteamiento": [
         {
           "tipo": "texto",
@@ -92,11 +96,11 @@
     "error": {
       "enUnaFrase": "Confunde el número de masa con el número de neutrones, sin restar el número atómico.",
       "creenciaDeAtras": "cree que A es directamente el número de neutrones, o que el número que se ve grande en la tabla es siempre el de neutrones",
-      "pasoQueCorrompe": 5,
+      "pasoQueCorrompe": 4,
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "Neutrones = 23"
+          "valor": "A − Z = 23 − 0 = 23"
         }
       ],
       "resultadoMalo": [
@@ -105,7 +109,7 @@
           "valor": "Neutrones = 23"
         }
       ],
-      "comoSeCacha": "El resultado (23) es igual al número de masa que se vio al principio, no es el resultado de restar nada. El paso 4 desapareció: no hay resta escrita."
+      "comoSeCacha": "La resta no quitó ningún protón y el resultado (23) es igual a A. Comprobación: protones + neutrones debe dar A, pero 11 + 23 = 34 y A = 23: ese núcleo tendría más partículas de las que indica A."
     },
     "erroresSecundarios": [
       {
@@ -116,13 +120,13 @@
     "vocabulario": [
       {
         "palabra": "número atómico",
-        "queEs": "El número de protones que tiene un átomo. Es el que aparece abajo en el símbolo del elemento, y define qué elemento es.",
-        "noEsLoMismoQue": "número de masa, que es el de arriba y consta de protones más neutrones"
+        "queEs": "El número de protones que tiene un átomo; define qué elemento es. En la casilla de la tabla periódica es el entero que va arriba del símbolo.",
+        "noEsLoMismoQue": "número de masa, que cuenta protones más neutrones y nunca es menor que el atómico (A ≥ Z)"
       },
       {
         "palabra": "número de masa",
-        "queEs": "La cantidad total de protones más neutrones que hay en el núcleo. Es el que aparece arriba en el símbolo del elemento.",
-        "noEsLoMismoQue": "número atómico, que solo cuenta protones"
+        "queEs": "La cantidad total de protones más neutrones que hay en el núcleo. En la tabla no viene tal cual: es la masa atómica de la casilla (con decimales) redondeada al entero más cercano.",
+        "noEsLoMismoQue": "número atómico, que solo cuenta protones; ni la masa atómica de la tabla, que trae decimales"
       },
       {
         "palabra": "protones",
@@ -141,7 +145,7 @@
       }
     ],
     "cotas": {
-      "numeros": "números atómicos de 1 a 20; números de masa entre 1 y 50; resultados de neutrones entre 0 y 30, todos enteros",
+      "numeros": "números atómicos de 1 a 20; masa atómica real de la tabla (Na 22.99, Cl 35.45) redondeada al entero A, entre 1 y 50; resultados de neutrones enteros entre 0 y 30",
       "unidades": [],
       "simbolos": [
         {
@@ -155,6 +159,10 @@
         {
           "tipo": "texto",
           "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "≈"
         }
       ]
     },

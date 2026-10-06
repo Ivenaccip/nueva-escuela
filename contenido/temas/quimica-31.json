@@ -26,7 +26,7 @@
               "valor": "O"
             }
           ],
-          "porQue": "Los subíndices te dicen cuántos átomos de cada elemento tiene la molécula. Sin ellos no sabes qué multiplicar ni por cuánto."
+          "porQue": "Los subíndices te dicen cuántos átomos de cada elemento tiene la molécula, y si un símbolo no trae número, su subíndice es 1. Sin ellos no sabes qué multiplicar ni por cuánto."
         },
         {
           "numero": 2,
@@ -45,10 +45,10 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "(1 × 2) + 16"
+              "valor": "(1 × 2) + (16 × 1)"
             }
           ],
-          "porQue": "Cada elemento aparece varias veces en la molécula, así que su peso se cuenta varias veces. El paréntesis agrupa lo que multiplica."
+          "porQue": "Cada átomo aporta su masa, así que la de cada elemento se cuenta tantas veces como dice su subíndice. El O no trae número: su subíndice es 1 y su masa se cuenta una vez. El paréntesis agrupa lo que multiplica."
         },
         {
           "numero": 4,
@@ -111,7 +111,7 @@
           "valor": "= 17 g/mol"
         }
       ],
-      "comoSeCacha": "El resultado es menor que uno de los factores: 17 es menor que 16. Si estuvieras multiplicando 1 por 2 de verdad, no podría ser menor que lo que multiplicas."
+      "comoSeCacha": "Cuenta los átomos de la fórmula: H₂O tiene tres (dos de H y uno de O), pero 1 + 16 sólo cuenta uno de cada elemento. Si el 2 del subíndice no aparece en la cuenta, el hidrógeno se contó una sola vez."
     },
     "erroresSecundarios": [
       {
@@ -131,7 +131,7 @@
       },
       {
         "palabra": "subíndice",
-        "queEs": "El número pequeño que aparece en la esquina inferior derecha de cada símbolo en una fórmula química. Te dice cuántos átomos de ese elemento hay en la molécula."
+        "queEs": "El número pequeño abajo a la derecha de un símbolo. Dice cuántos átomos de ese elemento hay en la molécula. Si el símbolo no trae número, hay un solo átomo (subíndice 1)."
       },
       {
         "palabra": "mol",
@@ -139,7 +139,7 @@
       }
     ],
     "cotas": {
-      "numeros": "compuestos con dos o tres elementos, subíndices del 1 al 4, masas atómicas del 1 al 40 con un decimal (H=1, C=12, N=14, O=16, S=32, Cl=35.5), resultado entero del 1 al 100",
+      "numeros": "compuestos con dos o tres elementos, subíndices del 1 al 4 (el 1 no se escribe en la fórmula), masas atómicas enteras del 1 al 40 (H=1, C=12, N=14, O=16, S=32), sin decimales, resultado entero del 1 al 100",
       "unidades": [
         "g/mol"
       ],

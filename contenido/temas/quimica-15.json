@@ -45,26 +45,26 @@
         },
         {
           "numero": 3,
-          "queSeHace": "Restas protones menos electrones.",
+          "queSeHace": "Restas el número mayor menos el menor.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "17 protones − 18 electrones = −1"
+              "valor": "18 electrones − 17 protones = 1"
             }
           ],
-          "porQue": "Si hay más protones que electrones, la carga es positiva. Si hay más electrones que protones, la carga es negativa. La resta te dice cuánto."
+          "porQue": "La resta dice cuántas cargas sobran: 1. El signo no sale de la resta, lo dice quién sobra: si sobran electrones la carga es negativa, si sobran protones es positiva."
         },
         {
           "numero": 4,
-          "queSeHace": "Escribes el número de la carga con su signo como superíndice.",
+          "queSeHace": "Escribes la carga con su signo como superíndice; si es 1, sólo va el signo.",
           "renglon": [
             {
               "tipo": "simbolo",
               "valor": "Cl",
-              "sup": "1−"
+              "sup": "−"
             }
           ],
-          "porQue": "El superíndice es la forma estándar de escribir la carga de un ion. El número va primero, el signo después."
+          "porQue": "El signo lo pone quien sobra: más electrones que protones, negativo; al revés, positivo. El número va antes del signo (Ca²⁺, O²⁻) y cuando la carga es 1 no se escribe el 1: Na⁺, Cl⁻."
         },
         {
           "numero": 5,
@@ -77,14 +77,14 @@
             {
               "tipo": "simbolo",
               "valor": "Cl",
-              "sup": "1−"
+              "sup": "−"
             },
             {
               "tipo": "texto",
               "valor": "= anión cloruro"
             }
           ],
-          "porQue": "Anión viene del nombre del elemento pero con terminación -uro o -ido. Catión es el nombre del elemento tal cual. Es la forma que tiene cada ciencia de poner nombres para no confundirse."
+          "porQue": "Más electrones que protones: carga negativa, anión. Menos: carga positiva, catión. Al anión de un solo elemento se le cambia el final a -uro (cloro, cloruro; azufre, sulfuro; oxígeno, óxido). El catión conserva el nombre: Na⁺, ion sodio."
         }
       ]
     },
@@ -100,29 +100,30 @@
         {
           "tipo": "simbolo",
           "valor": "Cl",
-          "sup": "1−"
+          "sup": "−"
         }
       ],
       "resultadoEnPalabras": "cloruro, anión con carga −1"
     },
     "error": {
-      "enUnaFrase": "Suma electrones para la carga en vez de restar protones menos electrones, y cree que ganar electrones da carga positiva.",
+      "enUnaFrase": "Cree que ganar un electrón deja al átomo con carga positiva y escribe Cl⁺ en lugar de Cl⁻.",
       "creenciaDeAtras": "cree que «ganar» significa sumar, y que el signo de la carga va en la misma dirección que la acción: si ganas algo subes, si pierdes algo bajas",
-      "pasoQueCorrompe": 3,
+      "pasoQueCorrompe": 4,
       "renglonMalo": [
         {
-          "tipo": "texto",
-          "valor": "17 protones + 18 electrones = 35"
+          "tipo": "simbolo",
+          "valor": "Cl",
+          "sup": "+"
         }
       ],
       "resultadoMalo": [
         {
           "tipo": "simbolo",
           "valor": "Cl",
-          "sup": "35+"
+          "sup": "+"
         }
       ],
-      "comoSeCacha": "El número de la carga es mucho más grande que el número de protones o electrones. Una carga no puede ser 35+ cuando el cloro tiene solo 17 protones que la generen."
+      "comoSeCacha": "Ganar un electrón suma algo negativo, así que el átomo no puede quedar positivo. Compara: ¿hay más protones (17) o más electrones (18)? Hay más electrones, así que la carga es negativa: Cl⁻."
     },
     "erroresSecundarios": [
       {
@@ -156,7 +157,7 @@
       }
     ],
     "cotas": {
-      "numeros": "elementos del periodo 3 (Na, Mg, Al, Si, P, S, Cl, Ar) y del grupo 17 (F, Cl, Br) con 17 a 20 protones; ganancias o pérdidas de 1 a 3 electrones; resultado de carga entre −3 y +3",
+      "numeros": "Sólo iones reales de 8 a 20 protones: Na⁺ (11), Mg²⁺ (12), Al³⁺ (13), K⁺ (19), Ca²⁺ (20), F⁻ (9), O²⁻ (8), S²⁻ (16), Cl⁻ (17); los metales pierden electrones y los no metales ganan. Se teclean enteros sin signo: protones, electrones (10 o 18) o carga (1 a 3); el signo va en el enunciado.",
       "unidades": [],
       "simbolos": [
         {

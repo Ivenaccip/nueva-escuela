@@ -8,7 +8,7 @@
     "materia": "quimica",
     "titulo": "Densidad: por qué flota o se hunde",
     "notacion": "lineal",
-    "formaDeRespuesta": "numero",
+    "formaDeRespuesta": "fraccion",
     "procedimiento": {
       "nombre": "Calcular la densidad de un material y decidir si flota en agua",
       "pasos": [
@@ -41,7 +41,7 @@
         },
         {
           "numero": 3,
-          "queSeHace": "Divides la masa entre el volumen.",
+          "queSeHace": "Divides la masa entre el volumen y simplificas la fracción.",
           "renglon": [
             {
               "tipo": "texto",
@@ -54,10 +54,15 @@
             },
             {
               "tipo": "texto",
-              "valor": "= 0.7"
+              "valor": "="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 7,
+              "abajo": 10
             }
           ],
-          "porQue": "Densidad es masa entre volumen: cuántos gramos pesa cada centímetro cúbico. La masa siempre arriba, el volumen siempre abajo."
+          "porQue": "Densidad es masa entre volumen: cuántos gramos pesa cada centímetro cúbico. La masa siempre arriba, el volumen siempre abajo. Se simplifica (÷ 20 arriba y abajo) para dejar la fracción más corta."
         },
         {
           "numero": 4,
@@ -65,7 +70,16 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Densidad = 0.7 g/"
+              "valor": "Densidad ="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 7,
+              "abajo": 10
+            },
+            {
+              "tipo": "texto",
+              "valor": "g/"
             },
             {
               "tipo": "simbolo",
@@ -80,8 +94,13 @@
           "queSeHace": "Comparas la densidad del material con 1 g/cm³, que es la densidad del agua.",
           "renglon": [
             {
+              "tipo": "fraccion",
+              "arriba": 7,
+              "abajo": 10
+            },
+            {
               "tipo": "texto",
-              "valor": "0.7 g/"
+              "valor": "g/"
             },
             {
               "tipo": "simbolo",
@@ -126,7 +145,16 @@
       "resultado": [
         {
           "tipo": "texto",
-          "valor": "Densidad = 0.7 g/"
+          "valor": "Densidad ="
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 7,
+          "abajo": 10
+        },
+        {
+          "tipo": "texto",
+          "valor": "g/"
         },
         {
           "tipo": "simbolo",
@@ -138,7 +166,7 @@
           "valor": ". Flota."
         }
       ],
-      "resultadoEnPalabras": "cero coma siete gramos por centímetro cúbico; flota"
+      "resultadoEnPalabras": "siete décimos de gramo por centímetro cúbico; flota"
     },
     "error": {
       "enUnaFrase": "Divide el volumen entre la masa, no la masa entre el volumen.",
@@ -156,13 +184,27 @@
         },
         {
           "tipo": "texto",
-          "valor": "= 1.4"
+          "valor": "="
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 10,
+          "abajo": 7
         }
       ],
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "Densidad = 1.4 g/"
+          "valor": "Densidad ="
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": 10,
+          "abajo": 7
+        },
+        {
+          "tipo": "texto",
+          "valor": "g/"
         },
         {
           "tipo": "simbolo",
@@ -174,7 +216,7 @@
           "valor": ". Se hunde."
         }
       ],
-      "comoSeCacha": "El resultado da 1.4, que es mayor que 1, así que el procedimiento dice que se hunde. Pero el mismo objeto es menos denso que el agua: la confusión está en qué va arriba y qué va abajo en la fracción, no en lo que el resultado significa."
+      "comoSeCacha": "Revisa las unidades: 200 cm³ entre 140 g da cm³ por gramo, no g/cm³. Y compara los números: hay más cm³ (200) que gramos (140), así que cada cm³ pesa menos de 1 g. La densidad debe salir menor que 1, y diez séptimos no cuadra."
     },
     "erroresSecundarios": [
       {
@@ -207,7 +249,7 @@
       }
     ],
     "cotas": {
-      "numeros": "masa del 10 al 200 gramos, volumen del 20 al 300 centímetros cúbicos, densidad del 0.3 al 2.5 g/cm³, siempre resultado exacto con un máximo de un decimal",
+      "numeros": "masa del 10 al 200 gramos, volumen del 20 al 300 centímetros cúbicos; la densidad es una fracción a/b simplificada, con b de 2, 4, 5 o 10, de 3/10 a 5/2 y nunca igual a 1 (con 1 ni flota ni se hunde); su inversa (la del error) también es exacta. Se teclea sólo a/b, sin unidades ni decimales",
       "unidades": [
         "g",
         "cm³",

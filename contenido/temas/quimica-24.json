@@ -54,7 +54,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "(+1)(2) + x + (−2)(2) = 0"
+              "valor": "x + (−2)(2) = 0"
             }
           ],
           "porQue": "Una fórmula es neutra: la carga positiva y la negativa se anulan. La suma de los números de oxidación es cero en un compuesto neutro y es la carga en un ion."
@@ -65,7 +65,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "+2 + x − 4 = 0"
+              "valor": "x − 4 = 0"
             },
             {
               "tipo": "texto",
@@ -73,7 +73,7 @@
             },
             {
               "tipo": "texto",
-              "valor": "x = 2"
+              "valor": "x = 4"
             }
           ],
           "porQue": "Lo que buscas es el número que le falta a los demás para llegar a cero. Despejando lo ves."
@@ -93,7 +93,7 @@
             },
             {
               "tipo": "texto",
-              "valor": "= 2 ÷ 1 = +2"
+              "valor": "= 4 ÷ 1 = +4"
             }
           ],
           "porQue": "El número que despejaste es la aportación total de ese elemento. Divides entre cuántos átomos hay para hallar el número de oxidación de uno solo."
@@ -101,39 +101,30 @@
       ]
     },
     "ejemplo": {
-      "deQueVa": "el número de oxidación de cada elemento en la fórmula H₂S (sulfuro de hidrógeno)",
+      "deQueVa": "el número de oxidación del azufre en la fórmula SO₂ (dióxido de azufre)",
       "planteamiento": [
-        {
-          "tipo": "simbolo",
-          "valor": "H",
-          "sub": "2"
-        },
         {
           "tipo": "texto",
           "valor": "S"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
         }
       ],
       "resultado": [
         {
           "tipo": "texto",
-          "valor": "Hidrógeno:"
-        },
-        {
-          "tipo": "simbolo",
-          "valor": "H",
-          "sup": "+1"
-        },
-        {
-          "tipo": "texto",
-          "valor": "; Azufre:"
+          "valor": "Azufre:"
         },
         {
           "tipo": "simbolo",
           "valor": "S",
-          "sup": "+2"
+          "sup": "+4"
         }
       ],
-      "resultadoEnPalabras": "hidrógeno más uno, azufre más dos"
+      "resultadoEnPalabras": "azufre más cuatro"
     },
     "error": {
       "enUnaFrase": "Toma el subíndice como si fuera el número de oxidación, sin multiplicar ni plantear la suma igual a cero.",
@@ -157,16 +148,7 @@
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "Oxígeno:"
-        },
-        {
-          "tipo": "simbolo",
-          "valor": "O",
-          "sup": "−2"
-        },
-        {
-          "tipo": "texto",
-          "valor": "; Azufre:"
+          "valor": "Azufre:"
         },
         {
           "tipo": "simbolo",
@@ -174,7 +156,7 @@
           "sup": "+2"
         }
       ],
-      "comoSeCacha": "El número de oxidación del oxígeno debería ser −2, pero el estudiante dejó sin multiplicar por el subíndice 2. Además, si la suma tiene que dar cero, el azufre no puede valer lo mismo que su subíndice: eso nunca cierra la ecuación."
+      "comoSeCacha": "El oxígeno vale −2 pero hay 2 átomos, así que aporta (−2)(2) = −4, no −2. Se cacha comprobando la suma con ese resultado: +2 + (−2)(2) = −2, y debería dar 0. Si la suma no da cero, hay un error."
     },
     "erroresSecundarios": [
       {
@@ -206,7 +188,7 @@
       }
     ],
     "cotas": {
-      "numeros": "números de oxidación del 1 al 8 con signo más o menos; subíndices del 1 al 4; el resultado siempre es un entero entre −4 y +8",
+      "numeros": "la respuesta que se teclea es siempre un entero de 1 a 8 (el número de oxidación positivo del elemento que se busca, sin signo); subíndices del 1 al 4; los valores conocidos O −2 y H +1 sólo se muestran, nunca se teclean; el elemento buscado no sale negativo",
       "unidades": [],
       "simbolos": [
         {

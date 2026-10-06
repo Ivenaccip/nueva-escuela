@@ -18,33 +18,33 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Masa del contaminante: 2 mg"
+              "valor": "Masa del contaminante: 5 mg"
             }
           ],
-          "porQue": "Las partes por millón siempre se calculan con el numerador en miligramos. Si el dato viene en gramos, multiplicas por 1 000; si viene en microgramos, divides entre 1 000."
+          "porQue": "Para comparar el soluto con la disolución, las dos masas tienen que estar en la misma unidad; aquí usamos miligramos. Si el dato viene en gramos, multiplicas por 1 000; si viene en microgramos, divides entre 1 000."
         },
         {
           "numero": 2,
-          "queSeHace": "Conviertes la masa total de la disolución a litros o kilogramos.",
+          "queSeHace": "Conviertes la masa total de la disolución también a miligramos, la misma unidad del contaminante.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Masa total de la disolución: 1 000 kg"
+              "valor": "Masa de la disolución: 1 kg = 1 000 000 mg"
             }
           ],
-          "porQue": "El ppm se calcula con el denominador en kilogramos o litros, nunca en gramos. Un kilogramo de agua es un litro, así que puedes cambiar entre ellos sin cambiar el resultado final."
+          "porQue": "Arriba y abajo tienen que estar en la misma unidad para que la fracción compare partes iguales. 1 kg son 1 000 g y cada gramo son 1 000 mg, o sea 1 000 000 mg. Por eso 1 ppm es 1 mg de contaminante en 1 kg de disolución."
         },
         {
           "numero": 3,
-          "queSeHace": "Armas la fracción con miligramos arriba y kilogramos abajo.",
+          "queSeHace": "Armas la fracción con la masa del contaminante arriba y la de la disolución abajo, las dos en miligramos.",
           "renglon": [
             {
               "tipo": "fraccion",
-              "arriba": "2 mg",
-              "abajo": "1 000 kg"
+              "arriba": "5 mg",
+              "abajo": "1 000 000 mg"
             }
           ],
-          "porQue": "Las unidades tienen que estar en los lugares correctos: miligramos en el numerador y kilogramos en el denominador. Aquí es donde la mayoría confunde si los datos originales no estaban en las unidades que pide ppm."
+          "porQue": "Arriba va la parte que te interesa y abajo el total con el que la comparas. Como las dos están en miligramos, las unidades se cancelan y queda una razón sin unidades: cuántas partes de contaminante hay en cada parte de disolución."
         },
         {
           "numero": 4,
@@ -52,8 +52,8 @@
           "renglon": [
             {
               "tipo": "fraccion",
-              "arriba": "2 mg",
-              "abajo": "1 000 kg"
+              "arriba": "5 mg",
+              "abajo": "1 000 000 mg"
             },
             {
               "tipo": "texto",
@@ -66,7 +66,7 @@
             },
             {
               "tipo": "texto",
-              "valor": "= 2 ppm"
+              "valor": "= 5 ppm"
             }
           ],
           "porQue": "Multiplicar por un millón es lo que convierte la fracción en partes por millón. El 10 a la 6 es otra forma de escribir un millón: la pantalla y la mayoría de calculadoras lo entienden así."
@@ -77,7 +77,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "2 ppm es menor que 10 ppm permitido. El agua se puede beber."
+              "valor": "5 ppm es menor que 10 ppm permitido. El agua se puede beber."
             }
           ],
           "porQue": "Calcular ppm sin saber si supera el límite no sirve. La cifra só­lo tiene sentido cuando la comparas con la norma que fija si es seguro o no."
@@ -89,16 +89,24 @@
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "Hay 2 mg de contaminante en 1 000 kg de agua. ¿Cuántos ppm hay?"
+          "valor": "1 kg de agua del pozo contiene 5 mg de contaminante."
+        },
+        {
+          "tipo": "texto",
+          "valor": "El límite permitido es 10 ppm."
+        },
+        {
+          "tipo": "texto",
+          "valor": "¿Cuántos ppm hay?"
         }
       ],
       "resultado": [
         {
           "tipo": "texto",
-          "valor": "2 ppm"
+          "valor": "5 ppm"
         }
       ],
-      "resultadoEnPalabras": "dos partes por millón"
+      "resultadoEnPalabras": "cinco partes por millón"
     },
     "error": {
       "enUnaFrase": "Multiplica por 100 en vez de por 1 000 000 porque cree que ppm es como porcentaje.",
@@ -107,8 +115,8 @@
       "renglonMalo": [
         {
           "tipo": "fraccion",
-          "arriba": "2 mg",
-          "abajo": "1 000 kg"
+          "arriba": "5 mg",
+          "abajo": "1 000 000 mg"
         },
         {
           "tipo": "texto",
@@ -130,18 +138,18 @@
           "valor": "0.0005 ppm"
         }
       ],
-      "comoSeCacha": "El resultado sale diez mil veces más chico de lo que debería. Dos miligramos en un kilogramo no puede dar menos de 0.002 ppm: si el numerador sube, el resultado también tiene que subir."
+      "comoSeCacha": "El resultado sale diez mil veces más chico de lo que debería. Estima antes: 1 mg en 1 kg ya es 1 ppm, así que 5 mg en 1 kg no pueden dar menos de 1 ppm. Si te sale 0.0005, usaste 100 en vez de 1 000 000."
     },
     "erroresSecundarios": [
       {
         "enUnaFrase": "Arma la fracción con miligramos abajo y gramos arriba sin convertir primero.",
-        "creenciaDeAtras": "cree que da igual en qué orden va cada cosa porque es todo la misma disolución, sin fijarse que el numerador y el denominador tienen unidades diferentes que el ppm fija"
+        "creenciaDeAtras": "cree que da igual en qué unidad vengan los datos porque es todo la misma disolución, sin fijarse que arriba y abajo tienen que estar en la misma unidad para que la fracción compare partes iguales"
       }
     ],
     "vocabulario": [
       {
         "palabra": "partes por millón",
-        "queEs": "Una forma de medir qué tan concentrado está un soluto en una disolución. Una parte por millón significa una unidad del soluto en un millón de unidades de disolución.",
+        "queEs": "Una forma de medir qué tan concentrado está un soluto en una disolución. Una parte por millón es una unidad de soluto en un millón de unidades de disolución: 1 ppm es 1 mg de soluto en 1 kg de disolución.",
         "noEsLoMismoQue": "porcentaje, que es partes por cien, no partes por millón"
       },
       {
@@ -150,7 +158,7 @@
       },
       {
         "palabra": "denominador",
-        "queEs": "El número de abajo de una fracción. En ppm, va la masa total de la disolución en kilogramos o litros."
+        "queEs": "El número de abajo de una fracción. En ppm, va la masa total de la disolución, también en miligramos, para que arriba y abajo tengan la misma unidad."
       },
       {
         "palabra": "contaminante",
@@ -167,11 +175,10 @@
       }
     ],
     "cotas": {
-      "numeros": "Masa del contaminante de 1 a 20 mg; masa total de la disolución de 100 a 2 000 kg; resultado entero del 1 al 50 ppm",
+      "numeros": "Disolución de 1 a 5 kg (se pasa a miligramos); masa del contaminante de 1 a 100 mg, siempre múltiplo de los kg de la disolución; resultado entero del 1 al 50 ppm; el límite permitido es un entero mayor que el resultado y va en el enunciado",
       "unidades": [
         "mg",
         "kg",
-        "L",
         "ppm"
       ],
       "simbolos": [
@@ -183,10 +190,6 @@
         {
           "tipo": "texto",
           "valor": "×"
-        },
-        {
-          "tipo": "texto",
-          "valor": "÷"
         }
       ]
     },

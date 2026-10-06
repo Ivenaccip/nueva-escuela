@@ -14,11 +14,21 @@
       "pasos": [
         {
           "numero": 1,
-          "queSeHace": "Identifies cuál es el ácido y cuál es la base en la reacción.",
+          "queSeHace": "Identificas cuál es el ácido y cuál es la base en la reacción.",
           "renglon": [
             {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "SO",
+              "sub": "4"
+            },
+            {
               "tipo": "texto",
-              "valor": "HCl es el ácido. NaOH es la base."
+              "valor": "es el ácido. NaOH es la base."
             }
           ],
           "porQue": "El ácido aporta hidrógeno (H⁺) y la base aporta hidróxido (OH⁻). Sin identificarlos, no sabes qué mezclar."
@@ -36,55 +46,88 @@
         },
         {
           "numero": 3,
-          "queSeHace": "Tomas el resto del ácido sin el hidrógeno.",
+          "queSeHace": "Tomas el resto del ácido, sin sus hidrógenos.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Resto del ácido: Cl"
+              "valor": "Resto del ácido:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "SO",
+              "sub": "4",
+              "sup": "2−"
             }
           ],
-          "porQue": "El ácido HCl pierde su hidrógeno. Lo que queda es el cloro (Cl), que forma la sal con el metal."
+          "porQue": "Cuando el H₂SO₄ suelta sus dos hidrógenos (que se van como H⁺), lo que queda es el ion sulfato, SO₄²⁻. Ese resto, con su carga negativa, es el que se une al metal para formar la sal."
         },
         {
           "numero": 4,
-          "queSeHace": "Cruzas las valencias del metal y del resto del ácido para escribir la fórmula de la sal.",
+          "queSeHace": "Cruzas las valencias: el número de la carga de cada ion pasa como subíndice del otro; si los dos subíndices salen iguales, los reduces (Ca₂(SO₄)₂ queda CaSO₄).",
           "renglon": [
             {
+              "tipo": "simbolo",
+              "valor": "Na",
+              "sup": "1+"
+            },
+            {
               "tipo": "texto",
-              "valor": "Na"
+              "valor": "y"
             },
             {
               "tipo": "simbolo",
-              "valor": "1",
-              "sup": "+"
+              "valor": "SO",
+              "sub": "4",
+              "sup": "2−"
             },
             {
               "tipo": "texto",
-              "valor": "y Cl"
+              "valor": ": la sal es"
             },
             {
               "tipo": "simbolo",
-              "valor": "1",
-              "sup": "−"
+              "valor": "Na",
+              "sub": "2"
             },
             {
-              "tipo": "texto",
-              "valor": ": la sal es NaCl"
+              "tipo": "simbolo",
+              "valor": "SO",
+              "sub": "4"
             }
           ],
-          "porQue": "Las cargas opuestas se neutralizan: el + del metal y el − del resto del ácido se simplifican en la fórmula de la sal."
+          "porQue": "La sal no tiene carga total: lo positivo y lo negativo tienen que sumar cero. Por eso se necesitan tantos iones de cada tipo como pida la carga del otro: dos Na⁺ para compensar un SO₄²⁻."
         },
         {
           "numero": 5,
           "queSeHace": "Escribes la ecuación completa balanceada con flecha, signos + y agua como producto.",
           "renglon": [
             {
-              "tipo": "texto",
-              "valor": "HCl + NaOH →"
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "SO",
+              "sub": "4"
             },
             {
               "tipo": "texto",
-              "valor": "NaCl +"
+              "valor": "+ 2NaOH →"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "Na",
+              "sub": "2"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "SO",
+              "sub": "4"
+            },
+            {
+              "tipo": "texto",
+              "valor": "+ 2"
             },
             {
               "tipo": "simbolo",
@@ -96,34 +139,35 @@
               "valor": "O"
             }
           ],
-          "porQue": "El ácido y la base producen la sal y agua. Balancear garantiza que lo que entra es lo que sale: no pierdes ni ganas átomos."
+          "porQue": "El ácido y la base producen la sal y agua. Balancear garantiza que lo que entra es lo que sale: Na₂SO₄ trae dos sodios, así que hacen falta 2 NaOH, y con ellos salen 2 H₂O."
         }
       ]
     },
     "ejemplo": {
-      "deQueVa": "una reacción entre ácido clorhídrico y hidróxido de sodio",
+      "deQueVa": "la neutralización del ácido sulfúrico con hidróxido de sodio; se balancea y se pregunta qué coeficiente lleva el NaOH",
       "planteamiento": [
-        {
-          "tipo": "texto",
-          "valor": "HCl + NaOH →"
-        }
-      ],
-      "resultado": [
-        {
-          "tipo": "texto",
-          "valor": "NaCl +"
-        },
         {
           "tipo": "simbolo",
           "valor": "H",
           "sub": "2"
         },
         {
+          "tipo": "simbolo",
+          "valor": "SO",
+          "sub": "4"
+        },
+        {
           "tipo": "texto",
-          "valor": "O"
+          "valor": "+ NaOH →"
         }
       ],
-      "resultadoEnPalabras": "cloruro de sodio y agua"
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "2"
+        }
+      ],
+      "resultadoEnPalabras": "dos hidróxidos de sodio por cada ácido sulfúrico; salen sulfato de sodio y agua"
     },
     "error": {
       "enUnaFrase": "Del lado de los productos escribes solo agua y te olvidas de la sal.",
@@ -131,8 +175,18 @@
       "pasoQueCorrompe": 5,
       "renglonMalo": [
         {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "SO",
+          "sub": "4"
+        },
+        {
           "tipo": "texto",
-          "valor": "HCl + NaOH →"
+          "valor": "+ NaOH →"
         },
         {
           "tipo": "simbolo",
@@ -146,16 +200,11 @@
       ],
       "resultadoMalo": [
         {
-          "tipo": "simbolo",
-          "valor": "H",
-          "sub": "2"
-        },
-        {
           "tipo": "texto",
-          "valor": "O"
+          "valor": "1"
         }
       ],
-      "comoSeCacha": "En una ecuación química, lo que entra tiene que salir: contas los átomos de cada lado y del lado de los productos falta el sodio y el cloro que entraron como NaOH y HCl."
+      "comoSeCacha": "Lo que entra tiene que salir: al contar átomos, del lado de los productos faltan el sodio y el azufre que entraron en NaOH y H₂SO₄. Sin la sal nada obliga a cambiar el coeficiente del NaOH, y se queda en 1."
     },
     "erroresSecundarios": [
       {
@@ -190,10 +239,15 @@
       {
         "palabra": "valencia",
         "queEs": "La carga que tiene un ión y que usas para saber cómo se combinan los átomos en una sal."
+      },
+      {
+        "palabra": "coeficiente",
+        "queEs": "El número que va delante de una fórmula y dice cuántas veces entra o sale esa fórmula en la reacción.",
+        "noEsLoMismoQue": "el subíndice, que va abajo y dice cuántos átomos hay dentro de una sola fórmula"
       }
     ],
     "cotas": {
-      "numeros": "ácidos y bases sencillos de un grado de disociación, con valencias 1+ y 1−, o 2+ y 2−; los números de los coeficientes de balanceo hasta 3",
+      "numeros": "ácidos HCl y H₂SO₄ con bases NaOH y Ca(OH)₂; cargas 1+ o 2+ en el metal y 1− o 2− en el resto del ácido, siempre con número y signo; sales NaCl, Na₂SO₄, CaCl₂ y CaSO₄; coeficientes de balanceo hasta 2",
       "unidades": [],
       "simbolos": [
         {
@@ -211,18 +265,44 @@
         },
         {
           "tipo": "simbolo",
-          "valor": "O",
+          "valor": "Na",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "SO",
           "sub": "4"
         },
         {
           "tipo": "simbolo",
+          "valor": "SO",
+          "sub": "4",
+          "sup": "2−"
+        },
+        {
+          "tipo": "simbolo",
           "valor": "Na",
-          "sup": "+"
+          "sup": "1+"
         },
         {
           "tipo": "simbolo",
           "valor": "Cl",
-          "sup": "−"
+          "sup": "1−"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "Ca",
+          "sup": "2+"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "Cl",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": ")",
+          "sub": "2"
         }
       ]
     },

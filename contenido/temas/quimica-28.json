@@ -18,7 +18,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Antes:"
+              "valor": "Antes: 2"
             },
             {
               "tipo": "simbolo",
@@ -27,7 +27,7 @@
             },
             {
               "tipo": "texto",
-              "valor": "+ 2"
+              "valor": "+"
             },
             {
               "tipo": "simbolo",
@@ -56,7 +56,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Reactivos: 1 mol de"
+              "valor": "Reactivos: 2"
             },
             {
               "tipo": "simbolo",
@@ -65,7 +65,7 @@
             },
             {
               "tipo": "texto",
-              "valor": "y 2 moles de"
+              "valor": "(hidrógeno, 2 átomos de H por molécula) y"
             },
             {
               "tipo": "simbolo",
@@ -74,7 +74,7 @@
             },
             {
               "tipo": "texto",
-              "valor": "."
+              "valor": "(oxígeno, 2 átomos de O por molécula)."
             }
           ],
           "porQue": "Nombrar cada cosa evita mezclarlas. Una sustancia es un cuadro aparte, con su coeficiente y sus subíndices propios."
@@ -125,7 +125,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "1 mol de"
+              "valor": "2 moléculas de"
             },
             {
               "tipo": "simbolo",
@@ -134,7 +134,7 @@
             },
             {
               "tipo": "texto",
-              "valor": "más 2 moles de"
+              "valor": "más 1 molécula de"
             },
             {
               "tipo": "simbolo",
@@ -143,7 +143,7 @@
             },
             {
               "tipo": "texto",
-              "valor": "producen 2 moles de agua."
+              "valor": "producen 2 moléculas de agua."
             }
           ],
           "porQue": "Una ecuación química es una reacción, no una igualdad de mate. La flecha → dice que algo cambia y se forma algo nuevo."
@@ -191,7 +191,7 @@
           "valor": "4"
         }
       ],
-      "resultadoEnPalabras": "cuatro átomos de hidrógeno en los reactivos"
+      "resultadoEnPalabras": "cuatro átomos de hidrógeno en 2H₂O, que está en los productos"
     },
     "error": {
       "enUnaFrase": "Lee el subíndice como si fuera coeficiente y cuenta sólo dos átomos de hidrógeno.",
@@ -209,7 +209,7 @@
         },
         {
           "tipo": "texto",
-          "valor": "O: coeficiente 2, subíndice 2 en H, nada en O. Total: 2 átomos de H."
+          "valor": "O: coeficiente 2, coeficiente 2 en H, nada en O."
         }
       ],
       "resultadoMalo": [

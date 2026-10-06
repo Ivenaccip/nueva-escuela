@@ -47,22 +47,22 @@
         },
         {
           "numero": 4,
-          "queSeHace": "Sigues dividiendo por 10 hasta que la energía se acabe o no alcance para sostener un nivel.",
+          "queSeHace": "Aplicas el 10% otra vez, ahora a los 100 kcal, y llegas al nivel 4.",
           "renglon": [
             {
               "tipo": "texto",
               "valor": "100 kcal → 10% de 100 = 10 kcal"
             }
           ],
-          "porQue": "Cada nivel necesita cierta cantidad mínima de energía para existir. Cuando llega a un número demasiado bajo, no hay suficiente energía para que ese nivel tenga individuos."
+          "porQue": "Cada nivel recibe sólo el 10% del anterior, así que la cifra baja muy rápido. Otra división dejaría 1 kcal, tan poca energía que ya no alcanzaría para sostener un nivel más."
         },
         {
           "numero": 5,
-          "queSeHace": "Cuentas cuántos niveles aguanta la pirámide y cuánta energía se perdió en total.",
+          "queSeHace": "Escribes la energía que llega al nivel 4 y cuánta se perdió por el camino hasta ahí.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "4 niveles. Energía perdida: 10000 − 1000 − 100 − 10 = 8890 kcal"
+              "valor": "Nivel 4: 10 kcal. Perdida: 10000 − 10 = 9990 kcal"
             }
           ],
           "porQue": "La pirámide se angosta porque los niveles de arriba tienen menos energía cada vez. Esto es físicamente inevitable: no se recicla, se disipa en calor."
@@ -74,39 +74,43 @@
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "10000 kcal"
+          "valor": "Nivel 1: 10000 kcal. ¿Cuántas kcal llegan al nivel 4?"
         }
       ],
       "resultado": [
         {
           "tipo": "texto",
-          "valor": "4 niveles"
+          "valor": "10 kcal"
         }
       ],
-      "resultadoEnPalabras": "cuatro niveles"
+      "resultadoEnPalabras": "diez kilocalorías"
     },
     "error": {
-      "enUnaFrase": "Cree que hay pocos depredadores porque son grandes y nacen pocos, no porque se perdió casi toda la energía.",
-      "creenciaDeAtras": "cree que la energía se recicla igual que la materia, así que los depredadores son pocos por razones de tamaño o reproducción, no por disponibilidad energética",
-      "pasoQueCorrompe": 5,
+      "enUnaFrase": "Calcula que pasa el 90% de la energía al siguiente nivel, en vez del 10%, como si casi toda se reciclara.",
+      "creenciaDeAtras": "cree que la energía se recicla igual que la materia, así que casi toda pasa al siguiente nivel y en cada paso se pierde sólo un poco",
+      "pasoQueCorrompe": 2,
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "4 niveles. Los depredadores son pocos porque son grandes."
+          "valor": "10000 kcal → 90% de 10000 = 9000 kcal"
         }
       ],
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "explicación sin cálculo de energía"
+          "valor": "7290 kcal"
         }
       ],
-      "comoSeCacha": "El renglón evita hacer la cuenta de cuánta energía queda. Sin números no se ve que en cada paso se pierda el 90%, y parece que la cantidad de depredadores depende de otra cosa."
+      "comoSeCacha": "La energía casi no baja: el nivel 4 sale con más de la mitad de lo que tenía el nivel 1, y entonces la pirámide no se angostaría. Con el 10% el nivel 2 queda con una décima parte."
     },
     "erroresSecundarios": [
       {
         "enUnaFrase": "Cree que los niveles más altos tienen más energía porque están más arriba.",
         "creenciaDeAtras": "confunde el flujo de energía con una acumulación física, como si subir significara más cantidad"
+      },
+      {
+        "enUnaFrase": "Explica que hay pocos depredadores porque son grandes y nacen pocos, sin hablar de la energía.",
+        "creenciaDeAtras": "cree que la cantidad de depredadores depende de su tamaño o de cuántas crías tienen, no de cuánta energía les llega"
       }
     ],
     "vocabulario": [
@@ -134,10 +138,9 @@
       }
     ],
     "cotas": {
-      "numeros": "Energía inicial entre 5000 y 20000 kcal, entero; porcentaje fijo del 10%; número de niveles entre 2 y 5; resultado siempre un número entero de kcal o de niveles, sin decimales",
+      "numeros": "Energía inicial múltiplo de 1000, entre 5000 y 20000 kcal; porcentaje fijo del 10%; siempre se pregunta por el nivel 4 (tres veces el 10%), así toda cifra es entera: 5000 → 500 → 50 → 5; resultado entero de kcal",
       "unidades": [
-        "kcal",
-        "niveles"
+        "kcal"
       ],
       "simbolos": [
         {

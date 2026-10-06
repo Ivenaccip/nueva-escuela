@@ -14,7 +14,7 @@
       "pasos": [
         {
           "numero": 1,
-          "queSeHace": "Llenas la probeta con agua hasta una altura que permita meter el objeto sin que se desborde.",
+          "queSeHace": "Llenas la probeta con agua suficiente para cubrir el objeto por completo, sin llenarla tanto que se desborde al meterlo, y anotas el nivel inicial.",
           "renglon": [
             {
               "tipo": "texto",
@@ -25,18 +25,18 @@
         },
         {
           "numero": 2,
-          "queSeHace": "Anotas el nivel que marca la probeta, mirando a la altura del menisco.",
+          "queSeHace": "Metes el objeto con cuidado, hasta que quede totalmente bajo el agua.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Anotas: 60 mL"
+              "valor": "Objeto bajo el agua"
             }
           ],
-          "porQue": "El menisco es la curva en la superficie del agua. Si lees desde arriba, el número no es exacto y el volumen que calcules sale equivocado."
+          "porQue": "Todo el objeto tiene que quedar bajo el agua. Si una parte queda fuera, el agua sube menos de lo que ocupa el objeto y el volumen que calcules sale chico."
         },
         {
           "numero": 3,
-          "queSeHace": "Metes cuidadosamente el objeto en la probeta y anotas el nuevo nivel del agua.",
+          "queSeHace": "Anotas el nivel final del agua, leyendo a la altura del menisco.",
           "renglon": [
             {
               "tipo": "texto",
@@ -81,7 +81,7 @@
               "valor": "Volumen del objeto = 25 mL"
             }
           ],
-          "porQue": "El número solo no significa nada. La unidad dice que se trata de 25 mililitros, no 25 de otra cosa. El volumen del objeto es el número que restaste, no el que marca la probeta al final."
+          "porQue": "El número solo no significa nada. La unidad dice que se trata de 25 mililitros, no 25 de otra cosa. El volumen del objeto es el resultado de la resta (25 mL), no el nivel que marca la probeta al final (85 mL), porque ese nivel incluye el agua que ya estaba."
         }
       ]
     },
@@ -104,11 +104,27 @@
     "error": {
       "enUnaFrase": "Reporta el nivel final de la probeta como si fuera el volumen del objeto.",
       "creenciaDeAtras": "cree que el volumen es el número que la probeta señala después de meter el objeto, sin pensar que el agua ya tenía un nivel antes",
-      "pasoQueCorrompe": 5,
+      "pasoQueCorrompe": 4,
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "Volumen del objeto = 85 mL"
+          "valor": "85 mL"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "0 mL"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        },
+        {
+          "tipo": "texto",
+          "valor": "85 mL"
         }
       ],
       "resultadoMalo": [
@@ -117,7 +133,7 @@
           "valor": "85 mL"
         }
       ],
-      "comoSeCacha": "El volumen que reporta es mucho más grande que la diferencia entre los dos niveles. Si hizo una resta en el paso 4, el número que escribió aquí no puede ser el nivel final que anotó; tendría que ser el resultado de la resta."
+      "comoSeCacha": "Reporta justo el nivel final de la probeta, pero esos 85 mL incluyen los 60 mL de agua que ya estaban; el objeto no puede ocupar tanto como todo lo que marca la probeta."
     },
     "erroresSecundarios": [
       {

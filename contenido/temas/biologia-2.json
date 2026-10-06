@@ -29,7 +29,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Una célula de la piel mide 30 μm."
+              "valor": "Una célula de la piel mide 20 μm."
             }
           ],
           "porQue": "Las células no son todas del mismo tamaño, pero en un tejido sí se parecen. La medida que ves al microscopio te dice cuánto espacio ocupa cada una."
@@ -43,7 +43,7 @@
               "valor": "2 mm = 2000 μm."
             }
           ],
-          "porQue": "No puedes dividir 2 mm entre 30 μm porque están en unidades distintas. Es como dividir 2 pizzas entre 30 rebanadas: necesitas contar pizzas en rebanadas o rebanadas en rebanadas."
+          "porQue": "No puedes dividir 2 mm entre 20 μm porque están en unidades distintas. Es como dividir 2 pizzas entre 20 rebanadas: necesitas contar pizzas en rebanadas o rebanadas en rebanadas."
         },
         {
           "numero": 4,
@@ -51,7 +51,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "2000 μm ÷ 30 μm = 66 células en línea."
+              "valor": "2000 μm ÷ 20 μm = 100 células en línea."
             }
           ],
           "porQue": "La división te dice cuántas células del tamaño que mediste caben en el espacio de la muestra. Obtienes el número de células que entran en una fila."
@@ -62,10 +62,10 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "66 × 66 = 4356 células en la muestra."
+              "valor": "100 × 100 = 10000 células en la muestra."
             }
           ],
-          "porQue": "Las células ocupan área, no solo línea. Si caben 66 en el largo y 66 en el ancho, el número total es 66 veces 66. Así cubres toda la superficie."
+          "porQue": "Las células ocupan área, no solo línea. Si caben 100 en el largo y 100 en el ancho, el número total es 100 veces 100. Así cubres toda la superficie."
         }
       ]
     },
@@ -86,22 +86,22 @@
       "resultadoEnPalabras": "diez mil células"
     },
     "error": {
-      "enUnaFrase": "Cree que los números grandes miden el tamaño, no la cantidad de células.",
-      "creenciaDeAtras": "cree que un número mayor en las medidas significa que la célula es más grande, y confunde el tamaño de la muestra con el tamaño de la célula. Por eso dice que un elefante tiene células más grandes que un ratón.",
+      "enUnaFrase": "Cree que un animal grande tiene células más grandes, en vez de más células.",
+      "creenciaDeAtras": "cree que el elefante es grande porque cada una de sus células es enorme, y no se imagina que su cuerpo está hecho de muchísimas más células del mismo tamaño aproximado que las del ratón. Por eso, en vez de medir la célula en el microscopio, supone que la del elefante mide mucho más.",
       "pasoQueCorrompe": 2,
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "Una célula de un elefante mide 100 μm y una de un ratón mide 20 μm."
+          "valor": "Una célula de la piel de un elefante mide 100 μm."
         }
       ],
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "Las células del elefante son más grandes."
+          "valor": "400 células."
         }
       ],
-      "comoSeCacha": "La conclusión es al revés de la realidad. Las células de los mamíferos son del mismo tamaño; los organismos grandes tienen más células, no células más grandes. Si crees que un número mayor en la medida significa tamaño mayor, ya caíste en la trampa."
+      "comoSeCacha": "Las células del mismo tipo miden casi igual en un elefante y en un ratón: unas decenas de μm. El elefante es grande porque tiene muchísimas más células, no porque cada una sea enorme. El tamaño de una célula se mide al microscopio, no se adivina por el tamaño del animal."
     },
     "erroresSecundarios": [
       {
@@ -117,7 +117,7 @@
       },
       {
         "palabra": "tejido",
-        "queEs": "Un grupo de células que se parecen y hacen el mismo trabajo. La piel es un tejido, el músculo es otro, la sangre es otro."
+        "queEs": "Un grupo de células que se parecen y hacen el mismo trabajo. El músculo es un tejido, la sangre es otro. La piel entera es un órgano, hecho de varios tejidos."
       },
       {
         "palabra": "microscopio",
@@ -133,7 +133,7 @@
       }
     ],
     "cotas": {
-      "numeros": "medidas de la muestra en milímetros: 1 a 4 mm; medidas de la célula en micrón: 10 a 50 μm; resultado: número entero del 100 al 100000",
+      "numeros": "medidas de la muestra en milímetros enteros: 1 a 4 mm; medidas de la célula en micrón: sólo 10, 20, 25, 40 o 50 μm, para que dividan exacto la muestra en μm (1 mm = 1000 μm); resultado: número entero del 100 al 100000",
       "unidades": [
         "mm",
         "μm"

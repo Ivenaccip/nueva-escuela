@@ -46,7 +46,7 @@
               "abajo": 4
             }
           ],
-          "porQue": "La fracción traduce la proporción a probabilidad. El denominador es siempre 4 porque el cuadro de Punnett siempre tiene cuatro casillas."
+          "porQue": "La fracción traduce la proporción a probabilidad porque las casillas son igual de probables (cada padre da un alelo u otro con igual frecuencia): si 3 de las 4 dan hijo sano, la probabilidad es 3 de 4. El denominador es el total de casillas de este cuadro (aquí 3 + 1 = 4), no el número de hijos."
         },
         {
           "numero": 3,
@@ -81,7 +81,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "La proporción 3:1 es promedio: puede haber 2, 3 o 4 sanos en 4 hijos."
+              "valor": "La proporción 3:1 es promedio: en 4 hijos puede haber de 0 a 4 sanos; 3 es lo más común."
             }
           ],
           "porQue": "La proporción es lo que sale en promedio cuando haces muchas familias. Una sola familia puede no ajustarse a ese promedio. La proporción es una tendencia, no una cuota que se reparte."
@@ -93,13 +93,17 @@
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "Aa × Aa → proporción 3:1"
+          "valor": "Aa × Aa, enfermedad recesiva (aa): 3 sanos : 1 enfermo."
+        },
+        {
+          "tipo": "texto",
+          "valor": "¿Qué porcentaje de probabilidad hay de que un hijo sea sano?"
         }
       ],
       "resultado": [
         {
           "tipo": "texto",
-          "valor": "75"
+          "valor": "75%"
         }
       ],
       "resultadoEnPalabras": "setenta y cinco por ciento"
@@ -122,12 +126,7 @@
       ],
       "comoSeCacha": "La proporción 3:1 es un promedio, no una garantía. El cuarto embarazo tiene 75% de probabilidad de ser sano, igual que el primero. Si el estudiante cree que 'ya le toca', está tratando la proporción como un cupo."
     },
-    "erroresSecundarios": [
-      {
-        "enUnaFrase": "Confunde la proporción 3:1 con un ratio de edades o un rango de cifras en vez de un conteo de resultados.",
-        "creenciaDeAtras": "cree que 3:1 es una manera de escribir una razón de comparación entre grupos, no el resultado de contar casillas en el cuadro de Punnett"
-      }
-    ],
+    "erroresSecundarios": [],
     "vocabulario": [
       {
         "palabra": "proporción",
@@ -154,7 +153,7 @@
       }
     ],
     "cotas": {
-      "numeros": "proporciones 3:1, 1:2:1, 1:1, 9:3:3:1; fracciones 3/4, 1/4, 1/2, 2/4; porcentajes 75%, 25%, 50%; embarazos de 1 a 10; resultado entero del 25 al 75",
+      "numeros": "un solo carácter, cuadro de 2 × 2 (cuatro casillas); proporciones 3:1, 1:2:1, 1:1; fracciones 3/4, 1/4, 1/2, 2/4; porcentajes 75%, 25%, 50%; embarazos de 1 a 10; el resultado en porcentaje es siempre 25, 50 o 75, sin decimales",
       "unidades": [
         "%"
       ],

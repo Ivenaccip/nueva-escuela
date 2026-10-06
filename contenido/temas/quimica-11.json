@@ -125,13 +125,13 @@
           "valor": "25%"
         }
       ],
-      "comoSeCacha": "Si divides soluto entre disolvente, el resultado puede ser mayor que el porcentaje de toda la disolución. Con 20 g en 80 g, debería salir menos del 20%, pero sale 25%."
+      "comoSeCacha": "Dividir entre el disolvente solo siempre da un porcentaje de más, porque abajo tiene que ir el disolvente más el soluto, que pesa más que el agua sola. Con 20 g en 80 g de agua, abajo van 100 g y sale 20%; si abajo quedó 80 g, sale 25%."
     },
     "erroresSecundarios": [],
     "vocabulario": [
       {
         "palabra": "soluto",
-        "queEs": "Lo que se disuelve: la sustancia que desaparece y se mezcla con el disolvente."
+        "queEs": "Lo que se disuelve: la sustancia que se reparte entre las partículas del disolvente. Ya no se ve, pero sigue ahí y sus gramos cuentan en la masa de la disolución."
       },
       {
         "palabra": "disolvente",

@@ -18,7 +18,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Polillas: 40 claros y 10 oscuros"
+              "valor": "Generación 1: 40 claros y 10 oscuros. Total: 50."
             }
           ],
           "porQue": "La selección natural no inventa las diferencias, sólo favorece las que ya existen. Si empiezas sin variación, no hay nada para seleccionar."
@@ -47,14 +47,14 @@
         },
         {
           "numero": 4,
-          "queSeHace": "Cuentas cuántos de cada variante quedan después de que el ambiente actúa.",
+          "queSeHace": "Cuentas cuántos de cada variante hay en la siguiente generación, es decir, entre las crías de los que se reprodujeron.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Siguiente generación: 25 claros y 25 oscuros"
+              "valor": "Generación 2: 15 claros y 35 oscuros. Total: 50."
             }
           ],
-          "porQue": "La proporción cambió porque menos claras que oscuras dejaron crías. El conteo es lo que muestra que algo pasó. La herencia garantiza que las crías de oscuros sean oscuras."
+          "porQue": "La proporción cambió porque las oscuras, que eran 10, dejaron 35 crías, y las claras, que eran 40, sólo 15: cada oscura dejó más crías que cada clara. El conteo es lo que muestra que algo pasó. La herencia garantiza que las crías de oscuros sean oscuras."
         },
         {
           "numero": 5,
@@ -62,7 +62,7 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Antes: 80% claros. Después: 50% claros. La frecuencia bajó."
+              "valor": "Antes: 80% claros. Después: 30% claros. La frecuencia bajó."
             }
           ],
           "porQue": "El cambio en la frecuencia de cada variante es la evolución dentro de la población. Sin esto, no hay selección natural, hay coincidencia. La comparación es lo que lo demuestra."
@@ -74,16 +74,20 @@
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "Generación 1: 40 claros, 10 oscuros"
+          "valor": "Generación 1: 40 claros, 10 oscuros → Generación 2: 15 claros, 35 oscuros"
+        },
+        {
+          "tipo": "texto",
+          "valor": "¿Qué porcentaje de la generación 2 son claros?"
         }
       ],
       "resultado": [
         {
           "tipo": "texto",
-          "valor": "Generación 2: 25 claros, 25 oscuros. Claros bajaron de 80% a 50%."
+          "valor": "30"
         }
       ],
-      "resultadoEnPalabras": "la frecuencia de claros bajó de 80 por ciento a 50 por ciento"
+      "resultadoEnPalabras": "treinta por ciento de las polillas de la generación 2 son claras; antes eran el ochenta por ciento"
     },
     "error": {
       "enUnaFrase": "Explica el cambio diciendo que los animales se esforzaron o se acostumbraron, o que adquirieron un rasgo durante la vida y lo heredaron.",
@@ -101,7 +105,7 @@
           "valor": "Por eso sus crías nacieron mas oscuras"
         }
       ],
-      "comoSeCacha": "Si la variación ya existía en la primera generación (40 claros y 10 oscuros), no pudieron haberla adquirido durante sus vidas. El esfuerzo de un individuo no aparece en el conteo de la generación siguiente: sólo aparecen los que se reprodujeron."
+      "comoSeCacha": "Si la variación ya existía en la primera generación (40 claros y 10 oscuros), no pudieron haberla adquirido durante sus vidas. El esfuerzo de un individuo no aparece en el conteo de la generación siguiente: ahí sólo cuentan las crías de los que se reprodujeron."
     },
     "erroresSecundarios": [
       {
@@ -134,8 +138,10 @@
       }
     ],
     "cotas": {
-      "numeros": "números pequeños de 10 a 100 por generación; dos variantes contrastadas; porcentajes simples que resultan de los conteos; del 1 al 3 generaciones para ver el cambio",
-      "unidades": [],
+      "numeros": "números pequeños de 10 a 100 por generación; dos variantes contrastadas; el total de cada generación es 20, 25, 50 o 100 (el del ejemplo es 50) para que el porcentaje salga entero, sin decimales; del 1 al 3 generaciones para ver el cambio",
+      "unidades": [
+        "%"
+      ],
       "simbolos": [
         {
           "tipo": "texto",
