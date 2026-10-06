@@ -20,6 +20,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { CODIGO_DE_TOPE, resumenDelGasto } from './gasto.mjs';
+import { llaveDeAnthropic } from './llaves.mjs';
 
 const aqui = dirname(fileURLToPath(import.meta.url));
 const raiz = dirname(aqui);
@@ -100,9 +101,10 @@ const rehacer = banderas.has('--rehacer');
 // Se comprueban aqui, antes de parir veinte hijos que impriman veinte veces el
 // mismo reclamo. El sondeo no busca videos, asi que no pide la de OpenAI.
 if (!seco) {
-  const hacenFalta = ['ANTHROPIC_API_KEY', ...(sondeo ? [] : ['OPENAI_API_KEY'])].filter(
-    (n) => !process.env[n],
-  );
+  const hacenFalta = [
+    ...(llaveDeAnthropic() ? [] : ['ANDAMIO_ANTHROPIC_API_KEY']),
+    ...(sondeo || process.env.OPENAI_API_KEY ? [] : ['OPENAI_API_KEY']),
+  ];
   if (hacenFalta.length) {
     console.error(
       [

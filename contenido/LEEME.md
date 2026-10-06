@@ -106,7 +106,9 @@ público y se deja incrustar, y de paso da el título y el canal de verdad.
 Claude sólo **escoge** entre esa lista, y el llamador comprueba que lo que escogió
 estuviera en ella. Si no, el video se tira y el tema se guarda sin él.
 
-Necesitas `OPENAI_API_KEY` además de `ANTHROPIC_API_KEY`. Las dos van en `.env`,
+Necesitas `OPENAI_API_KEY` además de `ANDAMIO_ANTHROPIC_API_KEY` (también vale
+`ANTHROPIC_API_KEY`, pero en una sesión en la nube usa la primera: la segunda es la
+variable con la que Claude Code se autentica a sí mismo). Las dos van en `.env`,
 que `.gitignore` ignora; `generar.mjs` y `tanda.mjs` lo cargan solos.
 
 ---

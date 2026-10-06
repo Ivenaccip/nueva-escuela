@@ -30,6 +30,7 @@ import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
 
 import { buscarVideos, candidatosComoTexto } from './buscar-videos.mjs';
+import { llaveDeAnthropic } from './llaves.mjs';
 import {
   anotar,
   CODIGO_DE_TOPE,
@@ -259,7 +260,12 @@ function faltaLaLlave(nombre, paraQue) {
 
 if (!seco) {
   const pendientes = [
-    faltaLaLlave('ANTHROPIC_API_KEY', 'la que escribe el contenido'),
+    llaveDeAnthropic()
+      ? null
+      : faltaLaLlave(
+          'ANDAMIO_ANTHROPIC_API_KEY',
+          'la que escribe el contenido (también vale ANTHROPIC_API_KEY)',
+        ),
     solo === 'canon'
       ? null
       : faltaLaLlave('OPENAI_API_KEY', 'la que busca el video de la estacion 1'),
@@ -267,7 +273,7 @@ if (!seco) {
   if (pendientes.length) morir(pendientes.join('\n\n'));
 }
 
-const cliente = seco ? null : new Anthropic();
+const cliente = seco ? null : new Anthropic({ apiKey: llaveDeAnthropic() });
 
 // ---------------------------------------------------------------------------
 // Validar contra el esquema. La API NO lo hace (CONTRATO.md §7).
@@ -382,7 +388,7 @@ async function pedir(cuerpo) {
   try {
     return await cliente.messages.create(cuerpo);
   } catch (e) {
-    if (e instanceof Anthropic.AuthenticationError) morir('La llave de ANTHROPIC_API_KEY no sirve.');
+    if (e instanceof Anthropic.AuthenticationError) morir('La llave de Anthropic no sirve.');
     if (e instanceof Anthropic.BadRequestError) {
       if (estricto && /strict|schema/i.test(e.message)) {
         estricto = false;
