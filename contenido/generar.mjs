@@ -176,6 +176,12 @@ const CASOS_APARTE = {
 
 class Rajada extends Error {}
 
+/**
+ * El id del `tool_use` de cada salida, por objeto. La corrección (ver `correr`) tiene
+ * que devolverle al modelo su propia salida como turno suyo, y la API exige el id.
+ */
+const IDS_DE_SALIDA = new WeakMap();
+
 const morir = (mensaje, detalle) => {
   console.error(`\n${mensaje}`);
   if (detalle) console.error(detalle);
@@ -418,7 +424,7 @@ async function pedir(cuerpo) {
  * esquema en el servidor. No sustituye a ajv —el esquema completo no cabe en el
  * subconjunto de strict— pero atrapa gratis la mitad de los errores de forma.
  */
-async function llamar({ paso, sistema, mensaje }) {
+async function llamar({ paso, sistema, mensaje, corregir }) {
   const esquema = await cargarEsquema(paso.esquema);
   const herramientaSalida = {
     name: paso.herramienta,
@@ -428,6 +434,33 @@ async function llamar({ paso, sistema, mensaje }) {
   };
 
   const mensajes = [{ role: 'user', content: mensaje }];
+  // Una corrección es la misma conversación con dos turnos más: lo que el modelo
+  // devolvió, y el resultado de la herramienta como error con lo que falló.
+  if (corregir) {
+    const id = IDS_DE_SALIDA.get(corregir.salida);
+    mensajes.push(
+      {
+        role: 'assistant',
+        content: [{ type: 'tool_use', id, name: paso.herramienta, input: corregir.salida }],
+      },
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'tool_result',
+            tool_use_id: id,
+            is_error: true,
+            content:
+              `La salida no pasó la validación. Los errores exactos:\n${corregir.errores}\n\n` +
+              `Llama otra vez a ${paso.herramienta} con la salida COMPLETA, igual que la anterior ` +
+              'salvo los campos que el error señala. Corrige sólo esos: lo que pasó del tope de ' +
+              'caracteres se reescribe más corto, con la misma idea y sin cortar a media frase; ' +
+              'respeta cada tope; no cambies nada más.',
+          },
+        ],
+      },
+    );
+  }
   const tope = 1;
 
   for (let turno = 1; turno <= tope; turno += 1) {
@@ -474,7 +507,10 @@ async function llamar({ paso, sistema, mensaje }) {
     const salida = (datos.content ?? []).find(
       (b) => b.type === 'tool_use' && b.name === paso.herramienta,
     );
-    if (salida) return salida.input;
+    if (salida) {
+      IDS_DE_SALIDA.set(salida.input, salida.id);
+      return salida.input;
+    }
 
     throw new Rajada(
       `${paso.clave}: contestó sin llamar a ${paso.herramienta} (stop_reason ${datos.stop_reason}). Se descarta.`,
@@ -895,20 +931,41 @@ async function correr(paso, valores) {
   decir(`\n  ${paso.clave} · ${paso.herramienta}`);
   let resultado = await llamarConReintentos({ paso, sistema, mensaje });
 
-  // Todo lo que el llamador sabe con certeza se rellena ANTES de validar: un campo
-  // que nadie tenía que adivinar no puede tirar la llamada entera.
-  sellarTraza(paso, resultado, temario, tema);
-  sellarIndices(resultado);
-  sellarComillasSueltas(resultado);
-  sellarTeclado(paso, resultado);
-  if (paso.necesitaVideos) sellarVideo(resultado, valores.__candidatos ?? [], valores.__consulta);
+  const sellarYComprobar = (r) => {
+    // Todo lo que el llamador sabe con certeza se rellena ANTES de validar: un campo
+    // que nadie tenía que adivinar no puede tirar la llamada entera.
+    sellarTraza(paso, r, temario, tema);
+    sellarIndices(r);
+    sellarComillasSueltas(r);
+    sellarTeclado(paso, r);
+    if (paso.necesitaVideos) sellarVideo(r, valores.__candidatos ?? [], valores.__consulta);
 
-  comprobarEsquema(paso, resultado);
-  comprobarTraza(paso, resultado, temario, tema);
-  comprobarIndices(paso, resultado);
-  comprobarUnoSolo(paso, resultado);
+    comprobarEsquema(paso, r);
+    comprobarTraza(paso, r, temario, tema);
+    comprobarIndices(paso, r);
+    comprobarUnoSolo(paso, r);
 
-  if (paso.necesitaVideos) comprobarVideoEscogido(resultado, valores.__candidatos ?? []);
+    if (paso.necesitaVideos) comprobarVideoEscogido(r, valores.__candidatos ?? []);
+  };
+
+  // Una vuelta de corrección, no un reintento a ciegas. Lo que más tira una salida
+  // es pasarse de un tope de caracteres (resumen 242 de 240, pregunta 75 de 70), y
+  // repetir la llamada tal cual vuelve a pasarse por lo mismo: el modelo no ve qué
+  // falló. Con el error delante corrige sólo ese campo. Cuesta una llamada más, y
+  // ahorra las tres que la tanda se gastaba repitiendo el tema entero.
+  try {
+    sellarYComprobar(resultado);
+  } catch (e) {
+    if (!(e instanceof Rajada)) throw e;
+    decir(`      no valida; una vuelta de corrección con los errores a la vista`);
+    resultado = await llamarConReintentos({
+      paso,
+      sistema,
+      mensaje,
+      corregir: { salida: resultado, errores: e.message },
+    });
+    sellarYComprobar(resultado);
+  }
 
   if (resultado.noSePuede) {
     decir(`      noSePuede lleno: ${resultado.noSePuede.que}`);
@@ -1025,8 +1082,25 @@ for (const paso of porGenerar) {
   try {
     const suyos = { ...valores };
     if (paso.necesitaVideos) {
-      decir('\n  buscando el video con OpenAI...');
-      const hallazgo = await buscarVideos(tema, materia);
+      // La búsqueda se paga (≈ $0.2 con gpt-5.5) y la estación 1 puede no salir a la
+      // primera. Lo buscado se guarda aparte para que reintentar la estación no lo
+      // pague otra vez; un archivo vacío de candidatos no se guarda: ahí sí se busca.
+      const rutaDeVideos = join(dirTemas, `_videos-${materia}-${numero}.json`);
+      let hallazgo = null;
+      try {
+        hallazgo = JSON.parse(await readFile(rutaDeVideos, 'utf8'));
+        if (!hallazgo?.candidatos?.length) hallazgo = null;
+        else decir('\n  video: se reusa la búsqueda guardada de la corrida anterior.');
+      } catch {
+        // Sin archivo, o ilegible: se busca de nuevo.
+      }
+      if (!hallazgo) {
+        decir('\n  buscando el video con OpenAI...');
+        hallazgo = await buscarVideos(tema, materia);
+        if (hallazgo.candidatos.length) {
+          await writeFile(rutaDeVideos, JSON.stringify(hallazgo, null, 2) + '\n', 'utf8');
+        }
+      }
       decir(
         `      ${hallazgo.candidatos.length} candidato(s) de ${hallazgo.buscados} enlace(s) vistos` +
           (hallazgo.descartados.length ? `, ${hallazgo.descartados.length} descartado(s)` : ''),

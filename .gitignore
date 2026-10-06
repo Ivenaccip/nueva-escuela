@@ -64,3 +64,6 @@ contenido/temas/_corrida.log
 
 # Cuanto se lleva gastado en la API: estado de tu cuenta, no contenido.
 contenido/temas/_gasto.json
+
+# Candidatos de video ya buscados: cuestan, y reintentar una estacion no debe pagarlos otra vez.
+contenido/temas/_videos-*.json
