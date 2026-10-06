@@ -19,9 +19,22 @@ import matematicas_9 from '../../contenido/temas/matematicas-9.json';
 import matematicas_13 from '../../contenido/temas/matematicas-13.json';
 import matematicas_14 from '../../contenido/temas/matematicas-14.json';
 import matematicas_18 from '../../contenido/temas/matematicas-18.json';
+import biologia_2 from '../../contenido/temas/biologia-2.json';
+import biologia_11 from '../../contenido/temas/biologia-11.json';
 import biologia_24 from '../../contenido/temas/biologia-24.json';
+import biologia_26 from '../../contenido/temas/biologia-26.json';
+import biologia_33 from '../../contenido/temas/biologia-33.json';
 import quimica_1 from '../../contenido/temas/quimica-1.json';
+import quimica_2 from '../../contenido/temas/quimica-2.json';
 import quimica_11 from '../../contenido/temas/quimica-11.json';
+import quimica_12 from '../../contenido/temas/quimica-12.json';
+import quimica_13 from '../../contenido/temas/quimica-13.json';
+import quimica_14 from '../../contenido/temas/quimica-14.json';
+import quimica_15 from '../../contenido/temas/quimica-15.json';
+import quimica_24 from '../../contenido/temas/quimica-24.json';
+import quimica_28 from '../../contenido/temas/quimica-28.json';
+import quimica_31 from '../../contenido/temas/quimica-31.json';
+import quimica_34 from '../../contenido/temas/quimica-34.json';
 
 /** Lo que el temario sabe de un tema y la IA no repite. */
 export type EntradaDelTemario = {
@@ -63,7 +76,11 @@ export const CATALOGO: Partial<Record<Materia, MateriaDelCatalogo>> = {
     totalTemas: temario_biologia.totalTemas,
     temario: temario_biologia.temas as unknown as EntradaDelTemario[],
     redactados: [
+      biologia_2 as unknown as TemaRedactado,
+      biologia_11 as unknown as TemaRedactado,
       biologia_24 as unknown as TemaRedactado,
+      biologia_26 as unknown as TemaRedactado,
+      biologia_33 as unknown as TemaRedactado,
     ],
   },
   quimica: {
@@ -72,7 +89,16 @@ export const CATALOGO: Partial<Record<Materia, MateriaDelCatalogo>> = {
     temario: temario_quimica.temas as unknown as EntradaDelTemario[],
     redactados: [
       quimica_1 as unknown as TemaRedactado,
+      quimica_2 as unknown as TemaRedactado,
       quimica_11 as unknown as TemaRedactado,
+      quimica_12 as unknown as TemaRedactado,
+      quimica_13 as unknown as TemaRedactado,
+      quimica_14 as unknown as TemaRedactado,
+      quimica_15 as unknown as TemaRedactado,
+      quimica_24 as unknown as TemaRedactado,
+      quimica_28 as unknown as TemaRedactado,
+      quimica_31 as unknown as TemaRedactado,
+      quimica_34 as unknown as TemaRedactado,
     ],
   },
 };
