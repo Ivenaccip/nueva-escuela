@@ -1,0 +1,254 @@
+{
+  "materia": "biologia",
+  "temaNumero": 9,
+  "titulo": "Fotosíntesis: comer del aire",
+  "generadoEn": "2026-10-06T15:51:57.805Z",
+  "canon": {
+    "temaNumero": 9,
+    "materia": "biologia",
+    "titulo": "Fotosíntesis: comer del aire",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Explicar el balance de materia en la fotosíntesis",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas dónde ocurre la fotosíntesis: en la hoja de la planta.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La fotosíntesis ocurre en la hoja"
+            }
+          ],
+          "porQue": "Es donde entra la luz del sol, que es la energía que hace funcionar todo lo demás. Sin ese lugar, confundes dónde entran los ingredientes."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Señalas qué entra por la hoja y qué entra por la raíz: en la hoja entra bióxido de carbono del aire, en la raíz entra agua del suelo.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "CO",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "+ "
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "O"
+            }
+          ],
+          "porQue": "Casi toda la masa que la planta gana viene del aire, no del suelo. La raíz trae agua, pero la madera está hecha de carbono que cogió del bióxido de carbono."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Escribes qué se forma gracias a la luz: una azúcar, que es comida para la planta.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Con luz se forma "
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "C",
+              "sub": "6"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "12"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "6"
+            }
+          ],
+          "porQue": "Esa azúcar es la que construye la planta: sin ella no crece. Cuando comes una papa, comes azúcares que la planta guardó con esta reacción."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Dices qué sale de la fotosíntesis: oxígeno que la planta no necesita y que tú sí.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Sale "
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "2"
+            }
+          ],
+          "porQue": "Es el gas que respiras. La planta lo regala. Si no existiera la fotosíntesis, no habría aire para respirar."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Concluyws de dónde salió la masa de la planta: casi toda del bióxido de carbono que entró por la hoja, no del suelo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La madera viene del aire, no del suelo"
+            }
+          ],
+          "porQue": "El carbono es pesado. Si casi toda la masa salió del bióxido de carbono, la planta crecerá aunque el suelo no tenga tantos nutrientes. El peso no puede salir de donde no entra."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una planta que crece bajo la luz del sol",
+      "planteamiento": [
+        {
+          "tipo": "simbolo",
+          "valor": "CO",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "+ "
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "O → "
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "C",
+          "sub": "6"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "12"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "6"
+        },
+        {
+          "tipo": "texto",
+          "valor": "+ "
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "El carbono en la azúcar viene del aire"
+        }
+      ],
+      "resultadoEnPalabras": "el carbono en la azúcar viene del aire, no del suelo"
+    },
+    "error": {
+      "enUnaFrase": "Dice que la planta se alimenta del suelo y que el tronco está hecho de tierra que subió por la raíz.",
+      "creenciaDeAtras": "Cree que todo lo que la planta gana entra por la raíz, porque la raíz es lo único que toca el suelo. No ve que el bióxido de carbono del aire es más pesado que el agua que entra por abajo.",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "La madera viene del suelo, por la raíz"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "La planta se alimenta de la tierra"
+        }
+      ],
+      "comoSeCacha": "Si todo entrara por la raíz, la planta sólo crecería cuando llueve. Pero crece más en los días soleados. También, si el suelo no tuviera nutrientes, no crecería nada; sin embargo, las plantas en agua destilada (sin sales del suelo) crecen si están bajo la luz."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "fotosíntesis",
+        "queEs": "El proceso donde la planta usa la luz del sol para juntar bióxido de carbono del aire y agua del suelo, y forma azúcar para crecer.",
+        "noEsLoMismoQue": "la respiración de la planta, que es lo contrario: la planta quema azúcar y produce bióxido de carbono"
+      },
+      {
+        "palabra": "bióxido de carbono",
+        "queEs": "El gas del aire que la planta necesita para la fotosíntesis. Es lo que sueltan los coches, los animales y las fábricas cuando respiran o queman combustible.",
+        "noEsLoMismoQue": "el oxígeno, que es lo que sale de la fotosíntesis y lo que nosotros necesitamos para respirar"
+      },
+      {
+        "palabra": "azúcar",
+        "queEs": "La comida que forma la planta con la luz, el aire y el agua. La planta usa esa azúcar para crecer y construir su madera.",
+        "noEsLoMismoQue": "el nutriente del suelo, que son sales y minerales que entran por la raíz pero no forman la masa principal de la planta"
+      },
+      {
+        "palabra": "hoja",
+        "queEs": "La parte de la planta donde entra la luz del sol y el bióxido de carbono del aire. Es donde ocurre la fotosíntesis.",
+        "noEsLoMismoQue": "la raíz, que trae el agua del suelo"
+      },
+      {
+        "palabra": "nutriente",
+        "queEs": "La sal o el mineral que la planta saca del suelo por la raíz. Es poca masa comparada con el carbono del aire.",
+        "noEsLoMismoQue": "el bióxido de carbono, que entra por la hoja y forma casi toda la masa de la planta"
+      }
+    ],
+    "cotas": {
+      "numeros": "Los números del ejemplo son los átomos de la ecuación balanceada: CO₂, H₂O, C₆H₁₂O₆, O₂. No se usan números adicionales en los escalones.",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "simbolo",
+          "valor": "CO",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "C",
+          "sub": "6"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "12"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "6"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

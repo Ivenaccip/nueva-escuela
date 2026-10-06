@@ -1,0 +1,176 @@
+{
+  "materia": "biologia",
+  "temaNumero": 8,
+  "titulo": "Enzimas: por qué el pH las apaga",
+  "generadoEn": "2026-10-06T15:51:36.959Z",
+  "canon": {
+    "temaNumero": 8,
+    "materia": "biologia",
+    "titulo": "Enzimas: por qué el pH las apaga",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Entender por qué una enzima solo trabaja en su pH",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas cuál es el sustrato que la enzima corta y a qué pH trabaja mejor.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La amilasa corta almidón en pH 8"
+            }
+          ],
+          "porQue": "Cada enzima solo funciona con una sustancia específica y en un rango de pH estrecho. Fuera de ese rango, pierde su forma y no puede agarrar el sustrato."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Observas qué pasa con la enzima si el pH cambia, aunque sea poco.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "En pH 2, la amilasa se desnaturaliza"
+            }
+          ],
+          "porQue": "El pH extremo rompe los enlaces que mantienen la proteína enrollada. Sin su forma de gancho, la enzima no puede agarrar el almidón aunque esté presente."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Distingues si la desnaturalización es reversible o irreversible.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La desnaturalización es irreversible"
+            }
+          ],
+          "porQue": "Si el pH cambió demasiado, la proteína se rompió tan mal que no se puede recomponer. La enzima sigue siendo proteína, pero ya no funciona como enzima."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Reconoces que la enzima no se gasta ni se convierte en parte del alimento, solo se apaga.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La amilasa sigue ahí, pero inactiva"
+            }
+          ],
+          "porQue": "La enzima solo reordena las moléculas, no se une a ellas ni desaparece. Si vuelve a su pH original, se redobla y vuelve a funcionar; si se desnaturalizó, quedó rota pero presente."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Identificas qué otra enzima toma el relevo cuando la anterior se apaga.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La pepsina del estómago corta proteínas en pH 2"
+            }
+          ],
+          "porQue": "El alimento no deja de digerirse; solo cambia el tipo de sustancia que se digiere. Cada órgano tiene sus propias enzimas, cada una con su pH óptimo, para que la digestión sea continua."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "de cómo la amilasa de la saliva se apaga al caer al estómago",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Amilasa en pH 8: activa. ¿A qué pH se desnaturaliza?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "A pH 2"
+        }
+      ],
+      "resultadoEnPalabras": "pH dos"
+    },
+    "error": {
+      "enUnaFrase": "Cree que la enzima se gasta o se convierte en parte del alimento, y que entre más ácido, mejor se digiere.",
+      "creenciaDeAtras": "Confunde la desnaturalización con consumo: piensa que si la enzima no funciona más es porque 'se acabó' o 'se metió en el alimento', como si fuera un reactivo que desaparece",
+      "pasoQueCorrompe": 4,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "La amilasa se convierte en glucosa"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "La enzima se convierte en el producto final"
+        }
+      ],
+      "comoSeCacha": "La amilasa es una proteína que mide más de 500 aminoácidos. La glucosa es un solo azúcar. Una no se convierte en la otra: son moléculas de complejidad completamente distinta."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que a pH muy bajo (muy ácido) todo se digiere mejor.",
+        "creenciaDeAtras": "Piensa que la acidez 'rompe' las moléculas de alimento, confundiendo desnaturalización de proteína con degradación de sustrato. En realidad, el pH extremo solo apaga la herramienta."
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "pH óptimo",
+        "queEs": "El rango de acidez o alcalinidad en el que una enzima funciona mejor. Fuera de ese rango, la enzima se desnaturaliza.",
+        "noEsLoMismoQue": "pH del alimento, que es dónde está el sustrato pero no necesariamente dónde la enzima trabaja"
+      },
+      {
+        "palabra": "desnaturalizar",
+        "queEs": "Perder la forma enrollada que tiene una proteína. Si se desnaturaliza, la proteína sigue siendo proteína, pero pierde su función."
+      },
+      {
+        "palabra": "reversible e irreversible",
+        "queEs": "Reversible: se puede volver al estado original si cambian las condiciones. Irreversible: no se vuelve nunca al estado original, aunque cambien las condiciones.",
+        "noEsLoMismoQue": "recuperarse y no recuperarse, que es el resultado, no el tipo de cambio"
+      },
+      {
+        "palabra": "sustrato",
+        "queEs": "La molécula que una enzima corta. Para la amilasa es el almidón; para la pepsina es las proteínas.",
+        "noEsLoMismoQue": "producto, que es lo que queda después de que la enzima corta el sustrato"
+      },
+      {
+        "palabra": "enzima",
+        "queEs": "Una proteína que acelera una reacción química sin gastarse. Reordena moléculas pero no cambia ella."
+      }
+    ],
+    "cotas": {
+      "numeros": "valores de pH de 1 a 14, enteros; preguntas sobre cuál es el pH óptimo de una enzima o a qué pH se desnaturaliza",
+      "unidades": [
+        "pH"
+      ],
+      "simbolos": [
+        {
+          "tipo": "simbolo",
+          "valor": "C",
+          "sub": "6"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "12"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "6"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "Notación de la escala de pH con representación visual y reacción enzimática con la enzima encima de la flecha",
+      "porQue": "El esquema de átomos puede escribir 'pH 2' y la flecha '→', pero no puede dibujar una escala visual de pH o una reacción dibujada con la enzima encima. Esto requiere una figura, no solo renglones.",
+      "queHagoConEsto": "El tema necesita notación: 'figura', no 'lineal'. La pantalla tendrá que dibujar la escala de pH y las reacciones como diagrama. Sin esto, los cinco pasos no se pueden mostrar completamente porque falta el contexto visual del pH que es central al tema."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

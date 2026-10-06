@@ -1,0 +1,169 @@
+{
+  "materia": "biologia",
+  "temaNumero": 15,
+  "titulo": "Reproducción sexual y asexual",
+  "generadoEn": "2026-10-06T15:54:10.809Z",
+  "canon": {
+    "temaNumero": 15,
+    "materia": "biologia",
+    "titulo": "Reproducción sexual y asexual",
+    "notacion": "lineal",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Clasificar si un ser vivo se reprodujo sexual o asexualmente",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Cuentas cuántos progenitores tuvo el ser vivo: uno o dos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Una célula madre se divide. Un progenitor."
+            }
+          ],
+          "porQue": "La reproducción sexual siempre necesita dos: macho y hembra, o dos células sexuales que se fusionan. Si hay uno solo, no hay información de dos fuentes."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Determinas si hubo células sexuales o si fue división directa.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "No hay gametos. Se divide el cuerpo directamente."
+            }
+          ],
+          "porQue": "Las células sexuales sirven sólo para que se mezcle información. Si no hay gametos, no hay mezcla posible, aunque haya dos progenitores."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Revisas si se mezclaron dos informaciones genéticas distintas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La información viene toda de un progenitor. Copia exacta."
+            }
+          ],
+          "porQue": "Aunque haya gametos, la información genética es lo que cambia. Si se mezclan dos informaciones, salen crías distintas entre sí. Si no se mezclan, las crías son copias."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Observas cuánta variación hay entre los hijos y compararlos con los padres.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Todos los hijos son idénticos al padre y entre sí."
+            }
+          ],
+          "porQue": "Si la información no se mezcló, los hijos no pueden variar. Son clones. Si hay variación, es señal de que hubo mezcla de dos informaciones diferentes."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Clasificas: asexual si no hay mezcla de información; sexual si la hay.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Reproducción: asexual."
+            }
+          ],
+          "porQue": "La diferencia entre sexual y asexual es si dos informaciones se mezclaron o una sola se copió. Todo lo anterior fue para saber esto. Asexual produce copias; sexual produce variación."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una bacteria que se divide en dos células iguales",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Una bacteria se divide sin fusionarse con otra. Sus dos células hijas son copias exactas."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Reproducción asexual."
+        }
+      ],
+      "resultadoEnPalabras": "asexual"
+    },
+    "error": {
+      "enUnaFrase": "Clasifica como asexual a cualquier ser que no busque pareja.",
+      "creenciaDeAtras": "cree que 'asexual' significa 'sin pareja' o 'que no se busca pareja', como la palabra en otros contextos; confunde el mecanismo biológico con el comportamiento de buscar compañero",
+      "pasoQueCorrompe": 1,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Una planta tiene flores pero no busca a otra planta. Un progenitor."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Reproducción asexual."
+        }
+      ],
+      "comoSeCacha": "Una planta con flores SÍ produce gametos y SÍ necesita otro progenitor para que se mezclen dos informaciones. La flor es el órgano sexual: está buscando pareja aunque no se mueva."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Piensa que los hijos asexuales se parecen mucho, pero no son copias exactas.",
+        "creenciaDeAtras": "cree que 'idéntico' significa 'muy parecido' en vez de 'igual en cada detalle', porque en la vida cotidiana se usa así; no ve la diferencia entre 'casi igual' y 'copia exacta'"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "reproducción sexual",
+        "queEs": "La que necesita dos progenitores cuyos gametos se fusionan, mezclando información genética de ambos en los hijos.",
+        "noEsLoMismoQue": "reproducción asexual, donde un solo progenitor se copia sin mezclar información"
+      },
+      {
+        "palabra": "reproducción asexual",
+        "queEs": "La que hace un progenitor solo, sin gametos ni mezcla. Los hijos son copias genéticas idénticas del padre.",
+        "noEsLoMismoQue": "tener un solo compañero o no buscar pareja, que es otra cosa"
+      },
+      {
+        "palabra": "gameto",
+        "queEs": "Célula sexual que lleva información genética de un progenitor. Se fusiona con otro gameto para mezclar dos informaciones y hacer un ser vivo nuevo.",
+        "noEsLoMismoQue": "célula ordinaria, que se copia sin fusionarse"
+      },
+      {
+        "palabra": "idéntico",
+        "queEs": "Exactamente igual en cada detalle genético, una copia perfecta sin ninguna diferencia.",
+        "noEsLoMismoQue": "parecido, que es similar pero no exacto"
+      },
+      {
+        "palabra": "variación",
+        "queEs": "Las diferencias que aparecen entre los hijos cuando sus padres tienen información genética distinta que se mezcla.",
+        "noEsLoMismoQue": "no hay variación en los clones, que son todos idénticos"
+      },
+      {
+        "palabra": "información genética",
+        "queEs": "Los datos en el ADN que determina las características de un ser vivo: color, forma, tamaño, comportamiento heredado."
+      }
+    ],
+    "cotas": {
+      "numeros": "no aplica; el tema es clasificación cualitativa sin números",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "sexual"
+        },
+        {
+          "tipo": "texto",
+          "valor": "asexual"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "La respuesta es una palabra o una clasificación categórica, no un número ni una fracción.",
+      "porQue": "El teclado de la app sólo puede escribir dígitos y la diagonal. Las palabras 'sexual' y 'asexual' no se teclean.",
+      "queHagoConEsto": "Este tema necesita otro prompt que acepte palabras como respuesta. Declara formaDeRespuesta como 'palabra' y el tema se mandará a una estación que permita seleccionar o confirmar una clasificación en vez de teclear números."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

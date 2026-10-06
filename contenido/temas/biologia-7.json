@@ -1,0 +1,162 @@
+{
+  "materia": "biologia",
+  "temaNumero": 7,
+  "titulo": "El viaje del taco: digestión",
+  "generadoEn": "2026-10-06T15:51:12.990Z",
+  "canon": {
+    "temaNumero": 7,
+    "materia": "biologia",
+    "titulo": "El viaje del taco: digestión",
+    "notacion": "lineal",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Seguir el taco por el tubo digestivo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "El taco entra por la boca, donde se rompe en pedazos y se mezcla con saliva.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "boca → esófago"
+            }
+          ],
+          "porQue": "La boca es la puerta: ahí empieza la digestión mecánica cuando mastícas, y la química cuando la saliva desmorona las moléculas de carbohidrato. Lo que sale de la boca es un bolo masticado, no lo que entró."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "El esófago es sólo un tubo que baja el bolo hacia el estómago sin digerir nada.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "esófago → estómago"
+            }
+          ],
+          "porQue": "El esófago no tiene enzimas ni segrega ácido. Su único trabajo es empujar lo que comiste hacia abajo con contracciones, como una manguera que transporta. Lo que sale del esófago es lo mismo que entró, sólo que más abajo."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "En el estómago, el ácido rompe proteínas y las grasas empiezan a desmoronarse, pero casi nada se absorbe.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "estómago → intestino delgado"
+            }
+          ],
+          "porQue": "El estómago digiere, pero no absorbe: es un tanque de mezcla y reacción. La pared del estómago no deja pasar los nutrientes a la sangre. Lo que sale es una papilla ácida llamada quimo, lista para el intestino delgado."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "En el intestino delgado, el hígado y el páncreas vierten sus jugos para romper lo que queda, y aquí sí los nutrientes pasan a la sangre.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "intestino delgado → intestino grueso"
+            }
+          ],
+          "porQue": "El intestino delgado es donde pasa de verdad lo importante: tiene la superficie exacta para que los nutrientes atraviesen la pared hacia los vasos sanguíneos. Sin esa absorción no hay energía para el cuerpo. Es el paso que define si los nutrientes entran a la sangre o se pierden."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "En el intestino grueso se absorbe el agua que queda, y lo que no se pudo digerir se descarta como heces.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "intestino grueso → afuera"
+            }
+          ],
+          "porQue": "El intestino grueso es el último paso, no es un tubo de paso. Absorbe agua para que el cuerpo no pierda líquido, y concentra lo que no le sirve. Sin este paso, perderías agua con cada comida."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un taco de pollo que entra a la boca a las 12 del mediodía",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "boca → esófago → estómago → intestino delgado → intestino grueso"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "intestino delgado"
+        }
+      ],
+      "resultadoEnPalabras": "el intestino delgado, que es donde pasan los nutrientes a la sangre"
+    },
+    "error": {
+      "enUnaFrase": "Cree que la digestión termina en el estómago y que ahí se absorben los nutrientes.",
+      "creenciaDeAtras": "piensa que porque el estómago digiere también es donde entran los nutrientes a la sangre, confundiendo dónde se rompe la comida con dónde se absorbe",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "estómago: aquí se digiere y se absorben los nutrientes → intestino grueso"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "estómago"
+        }
+      ],
+      "comoSeCacha": "El estudiante salta el intestino delgado, que es el órgano clave para la absorción. Cuando dices qué órgano absorbe los nutrientes de verdad, falta en su respuesta el que hace ese trabajo."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Ve el intestino delgado como un tubo de paso rumbo al baño, sin función propia.",
+        "creenciaDeAtras": "no distingue entre transportar algo y procesarlo, así que si el intestino delgado no «rompe» como el estómago, piensa que no hace nada importante"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "absorber",
+        "queEs": "Cuando los nutrientes atraviesan la pared del órgano y entran a la sangre para llegar a todo el cuerpo.",
+        "noEsLoMismoQue": "digerir, que es romper la comida en moléculas más chiquitas para que se puedan absorber"
+      },
+      {
+        "palabra": "digerir",
+        "queEs": "Romper la comida en moléculas lo bastante chiquitas para que pasen a la sangre. Sin esto, el cuerpo no puede usar la comida aunque la tenga dentro.",
+        "noEsLoMismoQue": "absorber, que es el paso siguiente en el que esas moléculas chiquitas entran a la sangre"
+      },
+      {
+        "palabra": "el tubo digestivo",
+        "queEs": "El camino por el que pasa la comida desde que entra por la boca hasta que sale por el ano: boca, esófago, estómago, intestino delgado e intestino grueso."
+      },
+      {
+        "palabra": "enzimas",
+        "queEs": "Las proteínas que digieren, que rompen las moléculas de comida en pedazos más pequeños. Cada enzima rompe un tipo de comida distinto."
+      },
+      {
+        "palabra": "nutrientes",
+        "queEs": "Lo que el cuerpo necesita de la comida para tener energía y para crecer: proteínas, grasas, carbohidratos, vitaminas y minerales."
+      },
+      {
+        "palabra": "intestino delgado",
+        "queEs": "El órgano donde se absorben la mayoría de los nutrientes hacia la sangre. Es delgado pero muy largo para tener más superficie."
+      }
+    ],
+    "cotas": {
+      "numeros": "no se usan números en este tema",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "La respuesta es una palabra o un nombre de órgano (intestino delgado, estómago, boca), y el teclado de la estación 3 sólo tiene dígitos, la diagonal y borrar.",
+      "porQue": "El teclado actual no soporta letras, así que no puede escribir palabras como respuesta.",
+      "queHagoConEsto": "Cambiar el tema para que pida un número en vez de un órgano (por ejemplo numerar los órganos del 1 al 5 y pedir el número), o dejar este tema fuera de las estaciones 3 y 4 que piden teclear, y procesarlo con otro prompt que sí soporte texto libre."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

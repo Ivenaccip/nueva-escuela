@@ -1,0 +1,155 @@
+{
+  "materia": "biologia",
+  "temaNumero": 4,
+  "titulo": "Célula animal y célula vegetal",
+  "generadoEn": "2026-10-06T15:50:08.391Z",
+  "canon": {
+    "temaNumero": 4,
+    "materia": "biologia",
+    "titulo": "Célula animal y célula vegetal",
+    "notacion": "figura",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Distinguir una célula vegetal de una animal por sus partes",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Observas la forma de la célula: si es rígida y cuadrada, es vegetal; si es redondeada, es animal.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La célula es rígida y tiene forma de caja."
+            }
+          ],
+          "porQue": "La forma rígida viene de la pared celular, que sólo tienen las plantas. Las células animales sin pared se contraen y redondean."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Buscas si hay pared celular rodeando toda la célula.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Tiene pared celular."
+            }
+          ],
+          "porQue": "La pared celular es lo que le da forma rígida a la célula vegetal. La célula animal tiene membrana, pero la pared sólo la tiene la planta."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Observas si hay cloroplastos verdes dentro de la célula.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Tiene cloroplastos verdes."
+            }
+          ],
+          "porQue": "Los cloroplastos hacen la fotosíntesis y dan el color verde. Todos los cloroplastos están en células de la planta que ven la luz, no en las raíces."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Buscas una vacuola grande que ocupa casi toda la célula.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Tiene una vacuola grande."
+            }
+          ],
+          "porQue": "La vacuola grande en las células vegetales guarda agua y le da firmeza a la planta. La célula animal tiene vacuolas, pero pequeñas."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Conclusión: si tiene pared y vacuola grande es vegetal; si es redondeada sin pared es animal.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La célula es vegetal."
+            }
+          ],
+          "porQue": "La pared celular y la vacuola grande son únicos de las plantas. Una célula que tiene los dos no puede ser animal."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una célula que observas al microscopio: tiene forma cuadrada, pared, cloroplastos y una vacuola grande",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Célula con forma de caja, pared celular, cloroplastos verdes y vacuola grande."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Célula vegetal"
+        }
+      ],
+      "resultadoEnPalabras": "es una célula vegetal"
+    },
+    "error": {
+      "enUnaFrase": "Dice que la célula vegetal no tiene membrana porque ya tiene pared.",
+      "creenciaDeAtras": "cree que la pared y la membrana son la misma cosa, o que si hay pared no hay membrana debajo",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Tiene pared celular, así que no tiene membrana."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "No es célula vegetal porque le falta membrana."
+        }
+      ],
+      "comoSeCacha": "La pared y la membrana son dos capas distintas. Toda célula, vegetal o animal, tiene membrana. La vegetal tiene pared encima de la membrana."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Confunde el cloroplasto con la célula entera: cree que si una célula tiene cloroplastos verdes, toda la planta es verde.",
+        "creenciaDeAtras": "cree que los cloroplastos están en todas las células de la planta, incluso en las raíces que no ven luz"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "pared celular",
+        "queEs": "La capa rígida que rodea la célula vegetal por fuera de la membrana. Le da forma y firmeza.",
+        "noEsLoMismoQue": "membrana celular, que está debajo de la pared y que todas las células, animales o vegetales, tienen"
+      },
+      {
+        "palabra": "membrana celular",
+        "queEs": "La capa que rodea toda célula, animal o vegetal, y deja pasar lo que la célula necesita.",
+        "noEsLoMismoQue": "pared celular, que en las plantas está encima de la membrana y en los animales no existe"
+      },
+      {
+        "palabra": "cloroplasto",
+        "queEs": "La parte de la célula vegetal donde ocurre la fotosíntesis y se produce el color verde. No está en todas las células: las raíces no tienen cloroplastos.",
+        "noEsLoMismoQue": "la célula vegetal, que es mucho más grande y contiene cloroplastos adentro"
+      },
+      {
+        "palabra": "vacuola",
+        "queEs": "Un espacio dentro de la célula que guarda agua y otras sustancias. En las plantas es muy grande. En los animales es pequeña.",
+        "noEsLoMismoQue": "la célula, que es todo junto"
+      },
+      {
+        "palabra": "fotosíntesis",
+        "queEs": "El proceso en el que la planta usa luz, agua y aire para hacer su propio alimento."
+      }
+    ],
+    "cotas": {
+      "numeros": "no hay números en este tema; es clasificación de estructuras",
+      "unidades": [],
+      "simbolos": []
+    },
+    "noSePuede": {
+      "que": "El tema pide teclear el nombre de la parte de la célula que falta en un diagrama etiquetado. La respuesta es una palabra: 'pared celular', 'membrana celular', 'cloroplasto', 'vacuola', 'núcleo'.",
+      "porQue": "El teclado de la estación 3 y 4 sólo tiene diez dígitos, la diagonal y borrar. No tiene letras. Una palabra no se puede teclear.",
+      "queHagoConEsto": "El tema necesita un prompt distinto que dibuje un diagrama con espacios numerados y pida al estudiante que reconozca la parte por su número o por su función. O se reformula para que la respuesta sea 'animal' o 'vegetal' en vez del nombre de una parte."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

@@ -1,0 +1,162 @@
+{
+  "materia": "biologia",
+  "temaNumero": 23,
+  "titulo": "El cuadro de Punnett",
+  "generadoEn": "2026-10-06T15:57:20.947Z",
+  "canon": {
+    "temaNumero": 23,
+    "materia": "biologia",
+    "titulo": "El cuadro de Punnett",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Armar un cuadro de Punnett y leer los resultados de una cruza",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Escribes el genotipo completo de cada progenitor en la orilla del cuadro, uno arriba y otro a un lado.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Progenitor 1: Aa arriba. Progenitor 2: Aa a un lado."
+            }
+          ],
+          "porQue": "El cuadro organiza los gametos: tienes que saber de dónde viene cada alelo para entender qué combinaciones salen. Los dos progenitores aportan uno cada uno, y necesitas sus genotipos completos para separar sus alelos."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Separas los alelos de cada progenitor: en una fila escribes el alelo de arriba, en otra el de abajo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Progenitor 1 aporta: A y a. Progenitor 2 aporta: A y a."
+            }
+          ],
+          "porQue": "Un progenitor heterocigoto Aa produce dos tipos de gametos, uno con A y otro con a. Si escribes el genotipo completo en una sola casilla, no separas los alelos y el cuadro no te dice cuántos genotipos diferentes salen."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Pones los alelos de un progenitor en la orilla de arriba y los del otro en la orilla de la izquierda, uno por columna o fila.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Arriba: A, a. Izquierda: A, a."
+            }
+          ],
+          "porQue": "Cada casilla del cuadro es la combinación de un alelo de arriba con uno de la izquierda. Si pones dos alelos en una sola casilla de la orilla, todas las casillas de esa columna tendrán dos alelos cuando tienen que tener uno de cada lado."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Llenas cada casilla multiplicando: un alelo de la columna más uno de la fila, en el orden que la biología usa.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Casilla arriba-izquierda: A del progenitor 1 + A del progenitor 2 = AA."
+            }
+          ],
+          "porQue": "El genotipo de cada descendiente es la suma ordenada de un alelo de cada papá. Si mezclas los lugares o repites alelos del mismo papá, la herencia no funciona."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Cuentas cuántos descendientes tienen cada genotipo, y escribes la razón como números separados por dos puntos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "1 AA : 2 Aa : 1 aa."
+            }
+          ],
+          "porQue": "La razón te dice qué tan probable es cada genotipo en la próxima generación. De cada cuatro descendientes, esperas uno AA, dos heterocigotos Aa, y uno aa. Eso es lo que el cuadro te enseña."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una cruza de dos progenitores heterocigotos, cada uno con genotipo Aa",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Progenitor 1: Aa. Progenitor 2: Aa. ¿Qué genotipos salen?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "1 AA : 2 Aa : 1 aa"
+        }
+      ],
+      "resultadoEnPalabras": "uno AA, dos Aa, uno aa"
+    },
+    "error": {
+      "enUnaFrase": "Pone el genotipo completo en la orilla del cuadro en vez de separar sus alelos.",
+      "creenciaDeAtras": "cree que el genotipo es una unidad que no se parte, así que lo escribe completo en una sola casilla de la orilla y el cuadro termina repitiendo a los papás",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Progenitor 1 aporta: Aa. Progenitor 2 aporta: Aa."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Cuatro casillas con Aa × Aa: todos los descendientes tienen Aa."
+        }
+      ],
+      "comoSeCacha": "Si el progenitor aporta Aa sin separarse, todas las casillas del cuadro quedan igual. El resultado tiene que mostrar diferentes genotipos; si todo es Aa, el cuadro no está cumpliendo su función."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Confunde el orden de los alelos en el resultado, escribiendo minúscula primero.",
+        "creenciaDeAtras": "cree que el orden no importa porque la herencia toma alelos del azar, sin jerarquía. En realidad se escribe mayúscula dominante primero por convención."
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "genotipo",
+        "queEs": "La pareja de alelos que un individuo lleva para un gen, como Aa o BB."
+      },
+      {
+        "palabra": "alelo",
+        "queEs": "Una de las versiones de un gen. Por ejemplo, en una pareja Aa, el A es un alelo y el a es otro."
+      },
+      {
+        "palabra": "gameto",
+        "queEs": "La célula sexual que aporta un alelo. Un gameto de Aa es o A o a, no los dos.",
+        "noEsLoMismoQue": "el genotipo, que sí lleva los dos alelos"
+      },
+      {
+        "palabra": "heterocigoto",
+        "queEs": "Un individuo cuyos dos alelos son diferentes, como Aa.",
+        "noEsLoMismoQue": "homocigoto, que tiene los dos alelos iguales, como AA o aa"
+      },
+      {
+        "palabra": "razón",
+        "queEs": "La comparación entre cuántos descendientes tienen cada genotipo, escrita como números separados por dos puntos: 1:2:1."
+      }
+    ],
+    "cotas": {
+      "numeros": "alelos representados por una letra mayúscula y una minúscula (A, a); genotipos de dos alelos; razones de conteo entero que salen exactas del cuadro de 2 × 2",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": ":"
+        },
+        {
+          "tipo": "texto",
+          "valor": "×"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema pide un cuadro de Punnett de 2×2 con letras en las orillas y dentro de las casillas, y teclear en casillas concretas.",
+      "porQue": "El teclado actual (1-9, 0, /, borrar) no puede dibujar una tabla ni un rejilla, y las estaciones 3 y 4 usan renglones de átomos, no grillas interactivas.",
+      "queHagoConEsto": "Este tema necesita un prompt especial que dibuje la tabla o rejilla de Punnett y permita teclear dentro de cada casilla. El canon está bien estructurado pero la interfaz de las estaciones actuales no lo soporta. Mandar a un prompt de figura/tabla que incluya grillas interactivas."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

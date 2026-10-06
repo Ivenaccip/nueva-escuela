@@ -1,0 +1,161 @@
+{
+  "materia": "biologia",
+  "temaNumero": 13,
+  "titulo": "La cadena de un contagio",
+  "generadoEn": "2026-10-06T15:53:28.331Z",
+  "canon": {
+    "temaNumero": 13,
+    "materia": "biologia",
+    "titulo": "La cadena de un contagio",
+    "notacion": "lineal",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Rastrear la cadena de un contagio",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas qué microorganismo o sustancia causa la enfermedad.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Causa: bacteria de disentería (Shigella)"
+            }
+          ],
+          "porQue": "El agente que viaja es específico. Si confundes la causa con las circunstancias (salir sin suéter no causa gripa, aunque haya más riesgo), no encuentras cómo cortar la cadena."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Determines dónde vivía ese agente antes de enfermarte: en agua, tierra, otro cuerpo, o en alguien que no tiene síntomas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Fuente: agua sin hervir"
+            }
+          ],
+          "porQue": "El agente no llega solo: viene de un lugar. Alguien sin síntomas también puede contagiar, así que la fuente no siempre es una persona enferma."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Identificas por qué vía viajó el agente: aire que respiras, saliva, contacto con piel, agua, sangre.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Vía: boca"
+            }
+          ],
+          "porQue": "Cada agente entra por una puerta distinta. La bacteria de disentería entra por la boca, pero la tuberculosis viaja por aire. La vía determina dónde cortar."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Identifies la parte del cuerpo donde entra el agente y empieza a multiplicarse.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Puerta de entrada: intestino"
+            }
+          ],
+          "porQue": "Adentro del cuerpo, el agente baja hacia donde daña. En el intestino ataca el recubrimiento y causa diarrea. Saber dónde entra te dice qué síntomas mirar primero."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Eligues cuál eslabón de la cadena puedes cortar: eliminar la fuente, bloquear la vía, o impedir que entre.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Cortar: hervir el agua"
+            }
+          ],
+          "porQue": "La cadena tiene cinco eslabones. Si cada uno se ve, sabes cuál es más fácil de romper: hervir agua es posible, aislar toda el agua no. Cortar es actuar donde puedes."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una persona que se enferma de disentería después de beber agua contaminada",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "agua sin hervir → boca → intestino"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Se corta hirviendo el agua"
+        }
+      ],
+      "resultadoEnPalabras": "se corta hirviendo el agua"
+    },
+    "error": {
+      "enUnaFrase": "Confunde la causa con la circunstancia y cree que quien no tiene síntomas no contagia.",
+      "creenciaDeAtras": "Piensa que la enfermedad viene de un comportamiento riesgoso (mojarse, salir sin suéter) y no de un agente que entra al cuerpo. También piensa que el contagio sólo viaja de quien se ve enfermo.",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Fuente: salir sin suéter y mojarse"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "No se corta porque el problema es el comportamiento"
+        }
+      ],
+      "comoSeCacha": "La disentería no viene de un suéter o de mojarse. Esas circunstancias pueden bajar las defensas, pero el agente que causa la enfermedad es una bacteria que viaja en el agua. Si la fuente no es real, el eslabón para cortar tampoco existe."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que sólo contagia quien muestra síntomas visibles.",
+        "creenciaDeAtras": "Piensa que tener el agente adentro es lo mismo que tener síntomas, así que si alguien se ve sano, no puede transmitir."
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "agente infeccioso",
+        "queEs": "El microorganismo o la sustancia que causa la enfermedad: una bacteria, un virus, un hongo, un parásito.",
+        "noEsLoMismoQue": "las circunstancias que debilitan las defensas, como el frío o la fatiga"
+      },
+      {
+        "palabra": "portador",
+        "queEs": "Alguien que lleva el agente adentro y lo contagia, aunque no tenga síntomas visibles.",
+        "noEsLoMismoQue": "alguien enfermo, que sí muestra síntomas"
+      },
+      {
+        "palabra": "vía de transmisión",
+        "queEs": "El camino por el que viaja el agente de una persona a otra: aire, saliva, contacto con piel, agua, sangre.",
+        "noEsLoMismoQue": "la puerta de entrada, que es la parte del cuerpo donde entra"
+      },
+      {
+        "palabra": "eslabón",
+        "queEs": "Cada parte de la cadena de contagio: la fuente, la vía y la puerta de entrada. Si cortas uno, la cadena se rompe.",
+        "noEsLoMismoQue": "la causa de la enfermedad, que es el agente"
+      },
+      {
+        "palabra": "fuente",
+        "queEs": "El lugar donde viajaba el agente antes de enfermarte: agua, tierra, otro cuerpo, o el cuerpo de alguien sin síntomas.",
+        "noEsLoMismoQue": "la enfermedad misma"
+      }
+    ],
+    "cotas": {
+      "numeros": "sin números",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "La respuesta es una palabra o una frase corta ('se corta hirviendo el agua')",
+      "porQue": "El teclado de la app sólo tiene 1–9, 0, / y borrar. No puede escribir letras.",
+      "queHagoConEsto": "Este tema necesita un teclado de letras que la app no tiene hoy. Reformular para que la respuesta sea un número (qué paso, en cuál eslabón) quita el sentido del tema, que es rastrear dónde se corta. Enviar a otro prompt."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

@@ -1,0 +1,171 @@
+{
+  "materia": "biologia",
+  "temaNumero": 21,
+  "titulo": "ADN, gen y cromosoma",
+  "generadoEn": "2026-10-06T15:56:42.605Z",
+  "canon": {
+    "temaNumero": 21,
+    "materia": "biologia",
+    "titulo": "ADN, gen y cromosoma",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Ordenar célula, núcleo, cromosoma, gen y ADN de lo grande a lo chico",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Ubicas dónde está guardada la receta de la célula.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La receta está en el"
+            }
+          ],
+          "porQue": "La célula es lo más grande de todos. Antes de abrir cajas más chicas tienes que saber que todo lo que viene es parte de la célula, guardado adentro."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Abres la célula y buscas dónde vive la receta.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Dentro de la célula está el núcleo. El núcleo contiene"
+            }
+          ],
+          "porQue": "No toda la receta anda suelta en la célula. La mayor parte está metida en una bolsa que se llama núcleo, como una bóveda. Hay un solo núcleo por célula."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Abres el núcleo y cuentas cuántos paquetes tiene.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Dentro del núcleo hay"
+            },
+            {
+              "tipo": "texto",
+              "valor": "46 cromosomas"
+            },
+            {
+              "tipo": "texto",
+              "valor": "(23 pares)"
+            }
+          ],
+          "porQue": "La receta se divide en capítulos, y cada capítulo es un cromosoma. Los 46 están empaquetados como parejas: 23 que vienen de tu mamá y 23 de tu papá."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Abres un cromosoma y buscas qué instruye cada pedazo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Dentro de cada cromosoma hay genes. Cada gen"
+            }
+          ],
+          "porQue": "No todo lo que está en el cromosoma es igual de importante. Un gen es el pedazo que realmente instruye: dice cómo hacer una proteína o cómo heredar un rasgo."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Abres un gen y miras de qué está hecho.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Dentro de cada gen está el ADN. El ADN es la"
+            }
+          ],
+          "porQue": "El gen no es un objeto que puedas tocar. Es una secuencia de ADN, una tira de la molécula más pequeña que tiene las letras de la receta. El ADN es lo más pequeño de todo."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "la estructura de contención desde la célula hasta el ADN",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Ordena de lo grande a lo chico: ADN, gen, cromosoma, núcleo, célula"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Célula → núcleo → cromosoma → gen → ADN"
+        }
+      ],
+      "resultadoEnPalabras": "célula contiene núcleo, núcleo contiene cromosoma, cromosoma contiene gen, gen contiene ADN"
+    },
+    "error": {
+      "enUnaFrase": "Invierte el orden y dice que el ADN es el más grande.",
+      "creenciaDeAtras": "cree que el ADN es una sustancia aparte que anda suelta en la sangre o en el cuerpo, no un pedazo pequeño que está dentro de otras cosas",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "El ADN es lo más grande. Dentro del ADN está el gen. Dentro del gen está el cromosoma."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "ADN → gen → cromosoma → núcleo → célula"
+        }
+      ],
+      "comoSeCacha": "Si el ADN fuera lo más grande, estaría afuera, no adentro. Pero sabemos que la célula es lo único que existe por su cuenta; todo lo demás está metido adentro de algo."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Dice que el cromosoma contiene al ADN y el ADN contiene al gen, cuando es al revés.",
+        "creenciaDeAtras": "cree que los órganos del cuerpo (cromosomas) son más grandes que la receta de cómo hacer un rasgo (gen), cuando la receta es un pedazo del cromosoma"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "célula",
+        "queEs": "La unidad más pequeña de un ser vivo que funciona por su cuenta. Todo lo demás en biología vive dentro de la célula.",
+        "noEsLoMismoQue": "el cuerpo: el cuerpo está hecho de muchas células, pero una célula no necesita del cuerpo para vivir"
+      },
+      {
+        "palabra": "núcleo",
+        "queEs": "La bolsa dentro de la célula que guarda casi toda la receta. Cuando ves una célula al microscopio, el núcleo es el punto oscuro del que sale todo lo importante.",
+        "noEsLoMismoQue": "cromosoma: el núcleo es la bolsa entera, los cromosomas son los 46 capítulos que viven dentro de esa bolsa"
+      },
+      {
+        "palabra": "cromosoma",
+        "queEs": "Un capítulo de la receta. Está hecho de ADN enrollado muchas vueltas para que quepa dentro del núcleo. Tienes 46: 23 que heredaste de tu mamá y 23 de tu papá.",
+        "noEsLoMismoQue": "gen: el cromosoma es todo el capítulo, el gen es un párrafo de ese capítulo"
+      },
+      {
+        "palabra": "gen",
+        "queEs": "Un párrafo de la receta, un pedazo de cromosoma. Cada gen instruye cómo hacer una proteína o cómo heredar un rasgo: el color de ojos, si tienes hoyuelos, qué tipo de sangre heredaste.",
+        "noEsLoMismoQue": "cromosoma: el gen es un pedazo, el cromosoma es el paquete entero que contiene muchos genes"
+      },
+      {
+        "palabra": "ADN",
+        "queEs": "La molécula más pequeña. Es una tira larga con cuatro letras (A, T, G, C) que se repiten en orden. Esa secuencia de letras es la receta. Toda la receta de la vida está escrita con cuatro letras."
+      },
+      {
+        "palabra": "contención",
+        "queEs": "Cuando algo está metido dentro de otra cosa. La célula contiene el núcleo, el núcleo contiene los cromosomas."
+      }
+    ],
+    "cotas": {
+      "numeros": "números de conteo solamente: 46 cromosomas, 23 pares; sin decimales, sin operaciones",
+      "unidades": [
+        "cromosomas",
+        "pares"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

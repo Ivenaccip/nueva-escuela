@@ -1,0 +1,179 @@
+{
+  "materia": "biologia",
+  "temaNumero": 12,
+  "titulo": "Por qué entra el aire al pulmón",
+  "generadoEn": "2026-10-06T15:53:06.422Z",
+  "canon": {
+    "temaNumero": 12,
+    "materia": "biologia",
+    "titulo": "Por qué entra el aire al pulmón",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Explicar cómo entra el aire por diferencia de presión",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas que el diafragma es un músculo bajo los pulmones que baja cuando inhalas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El diafragma está debajo de los pulmones y"
+            }
+          ],
+          "porQue": "El diafragma no es pasivo: su movimiento es activo y controlado. Saber dónde está es el primer paso para entender cómo mueve el aire."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Reconoces que cuando el diafragma baja, el volumen del tórax aumenta.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "↓ diafragma → ↑ volumen del tórax"
+            }
+          ],
+          "porQue": "El diafragma que baja es como el pistón de una jeringa: crea más espacio adentro. Sin más espacio, la presión no cambia."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Deduces que cuando el volumen aumenta, la presión del aire adentro baja.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "↑ volumen → ↓ presión dentro"
+            }
+          ],
+          "porQue": "La presión es cuánto aire hay en cuánto espacio. Si el espacio crece y el aire no entra todavía, hay menos presión. Es la misma causa del vacío: espacio vacío sin aire."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Comparas la presión de adentro con la de afuera y reconoces que la de afuera es mayor.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "P dentro"
+            },
+            {
+              "tipo": "texto",
+              "valor": "<"
+            },
+            {
+              "tipo": "texto",
+              "valor": "P fuera"
+            }
+          ],
+          "porQue": "La presión afuera es la atmosférica, que siempre está ahí empujando. Adentro, la presión acababa de bajar. La diferencia es lo que fuerza el aire."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Concluyes que el aire entra empujado por la mayor presión de afuera, no jalado por el pulmón.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La presión de afuera empuja el aire adentro"
+            }
+          ],
+          "porQue": "El pulmón no jala aire. Una presión mayor empuja hacia una menor, igual que el agua corre cuesta abajo. El motor es la diferencia de presión, no la voluntad del pulmón."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una inhalación normal donde el diafragma baja",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "El diafragma baja, ¿qué pasa con la presión dentro?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "La presión dentro baja y queda menor que la de afuera"
+        }
+      ],
+      "resultadoEnPalabras": "la presión dentro baja porque el volumen aumenta, y eso permite que la presión de afuera mayor empuje el aire adentro"
+    },
+    "error": {
+      "enUnaFrase": "Cree que el diafragma sube cuando inhalas y que el pulmón jala el aire por su cuenta.",
+      "creenciaDeAtras": "cree que inhalar es que el pulmón se infla solo, como un globo que se expande, sin necesidad de que algo lo empuje desde afuera. Confunde la causa con el efecto: ve que el pulmón se expande, así que piensa que él es quien causa que el aire entre.",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "↑ diafragma → ↓ volumen del tórax"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "El diafragma sube y el pulmón jala el aire"
+        }
+      ],
+      "comoSeCacha": "El movimiento está invertido: si el diafragma sube, el volumen disminuye, no aumenta. La geometría del cuerpo no cambia: un músculo que sube es lo opuesto a uno que baja."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Espera que el aire entre jalado por el pulmón, como si tuviera una fuerza que lo atrae.",
+        "creenciaDeAtras": "cree que los órganos pueden tener voluntad o atracción, y que el pulmón 'quiere' que entre aire. No distingue entre causa física (diferencia de presión) y causa biológica (propósito de un órgano)."
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "diafragma",
+        "queEs": "El músculo plano que está debajo de los pulmones y sube y baja para cambiar el tamaño de la caja torácica.",
+        "noEsLoMismoQue": "el pulmón, que es el órgano donde entra el aire"
+      },
+      {
+        "palabra": "volumen",
+        "queEs": "Cuánto espacio hay adentro de algo. En la respiración, el espacio dentro del tórax."
+      },
+      {
+        "palabra": "presión",
+        "queEs": "El aire que empuja contra las paredes. Con más aire en menos espacio, la presión es mayor. Con menos aire o más espacio, la presión es menor.",
+        "noEsLoMismoQue": "volumen, que es el espacio, no la fuerza del aire"
+      },
+      {
+        "palabra": "diferencia de presión",
+        "queEs": "Cuando hay más presión en un lado que en otro. El aire siempre se mueve hacia donde hay menos presión, empujado por donde hay más.",
+        "noEsLoMismoQue": "presión, que es una sola medida"
+      },
+      {
+        "palabra": "inhalar",
+        "queEs": "Meter aire a los pulmones bajando el diafragma y aumentando el volumen del tórax, de modo que la presión adentro baja y el aire entra."
+      }
+    ],
+    "cotas": {
+      "numeros": "El tema no usa números: explica mecanismo cualitativo de presión y volumen.",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "↓"
+        },
+        {
+          "tipo": "texto",
+          "valor": "↑"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        },
+        {
+          "tipo": "texto",
+          "valor": "<"
+        },
+        {
+          "tipo": "texto",
+          "valor": ">"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

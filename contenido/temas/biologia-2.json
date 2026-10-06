@@ -1,0 +1,160 @@
+{
+  "materia": "biologia",
+  "temaNumero": 2,
+  "titulo": "La célula, la unidad de lo vivo",
+  "generadoEn": "2026-10-06T15:49:25.466Z",
+  "canon": {
+    "temaNumero": 2,
+    "materia": "biologia",
+    "titulo": "La célula, la unidad de lo vivo",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Estimar cuántas células caben en una muestra de tejido",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Mides el largo y el ancho de la muestra con la regla.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La muestra mide 2 mm de largo y 2 mm de ancho."
+            }
+          ],
+          "porQue": "Necesitas saber cuánto espacio ocupa la muestra para después compararlo con el tamaño de una célula. Sin la medida de la muestra no puedes hacer la división."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Miras al microscopio cuánto mide una sola célula.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Una célula de la piel mide 30 μm."
+            }
+          ],
+          "porQue": "Las células no son todas del mismo tamaño, pero en un tejido sí se parecen. La medida que ves al microscopio te dice cuánto espacio ocupa cada una."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Conviertes la muestra a la misma unidad que la célula.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2 mm = 2000 μm."
+            }
+          ],
+          "porQue": "No puedes dividir 2 mm entre 30 μm porque están en unidades distintas. Es como dividir 2 pizzas entre 30 rebanadas: necesitas contar pizzas en rebanadas o rebanadas en rebanadas."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Divides el largo de la muestra entre lo que mide una célula.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2000 μm ÷ 30 μm = 66 células en línea."
+            }
+          ],
+          "porQue": "La división te dice cuántas células del tamaño que mediste caben en el espacio de la muestra. Obtienes el número de células que entran en una fila."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Repites lo mismo con el ancho y multiplicas los dos números.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "66 × 66 = 4356 células en la muestra."
+            }
+          ],
+          "porQue": "Las células ocupan área, no solo línea. Si caben 66 en el largo y 66 en el ancho, el número total es 66 veces 66. Así cubres toda la superficie."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un pedacito de piel observado al microscopio",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "¿Cuántas células caben en un cuadrado de 2 mm × 2 mm si cada célula mide 20 μm?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "10000 células."
+        }
+      ],
+      "resultadoEnPalabras": "diez mil células"
+    },
+    "error": {
+      "enUnaFrase": "Cree que los números grandes miden el tamaño, no la cantidad de células.",
+      "creenciaDeAtras": "cree que un número mayor en las medidas significa que la célula es más grande, y confunde el tamaño de la muestra con el tamaño de la célula. Por eso dice que un elefante tiene células más grandes que un ratón.",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Una célula de un elefante mide 100 μm y una de un ratón mide 20 μm."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Las células del elefante son más grandes."
+        }
+      ],
+      "comoSeCacha": "La conclusión es al revés de la realidad. Las células de los mamíferos son del mismo tamaño; los organismos grandes tienen más células, no células más grandes. Si crees que un número mayor en la medida significa tamaño mayor, ya caíste en la trampa."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que la sangre o el hueso no son células.",
+        "creenciaDeAtras": "cree que las células son solo las de la piel o del músculo que ve al microscopio, y que las otras sustancias del cuerpo son adornos que van por dentro pero no están hechos de células"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "célula",
+        "queEs": "La unidad viva más chica. Todo ser vivo está hecho de células: los organismos grandes tienen más células, no células más grandes.",
+        "noEsLoMismoQue": "un órgano, que es un pedazo del cuerpo hecho de muchas células juntas"
+      },
+      {
+        "palabra": "tejido",
+        "queEs": "Un grupo de células que se parecen y hacen el mismo trabajo. La piel es un tejido, el músculo es otro, la sangre es otro."
+      },
+      {
+        "palabra": "microscopio",
+        "queEs": "El aparato que se usa para ver cosas tan chiquitas que el ojo no puede verlas, como las células."
+      },
+      {
+        "palabra": "μm",
+        "queEs": "Micrón: una unidad de medida muy chica. Un milímetro son mil micrón. Se escribe como μm."
+      },
+      {
+        "palabra": "escala",
+        "queEs": "El tamaño relativo de dos cosas. La escala te dice cuántas veces cabe una cosa dentro de otra."
+      }
+    ],
+    "cotas": {
+      "numeros": "medidas de la muestra en milímetros: 1 a 4 mm; medidas de la célula en micrón: 10 a 50 μm; resultado: número entero del 100 al 100000",
+      "unidades": [
+        "mm",
+        "μm"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "×"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}
