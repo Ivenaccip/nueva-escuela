@@ -1,0 +1,203 @@
+{
+  "materia": "quimica",
+  "temaNumero": 18,
+  "titulo": "Grupos y periodos de la tabla",
+  "generadoEn": "2026-10-06T16:21:46.498Z",
+  "canon": {
+    "temaNumero": 18,
+    "materia": "quimica",
+    "titulo": "Grupos y periodos de la tabla",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Ubicar un elemento en la tabla periódica y leer grupo y periodo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Localizas el símbolo del elemento en la tabla periódica.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Buscas Na en la tabla"
+            }
+          ],
+          "porQue": "Para saber dónde está el elemento, tienes que encontrarlo en la tabla. El símbolo es la forma de identificarlo: una o dos letras, con mayúscula y minúscula exactas."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Lees el número atómico del elemento: es el número arriba de la casilla.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Número atómico de Na ="
+            },
+            {
+              "tipo": "texto",
+              "valor": " 11"
+            }
+          ],
+          "porQue": "El número atómico dice cuántos protones tiene el núcleo y cuántos electrones en el átomo neutro. Es el que define qué elemento es: no hay confusión posible."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Cuentas la columna en la que está el elemento: ese número es el grupo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Na está en la columna 1 = Grupo IA"
+            }
+          ],
+          "porQue": "Las columnas de la tabla periódica son los grupos. El grupo te dice cuántos electrones de valencia tiene el elemento en su capa más externa."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Cuentas el renglón en el que está el elemento: ese número es el periodo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Na está en el renglón 3 = Periodo 3"
+            }
+          ],
+          "porQue": "Los renglones de la tabla periódica son los periodos. El periodo te dice cuántos niveles de energía tiene el átomo."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Interpretas lo que cada número predice: grupo da electrones de valencia, periodo da niveles de energía.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Grupo IA → 1 electrón de valencia. Periodo 3 → 3 niveles"
+            }
+          ],
+          "porQue": "Los números no son cifras sueltas: cada uno cuenta algo del átomo. El grupo y el periodo juntos te dicen cómo se comportará el elemento en una reacción."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "ubicar el sodio en la tabla periódica y leer su grupo y periodo",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "¿Qué grupo y qué periodo tiene el Na?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Grupo IA, periodo 3"
+        }
+      ],
+      "resultadoEnPalabras": "Grupo IA, periodo 3"
+    },
+    "error": {
+      "enUnaFrase": "Invierte grupo y periodo: llama grupo al renglón y periodo a la columna.",
+      "creenciaDeAtras": "cree que grupo es el sentido vertical (arriba-abajo) y periodo es el sentido horizontal (izquierda-derecha), cuando es al revés",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Na está en el renglón 3 = Grupo 3"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Grupo 3, periodo IA"
+        }
+      ],
+      "comoSeCacha": "El período se escribe con números romanos y el grupo también, pero en orden inverso. Si inviertes los dos, uno sale como letra y otro como número: eso no es cómo se escribe en la tabla."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Busca el elemento guiándose por el número de masa en vez del número atómico.",
+        "creenciaDeAtras": "cree que el número de masa (abajo en la casilla) es lo que identifica al elemento, cuando el número atómico (arriba) es el que define qué es"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "número atómico",
+        "queEs": "El número de protones en el núcleo de un átomo. Define qué elemento es. Está arriba en la casilla de la tabla periódica.",
+        "noEsLoMismoQue": "número de masa, que está abajo y es la suma de protones y neutrones"
+      },
+      {
+        "palabra": "número de masa",
+        "queEs": "La suma de protones y neutrones en el núcleo. Está abajo en la casilla de la tabla periódica. Varía entre isótopos del mismo elemento."
+      },
+      {
+        "palabra": "grupo",
+        "queEs": "Una columna de la tabla periódica. El grupo determina cuántos electrones de valencia tiene el elemento.",
+        "noEsLoMismoQue": "periodo, que es un renglón"
+      },
+      {
+        "palabra": "periodo",
+        "queEs": "Un renglón de la tabla periódica. El periodo determina cuántos niveles de energía tiene el átomo.",
+        "noEsLoMismoQue": "grupo, que es una columna"
+      },
+      {
+        "palabra": "electrones de valencia",
+        "queEs": "Los electrones en la capa más externa del átomo. Son los que participan en las reacciones químicas. El grupo determina cuántos tiene."
+      },
+      {
+        "palabra": "niveles de energía",
+        "queEs": "Las capas electrónicas del átomo, contadas desde el núcleo. El periodo determina cuántos niveles tiene un elemento."
+      }
+    ],
+    "cotas": {
+      "numeros": "números atómicos del 1 al 20; números romanos de grupo del IA al VIIIA; periodos del 1 al 4",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "Grupo"
+        },
+        {
+          "tipo": "texto",
+          "valor": "Periodo"
+        },
+        {
+          "tipo": "texto",
+          "valor": "IA"
+        },
+        {
+          "tipo": "texto",
+          "valor": "IIA"
+        },
+        {
+          "tipo": "texto",
+          "valor": "IIIA"
+        },
+        {
+          "tipo": "texto",
+          "valor": "IVA"
+        },
+        {
+          "tipo": "texto",
+          "valor": "VA"
+        },
+        {
+          "tipo": "texto",
+          "valor": "VIA"
+        },
+        {
+          "tipo": "texto",
+          "valor": "VIIA"
+        },
+        {
+          "tipo": "texto",
+          "valor": "VIIIA"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema requiere una representación visual de la tabla periódica con casillas que muestren número atómico arriba y número de masa abajo.",
+      "porQue": "Los cuatro átomos disponibles (texto, fracción, símbolo con sub/sup, hueco) no pueden representar una tabla periódica con casillas dispuestas en filas y columnas, ni pueden mostrar dos números apilados dentro de cada casilla de la forma que se ve en la tabla real.",
+      "queHagoConEsto": "Este tema debe mandarse a un prompt diferente que soporte la notación de tabla periódica con figura, no al prompt lineal estándar. La estación que lo dibuje necesita un lienzo de gráficos o una tabla HTML especializada."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

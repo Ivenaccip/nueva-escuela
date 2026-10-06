@@ -1,0 +1,169 @@
+{
+  "materia": "quimica",
+  "temaNumero": 31,
+  "titulo": "El mol y la masa molar",
+  "generadoEn": "2026-10-06T16:26:25.695Z",
+  "canon": {
+    "temaNumero": 31,
+    "materia": "quimica",
+    "titulo": "El mol y la masa molar",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Calcular la masa molar de un compuesto",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Escribes la fórmula del compuesto con sus subíndices.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "O"
+            }
+          ],
+          "porQue": "Los subíndices te dicen cuántos átomos de cada elemento tiene la molécula. Sin ellos no sabes qué multiplicar ni por cuánto."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Buscas la masa atómica de cada elemento en la tabla periódica.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "H = 1, O = 16"
+            }
+          ],
+          "porQue": "La masa atómica es el peso de un átomo de ese elemento. Es el número que está en la tabla, no el número atómico que está arriba a la izquierda."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Multiplicas cada masa atómica por su subíndice.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "(1 × 2) + 16"
+            }
+          ],
+          "porQue": "Cada elemento aparece varias veces en la molécula, así que su peso se cuenta varias veces. El paréntesis agrupa lo que multiplica."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Resuelves las multiplicaciones.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2 + 16"
+            }
+          ],
+          "porQue": "Una vez multiplicado, tienes los pesos parciales listos para sumar."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Sumas todos los productos y escribes el total con la unidad g/mol.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "= 18 g/mol"
+            }
+          ],
+          "porQue": "La suma final es la masa de un mol de ese compuesto. La unidad g/mol lo dice: gramos por cada mol de moléculas."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "el cálculo de cuánto pesa un mol de agua",
+      "planteamiento": [
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "O"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "18 g/mol"
+        }
+      ],
+      "resultadoEnPalabras": "dieciocho gramos por mol"
+    },
+    "error": {
+      "enUnaFrase": "Sumas las masas atómicas sin multiplicarlas por el subíndice.",
+      "creenciaDeAtras": "cree que el subíndice sólo indica la composición, no que el elemento se cuente varias veces en la multiplicación",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "1 + 16"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "= 17 g/mol"
+        }
+      ],
+      "comoSeCacha": "El resultado es menor que uno de los factores: 17 es menor que 16. Si estuvieras multiplicando 1 por 2 de verdad, no podría ser menor que lo que multiplicas."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Confunde la masa atómica con el número atómico y toma el valor del recuadro equivocado de la tabla.",
+        "creenciaDeAtras": "cree que el número atómico y la masa atómica son lo mismo, porque ambos aparecen en la tabla periódica y no fija en el recuadro donde busca cada uno"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "masa atómica",
+        "queEs": "El peso de un átomo de un elemento. Es el número que aparece en la parte inferior del recuadro en la tabla periódica.",
+        "noEsLoMismoQue": "número atómico, que es el que está arriba a la izquierda y cuenta cuántos protones tiene el núcleo"
+      },
+      {
+        "palabra": "masa molar",
+        "queEs": "El peso total de un mol de un compuesto. Se mide en gramos por mol (g/mol)."
+      },
+      {
+        "palabra": "subíndice",
+        "queEs": "El número pequeño que aparece en la esquina inferior derecha de cada símbolo en una fórmula química. Te dice cuántos átomos de ese elemento hay en la molécula."
+      },
+      {
+        "palabra": "mol",
+        "queEs": "Una cantidad fija de sustancia que siempre contiene 6.022 × 10²³ partículas. Es la cantidad que conecta el mundo de los átomos con lo que pesas en la balanza."
+      }
+    ],
+    "cotas": {
+      "numeros": "compuestos con dos o tres elementos, subíndices del 1 al 4, masas atómicas del 1 al 40 con un decimal (H=1, C=12, N=14, O=16, S=32, Cl=35.5), resultado entero del 1 al 100",
+      "unidades": [
+        "g/mol"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "×"
+        },
+        {
+          "tipo": "texto",
+          "valor": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

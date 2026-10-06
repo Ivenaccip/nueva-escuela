@@ -21,6 +21,7 @@ import { fileURLToPath } from 'node:url';
 
 import { CODIGO_DE_TOPE, resumenDelGasto } from './gasto.mjs';
 import { llaveDeAnthropic } from './llaves.mjs';
+import { resultadoSinCifra } from './forma.mjs';
 
 const aqui = dirname(fileURLToPath(import.meta.url));
 const raiz = dirname(aqui);
@@ -206,6 +207,7 @@ async function clasificar(numero) {
 
   if (canon.noSePuede) return { ...base, estado: 'canon-dice-no', pintable: false };
   if (caso) return { ...base, estado: `ruteado-${caso}`, pintable: false };
+  if (resultadoSinCifra(canon)) return { ...base, estado: 'forma-dudosa', pintable: false };
   if (hechas.length < 6) return { ...base, estado: 'a-medias', pintable: false };
   if (bloquean.length > 0) return { ...base, estado: 'noSePuede', pintable: false };
   return { ...base, estado: 'completo', pintable: true };
@@ -332,9 +334,11 @@ for (const { n, t, e } of filas) {
     : sondeo
       ? !e.notacion
         ? 'SIN CANON'
-        : aparte
-          ? 'CASO APARTE'
-          : 'CAMINO NORMAL'
+        : e.estado === 'forma-dudosa'
+          ? 'FORMA DUDOSA'
+          : aparte
+            ? 'CASO APARTE'
+            : 'CAMINO NORMAL'
       : e.pintable
         ? 'SE PINTA'
         : 'NO SE PINTA';
@@ -356,6 +360,7 @@ const pintables = filas.filter((f) => f.e && f.e.pintable);
 const ruteados = filas.filter((f) => f.e && String(f.e.estado).startsWith('ruteado-'));
 const aMedias = filas.filter((f) => f.e && (f.e.estado === 'a-medias' || f.e.estado === 'sin-canon' || f.e.estado === 'sin-archivo'));
 const negados = filas.filter((f) => f.e && (f.e.estado === 'canon-dice-no' || f.e.estado === 'noSePuede'));
+const dudosas = filas.filter((f) => f.e && f.e.estado === 'forma-dudosa');
 
 decir('\n' + '-'.repeat(78));
 if (seco) {
@@ -369,13 +374,18 @@ if (seco) {
 // pagarla. Es la unica pregunta que importa antes de soltar la tanda entera.
 if (sondeo) {
   const conCanon = filas.filter((f) => f.e && f.e.notacion);
-  const aparte = conCanon.filter((f) => f.e.caso || f.e.estado === 'canon-dice-no');
+  const dudosos = conCanon.filter((f) => f.e.estado === 'forma-dudosa');
+  const aparte = conCanon.filter(
+    (f) => f.e.estado !== 'forma-dudosa' && (f.e.caso || f.e.estado === 'canon-dice-no'),
+  );
   decir(`  canon obtenido: ${conCanon.length} de ${numeros.length}`);
-  decir(`  van al camino normal y se van a poder pintar: ${conCanon.length - aparte.length}`);
+  decir(`  van al camino normal y se van a poder pintar: ${conCanon.length - aparte.length - dudosos.length}`);
   decir(`  van a un caso aparte o el canon los niega: ${aparte.length}`);
   for (const f of aparte) {
     decir(`      ${String(f.n).padStart(3)} ${f.e.notacion}/${f.e.forma} -> ${f.e.caso ?? 'noSePuede'}  ${f.t.titulo}`);
   }
+  decir(`  dicen numero pero su resultado no tiene ninguna cifra: ${dudosos.length}`);
+  for (const f of dudosos) decir(`      ${String(f.n).padStart(3)} ${f.t.titulo}`);
   decir('\n  Genera la tanda completa solo de los del camino normal. Los de arriba se');
   decir('  pagarian igual y la app no los puede abrir (CONTRATO.md §5).');
   decir('-'.repeat(78) + '\n');
@@ -390,6 +400,9 @@ if (ruteados.length) {
   decir('      Falta codigo de UI, no contenido (CONTRATO.md §5).');
 }
 if (negados.length) decir(`  con noSePuede que bloquea: ${negados.map((f) => f.n).join(', ')}`);
+if (dudosas.length) {
+  decir(`  dicen numero pero su resultado no tiene cifras, no se pintan: ${dudosas.map((f) => f.n).join(', ')}`);
+}
 if (aMedias.length) decir(`  a medias, vuelve a correr la tanda para retomar: ${aMedias.map((f) => f.n).join(', ')}`);
 decir(`  estado de la tanda: ${rutaEstado}`);
 decir('-'.repeat(78) + '\n');

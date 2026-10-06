@@ -135,6 +135,26 @@ resultado limpio. Es el ejemplo que el estudiante va a ver tres veces (en la
 Que los números salgan del programa de su grado: nada de 4/17 en 6º de
 primaria.
 
+**`planteamiento` es lo que se escribe, no el enunciado del problema.** El
+enunciado en palabras («un bosque guarda 10 000 kcal y cada nivel come el 10 %
+de…») va en `deQueVa`, sin cifras, y en `queSeHace`. En `planteamiento`,
+`resultado` y cada `renglon` va sólo lo que se vería en una libreta: la cuenta,
+la fórmula, la cadena de símbolos. Cada átomo de `texto` mide **90 caracteres
+como máximo** y cada número 12: una frase más larga no es un renglón, es prosa,
+y el esquema rechaza el canon entero. Esto muerde sobre todo en Biología y en
+Química, donde es fácil escribir el problema completo en el renglón.
+
+- Bien (Biología): `10000 × 10 % = 1000`, `Aa × Aa → 1 : 2 : 1`, `2 → 4 → 8 → 16`.
+- Bien (Química): `p⁺ = 11`, `NaCl → Na⁺ + Cl⁻`, `m / M = n`.
+- Mal: «Las plantas del bosque guardan 10 000 kcal. Cada animal come el 10 %
+  de lo que comió el anterior. ¿Cuántos niveles aguanta la pirámide?»
+
+**Y `numero` quiere decir que el resultado ES un número.** Si lo que el estudiante
+acaba sabiendo es una frase («la presión dentro baja»), la respuesta es
+`palabra` aunque el ejemplo traiga algún dato numérico. Declarar `numero` sin
+cifra en el resultado manda a las estaciones 3 y 4 a pedir algo que el teclado
+no puede escribir.
+
 ### 3. `error`
 
 Toma `errorTipico` del temario y **ubícalo**:

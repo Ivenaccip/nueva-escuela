@@ -1,0 +1,152 @@
+{
+  "materia": "quimica",
+  "temaNumero": 9,
+  "titulo": "Disoluciones: soluto y disolvente",
+  "generadoEn": "2026-10-06T16:18:45.817Z",
+  "canon": {
+    "temaNumero": 9,
+    "materia": "quimica",
+    "titulo": "Disoluciones: soluto y disolvente",
+    "notacion": "lineal",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Identificar el soluto y el disolvente de una disolución",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Nombra los dos componentes que se mezclaron.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Componente 1: azúcar. Componente 2: agua."
+            }
+          ],
+          "porQue": "Una disolución siempre tiene exactamente dos cosas: una que se disuelve y otra que la disuelve. Si no reconoces cuáles son los dos, no puedes decir cuál es cuál."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Compara cuánta cantidad hay de cada uno.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "20 g de azúcar y 200 g de agua."
+            }
+          ],
+          "porQue": "El componente que hay en mayor cantidad es el disolvente, y el que hay menos es el soluto. La comparación decide cuál es cuál, no lo que ves."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Identifica cuál está en menor cantidad: ese es el soluto.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Soluto: azúcar (20 g, menor cantidad)."
+            }
+          ],
+          "porQue": "El soluto es lo que se disuelve, y siempre es la sustancia que está en menor cantidad. El azúcar es menos que el agua."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Identifica cuál está en mayor cantidad: ese es el disolvente.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Disolvente: agua (200 g, mayor cantidad)."
+            }
+          ],
+          "porQue": "El disolvente es lo que hace la disolución, y siempre es la sustancia que está en mayor cantidad. El agua es más que el azúcar."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Recuerda el estado en que estaba cada uno antes de mezclarse.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Azúcar: sólido. Agua: líquido. La disolución es líquida."
+            }
+          ],
+          "porQue": "El soluto y el disolvente conservan su naturaleza aunque no se vean: el azúcar sigue siendo azúcar, el agua sigue siendo agua, solo que ahora están mezcladas en una disolución. El estado de la disolución es el del disolvente."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "agua con azúcar disuelta",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "20 g de azúcar disueltos en 200 g de agua."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Soluto: azúcar. Disolvente: agua. Disolución: agua dulce."
+        }
+      ],
+      "resultadoEnPalabras": "El soluto es el azúcar, el disolvente es el agua, y la mezcla es una disolución"
+    },
+    "error": {
+      "enUnaFrase": "Confunde soluto y disolvente; llama soluto al componente que está en mayor cantidad.",
+      "creenciaDeAtras": "cree que el componente principal o el que hay más de eso tiene que ser el soluto porque es 'el protagonista' de la mezcla",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Soluto: agua (200 g, mayor cantidad)."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Soluto: agua. Disolvente: azúcar."
+        }
+      ],
+      "comoSeCacha": "El agua es el componente que está en mayor cantidad, pero el soluto siempre es el que está en menor cantidad. La definición de soluto no depende de lo que el estudiante crea que es importante."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que el azúcar o cualquier soluto desaparece cuando se disuelve.",
+        "creenciaDeAtras": "cree que si no se ve un sólido tiene que haberse desaparecido o dejar de existir, sin pensar que está ahí pero distribuido en el líquido"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "soluto",
+        "queEs": "El componente que se disuelve en otro, y que siempre está en menor cantidad en la disolución.",
+        "noEsLoMismoQue": "disolvente, que es lo que hace la disolución y está en mayor cantidad"
+      },
+      {
+        "palabra": "disolvente",
+        "queEs": "El componente que disuelve a otro, y que siempre está en mayor cantidad en la disolución.",
+        "noEsLoMismoQue": "soluto, que es lo que se disuelve y está en menor cantidad"
+      },
+      {
+        "palabra": "disolución",
+        "queEs": "La mezcla homogénea que resulta cuando el soluto se disuelve en el disolvente.",
+        "noEsLoMismoQue": "soluto o disolvente, que son los dos componentes que la forman"
+      },
+      {
+        "palabra": "disolver",
+        "queEs": "Cuando una sustancia sólida se mezcla con un líquido de manera que ya no se ve el sólido, pero sigue ahí."
+      }
+    ],
+    "cotas": {
+      "numeros": "masas en gramos, entre 5 y 500 g; soluto siempre menor que disolvente; números redondos",
+      "unidades": [
+        "g"
+      ],
+      "simbolos": []
+    },
+    "noSePuede": {
+      "que": "La respuesta requiere identificar sustancias o escribir palabras, que el teclado de la app no puede teclear.",
+      "porQue": "El teclado sólo tiene dígitos 1-9, 0, la diagonal y borrar (app/estacion/completar.tsx:23-28). No puede escribir letras ni caracteres especiales. Las palabras 'azúcar', 'agua', 'soluto', 'disolvente' no caben en ese teclado.",
+      "queHagoConEsto": "El tema debe formularse para que la respuesta sea un número, no una palabra. Alternativa: cambiar formaDeRespuesta a 'palabra' manda el tema a otro prompt con teclado de texto completo."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

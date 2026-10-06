@@ -1,0 +1,239 @@
+{
+  "materia": "quimica",
+  "temaNumero": 2,
+  "titulo": "Densidad: por qué flota o se hunde",
+  "generadoEn": "2026-10-06T16:16:08.859Z",
+  "canon": {
+    "temaNumero": 2,
+    "materia": "quimica",
+    "titulo": "Densidad: por qué flota o se hunde",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Calcular la densidad de un material y decidir si flota en agua",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Anotas la masa del material en gramos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Masa = 140 g"
+            }
+          ],
+          "porQue": "La densidad necesita dos datos: cuánto pesa y cuánto espacio ocupa. El primero es la masa, que siempre va arriba en la fórmula."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Anotas el volumen del material en centímetros cúbicos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Volumen = 200 cm"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "cm",
+              "sup": "3"
+            }
+          ],
+          "porQue": "El volumen mide el espacio que ocupa. Va abajo en la fórmula, y siempre en centímetros cúbicos para que la densidad salga en g/cm³."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Divides la masa entre el volumen.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Densidad ="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": "140 g",
+              "abajo": "200 cm³"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 0.7"
+            }
+          ],
+          "porQue": "Densidad es masa entre volumen: cuántos gramos pesa cada centímetro cúbico. La masa siempre arriba, el volumen siempre abajo."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Escribes la unidad de la densidad: g/cm³.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Densidad = 0.7 g/"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "cm",
+              "sup": "3"
+            }
+          ],
+          "porQue": "La unidad de la densidad es gramos por cada centímetro cúbico. Sin la unidad, el número no dice de qué estamos hablando."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Comparas la densidad del material con 1 g/cm³, que es la densidad del agua.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "0.7 g/"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "cm",
+              "sup": "3"
+            },
+            {
+              "tipo": "texto",
+              "valor": "< 1 g/"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "cm",
+              "sup": "3"
+            },
+            {
+              "tipo": "texto",
+              "valor": ", entonces flota"
+            }
+          ],
+          "porQue": "Si la densidad es menor que la del agua, el material flota. Si es mayor, se hunde. Esto vale aunque el material sea muy pesado."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un objeto que pesa 140 gramos y ocupa 200 centímetros cúbicos",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Masa = 140 g, volumen = 200 cm"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "cm",
+          "sup": "3"
+        },
+        {
+          "tipo": "texto",
+          "valor": ". Calcula la densidad y di si flota en agua."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Densidad = 0.7 g/"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "cm",
+          "sup": "3"
+        },
+        {
+          "tipo": "texto",
+          "valor": ". Flota."
+        }
+      ],
+      "resultadoEnPalabras": "cero coma siete gramos por centímetro cúbico; flota"
+    },
+    "error": {
+      "enUnaFrase": "Divide el volumen entre la masa, no la masa entre el volumen.",
+      "creenciaDeAtras": "cree que tiene que acomodar el número más grande arriba para que la división salga más bonita, o que arriba va el número más grande sin pensar",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Densidad ="
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": "200 cm³",
+          "abajo": "140 g"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= 1.4"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Densidad = 1.4 g/"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "cm",
+          "sup": "3"
+        },
+        {
+          "tipo": "texto",
+          "valor": ". Se hunde."
+        }
+      ],
+      "comoSeCacha": "El resultado da 1.4, que es mayor que 1, así que el procedimiento dice que se hunde. Pero el mismo objeto es menos denso que el agua: la confusión está en qué va arriba y qué va abajo en la fracción, no en lo que el resultado significa."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Compara el peso del objeto con el peso del agua, no la densidad.",
+        "creenciaDeAtras": "cree que si algo pesa mucho, se hunde de todas formas, sin importar la densidad"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "densidad",
+        "queEs": "Cuántos gramos pesa cada centímetro cúbico de un material. Es masa entre volumen.",
+        "noEsLoMismoQue": "peso, que es la fuerza con la que algo atrae hacia abajo"
+      },
+      {
+        "palabra": "masa",
+        "queEs": "La cantidad de materia que tiene algo, medida en gramos o kilogramos. Es lo que mide una báscula."
+      },
+      {
+        "palabra": "volumen",
+        "queEs": "El espacio que ocupa algo, medido en centímetros cúbicos, litros o metros cúbicos."
+      },
+      {
+        "palabra": "flota",
+        "queEs": "Está arriba del agua sin hundirse. Pasa cuando la densidad del objeto es menor que 1 g/cm³.",
+        "noEsLoMismoQue": "se hunde, que es cuando está abajo del agua y su densidad es mayor que 1 g/cm³"
+      },
+      {
+        "palabra": "agua",
+        "queEs": "Líquido de referencia. Tiene densidad de exactamente 1 g/cm³, así que sirve de comparación."
+      }
+    ],
+    "cotas": {
+      "numeros": "masa del 10 al 200 gramos, volumen del 20 al 300 centímetros cúbicos, densidad del 0.3 al 2.5 g/cm³, siempre resultado exacto con un máximo de un decimal",
+      "unidades": [
+        "g",
+        "cm³",
+        "g/cm³"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "="
+        },
+        {
+          "tipo": "texto",
+          "valor": "<"
+        },
+        {
+          "tipo": "texto",
+          "valor": ">"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

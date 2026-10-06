@@ -1,0 +1,169 @@
+{
+  "materia": "quimica",
+  "temaNumero": 14,
+  "titulo": "Número atómico y número de masa",
+  "generadoEn": "2026-10-06T16:20:29.032Z",
+  "canon": {
+    "temaNumero": 14,
+    "materia": "quimica",
+    "titulo": "Número atómico y número de masa",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Obtener protones, electrones y neutrones a partir del número atómico y el número de masa",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Lees el número atómico Z en la tabla periódica: ese número dice cuántos protones tiene el átomo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Z = 11"
+            },
+            {
+              "tipo": "texto",
+              "valor": ", protones = 11"
+            }
+          ],
+          "porQue": "El número atómico define qué elemento es: el sodio siempre tiene 11 protones. Sin eso, no sería sodio."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Si el átomo es neutro, el número de electrones es igual al número de protones.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Átomo neutro: electrones = protones = 11"
+            }
+          ],
+          "porQue": "Un átomo neutro tiene carga cero porque los electrones negativos anulan los protones positivos: mismo número de ambos."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Lees el número de masa A en la tabla periódica: ese número dice cuántas partículas tienen carga o neutras hay en el núcleo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "A = 23"
+            }
+          ],
+          "porQue": "El número de masa es la suma de todos los nucleones del átomo: protones más neutrones."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Restas el número de masa menos el número atómico: A − Z.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "A − Z = 23 − 11 = 12"
+            }
+          ],
+          "porQue": "El número de masa cuenta protones y neutrones juntos. Si restas los protones, lo que queda son los neutrones."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "El resultado de la resta es el número de neutrones.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Neutrones = 12"
+            }
+          ],
+          "porQue": "Ya separaste los neutrones de los protones, así que ese número es lo que buscabas."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "leer los números de un átomo de sodio en la tabla periódica y encontrar cuántos neutrones tiene",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Z = 11, A = 23"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Neutrones = 12"
+        }
+      ],
+      "resultadoEnPalabras": "doce neutrones"
+    },
+    "error": {
+      "enUnaFrase": "Confunde el número de masa con el número de neutrones, sin restar el número atómico.",
+      "creenciaDeAtras": "cree que A es directamente el número de neutrones, o que el número que se ve grande en la tabla es siempre el de neutrones",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Neutrones = 23"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Neutrones = 23"
+        }
+      ],
+      "comoSeCacha": "El resultado (23) es igual al número de masa que se vio al principio, no es el resultado de restar nada. El paso 4 desapareció: no hay resta escrita."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Suma protones más electrones para obtener el número de masa.",
+        "creenciaDeAtras": "cree que el número de masa es la suma de algo, así que suma los dos números de carga que vio (protones y electrones), aunque eso no tiene sentido porque electrones no están en el núcleo"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "número atómico",
+        "queEs": "El número de protones que tiene un átomo. Es el que aparece abajo en el símbolo del elemento, y define qué elemento es.",
+        "noEsLoMismoQue": "número de masa, que es el de arriba y consta de protones más neutrones"
+      },
+      {
+        "palabra": "número de masa",
+        "queEs": "La cantidad total de protones más neutrones que hay en el núcleo. Es el que aparece arriba en el símbolo del elemento.",
+        "noEsLoMismoQue": "número atómico, que solo cuenta protones"
+      },
+      {
+        "palabra": "protones",
+        "queEs": "Partículas en el núcleo del átomo con carga positiva. Su número es el número atómico.",
+        "noEsLoMismoQue": "neutrones, que tienen carga cero"
+      },
+      {
+        "palabra": "neutrones",
+        "queEs": "Partículas en el núcleo con carga cero. Se obtienen restando el número atómico del número de masa.",
+        "noEsLoMismoQue": "protones, que sí tienen carga"
+      },
+      {
+        "palabra": "electrones",
+        "queEs": "Partículas fuera del núcleo con carga negativa. En un átomo neutro, hay el mismo número que protones.",
+        "noEsLoMismoQue": "protones, que están en el núcleo"
+      }
+    ],
+    "cotas": {
+      "numeros": "números atómicos de 1 a 20; números de masa entre 1 y 50; resultados de neutrones entre 0 y 30, todos enteros",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "Z"
+        },
+        {
+          "tipo": "texto",
+          "valor": "A"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

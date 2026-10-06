@@ -1,0 +1,148 @@
+{
+  "materia": "quimica",
+  "temaNumero": 17,
+  "titulo": "Electrones de valencia",
+  "generadoEn": "2026-10-06T16:21:25.908Z",
+  "canon": {
+    "temaNumero": 17,
+    "materia": "quimica",
+    "titulo": "Electrones de valencia",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Contar los electrones de valencia de un átomo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Escribes la configuración electrónica del átomo distribuyendo electrones por niveles de energía.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Cloro (Cl): 2, 8, 7"
+            }
+          ],
+          "porQue": "Cada nivel tiene una cantidad máxima de electrones que puede guardar. El primer nivel cabe 2, el segundo cabe 8, y así sucesivamente. Distribuir bien es lo que te permite identificar después cuál es el último nivel ocupado."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Identificas cuál es el último nivel ocupado: el que tiene electrones y está más lejos del núcleo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Último nivel: 7"
+            }
+          ],
+          "porQue": "Los electrones de ese nivel son los que están más sueltos y pueden interactuar con otros átomos. Los electrones de los niveles internos están más pegados al núcleo y no participan en las reacciones químicas."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Cuentas cuántos electrones hay en ese último nivel.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Electrones de valencia: 7"
+            }
+          ],
+          "porQue": "Son estos electrones los que definen cómo se comporta el átomo. No importa el total de electrones que tiene el átomo, sólo los del último nivel."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Calculas cuántos electrones le faltan para llegar a 8 en el último nivel.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "8 − 7 = 1"
+            }
+          ],
+          "porQue": "Los átomos tienden a tener 8 electrones en el último nivel porque así la energía es más baja y el átomo es más estable. Con 8 electrones está en una configuración segura."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Predices si al átomo le conviene ganar o perder electrones según qué está más cerca de 8.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Ganando 1 está más cerca de 8 que perdiendo 7. Le conviene ganar."
+            }
+          ],
+          "porQue": "Si está muy lejos de 8 en un lado, es más fácil llegar desde el otro. El cloro, que necesita sólo 1 para llegar a 8, prefiere ganar ese 1 en vez de perder 7."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un átomo de cloro que queremos saber cuántos electrones de valencia tiene y si debe ganarlos o perderlos",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Cloro (Cl) tiene configuración 2, 8, 7."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "7 electrones de valencia. Le conviene ganar 1."
+        }
+      ],
+      "resultadoEnPalabras": "siete electrones de valencia, el cloro gana uno"
+    },
+    "error": {
+      "enUnaFrase": "Dice que el cloro tiene 17 electrones de valencia porque cuenta todos los electrones del átomo.",
+      "creenciaDeAtras": "cree que electrones de valencia significa electrones en total, sin distinguir el último nivel de los otros niveles",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Electrones de valencia: 17"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "17 electrones de valencia. Le conviene perder algunos."
+        }
+      ],
+      "comoSeCacha": "Si sumás 2 + 8 + 7 te da 17, pero ése es el total. La configuración está escrita con comas separando niveles, no sumada. El número después de la última coma es siempre el de valencia."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "electrones de valencia",
+        "queEs": "Los electrones que están en el último nivel ocupado del átomo, los que pueden interactuar con otros átomos."
+      },
+      {
+        "palabra": "último nivel ocupado",
+        "queEs": "El nivel de energía más lejano del núcleo que tiene electrones."
+      },
+      {
+        "palabra": "configuración electrónica",
+        "queEs": "La forma de escribir cuántos electrones tiene el átomo en cada nivel, separados por comas.",
+        "noEsLoMismoQue": "el total de electrones, que es la suma de todos los números"
+      },
+      {
+        "palabra": "estable",
+        "queEs": "Que tiene poca energía y no necesita cambiar. Un átomo con 8 electrones en el último nivel está estable."
+      }
+    ],
+    "cotas": {
+      "numeros": "números atómicos del 1 al 18, configuraciones del tipo 2; 2,8; 2,8,8, etc. Los números nunca pasan de 8 en un nivel y nunca son decimales",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "−"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema pide dibujar una estructura de puntos de Lewis, que son ocho puntos repartidos en los cuatro lados del símbolo químico",
+      "porQue": "No existe en los cuatro átomos un símbolo o un modo para representar puntos alrededor de un símbolo. El átomo permite texto, fracción, símbolo con sub/sup, y hueco. Un círculo con puntos necesita un dibujo.",
+      "queHagoConEsto": "Reformular el tema para pedir sólo el conteo de electrones de valencia y la predicción de si gana o pierde, dejando la estructura de Lewis para otro tema que tenga prompt de figura, o mandar este tema al prompt de figura donde se pueda dibujar la estructura completa."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

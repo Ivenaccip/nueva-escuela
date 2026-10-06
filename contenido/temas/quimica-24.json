@@ -1,0 +1,238 @@
+{
+  "materia": "quimica",
+  "temaNumero": 24,
+  "titulo": "Número de oxidación",
+  "generadoEn": "2026-10-06T16:24:01.291Z",
+  "canon": {
+    "temaNumero": 24,
+    "materia": "quimica",
+    "titulo": "Número de oxidación",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Sacar el número de oxidación de un elemento en una fórmula",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Asignas el valor conocido a un elemento: oxígeno vale −2, hidrógeno vale +1.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Oxígeno:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sup": "−2"
+            }
+          ],
+          "porQue": "El oxígeno y el hidrógeno casi siempre tienen el mismo número de oxidación en los compuestos. Empezar por lo que ya sabes agiliza el cálculo sin perder exactitud."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Multiplicas el valor que asignaste por el subíndice del elemento.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "(−2) ×"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= −4"
+            }
+          ],
+          "porQue": "El subíndice te dice cuántos átomos de ese elemento hay en la fórmula, y cada uno aporta su número de oxidación. Debes contar la aportación total multiplicando."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Planteas que la suma de todos los números de oxidación da cero.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "(+1)(2) + x + (−2)(2) = 0"
+            }
+          ],
+          "porQue": "Una fórmula es neutra: la carga positiva y la negativa se anulan. La suma de los números de oxidación es cero en un compuesto neutro y es la carga en un ion."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Despejas la incógnita sumando o restando para que la x quede sola.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "+2 + x − 4 = 0"
+            },
+            {
+              "tipo": "texto",
+              "valor": " → "
+            },
+            {
+              "tipo": "texto",
+              "valor": "x = 2"
+            }
+          ],
+          "porQue": "Lo que buscas es el número que le falta a los demás para llegar a cero. Despejando lo ves."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Divides el resultado entre el subíndice del elemento que buscabas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "x ÷"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "S",
+              "sub": "1"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 2 ÷ 1 = +2"
+            }
+          ],
+          "porQue": "El número que despejaste es la aportación total de ese elemento. Divides entre cuántos átomos hay para hallar el número de oxidación de uno solo."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "el número de oxidación de cada elemento en la fórmula H₂S (sulfuro de hidrógeno)",
+      "planteamiento": [
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "S"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Hidrógeno:"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sup": "+1"
+        },
+        {
+          "tipo": "texto",
+          "valor": "; Azufre:"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "S",
+          "sup": "+2"
+        }
+      ],
+      "resultadoEnPalabras": "hidrógeno más uno, azufre más dos"
+    },
+    "error": {
+      "enUnaFrase": "Toma el subíndice como si fuera el número de oxidación, sin multiplicar ni plantear la suma igual a cero.",
+      "creenciaDeAtras": "cree que el número pequeño de abajo del símbolo es el número de oxidación que aparece arriba, sin ver que son dos cosas distintas",
+      "pasoQueCorrompe": 2,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "(−2) ×"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= −2"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Oxígeno:"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sup": "−2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "; Azufre:"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "S",
+          "sup": "+2"
+        }
+      ],
+      "comoSeCacha": "El número de oxidación del oxígeno debería ser −2, pero el estudiante dejó sin multiplicar por el subíndice 2. Además, si la suma tiene que dar cero, el azufre no puede valer lo mismo que su subíndice: eso nunca cierra la ecuación."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "No plantea que la suma de todos los números de oxidación sea cero, así que después no puede despejar.",
+        "creenciaDeAtras": "cree que alcanza con identificar los valores ya conocidos, sin necesidad de armar una ecuación que obligue a que todo tenga sentido junto"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "número de oxidación",
+        "queEs": "El número de electrones que un elemento pierde, gana o comparte en un compuesto. Se escribe arriba y a la derecha del símbolo químico con su signo.",
+        "noEsLoMismoQue": "el subíndice, que es el número de átomos de ese elemento en la fórmula y va abajo a la derecha"
+      },
+      {
+        "palabra": "subíndice",
+        "queEs": "El número pequeño que va abajo a la derecha del símbolo químico y dice cuántos átomos de ese elemento hay en la fórmula."
+      },
+      {
+        "palabra": "compuesto neutro",
+        "queEs": "Una fórmula química donde la suma de todos los números de oxidación es cero porque las cargas positivas y negativas se anulan."
+      },
+      {
+        "palabra": "despejar",
+        "queEs": "Aislar la incógnita en una ecuación, moviendo los demás números hacia el otro lado del signo igual, para hallar su valor."
+      },
+      {
+        "palabra": "ion",
+        "queEs": "Un átomo o grupo de átomos con carga eléctrica porque tiene más o menos electrones de los que corresponden a su número de protones."
+      }
+    ],
+    "cotas": {
+      "numeros": "números de oxidación del 1 al 8 con signo más o menos; subíndices del 1 al 4; el resultado siempre es un entero entre −4 y +8",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "÷"
+        },
+        {
+          "tipo": "texto",
+          "valor": "×"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

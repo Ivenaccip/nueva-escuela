@@ -1,0 +1,175 @@
+{
+  "materia": "quimica",
+  "temaNumero": 22,
+  "titulo": "Enlace covalente: compartir",
+  "generadoEn": "2026-10-06T16:23:18.613Z",
+  "canon": {
+    "temaNumero": 22,
+    "materia": "quimica",
+    "titulo": "Enlace covalente: compartir",
+    "notacion": "figura",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Formar un enlace covalente entre dos no metales",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Verificas que los dos átomos sean no metales.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Oxígeno y oxígeno: los dos son no metales."
+            }
+          ],
+          "porQue": "El enlace covalente ocurre entre no metales. Si uno es metal y otro no metal, el enlace es iónico y hay transferencia de electrones, no compartición."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Cuentas los electrones de valencia de cada átomo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "O: 6 electrones de valencia; O: 6 electrones de valencia."
+            }
+          ],
+          "porQue": "Los electrones de valencia son los que cada átomo puede compartir. Están en la última capa y determinan cuántos pares va a formar."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Calculas cuántos electrones le faltan a cada uno para llegar a 8.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "A cada O le faltan 2 para llegar a 8."
+            }
+          ],
+          "porQue": "La regla del octeto dice que los átomos buscan tener 8 electrones en la última capa para ser estables. Lo que le falta es lo que necesita captar o compartir."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Formas los pares compartidos: cada par que necesita un átomo se forma compartiendo con el otro.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Cada O necesita 2. Forman 2 pares compartidos: O=O"
+            }
+          ],
+          "porQue": "Un par de electrones son dos electrones, uno del primer átomo y uno del segundo. Si cada uno necesita 2 electrones, cuentan 2 pares, no 2 electrones sueltos."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Cuentas los pares para decir si el enlace es sencillo, doble o triple.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "2 pares = enlace doble."
+            }
+          ],
+          "porQue": "Un par compartido es un enlace sencillo. Dos pares es doble, tres es triple. El número de pares que se comparten determina la multiplicidad del enlace."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "dos átomos de oxígeno que necesitan estabilizarse y forman una molécula",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Formación de "
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "O=O, enlace doble"
+        }
+      ],
+      "resultadoEnPalabras": "dos oxígenos unidos por un enlace doble"
+    },
+    "error": {
+      "enUnaFrase": "Dibuja transferencia de electrones con cargas, como si fuera un enlace iónico.",
+      "creenciaDeAtras": "cree que todos los enlaces son iguales al iónico del tema anterior, donde un átomo pierde electrones y otro los gana, y alguien recibe cargas",
+      "pasoQueCorrompe": 1,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "O²⁻ y O²⁺: transferencia de electrones, enlaces iónicos."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Enlace iónico con cargas"
+        }
+      ],
+      "comoSeCacha": "En el paso 1 acabas de verificar que los dos son no metales, y aquí aparecen cargas de +2 y −2 como si fueran iones. Los no metales no transfieren electrones completos: comparten pares."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Comparte un solo electrón en vez de un par.",
+        "creenciaDeAtras": "cree que cada electrón se comparte de forma individual, no entiende que un par son dos electrones —uno de cada átomo—"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "electrones de valencia",
+        "queEs": "Los electrones que un átomo tiene en su última capa de electrones. Son los que puede compartir o transferir en un enlace.",
+        "noEsLoMismoQue": "los electrones internos, que están en capas profundas y no participan en los enlaces"
+      },
+      {
+        "palabra": "par compartido",
+        "queEs": "Dos electrones, uno aportado por cada átomo, que los dos átomos usan al mismo tiempo para estabilizarse. Un par compartido forma un enlace sencillo.",
+        "noEsLoMismoQue": "un electrón compartido, que sería uno solo"
+      },
+      {
+        "palabra": "enlace sencillo",
+        "queEs": "Un enlace covalente formado por un par compartido. Se escribe con una raya: H−H."
+      },
+      {
+        "palabra": "enlace doble",
+        "queEs": "Un enlace covalente formado por dos pares compartidos. Se escribe con dos rayas: O=O."
+      },
+      {
+        "palabra": "enlace triple",
+        "queEs": "Un enlace covalente formado por tres pares compartidos. Se escribe con tres rayas: N≡N."
+      },
+      {
+        "palabra": "regla del octeto",
+        "queEs": "La regla que dice que los átomos buscan tener 8 electrones en la última capa para ser estables. El hidrógeno es excepción: busca 2."
+      }
+    ],
+    "cotas": {
+      "numeros": "Números atómicos menores a 18; números de electrones de valencia del 1 al 8; conteos de pares del 1 al 3",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        },
+        {
+          "tipo": "texto",
+          "valor": "≡"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "La estación 3 pide una respuesta con la palabra del tipo de enlace, no un número o fracción.",
+      "porQue": "El teclado de la app solo tiene doce teclas: 1-9, 0, diagonal y borrar. No tiene letras, así que no se puede teclear palabras como 'sencillo', 'doble' o 'triple'.",
+      "queHagoConEsto": "Este tema necesita que el prompt de estación 3 sea diferente, uno que acepte respuestas escritas. Con la notación de figura (diagrama de Lewis) y las palabras que pide (tipo de enlace), el tema no cabe en el flujo actual de digitación."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

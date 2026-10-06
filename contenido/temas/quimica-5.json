@@ -1,0 +1,154 @@
+{
+  "materia": "quimica",
+  "temaNumero": 5,
+  "titulo": "Cambio físico o cambio químico",
+  "generadoEn": "2026-10-06T16:17:13.250Z",
+  "canon": {
+    "temaNumero": 5,
+    "materia": "quimica",
+    "titulo": "Cambio físico o cambio químico",
+    "notacion": "tabla",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Distinguir un cambio físico de uno químico",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas qué sustancia tenías antes del cambio.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Antes: azúcar sólido blanco"
+            }
+          ],
+          "porQue": "Un cambio físico o químico siempre empieza con algo específico. Si no sabes de dónde sales, no puedes decir a dónde llegaste."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Identificas qué sustancia o sustancias tienes después del cambio.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Después: agua y azúcar disueltos"
+            }
+          ],
+          "porQue": "El resultado puede ser una sustancia nueva o la misma de antes en forma distinta. La diferencia entre antes y después te dice cuál pasó."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Decides si puedes regresar a la sustancia original sin hacer química.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "¿Se puede recuperar el azúcar? Sí, evaporando el agua."
+            }
+          ],
+          "porQue": "Si lo que cambió se puede deshacer sin romper ni quemar nada, nada nuevo se creó. La sustancia sólo se vio distinta."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Buscas señales de que apareció una sustancia nueva: gas, olor fuerte, color que no se quita, sólido en el fondo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "¿Hay gas? No. ¿Olor nuevo? No. ¿Color? No. ¿Sólido? No."
+            }
+          ],
+          "porQue": "Cuando átomos se reorganizan en una sustancia nueva, casi siempre dejan pistas: huelen, sueltan gas, cambian de color de forma que no vuelve, o forman un sólido que se queda. El azúcar disuelto no deja ninguna."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Concluyes el tipo de cambio: si se puede deshacer y no hay señales, es físico; si apareció sustancia nueva, es químico.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Cambio físico: el azúcar se disolvió pero sigue siendo azúcar."
+            }
+          ],
+          "porQue": "Un cambio químico crea sustancias nuevas que la naturaleza no rehace sola. Un cambio físico deja la sustancia igual, sólo cambia su forma de verse."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "azúcar que se disuelve en agua",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Se disuelve azúcar blanco en agua. ¿Cambio físico o químico?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Cambio físico"
+        }
+      ],
+      "resultadoEnPalabras": "cambio físico"
+    },
+    "error": {
+      "enUnaFrase": "Clasifica como químico todo lo que se ve distinto, aunque se puede deshacer.",
+      "creenciaDeAtras": "cree que si la sustancia se ve diferente después, automáticamente cambió a otra sustancia nueva, porque \"ya no es igual que antes\"",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "¿Se puede recuperar el azúcar? No, porque ya no se ve igual."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Cambio químico"
+        }
+      ],
+      "comoSeCacha": "El paso 3 dice que se decide si se puede deshacer. En la versión equivocada se justifica con cómo se ve, no con si se puede recuperar. Disolución no es lo mismo que descomposición: el azúcar disuelto sigue siendo azúcar."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Clasifica como físico cambios donde apareció sustancia nueva, porque \"nada más cambió de color\" o \"nada más se oxidó\".",
+        "creenciaDeAtras": "cree que los cambios químicos tienen que ser espectaculares con explosiones o cosas radicales, y que un color que cambia no es importante"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "cambio físico",
+        "queEs": "Cuando una sustancia se ve distinta pero sigue siendo la misma sustancia adentro. Se puede deshacer sin crear nada nuevo.",
+        "noEsLoMismoQue": "cambio químico, donde aparecen sustancias completamente nuevas"
+      },
+      {
+        "palabra": "cambio químico",
+        "queEs": "Cuando los átomos se reagrupan y forman sustancias completamente nuevas. No se puede deshacer fácilmente.",
+        "noEsLoMismoQue": "cambio físico, donde la sustancia sigue siendo la misma aunque se vea distinta"
+      },
+      {
+        "palabra": "disolución",
+        "queEs": "Cuando una sustancia se disuelve en otra y se mezclan, pero cada una sigue siendo lo que era. Se puede separar.",
+        "noEsLoMismoQue": "descomposición, donde una sustancia se rompe y forma otras nuevas"
+      },
+      {
+        "palabra": "sustancia",
+        "queEs": "Cada material diferente: azúcar, agua, hierro, oxígeno. Tiene propiedades propias que no cambian aunque la muevas o la disuelvas."
+      },
+      {
+        "palabra": "señal de sustancia nueva",
+        "queEs": "Algo que ves o hueles cuando aparece una sustancia que no existía antes: gas que se suelta, olor fuerte nuevo, color que no se quita, sólido que se forma en el fondo."
+      }
+    ],
+    "cotas": {
+      "numeros": "ejemplos de la vida diaria en 6º de primaria: azúcar, agua, hierro, vidrio, café, sal, leche, papel",
+      "unidades": [],
+      "simbolos": []
+    },
+    "noSePuede": {
+      "que": "La respuesta es una palabra: cambio físico o cambio químico.",
+      "porQue": "El teclado de la estación 3 y 4 sólo tiene dígitos, diagonal y borrar. No puede escribir letras.",
+      "queHagoConEsto": "Este tema debe mandarse a un prompt diferente que maneje respuestas en palabra. Si no existe ese prompt, el tema debe replantearse para que el estudiante dé su respuesta como número (por ejemplo, preguntarle cuántas señales de sustancia nueva vio, o qué número corresponde a cada tipo de cambio en una lista que aparezca en el enunciado)."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

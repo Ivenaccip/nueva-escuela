@@ -1,0 +1,187 @@
+{
+  "materia": "quimica",
+  "temaNumero": 4,
+  "titulo": "Cambios de estado: fusión y evaporación",
+  "generadoEn": "2026-10-06T16:16:52.362Z",
+  "canon": {
+    "temaNumero": 4,
+    "materia": "quimica",
+    "titulo": "Cambios de estado: fusión y evaporación",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Identificar y nombrar un cambio de estado",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identifies el estado inicial de la sustancia: sólido, líquido o gas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Hielo: estado inicial es"
+            }
+          ],
+          "porQue": "Necesitas saber de dónde parte la sustancia para saber a dónde va. Si confundes qué estado es cada uno, no sabes qué cambio ocurre."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Identifica el estado final: sólido, líquido o gas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Agua líquida: estado final es"
+            }
+          ],
+          "porQue": "El cambio es la distancia entre los dos: no es lo mismo pasar de sólido a líquido que de líquido a gas."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Nombra el cambio: fusión es sólido a líquido, evaporación es líquido a gas, condensación es gas a líquido, solidificación es líquido a sólido.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Sólido"
+            },
+            {
+              "tipo": "texto",
+              "valor": "→"
+            },
+            {
+              "tipo": "texto",
+              "valor": "líquido:"
+            },
+            {
+              "tipo": "texto",
+              "valor": "fusión"
+            }
+          ],
+          "porQue": "Cada cambio tiene su nombre. Usar el nombre correcto te permite comunicar exactamente qué pasó, sin dejar lugar a confusiones."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Decide si se agregó o se quitó calor: para ir de sólido a líquido o de líquido a gas, la sustancia absorbe calor. Para lo opuesto, libera calor.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Fusión absorbe calor"
+            }
+          ],
+          "porQue": "El calor es lo que mueve las partículas. Si la sustancia se dispersa más (sólido a líquido a gas), necesita energía: absorbe. Si se junta más, libera energía."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Explica qué pasó con las partículas: sus posiciones y su movimiento cambian, pero la sustancia sigue siendo la misma, no desaparece ni se convierte en otra cosa.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Las partículas se separan y se mueven más, pero sigue siendo agua"
+            }
+          ],
+          "porQue": "El agua que hierve no se convierte en aire ni desaparece: sus partículas se dispersan en el aire como vapor, pero la masa sigue ahí. Si lo ves como niebla, es que el vapor se condensó en gotitas líquidas de nuevo."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un trozo de hielo que se calienta en una olla",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Hielo a"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "0",
+          "sup": "°C"
+        },
+        {
+          "tipo": "texto",
+          "valor": "se calienta. Pasa a agua líquida."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Fusión"
+        }
+      ],
+      "resultadoEnPalabras": "fusión"
+    },
+    "error": {
+      "enUnaFrase": "Dice que el agua al hervir se convierte en aire o se acaba, en lugar de pasar a vapor.",
+      "creenciaDeAtras": "cree que el vapor es aire o que la sustancia desaparece cuando no la ve, en lugar de entender que el agua sigue siendo agua pero dispersa en el aire",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Las partículas se dispersan y se convierten en aire, la sustancia se acaba"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Evaporación = desaparición"
+        }
+      ],
+      "comoSeCacha": "Dice que la sustancia se acaba o se convierte en otra. Pero en todos los pasos anteriores la sustancia sigue siendo la misma: es el estado el que cambia, no la sustancia."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Usa el nombre equivocado para el cambio: llama evaporación a la fusión o dice que el agua se derrite.",
+        "creenciaDeAtras": "cree que los nombres de los cambios no importan o que se usan en cualquier orden, porque no distingue bien cuál es sólido, cuál líquido y cuál gas"
+      },
+      {
+        "enUnaFrase": "Llama gas a la nube blanca que sale de una olla hirviendo, cuando esa nube es en realidad agua líquida condensada.",
+        "creenciaDeAtras": "cree que lo que ve salir de la olla es el gas, cuando el vapor de agua es incoloro y la nube blanca es agua que ya se condensó de nuevo a gotitas líquidas"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "fusión",
+        "queEs": "El cambio de estado sólido a líquido. El sólido absorbe calor y sus partículas se separan lo suficiente para poder fluir.",
+        "noEsLoMismoQue": "evaporación, que es cuando un líquido pasa a gas"
+      },
+      {
+        "palabra": "evaporación",
+        "queEs": "El cambio de estado líquido a gas. El líquido absorbe calor y sus partículas se dispersan en el aire como vapor.",
+        "noEsLoMismoQue": "condensación, que es el opuesto y ocurre cuando un gas libera calor y pasa a líquido"
+      },
+      {
+        "palabra": "vapor",
+        "queEs": "La forma gaseosa de una sustancia. El vapor de agua es incoloro: no es la nube blanca que ves en una olla, que es agua líquida que se condensó.",
+        "noEsLoMismoQue": "gas, que es un estado de la materia, y vapor, que es una sustancia específica en estado gaseoso"
+      },
+      {
+        "palabra": "estado de la materia",
+        "queEs": "La forma en que se presenta una sustancia: sólido tiene forma y volumen fijos; líquido tiene volumen fijo pero adopta la forma del recipiente; gas no tiene forma ni volumen fijos."
+      },
+      {
+        "palabra": "cambio de estado",
+        "queEs": "La transformación de una sustancia de un estado a otro: fusión, evaporación, condensación o solidificación. La sustancia sigue siendo la misma, sólo cambia su estado.",
+        "noEsLoMismoQue": "cambio químico, donde la sustancia se transforma en otra sustancia completamente distinta"
+      },
+      {
+        "palabra": "partículas",
+        "queEs": "Las pequeñas partes de las que está hecha la materia. En un sólido están apretadas y no se mueven, en un líquido se tocan pero pueden fluir, y en un gas están muy separadas y se mueven rápido."
+      }
+    ],
+    "cotas": {
+      "numeros": "temperaturas de 0 °C y 100 °C; los números que aparecen en el enunciado son siempre pequeños y referidos a temperaturas comunes",
+      "unidades": [
+        "°C"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

@@ -1,0 +1,179 @@
+{
+  "materia": "quimica",
+  "temaNumero": 1,
+  "titulo": "Volumen por desplazamiento de agua",
+  "generadoEn": "2026-10-06T16:15:48.626Z",
+  "canon": {
+    "temaNumero": 1,
+    "materia": "quimica",
+    "titulo": "Volumen por desplazamiento de agua",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Medir el volumen de un objeto por desplazamiento de agua",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Llenas la probeta con agua hasta una altura que permita meter el objeto sin que se desborde.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Nivel inicial del agua: 60 mL"
+            }
+          ],
+          "porQue": "Necesitas saber dónde está el agua al principio. Ese número es tu punto de partida para calcular cuánto espacio ocupó el objeto. Lee la probeta a la altura del menisco, no desde arriba."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Anotas el nivel que marca la probeta, mirando a la altura del menisco.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Anotas: 60 mL"
+            }
+          ],
+          "porQue": "El menisco es la curva en la superficie del agua. Si lees desde arriba, el número no es exacto y el volumen que calcules sale equivocado."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Metes cuidadosamente el objeto en la probeta y anotas el nuevo nivel del agua.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Nivel final del agua: 85 mL"
+            }
+          ],
+          "porQue": "El agua sube porque el objeto ocupa espacio. El nuevo número te dice hasta dónde subió. Vuelves a leer a la altura del menisco."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Restas el nivel inicial del nivel final: final menos inicial.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "85 mL"
+            },
+            {
+              "tipo": "texto",
+              "valor": "−"
+            },
+            {
+              "tipo": "texto",
+              "valor": "60 mL"
+            },
+            {
+              "tipo": "texto",
+              "valor": "="
+            },
+            {
+              "tipo": "texto",
+              "valor": "25 mL"
+            }
+          ],
+          "porQue": "La diferencia entre los dos números es el espacio que ocupó el objeto. Si restas al revés, el volumen te queda negativo, lo que no existe. El nivel final siempre es más alto que el inicial porque el objeto sube el agua."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Escribes el resultado con la unidad de volumen.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Volumen del objeto = 25 mL"
+            }
+          ],
+          "porQue": "El número solo no significa nada. La unidad dice que se trata de 25 mililitros, no 25 de otra cosa. El volumen del objeto es el número que restaste, no el que marca la probeta al final."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una piedra pequeña que se mete en una probeta con agua",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Nivel inicial: 60 mL. Nivel final con la piedra: 85 mL. ¿Cuál es el volumen de la piedra?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "25 mL"
+        }
+      ],
+      "resultadoEnPalabras": "veinticinco mililitros"
+    },
+    "error": {
+      "enUnaFrase": "Reporta el nivel final de la probeta como si fuera el volumen del objeto.",
+      "creenciaDeAtras": "cree que el volumen es el número que la probeta señala después de meter el objeto, sin pensar que el agua ya tenía un nivel antes",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Volumen del objeto = 85 mL"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "85 mL"
+        }
+      ],
+      "comoSeCacha": "El volumen que reporta es mucho más grande que la diferencia entre los dos niveles. Si hizo una resta en el paso 4, el número que escribió aquí no puede ser el nivel final que anotó; tendría que ser el resultado de la resta."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Resta el nivel final menos el inicial al revés, restando inicial menos final.",
+        "creenciaDeAtras": "cree que el orden de los números en una resta no importa, o no piensa en qué número es más grande"
+      },
+      {
+        "enUnaFrase": "Lee la probeta desde arriba en lugar de a la altura del menisco.",
+        "creenciaDeAtras": "cree que la posición desde la que se lee no cambia el número, o no sabe que el menisco es la posición correcta"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "desplazamiento de agua",
+        "queEs": "El cambio en el nivel del agua cuando un objeto se mete en ella. El agua sube porque el objeto ocupa espacio.",
+        "noEsLoMismoQue": "el volumen de agua que había al principio"
+      },
+      {
+        "palabra": "menisco",
+        "queEs": "La curva que forma el agua en la superficie. Es donde realmente está el nivel del agua, y es el único lugar desde el que se debe leer una probeta.",
+        "noEsLoMismoQue": "la parte superior de la probeta o el agua vista desde arriba"
+      },
+      {
+        "palabra": "nivel inicial",
+        "queEs": "La altura del agua en la probeta antes de meter el objeto.",
+        "noEsLoMismoQue": "el nivel final, que es después de meter el objeto"
+      },
+      {
+        "palabra": "nivel final",
+        "queEs": "La altura del agua en la probeta después de meter el objeto.",
+        "noEsLoMismoQue": "el nivel inicial, que es antes"
+      },
+      {
+        "palabra": "volumen",
+        "queEs": "El espacio que ocupa un objeto. Se mide en mililitros (mL) o centímetros cúbicos (cm³)."
+      }
+    ],
+    "cotas": {
+      "numeros": "números enteros del 1 al 100 para los niveles; la diferencia entre nivel final e inicial es un entero del 1 al 50",
+      "unidades": [
+        "mL",
+        "cm³"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

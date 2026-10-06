@@ -1,0 +1,184 @@
+{
+  "materia": "quimica",
+  "temaNumero": 15,
+  "titulo": "Iones: cationes y aniones",
+  "generadoEn": "2026-10-06T16:20:47.148Z",
+  "canon": {
+    "temaNumero": 15,
+    "materia": "quimica",
+    "titulo": "Iones: cationes y aniones",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Escribir la carga de un ion",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Cuentas los protones que tiene el átomo original.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Cloro:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "Cl",
+              "sup": "0"
+            },
+            {
+              "tipo": "texto",
+              "valor": "tiene 17 protones"
+            }
+          ],
+          "porQue": "Los protones nunca cambian cuando se forma un ion. El número de protones define qué elemento es, y si cambias eso, ya no es cloro."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Cuentas los electrones que quedan después de ganar o perder.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Si gana 1 e⁻, quedan 17 + 1 = 18 electrones"
+            }
+          ],
+          "porQue": "Los protones no se mueven. Lo que cambia es el número de electrones. Si pierdes un electrón tienes un protón más que electrones; si ganas uno tienes un electrón más que protones."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Restas protones menos electrones.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "17 protones − 18 electrones = −1"
+            }
+          ],
+          "porQue": "Si hay más protones que electrones, la carga es positiva. Si hay más electrones que protones, la carga es negativa. La resta te dice cuánto."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Escribes el número de la carga con su signo como superíndice.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "Cl",
+              "sup": "1−"
+            }
+          ],
+          "porQue": "El superíndice es la forma estándar de escribir la carga de un ion. El número va primero, el signo después."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Nombras el ion: si la carga es negativa es anión, si es positiva es catión.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Carga negativa"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "Cl",
+              "sup": "1−"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= anión cloruro"
+            }
+          ],
+          "porQue": "Anión viene del nombre del elemento pero con terminación -uro o -ido. Catión es el nombre del elemento tal cual. Es la forma que tiene cada ciencia de poner nombres para no confundirse."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un átomo de cloro que gana un electrón",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Cloro gana 1 electrón"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "simbolo",
+          "valor": "Cl",
+          "sup": "1−"
+        }
+      ],
+      "resultadoEnPalabras": "cloruro, anión con carga −1"
+    },
+    "error": {
+      "enUnaFrase": "Suma electrones para la carga en vez de restar protones menos electrones, y cree que ganar electrones da carga positiva.",
+      "creenciaDeAtras": "cree que «ganar» significa sumar, y que el signo de la carga va en la misma dirección que la acción: si ganas algo subes, si pierdes algo bajas",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "17 protones + 18 electrones = 35"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "simbolo",
+          "valor": "Cl",
+          "sup": "35+"
+        }
+      ],
+      "comoSeCacha": "El número de la carga es mucho más grande que el número de protones o electrones. Una carga no puede ser 35+ cuando el cloro tiene solo 17 protones que la generen."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cambia el número de protones del átomo para formar el ion, en vez de cambiar solo los electrones.",
+        "creenciaDeAtras": "cree que para que un ion tenga carga diferente, tiene que cambiar el elemento mismo: si gana electrones debe tener más protones para compensar"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "protón",
+        "queEs": "La partícula cargada positivamente que vive en el núcleo del átomo. El número de protones nunca cambia cuando se forma un ion.",
+        "noEsLoMismoQue": "electrón, que es la partícula cargada negativamente que rodea el núcleo y es la que se gana o se pierde"
+      },
+      {
+        "palabra": "electrón",
+        "queEs": "La partícula cargada negativamente que rodea el núcleo. Es la que se mueve cuando se forma un ion."
+      },
+      {
+        "palabra": "catión",
+        "queEs": "Un ion con carga positiva, porque perdió electrones y le quedaron más protones que electrones.",
+        "noEsLoMismoQue": "anión, que tiene carga negativa"
+      },
+      {
+        "palabra": "anión",
+        "queEs": "Un ion con carga negativa, porque ganó electrones y le quedaron más electrones que protones.",
+        "noEsLoMismoQue": "catión, que tiene carga positiva"
+      },
+      {
+        "palabra": "superíndice",
+        "queEs": "Los números o signos pequeños que se escriben arriba y a la derecha de un símbolo. En los iones, el superíndice es la carga."
+      }
+    ],
+    "cotas": {
+      "numeros": "elementos del periodo 3 (Na, Mg, Al, Si, P, S, Cl, Ar) y del grupo 17 (F, Cl, Br) con 17 a 20 protones; ganancias o pérdidas de 1 a 3 electrones; resultado de carga entre −3 y +3",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "e⁻"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

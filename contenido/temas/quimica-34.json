@@ -1,0 +1,237 @@
+{
+  "materia": "quimica",
+  "temaNumero": 34,
+  "titulo": "Neutralización: sal y agua",
+  "generadoEn": "2026-10-06T16:27:29.294Z",
+  "canon": {
+    "temaNumero": 34,
+    "materia": "quimica",
+    "titulo": "Neutralización: sal y agua",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Escribir la ecuación de neutralización entre un ácido y una base",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identifies cuál es el ácido y cuál es la base en la reacción.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "HCl es el ácido. NaOH es la base."
+            }
+          ],
+          "porQue": "El ácido aporta hidrógeno (H⁺) y la base aporta hidróxido (OH⁻). Sin identificarlos, no sabes qué mezclar."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Tomas el metal de la base y lo anotas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Metal de la base: Na"
+            }
+          ],
+          "porQue": "El metal de la base será parte de la sal. La base NaOH tiene al sodio (Na) como metal."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Tomas el resto del ácido sin el hidrógeno.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Resto del ácido: Cl"
+            }
+          ],
+          "porQue": "El ácido HCl pierde su hidrógeno. Lo que queda es el cloro (Cl), que forma la sal con el metal."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Cruzas las valencias del metal y del resto del ácido para escribir la fórmula de la sal.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Na"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "1",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "y Cl"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "1",
+              "sup": "−"
+            },
+            {
+              "tipo": "texto",
+              "valor": ": la sal es NaCl"
+            }
+          ],
+          "porQue": "Las cargas opuestas se neutralizan: el + del metal y el − del resto del ácido se simplifican en la fórmula de la sal."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Escribes la ecuación completa balanceada con flecha, signos + y agua como producto.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "HCl + NaOH →"
+            },
+            {
+              "tipo": "texto",
+              "valor": "NaCl +"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "O"
+            }
+          ],
+          "porQue": "El ácido y la base producen la sal y agua. Balancear garantiza que lo que entra es lo que sale: no pierdes ni ganas átomos."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una reacción entre ácido clorhídrico y hidróxido de sodio",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "HCl + NaOH →"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "NaCl +"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "O"
+        }
+      ],
+      "resultadoEnPalabras": "cloruro de sodio y agua"
+    },
+    "error": {
+      "enUnaFrase": "Del lado de los productos escribes solo agua y te olvidas de la sal.",
+      "creenciaDeAtras": "cree que neutralizar significa que no queda nada, que el ácido 'desaparece' completamente",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "HCl + NaOH →"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "O"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "O"
+        }
+      ],
+      "comoSeCacha": "En una ecuación química, lo que entra tiene que salir: contas los átomos de cada lado y del lado de los productos falta el sodio y el cloro que entraron como NaOH y HCl."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cuando sí escribes la sal, tomas el hidrógeno del ácido en lugar del metal de la base.",
+        "creenciaDeAtras": "cree que el hidrógeno del ácido es lo que se queda en la sal porque el ácido es lo fuerte y tiene que estar presente"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "neutralización",
+        "queEs": "La reacción en la que un ácido se encuentra con una base y juntos forman una sal y agua."
+      },
+      {
+        "palabra": "sal",
+        "queEs": "El compuesto iónico que se forma cuando reaccionan un ácido y una base. Está hecha del metal de la base y del resto del ácido.",
+        "noEsLoMismoQue": "el agua, que también se forma pero es diferente a la sal"
+      },
+      {
+        "palabra": "metal de la base",
+        "queEs": "El elemento que acompaña al hidróxido (OH) en la base. Es la parte que va en la sal.",
+        "noEsLoMismoQue": "el hidrógeno del ácido, que va en el agua"
+      },
+      {
+        "palabra": "resto del ácido",
+        "queEs": "Lo que queda del ácido cuando le quitas el hidrógeno. Es el anión que va en la sal.",
+        "noEsLoMismoQue": "el hidrógeno del ácido, que se combina con el hidróxido para hacer agua"
+      },
+      {
+        "palabra": "balancear",
+        "queEs": "Asegurar que el mismo número de cada tipo de átomo entra del lado izquierdo que sale del lado derecho de la flecha."
+      },
+      {
+        "palabra": "valencia",
+        "queEs": "La carga que tiene un ión y que usas para saber cómo se combinan los átomos en una sal."
+      }
+    ],
+    "cotas": {
+      "numeros": "ácidos y bases sencillos de un grado de disociación, con valencias 1+ y 1−, o 2+ y 2−; los números de los coeficientes de balanceo hasta 3",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "4"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "Na",
+          "sup": "+"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "Cl",
+          "sup": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

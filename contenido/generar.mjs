@@ -30,6 +30,7 @@ import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
 
 import { buscarVideos, candidatosComoTexto } from './buscar-videos.mjs';
+import { resultadoSinCifra } from './forma.mjs';
 import { llaveDeAnthropic } from './llaves.mjs';
 import {
   anotar,
@@ -994,6 +995,18 @@ if (caso) {
       '  Ese caso aparte pide componentes de UI que hoy no existen (CONTRATO.md §5),\n' +
       '  asi que aqui solo se generan las estaciones que si corren.',
   );
+}
+
+// Un canon que se llama numérico y no tiene una sola cifra en su resultado no corre
+// en las estaciones 3 y 4: se para aquí, antes de pagar las seis (contenido/forma.mjs).
+if (!caso && !solo && resultadoSinCifra(canon)) {
+  decir(
+    `\n  Forma dudosa: el canon dice "${canon.formaDeRespuesta}" pero su resultado no tiene ninguna cifra.\n` +
+      '  Las estaciones 3 y 4 pedirian una respuesta que el teclado no puede escribir, asi que\n' +
+      '  no se generan. El canon queda guardado; si de verdad es numerico, rehaz el tema.',
+  );
+  decir(`\n  Gasto acumulado (contenido/temas/_gasto.json):\n${await resumenDelGasto()}`);
+  process.exit(0);
 }
 
 const porGenerar = ESTACIONES.filter((e) => {

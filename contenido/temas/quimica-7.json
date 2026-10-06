@@ -1,0 +1,167 @@
+{
+  "materia": "quimica",
+  "temaNumero": 7,
+  "titulo": "Filtración y decantación",
+  "generadoEn": "2026-10-06T16:17:58.451Z",
+  "canon": {
+    "temaNumero": 7,
+    "materia": "quimica",
+    "titulo": "Filtración y decantación",
+    "notacion": "tabla",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Elegir entre filtración y decantación para separar una mezcla",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Nombra los componentes de la mezcla: qué sustancias hay y cuál es sólida y cuál es líquida.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Arena y agua. La arena es sólida, el agua es líquida."
+            }
+          ],
+          "porQue": "Si no distingues qué sólido tienes y qué líquido hay, no sabes cuál es la sustancia que quieres separar ni cuál es la que hace el trabajo de separar."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Decide si la mezcla es homogénea o heterogénea: si ves los componentes separados o si se ven como uno solo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La mezcla es heterogénea: ves la arena en el fondo y el agua arriba, no se mezclan."
+            }
+          ],
+          "porQue": "Si los componentes no se ven por separado, ni la filtración ni la decantación van a servir. Hace falta otro método."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Pregúntate si el sólido está disuelto en el líquido o solo revuelto sin disolverse.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El sólido está revuelto: la arena no se disuelve en el agua, solo flota o se hunde."
+            }
+          ],
+          "porQue": "Un sólido disuelto desaparece en el líquido y no se puede separar solo con filtro o decantación. Uno que no se disuelve se queda como grano o partícula grande, y ahí sí puedes elegir."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Elige el método: decantación si el sólido es más pesado que el líquido y se hunde rápido; filtración si el sólido es más ligero, flota, o si está en partículas muy finas que se mezclan con el líquido.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La arena se hunde rápido: usa decantación, viertes el agua dejando la arena en el fondo."
+            }
+          ],
+          "porQue": "Decantar es solo verter: rápido y sin aparatos. Filtrar es pasar por un colador: tarda más pero atrapa partículas más finas. Elegir bien ahorra trabajo y funciona seguro."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Di qué queda en cada lado cuando terminas: el sólido en un lugar y el líquido en otro.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "En el fondo queda la arena seca. En el vaso queda el agua clara."
+            }
+          ],
+          "porQue": "Revisar qué quedó de cada lado te muestra si funcionó: si el sólido se quedó sucio de líquido o si en el líquido quedaron partículas del sólido. Si algo no quedó bien, sabes que en la próxima tienes que mejorar el método."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una mezcla de arena y agua que necesita separarse",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Tienes una mezcla de arena y agua. Sepárala."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Usa decantación. Vierte el agua lentamente dejando la arena en el fondo."
+        }
+      ],
+      "resultadoEnPalabras": "decantación"
+    },
+    "error": {
+      "enUnaFrase": "Elige filtración para separar agua con sal disuelta.",
+      "creenciaDeAtras": "cree que el filtro atrapa todo lo que no es agua, sin distinguir que el filtro solo retiene lo que quedó sin disolver, no lo que desapareció en el agua",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "El sólido está disuelto en el agua: el filtro va a atraparlo."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Usa filtración para separar el agua de la sal."
+        }
+      ],
+      "comoSeCacha": "Un sólido disuelto no existe como sólido en la mezcla: se convirtió en moléculas sueltas en el agua. El filtro no atrapa moléculas, atrapa granos y partículas grandes. Si pasaste el agua por el filtro y la sal sigue ahí, no funcionó."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que filtración y decantación hacen lo mismo.",
+        "creenciaDeAtras": "no distingue que decantación es solo verter aprovechando que lo pesado se hunde, mientras que filtración atrapa partículas finas con un material poroso"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "heterogéneo",
+        "queEs": "Una mezcla donde ves los componentes por separado: el agua de un lado, la arena del otro, sin confundirse.",
+        "noEsLoMismoQue": "homogéneo, donde todo se ve como si fuera una sola sustancia"
+      },
+      {
+        "palabra": "disuelto",
+        "queEs": "Cuando un sólido se desaparece dentro de un líquido formando una sola cosa: la sal en el agua no se ve, el agua se vuelve salada."
+      },
+      {
+        "palabra": "decantación",
+        "queEs": "Verter lentamente un líquido dejando lo que se hunde en el fondo: aprovechas que lo pesado cae y lo ligero queda arriba.",
+        "noEsLoMismoQue": "filtración, que atrapa partículas pequeñas con un material poroso"
+      },
+      {
+        "palabra": "filtración",
+        "queEs": "Pasar un líquido con partículas a través de un material poroso que atrapa lo sólido y deja pasar lo líquido.",
+        "noEsLoMismoQue": "decantación, que solo vierte"
+      },
+      {
+        "palabra": "partícula",
+        "queEs": "Un grano o pedazo muy pequeño de sólido que sigue siendo sólido y se puede ver, aunque sea minúsculo."
+      }
+    ],
+    "cotas": {
+      "numeros": "ninguno; el tema solo trabaja con nombres de mezclas y métodos",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "agua"
+        },
+        {
+          "tipo": "texto",
+          "valor": "arena"
+        },
+        {
+          "tipo": "texto",
+          "valor": "sal"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema pide elegir entre dos métodos y explicar el resultado, pero la forma de respuesta es palabra",
+      "porQue": "La respuesta canónica es una decisión (decantación) que se teclearía como texto, no como número o fracción. El teclado de la app solo tiene 1-9, 0, / y borrar, y no puede escribir letras.",
+      "queHagoConEsto": "Cambiar notacion a tabla y formaDeRespuesta a tabla también, para que las estaciones 3 y 4 muestren una tabla con dos columnas (lo que se queda en el filtro / decantador, y lo que pasa). El estudiante llenad la tabla con nombres de sustancias, no teclea respuestas. Este cambio mantiene el tema completo sin perder el error que enseña a distinguir disuelto de revuelto."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}
