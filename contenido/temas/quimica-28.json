@@ -1,0 +1,281 @@
+{
+  "materia": "quimica",
+  "temaNumero": 28,
+  "titulo": "La ecuación química",
+  "generadoEn": "2026-10-06T16:35:22.205Z",
+  "canon": {
+    "temaNumero": 28,
+    "materia": "quimica",
+    "titulo": "La ecuación química",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Leer una ecuación química y contar átomos correctamente",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas qué está antes de la flecha y qué está después.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Antes:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "+ 2"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "→ Después: 2"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "O"
+            }
+          ],
+          "porQue": "La flecha → divide reactivos de productos. Confundir antes y después te hace contar átomos de las sustancias equivocadas."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Nombras cada sustancia: sus elementos y sus números de átomos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Reactivos: 1 mol de"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "y 2 moles de"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "."
+            }
+          ],
+          "porQue": "Nombrar cada cosa evita mezclarlas. Una sustancia es un cuadro aparte, con su coeficiente y sus subíndices propios."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Distingues el coeficiente del subíndice: el coeficiente va fuera y adelante, el subíndice va pegado al símbolo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "En 2"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "O: coeficiente 2, subíndice 2 en H, nada en O."
+            }
+          ],
+          "porQue": "El coeficiente multiplica la molécula entera, el subíndice sólo ese elemento. Confundirlos es el error más común."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Cuentas los átomos de un elemento multiplicando coeficiente por subíndice.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "En 2"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "O: el H aparece 2 × 2 = 4 átomos. El O aparece 2 × 1 = 2 átomos."
+            }
+          ],
+          "porQue": "Si hay dos moléculas y cada una tiene dos hidrógenos, el total es cuatro. No es dos de cada una y punto."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Lees la ecuación en voz alta sin confundir signo = con flecha →.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "1 mol de"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "más 2 moles de"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "producen 2 moles de agua."
+            }
+          ],
+          "porQue": "Una ecuación química es una reacción, no una igualdad de mate. La flecha → dice que algo cambia y se forma algo nuevo."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una ecuación que muestra cómo se forma agua a partir de hidrógeno y oxígeno",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "+ "
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→ 2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "O"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "4"
+        }
+      ],
+      "resultadoEnPalabras": "cuatro átomos de hidrógeno en los reactivos"
+    },
+    "error": {
+      "enUnaFrase": "Lee el subíndice como si fuera coeficiente y cuenta sólo dos átomos de hidrógeno.",
+      "creenciaDeAtras": "cree que el número chico que está pegado al símbolo quiere decir cuántas moléculas hay, igual que el número grande de adelante",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "En 2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "O: coeficiente 2, subíndice 2 en H, nada en O. Total: 2 átomos de H."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "2"
+        }
+      ],
+      "comoSeCacha": "Confunde los lugares donde van los números. El subíndice se contagia del coeficiente pero uno multiplica la molécula entera y el otro sólo el elemento."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Escribe el signo igual en vez de la flecha →.",
+        "creenciaDeAtras": "cree que una ecuación química es una igualdad de matemáticas donde dos cosas que valen lo mismo se escriben con = en el medio"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "coeficiente",
+        "queEs": "El número que va adelante de una sustancia y dice cuántas moléculas de esa sustancia hay. En 2H₂O el coeficiente es 2.",
+        "noEsLoMismoQue": "subíndice, que es el número chico pegado al símbolo y dice cuántos átomos de ese elemento hay en una sola molécula"
+      },
+      {
+        "palabra": "subíndice",
+        "queEs": "El número chico pegado al símbolo de un elemento, que dice cuántos átomos de ese elemento hay en una molécula. En H₂ el subíndice es 2.",
+        "noEsLoMismoQue": "coeficiente, que es el número grande de adelante y multiplica a toda la sustancia"
+      },
+      {
+        "palabra": "reactivos",
+        "queEs": "Las sustancias que están antes de la flecha en una ecuación química. Son las que reaccionan y desaparecen."
+      },
+      {
+        "palabra": "productos",
+        "queEs": "Las sustancias que están después de la flecha en una ecuación química. Son las que se forman en la reacción."
+      },
+      {
+        "palabra": "ecuación química",
+        "queEs": "Un modelo que escribe qué sustancias reaccionan y qué se forma, con sus moléculas contadas y sus estados entre paréntesis.",
+        "noEsLoMismoQue": "una igualdad de matemáticas, que conecta dos cosas que valen lo mismo con un igual"
+      },
+      {
+        "palabra": "flecha de reacción",
+        "queEs": "El símbolo → que separa reactivos de productos. Dice que algo cambió y se formó algo nuevo.",
+        "noEsLoMismoQue": "el signo igual =, que sólo dice que dos cosas valen lo mismo"
+      }
+    ],
+    "cotas": {
+      "numeros": "coeficientes del 1 al 3, subíndices del 1 al 3, resultado de la cuenta del 1 al 8",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

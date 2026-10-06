@@ -1,0 +1,258 @@
+{
+  "materia": "quimica",
+  "temaNumero": 13,
+  "titulo": "Protones, neutrones y electrones",
+  "generadoEn": "2026-10-06T16:42:51.352Z",
+  "canon": {
+    "temaNumero": 13,
+    "materia": "quimica",
+    "titulo": "Protones, neutrones y electrones",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Identificar protones, neutrones y electrones en un átomo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas qué partícula estás mirando por su nombre: protón, neutrón o electrón.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Partícula:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            }
+          ],
+          "porQue": "Las tres partículas son distintas y llevan nombres diferentes. Si no sabes cuál estás viendo, confundes dónde va cada una y qué carga tiene."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Dices la carga que lleva: positiva, negativa o sin carga.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "tiene carga positiva"
+            }
+          ],
+          "porQue": "La carga de cada partícula es fija: el protón siempre es positivo, el electrón siempre es negativo y el neutrón siempre es neutro. Sin eso no puedes saber si van a anularse."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Dices dónde está la partícula: dentro del núcleo o en los alrededores.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "está en el núcleo"
+            }
+          ],
+          "porQue": "El núcleo es un lugar separado del resto del átomo. Si no sabes dónde vive cada partícula, las metes todas juntas y el modelo del átomo se deshace."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Dices si la partícula aporta masa al átomo o casi no aporta nada.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "aporta masa"
+            }
+          ],
+          "porQue": "El protón y el neutrón pesan casi lo mismo y los dos son pesados. El electrón es casi invisible si los comparas: pesa menos de la milésima parte. La masa del átomo sale de los que pesan."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Cuentas los protones y los electrones, y compruebas que sean iguales para que el átomo sea neutro.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Na: 11"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "y 11"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "e",
+              "sup": "−"
+            }
+          ],
+          "porQue": "Un protón positivo se anula con un electrón negativo. Si cuentas igual protones que electrones, el átomo es neutro, carga cero. Si no, sabe que hay un error."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "el sodio, que tiene 11 protones",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Na:"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "p",
+          "sup": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= 11,"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "n",
+          "sup": "0"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= 12,"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "e",
+          "sup": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= ?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "11"
+        }
+      ],
+      "resultadoEnPalabras": "once electrones"
+    },
+    "error": {
+      "enUnaFrase": "Mete los electrones al núcleo junto con protones y neutrones, y le asigna carga negativa al neutrón.",
+      "creenciaDeAtras": "cree que todo lo que está dentro del átomo está dentro del núcleo, y el nombre neutrón suena parecido a negativo así que supone que tiene esa carga",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "simbolo",
+          "valor": "e",
+          "sup": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "está en el núcleo"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Na: núcleo con 11"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "p",
+          "sup": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": ", 12"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "n",
+          "sup": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "y 11"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "e",
+          "sup": "−"
+        }
+      ],
+      "comoSeCacha": "El electrón tiene carga negativa pero no está en el núcleo; el neutrón está en el núcleo pero no tiene carga negativa. Quien confunde uno con otro termina con todo en el mismo lugar y con cargas equivocadas."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Asigna carga negativa al neutrón porque el nombre suena parecido a negativo.",
+        "creenciaDeAtras": "cree que el nombre de la partícula describe su carga: neutrón suena como negativo, así que es negativo"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "protón",
+        "queEs": "La partícula que está en el núcleo del átomo y tiene carga positiva. El número de protones define qué elemento es el átomo."
+      },
+      {
+        "palabra": "neutrón",
+        "queEs": "La partícula que está en el núcleo del átomo y no tiene carga, su carga es cero. Pesa casi lo mismo que el protón.",
+        "noEsLoMismoQue": "electrón, que tiene carga negativa y está afuera del núcleo"
+      },
+      {
+        "palabra": "electrón",
+        "queEs": "La partícula que anda en los alrededores del núcleo y tiene carga negativa. Pesa mucho menos que el protón y el neutrón.",
+        "noEsLoMismoQue": "neutrón, que está adentro del núcleo y no tiene carga"
+      },
+      {
+        "palabra": "núcleo",
+        "queEs": "El centro del átomo, donde están el protón y el neutrón, mucho más pequeño y denso que el resto del átomo."
+      },
+      {
+        "palabra": "carga",
+        "queEs": "Una propiedad de las partículas: puede ser positiva, negativa o cero. Dos cargas opuestas se anulan."
+      },
+      {
+        "palabra": "átomo neutro",
+        "queEs": "Un átomo donde el número de protones es igual al número de electrones, así sus cargas se anulan y la carga total es cero."
+      }
+    ],
+    "cotas": {
+      "numeros": "número de protones del 1 al 20; número de neutrones del 1 al 30; el resultado es el número de electrones de un átomo neutro, igual al de protones, entero del 1 al 20",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "simbolo",
+          "valor": "p",
+          "sup": "+"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "n",
+          "sup": "0"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "e",
+          "sup": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

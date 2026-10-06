@@ -1,0 +1,211 @@
+{
+  "materia": "biologia",
+  "temaNumero": 11,
+  "titulo": "El viaje del oxígeno",
+  "generadoEn": "2026-10-06T16:41:53.819Z",
+  "canon": {
+    "temaNumero": 11,
+    "materia": "biologia",
+    "titulo": "El viaje del oxígeno",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Seguir una molécula de oxígeno desde el aire hasta una célula y regresar con bióxido de carbono",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "El oxígeno entra por la nariz y llega a los alvéolos del pulmón.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Aire con O₂ → nariz → pulmón → alvéolo"
+            }
+          ],
+          "porQue": "El aire que respiramos es el transporte físico del oxígeno. Los alvéolos son donde el oxígeno se separa del aire y entra en la sangre, así que es el primer punto crítico del viaje."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "El oxígeno cruza la pared del alvéolo y se disuelve en la sangre.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "O₂ en alvéolo →"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "disuelto en sangre (con oxígeno)"
+            }
+          ],
+          "porQue": "En el alvéolo hay una pared muy delgada que permite que el oxígeno pase al capilar sanguíneo. El oxígeno se disuelve en la sangre y se une a la hemoglobina, que lo transporta. Aquí la sangre sube su contenido de oxígeno."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "El corazón bombea la sangre con oxígeno del pulmón a todo el cuerpo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Sangre con O₂: pulmón → corazón → arterias → células"
+            }
+          ],
+          "porQue": "El corazón es la bomba que distribuye. No 'usa' el oxígeno: sólo lo transporta. Cada latido envía la sangre oxigenada a través de las arterias hasta las capilares que rodean cada célula."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "El oxígeno cruza la pared del capilar y entra en la célula.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "O₂ en sangre →"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "dentro de la célula"
+            }
+          ],
+          "porQue": "Dentro de la célula, el oxígeno abandona la hemoglobina. Ahora entra en las mitocondrias, donde se usa de verdad para liberar energía en la respiración celular. Es aquí donde el oxígeno se 'consume'."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "La célula produce bióxido de carbono en la respiración celular, que regresa por el mismo camino inverso: célula → sangre → pulmón → nariz.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Célula →"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "CO",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "→ sangre → pulmón → nariz"
+            }
+          ],
+          "porQue": "El bióxido de carbono no sale directo a la boca: es un desecho que viaja en la sangre hasta el pulmón, donde atraviesa el alvéolo y se expulsa con el aire. La sangre baja su contenido de oxígeno y sube el de bióxido de carbono en cada célula, cierre del ciclo."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una molécula de oxígeno que el pie usa y el bióxido de carbono que devuelve",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "O₂ entra por nariz → pulmón → sangre → corazón → pie"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Pie produce"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "CO",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→ sangre → pulmón → sale por nariz"
+        }
+      ],
+      "resultadoEnPalabras": "el bióxido de carbono regresa por la sangre hasta el pulmón y se expulsa"
+    },
+    "error": {
+      "enUnaFrase": "Cree que el oxígeno se usa en el pulmón o el corazón, no en la célula.",
+      "creenciaDeAtras": "cree que porque el oxígeno entra en el pulmón o pasa por el corazón es allí donde se consume, sin darse cuenta de que el pulmón sólo lo recibe del aire y el corazón sólo lo transporta",
+      "pasoQueCorrompe": 4,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "O₂ llega al corazón y se usa en el corazón"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "El oxígeno se consume en el corazón, no en las células"
+        }
+      ],
+      "comoSeCacha": "El paso 4 dice que el oxígeno entra en la célula, no en el corazón. Si alguien dice que se usa en el corazón, está saltándose el paso de la entrada en la célula, o lo está escribiendo al revés."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que la sangre lleva aire, no oxígeno disuelto.",
+        "creenciaDeAtras": "confunde el aire que respira con el oxígeno que viaja en la sangre, como si la sangre tuviera burbujas de aire en lugar de oxígeno molecularmente disuelto"
+      },
+      {
+        "enUnaFrase": "Cree que el bióxido de carbono sale directo de la célula a la boca, sin pasar por la sangre.",
+        "creenciaDeAtras": "no ve la sangre como un transporte de dos direcciones: solo la imagina llevando oxígeno hacia la célula, no volviendo con desechos"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "alvéolo",
+        "queEs": "Una bolsita diminuta dentro del pulmón donde el aire se detiene y el oxígeno cruza hacia la sangre. Hay millones en cada pulmón."
+      },
+      {
+        "palabra": "mitocondriat",
+        "queEs": "La parte de la célula donde ocurre la respiración celular: el oxígeno se usa de verdad para liberar la energía que la célula necesita."
+      },
+      {
+        "palabra": "hemoglobina",
+        "queEs": "La proteína dentro de los glóbulos rojos que atrapa el oxígeno en el pulmón y lo suelta en la célula. Es el transportista molecular."
+      },
+      {
+        "palabra": "respiración celular",
+        "queEs": "El proceso dentro de la mitocondria donde la célula usa oxígeno para producir energía, y genera bióxido de carbono como desecho.",
+        "noEsLoMismoQue": "respiración pulmonar, que es el intercambio de aire en el pulmón"
+      },
+      {
+        "palabra": "capilar",
+        "queEs": "Un vaso sanguíneo muy fino donde la sangre se acerca lo suficiente a las células para intercambiar oxígeno y bióxido de carbono."
+      }
+    ],
+    "cotas": {
+      "numeros": "ninguno; el tema es un recorrido, no una cuenta",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "CO",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        },
+        {
+          "tipo": "texto",
+          "valor": "con oxígeno"
+        },
+        {
+          "tipo": "texto",
+          "valor": "sin oxígeno"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

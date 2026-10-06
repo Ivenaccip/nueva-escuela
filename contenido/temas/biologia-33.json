@@ -1,0 +1,161 @@
+{
+  "materia": "biologia",
+  "temaNumero": 33,
+  "titulo": "Por qué se angosta la pirámide",
+  "generadoEn": "2026-10-06T16:33:52.960Z",
+  "canon": {
+    "temaNumero": 33,
+    "materia": "biologia",
+    "titulo": "Por qué se angosta la pirámide",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Calcular cuánta energía llega a cada nivel de una pirámide alimentaria",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Escribes la energía del primer nivel, el que producen las plantas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "10000 kcal"
+            }
+          ],
+          "porQue": "Es lo que entra al sistema. Todo lo demás sale de este número, así que tienen que conocerlo primero."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Calculas el 10% y escribes la energía que pasa al siguiente nivel.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "10000 kcal → 10% de 10000 = 1000 kcal"
+            }
+          ],
+          "porQue": "En cada paso del nivel al siguiente, casi toda la energía se pierde en calor y en movimiento. Solo el 10% de lo que comió un nivel sirve para que crezca el siguiente."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Aplicas la regla del 10% nuevamente: el 10% de los 1000 kcal.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "1000 kcal → 10% de 1000 = 100 kcal"
+            }
+          ],
+          "porQue": "La pérdida se repite en cada eslabón. Si no pierdes energía en cada paso, la pirámide sería del mismo ancho en todos lados."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Sigues dividiendo por 10 hasta que la energía se acabe o no alcance para sostener un nivel.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "100 kcal → 10% de 100 = 10 kcal"
+            }
+          ],
+          "porQue": "Cada nivel necesita cierta cantidad mínima de energía para existir. Cuando llega a un número demasiado bajo, no hay suficiente energía para que ese nivel tenga individuos."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Cuentas cuántos niveles aguanta la pirámide y cuánta energía se perdió en total.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "4 niveles. Energía perdida: 10000 − 1000 − 100 − 10 = 8890 kcal"
+            }
+          ],
+          "porQue": "La pirámide se angosta porque los niveles de arriba tienen menos energía cada vez. Esto es físicamente inevitable: no se recicla, se disipa en calor."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un bosque que produce energía y la pasa a través de varios niveles de consumidores",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "10000 kcal"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "4 niveles"
+        }
+      ],
+      "resultadoEnPalabras": "cuatro niveles"
+    },
+    "error": {
+      "enUnaFrase": "Cree que hay pocos depredadores porque son grandes y nacen pocos, no porque se perdió casi toda la energía.",
+      "creenciaDeAtras": "cree que la energía se recicla igual que la materia, así que los depredadores son pocos por razones de tamaño o reproducción, no por disponibilidad energética",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "4 niveles. Los depredadores son pocos porque son grandes."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "explicación sin cálculo de energía"
+        }
+      ],
+      "comoSeCacha": "El renglón evita hacer la cuenta de cuánta energía queda. Sin números no se ve que en cada paso se pierda el 90%, y parece que la cantidad de depredadores depende de otra cosa."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que los niveles más altos tienen más energía porque están más arriba.",
+        "creenciaDeAtras": "confunde el flujo de energía con una acumulación física, como si subir significara más cantidad"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "nivel trófico",
+        "queEs": "Cada escalón de la pirámide. El 1 es las plantas, el 2 los herbívoros, el 3 los carnívoros que comen herbívoros, el 4 los carnívoros que comen otros carnívoros.",
+        "noEsLoMismoQue": "especie, que es un tipo de organismo, no un lugar en la cadena de quien come a quién"
+      },
+      {
+        "palabra": "regla del 10%",
+        "queEs": "Solo el 10% de la energía que un nivel consume pasa al siguiente. El otro 90% se pierde en calor, movimiento, descomposición y cosas que el cuerpo necesita para vivir."
+      },
+      {
+        "palabra": "pirámide alimentaria",
+        "queEs": "Un dibujo que muestra cuántos organismos o cuánta energía hay en cada nivel de la cadena: más abajo (plantas), más ancho; más arriba (depredadores), más angosto.",
+        "noEsLoMismoQue": "cadena alimentaria, que es el orden de quién come a quién sin mostrar cantidades"
+      },
+      {
+        "palabra": "energía disponible",
+        "queEs": "La que puede pasar de un nivel al siguiente. Cada vez hay menos porque el 90% no sobrevive al cambio de nivel."
+      },
+      {
+        "palabra": "disipación de energía",
+        "queEs": "La pérdida de energía en forma de calor cuando un organismo vive, se mueve, respira y se reproduce. No desaparece, pero ya no puede usarla el siguiente nivel."
+      }
+    ],
+    "cotas": {
+      "numeros": "Energía inicial entre 5000 y 20000 kcal, entero; porcentaje fijo del 10%; número de niveles entre 2 y 5; resultado siempre un número entero de kcal o de niveles, sin decimales",
+      "unidades": [
+        "kcal",
+        "niveles"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "→"
+        },
+        {
+          "tipo": "texto",
+          "valor": "%"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

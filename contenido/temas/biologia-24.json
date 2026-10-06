@@ -1,0 +1,184 @@
+{
+  "materia": "biologia",
+  "temaNumero": 24,
+  "titulo": "El 3 a 1 no es una promesa",
+  "generadoEn": "2026-10-06T16:32:51.091Z",
+  "canon": {
+    "temaNumero": 24,
+    "materia": "biologia",
+    "titulo": "El 3 a 1 no es una promesa",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Pasar una proporción de herencia a probabilidad de un embarazo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Cuentas cuántas casillas en el cuadro de Punnett muestran cada resultado.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Sano: 3 casillas. Enfermo: 1 casilla."
+            }
+          ],
+          "porQue": "La proporción sale de contar cuántos de los cuatro cruzamientos posibles dan cada resultado. Esa cuenta es lo único que importa."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Escribes la cantidad de cada resultado como una fracción sobre el total de casillas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Sano:"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 4
+            },
+            {
+              "tipo": "texto",
+              "valor": "Enfermo:"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 4
+            }
+          ],
+          "porQue": "La fracción traduce la proporción a probabilidad. El denominador es siempre 4 porque el cuadro de Punnett siempre tiene cuatro casillas."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Multiplicas la fracción por 100 para convertirla a porcentaje.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": 3,
+              "abajo": 4
+            },
+            {
+              "tipo": "texto",
+              "valor": "× 100 = 75%"
+            }
+          ],
+          "porQue": "El porcentaje es la fracción por cien. Dice qué parte de cien embarazos tendrán ese resultado en promedio, a lo largo de muchos."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Entiende que ese porcentaje vale para cada embarazo nuevo, no para los que ya nacieron.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Cada embarazo: 75% sano, 25% enfermo."
+            }
+          ],
+          "porQue": "Cada embarazo es un nuevo sorteo. Lo que pasó antes no cambia las casillas del cuadro de Punnett. No importa cuántos hijos sanos haya, el siguiente empieza con las mismas probabilidades."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Reconoces que si hay 4 hijos, no forzosamente hay 3 sanos y 1 enfermo, aunque la proporción lo sugiera.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La proporción 3:1 es promedio: puede haber 2, 3 o 4 sanos en 4 hijos."
+            }
+          ],
+          "porQue": "La proporción es lo que sale en promedio cuando haces muchas familias. Una sola familia puede no ajustarse a ese promedio. La proporción es una tendencia, no una cuota que se reparte."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "el cruzamiento de dos padres heterocigotos Aa para un carácter recesivo",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Aa × Aa → proporción 3:1"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "75"
+        }
+      ],
+      "resultadoEnPalabras": "setenta y cinco por ciento"
+    },
+    "error": {
+      "enUnaFrase": "Lee la proporción 3:1 como un cupo que se llena: si ya nacieron tres hijos sanos, asegura que el cuarto forzosamente tendrá la enfermedad.",
+      "creenciaDeAtras": "cree que la proporción es una distribución que se reparte entre los embarazos, como si fueran cupo que se agotan, en vez de una probabilidad que se repite en cada uno",
+      "pasoQueCorrompe": 4,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Después de 3 sanos, el 4.º debe ser enfermo para cumplir 3:1."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "El siguiente embarazo es seguro que sea enfermo."
+        }
+      ],
+      "comoSeCacha": "La proporción 3:1 es un promedio, no una garantía. El cuarto embarazo tiene 75% de probabilidad de ser sano, igual que el primero. Si el estudiante cree que 'ya le toca', está tratando la proporción como un cupo."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Confunde la proporción 3:1 con un ratio de edades o un rango de cifras en vez de un conteo de resultados.",
+        "creenciaDeAtras": "cree que 3:1 es una manera de escribir una razón de comparación entre grupos, no el resultado de contar casillas en el cuadro de Punnett"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "proporción",
+        "queEs": "La relación entre la cantidad de un resultado y la cantidad de otro, escrita como 3:1, 1:2:1, o parecido. Sale de contar cuántas casillas del cuadro de Punnett dan cada resultado.",
+        "noEsLoMismoQue": "probabilidad, que es la fracción de veces que algo ocurre de entre todas las veces que podría ocurrir"
+      },
+      {
+        "palabra": "probabilidad",
+        "queEs": "La fracción de veces que algo ocurre en muchas pruebas. Escrita como fracción o porcentaje: 75%, 3/4. Vale para cada prueba nueva, no se agota con el tiempo.",
+        "noEsLoMismoQue": "proporción, que es la relación entre la cantidad de un resultado y la cantidad de otro sin hablar de tiempo ni de repetición"
+      },
+      {
+        "palabra": "cuadro de Punnett",
+        "queEs": "La tabla de dos en dos donde escribes los alelos de cada padre, cruzas las filas con las columnas y cuentas qué sale en las cuatro casillas. Las casillas son todas igualmente posibles."
+      },
+      {
+        "palabra": "evento independiente",
+        "queEs": "Una prueba cuyo resultado no depende de lo que pasó antes. En herencia, cada embarazo es independiente: los hijos que ya nacieron no cambian las probabilidades del siguiente.",
+        "noEsLoMismoQue": "evento dependiente, donde el resultado sí cambia según lo que pasó antes"
+      },
+      {
+        "palabra": "promedio",
+        "queEs": "Lo que sale cuando repites muchas veces. La proporción 3:1 es el promedio de muchas familias, no la garantía de una sola."
+      }
+    ],
+    "cotas": {
+      "numeros": "proporciones 3:1, 1:2:1, 1:1, 9:3:3:1; fracciones 3/4, 1/4, 1/2, 2/4; porcentajes 75%, 25%, 50%; embarazos de 1 a 10; resultado entero del 25 al 75",
+      "unidades": [
+        "%"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": ":"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        },
+        {
+          "tipo": "texto",
+          "valor": "×"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

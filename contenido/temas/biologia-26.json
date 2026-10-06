@@ -1,0 +1,154 @@
+{
+  "materia": "biologia",
+  "temaNumero": 26,
+  "titulo": "Selección natural, paso a paso",
+  "generadoEn": "2026-10-06T16:33:13.192Z",
+  "canon": {
+    "temaNumero": 26,
+    "materia": "biologia",
+    "titulo": "Selección natural, paso a paso",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Explicar cómo cambió una población con selección natural",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Observas la variación que ya existe en la población antes de que pase nada.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Polillas: 40 claros y 10 oscuros"
+            }
+          ],
+          "porQue": "La selección natural no inventa las diferencias, sólo favorece las que ya existen. Si empiezas sin variación, no hay nada para seleccionar."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Identificas la presión del ambiente que afecta a la población.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Los árboles se ensuciaron por la contaminación"
+            }
+          ],
+          "porQue": "La presión del ambiente decide quién sobrevive y quién no. Sin cambio en el ambiente, la proporción de la población se queda igual."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Determinas cuál variante sobrevive mejor con esa presión.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Las oscuras se camuflan mejor, dejan más crías"
+            }
+          ],
+          "porQue": "La sobrevivencia diferencial es el núcleo de la selección: unos viven y se reproducen, otros mueren sin reproducirse. No es esfuerzo ni voluntad, es supervivencia de los que se adaptan al ambiente."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Cuentas cuántos de cada variante quedan después de que el ambiente actúa.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Siguiente generación: 25 claros y 25 oscuros"
+            }
+          ],
+          "porQue": "La proporción cambió porque menos claras que oscuras dejaron crías. El conteo es lo que muestra que algo pasó. La herencia garantiza que las crías de oscuros sean oscuras."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Comparas la proporción de la población antes y después para ver el cambio.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Antes: 80% claros. Después: 50% claros. La frecuencia bajó."
+            }
+          ],
+          "porQue": "El cambio en la frecuencia de cada variante es la evolución dentro de la población. Sin esto, no hay selección natural, hay coincidencia. La comparación es lo que lo demuestra."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una población de polillas en un bosque limpio, y después en un bosque sucio",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Generación 1: 40 claros, 10 oscuros"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Generación 2: 25 claros, 25 oscuros. Claros bajaron de 80% a 50%."
+        }
+      ],
+      "resultadoEnPalabras": "la frecuencia de claros bajó de 80 por ciento a 50 por ciento"
+    },
+    "error": {
+      "enUnaFrase": "Explica el cambio diciendo que los animales se esforzaron o se acostumbraron, o que adquirieron un rasgo durante la vida y lo heredaron.",
+      "creenciaDeAtras": "cree que la evolución funciona porque el animal nota el problema y cambia su cuerpo para resolverlo, y eso se hereda. Esto es el pensamiento de Lamarck, que era lo que se creía antes de que Darwin lo refutara.",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Las polillas oscuras se esforzaron por camuflarse mejor"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Por eso sus crías nacieron mas oscuras"
+        }
+      ],
+      "comoSeCacha": "Si la variación ya existía en la primera generación (40 claros y 10 oscuros), no pudieron haberla adquirido durante sus vidas. El esfuerzo de un individuo no aparece en el conteo de la generación siguiente: sólo aparecen los que se reprodujeron."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Espera que la adaptación suceda dentro de la vida del animal, no dentro de la población a lo largo de generaciones.",
+        "creenciaDeAtras": "cree que la evolución es lo que le pasa a un individuo cuando se adapta al ambiente, en vez de ser el cambio en las proporciones de la población de generación en generación"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "variación",
+        "queEs": "La diferencia que ya existe dentro de una población: no todos son iguales. Unos son claros, otros oscuros; unos rápidos, otros lentos.",
+        "noEsLoMismoQue": "mutación, que es cómo surge la variación nueva, pero variación es el hecho de que haya diferencias en los individuos de una población"
+      },
+      {
+        "palabra": "presión del ambiente",
+        "queEs": "El cambio en las condiciones que decide cuál variante sobrevive mejor. Árboles sucios favorecen claros o favorecen oscuros; hambre favorece rápidos; depredador favorece quien se camufla."
+      },
+      {
+        "palabra": "heredar",
+        "queEs": "Pasar un rasgo de padres a hijos porque está en los genes. El rasgo tiene que existir de antemano; no se hereda lo que se aprendió en la vida.",
+        "noEsLoMismoQue": "adquirir, que es lo que hace un animal durante su vida cuando aprende o se entrena"
+      },
+      {
+        "palabra": "selección natural",
+        "queEs": "El proceso en el que el ambiente elimina a los individuos que no se adaptan, y sólo se reproducen los que sobreviven. Así cambia la proporción de las variantes en la población generación tras generación."
+      },
+      {
+        "palabra": "frecuencia",
+        "queEs": "El porcentaje de una variante dentro de la población. Si hay 100 individuos y 30 son oscuros, la frecuencia de oscuros es 30 por ciento."
+      }
+    ],
+    "cotas": {
+      "numeros": "números pequeños de 10 a 100 por generación; dos variantes contrastadas; porcentajes simples que resultan de los conteos; del 1 al 3 generaciones para ver el cambio",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}
