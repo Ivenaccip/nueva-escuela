@@ -94,6 +94,16 @@ export type EntradaDePantalla =
   | { modo: 'opciones'; opciones: string[] }
   | { modo: 'texto' };
 
+/**
+ * Una ficha de las interacciones que no se teclean (ordenar, clasificar,
+ * emparejar). El `id` es lo que la pantalla devuelve al tocar: el orden en que
+ * llegan las piezas ya viene mezclado y no dice nada de la respuesta.
+ */
+export type PiezaDePantalla = { id: string; partes: ParteMat[] };
+
+/** Lo que las interacciones pintan tras comprobar: las piezas mal puestas, por `id`. */
+export type ResultadoDePiezas = { bien: boolean; malas: string[] };
+
 /** Estación 3 · completar el paso. */
 export type ContenidoCompletar = {
   expresion: ParteMat[];
