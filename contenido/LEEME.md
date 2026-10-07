@@ -327,7 +327,7 @@ Matemáticas cuya estación 3 y 4 se habían escrito con dígitos y una reformul
   - Exponentes: `2³` se teclea con la ficha `³` y `enAtomos` lo pinta como superíndice;
     `aplanar` acepta las dos escrituras.
 - **Todos los temas traían errores graves** (14 temas revisados con dos lentes independientes, ciencia
-  y cuentas/contrato del teclado): 116 graves, 312 medios y 155 leves en total. Los más
+  y cuentas/contrato del teclado): 146 graves, 369 medios y 174 leves en total. Los más
   repetidos: un error típico que con el ejemplo del canon da el resultado correcto, rúbricas de
   la estación 6 que afirman algo falso, una opción equivocada que también es correcta, y
   escalones que repiten la misma respuesta. Tras una a tres rondas de corrección y verificación
