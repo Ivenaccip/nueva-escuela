@@ -20,6 +20,7 @@ import type {
 } from './autoria';
 import { CATALOGO } from './catalogo';
 import { mezclar } from './mezclar';
+import { aplicarTeclado } from './teclado';
 import { llaveDe, type ClaveEstacion, type Tema } from './tipos';
 
 /**
@@ -102,7 +103,8 @@ export function redactadoDe(materia: Materia, numero: number): TemaJugable | nul
   const crudo = CATALOGO[materia]?.redactados.find((t) => t.temaNumero === numero);
   if (!crudo) return null;
 
-  const listo = mezclar(crudo) as TemaJugable;
+  // Primero el teclado del tema (si trae uno), para que el barajado alcance a sus opciones.
+  const listo = mezclar(aplicarTeclado(crudo)) as TemaJugable;
   barajados.set(llave, listo);
   return listo;
 }

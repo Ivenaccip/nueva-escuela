@@ -27,6 +27,7 @@ import type {
   TemaRedactado,
   VerRedactado,
 } from './autoria';
+import { entradaDePantalla } from './teclado';
 import {
   ORDEN_ESTACIONES,
   type ClaveEstacion,
@@ -169,9 +170,15 @@ function adaptarContacto(c: ContactoRedactado | null, progreso: Progreso) {
 
 function adaptarCompletar(c: CompletarRedactado | null, progreso: Progreso) {
   if (!c) {
-    return { expresion: FALTA, pistaEn: comoReloj(0), pistas: progreso.pistasRestantes };
+    return {
+      expresion: FALTA,
+      entrada: { modo: 'digitos' as const },
+      pistaEn: comoReloj(0),
+      pistas: progreso.pistasRestantes,
+    };
   }
   return {
+    entrada: entradaDePantalla(c.entrada, c.respuesta),
     // Lo que lleva tecleado se pinta dentro del hueco, así que viaja en el
     // átomo y no aparte: `Expresion` ya sabe dibujarlo.
     expresion: c.expresion.map((parte) =>
@@ -191,6 +198,7 @@ function adaptarEscalera(e: EscaleraRedactada | null, progreso: Progreso) {
       situacion: 'Este ejercicio todavía no se ha escrito.',
       expresion: FALTA,
       pregunta: '',
+      entrada: { modo: 'digitos' as const },
       pistas: progreso.pistasRestantes,
     };
   }
@@ -202,6 +210,7 @@ function adaptarEscalera(e: EscaleraRedactada | null, progreso: Progreso) {
     situacion: escalon.situacion,
     expresion: escalon.expresion,
     pregunta: escalon.pregunta,
+    entrada: entradaDePantalla(escalon.entrada, escalon.respuesta),
     pistas: progreso.pistasRestantes,
     respuestaInicial: progreso.tecleado || undefined,
   };

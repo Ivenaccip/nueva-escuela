@@ -8,10 +8,12 @@ import {
   BotonPista,
   BotonPrincipal,
   Cuerpo,
+  EntradaDeRespuesta,
   Expresion,
   Marco,
   Pie,
   Tarjeta,
+  usePuestas,
 } from '../../src/componentes';
 import { respuestaDeEscalon, type Respuesta } from '../../src/contenido/calificar';
 import { Guardia, useAndamio } from '../../src/estado/Andamio';
@@ -45,21 +47,33 @@ function Escalon() {
   const llave = `escalera-${escalera.escalon}`;
   const esElUltimo = escalera.escalon >= escalera.escalones;
 
-  const [respuesta, setRespuesta] = useState('');
+  const entrada = escalera.entrada;
+  const puestas = usePuestas();
+  const respuesta = puestas.escrito;
   const [resultado, setResultado] = useState<Respuesta | null>(null);
   const acertado = resultado?.bien === true;
 
-  // El campo es del sistema y acepta letras, pero la estación 3 sólo teclea
-  // dígitos y diagonal, y el contrato pide lo mismo aquí: se filtra al escribir.
-  const cambiar = (texto: string) => {
+  // Lo que se contestó era sobre lo que había escrito antes: al cambiarlo, deja de valer.
+  const cambiar = (hacer: () => void) => {
     if (acertado) return;
-    setRespuesta(texto.replace(/[^0-9/]/g, ''));
     setResultado(null);
+    hacer();
   };
+
+  // Con dígitos el campo es del sistema y acepta letras, pero la estación 3 sólo
+  // teclea dígitos y diagonal, y el contrato pide lo mismo aquí: se filtra al escribir.
+  const escribirEnElCampo = (texto: string) =>
+    cambiar(() =>
+      puestas.escribir(entrada.modo === 'digitos' ? texto.replace(/[^0-9/]/g, '') : texto),
+    );
 
   const comprobar = () => {
     if (respuesta !== '') setResultado(respuestaDeEscalon(respuesta, contenido));
   };
+
+  // Con fichas el teclado va abajo y el campo sólo muestra lo escrito; con opciones
+  // no hay campo, la elección está en la lista; con dígitos o texto el campo se teclea.
+  const campoSeTeclea = entrada.modo === 'digitos' || entrada.modo === 'texto';
 
   const seguir = () => {
     if (!esElUltimo) return siguienteEscalon();
@@ -118,25 +132,37 @@ function Escalon() {
             <Text style={estilos.pregunta}>{escalera.pregunta}</Text>
           </View>
 
-          <View style={estilos.zonaCampo}>
-            <Text nativeID={ID_CAMPO} style={estilos.etiqueta}>
-              tu respuesta
-            </Text>
-            <TextInput
-              value={respuesta}
-              onChangeText={cambiar}
-              editable={!acertado}
-              accessibilityLabel="tu respuesta"
-              accessibilityLabelledBy={ID_CAMPO}
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="numbers-and-punctuation"
-              returnKeyType="done"
-              onSubmitEditing={acertado ? seguir : comprobar}
-              selectionColor={colores.acento}
-              style={[estilos.campo, resultado && !resultado.bien && estilos.campoFallado]}
-            />
-          </View>
+          {entrada.modo === 'opciones' ? null : (
+            <View style={estilos.zonaCampo}>
+              <Text nativeID={ID_CAMPO} style={estilos.etiqueta}>
+                tu respuesta
+              </Text>
+              {campoSeTeclea ? (
+                <TextInput
+                  value={respuesta}
+                  onChangeText={escribirEnElCampo}
+                  editable={!acertado}
+                  accessibilityLabel="tu respuesta"
+                  accessibilityLabelledBy={ID_CAMPO}
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  keyboardType={entrada.modo === 'digitos' ? 'numbers-and-punctuation' : 'default'}
+                  returnKeyType="done"
+                  onSubmitEditing={acertado ? seguir : comprobar}
+                  selectionColor={colores.acento}
+                  style={[estilos.campo, resultado && !resultado.bien && estilos.campoFallado]}
+                />
+              ) : (
+                <View
+                  accessibilityRole="text"
+                  accessibilityLabel={`tu respuesta: ${respuesta || 'vacía'}`}
+                  style={[estilos.campo, resultado && !resultado.bien && estilos.campoFallado]}
+                >
+                  <Text style={estilos.campoLeido}>{respuesta}</Text>
+                </View>
+              )}
+            </View>
+          )}
 
           {resultado ? (
             <BloqueRespuesta
@@ -162,6 +188,18 @@ function Escalon() {
         </Cuerpo>
 
         <Pie>
+          {campoSeTeclea ? null : (
+            <EntradaDeRespuesta
+              entrada={entrada}
+              escrito={respuesta}
+              resultado={resultado}
+              poner={(tecla) => cambiar(() => puestas.poner(tecla))}
+              borrar={() => cambiar(puestas.borrar)}
+              elegir={(etiqueta) => cambiar(() => puestas.elegir(etiqueta))}
+              escribir={escribirEnElCampo}
+              alEnviar={acertado ? seguir : comprobar}
+            />
+          )}
           <BotonPrincipal
             desactivado={!acertado && respuesta === ''}
             onPress={acertado ? seguir : comprobar}
@@ -264,6 +302,13 @@ const estilos = StyleSheet.create({
   },
   campoFallado: {
     borderColor: colores.error,
+  },
+  // El campo de lectura (fichas) es un View: la letra va en su hijo.
+  campoLeido: {
+    fontFamily: fuentes.cuerpo,
+    fontSize: 24,
+    lineHeight: 56,
+    color: colores.texto,
   },
   zonaPista: {
     paddingHorizontal: espacio.margenAncho,

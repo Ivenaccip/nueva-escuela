@@ -15,7 +15,7 @@
  * letra ni una posición («la opción B»), así que reordenar no rompe ninguno.
  */
 
-import type { TemaRedactado } from './autoria';
+import type { RespuestaTecleada, TemaRedactado } from './autoria';
 
 const LETRAS = ['A', 'B', 'C', 'D'] as const;
 
@@ -51,6 +51,12 @@ function barajar<T>(lista: readonly T[], azar: () => number): T[] {
   return copia;
 }
 
+/** Con el teclado `opciones` la correcta también sale primero: se baraja igual. */
+function barajarRespuesta(respuesta: RespuestaTecleada, semilla: string): RespuestaTecleada {
+  if (!respuesta.opciones) return respuesta;
+  return { ...respuesta, opciones: barajar(respuesta.opciones, generador(semillaDe(semilla))) };
+}
+
 /** Devuelve una copia del tema con las opciones y los motivos en otro orden. */
 export function mezclar(tema: TemaRedactado): TemaRedactado {
   const base = `${tema.materia}-${tema.temaNumero}`;
@@ -64,6 +70,17 @@ export function mezclar(tema: TemaRedactado): TemaRedactado {
         opciones: barajar(pregunta.opciones, generador(semillaDe(`${base}-contacto-${i}`))).map(
           (opcion, k) => ({ ...opcion, letra: LETRAS[k] }),
         ),
+      })),
+    },
+    completar: tema.completar && {
+      ...tema.completar,
+      respuesta: barajarRespuesta(tema.completar.respuesta, `${base}-completar`),
+    },
+    escalera: tema.escalera && {
+      ...tema.escalera,
+      escalones: tema.escalera.escalones.map((escalon, i) => ({
+        ...escalon,
+        respuesta: barajarRespuesta(escalon.respuesta, `${base}-escalon-${i}`),
       })),
     },
     error: tema.error && {

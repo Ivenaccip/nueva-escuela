@@ -75,9 +75,29 @@ export type ContenidoContacto = {
   total: number;
 };
 
+/** Una tecla del teclado de fichas: lo que se pinta y cómo lo dice el lector de pantalla. */
+export type FichaDePantalla = { etiqueta: string; comoSeLee: string };
+
+/**
+ * Con qué contesta el estudiante en las estaciones 3 y 4. Es lo que la pantalla
+ * necesita para dibujar el campo: nunca dice cuál es la respuesta buena (eso lo
+ * sabe `calificar.ts`, con el contenido redactado en la mano).
+ *
+ *   - `digitos`: las doce teclas de siempre (0-9, diagonal, borrar).
+ *   - `fichas`: las teclas las define el tema (punto, menos, símbolos, letras).
+ *   - `opciones`: elegir una de dos a cuatro etiquetas.
+ *   - `texto`: el teclado del sistema.
+ */
+export type EntradaDePantalla =
+  | { modo: 'digitos' }
+  | { modo: 'fichas'; fichas: FichaDePantalla[] }
+  | { modo: 'opciones'; opciones: string[] }
+  | { modo: 'texto' };
+
 /** Estación 3 · completar el paso. */
 export type ContenidoCompletar = {
   expresion: ParteMat[];
+  entrada: EntradaDePantalla;
   /** Segundos que faltan para que se libere una pista. */
   pistaEn: string;
   pistas: number;
@@ -91,6 +111,7 @@ export type ContenidoEscalera = {
   situacion: string;
   expresion: ParteMat[];
   pregunta: string;
+  entrada: EntradaDePantalla;
   pistas: number;
   /** Lo que el diseño muestra ya tecleado en el campo. */
   respuestaInicial?: string;

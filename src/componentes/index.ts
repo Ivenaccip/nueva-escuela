@@ -9,6 +9,7 @@ export { Fraccion } from './Fraccion';
 export { HojaPista } from './HojaPista';
 export { Marco, useEsEscritorio, usePieSeguro } from './Marco';
 export { Tarjeta } from './Tarjeta';
+export { CampoDeTexto, EntradaDeRespuesta, OpcionesDeRespuesta, Teclado, usePuestas } from './Teclado';
 export {
   IconoBitacora,
   IconoBorrar,
