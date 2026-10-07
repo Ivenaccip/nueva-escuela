@@ -34,10 +34,21 @@ export function normalizar(tecleado: string, regla?: ComoSeCompara): string {
   if (regla?.ignoraMayusculas) limpio = limpio.toLowerCase();
   if (regla?.ignoraAcentos) limpio = limpio.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const partes = limpio.split('/');
-  const sinCeros = partes.map((p) => p.replace(/^(-?)0+(?=\d)/, '$1'));
+  const sinCeros = partes.map((p) => sinCerosDeMas(p));
   // Un denominador de 1 no cambia el número: 4/1 es 4.
   if (sinCeros.length === 2 && sinCeros[1] === '1') return sinCeros[0];
   return sinCeros.join('/');
+}
+
+/**
+ * `007` es `7`, y con punto `2.50` es `2.5` y `.5` es `0.5`: es el mismo número, y
+ * quien teclea el de menos ceros no se equivocó. Un entero (`100`) no se toca.
+ */
+function sinCerosDeMas(parte: string): string {
+  const sinInicio = parte.replace(/^(-?)0+(?=\d)/, '$1');
+  if (!/^-?\d*\.\d+$/.test(sinInicio)) return sinInicio;
+  const sinFinal = sinInicio.replace(/0+$/, '').replace(/\.$/, '');
+  return sinFinal.replace(/^(-?)\./, '$10.');
 }
 
 /** ¿Lo tecleado cuenta como la respuesta correcta? */

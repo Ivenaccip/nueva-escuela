@@ -6,6 +6,7 @@ import {
   CLAVE_X3,
   casoDeTeclado,
   casoDelCanon,
+  casoServible,
   noSePuedeVigente,
   problemasDeTeclado,
 } from './teclado.mjs';
@@ -39,9 +40,7 @@ export function motivoDeExclusion(tema) {
   }
 
   // Lo mismo que decide la app para servir el caso en lugar de las dos normales.
-  const x3Sirve = Boolean(
-    x3 && !x3.noSePuede && x3.completar && Array.isArray(x3.escalera) && x3.escalera.length > 0,
-  );
+  const x3Sirve = casoServible(tema);
   const sustituidas = x3Sirve ? ['completar', 'escalera'] : [];
 
   // Un tema que el canon manda a X3 y todavía no lo tiene: lo que falta es el caso, no
@@ -64,10 +63,12 @@ export function motivoDeExclusion(tema) {
   // El caso que la app va a servir tiene que estar entero y ser contestable.
   if (x3Sirve) {
     const problemas = [];
-    if (x3.escalera.length < MIN_ESCALONES) {
-      problemas.push(`escalera: hay ${x3.escalera.length} escalones y tienen que ser al menos ${MIN_ESCALONES}`);
+    if (x3Sirve.escalera.length < MIN_ESCALONES) {
+      problemas.push(
+        `escalera: hay ${x3Sirve.escalera.length} escalones y tienen que ser al menos ${MIN_ESCALONES}`,
+      );
     }
-    problemas.push(...problemasDeTeclado(x3));
+    problemas.push(...problemasDeTeclado(x3Sirve));
     if (problemas.length > 0) {
       const resto = problemas.length > 1 ? ` (y ${problemas.length - 1} más)` : '';
       return `el caso ${CLAVE_X3} no se puede contestar: ${problemas[0]}${resto}`;

@@ -2,6 +2,7 @@
 //
 //   node contenido/generar.mjs quimica 11
 //   node contenido/generar.mjs fisica 4 --solo ver
+//   node contenido/generar.mjs biologia 7 --solo X3-teclado   sólo el caso del teclado
 //   node contenido/generar.mjs matematicas 9 --rehacer
 //   node contenido/generar.mjs quimica 11 --seco     nada de API: sólo arma
 //
@@ -1161,8 +1162,8 @@ if (caso) {
 const guardadoDe = (paso) =>
   paso.clave === CLAVE_X3 ? salida.casosAparte?.[CLAVE_X3] : salida[paso.clave];
 
-// X3 va al final: sustituye a la 3 y a la 4, y es la llamada que más se parece a un
-// ejercicio de verdad, así que se pide cuando lo demás ya está guardado.
+// X3 va al final y sólo se pide si el tema se rutea a él (o con `--solo X3-teclado`):
+// sustituye a completar y escalera.
 const pasosDelTema = [...ESTACIONES, CASOS_APARTE.teclado];
 
 const porGenerar = pasosDelTema.filter((p) => {

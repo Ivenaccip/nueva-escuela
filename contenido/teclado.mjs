@@ -74,6 +74,18 @@ export function noSePuedeVigente(canon) {
 /** El caso X3 guardado en el tema, o `null`. */
 export const casoDeTeclado = (tema) => tema?.casosAparte?.[CLAVE_X3] ?? null;
 
+/**
+ * El caso X3 que la app va a servir en lugar de `completar` y `escalera`, o `null`.
+ * Es el mismo criterio de `casoDeTeclado` en `src/contenido/teclado.ts`: sin
+ * `noSePuede`, con su estación 3 y con al menos un escalón.
+ */
+export function casoServible(tema) {
+  const caso = casoDeTeclado(tema);
+  const sirve =
+    caso && !caso.noSePuede && caso.completar && Array.isArray(caso.escalera) && caso.escalera.length > 0;
+  return sirve ? caso : null;
+}
+
 // ---------------------------------------------------------------------------
 // Armar, aplanar y comparar
 // ---------------------------------------------------------------------------
@@ -100,6 +112,11 @@ export function seArma(cadena, etiquetas) {
 const sinEspacios = (s) => s.replace(/\s+/g, '').replace(/[−–—]/g, '-');
 const plegar = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
+const SUPERINDICES = { 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹', '+': '⁺', '-': '⁻', '−': '⁻' };
+const SUBINDICES = { 0: '₀', 1: '₁', 2: '₂', 3: '₃', 4: '₄', 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉', '+': '₊', '-': '₋', '−': '₋' };
+const aSuperindice = (t) => [...t].map((c) => SUPERINDICES[c] ?? c).join('');
+const aSubindice = (t) => [...t].map((c) => SUBINDICES[c] ?? c).join('');
+
 /**
  * Lo que dice `enAtomos` una vez aplanado: `valor` + `sub` + `sup`, y también
  * `valor` + `sup` + `sub`, porque quien lo escribe no sabe en qué orden lo lee quien
@@ -113,16 +130,32 @@ export function aplanar(partes) {
     if (p?.tipo === 'texto') opciones = [String(p.valor ?? '')];
     else if (p?.tipo === 'fraccion') opciones = [`${p.arriba}/${p.abajo}`];
     else if (p?.tipo === 'simbolo') {
+      // El sub y el sup pueden teclearse como dígitos sueltos (`H2`, `Ca2+`) o con la
+      // ficha de un solo carácter que ya trae el exponente (`2³`, `x²`, `Ca²⁺`).
+      const subs = [...new Set([p.sub ?? '', aSubindice(p.sub ?? '')])];
+      const sups = [...new Set([p.sup ?? '', aSuperindice(p.sup ?? '')])];
       opciones = [
-        ...new Set([
-          `${p.valor ?? ''}${p.sub ?? ''}${p.sup ?? ''}`,
-          `${p.valor ?? ''}${p.sup ?? ''}${p.sub ?? ''}`,
-        ]),
+        ...new Set(
+          subs.flatMap((sub) =>
+            sups.flatMap((sup) => [
+              `${p.valor ?? ''}${sub}${sup}`,
+              `${p.valor ?? ''}${sup}${sub}`,
+            ]),
+          ),
+        ),
       ];
     } else opciones = [''];
     candidatos = candidatos.flatMap((c) => opciones.map((o) => c + o)).slice(0, 64);
   }
   return candidatos.map(sinEspacios);
+}
+
+/** Espejo de `sinCerosDeMas` de src/contenido/calificar.ts: 007 es 7, 2.50 es 2.5, .5 es 0.5. */
+function sinCerosDeMas(parte) {
+  const sinInicio = parte.replace(/^(-?)0+(?=\d)/, '$1');
+  if (!/^-?\d*\.\d+$/.test(sinInicio)) return sinInicio;
+  const sinFinal = sinInicio.replace(/0+$/, '').replace(/\.$/, '');
+  return sinFinal.replace(/^(-?)\./, '$10.');
 }
 
 /**
@@ -136,7 +169,7 @@ export function normalizarComoLaApp(tecleado, regla) {
   else if (!regla) limpio = limpio.replace(/\s+/g, '');
   if (regla?.ignoraMayusculas) limpio = limpio.toLowerCase();
   if (regla?.ignoraAcentos) limpio = limpio.normalize('NFD').replace(/[̀-ͯ]/g, '');
-  const sinCeros = limpio.split('/').map((p) => p.replace(/^(-?)0+(?=\d)/, '$1'));
+  const sinCeros = limpio.split('/').map((p) => sinCerosDeMas(p));
   if (sinCeros.length === 2 && sinCeros[1] === '1') return sinCeros[0];
   return sinCeros.join('/');
 }
@@ -144,7 +177,7 @@ export function normalizarComoLaApp(tecleado, regla) {
 const escaparParaRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 /** ¿`texto` trae `buscada` como palabra suelta, sin pegarse a letras ni cifras? */
-function traeLiteral(texto, buscada) {
+export function traeLiteral(texto, buscada) {
   const re = new RegExp(
     `(?<![\\p{L}\\p{N}])${escaparParaRegex(buscada)}(?![\\p{L}\\p{N}])`,
     'iu',
@@ -251,9 +284,12 @@ export function problemasDeTeclado(caso) {
         cadena.includes('-') && etiquetas.includes('−')
           ? ' El menos es − (U+2212), no un guion.'
           : '';
+      const numeros = etiquetas.some((e) => /^[0-9]{2,}$/.test(e))
+        ? ' Un número se arma con fichas de dígitos (0–9), no con el número hecho como ficha.'
+        : '';
       malos.push(
         `${donde}: "${cadena}" no se puede armar con las fichas del tema (${etiquetas.join(' ')}). ` +
-          `Añade a fichas la que falta (hasta ${MAX_FICHAS}) o cambia lo que se pide.${pista}`,
+          `Añade a fichas la que falta (hasta ${MAX_FICHAS}) o cambia lo que se pide.${pista}${numeros}`,
       );
     }
   };

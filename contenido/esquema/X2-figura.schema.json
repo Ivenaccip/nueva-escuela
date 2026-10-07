@@ -1067,7 +1067,7 @@
     },
     "tecleado": {
       "type": "string",
-      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28, doce teclas: 1-9, 0, / y borrar). Sin punto decimal, sin signo menos, sin letras, sin parentesis, sin exponente, sin x de multiplicar, sin dos puntos. LA DIAGONAL ES LA RAYA DE UNA FRACCION Y NADA MAS: \"a/b\" se dibuja apilado como la fraccion a sobre b (src/componentes/Expresion.tsx:171 y 193) y el lector de pantalla lo dicta \"a entre b\" (Expresion.tsx:54-55). Nunca es \"por\", ni \"y sobran\", ni \"a\", ni \"con\", ni un separador de factores. Si la respuesta son dos numeros que no son numerador y denominador, la pregunta esta mal planteada: se parte en dos escalones.",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que escribe el teclado de digitos de la app (src/componentes/Teclado.tsx, TECLAS_DE_DIGITOS: 1-9, 0, / y borrar), que es el que piden 03-completar y 04-escalera. Un tema que necesita otro caracter sale por X3-respuesta-no-numerica, con su propio teclado. Sin punto decimal, sin signo menos, sin letras, sin parentesis, sin exponente, sin x de multiplicar, sin dos puntos. LA DIAGONAL ES LA RAYA DE UNA FRACCION Y NADA MAS: \"a/b\" se dibuja apilado como la fraccion a sobre b (src/componentes/Expresion.tsx:171 y 193) y el lector de pantalla lo dicta \"a entre b\" (Expresion.tsx:54-55). Nunca es \"por\", ni \"y sobran\", ni \"a\", ni \"con\", ni un separador de factores. Si la respuesta son dos numeros que no son numerador y denominador, la pregunta esta mal planteada: se parte en dos escalones.",
       "pattern": "^[0-9]+(/[0-9]+)?$",
       "maxLength": 9
     },

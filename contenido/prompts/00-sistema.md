@@ -172,16 +172,16 @@ administrativos.
 ## La salida de emergencia
 
 La app dibuja poco. Sólo sabe pintar renglones hechos de cuatro átomos
-(`texto`, `fraccion`, `simbolo`, `hueco`), y el teclado con el que el
-estudiante contesta sólo tiene `1`–`9`, `0`, `/` y borrar.
+(`texto`, `fraccion`, `simbolo`, `hueco`), y el estudiante contesta con uno de
+cuatro teclados: `digitos` (`0`–`9`, `/` y borrar), `fichas` (las teclas que defina
+el tema: un punto, un menos, paréntesis, letras, símbolos), `opciones` (elegir entre
+dos y cuatro) o `texto` (el del sistema). El teclado de cada tema lo decide el canon
+y lo elige `X3-respuesta-no-numerica`; las estaciones 3 y 4 normales usan `digitos`.
 
-Cuando lo que el tema necesita no cabe ahí —una gráfica, una tabla, un trazo,
-una respuesta con letras, un decimal, un número negativo— **no lo disfraces**.
-Llena `noSePuede` y di qué falta. Un ejercicio que la pantalla no puede dibujar
-es peor que un ejercicio que no existe: el estudiante se queda trabado y cree
-que él es el que está mal.
+Cuando lo que el tema necesita no cabe en nada de eso —una gráfica, una tabla, un
+trazo— **no lo disfraces**. Llena `noSePuede` y di qué falta. Un ejercicio que la
+pantalla no puede dibujar es peor que un ejercicio que no existe: el estudiante se
+queda trabado y cree que él es el que está mal.
 
-Antes de rendirte, intenta una vez reformular la pregunta para que sí quepa
-(pedir el numerador en vez del resultado, pedir un número en vez de una
-palabra). Si la reformulación cambia lo que el tema enseña, entonces sí:
-`noSePuede`.
+Antes de rendirte, intenta una vez reformular la pregunta para que sí quepa. Si la
+reformulación cambia lo que el tema enseña, entonces sí: `noSePuede`.

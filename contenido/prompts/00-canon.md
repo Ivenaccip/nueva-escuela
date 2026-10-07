@@ -151,9 +151,8 @@ Química, donde es fácil escribir el problema completo en el renglón.
 
 **Y `numero` quiere decir que el resultado ES un número.** Si lo que el estudiante
 acaba sabiendo es una frase («la presión dentro baja»), la respuesta es
-`palabra` aunque el ejemplo traiga algún dato numérico. Declarar `numero` sin
-cifra en el resultado manda a las estaciones 3 y 4 a pedir algo que el teclado
-no puede escribir.
+`palabra` aunque el ejemplo traiga algún dato numérico. Un `numero` sin una sola
+cifra en el resultado es una frase mal declarada.
 
 ### 3. `error`
 
@@ -214,12 +213,13 @@ Los límites: qué números puede usar el tema, qué unidades, y qué símbolos 
 escritos con átomos. Esto evita que la estación 4 se vaya a números de cuatro
 cifras cuando la 3 usó números de una.
 
-**Si `formaDeRespuesta` es `numero` y el tema trae decimales, las cotas tienen que
-garantizar que el resultado sea entero.** Los decimales viven en el enunciado, como
-`texto` dentro del renglón, y eso es legal; lo que no cabe en el hueco es el punto.
-Así está escrito el tema 13 —«divisores decimales, siempre 0.1, 0.2, 0.25, 0.5;
-resultado entero del 1 al 100»— y es lo único que lo salva de caer donde cayó el 11.
-Es la misma regla que ya rige para las unidades: van en el renglón, nunca en el hueco.
+**Si `formaDeRespuesta` es `numero`, las cotas tienen que garantizar que el resultado
+sea entero** (o una fracción, si es `fraccion`): lo que se teclea con dígitos. Los
+decimales pueden vivir en el enunciado, como `texto` dentro del renglón. Así está
+escrito el tema 13 —«divisores decimales, siempre 0.1, 0.2, 0.25, 0.5; resultado
+entero del 1 al 100»—. Pero si la respuesta natural del tema ES un decimal, no la
+fuerces a entero: declara `expresion`, que se contesta con fichas y lleva el punto.
+Las unidades siguen la misma regla: van en el renglón, nunca en el hueco.
 
 ### 6. `notacion` y `formaDeRespuesta`
 
@@ -233,55 +233,48 @@ Aquí decides a qué prompt se manda el tema. Lee `{{tema.notacion}}` y elige:
   recta numérica, diagrama de Lewis, esquema de fuerzas con flechas, probeta,
   escala de pH, círculos concéntricos.
 
-Y `formaDeRespuesta`, que es qué teclea el estudiante en las estaciones 3 y 4.
-Míralo contra el teclado de verdad, que tiene DOCE teclas y nada más
-(`app/estacion/completar.tsx:23-28`): `1`-`9`, `0`, `/` y borrar.
+Y `formaDeRespuesta`, que es lo que contesta el estudiante en las estaciones 3 y 4.
+Hay cuatro teclados y el tema elige uno después, en otra llamada: `digitos` (`0`-`9`
+y `/`), `fichas` (las teclas que el tema defina: punto, menos, paréntesis, letras,
+símbolos de elementos), `opciones` (elegir entre dos y cuatro) y `texto` (el del
+sistema). Tú sólo dices qué forma tiene la respuesta:
 
-- `numero` — un entero. Se puede teclear.
-- `fraccion` — algo como `12/5`. Se puede teclear.
-- `expresion` — la respuesta necesita un carácter que el teclado **no tiene**: el
-  punto decimal (`16.25`), el signo menos (`−2`), un exponente (`2³`), la `×` de
-  multiplicar, los dos puntos de una razón (`3:2`), o `<`, `>` y `=`.
-- `palabra` — una palabra o un nombre. **No se puede teclear** con el teclado
-  de hoy.
-- `trazo` — un dibujo, un punto en un plano, una flecha. **No se puede
-  teclear**.
+- `numero` — el resultado ES un entero. Se teclea con dígitos.
+- `fraccion` — algo como `12/5`. Se teclea con dígitos.
+- `expresion` — la respuesta natural necesita algo más que dígitos: el punto decimal
+  (`16.25`), el signo menos (`−2`), paréntesis, un exponente (`2³`), la `×`, los dos
+  puntos de una razón (`3:2`), `<`, `>` o `=`, letras de variable (`3x + 2`), símbolos
+  de elementos o una fórmula (`CaCl2`, `Ca2+`). Se arma con fichas, y es bienvenida:
+  no reformules el tema para huir de ella.
+- `palabra` — la respuesta es un término, un nombre o un par que se confunde
+  (mitosis o meiosis, flota o se hunde, soluto). Se elige entre opciones o se escribe.
+- `trazo` — un dibujo, un punto en un plano, una flecha. No hay teclado que lo cubra.
 
-**Escribe el resultado del ejemplo y míralo carácter por carácter contra esas doce
-teclas antes de contestar.** Es la mitad del temario de matemáticas la que no pasa:
-si el resultado lleva un carácter que no está, es `expresion`, no `numero`. Cuando
-dices `numero` y no lo es, el tema se va a la estación 4, la escalera pide una
-respuesta intecleable y el esquema la rechaza tantas veces como reintentos haya —y
-tiene razón cada vez. Con `expresion` el tema sale por otro prompt y no cobra nada.
-
-Antes de declarar `expresion`, prueba UNA reformulación que deje la respuesta en un
-entero y que siga preguntando lo que el tema enseña. Casi siempre existe, y a veces
-sale mejor que la original: para `0.3 × 0.4 = 0.12`, el escalón
-`[{"tipo":"texto","valor":"0.3 × 0.4 → 3 × 4 = 12, con"},{"tipo":"hueco"},{"tipo":"texto","valor":"cifras decimales."}]`
-con «¿cuántas cifras decimales lleva el resultado?» y `"2"` pregunta exactamente el
-error típico del tema. Lo que NO vale es una reformulación que borre el error que el
-tema existe para curar: si sumar decimales se pregunta en centésimos, desaparece el
-punto y con él la posibilidad de desalinear, que era todo el tema. Ahí se declara
-`expresion` y se dice en `noSePuede` qué tecla falta.
+**Escribe el resultado del ejemplo y míralo antes de contestar.** `numero` y
+`fraccion` son sólo para cuando el resultado ES un número: si lleva un punto, un
+menos, una letra o un símbolo, es `expresion`; si es una frase o un término, es
+`palabra`. Si el tema se puede preguntar igual de bien con un entero («¿cuántas cifras
+decimales lleva el resultado?», `"2"`), el entero cuesta menos; pero no borres lo que
+el tema enseña para lograrlo: sumar decimales sin punto ya no enseña a alinear el
+punto, y ahí lo que va es `expresion`.
 
 ### 7. `noSePuede`
 
-`null` si el tema se puede recorrer completo.
+`null` si el tema se puede recorrer completo, y eso incluye las respuestas
+`expresion` y `palabra`: se sirven con los otros teclados.
 
-Llénalo cuando:
+Llénalo sólo cuando:
 
-- `formaDeRespuesta` es `expresion`, `palabra` o `trazo` —y entonces `noSePuede`
-  **nombra la tecla o el átomo que falta**, no «el teclado»: el punto decimal, el
-  signo menos, el exponente, la `×`, los dos puntos, `<`/`>`/`=`, o la raya de
-  periodo, que tampoco existe como átomo (los cuatro son `texto`, `fraccion`,
-  `simbolo` con `sub`/`sup`, y `hueco`: no hay nada que vaya encima de una cifra),
-  o
-- alguno de los cinco pasos no se puede escribir con los cuatro átomos.
+- `formaDeRespuesta` es `trazo` —y entonces `noSePuede` **nombra el dibujo** que hace
+  falta: un punto en un plano, una flecha, una probeta—, o
+- alguno de los cinco pasos no se puede escribir con los cuatro átomos, y entonces
+  nombra **el átomo que falta**: por ejemplo la raya de periodo, que tampoco existe
+  (los cuatro son `texto`, `fraccion`, `simbolo` con `sub`/`sup`, y `hueco`: no hay
+  nada que vaya encima de una cifra).
 
-Antes de llenarlo, intenta una vez reformular: si el resultado es `0.8`, tal
-vez el tema puede pedir `8/10`; si la respuesta es «se hunde», tal vez puede
-pedir el número que se compara. Si la reformulación cambia lo que el tema
-enseña, entonces sí llena `noSePuede` y di qué hace falta.
+Antes de llenarlo, mira que no sea sólo cuestión de teclado: una palabra, un decimal,
+un negativo o una fórmula se contestan con los teclados que hay. Si de verdad el tema
+enseña algo que no se puede escribir, entonces sí, y di qué hace falta.
 
 ## Un ejemplo completo
 
@@ -327,7 +320,9 @@ Cuatro cosas de ese ejemplo:
 10. ¿Ningún renglón del canon lleva `hueco`? El canon no tiene huecos: los
     huecos los pone cada estación, y el esquema los rechaza aquí.
 11. ¿Cero emoji, cero signos de admiración, cero «es fácil»?
-12. **La lista, campo por campo.** El campo que falta tira la llamada entera y
+12. ¿`formaDeRespuesta` es `numero` o `fraccion` sólo porque el resultado del ejemplo
+    son dígitos y nada más (sin punto, sin menos, sin letras)?
+13. **La lista, campo por campo.** El campo que falta tira la llamada entera y
     con ella el canon, que es de quien cuelgan las otras seis. Tacha uno por uno:
     `notacion`, `formaDeRespuesta`, `procedimiento`, `ejemplo`, `error`,
     `erroresSecundarios`, `vocabulario`, `cotas`, `noSePuede`. Adentro:
@@ -339,6 +334,6 @@ Cuatro cosas de ese ejemplo:
     `vocabulario` lleva `palabra`, `queEs` y `noEsLoMismoQue`; `cotas` lleva
     `numeros`, `unidades` y `simbolos`. `notacion` y `formaDeRespuesta` son los dos
     que deciden a qué prompts va el tema: sin ellos no hay estaciones que generar,
-    y con ellos mal puestos el tema va a pedir una respuesta que el teclado no
-    puede escribir. El `titulo` y el `numero` de cada paso no van en esta lista:
+    y con ellos mal puestos el tema se rutea mal (a dígitos con una respuesta que
+    no lo es). El `titulo` y el `numero` de cada paso no van en esta lista:
     los pone quien llama.

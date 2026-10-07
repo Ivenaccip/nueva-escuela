@@ -20,6 +20,11 @@ node contenido/generar.mjs quimica 11 --seco         # las siete llamadas, sin A
 Un tema son **siete** llamadas: el canon y las seis estaciones. El cierre —la
 séptima pantalla— no necesita IA, y eso está explicado al final.
 
+Un tema ruteado a X3 (la respuesta es una palabra, una expresión o una frase) son
+**seis**: el canon, las estaciones 1, 2, 5 y 6, y una sola llamada, la de
+`X3-respuesta-no-numerica`, en lugar de las estaciones 3 y 4. Más abajo, en «Qué
+prompt le toca a qué tema».
+
 La primera no se puede paralelizar. Las otras seis sí.
 
 ```
@@ -59,6 +64,7 @@ placeholders ya sustituidos, va como el único mensaje del usuario.
 | 4 | `04-escalera.md` | `escribir_estacion_escalera` | tema + canon | forzado |
 | 5 | `05-error.md` | `escribir_estacion_error` | tema + canon | forzado |
 | 6 | `06-explicar.md` | `escribir_estacion_explicar` | tema + canon | forzado |
+| 3 y 4 de un tema ruteado a X3 | `X3-respuesta-no-numerica.md` | `escribir_caso_teclado` | tema + canon | forzado |
 
 ### Lo que se interpola
 
@@ -123,6 +129,7 @@ explicación se escribe igual sea cual sea la notación.
 |---|---|---|---|---|
 | `lineal` | `numero` | `02-contacto` | `03-completar` + `04-escalera` | `05-error` |
 | `lineal` | `fraccion` | `02-contacto` | `03-completar` + `04-escalera` | `05-error` |
+| `lineal` | `numero` o `fraccion`, con el resultado sin una cifra | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `expresion` | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `palabra` | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `trazo` | `02-contacto` | `X2-figura` | `05-error` |
@@ -142,13 +149,21 @@ explicación se escribe igual sea cual sea la notación.
 - **`X4-no-encaja` no se rutea.** Se llama una vez por cada entrada de
   `noEncajan[]` del temario —son 37—, después de que el tema anfitrión ya tiene sus
   seis estaciones.
-- **Los tres casos aparte piden componentes de UI que hoy no existen.** Su salida
-  se puede generar y guardar, pero no se puede pintar. `generar.mjs` los nombra y
-  no los llama.
+- **`X3-respuesta-no-numerica` se llama de verdad y se pinta.** Existen los cuatro
+  teclados (`digitos`, `fichas`, `opciones` y `texto`: `src/componentes/Teclado.tsx`).
+  `generar.mjs` genera ver, contacto, error y explicar, llama a X3 en lugar de
+  completar y escalera, y guarda su salida en `casosAparte["X3-teclado"]`; los campos
+  `completar` y `escalera` de la raíz del tema quedan en `null`. Va a X3 todo `lineal`
+  con respuesta `palabra` o `expresion`, y también un `numero` o `fraccion` cuyo
+  resultado no trae ni una cifra (`forma.mjs`): ése antes se detenía en «forma
+  dudosa» y ahora se rutea.
+- **`X1-tabla` y `X2-figura` siguen sin generarse.** Piden componentes de UI que no
+  existen (rejilla, figuras): `generar.mjs` los nombra, genera las estaciones que sí
+  corren y no llama al caso. Lo mismo para `trazo`, que va a X2.
 - **`expresion` es el renglón que más pesa, y el que faltaba.** Es la respuesta que
-  necesita un carácter que el teclado no tiene. Sin ese renglón, la factorización del
-  tema 2 se fue a la escalera, ésta pidió `2³ × 3² × 5` y `$defs.tecleado` la rechazó
-  tres veces: el tope tenía razón, el ruteo no.
+  necesita un carácter que el teclado de dígitos no tiene. Sin ese renglón, la
+  factorización del tema 2 se fue a la escalera, ésta pidió `2³ × 3² × 5` y
+  `$defs.tecleado` la rechazó tres veces: el tope tenía razón, el ruteo no.
 
 ### Dos listas que no hay que confundir al contar reintentos
 
@@ -174,18 +189,23 @@ Dos cosas que ese conteo enseña:
   14) o el menos (15, 16, 17). Dos más necesitan los tres de comparación (6, 10). Sólo
   el 1 y el 2 seguirían necesitando reformularse aunque el teclado creciera, porque su
   respuesta son dos números o un producto. `FILAS` es una constante de doce teclas en
-  un archivo (`app/estacion/completar.tsx:26-31`) y el temario pide catorce o quince:
-  vale la pena medir cuánto cuesta una cuarta y una quinta fila **antes** de escribir
-  diez reformulaciones que mueven la pregunta lejos de la habilidad que el tema promete.
-- **`X3-respuesta-no-numerica` no salva a ninguno de los diez hoy.** De sus cuatro
-  teclados sólo corre `digitos` (`CONTRATO.md §5`), así que X3 los documenta; no los
-  arregla. Lo que sí hace, y no es poco, es sacarlos de `04-escalera` para que no
-  cobren tres reintentos cada uno.
+  un archivo (`app/estacion/completar.tsx:26-31`) y el temario pide catorce o quince.
+  Esa constante ya no existe: el teclado de fichas crece a cuatro columnas hasta 15
+  fichas, así que el punto, el menos y los tres signos de comparación caben como
+  fichas y no hace falta reformular esos temas.
+- **`X3-respuesta-no-numerica` ya no sólo los documenta: los sirve.** De sus cuatro
+  teclados corren los cuatro (`CONTRATO.md §5`), y con `fichas` se escriben el punto,
+  el menos y `<`, `>`, `=`. Además los saca de `04-escalera` para que no cobren tres
+  reintentos cada uno. Este conteo se hizo cuando X3 sólo se nombraba: no hay todavía
+  una tanda medida con X3 generado de verdad.
 - **La reformulación casi siempre existe, y a veces sale mejor.** El caso del **12** es
   el ejemplo: «¿cuántas cifras decimales lleva el resultado?», con `"2"`, es
   exactamente el error típico del tema convertido en un dígito. El que **no** se salva
   bien es el **11**: preguntado en centésimos desaparece el punto, y con él la
   posibilidad de desalinear, que es el único error que ese tema existe para curar.
+  Con los cuatro teclados `00-canon.md` ya no empuja a reformular a la fuerza: dice
+  que `expresion` es bienvenida y que el entero cuesta menos sólo cuando el tema se
+  puede preguntar igual de bien con él.
 
 ---
 
@@ -242,11 +262,12 @@ node contenido/generar.mjs biologia 3             # sólo los de camino normal, 
 node contenido/indexar.mjs                        # y se meten en la app
 ```
 
-Un tema sólo se puede abrir con las seis estaciones, y eso pide que la respuesta de
-las estaciones 3 y 4 sea un número o una fracción (el teclado sólo tiene dígitos y
-diagonal). En Biología y Química la mayoría de las respuestas son palabras o
-fórmulas, así que **muchos temas irán a un caso aparte** y se pagarían a medias sin
-poder abrirse. Por eso se sondea primero.
+Un tema sólo se puede abrir con las seis estaciones. Las 3 y 4 salen de
+`03-completar` y `04-escalera` cuando la respuesta es un número o una fracción, y de
+`X3-respuesta-no-numerica` cuando es una palabra, una expresión o una frase: esos
+sí se abren, con el teclado que X3 elija. Los que se pagarían a medias sin poder
+abrirse son los de `tabla` y `figura`, que siguen sin componente de UI. Por eso se
+sondea primero.
 
 **Lo que se midió al hacerlo con Biología y Química (35 temas cada una):**
 
@@ -257,10 +278,13 @@ poder abrirse. Por eso se sondea primero.
 | Canon recuperado tras aclarar el prompt y reintentar | 6 (4 de camino normal) | 3 (2 de camino normal) |
 | **Candidatos con respuesta numérica de verdad** | **5 de 35** | **11 de 35** |
 
+Esa tabla se midió cuando X3 sólo se nombraba: los temas de palabra y los de «forma
+dudosa» no se podían abrir. Ahora van a X3 (ver «Qué prompt le toca a qué tema»).
+
 - **`formaDeRespuesta: "numero"` no basta.** El modelo la declaraba con un resultado
   que era una frase. `contenido/forma.mjs` lo caza (no hay ni una cifra en
-  `ejemplo.resultado`), `generar.mjs` para antes de pagar las estaciones y `tanda.mjs`
-  lo informa como `FORMA DUDOSA`.
+  `ejemplo.resultado`) y el ruteo lo manda a X3: `generar.mjs` ya no se detiene en
+  «forma dudosa» y `tanda.mjs` lo cuenta entre los de X3 y dice por qué.
 - **Los canon rechazados eran casi todos prosa en un renglón.** Un átomo de `texto`
   mide 90 caracteres como máximo; el modelo escribía el enunciado del problema ahí.
   `00-canon.md` ya dice que el enunciado va en `deQueVa` y el renglón es lo que se
@@ -304,6 +328,7 @@ node contenido/tanda.mjs matematicas 1 20           # los 20 completos
 node contenido/generar.mjs quimica 11            # un tema completo
 node contenido/generar.mjs quimica 11 --seco      # sin API: revisa los prompts
 node contenido/generar.mjs fisica 4 --solo ver    # una sola llamada
+node contenido/generar.mjs biologia 7 --solo X3-teclado # sólo el caso del teclado
 node contenido/generar.mjs matematicas 9 --rehacer # tira lo guardado y de cero
 
 node contenido/indexar.mjs                         # mete en la app los temas que ya se pueden abrir
@@ -312,8 +337,22 @@ node contenido/indexar.mjs --revisar               # dice cuáles entran y cuál
 
 **Generar un tema no lo mete en la app.** La app sólo abre lo que está en
 `src/contenido/catalogo.ts`, y ese archivo lo escribe `indexar.mjs`: deja entrar
-los temas con las seis estaciones y sin `noSePuede` lleno de la 2 a la 6. Hay que
-correrlo después de cada tanda y subir el archivo que escribe.
+los temas con las seis estaciones (la 3 y la 4 pueden venir de `casosAparte["X3-teclado"]`,
+si el caso trae `noSePuede` en `null`, al menos tres escalones y pasa las comprobaciones
+de `contenido/teclado.mjs`) y sin `noSePuede` lleno de la 2 a la 6. Hay que correrlo
+después de cada tanda y subir el archivo que escribe. `--revisar` dice qué entra y qué
+no, y por qué, sin escribir.
+
+**`--solo X3-teclado`** hace una sola llamada, la del caso del teclado, y guarda su
+salida en `casosAparte["X3-teclado"]` (pisa la anterior). Sirve para rehacer sólo X3
+sin repetir el video ni las otras cuatro estaciones, y no pide la llave de OpenAI.
+Funciona aunque el canon no mande el tema a X3. Con `--rehacer` se tira el archivo
+entero, canon incluido.
+
+Un canon viejo, escrito cuando el teclado de dígitos era el único, llenó `noSePuede`
+por regla en cuanto la respuesta era una `palabra` o una `expresion`. Ese aviso quedó
+viejo: `generar.mjs` no se lo muestra a las llamadas de X3, y `tanda.mjs` e `indexar.mjs`
+no lo cuentan (`noSePuedeVigente` en `teclado.mjs`). El archivo del canon no se toca.
 
 La salida se escribe en `contenido/temas/<materia>-<numero>.json` **después de
 cada llamada**, así que una corrida interrumpida se reanuda sola: al volver a
@@ -332,7 +371,9 @@ Un campo que nadie tenía que adivinar no puede tirar la llamada entera.
 1. **Se sella** lo que el llamador sabe con certeza: `temaNumero`, `materia` y el
    `titulo` de raíz (`sellarTraza`); la `letra` de cada opción, el `orden` de cada
    pista y el `numero` de cada paso, que son el índice del arreglo (`sellarIndices`);
-   `faltaCodigo` y `comoSeCompara` del caso X3 (`sellarTeclado`); y la `url`, el
+   `comoSeCompara`, `fichas` y `respuesta.opciones` del caso X3, que van en `false` o
+   vacíos según el teclado, con `faltaCodigo` y `planB` quitados si el modelo los trae
+   por costumbre (`sellarTeclado`); y la `url`, el
    `titulo`, el `canal`, `dondeSalio` y la `consulta` del video, que salen del
    candidato (`sellarVideo`). La tabla completa está en `CONTRATO.md §6bis`.
 2. **Contra el esquema**, con ajv 2020-12.
@@ -341,7 +382,15 @@ Un campo que nadie tenía que adivinar no puede tirar la llamada entera.
    dejar de comprobar: un reintento que se cruza, o una tanda que se reanuda a
    medias, se caza aquí y no con un tema cuya estación 5 acusa un paso de otro. Y una
    `letra: "C"` en el primer lugar cambiaría cuál opción se marca como correcta.
-4. **Las tres URL de la estación 1**, contra el oEmbed de YouTube, que no pide
+4. **El teclado de X3** (`contenido/teclado.mjs`), lo que el esquema no puede
+   expresar. Cada `correcta`, cada `aceptaTambien` y el `siTecleaElError` se arman con
+   las fichas —programación dinámica, porque `C` y `Ca` son una ficha cada una y una
+   es prefijo de la otra— o casan con `^[0-9]+(/[0-9]+)?$`. Con `opciones`: de 2 a 4,
+   una sola `esCorrecta` y `correcta` igual a su etiqueta. Un solo hueco por renglón;
+   `enAtomos`, aplanado, da `correcta`; la tercera pista no escribe la respuesta. Lo
+   que falle vuelve al modelo en la vuelta de corrección, con el campo exacto. Un caso
+   con `noSePuede` lleno no se revisa.
+5. **Las tres URL de la estación 1**, contra el oEmbed de YouTube, que no pide
    llave. Un **200** con `title` y `author_name` quiere decir que el video existe,
    es público y se puede incrustar; **401, 403 o 404** que se borró, es privado o
    no deja incrustarse; **400** que el id está mal formado. Y el `title` y el
@@ -370,11 +419,11 @@ Qué hacer, según quién lo llenó:
 
 | Quién | Qué significa | Qué sigue |
 |---|---|---|
-| **el canon** | el tema entero no cabe: la respuesta es un trazo, o el resultado necesita un decimal o un negativo | el tema no se genera. Se anota y se espera a que exista lo que falta |
+| **el canon** | el tema entero no cabe: la respuesta es un trazo, o un paso no se escribe con los cuatro átomos. Un decimal, un negativo, una letra o una palabra **no**: son `expresion` o `palabra` y van a X3 | el tema no se genera. Se anota y se espera a que exista lo que falta |
 | **la estación 1** | no hay video en español que explique el por qué | el tema **sí** se publica. `pregunta` y `resumen` se escriben igual y la tarjeta del video se queda vacía |
 | **la 2, 3, 4 o 5** | esa estación no cabe, pero el tema sí | el tema no se publica: son seis estaciones o ninguna (`BarraEstacion` tiene `TOTAL = 6`) |
 | **la 6** | la única pregunta que valdría la pena necesita un dibujo | raro. Aquí no hay teclado que limite nada; si pasa, se revisa el canon |
-| **`X3`** con `faltaCodigo` en `true` | el teclado que el tema necesita no existe todavía | se sirve el `planB` con dígitos si `sirveHoy` es `true`, y se vuelve a la versión buena cuando el teclado se escriba |
+| **`X3`** | un límite real: la respuesta es un trazo (va a X2), hacen falta más de 15 fichas o una etiqueta de más de 4 caracteres, la respuesta queda armada de un toque o dos, o con `texto` se calificaría ortografía | el tema no se publica y `indexar.mjs` lo excluye. Elegir `fichas`, `opciones` o `texto` **no** lo llena: los cuatro se sirven |
 
 Lo que **no** se hace: publicar el tema de todos modos. Filtra por
 `noSePuede !== null` antes de servir nada.
@@ -405,15 +454,22 @@ El contenido generado ya se recorre completo: las seis estaciones, la calificaci
 las pistas, el cierre, y el progreso se guarda entre sesiones (ver `CONTRATO.md` §4 y
 §5 para cómo quedó cada pieza).
 
+**El teclado propio de cada tema ya existe** (`src/componentes/Teclado.tsx`). El tema
+elige uno para las estaciones 3 y 4 —el caso `X3-respuesta-no-numerica`— y la app lo
+sirve: `digitos` (como siempre), `fichas` (las teclas las define el tema: tres
+columnas hasta 11 fichas y cuatro hasta 15; borrar quita una ficha entera),
+`opciones` (elegir entre 2 y 4; las baraja la app y una equivocada muestra su
+`queRevela`) y `texto` (el teclado del sistema, con `comoSeCompara` para perdonar
+mayúsculas, acentos y espacios). Con él se abren los temas de palabra, de fórmula y
+de decimales o negativos. Cuántos temas se abren de más no está medido con la API:
+las cuentas de arriba (5 de Biología y 11 de Química con sólo dígitos) son de antes
+de X3.
+
 Lo que sigue sin existir, en orden de cuántos temas desbloquea:
 
-1. **El teclado de fichas** (que `FILAS` salga del contenido) — desbloquea los temas
-   de `X3` y, con punto, menos y paréntesis, la mitad del temario de Matemáticas.
-   Con el teclado de hoy, de 35 temas Biología tiene 5 jugables y Química 11; con
-   fichas se abrirían unos 11 de Biología que hoy contestan con una palabra.
-2. **`src/componentes/Tabla.tsx`** — desbloquea los temas de `X1-tabla`.
-3. **Los componentes de figura** — desbloquea los temas de `X2-figura`.
-4. **Calificar la estación 6** — una segunda llamada a la API con la `rubrica`. Hoy se
+1. **`src/componentes/Tabla.tsx`** — desbloquea los temas de `X1-tabla`.
+2. **Los componentes de figura** — desbloquea los temas de `X2-figura`.
+3. **Calificar la estación 6** — una segunda llamada a la API con la `rubrica`. Hoy se
    muestra como autoevaluación. Necesita la llave en un servidor, nunca en la app.
-5. **Que el tema vuelva más adelante**, como promete el cierre. Hoy se guarda cuándo
+4. **Que el tema vuelva más adelante**, como promete el cierre. Hoy se guarda cuándo
    se cerró; falta quien decida cuándo sacarlo otra vez.

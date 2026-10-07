@@ -1027,5 +1027,282 @@
       ]
     },
     "noSePuede": null
+  },
+  "casosAparte": {
+    "X3-teclado": {
+      "temaNumero": 17,
+      "materia": "matematicas",
+      "teclado": "fichas",
+      "porQueEseTeclado": "La respuesta es un entero con signo: −2, +8, −6. El teclado de dígitos escribe 0–9 y la diagonal, pero no el signo menos (−). Con fichas el estudiante produce la respuesta juntando dígitos y el signo menos que necesita, sin confundir este signo con la operación de resta.",
+      "tecladosDescartados": [
+        {
+          "teclado": "digitos",
+          "porQue": "No tiene el signo menos (−). Todo resultado de una multiplicación o división de enteros lleva signo, y sin la ficha −, números como −6 o −12 no se pueden escribir en el hueco."
+        }
+      ],
+      "fichas": [
+        {
+          "etiqueta": "−",
+          "comoSeLee": "menos"
+        },
+        {
+          "etiqueta": "+",
+          "comoSeLee": "más"
+        },
+        {
+          "etiqueta": "0",
+          "comoSeLee": "cero"
+        },
+        {
+          "etiqueta": "1",
+          "comoSeLee": "uno"
+        },
+        {
+          "etiqueta": "2",
+          "comoSeLee": "dos"
+        },
+        {
+          "etiqueta": "3",
+          "comoSeLee": "tres"
+        },
+        {
+          "etiqueta": "4",
+          "comoSeLee": "cuatro"
+        },
+        {
+          "etiqueta": "5",
+          "comoSeLee": "cinco"
+        },
+        {
+          "etiqueta": "6",
+          "comoSeLee": "seis"
+        },
+        {
+          "etiqueta": "7",
+          "comoSeLee": "siete"
+        },
+        {
+          "etiqueta": "8",
+          "comoSeLee": "ocho"
+        },
+        {
+          "etiqueta": "9",
+          "comoSeLee": "nueve"
+        }
+      ],
+      "comoSeCompara": {
+        "ignoraMayusculas": false,
+        "ignoraAcentos": false,
+        "ignoraEspaciosDeMas": false
+      },
+      "completar": {
+        "pasoDelCanon": 4,
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "(−2) ×"
+          },
+          {
+            "tipo": "texto",
+            "valor": "(−3) ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "respuesta": {
+          "correcta": "+6",
+          "enAtomos": [
+            {
+              "tipo": "texto",
+              "valor": "+6"
+            }
+          ],
+          "comoSeLee": "más seis",
+          "aceptaTambien": [
+            "6"
+          ],
+          "opciones": []
+        },
+        "pistas": [
+          {
+            "texto": "Dos negativos son un número par. Aplica la regla: número par de negativos da un resultado positivo.",
+            "orden": 1
+          },
+          {
+            "texto": "Ya decidiste el signo: positivo. Multiplica los números: 2 × 3 = 6. Ponle el signo adelante.",
+            "orden": 2
+          },
+          {
+            "texto": "El resultado de multiplicar dos negativos es positivo. Puedes escribir +6 o solo 6.",
+            "orden": 3
+          }
+        ]
+      },
+      "escalera": [
+        {
+          "situacion": "En un videojuego pierdes 3 monedas en cada nivel. Después de pasar 2 niveles, ¿cuántas monedas perdiste?",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "(−3) ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "2 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "Escribe el resultado con su signo.",
+          "respuesta": {
+            "correcta": "−6",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "−6"
+              }
+            ],
+            "comoSeLee": "menos seis",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Tienes un número negativo y otro positivo. ¿Cuántos negativos hay en total?",
+              "orden": 1
+            },
+            {
+              "texto": "Un número impar de negativos da negativo. Multiplica 3 × 2 = 6 y ponle el signo que decidiste.",
+              "orden": 2
+            }
+          ]
+        },
+        {
+          "situacion": "Un submarino baja 4 metros cada minuto. ¿A qué profundidad estará después de 3 minutos?",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "(−4) ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "3 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "Escribe el resultado con su signo.",
+          "respuesta": {
+            "correcta": "−12",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "−12"
+              }
+            ],
+            "comoSeLee": "menos doce",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Un número es negativo y otro es positivo. ¿Cuántos negativos tienes?",
+              "orden": 1
+            },
+            {
+              "texto": "Número impar de negativos: resultado negativo. Multiplica 4 × 3 = 12 y ponle menos.",
+              "orden": 2
+            }
+          ]
+        },
+        {
+          "situacion": "Una deuda de 5 pesos. Tu hermana tiene tres deudas iguales a la tuya. ¿Cuál es su deuda total?",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "(−5) ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "(−3) ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "Escribe el resultado con su signo.",
+          "respuesta": {
+            "correcta": "+15",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "+15"
+              }
+            ],
+            "comoSeLee": "más quince",
+            "aceptaTambien": [
+              "15"
+            ],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Cuenta los negativos: ¿cuántos hay en total? ¿Ese número es par o impar?",
+              "orden": 1
+            },
+            {
+              "texto": "Dos negativos: número par, resultado positivo. Multiplica 5 × 3 = 15 y ponle el signo.",
+              "orden": 2
+            }
+          ]
+        },
+        {
+          "situacion": "En una prueba, cada respuesta equivocada quita 2 puntos. Contestaste mal 4 preguntas. ¿Cuántos puntos perdiste?",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "(−2) ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "(−4) ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "Escribe el resultado con su signo.",
+          "respuesta": {
+            "correcta": "+8",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "+8"
+              }
+            ],
+            "comoSeLee": "más ocho",
+            "aceptaTambien": [
+              "8"
+            ],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Dos números negativos: número par. Por la regla, el resultado es positivo.",
+              "orden": 1
+            },
+            {
+              "texto": "Multiplica 2 × 4 = 8 y ponle el signo de más.",
+              "orden": 2
+            }
+          ]
+        }
+      ],
+      "noSePuede": null,
+      "titulo": "Multiplicación y división de enteros"
+    }
   }
 }

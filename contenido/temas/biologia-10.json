@@ -265,10 +265,878 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
+  "ver": {
+    "temaNumero": 10,
+    "materia": "biologia",
+    "pregunta": "¿Por qué la energía que te mueve viene de la glucosa y no del oxígeno?",
+    "resumen": "Todas las células, en plantas y animales, rompen glucosa para obtener energía. El oxígeno ayuda en el proceso, pero es la glucosa la que guarda la energía que se libera cuando sus enlaces se quiebran.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué la glucosa es la fuente de energía y no el oxígeno en la respiración celular.",
+        "Aclara que la respiración celular ocurre en todas las células vivas, en plantas y animales, de día y de noche.",
+        "Muestra la ecuación de la respiración celular con glucosa, oxígeno, dióxido de carbono, agua y energía.",
+        "Es del nivel de primer año de secundaria: no entra en detalles de las fases (glucólisis, ciclo de Krebs, cadena respiratoria).",
+        "Distingue entre respiración celular (romper moléculas) y respirar (meter y sacar aire)."
+      ],
+      "descarta": [
+        "Enseña que solo los animales respiran o que las plantas no respiran porque hacen fotosíntesis.",
+        "Sugiere que la energía viene del oxígeno o lo presenta como la fuente de energía.",
+        "Es un video de bachillerato que entra en detalles complejos de metabolismo celular.",
+        "Solo muestra pasos de la glucólisis o la cadena respiratoria sin explicar el proceso general.",
+        "Tiene más de quince minutos de introducción antes de abordar el tema."
+      ],
+      "consulta": "video explicación \"De dónde sale la energía\" biología 1º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "RWb_Zg8fosY",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único video de la lista que explica por qué la glucosa es la fuente de energía y cómo el oxígeno participa en el proceso sin ser la fuente. Aclara que tanto plantas como animales realizan respiración celular, de día y de noche, separando este concepto del acto de respirar.",
+      "url": "https://www.youtube.com/watch?v=RWb_Zg8fosY",
+      "titulo": "BIOLOGÍA - Fotosíntesis y respiración celular [CICLO FREE]",
+      "canal": "Academia Grupo Ciencias",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "8In9ifOhpME",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Compara fotosíntesis y respiración celular, lo que refuerza que ambos procesos ocurren en las plantas. Es menos específico que el elegido en explicar por qué la glucosa guarda la energía.",
+        "url": "https://www.youtube.com/watch?v=8In9ifOhpME",
+        "titulo": "Fotosíntesis y Respiración Celular",
+        "canal": "Departamento de Biología del Instituto Nacional",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "lwTwEHECFOU",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Tercer respaldo. Se centra en respiración de plantas, lo que corrige la creencia de que solo animales respiran. Menos completo que el elegido porque no desarrolla la ecuación de la respiración celular ni explica cómo se libera la energía.",
+        "url": "https://www.youtube.com/watch?v=lwTwEHECFOU",
+        "titulo": "¿CÓMO RESPIRAN LAS PLANTAS? | CONCEPTOS BÁSICOS SOBRE LA RESPIRACIÓN DE LAS PLANTAS",
+        "canal": "Yoidi GZ Oss",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "media",
+    "porQueEsaConfianza": "El título del elegido salió literal en la búsqueda y explica tanto fotosíntesis como respiración celular. Media y no alta porque el español del video no se confirma como de México, y el canal Academia Grupo Ciencias no trae información clara de su origen regional. El video sí explica por qué la glucosa es la fuente, que es el núcleo de esta estación.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 10,
+    "materia": "biologia",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Las plantas respiran durante"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "solo el día, cuando hay luz"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás confundiendo la respiración celular con la fotosíntesis. La respiración celular ocurre de día y de noche en todos los seres vivos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "solo de noche, en la oscuridad"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Crees que las plantas no respiran porque hacen fotosíntesis. Respiran todo el tiempo, de día y de noche, en todas sus células.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "de día y de noche, siempre"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Reconociste que la respiración celular ocurre constantemente en las plantas, independiente de la fotosíntesis.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "solo si tienen pulmones"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás pensando que respirar es meter y sacar aire por pulmones. La respiración celular ocurre en todas las células, no requiere pulmones.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Cuando una célula rompe glucosa, la energía que se libera viene de"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "los enlaces de la glucosa"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Entendiste que la glucosa guarda la energía en sus enlaces químicos, y se libera al romperlos.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "el oxígeno que entra"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Crees que el oxígeno es la fuente de energía. El oxígeno ayuda a romper la glucosa, pero no es quien guarda la energía.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "el agua que se produce"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El agua es un residuo que sale del proceso. La energía no viene de lo que sobra después de romper, sino de romper los enlaces.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "el dióxido de carbono"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El dióxido de carbono es otro residuo que expulsa la célula. Tampoco es la fuente de energía.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Respiración celular es el proceso en que una célula"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "respira con pulmones o branquias"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás describiendo respirar, que es meter y sacar aire. Es distinto a la respiración celular, que ocurre en todas las células sin pulmones.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "rompe glucosa con oxígeno y libera energía"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Reconociste que la respiración celular es quebrar moléculas de glucosa para obtener energía, no meter y sacar aire.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "fabrica su propio alimento con luz"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Eso es fotosíntesis. Las plantas hacen fotosíntesis y respiración celular; son dos procesos distintos que ocurren al mismo tiempo.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "intercambia oxígeno por dióxido de carbono"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás describiendo el intercambio de gases en los pulmones. La respiración celular ocurre dentro de cada célula y rompe moléculas.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En la ecuación de la respiración celular, ¿cuál es el primer ingrediente que entra a la célula?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "glucosa"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste que la glucosa es uno de los reactivos, la materia prima que la célula necesita para obtener energía.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "dióxido de carbono"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El dióxido de carbono es un producto, lo que sale. Los ingredientes que entran son la glucosa y el oxígeno.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "energía"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La energía es lo que se libera al final, no un ingrediente que entra. Entra guardada en los enlaces de la glucosa.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "agua"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El agua es un residuo que sale. Los reactivos que entran son la glucosa y el oxígeno.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": null,
   "escalera": null,
-  "error": null,
-  "explicar": null
+  "error": {
+    "temaNumero": 10,
+    "materia": "biologia",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien explica de dónde obtiene energía una célula:"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "C",
+        "sub": "6"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "12"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "O",
+        "sub": "6"
+      },
+      {
+        "tipo": "texto",
+        "valor": "+"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "O",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "→"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "CO",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "+"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "O + energía. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Digo qué es respiración celular:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "Solo en animales con pulmones. Plantas: solo fotosíntesis."
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que el paso 5 recibe y desarrolla después."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Escribo los ingredientes de la ecuación:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "C",
+            "sub": "6"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "12"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "6"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          }
+        ],
+        "siLoTocas": "La ecuación está bien anotada con los ingredientes. Esos símbolos vienen del problema y ese paso no inventó ninguno."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Escribo lo que sale de la ecuación:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "CO",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "O"
+          }
+        ],
+        "siLoTocas": "La ecuación está completa con los productos. Ese paso recibió sus símbolos y los anotó en su sitio."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Anoto dónde viene la energía:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "La energía viene del oxígeno que respiran."
+          }
+        ],
+        "siLoTocas": "Ese renglón hace bien su trabajo: cierra la idea de dónde sale la energía. No inventó nada; está consistente con el paso anterior."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Resumen de dónde va la energía:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "La energía viene del oxígeno. Solo animales respiran."
+          }
+        ],
+        "siLoTocas": "Ese paso resume la conclusión que el paso 1 plantea, y lo hace bien con ese dato. Repite la idea que recibió."
+      }
+    ],
+    "pasoMalo": 1,
+    "arrastre": "El error del paso 1 viaja a todo lo que sigue. El paso 4 dice que la energía viene del oxígeno en vez de la glucosa, porque el paso 1 estableció mal dónde ocurre la respiración. El paso 5 resume que solo animales respiran, recibiendo esa creencia del paso 1. Los pasos 2 y 3 están bien con sus símbolos, pero el paso 4 y 5 cierran mal porque aceptan la idea equivocada del paso 1.",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Confundió respiración celular con respirar por la boca.",
+        "esElBueno": true,
+        "queRevela": "Respirar es meter y sacar aire; respiración celular es lo que hace una célula para romper moléculas y obtener energía. Eso ocurre en toda célula viva, en plantas y animales, de día y de noche, sin necesidad de pulmones. El renglón cierra la puerta a las plantas y a lo que ocurre sin luz."
+      },
+      {
+        "texto": "Olvidó que también hay energía en la fotosíntesis.",
+        "esElBueno": false,
+        "queRevela": "Quien elige esto ya sabe que las plantas hacen algo; pero fotosíntesis y respiración celular son procesos distintos que ocurren a la vez. Fotosíntesis captura la energía del sol; respiración celular rompe la glucosa. Las plantas hacen ambas, todo el día y toda la noche."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Tres de los cinco pasos están bien. El error no es una operación equivocada: es una idea equivocada sobre dónde y en quién ocurre la respiración."
+      },
+      {
+        "orden": 2,
+        "texto": "El problema habla de una célula que respira y transforma glucosa. Busca esa palabra 'célula' en los renglones: en uno dice algo que no concuerda con que toda célula viva lo hace."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara lo que el paso 1 dice que es respiración con lo que hace una célula de noche, en la oscuridad, sin luz para hacer fotosíntesis. La respiración celular ocurre igual."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 10,
+    "materia": "biologia",
+    "titulo": "Explícame por qué las plantas también respiran y no solo hacen fotosíntesis.",
+    "aclaracion": "Con tus palabras, sin repetir lo que vimos. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero entender qué pasó en tu cabeza cuando lo viste.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "Las plantas respiran todo el tiempo, de día y de noche, porque todas sus células necesitan quebrar moléculas para sacar energía.",
+          "porQueImporta": "Sin esta idea, el estudiante cree que respiración es solo meter y sacar aire, y que en las plantas no existe porque hacen fotosíntesis. Se queda sin entender que respiración celular y fotosíntesis son dos procesos distintos que ocurren en la misma planta.",
+          "comoSuenaDicha": "Las plantas respiran todo el tiempo para tener energía, así como nosotros. No es lo mismo que la fotosíntesis.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Respirar es meter y sacar aire; respiración celular es quebrar glucosa dentro de la célula para sacar energía. Son dos cosas distintas con nombres parecidos.",
+          "porQueImporta": "Es la única forma de desmontar la confusión que trae desde el principio. Quien no separa estos dos significados sigue creyendo que plantas no pueden respirar porque no tienen pulmones.",
+          "comoSuenaDicha": "Respiración es lo que hace el pulmón. Respiración celular es lo que hace la célula para sacar energía de la glucosa.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "El oxígeno que las plantas sueltan de día durante la fotosíntesis no es lo que ellas usan de noche para respirar; es lo que cualquier célula viva necesita para romper moléculas.",
+          "porQueImporta": "Explica por qué de noche las plantas consumen oxígeno en vez de soltarlo, y desbarata la creencia de que la fotosíntesis es lo único que hace la planta.",
+          "comoSuenaDicha": "De noche, la planta respira y consume oxígeno igual que los animales, porque necesita energía todo el tiempo.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Las plantas respiran porque tienen células, y todas las células respiran para tener energía.",
+          "queLaDelata": "Es cierto, pero deja la pregunta sin responder: ¿por qué algunos creen que no respiran? No lo dice.",
+          "queLeFalta": "Que agregue la diferencia: respirar es lo que hace el pulmón, y respiración celular es lo que hace la célula de la planta."
+        },
+        {
+          "respuesta": "Las plantas respiran porque la respiración celular es el proceso que ocurre en todas las células vivas.",
+          "queLaDelata": "Repite la definición sin explicar nada. Es el procedimiento con otras palabras.",
+          "queLeFalta": "Que diga por qué alguien podría pensar que no, y por qué eso es un error."
+        },
+        {
+          "respuesta": "Porque aunque hacen fotosíntesis, también necesitan energía para crecer y moverse, igual que nosotros.",
+          "queLaDelata": "Empieza bien, pero se queda en el nivel de necesitar energía. No dice de dónde viene esa energía ni qué proceso la saca.",
+          "queLeFalta": "Que diga que la energía viene de quebrar glucosa en la respiración celular, no de la fotosíntesis."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Pero las plantas hacen fotosíntesis y el oxígeno que sueltan es lo que respiran.",
+          "seLeContesta": "Cierto que sueltan oxígeno en el día. Pero de noche, sin luz, no hacen fotosíntesis y aun así siguen vivas. ¿De dónde sacan oxígeno de noche si no hacen fotosíntesis? ¿Qué proceso necesitarían para seguir teniendo energía?",
+          "aDondeLoEmpuja": "A ver que respiración celular y fotosíntesis son independientes; la planta hace los dos en tiempos distintos."
+        },
+        {
+          "siDice": "Las plantas no tienen pulmones, así que no pueden respirar como los animales.",
+          "seLeContesta": "Cierto que no tienen pulmones. Pero respiración celular no es lo que hace el pulmón: es lo que hace la célula para quebrar moléculas. Las células de una planta hacen eso sin pulmones, igual que las células de tu estómago rompen la comida sin que el pulmón participe.",
+          "aDondeLoEmpuja": "A entender que respirar es lo del pulmón, y respiración celular es lo de la célula; son palabras parecidas pero no es lo mismo."
+        },
+        {
+          "siDice": "Entiendo todo eso, solo no sé cómo escribirlo.",
+          "seLeContesta": "Entonces contesta nada más esto: ¿qué diferencia hay entre respirar y respiración celular? Si eso te sale, ya dijiste lo importante.",
+          "aDondeLoEmpuja": "A que vea que la idea ya la tiene y lo que le falta es decirla corta, sin tanto rodeo."
+        }
+      ],
+      "ejemploQueSiCuenta": "Las plantas respiran todo el tiempo, de día y de noche, porque sus células necesitan quebrar glucosa para conseguir energía. Respirar es lo que hace el pulmón; respiración celular es lo que hace la célula para romper moléculas. De noche la planta no tiene luz para hacer fotosíntesis, pero sigue respiring porque necesita energía para estar viva. Por eso consume oxígeno de noche.",
+      "noCuentaEnContra": [
+        "La ortografía y los acentos.",
+        "Que no use las palabras de la lista de vocabulario de forma exacta: si dice el proceso de quebrar glucosa, ya lo dijo sin usar respiración celular.",
+        "Que escriba corto o que no ponga números: la idea cuenta sin detalles ni cifras."
+      ]
+    },
+    "noSePuede": null
+  },
+  "casosAparte": {
+    "X3-teclado": {
+      "temaNumero": 10,
+      "materia": "biologia",
+      "teclado": "opciones",
+      "porQueEseTeclado": "La respuesta del hueco es un término único: el nombre del proceso que ocurre en todas las células. No es un número, no se arma por piezas, y es uno entre cuatro términos que se confunden (respiración pulmonar, fotosíntesis, respiración celular, excreción). El estudiante tiene que reconocer cuál de los cuatro es el proceso donde se quiebra la glucosa y se libera energía en la célula.",
+      "tecladosDescartados": [
+        {
+          "teclado": "digitos",
+          "porQue": "La respuesta es una palabra, no un número. El teclado de dígitos solo escribe 0–9 y la diagonal de una fracción. 'Respiración celular' no cabe en eso."
+        }
+      ],
+      "fichas": [],
+      "comoSeCompara": {
+        "ignoraMayusculas": false,
+        "ignoraAcentos": false,
+        "ignoraEspaciosDeMas": false
+      },
+      "completar": {
+        "pasoDelCanon": 1,
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "El proceso en que la célula quiebra la glucosa con oxígeno y libera energía es la"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "respuesta": {
+          "correcta": "respiración celular",
+          "enAtomos": [
+            {
+              "tipo": "texto",
+              "valor": "respiración celular"
+            }
+          ],
+          "comoSeLee": "respiración celular",
+          "aceptaTambien": [],
+          "opciones": [
+            {
+              "etiqueta": "respiración celular",
+              "esCorrecta": true,
+              "queRevela": "Viste que ocurre en todas las células, todo el tiempo, de día y de noche, sin importar que haya luz o no."
+            },
+            {
+              "etiqueta": "respiración pulmonar",
+              "esCorrecta": false,
+              "queRevela": "Confundes respiración celular con respirar por la boca. Respirar es meter y sacar aire; respiración celular es quebrar moléculas adentro de la célula."
+            },
+            {
+              "etiqueta": "fotosíntesis",
+              "esCorrecta": false,
+              "queRevela": "Las plantas hacen fotosíntesis de día, pero también respiran de noche. Respiración celular y fotosíntesis son dos procesos distintos que ocurren en la misma célula."
+            },
+            {
+              "etiqueta": "excreción",
+              "esCorrecta": false,
+              "queRevela": "La excreción es expulsar residuos. Lo que buscas es el nombre del proceso donde se quiebra la glucosa y se libera energía."
+            }
+          ]
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Es un proceso que ocurre en TODAS las células vivas, en plantas y animales, todo el tiempo, sin parar."
+          },
+          {
+            "orden": 2,
+            "texto": "En el paso 1 del procedimiento se explica que es quebrar moléculas para conseguir energía, no lo mismo que respirar por la boca."
+          },
+          {
+            "orden": 3,
+            "texto": "Empieza con la palabra 'respiración'. Distingue esta respiración de la que haces con los pulmones porque ocurre dentro de cada célula."
+          }
+        ]
+      },
+      "escalera": [
+        {
+          "situacion": "Observas una planta verde en tu casa. De día recibe luz y hace fotosíntesis. Pero de noche, sin luz, ¿qué proceso sigue ocurriendo en sus células?",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "De noche, sin luz, las células de la planta siguen haciendo"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Qué proceso ocurre en las células de la planta durante la noche?",
+          "respuesta": {
+            "correcta": "respiración celular",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "respiración celular"
+              }
+            ],
+            "comoSeLee": "respiración celular",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "respiración celular",
+                "esCorrecta": true,
+                "queRevela": "Bien. La fotosíntesis necesita luz, pero la respiración celular ocurre todo el tiempo, sin importar si hay luz o no."
+              },
+              {
+                "etiqueta": "fotosíntesis",
+                "esCorrecta": false,
+                "queRevela": "La fotosíntesis requiere luz solar. De noche no hay luz, así que este proceso se detiene. Pero otro proceso sigue corriendo en las células."
+              },
+              {
+                "etiqueta": "excreción",
+                "esCorrecta": false,
+                "queRevela": "La excreción expulsa residuos, pero no es el proceso que libera energía de la glucosa. Ocurre en todas las células, de día y de noche, en plantas y animales."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Sin luz, un proceso se detiene y otro sigue. Piensa en cuál de los dos depende de la luz del sol."
+            },
+            {
+              "orden": 2,
+              "texto": "Es el proceso que quiebra la glucosa. Ocurre siempre, sin que importe la hora del día o si llueve."
+            },
+            {
+              "orden": 3,
+              "texto": "Empieza con 'respiración' y describe lo que ocurre adentro de cada célula, no lo que haces con los pulmones."
+            }
+          ]
+        },
+        {
+          "situacion": "En clase diseccionan una bacteria. Bajo el microscopio ven que no tiene mitocondrias, sino que los procesos químicos ocurren en la membrana. Sin embargo, ella sigue viva y necesita energía.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "La bacteria quiebra moléculas para conseguir energía mediante"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Qué nombre recibe el proceso por el que la bacteria obtiene energía?",
+          "respuesta": {
+            "correcta": "respiración celular",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "respiración celular"
+              }
+            ],
+            "comoSeLee": "respiración celular",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "respiración celular",
+                "esCorrecta": true,
+                "queRevela": "Así es. Respiración celular no necesita mitocondrias ni pulmones. Es el proceso de quebrar moléculas que existe en TODAS las células vivas."
+              },
+              {
+                "etiqueta": "respiración pulmonar",
+                "esCorrecta": false,
+                "queRevela": "Las bacterias no tienen pulmones. Respiración pulmonar es lo que hacen los animales al meter aire. Las bacterias necesitan otro proceso."
+              },
+              {
+                "etiqueta": "fotosíntesis",
+                "esCorrecta": false,
+                "queRevela": "Fotosíntesis solo ocurre en seres con clorofila. Las bacterias no la tienen. El proceso que buscas quiebra moléculas en todas las células."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Es el proceso que define cómo toda célula viva, sin excepción, consigue energía de las moléculas."
+            },
+            {
+              "orden": 2,
+              "texto": "Ocurre en el paso 1 del procedimiento: el proceso de quebrar glucosa. Todas las células lo hacen, aunque no tengan mitocondrias."
+            },
+            {
+              "orden": 3,
+              "texto": "Distingue el proceso que ocurre adentro de la célula del que haces tú al respirar por la boca."
+            }
+          ]
+        },
+        {
+          "situacion": "Un amigo dice: 'Las plantas no respiran porque respiran es meter aire. Hacen fotosíntesis y con eso tienen energía.' Quieres explicarle por qué se equivoca.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "Las plantas sí hacen"
+            },
+            {
+              "tipo": "hueco"
+            },
+            {
+              "tipo": "texto",
+              "valor": "de día y de noche, aunque la luz la usen solo en la fotosíntesis."
+            }
+          ],
+          "pregunta": "¿Qué proceso hacen las plantas todo el día y toda la noche para obtener energía?",
+          "respuesta": {
+            "correcta": "respiración celular",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "respiración celular"
+              }
+            ],
+            "comoSeLee": "respiración celular",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "respiración celular",
+                "esCorrecta": true,
+                "queRevela": "Exacto. Las plantas hacen fotosíntesis de día para hacer glucosa, pero también respiran de día y de noche para liberar la energía de esa glucosa."
+              },
+              {
+                "etiqueta": "fotosíntesis",
+                "esCorrecta": false,
+                "queRevela": "La fotosíntesis solo ocurre de día. Pero tu amigo está equivocado porque las plantas hacen OTRO proceso de día y de noche para obtener energía."
+              },
+              {
+                "etiqueta": "transporte activo",
+                "esCorrecta": false,
+                "queRevela": "El transporte activo mueve moléculas. Pero lo que buscas es el proceso que quiebra la glucosa y libera la energía que la planta necesita para vivir."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Tu amigo confunde dos procesos distintos que ocurren en la misma planta. Uno es de día con luz, otro es de día y de noche."
+            },
+            {
+              "orden": 2,
+              "texto": "Es el proceso del paso 1: quiebra moléculas de glucosa para sacar energía. Ocurre en todas las células de la planta, toda la vida."
+            },
+            {
+              "orden": 3,
+              "texto": "Describe el proceso que ocurre dentro de la célula, no el que haces cuando abres la nariz para inhalar."
+            }
+          ]
+        },
+        {
+          "situacion": "Un médico explica que durante el ejercicio intenso, los músculos necesitan más energía. Para obtenerla, las células rompen glucosa con la ayuda del oxígeno que traes en la sangre.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "El proceso en que los músculos rompen glucosa para obtener energía se llama"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es el nombre del proceso que hace que tus músculos obtengan energía?",
+          "respuesta": {
+            "correcta": "respiración celular",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "respiración celular"
+              }
+            ],
+            "comoSeLee": "respiración celular",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "respiración celular",
+                "esCorrecta": true,
+                "queRevela": "Bien. Es el proceso en que rompes la glucosa con oxígeno y liberas la energía que tus músculos necesitan para contraerse."
+              },
+              {
+                "etiqueta": "respiración pulmonar",
+                "esCorrecta": false,
+                "queRevela": "Respiration pulmonar es lo que haces al inhalar. Necesitas esa aire para obtener oxígeno, pero el proceso que libera la energía es otro."
+              },
+              {
+                "etiqueta": "contracción muscular",
+                "esCorrecta": false,
+                "queRevela": "La contracción es lo que ves: el músculo se acorta. Pero eso pasa PORQUE ocurre otro proceso que libera energía adentro de la célula."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "El médico nombra dos ingredientes: glucosa y oxígeno. ¿En qué proceso se encuentran estos dos para liberar energía?"
+            },
+            {
+              "orden": 2,
+              "texto": "Es lo que describe el paso 1 del procedimiento: el proceso que hace que las células rompan moléculas y suelten energía."
+            },
+            {
+              "orden": 3,
+              "texto": "Es el nombre del proceso que ocurre en la célula, no el de meter aire por la nariz."
+            }
+          ]
+        }
+      ],
+      "noSePuede": null,
+      "titulo": "De dónde sale la energía"
+    }
+  }
 }

@@ -667,5 +667,231 @@
       ]
     },
     "noSePuede": null
+  },
+  "casosAparte": {
+    "X3-teclado": {
+      "temaNumero": 12,
+      "materia": "matematicas",
+      "teclado": "fichas",
+      "porQueEseTeclado": "La respuesta es un número decimal: 0.12. El teclado de dígitos sólo escribe 0–9 y la diagonal, pero no tiene el punto. Con fichas el estudiante produce el decimal armándolo con los dígitos y el punto, y también puede escribir el error típico del canon: 1.2 con un solo decimal.",
+      "tecladosDescartados": [
+        {
+          "teclado": "digitos",
+          "porQue": "No tiene el punto decimal. Sin él no se puede escribir 0.12 ni 0.3 ni 0.4, que son los números que este tema usa."
+        }
+      ],
+      "fichas": [
+        {
+          "etiqueta": "0",
+          "comoSeLee": "cero"
+        },
+        {
+          "etiqueta": "1",
+          "comoSeLee": "uno"
+        },
+        {
+          "etiqueta": "2",
+          "comoSeLee": "dos"
+        },
+        {
+          "etiqueta": "3",
+          "comoSeLee": "tres"
+        },
+        {
+          "etiqueta": "4",
+          "comoSeLee": "cuatro"
+        },
+        {
+          "etiqueta": "5",
+          "comoSeLee": "cinco"
+        },
+        {
+          "etiqueta": "6",
+          "comoSeLee": "seis"
+        },
+        {
+          "etiqueta": "7",
+          "comoSeLee": "siete"
+        },
+        {
+          "etiqueta": "8",
+          "comoSeLee": "ocho"
+        },
+        {
+          "etiqueta": ".",
+          "comoSeLee": "punto"
+        }
+      ],
+      "comoSeCompara": {
+        "ignoraMayusculas": false,
+        "ignoraAcentos": false,
+        "ignoraEspaciosDeMas": false
+      },
+      "completar": {
+        "pasoDelCanon": 5,
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "0.3 × 0.4 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "respuesta": {
+          "correcta": "0.12",
+          "enAtomos": [
+            {
+              "tipo": "texto",
+              "valor": "0.12"
+            }
+          ],
+          "comoSeLee": "cero punto uno dos",
+          "aceptaTambien": [],
+          "opciones": []
+        },
+        "pistas": [
+          {
+            "texto": "Multiplicas 3 × 4 = 12. Ahora necesitas contar cuántos decimales trae el resultado.",
+            "orden": 1
+          },
+          {
+            "texto": "En el primer número hay 1 cifra después del punto, en el segundo hay 1. Suma esas cifras.",
+            "orden": 2
+          },
+          {
+            "texto": "Salieron 2 cifras decimales en total. Coloca el punto en 12 contando 2 posiciones de derecha a izquierda.",
+            "orden": 3
+          }
+        ],
+        "siTecleaElError": {
+          "tecleado": "1.2",
+          "queSeLeDice": "Contaste un solo decimal en el resultado, pero hay dos: uno de cada número. Vuelve al paso donde sumas los decimales de los dos."
+        }
+      },
+      "escalera": [
+        {
+          "situacion": "En la escuela compran tela de 0.5 metros de ancho por 0.6 metros de largo para hacer un cartel.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "0.5 × 0.6 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es el resultado de la multiplicación?",
+          "respuesta": {
+            "correcta": "0.30",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "0.30"
+              }
+            ],
+            "comoSeLee": "cero punto tres cero",
+            "aceptaTambien": [
+              "0.3"
+            ],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Primero quita los puntos y multiplica 5 × 6.",
+              "orden": 1
+            },
+            {
+              "texto": "El primer número trae 1 decimal, el segundo trae 1. Suma esos dos.",
+              "orden": 2
+            },
+            {
+              "texto": "Dos cifras decimales en el resultado. Coloca el punto dos posiciones desde la derecha en 30.",
+              "orden": 3
+            }
+          ]
+        },
+        {
+          "situacion": "Un frasco de medicina tiene 0.2 litros y necesitas usar 0.4 de esa cantidad cada día.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "0.2 × 0.4 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es el resultado?",
+          "respuesta": {
+            "correcta": "0.08",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "0.08"
+              }
+            ],
+            "comoSeLee": "cero punto cero ocho",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Multiplica 2 × 4 sin los puntos.",
+              "orden": 1
+            },
+            {
+              "texto": "Cada número tiene 1 cifra decimal. El total es 1 + 1 = 2 cifras decimales.",
+              "orden": 2
+            },
+            {
+              "texto": "Coloca el punto en 8 contando 2 posiciones desde la derecha. Puede quedar cero adelante.",
+              "orden": 3
+            }
+          ]
+        },
+        {
+          "situacion": "Una receta pide 0.7 de una taza de harina, y necesitas hacer 0.6 veces esa cantidad.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "0.7 × 0.6 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es el resultado de la multiplicación?",
+          "respuesta": {
+            "correcta": "0.42",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "0.42"
+              }
+            ],
+            "comoSeLee": "cero punto cuatro dos",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Quita los puntos y multiplica 7 × 6.",
+              "orden": 1
+            },
+            {
+              "texto": "Cuenta las cifras después del punto en cada número y súmalas.",
+              "orden": 2
+            },
+            {
+              "texto": "Son 2 cifras decimales en total. En 42 coloca el punto dos lugares desde la derecha.",
+              "orden": 3
+            }
+          ]
+        }
+      ],
+      "noSePuede": null,
+      "titulo": "Multiplicación de decimales"
+    }
   }
 }

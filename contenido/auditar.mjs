@@ -11,6 +11,9 @@ import { readFile, readdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { ESTACIONES } from './admision.mjs';
+import { casoServible, problemasDeTeclado, traeLiteral } from './teclado.mjs';
+
 const aqui = dirname(fileURLToPath(import.meta.url));
 const dirTemas = join(aqui, 'temas');
 
@@ -20,8 +23,40 @@ if (!materia) {
   process.exit(1);
 }
 
-/** El teclado de la estación 3 y 4: dígitos y diagonal, nada más. */
+/**
+ * Lo que escribe el teclado de dígitos. Un tema ruteado a X3 trae su propio teclado
+ * y se revisa aparte (`problemasDeTeclado`): esto es sólo para las estaciones 3 y 4
+ * normales, y para saber cuándo una respuesta del caso X3 es un número.
+ */
 const TECLEABLE = /^[0-9]+(\/[0-9]+)?$/;
+
+/**
+ * Los huecos de las estaciones 3 y 4 con su respuesta y sus pistas, vengan de donde
+ * vengan. En un tema con caso X3 sirviéndose, `completar` y `escalera` son `null` y
+ * todo vive en `casosAparte['X3-teclado']`, donde la respuesta se llama `correcta`.
+ */
+function huecosDe(t) {
+  const x3 = casoServible(t);
+  const delCaso = (r) => r && { ...r, tecleado: r.correcta };
+  if (x3) {
+    return [
+      { donde: 'completar (X3)', respuesta: delCaso(x3.completar.respuesta), pistas: x3.completar.pistas },
+      ...x3.escalera.map((e, i) => ({
+        donde: `escalera escalón ${i + 1} (X3)`,
+        respuesta: delCaso(e.respuesta),
+        pistas: e.pistas,
+      })),
+    ];
+  }
+  return [
+    { donde: 'completar', respuesta: t.completar?.respuesta, pistas: t.completar?.pistas },
+    ...(t.escalera?.escalones ?? []).map((e, i) => ({
+      donde: `escalera escalón ${i + 1}`,
+      respuesta: e.respuesta,
+      pistas: e.pistas,
+    })),
+  ];
+}
 
 /**
  * Una pista que dice «cinco por uno es cinco» regala la respuesta igual que si
@@ -52,6 +87,17 @@ const REGLAS = [
       const revisar = (respuesta, pistas, donde) => {
         const r = respuesta?.tecleado;
         if (!r) return;
+        // Una respuesta que no son dígitos (una fórmula, una palabra, un decimal) se
+        // busca tal cual y como palabra suelta: no hay cifras ni números en letras.
+        if (!TECLEABLE.test(r)) {
+          if (r.length < 3) return;
+          for (const p of pistas ?? []) {
+            if (traeLiteral(p.texto ?? String(p), r)) {
+              avisos.push(`${donde}: la pista ${p.orden ?? '?'} escribe la respuesta (${r})`);
+            }
+          }
+          return;
+        }
         const cifras = [r, ...String(r).split('/')].filter((x) => x.length > 1 || Number(x) > 9);
         const letras = [r, ...String(r).split('/')]
           .map((x) => EN_LETRAS[Number(x)])
@@ -64,16 +110,19 @@ const REGLAS = [
           }
         }
       };
-      revisar(t.completar?.respuesta, t.completar?.pistas, 'completar');
-      (t.escalera?.escalones ?? []).forEach((e, i) =>
-        revisar(e.respuesta, e.pistas, `escalera escalón ${i + 1}`),
-      );
+      for (const h of huecosDe(t)) revisar(h.respuesta, h.pistas, h.donde);
       return avisos;
     },
   },
   {
     clave: 'respuesta que el teclado no escribe',
     mira: (t) => {
+      // Con el caso X3 sirviéndose, el teclado es el que el tema eligió: se comprueba
+      // con las mismas reglas que generar.mjs antes de guardar (cada respuesta se arma con
+      // las fichas, las opciones son de 2 a 4 con una sola buena, un solo hueco por renglón...).
+      const x3 = casoServible(t);
+      if (x3) return problemasDeTeclado(x3).map((p) => `X3: ${p}`);
+
       const avisos = [];
       const ver = (r, donde) => {
         if (r?.tecleado && !TECLEABLE.test(r.tecleado)) {
@@ -133,8 +182,9 @@ const REGLAS = [
       const caminar = (v, ruta) => {
         if (typeof v === 'string') {
           const m = enLinea.exec(v);
-          // Una respuesta tecleada SÍ es "12/5": eso es lo que da el teclado.
-          if (m && !/tecleado|aceptaTambien|comoSeLee|url|idDeYouTube/.test(ruta)) {
+          // Una respuesta tecleada SÍ es "12/5": eso es lo que da el teclado. Y una
+          // etiqueta de ficha u opción es texto plano que no se puede apilar.
+          if (m && !/tecleado|correcta|etiqueta|aceptaTambien|comoSeLee|url|idDeYouTube/.test(ruta)) {
             avisos.push(`${ruta}: "${m[0]}" va en línea y debería ir apilada`);
           }
           return;
@@ -144,6 +194,7 @@ const REGLAS = [
       for (const clave of ['contacto', 'completar', 'escalera', 'error', 'explicar']) {
         if (t[clave]) caminar(t[clave], clave);
       }
+      if (t.casosAparte?.['X3-teclado']) caminar(t.casosAparte['X3-teclado'], 'X3-teclado');
       return avisos;
     },
   },
@@ -196,9 +247,10 @@ let conAvisos = 0;
 let total = 0;
 for (const f of archivos) {
   const t = JSON.parse(await readFile(join(dirTemas, f), 'utf8'));
-  const hechas = ['ver', 'contacto', 'completar', 'escalera', 'error', 'explicar'].filter(
-    (c) => t[c],
-  );
+  // En un tema con X3 sirviéndose, completar y escalera son null a propósito: las
+  // sustituye el caso, y cuentan como hechas.
+  const x3 = casoServible(t);
+  const hechas = ESTACIONES.filter((c) => t[c] || (x3 && (c === 'completar' || c === 'escalera')));
   const avisos = REGLAS.flatMap((r) => r.mira(t).map((a) => `${r.clave} · ${a}`));
   total += avisos.length;
   if (avisos.length) conAvisos += 1;

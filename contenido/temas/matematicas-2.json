@@ -886,5 +886,393 @@
       ]
     },
     "noSePuede": null
+  },
+  "casosAparte": {
+    "X3-teclado": {
+      "temaNumero": 2,
+      "materia": "matematicas",
+      "teclado": "fichas",
+      "porQueEseTeclado": "La respuesta es una descomposición en factores primos con superíndices. El teclado de dígitos no tiene multiplicación ni exponentes, así que 2³ × 3² × 5 no cabe. Con fichas el estudiante produce la respuesta juntando piezas.",
+      "tecladosDescartados": [
+        {
+          "teclado": "digitos",
+          "porQue": "No tiene el signo de multiplicación ni permite escribir superíndices. La respuesta necesita × y exponentes como ³ y ²."
+        }
+      ],
+      "fichas": [
+        {
+          "etiqueta": "2",
+          "comoSeLee": "dos"
+        },
+        {
+          "etiqueta": "3",
+          "comoSeLee": "tres"
+        },
+        {
+          "etiqueta": "5",
+          "comoSeLee": "cinco"
+        },
+        {
+          "etiqueta": "7",
+          "comoSeLee": "siete"
+        },
+        {
+          "etiqueta": "×",
+          "comoSeLee": "por"
+        },
+        {
+          "etiqueta": "¹",
+          "comoSeLee": "a la uno"
+        },
+        {
+          "etiqueta": "²",
+          "comoSeLee": "a la dos"
+        },
+        {
+          "etiqueta": "³",
+          "comoSeLee": "a la tres"
+        },
+        {
+          "etiqueta": "⁴",
+          "comoSeLee": "a la cuatro"
+        },
+        {
+          "etiqueta": "⁵",
+          "comoSeLee": "a la cinco"
+        }
+      ],
+      "comoSeCompara": {
+        "ignoraMayusculas": false,
+        "ignoraAcentos": false,
+        "ignoraEspaciosDeMas": false
+      },
+      "completar": {
+        "pasoDelCanon": 4,
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "360 se descompone en"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "respuesta": {
+          "correcta": "2³×3²×5",
+          "enAtomos": [
+            {
+              "tipo": "simbolo",
+              "valor": "2",
+              "sup": "3"
+            },
+            {
+              "tipo": "texto",
+              "valor": "×"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "3",
+              "sup": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "5"
+            }
+          ],
+          "comoSeLee": "dos al cubo por tres al cuadrado por cinco",
+          "aceptaTambien": [],
+          "opciones": []
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Mira la columna que hiciste: cuenta cuántas veces aparece cada número primo en la derecha."
+          },
+          {
+            "orden": 2,
+            "texto": "Los números primos se escriben como multiplicación, agrupando los que se repiten con exponente arriba."
+          },
+          {
+            "orden": 3,
+            "texto": "El 2 aparece tres veces, el 3 aparece dos veces y el 5 aparece una sola. Los exponentes van arriba pequeño."
+          }
+        ],
+        "siTecleaElError": {
+          "tecleado": "2³×3²×5¹",
+          "queSeLeDice": "Cada primo se cuenta bien en la columna. El 5 que aparece una sola vez no lleva exponente: cuando algo aparece una vez, el exponente 1 no se escribe."
+        }
+      },
+      "escalera": [
+        {
+          "situacion": "En la tiendita venden cajas de 12 caramelos para repartir en bolsitas iguales sin que sobre nada.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "12 se descompone en"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es la descomposición en factores primos de 12?",
+          "respuesta": {
+            "correcta": "2²×3",
+            "enAtomos": [
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "3"
+              }
+            ],
+            "comoSeLee": "dos al cuadrado por tres",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Sigue los pasos: divide entre 2, luego entre 2 de nuevo, luego entre 3 hasta llegar a 1."
+            },
+            {
+              "orden": 2,
+              "texto": "12 ÷ 2 = 6, 6 ÷ 2 = 3, y 3 ÷ 3 = 1."
+            },
+            {
+              "orden": 3,
+              "texto": "El 2 aparece dos veces con exponente 2. El 3 aparece una sola vez sin exponente."
+            }
+          ]
+        },
+        {
+          "situacion": "En la escuela hay 18 estudiantes y necesitan hacer equipos iguales sin que nadie quede fuera.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "18 se descompone en"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es la descomposición en factores primos de 18?",
+          "respuesta": {
+            "correcta": "2×3²",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "3",
+                "sup": "2"
+              }
+            ],
+            "comoSeLee": "dos por tres al cuadrado",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "18 es par, así que lo divides entre 2. El resultado es impar, así que lo divides entre 3."
+            },
+            {
+              "orden": 2,
+              "texto": "18 ÷ 2 = 9, y 9 ÷ 3 = 3, y 3 ÷ 3 = 1."
+            },
+            {
+              "orden": 3,
+              "texto": "El 2 aparece una sola vez sin exponente. El 3 aparece dos veces con exponente 2."
+            }
+          ]
+        },
+        {
+          "situacion": "Un pastelero tiene 30 galletas y las quiere empacar en cajas con el mismo número de galletas cada una.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "30 se descompone en"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es la descomposición en factores primos de 30?",
+          "respuesta": {
+            "correcta": "2×3×5",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "3"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "comoSeLee": "dos por tres por cinco",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "30 es par y acaba en 0, así que empieza dividiendo entre 2. Luego prueba el 3 sumando las cifras del resultado."
+            },
+            {
+              "orden": 2,
+              "texto": "30 ÷ 2 = 15. La suma de cifras de 15 es 1 + 5 = 6, que se divide entre 3."
+            },
+            {
+              "orden": 3,
+              "texto": "15 ÷ 3 = 5, y 5 es primo. Los tres números aparecen una sola vez cada uno sin exponente."
+            }
+          ]
+        },
+        {
+          "situacion": "En una farmacia quieren repartir 60 paquetes de vendas entre varios estantes de manera equitativa.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "60 se descompone en"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es la descomposición en factores primos de 60?",
+          "respuesta": {
+            "correcta": "2²×3×5",
+            "enAtomos": [
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "3"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "comoSeLee": "dos al cuadrado por tres por cinco",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "60 es par, así que lo divides entre 2. El resultado también es par, así que lo divides entre 2 de nuevo."
+            },
+            {
+              "orden": 2,
+              "texto": "60 ÷ 2 = 30, y 30 ÷ 2 = 15. Ahora 15 es impar, prueba con 3 sumando cifras."
+            },
+            {
+              "orden": 3,
+              "texto": "15 ÷ 3 = 5, y 5 es primo. El 2 aparece dos veces con exponente 2, y el 3 y el 5 aparecen una sola vez."
+            }
+          ]
+        },
+        {
+          "situacion": "Un taller de costura tiene 120 botones y quiere hacer bolsitas con igual cantidad en cada una.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "120 se descompone en"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es la descomposición en factores primos de 120?",
+          "respuesta": {
+            "correcta": "2³×3×5",
+            "enAtomos": [
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "3"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "3"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "comoSeLee": "dos al cubo por tres por cinco",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "120 es par y termina en 0. Divide entre 2 varias veces hasta que ya no se pueda."
+            },
+            {
+              "orden": 2,
+              "texto": "120 ÷ 2 = 60, luego 60 ÷ 2 = 30, luego 30 ÷ 2 = 15. El 15 es impar, así que prueba el 3."
+            },
+            {
+              "orden": 3,
+              "texto": "15 ÷ 3 = 5, y 5 es primo. El 2 aparece tres veces con exponente 3. El 3 y el 5 aparecen una sola vez."
+            }
+          ]
+        }
+      ],
+      "noSePuede": null,
+      "titulo": "Divisores, primos y factorización"
+    }
   }
 }

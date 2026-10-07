@@ -805,5 +805,291 @@
       ]
     },
     "noSePuede": null
+  },
+  "casosAparte": {
+    "X3-teclado": {
+      "temaNumero": 11,
+      "materia": "matematicas",
+      "teclado": "fichas",
+      "porQueEseTeclado": "La respuesta es un número decimal con punto. El teclado de dígitos no trae el punto decimal, sólo 0-9 y la diagonal de fracción. Con fichas el estudiante arma el decimal él mismo, eligiendo cada dígito y el punto en el lugar correcto, y eso mide si entendió dónde va el punto, que es justo lo que el tema enseña.",
+      "tecladosDescartados": [
+        {
+          "teclado": "digitos",
+          "porQue": "No tiene el punto decimal. En el teclado de dígitos sólo hay 0-9 y la diagonal para fracciones. Sumar 12.75 + 3.5 y teclear 1625 sin punto es un error grave que sin la ficha de punto no se puede atrapar."
+        }
+      ],
+      "fichas": [
+        {
+          "etiqueta": "0",
+          "comoSeLee": "cero"
+        },
+        {
+          "etiqueta": "1",
+          "comoSeLee": "uno"
+        },
+        {
+          "etiqueta": "2",
+          "comoSeLee": "dos"
+        },
+        {
+          "etiqueta": "3",
+          "comoSeLee": "tres"
+        },
+        {
+          "etiqueta": "4",
+          "comoSeLee": "cuatro"
+        },
+        {
+          "etiqueta": "5",
+          "comoSeLee": "cinco"
+        },
+        {
+          "etiqueta": "6",
+          "comoSeLee": "seis"
+        },
+        {
+          "etiqueta": "7",
+          "comoSeLee": "siete"
+        },
+        {
+          "etiqueta": "8",
+          "comoSeLee": "ocho"
+        },
+        {
+          "etiqueta": "9",
+          "comoSeLee": "nueve"
+        },
+        {
+          "etiqueta": ".",
+          "comoSeLee": "punto"
+        }
+      ],
+      "comoSeCompara": {
+        "ignoraMayusculas": false,
+        "ignoraAcentos": false,
+        "ignoraEspaciosDeMas": false
+      },
+      "completar": {
+        "pasoDelCanon": 4,
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "12.75 + 3.50 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "respuesta": {
+          "correcta": "16.25",
+          "enAtomos": [
+            {
+              "tipo": "texto",
+              "valor": "16.25"
+            }
+          ],
+          "comoSeLee": "dieciséis punto veinticinco",
+          "aceptaTambien": [],
+          "opciones": []
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Sumaste las columnas y obtuviste cifras. Ahora coloca el punto en el lugar correcto: donde estaba en los números de arriba."
+          },
+          {
+            "orden": 2,
+            "texto": "Bajaste el punto donde corresponde en el resultado. Todos los números que sumaste llevan punto en el mismo lugar, así que tu respuesta también."
+          },
+          {
+            "orden": 3,
+            "texto": "De derecha: 5 + 0 = 5. Luego 7 + 5 = 12, escribes 2 y llevas 1. El punto va aquí. Luego 1 + 2 + 3 = 6. Finalmente 1 + 0 = 1."
+          }
+        ],
+        "siTecleaElError": {
+          "tecleado": "1625",
+          "queSeLeDice": "Sumaste bien los dígitos, pero el resultado 1625 sin punto no es lo mismo que 16.25. Cuando sumas números con punto decimal, el resultado también lleva punto en el mismo lugar."
+        }
+      },
+      "escalera": [
+        {
+          "situacion": "En la tienda compras un jugo de 2.50 pesos y un pan de 3.75 pesos.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "2.50 + 3.75 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuánto gastas en total?",
+          "respuesta": {
+            "correcta": "6.25",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "6.25"
+              }
+            ],
+            "comoSeLee": "seis punto veinticinco",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Suma columna por columna de derecha a izquierda. Luego baja el punto en tu respuesta donde estaba en los precios."
+            },
+            {
+              "orden": 2,
+              "texto": "Sumaste cifra por cifra. Ahora ubica el punto donde debe estar en tu resultado final."
+            }
+          ]
+        },
+        {
+          "situacion": "Tu hermana tiene 15.30 metros de tela y compra 4.20 metros más para una cortina.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "15.30 + 4.20 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuántos metros de tela tiene ahora?",
+          "respuesta": {
+            "correcta": "19.50",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "19.50"
+              }
+            ],
+            "comoSeLee": "diecinueve punto cincuenta",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Suma centímetro por centímetro de derecha a izquierda. Los dos números tienen dos decimales, así que tu resultado también."
+            },
+            {
+              "orden": 2,
+              "texto": "Ya sumaste todas las columnas. El punto tiene que quedar donde estaba en los números que sumaste."
+            }
+          ]
+        },
+        {
+          "situacion": "Tienes una lata que pesa 0.75 kilos y le agregas arroz que pesa 2.40 kilos.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "0.75 + 2.40 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuánto pesa la lata con arroz?",
+          "respuesta": {
+            "correcta": "3.15",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "3.15"
+              }
+            ],
+            "comoSeLee": "tres punto quince",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Aunque el primer número empieza en cero, lo tratas igual: alinea por el punto y suma cada columna."
+            },
+            {
+              "orden": 2,
+              "texto": "Cuando sumas 5 + 0 de la derecha, y luego 7 + 4, suma bien y coloca el punto en su lugar."
+            }
+          ]
+        },
+        {
+          "situacion": "Un cable mide 25.80 metros y otro mide 12.35 metros. Necesitas saber cuánto miden juntos.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "25.80 + 12.35 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuánto miden los dos cables juntos?",
+          "respuesta": {
+            "correcta": "38.15",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "38.15"
+              }
+            ],
+            "comoSeLee": "treinta y ocho punto quince",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Números más grandes, pero el proceso es el mismo. Alinea por el punto y suma de derecha a izquierda."
+            },
+            {
+              "orden": 2,
+              "texto": "Sumaste bien todas las columnas. Verifica que el punto esté en el lugar correcto de tu respuesta."
+            }
+          ]
+        },
+        {
+          "situacion": "Tu mamá tenía 30.00 pesos y gastó 15.75 pesos en comida. Necesita saber cuánto le queda.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "30.00 − 15.75 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuánto dinero le queda?",
+          "respuesta": {
+            "correcta": "14.25",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "14.25"
+              }
+            ],
+            "comoSeLee": "catorce punto veinticinco",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Ahora restas. Alinea igual que en la suma, por el punto, y resta columna por columna de derecha a izquierda."
+            },
+            {
+              "orden": 2,
+              "texto": "Restaste cifra por cifra. Coloca el punto en tu respuesta donde debe ir según los números de arriba."
+            }
+          ]
+        }
+      ],
+      "noSePuede": null,
+      "titulo": "Suma y resta de decimales"
+    }
   }
 }
