@@ -28,10 +28,12 @@ import matematicas_18 from '../../contenido/temas/matematicas-18.json';
 import biologia_2 from '../../contenido/temas/biologia-2.json';
 import biologia_3 from '../../contenido/temas/biologia-3.json';
 import biologia_7 from '../../contenido/temas/biologia-7.json';
+import biologia_9 from '../../contenido/temas/biologia-9.json';
 import biologia_10 from '../../contenido/temas/biologia-10.json';
 import biologia_11 from '../../contenido/temas/biologia-11.json';
 import biologia_12 from '../../contenido/temas/biologia-12.json';
 import biologia_13 from '../../contenido/temas/biologia-13.json';
+import biologia_15 from '../../contenido/temas/biologia-15.json';
 import biologia_24 from '../../contenido/temas/biologia-24.json';
 import biologia_26 from '../../contenido/temas/biologia-26.json';
 import biologia_33 from '../../contenido/temas/biologia-33.json';
@@ -97,10 +99,12 @@ export const CATALOGO: Partial<Record<Materia, MateriaDelCatalogo>> = {
       biologia_2 as unknown as TemaRedactado,
       biologia_3 as unknown as TemaRedactado,
       biologia_7 as unknown as TemaRedactado,
+      biologia_9 as unknown as TemaRedactado,
       biologia_10 as unknown as TemaRedactado,
       biologia_11 as unknown as TemaRedactado,
       biologia_12 as unknown as TemaRedactado,
       biologia_13 as unknown as TemaRedactado,
+      biologia_15 as unknown as TemaRedactado,
       biologia_24 as unknown as TemaRedactado,
       biologia_26 as unknown as TemaRedactado,
       biologia_33 as unknown as TemaRedactado,

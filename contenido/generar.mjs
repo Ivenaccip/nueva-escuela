@@ -563,8 +563,9 @@ async function llamarConReintentos(opciones) {
 // ---------------------------------------------------------------------------
 
 /**
- * Un renglón que llegó como cadena en vez de arreglo. Haiku lo hace seguido: el
- * arreglo es correcto, pero serializado, con sus comillas escapadas adentro. Se
+ * Un renglón (o un objeto entero, como el `completar` o la `escalera` de X3) que
+ * llegó como cadena en vez de arreglo u objeto. Haiku lo hace seguido: el
+ * valor es correcto, pero serializado, con sus comillas escapadas adentro. Se
  * repara en vez de tirar la llamada, porque un reintento cuesta lo mismo que la
  * llamada entera y lo que devolvería es esto mismo.
  *
@@ -578,17 +579,21 @@ function repararArreglosSerializados(valor, ruta = '') {
   }
   if (!valor || typeof valor !== 'object') return valor;
   for (const [clave, v] of Object.entries(valor)) {
-    if (typeof v === 'string' && v.trimStart().startsWith('[') && v.trimEnd().endsWith(']')) {
+    const t = typeof v === 'string' ? v.trim() : '';
+    const pareceJson = (t.startsWith('[') && t.endsWith(']')) || (t.startsWith('{') && t.endsWith('}'));
+    if (pareceJson) {
       try {
-        const abierto = JSON.parse(v);
-        if (Array.isArray(abierto)) {
+        const abierto = JSON.parse(t);
+        if (abierto && typeof abierto === 'object') {
           valor[clave] = abierto;
-          console.error(`      reparado: ${ruta}/${clave} venía como cadena, era un arreglo`);
+          console.error(
+            `      reparado: ${ruta}/${clave} venía como cadena, era ${Array.isArray(abierto) ? 'un arreglo' : 'un objeto'}`,
+          );
           repararArreglosSerializados(abierto, `${ruta}/${clave}`);
           continue;
         }
       } catch {
-        // No era JSON: es texto que de casualidad empieza con corchete. Se deja.
+        // No era JSON: es texto que de casualidad empieza con corchete o llave. Se deja.
       }
     }
     repararArreglosSerializados(v, `${ruta}/${clave}`);
@@ -836,10 +841,28 @@ function comprobarIndices(paso, salida) {
  *   que copió la forma de antes los trae por costumbre y el esquema los rechazaría,
  *   así que se quitan en vez de gastar una corrección en ellos.
  */
+/**
+ * Corta un texto de bitácora al tope, en el último espacio, sin dejar una palabra a medias.
+ * Sólo se usa con campos que nadie pinta (`porQueEseTeclado`, el `porQue` de los teclados
+ * descartados): pasarse por unos caracteres de explicación no vale una llamada entera.
+ */
+function recortarBitacora(texto, tope) {
+  if (typeof texto !== 'string' || texto.length <= tope) return texto;
+  const corte = texto.slice(0, tope - 1);
+  const ultimoEspacio = corte.lastIndexOf(' ');
+  return (ultimoEspacio > tope * 0.6 ? corte.slice(0, ultimoEspacio) : corte).trimEnd() + '…';
+}
+
 function sellarTeclado(paso, salida) {
   if (paso.clave !== CLAVE_X3 || !salida || typeof salida !== 'object') return;
   delete salida.faltaCodigo;
   delete salida.planB;
+  salida.porQueEseTeclado = recortarBitacora(salida.porQueEseTeclado, 400);
+  if (Array.isArray(salida.tecladosDescartados)) {
+    for (const d of salida.tecladosDescartados) {
+      if (d && typeof d === 'object') d.porQue = recortarBitacora(d.porQue, 300);
+    }
+  }
 
   if (salida.teclado !== 'texto') {
     salida.comoSeCompara = {

@@ -866,5 +866,270 @@
       ]
     },
     "noSePuede": null
+  },
+  "casosAparte": {
+    "X3-teclado": {
+      "temaNumero": 9,
+      "materia": "biologia",
+      "teclado": "opciones",
+      "porQueEseTeclado": "La respuesta es un término que el estudiante tiene que reconocer entre cuatro para saber dónde va la masa de la planta. El teclado de dígitos sólo escribe números y fracciones, así que no lleva letras. Con `fichas` se armaría letra por letra y sería poco eficiente; con `opciones` el estudiante ve las cuatro posibilidades y elige la correcta, lo que mide si distingue de verdad la creencia falsa…",
+      "tecladosDescartados": [
+        {
+          "teclado": "digitos",
+          "porQue": "No tiene letras. La respuesta es un término que comienza con una palabra, y sin letras el hueco no puede recibir nada."
+        }
+      ],
+      "fichas": [],
+      "comoSeCompara": {
+        "ignoraMayusculas": false,
+        "ignoraAcentos": false,
+        "ignoraEspaciosDeMas": false
+      },
+      "completar": {
+        "pasoDelCanon": 5,
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "La madera viene del"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "respuesta": {
+          "correcta": "aire",
+          "enAtomos": [
+            {
+              "tipo": "texto",
+              "valor": "aire"
+            }
+          ],
+          "comoSeLee": "aire",
+          "aceptaTambien": [],
+          "opciones": [
+            {
+              "etiqueta": "aire",
+              "esCorrecta": true,
+              "queRevela": "El carbono es pesado: casi toda la madera que gana la planta viene del bióxido de carbono que entra por la hoja, no del agua de la raíz."
+            },
+            {
+              "etiqueta": "suelo",
+              "esCorrecta": false,
+              "queRevela": "Crees que todo lo que la planta gana entra por la raíz porque es lo único que toca el tierra. Pero la raíz sólo trae agua: la mayoría de la masa viene del bióxido de carbono del aire."
+            },
+            {
+              "etiqueta": "agua",
+              "esCorrecta": false,
+              "queRevela": "Es verdad que por la raíz entra agua, pero el agua es muy ligera. Lo pesado de la planta, casi todo, es carbono que vino del bióxido de carbono del aire."
+            },
+            {
+              "etiqueta": "sol",
+              "esCorrecta": false,
+              "queRevela": "El sol trae la energía, pero no es materia. La energía no pesa: lo que pesa es el carbono del aire que la luz le permitió trabajar."
+            }
+          ]
+        },
+        "pistas": [
+          {
+            "texto": "Piensa dónde entra cada cosa: bióxido de carbono por la hoja, agua por la raíz. Mira cuál de las dos es más pesado y cuál pesa menos.",
+            "orden": 1
+          },
+          {
+            "texto": "Acabas de ver que casi toda la masa entra por la hoja en forma de bióxido de carbono. Eso sale de donde entra.",
+            "orden": 2
+          },
+          {
+            "texto": "El agua que entra por la raíz es ligera: mide poco. El carbono que forma la madera es pesado, y todo ese peso entra por un solo lado.",
+            "orden": 3
+          }
+        ]
+      },
+      "escalera": [
+        {
+          "situacion": "Un árbol crece en una maceta pequeña durante un año. Las raíces tocan las paredes de la maceta, pero el suelo casi no cambia de peso mientras que el árbol gana muchos kilos.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "Si toda la masa viniera del suelo, el suelo"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Qué tendría que pasar si el suelo fuera la fuente de casi toda la madera?",
+          "respuesta": {
+            "correcta": "pesaría menos",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "pesaría menos"
+              }
+            ],
+            "comoSeLee": "pesaría menos",
+            "aceptaTambien": [
+              "pesaria menos"
+            ],
+            "opciones": [
+              {
+                "etiqueta": "pesaría menos",
+                "esCorrecta": true,
+                "queRevela": "Exacto: si el árbol gana 100 kilos y todo eso viniera del suelo, el suelo perdería 100 kilos. Pero el suelo casi no baja de peso."
+              },
+              {
+                "etiqueta": "cambiaría de color",
+                "esCorrecta": false,
+                "queRevela": "El color del suelo no prueba nada sobre dónde viene la masa del árbol. Fíjate en lo que pesa: ¿qué pierde peso cuando el árbol gana?"
+              },
+              {
+                "etiqueta": "se secaría",
+                "esCorrecta": false,
+                "queRevela": "El suelo se seca si no le das agua, pero eso pasa aunque el árbol no esté. El signo seguro de que el suelo es la fuente es que pierda PESO."
+              },
+              {
+                "etiqueta": "crecería",
+                "esCorrecta": false,
+                "queRevela": "Es lo opuesto: si el suelo alimentara el árbol, el suelo encogería. Pero en los árboles viejos, el suelo de alrededor no desaparece."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "texto": "El árbol gana masa. Si esa masa viniera del suelo, ¿qué le pasaría al suelo?",
+              "orden": 1
+            },
+            {
+              "texto": "Piensa en la masa como si fuera materia que se mueve: si todo pasa del suelo al árbol, uno gana y otro pierde.",
+              "orden": 2
+            },
+            {
+              "texto": "El árbol gana muchos kilos en un año. Si esos kilos salieron del suelo, el suelo quedaba casi sin tierra al año siguiente. Pero eso no pasa.",
+              "orden": 3
+            }
+          ]
+        },
+        {
+          "situacion": "Un investigador pesó un árbol pequeño al nacer: pesaba 1 kilo. Pesó el árbol a los 10 años: pesaba 50 kilos. Pesó el suelo de la maceta: había ganado 2 kilos.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "El árbol ganó 49 kilos. El suelo ganó 2. Entonces, casi los 49 kilos vinieron del"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿De dónde salió casi toda la masa que el árbol ganó?",
+          "respuesta": {
+            "correcta": "aire",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "aire"
+              }
+            ],
+            "comoSeLee": "aire",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "aire",
+                "esCorrecta": true,
+                "queRevela": "Ese es el número que prueba todo: si el suelo sólo dio 2 kilos y el árbol ganó 49, los otros 47 kilos tuvieron que venir del aire que la planta respira."
+              },
+              {
+                "etiqueta": "suelo",
+                "esCorrecta": false,
+                "queRevela": "El suelo ganó 2 kilos. ¿De dónde saldrían los otros 47 kilos que el árbol ganó? Tiene que ser de otro lado."
+              },
+              {
+                "etiqueta": "agua",
+                "esCorrecta": false,
+                "queRevela": "El agua es parte de lo que entra, pero es muy ligera. Si pesaras el agua que entra por la raíz, no te explicaría casi ninguno de esos 49 kilos."
+              },
+              {
+                "etiqueta": "luz del sol",
+                "esCorrecta": false,
+                "queRevela": "La luz es energía, no materia. No pesa. Lo que pesa es lo que entra: el bióxido de carbono del aire y el agua de la raíz."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "texto": "Suma: el árbol ganó 50 − 1 = 49 kilos. El suelo sólo contribuyó 2. Falta encontrar dónde están los otros 47 kilos.",
+              "orden": 1
+            },
+            {
+              "texto": "Las dos entradas son por la raíz (agua y nutrientes del suelo) y por la hoja (bióxido de carbono del aire). El suelo aportó 2. ¿Cuál lado aporta el resto?",
+              "orden": 2
+            },
+            {
+              "texto": "49 − 2 = 47 kilos que no vinieron del suelo. La luz no tiene masa y el agua de la raíz es muy ligera: descarta esas tres opciones y elige la que queda.",
+              "orden": 3
+            }
+          ]
+        },
+        {
+          "situacion": "La fotosíntesis se escribe CO₂ + H₂O → C₆H₁₂O₆ + O₂. Cuenta los átomos de cada lado: entran carbono por la hoja (en el CO₂) e hidrógeno y oxígeno por la raíz (en el H₂O). Salen carbono en la azúcar y oxígeno para respirar.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "El carbono de la azúcar C₆H₁₂O₆ tiene que venir del"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿De dónde viene el carbono que ve en la azúcar?",
+          "respuesta": {
+            "correcta": "aire",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "aire"
+              }
+            ],
+            "comoSeLee": "aire",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "aire",
+                "esCorrecta": true,
+                "queRevela": "En la ecuación está claro: el carbono entra por el CO₂ (que viene del aire por la hoja) y sale en la azúcar. El agua de la raíz no trae carbono: sólo hidrógeno y oxígeno."
+              },
+              {
+                "etiqueta": "agua",
+                "esCorrecta": false,
+                "queRevela": "El agua es H₂O: hidrógeno y oxígeno. No tiene carbono. Mira la ecuación: ¿de dónde entra el carbono si no es del CO₂?"
+              },
+              {
+                "etiqueta": "suelo",
+                "esCorrecta": false,
+                "queRevela": "El suelo trae nutrientes por la raíz, que lleva agua. Pero la ecuación muestra que entra agua (H₂O), no tierra. El carbono viene en otra cosa."
+              },
+              {
+                "etiqueta": "luz",
+                "esCorrecta": false,
+                "queRevela": "La luz es la energía que hace funcionar la máquina. Pero energía no es materia. El carbono que construye la azúcar es materia que entra por el aire."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "texto": "Mira la ecuación. A la izquierda, ¿dónde aparece carbono? Aparece en el CO₂. A la derecha aparece en la azúcar. Sigue la ruta del carbono.",
+              "orden": 1
+            },
+            {
+              "texto": "El CO₂ entra por la hoja porque viene del aire. El agua entra por la raíz. ¿Cuál de estas dos cosas lleva carbono?",
+              "orden": 2
+            },
+            {
+              "texto": "Agua = H₂O: dos átomos de hidrógeno, uno de oxígeno y cero de carbono. La luz es energía, no átomos, y la ecuación no trae tierra. Descarta esas tres y elige la que queda.",
+              "orden": 3
+            }
+          ]
+        }
+      ],
+      "noSePuede": null,
+      "titulo": "Fotosíntesis: comer del aire"
+    }
   }
 }

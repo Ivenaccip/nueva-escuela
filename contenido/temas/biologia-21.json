@@ -162,10 +162,529 @@
     },
     "noSePuede": null
   },
-  "ver": null,
-  "contacto": null,
+  "ver": {
+    "temaNumero": 21,
+    "materia": "biologia",
+    "pregunta": "¿Qué está adentro de qué: el gen dentro del cromosoma o al revés?",
+    "resumen": "Todo lo que es vida cabe dentro de cajas cada vez más chicas. La más grande es la célula, y si abres todas las cajas hasta el fondo, la receta está escrita en ADN, que es lo más pequeño.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué el ADN es lo más pequeño y está dentro del gen, el gen dentro del cromosoma, el cromosoma dentro del núcleo, y el núcleo dentro de la célula. No nada más el orden de tamaños.",
+        "Es del nivel de primero de secundaria. Muestra cómo están empaquetadas las estructuras una dentro de otra, no detalles de la molécula de ADN ni genética compleja.",
+        "Español de México o de América Latina. Usa palabras como receta, cromosomas, núcleo, gen con claridad.",
+        "Llega rápido al punto: muestra dónde está la receta en menos de dos minutos, sin intro larga del canal.",
+        "Corrige el error de creer que el ADN está suelto en la sangre o que es lo más grande: deja claro que es lo más pequeño y que está metido dentro de otras estructuras."
+      ],
+      "descarta": [
+        "Invierte el orden: dice que el ADN es lo más grande o que el cromosoma está dentro del gen.",
+        "Trata el ADN como una sustancia aparte que anda en el cuerpo, no como un pedazo que está dentro del cromosoma.",
+        "Es un video de química sobre moléculas y la estructura de bases del ADN, no de dónde está guardada la receta en la célula.",
+        "Es un examen resuelto de otro nivel o un video para niños muy chicos que no explica la jerarquía de contención."
+      ],
+      "consulta": "video explicación \"ADN, gen y cromosoma\" biología 1º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "seWJOJ5SESw",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único de la lista que explica el por qué: muestra por qué la receta está guardada así, en cajas anidadas, y corrige la idea de que el ADN está suelto. Viene de SM México, canal con muchos videos para este nivel.",
+      "url": "https://www.youtube.com/watch?v=seWJOJ5SESw",
+      "titulo": "1º Secundaria | Biología - La herencia: ADN, genes y cromosomas (Parte 1)",
+      "canal": "SM México",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "wlE2n-iebrA",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo video de SM México sobre el mismo tema. Es respaldo en caso de que el primero se caiga. Igual de bueno pero es la segunda parte, así que el primero llega al punto antes.",
+        "url": "https://www.youtube.com/watch?v=wlE2n-iebrA",
+        "titulo": "1º Secundaria |  Biología - La herencia, ADN, genes y cromosomas (Parte 2)",
+        "canal": "SM México",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "zGHBSJ1NhKw",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Tercer respaldo. Explica qué es el ADN, los genes y cromosomas, y cómo están guardados. Peor que los dos primeros porque el título lleva emoji y la presentación es más larga, pero salva si los otros dos se caen.",
+        "url": "https://www.youtube.com/watch?v=zGHBSJ1NhKw",
+        "titulo": "¿QUÉ ES EL ADN? Los GENES & CROMOSOMAS 🧬🔬",
+        "canal": "¡Biología Aplicada! 🧬",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "La URL y el título del elegido salieron de la lista que se verificó. SM México es un canal escolar con muchos videos para primaria y secundaria, explica el por qué de la estructura de contención, y el español es de México. Los dos respaldos también están en la lista y explican el tema.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 21,
+    "materia": "biologia",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Dónde está guardada la receta de la célula?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En el núcleo"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Localizaste que la receta principal está protegida dentro de una bolsa especial dentro de la célula.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En la sangre"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás pensando que el ADN anda suelto en la sangre como si fuera un líquido aparte. El ADN está dentro de las células, no flotando en la sangre.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En todo el cuerpo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Crees que la receta se dispersa por todo el cuerpo. En realidad, cada célula guarda su propia copia completa, bien guardada en el núcleo.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En las proteínas"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás confundiendo lo que la receta instruye con el lugar donde vive. Las proteínas son el resultado de seguir la receta, no su depósito.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué contiene el núcleo?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "46 cromosomas"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Abriste el núcleo y contaste los capítulos de la receta: 46 paquetes.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "23 cromosomas"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste solo la mitad. Los 46 cromosomas vienen en 23 parejas: 23 de mamá y 23 de papá.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Genes sueltos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás saltando un paso. Los genes no flotan dentro del núcleo: están empaquetados primero en cromosomas, y después esos cromosomas se guardan.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Proteínas"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Confundiste qué guarda el núcleo. Ahí vive la receta, no lo que la receta produce.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Un cromosoma es un capítulo de la receta. ¿Cuántos capítulos tienes?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "23"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste solo los que vinieron de uno de tus papás. Tienes dos de cada cromosoma: uno de tu mamá y otro de tu papá, así que 23 pares son 46.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "46"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste bien los 46 cromosomas, que son 23 parejas: los que heredaste de mamá y los de papá.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Dos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Confundiste la pareja con toda la colección. Tienes dos de cada tipo de cromosoma, pero existen 23 tipos distintos.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Mil"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los cromosomas no llegan ni cerca a esa cifra. Son 46 en total, visibles al microscopio cuando la célula se divide.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Abres un cromosoma y encuentras pedazos. ¿Cuál es el pedazo que realmente instruye?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "El cromosoma"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Retrocediste un paso. El cromosoma es todo el capítulo, pero no todas sus partes ordenan algo. El gen es el párrafo específico que sí instruye.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "El gen"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Hallaste el pedazo que importa: cada gen dice cómo hacer una proteína o cómo heredar un rasgo.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "La proteína"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás leyendo el resultado en vez de la orden. La proteína es lo que se hace siguiendo la instrucción del gen, no la instrucción misma.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "El ARN"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Confundiste lo que trae el recado. El ARN es un mensajero que lleva la instrucción del gen, pero quien ordena es el gen, no el mensajero.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Ordena de lo grande a lo chico: célula, núcleo, cromosoma, gen, ADN"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "ADN → gen → cromosoma → núcleo → célula"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Invertiste todo. Crees que el ADN es lo más grande porque lo ves mencionado aparte en la sangre. Pero el ADN es lo más pequeño: es la molécula adentro de todo.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Célula → cromosoma → gen → núcleo → ADN"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Saltaste el núcleo al principio. La célula contiene el núcleo primero, y dentro del núcleo están los cromosomas después.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Célula → núcleo → cromosoma → gen → ADN"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Ordenaste bien la cadena completa. Cada cosa está metida dentro de la anterior, como cajas que se abren.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Núcleo → célula → cromosoma → gen → ADN"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Pusiste el núcleo antes de la célula. El núcleo es una bolsa dentro de la célula, no al revés. La célula es lo único que existe por su cuenta.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
   "completar": null,
   "escalera": null,
-  "error": null,
-  "explicar": null
+  "error": {
+    "temaNumero": 21,
+    "materia": "biologia",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien ordenó de lo grande a lo chico: ADN, gen, cromosoma, núcleo, célula. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Inicio con lo más grande: La receta está en el núcleo"
+          }
+        ],
+        "siLoTocas": "Ese paso identifica que la célula es la bolsa más grande, pero ahí dice que la receta está en el núcleo. Ese paso parte bien la búsqueda."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Abro el núcleo: Dentro está el cromosoma. El núcleo contiene 46 cromosomas"
+          }
+        ],
+        "siLoTocas": "Ese paso dice bien que el núcleo guarda los cromosomas y cuenta cuántos hay. Los números vienen de lo que aprendiste sobre tu genética."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Abro un cromosoma: Dentro está el gen. El cromosoma contiene genes"
+          }
+        ],
+        "siLoTocas": "Ese paso abre el cromosoma y busca sus pedazos. La relación de contención está bien: un cromosoma sí contiene genes."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Abro un gen: Dentro está el ADN. El gen es una secuencia de ADN"
+          }
+        ],
+        "siLoTocas": "La cuenta está bien: un gen es un pedazo de ADN, así que le llegó el número correcto del paso anterior."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "El ADN es lo más grande. Dentro del ADN está el gen. Dentro del gen está el cromosoma."
+          }
+        ],
+        "siLoTocas": "Ahí está el error. Ese renglón es el que cambia todo el orden que venía bien."
+      }
+    ],
+    "pasoMalo": 5,
+    "arrastre": "No hay pasos después del paso 5, así que el error no se arrastra a los siguientes. La señal que lo delata es que invierte todo: dice que el ADN es lo más grande cuando debería ser lo más pequeño, metido dentro de las otras cosas, no conteniendo a todas.",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Invirtió el orden: puso el ADN de afuera en vez de adentro.",
+        "esElBueno": true,
+        "queRevela": "Es exactamente lo que pasó. El ADN es la molécula más pequeña, el última caja dentro de todas las otras. Si el ADN fuera lo más grande, estaría al inicio del orden, no al final. Pero en los pasos 1 a 4, el orden correcto va cellula → núcleo → cromosoma → gen, y el gen está hecho de ADN. Invertir todo rompe esa cadena."
+      },
+      {
+        "texto": "Confundió ADN con célula.",
+        "esElBueno": false,
+        "queRevela": "Quien escoge esto cree que el ADN es una sustancia suelta que anda por el cuerpo o la sangre, como algo independiente. Pero los primeros cuatro pasos ya establecieron que la célula es la bolsa que contiene todo lo demás. El ADN no es lo que vive solo; es lo más pequeño dentro de las cajas."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Los cuatro primeros pasos van de lo grande a lo chico, formando una cadena de cajas: uno contiene el siguiente. El último paso rompe esa cadena."
+      },
+      {
+        "orden": 2,
+        "texto": "Recuerda que el ADN es una molécula, la más pequeña de todas. En un orden de lo grande a lo chico, ¿dónde está lo más pequeño?"
+      },
+      {
+        "orden": 3,
+        "texto": "Compara el renglón malo con los cuatro anteriores. Los primeros dicen quién contiene a quién. El último dice lo opuesto."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 21,
+    "materia": "biologia",
+    "titulo": "Explícame por qué el ADN está adentro de todo lo demás, no afuera.",
+    "aclaracion": "Con tus palabras. No escribas los nombres o la lista de lo grande a lo chico. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El ADN es una molécula pequeña que está dentro de un gen, y el gen está dentro de un cromosoma, como cajas que se abren una adentro de otra.",
+          "porQueImporta": "Sin esta idea, el ADN parece algo suelto que anda por el cuerpo. Con ella, queda claro que todo lo que existe está metido adentro de algo más grande.",
+          "comoSuenaDicha": "El ADN está guardado en el gen, el gen en el cromosoma, y así va.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "La célula es lo único que funciona solo; todo lo demás necesita estar dentro de otra cosa para existir.",
+          "porQueImporta": "Es lo que impide invertir el orden. Si dices que el ADN es lo más grande, tendría que funcionar solo, pero no funciona: necesita estar dentro del gen.",
+          "comoSuenaDicha": "La célula es la que existe por su cuenta, todo lo demás está guardado dentro.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Cada uno hace un trabajo más pequeño que el anterior: la célula hace todo, el núcleo guarda casi todo, un cromosoma es un capítulo, un gen es un párrafo, el ADN es las letras.",
+          "porQueImporta": "Explica por qué el orden no puede ser al revés. Las letras no pueden ser el contenedor de un párrafo; el párrafo no puede contener un capítulo.",
+          "comoSuenaDicha": "De lo grande a lo chico: célula, núcleo, cromosoma, gen, ADN. Cada uno es más pequeño que el anterior.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque el ADN está en el núcleo de la célula, guardado adentro.",
+          "queLaDelata": "Dice dónde está, pero no explica por qué está ahí en vez de afuera. No dice nada sobre lo que lo contiene ni sobre el orden de las cosas.",
+          "queLeFalta": "Que diga que el ADN está dentro del gen, el gen dentro del cromosoma, no solo dentro del núcleo."
+        },
+        {
+          "respuesta": "Porque el ADN es la molécula más pequeña y forma los genes, que forman los cromosomas.",
+          "queLaDelata": "Nombra el orden pero no explica por qué es así. Simplemente lista las cosas sin decir qué significa que una contenga a la otra.",
+          "queLeFalta": "Que diga que las más pequeñas están metidas dentro de las más grandes, como si desempacaras cajas."
+        },
+        {
+          "respuesta": "Porque leí que el ADN está en los cromosomas y los cromosomas en el núcleo.",
+          "queLaDelata": "Es lo que memorizó, no lo que entiende. Puede recitar dónde está cada cosa sin poder decir por qué el orden no puede ser al revés.",
+          "queLeFalta": "Que diga qué sería diferente si el ADN fuera lo más grande: no funcionaría porque nada lo contendría."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "El ADN está en la sangre y por eso anda suelto en el cuerpo.",
+          "seLeContesta": "El ADN no anda suelto en la sangre. Lo que anda en la sangre son células con núcleos adentro, y los núcleos contienen cromosomas con ADN dentro. El ADN no sale de las células; está guardado dentro de capas y capas de contenedores.",
+          "aDondeLoEmpuja": "A la idea de que todo está metido dentro de otra cosa, como cajas que se abren una dentro de otra."
+        },
+        {
+          "siDice": "El cromosoma contiene al gen y el gen contiene al ADN, ¿no es al revés de lo que dices?",
+          "seLeContesta": "No, eso está bien: un cromosoma contiene muchos genes, y cada gen es un pedazo de ADN. El cromosoma es el todo, el gen es una parte, el ADN es la molécula de la que está hecho todo. El orden de lo que contiene a qué va así: cromosoma arriba, gene abajo.",
+          "aDondeLoEmpuja": "A que cada uno es más pequeño que el anterior, porque forma parte de él."
+        },
+        {
+          "siDice": "Sí entendí, pero no sé cómo explicarlo.",
+          "seLeContesta": "Entonces contesta una sola cosa: si el ADN es la cosa más chiquita, ¿puede estar afuera sin que nada lo contenga? Si el ADN estuviera suelto, ¿estaría vivo?",
+          "aDondeLoEmpuja": "A ver que la idea la tiene: algo tan pequeño no puede existir solo, necesita estar dentro."
+        }
+      ],
+      "ejemploQueSiCuenta": "El ADN es lo más pequeño de todo, las letras de la receta. Esas letras están dentro de un gen, que es un párrafo de la receta. El gen está dentro de un cromosoma, que es un capítulo entero. Y el cromosoma está dentro del núcleo, que es una bóveda en la célula. Todo está metido adentro de otra cosa, como cajas dentro de cajas.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba en minúsculas.",
+        "Que no use las palabras célula, núcleo, cromosoma, gen ni ADN: si dice lo pequeño, lo grande, lo que está adentro, ya está explicado.",
+        "Que no escriba números ni haga listas."
+      ]
+    },
+    "noSePuede": null
+  }
 }
