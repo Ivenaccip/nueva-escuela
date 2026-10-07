@@ -25,47 +25,47 @@
         },
         {
           "numero": 2,
-          "queSeHace": "Determines dónde vivía ese agente antes de enfermarte: en agua, tierra, otro cuerpo, o en alguien que no tiene síntomas.",
+          "queSeHace": "Determinas dónde vivía ese agente antes de enfermarte: en un charco o pozo, en la tierra, en otro cuerpo, o en alguien que no tiene síntomas.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Fuente: agua sin hervir"
+              "valor": "Fuente: charco o pozo con la bacteria"
             }
           ],
           "porQue": "El agente no llega solo: viene de un lugar. Alguien sin síntomas también puede contagiar, así que la fuente no siempre es una persona enferma."
         },
         {
           "numero": 3,
-          "queSeHace": "Identificas por qué vía viajó el agente: aire que respiras, saliva, contacto con piel, agua, sangre.",
+          "queSeHace": "Identificas por qué camino viajó el agente: aire que respiras, saliva, contacto con piel, agua que bebes, sangre.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Vía: boca"
+              "valor": "Vía: agua que se bebe"
             }
           ],
-          "porQue": "Cada agente entra por una puerta distinta. La bacteria de disentería entra por la boca, pero la tuberculosis viaja por aire. La vía determina dónde cortar."
+          "porQue": "Cada agente viaja por un camino distinto. La bacteria de la disentería viaja en el agua que se bebe; la tuberculosis, por el aire. La vía determina dónde cortar."
         },
         {
           "numero": 4,
-          "queSeHace": "Identifies la parte del cuerpo donde entra el agente y empieza a multiplicarse.",
+          "queSeHace": "Identificas la parte del cuerpo por donde entra el agente y dónde empieza a multiplicarse.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Puerta de entrada: intestino"
+              "valor": "Puerta de entrada: boca (se multiplica en el intestino)"
             }
           ],
-          "porQue": "Adentro del cuerpo, el agente baja hacia donde daña. En el intestino ataca el recubrimiento y causa diarrea. Saber dónde entra te dice qué síntomas mirar primero."
+          "porQue": "La bacteria entra por la boca y baja al intestino, donde se multiplica y causa diarrea. Saber por dónde entra te dice qué síntomas mirar primero."
         },
         {
           "numero": 5,
-          "queSeHace": "Eligues cuál eslabón de la cadena puedes cortar: eliminar la fuente, bloquear la vía, o impedir que entre.",
+          "queSeHace": "Eliges cuál eslabón de la cadena puedes cortar: eliminar la fuente, bloquear la vía (como hervir el agua que se bebe), o impedir que entre.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Cortar: hervir el agua"
+              "valor": "Cortar: hervir el agua que se bebe"
             }
           ],
-          "porQue": "La cadena tiene cinco eslabones. Si cada uno se ve, sabes cuál es más fácil de romper: hervir agua es posible, aislar toda el agua no. Cortar es actuar donde puedes."
+          "porQue": "La cadena tiene tres eslabones que se pueden cortar: la fuente, la vía y la puerta de entrada. Si los ves todos, eliges el más fácil de romper: hervir el agua que bebes en tu casa (la vía) es posible; limpiar todos los ríos (la fuente) no. Cortar es actuar donde puedes."
         }
       ]
     },
@@ -74,34 +74,34 @@
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "agua sin hervir → boca → intestino"
+          "valor": "charco con la bacteria → agua que se bebe → boca → intestino"
         }
       ],
       "resultado": [
         {
           "tipo": "texto",
-          "valor": "Se corta hirviendo el agua"
+          "valor": "Se corta hirviendo el agua que se bebe"
         }
       ],
-      "resultadoEnPalabras": "se corta hirviendo el agua"
+      "resultadoEnPalabras": "se corta hirviendo el agua que se bebe"
     },
     "error": {
-      "enUnaFrase": "Confunde la causa con la circunstancia y cree que quien no tiene síntomas no contagia.",
-      "creenciaDeAtras": "Piensa que la enfermedad viene de un comportamiento riesgoso (mojarse, salir sin suéter) y no de un agente que entra al cuerpo. También piensa que el contagio sólo viaja de quien se ve enfermo.",
-      "pasoQueCorrompe": 2,
+      "enUnaFrase": "Confunde la causa de la enfermedad con una circunstancia riesgosa.",
+      "creenciaDeAtras": "Piensa que la enfermedad viene de una circunstancia o un comportamiento riesgoso (mojarse, salir sin suéter, comer en la calle, el calor) y no de un agente que entra al cuerpo.",
+      "pasoQueCorrompe": 1,
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "Fuente: salir sin suéter y mojarse"
+          "valor": "Causa: comer en la calle y el calor"
         }
       ],
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "No se corta porque el problema es el comportamiento"
+          "valor": "Cortar: no comer en la calle"
         }
       ],
-      "comoSeCacha": "La disentería no viene de un suéter o de mojarse. Esas circunstancias pueden bajar las defensas, pero el agente que causa la enfermedad es una bacteria que viaja en el agua. Si la fuente no es real, el eslabón para cortar tampoco existe."
+      "comoSeCacha": "La causa de una enfermedad infecciosa es un agente que entra al cuerpo, no una situación como comer en la calle o el calor. Si el renglón de la causa no nombra un agente, todo lo que se arma encima sale torcido."
     },
     "erroresSecundarios": [
       {
@@ -122,18 +122,23 @@
       },
       {
         "palabra": "vía de transmisión",
-        "queEs": "El camino por el que viaja el agente de una persona a otra: aire, saliva, contacto con piel, agua, sangre.",
+        "queEs": "El camino por el que viaja el agente desde la fuente hasta quien se enferma: aire, saliva, contacto con piel, agua, sangre.",
         "noEsLoMismoQue": "la puerta de entrada, que es la parte del cuerpo donde entra"
       },
       {
         "palabra": "eslabón",
-        "queEs": "Cada parte de la cadena de contagio: la fuente, la vía y la puerta de entrada. Si cortas uno, la cadena se rompe.",
+        "queEs": "Cada parte de la cadena de contagio: la fuente, la vía y la puerta de entrada. Si cortas uno, la cadena se rompe. Aquí el agente no cuenta como eslabón: es lo que viaja por ellos.",
         "noEsLoMismoQue": "la causa de la enfermedad, que es el agente"
       },
       {
         "palabra": "fuente",
-        "queEs": "El lugar donde viajaba el agente antes de enfermarte: agua, tierra, otro cuerpo, o el cuerpo de alguien sin síntomas.",
+        "queEs": "El lugar donde vivía el agente antes de enfermarte: un charco o pozo, tierra, otro cuerpo, o el cuerpo de alguien sin síntomas.",
         "noEsLoMismoQue": "la enfermedad misma"
+      },
+      {
+        "palabra": "puerta de entrada",
+        "queEs": "La parte del cuerpo por donde entra el agente: la boca, la nariz y la garganta, o la piel.",
+        "noEsLoMismoQue": "la vía, que es el camino que recorre el agente hasta llegar ahí"
       }
     ],
     "cotas": {
@@ -173,31 +178,15 @@
       "consulta": "video explicación \"La cadena de un contagio\" biología 1º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
       "consultasAlternas": []
     },
-    "video": {
-      "idDeYouTube": "zYuJFyo2NT4",
-      "variedadDeEspanol": "no se pudo determinar",
-      "explicaElPorQue": true,
-      "porQueEste": "Es el único video de los dos que habla de los eslabones de la cadena epidemiológica en orden: agente, fuente, vía y puerta de entrada. Explica por qué cada eslabón importa y no nada más los nombra.",
-      "url": "https://www.youtube.com/watch?v=zYuJFyo2NT4",
-      "titulo": "Curso EXANI II 2026 Premedicina: Eslabones de la cadena epidemiológica #3",
-      "canal": "La Pizza de Don Cangrejo",
-      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
-    },
-    "alternativas": [
-      {
-        "idDeYouTube": "g-bv1DxJRKU",
-        "variedadDeEspanol": "no se pudo determinar",
-        "explicaElPorQue": true,
-        "porQueEste": "Segundo respaldo. También explica la cadena epidemiológica, pero es más corto y menos detallado que el elegido. Entra si el primero se cae.",
-        "url": "https://www.youtube.com/watch?v=g-bv1DxJRKU",
-        "titulo": "Cadena epidemiológica",
-        "canal": "OPOSITOMANÍA",
-        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
-      }
-    ],
-    "confianza": "media",
-    "porQueEsaConfianza": "Ambos videos existen en YouTube y tienen títulos que nombran la cadena epidemiológica, que es el tema. El elegido explica los eslabones en orden y el por qué de cada uno. Lo que baja la confianza a media es que no se pudo determinar si el español es de México o de América Latina: solo con el título no se alcanza a oír. Se validarán cuando se comprenda que son públicos.",
-    "noSePuede": null
+    "video": null,
+    "alternativas": [],
+    "confianza": "baja",
+    "porQueEsaConfianza": "Los dos videos que había (un curso de preparación para el EXANI II de Premedicina y un canal de oposiciones de España) no cumplen los criterios: no son de nivel de primero de secundaria y no se pudo comprobar ni su contenido ni su variedad de español. Sin un video validado, el tema abre con la pregunta y el resumen.",
+    "noSePuede": {
+      "que": "Un video de nivel de primero de secundaria que explique por qué alguien sin síntomas puede contagiar y qué es la cadena de un contagio.",
+      "porQue": "La búsqueda sólo dio un curso de preparación para el EXANI II de Premedicina y un video de un canal de oposiciones de España. Ninguno es de secundaria ni está comprobado en contenido o variedad del español.",
+      "queHagoConEsto": "Repetir la búsqueda con otras consultas (portadores asintomáticos, cadena de contagio) o buscar en canales de educación secundaria de México. Mientras tanto, la estación 1 abre con la pregunta y el resumen, sin video."
+    }
   },
   "contacto": {
     "materia": "biologia",
@@ -207,11 +196,35 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Un niño bebe agua sin hervir en un viaje. Una semana después tiene diarrea fuerte. ¿Qué causó la enfermedad?"
+            "valor": "Un niño viaja con calor, come en la calle y bebe agua sin hervir. Dos días después tiene disentería. ¿Qué la causó?"
           }
         ],
         "pasoDelCanon": 1,
         "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "beber agua sin hervir"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Nombras cómo llegó la bacteria, no lo que causa la enfermedad: el agua que se bebe es la vía por donde viajaba, y la bacteria es la causa.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "comer en la calle y el calor"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Comer en la calle y el calor son circunstancias: suben el riesgo, pero no son lo que causa la disentería. La causa es un agente, una bacteria, que entra al cuerpo.",
+            "letra": "B"
+          },
           {
             "partes": [
               {
@@ -221,43 +234,19 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Identificaste el agente infeccioso, que es lo específico que causa la enfermedad.",
-            "letra": "A"
-          },
-          {
-            "partes": [
-              {
-                "tipo": "texto",
-                "valor": "beber agua sin hervir"
-              }
-            ],
-            "esCorrecta": false,
-            "esElErrorTipico": true,
-            "queRevela": "Estás nombrando cómo llegó el agua, no qué agente viajaba en ella. El agua es la fuente; la bacteria es lo que causa la enfermedad.",
-            "letra": "B"
-          },
-          {
-            "partes": [
-              {
-                "tipo": "texto",
-                "valor": "no haber comido bien"
-              }
-            ],
-            "esCorrecta": false,
-            "esElErrorTipico": false,
-            "queRevela": "Estás pensando en una circunstancia que debilita las defensas. Pero la enfermedad la causa un agente específico, no una debilidad.",
+            "queRevela": "Identificaste el agente infeccioso: la bacteria es lo específico que causa la enfermedad, y viajaba en el agua.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "viajar cuando hacía calor"
+                "valor": "el cansancio del viaje"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El calor es una circunstancia que quizá favoreció el contagio, pero no es lo que causa la enfermedad. La causa es el agente que entra al cuerpo.",
+            "queRevela": "El cansancio debilita las defensas, pero es una circunstancia. La enfermedad la causa un agente específico, no una debilidad.",
             "letra": "D"
           }
         ]
@@ -269,7 +258,7 @@
             "valor": "Tu hermana dice que se enfermó de gripa por salir sin suéter cuando hacía frío. ¿Qué hay de malo en esa explicación?"
           }
         ],
-        "pasoDelCanon": 2,
+        "pasoDelCanon": 1,
         "opciones": [
           {
             "partes": [
@@ -325,7 +314,11 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Tu papá estuvo un día con tos, pero al siguiente se sentía bien. Tres días después tú tienes tos. ¿Quién fue la fuente del contagio?"
+            "valor": "Tu tío vino a comer. Se veía sano y nunca tosió. Dos días después supo que tenía el virus de la gripa, aunque nunca se sintió mal."
+          },
+          {
+            "tipo": "texto",
+            "valor": "Sólo lo viste a él esa semana y tres días después de la comida tienes tos. ¿Quién fue la fuente del contagio?"
           }
         ],
         "pasoDelCanon": 2,
@@ -334,43 +327,43 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "tu papá, aunque ya no tuviera síntomas"
+                "valor": "nadie, porque tu tío se veía sano"
               }
             ],
-            "esCorrecta": true,
+            "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Reconociste que alguien sin síntomas visibles puede seguir contagiando: es un portador.",
+            "queRevela": "Estás creyendo que sin síntomas visibles no hay contagio. Alguien puede llevar el agente adentro sin sentir nada y seguir siendo fuente; aquí el único con quien estuviste fue tu tío.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "alguien más que tú no viste enfermo"
+                "valor": "tu tío, aunque nunca se sintió mal"
               }
             ],
-            "esCorrecta": false,
+            "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Tu papá fue quien estuvo enfermo cuando la cadena empezó. Podría haber un portador de antes, pero la fuente más cercana que identifica la cadena es él.",
+            "queRevela": "Reconociste que alguien sin síntomas puede llevar el virus y contagiarlo: es un portador, y la fuente es donde estaba el agente.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "nadie, porque tu papá se vio bien al día siguiente"
+                "valor": "el frío que hizo esos días"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estás creyendo que sin síntomas visibles no hay contagio. Los síntomas desaparecen pero el agente queda; el portador sigue siendo fuente.",
+            "queRevela": "El frío es una circunstancia, no una fuente: la fuente es el lugar donde estaba el virus antes de llegar a ti, y no es el clima.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "el aire del cuarto donde estuviste con él"
+                "valor": "el aire del cuarto donde comieron"
               }
             ],
             "esCorrecta": false,
@@ -393,25 +386,13 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "la boca"
-              }
-            ],
-            "esCorrecta": true,
-            "esElErrorTipico": false,
-            "queRevela": "Nombraste por dónde entra el agente al cuerpo. El agua entra por la boca.",
-            "letra": "A"
-          },
-          {
-            "partes": [
-              {
-                "tipo": "texto",
                 "valor": "el charco de agua sucia"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El charco es la fuente, no la vía. La vía es el camino por el que viaja el agente de la fuente al cuerpo.",
-            "letra": "B"
+            "queRevela": "El charco es la fuente: el lugar donde estaba la bacteria. La vía es el camino que recorre de ahí al cuerpo.",
+            "letra": "A"
           },
           {
             "partes": [
@@ -422,19 +403,31 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El intestino es la puerta de entrada, donde el agente empieza a multiplicarse. Pero la vía es el camino para llegar ahí: el agua que se bebe.",
+            "queRevela": "El intestino es donde la bacteria se multiplica una vez adentro. La vía es el camino que recorre para llegar, no el lugar al que llega.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "la boca"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La boca es la puerta de entrada: la parte del cuerpo por donde entra la bacteria, no el camino que recorre.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "beber en el charco"
+                "valor": "el agua que se bebe"
               }
             ],
-            "esCorrecta": false,
+            "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Beber es la acción, no el nombre de la vía. La vía es por qué parte del cuerpo entra el agente: aire, saliva, piel, agua o sangre.",
+            "queRevela": "Nombraste el camino que usa la bacteria para llegar al cuerpo: el agua que se bebe, que lleva la bacteria del charco hasta la boca.",
             "letra": "D"
           }
         ]
@@ -443,7 +436,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Tu hermano tiene varicela y estornuda cerca de ti. Tú respiras ese aire. ¿En qué parte de tu cuerpo entra el virus?"
+            "valor": "Tu hermano tiene varicela y estornuda cerca de ti. Tú respiras ese aire. ¿Por dónde entra el virus a tu cuerpo?"
           }
         ],
         "pasoDelCanon": 4,
@@ -452,48 +445,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "en la piel"
+                "valor": "por la piel de la cara"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El virus de la varicela entra por el aire que respiras, no por la piel. La piel es donde aparece la erupción, pero el virus entra antes, por otro lado.",
+            "queRevela": "Aquí el virus llega en el aire que respiras, no por la piel. La piel es donde aparece la erupción, pero el virus entra antes, por las vías respiratorias.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "en las vías respiratorias"
+                "valor": "por las vías respiratorias"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Identificaste dónde el aire que respiras entra al cuerpo. El virus viaja por aire y la puerta de entrada son las vías respiratorias.",
+            "queRevela": "Identificaste la puerta de entrada: el aire que respiras entra por la nariz y la garganta, que son las vías respiratorias.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "en los pulmones"
+                "valor": "por el aparato digestivo"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Los pulmones son más profundo. El virus entra primero en las vías respiratorias, que es por donde respiras.",
+            "queRevela": "El aparato digestivo es por donde entra lo que se traga. Un virus que respiras entra por las vías respiratorias.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "en la boca"
+                "valor": "por la sangre del cuerpo"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "La boca es donde entra el agua que bebe. Cuando el virus viaja por aire, entra por las vías respiratorias, no por la boca.",
+            "queRevela": "La sangre puede llevar un agente por dentro del cuerpo, pero no es por donde entra aquí. El aire que respiras entra por las vías respiratorias.",
             "letra": "D"
           }
         ]
@@ -509,23 +502,7 @@
     "enunciado": [
       {
         "tipo": "texto",
-        "valor": "Alguien rastreó cómo se propaga la disentería. Agua sin hervir"
-      },
-      {
-        "tipo": "texto",
-        "valor": "→"
-      },
-      {
-        "tipo": "texto",
-        "valor": "boca"
-      },
-      {
-        "tipo": "texto",
-        "valor": "→"
-      },
-      {
-        "tipo": "texto",
-        "valor": "intestino. Hay exactamente un paso mal. Tócalo."
+        "valor": "Alguien rastreó cómo se propaga la disentería. Hay un solo paso mal; los siguientes sólo repiten su error. Tócalo."
       }
     ],
     "pasos": [
@@ -534,79 +511,79 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Identifico el agente: bacteria de disentería"
+            "valor": "Identifico la causa: comer en la calle y el calor"
           }
         ],
-        "siLoTocas": "Ese paso sólo nombra cuál es la bacteria que causa la enfermedad, y es la correcta. Identificar bien el agente no es el error."
+        "siLoTocas": "Ahí está. Es el primer renglón que se equivoca, y los pasos que siguen sólo repiten lo que de él recibieron."
       },
       {
         "numero": 2,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Busco la fuente: salir sin suéter y mojarse"
+            "valor": "Busco la fuente: la comida de la calle"
           }
         ],
-        "siLoTocas": "Ahí está. Ese renglón es el que les pasa su información a los dos pasos que siguen."
+        "siLoTocas": "Ese renglón hace bien su trabajo con lo que recibió: busca el lugar de donde viene lo que se anotó como causa. No inventó nada, sólo siguió lo anterior."
       },
       {
         "numero": 3,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Vía de transmisión: boca"
+            "valor": "Vía de transmisión: lo que se come"
           }
         ],
-        "siLoTocas": "La vía está bien identificada: la bacteria viaja por la boca. Ese paso recibió su ruta de dónde viajaba el agente, en vez de inventarla."
+        "siLoTocas": "Esa vía está bien con lo que recibió: lo que se come es el camino que seguiría lo anotado. Ese renglón sólo continúa la fuente que le llegó."
       },
       {
         "numero": 4,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Puerta de entrada: intestino"
+            "valor": "Puerta de entrada: boca"
           }
         ],
-        "siLoTocas": "La puerta está bien ubicada: es donde entra y se multiplica. Ese paso recibió su órgano de dónde viajaba el agente, no lo inventó."
+        "siLoTocas": "Esa puerta está bien: lo que se come entra por la boca. Este renglón no depende del error y tampoco lo causa."
       },
       {
         "numero": 5,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Cortar la cadena: no se corta porque el problema es el comportamiento"
+            "valor": "Cortar la cadena: no comer en la calle"
           }
         ],
-        "siLoTocas": "Si la fuente no es un agente real, no hay eslabón que cortar. Ese paso lee bien lo que recibió y repite el resultado."
+        "siLoTocas": "Esta conclusión sale de un paso anterior equivocado: con la causa correcta, el eslabón que se corta sería otro. Este renglón sólo repite lo que le llegó."
       }
     ],
-    "pasoMalo": 2,
-    "arrastre": "El paso 2 dice que la fuente es el comportamiento (mojarse), no agua contaminada. Eso cambia el paso 5: dice 'no se corta porque el problema es el comportamiento' en vez de 'se corta hirviendo el agua'. Los pasos 3 y 4 están bien hechos pero describen una vía y puerta que no tienen un agente que viaje desde la fuente.",
+    "pasoMalo": 1,
+    "arrastre": "El paso 1 anota como causa una circunstancia (comer en la calle y el calor), no un agente. De ahí salen la fuente del paso 2, la vía del paso 3 y el corte del paso 5; el paso 4 sigue igual porque la boca es la puerta en cualquier caso.",
     "porQue": "¿Y qué confundió en ese paso?",
     "motivos": [
       {
-        "texto": "Confundió la causa de la enfermedad con las circunstancias riesgosas.",
+        "texto": "Escribió una circunstancia riesgosa como si fuera lo que causa la enfermedad.",
         "esElBueno": true,
-        "queRevela": "La disentería la causa una bacteria que viaja en agua sin hervir. Mojarse y salir sin suéter no causan disentería; bajan las defensas, pero el agente que entra es la bacteria. El paso bueno nombra el agua contaminada, no el comportamiento."
+        "queRevela": "Comer en la calle y el calor son circunstancias: suben el riesgo, pero no son lo que causa la disentería. La causa es una bacteria que entra al cuerpo, y por eso el renglón de la causa tenía que nombrarla."
       },
       {
-        "texto": "Escribió un riesgo en vez de un agente que viaja.",
+        "texto": "Creyó que sólo contagia quien se ve enfermo, no quien parece sano.",
         "esElBueno": false,
-        "queRevela": "Quien escoge esto ya sabe que debe haber un agente. Pero confunde circunstancias (mojarse) con dónde vivía ese agente antes de enfermarte. El paso 1 identifica bien la bacteria; el paso 2 tendrá que decir de dónde viajó esa bacteria."
+        "queRevela": "Es una confusión frecuente (alguien que parece sano también puede contagiar), pero no es lo que falla en este renglón: aquí se anotó una circunstancia donde debía ir el agente que causa la enfermedad."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro pasos cumplen bien lo que cada uno debe hacer. El error no es confundir órganos: es nombrar dónde vivía el agente antes del contagio."
+        "texto": "Cuatro renglones salen de lo que anotó el anterior, así que casi todos parecen bien. Busca el primero que ya no responde bien a su pregunta."
       },
       {
         "orden": 2,
-        "texto": "El paso 1 dice cuál es la bacteria. El paso 2 debe decir de dónde viajó esa bacteria al cuerpo. Busca dónde vivía la bacteria antes de enfermarte."
+        "texto": "Piensa qué clase de respuesta debería dar cada renglón: un agente que viaja, un lugar donde vive, un camino, una puerta o una acción para cortar."
       },
       {
         "orden": 3,
-        "texto": "Mojarse y salir sin suéter son del cuerpo que enfermó. El agua sin hervir es un lugar donde la bacteria viajaba. Uno es riesgo; el otro es fuente."
+        "texto": "Compara lo que cada renglón anota con esas clases: ¿hay uno que anota algo que le pasa o hace la persona, en vez de algo que viaja o vive en un lugar?"
       }
     ],
     "noSePuede": null
@@ -614,7 +591,7 @@
   "explicar": {
     "temaNumero": 13,
     "materia": "biologia",
-    "titulo": "Explícame por qué el agua sin hervir es el culpable y no simplemente mojarse.",
+    "titulo": "Explícame qué causa la disentería, por qué mojarse no, y por qué hervir el agua corta el contagio.",
     "aclaracion": "Con tus palabras, sin escribir los cinco pasos. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
     "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
     "rubrica": {
@@ -626,24 +603,24 @@
           "esImprescindible": true
         },
         {
-          "idea": "El agente puede viajar desde alguien que no tiene síntomas visibles, así que la fuente no siempre es una persona que se ve enferma.",
-          "porQueImporta": "Si esperas a que se vea enfermo para cortar, el agente ya se transmitió. Un portador sin síntomas sigue contagiando, así que la cadena no se detiene donde tú crees.",
-          "comoSuenaDicha": "Alguien que no se ve enfermo puede tener la bacteria adentro y pasarla a otros.",
+          "idea": "La bacteria viaja en el agua desde el lugar donde estaba hasta la boca de quien la bebe.",
+          "porQueImporta": "Si no ves ese recorrido no sabes dónde cortarlo: el agua no enferma por sí sola, lo que enferma es la bacteria que lleva.",
+          "comoSuenaDicha": "La bacteria iba en el agua sucia y entró a la persona cuando se la bebió.",
           "esImprescindible": false
         },
         {
-          "idea": "La vía por donde viaja el agente determina dónde hay que actuar para cortarla.",
-          "porQueImporta": "Cada agente entra por una puerta distinta. Si sabes que entra por la boca en agua, sabes qué hay que hacer: hervir. Si no, intentas cerrar todas las puertas a la vez.",
-          "comoSuenaDicha": "Como la bacteria viaja en el agua que me bebo, lo que tengo que hacer es hervir el agua.",
+          "idea": "Hervir el agua mata la bacteria, y por eso corta la cadena antes de que llegue a la boca.",
+          "porQueImporta": "Sin esta idea, hervir parece un truco que alguien dijo: se corta porque la bacteria muere antes de llegar a quien bebe.",
+          "comoSuenaDicha": "Al hervir el agua la bacteria se muere, así que ya no llega a mi intestino y no me enferma.",
           "esImprescindible": false
         }
       ],
       "minimoParaContar": 2,
       "suenanBienYNoDicen": [
         {
-          "respuesta": "Porque el agua sin hervir es la fuente de la enfermedad.",
-          "queLaDelata": "Nombra la fuente y se detiene ahí. No dice qué hace que el agua sea culpable en lugar de mojarse, así que tampoco podría explicar por qué hervir agua funciona.",
-          "queLeFalta": "Que diga que la fuente tiene el agente dentro, la bacteria que causa la enfermedad, y que mojarse no la trae."
+          "respuesta": "Porque el agua contaminada es lo que enferma a la gente.",
+          "queLaDelata": "Culpa al agua y se detiene ahí. No dice qué lleva ese agua que enferma, así que tampoco podría explicar por qué hervirla funciona.",
+          "queLeFalta": "Que diga que el agua lleva el agente dentro, la bacteria que causa la enfermedad, y que mojarse no la trae."
         },
         {
           "respuesta": "Porque hay que seguir los cinco pasos para rastrear la cadena.",
@@ -656,9 +633,9 @@
           "queLeFalta": "Que diga qué le hace el hervir al agua o a la bacteria, y por qué eso detiene la cadena de contagio."
         },
         {
-          "respuesta": "Porque la persona bebe agua con bacteria y se enferma.",
-          "queLaDelata": "Cuenta qué pasó pero no distingue entre la causa de verdad, que es la bacteria, y la circunstancia de beberse agua sin hervir. En alguien con defensas fuertes bebiendo agua sin hervir, la bacteria no siempre causa enfermedad.",
-          "queLeFalta": "Que diga que la bacteria es lo que causa la enfermedad, no el acto de beber sin hervir."
+          "respuesta": "Porque el agua sin hervir está sucia y hace daño.",
+          "queLaDelata": "Dice que el agua hace daño, pero no nombra lo que de verdad enferma: la bacteria que viaja en ella.",
+          "queLeFalta": "Que diga que en el agua va una bacteria y que ésa es la causa de la disentería."
         }
       ],
       "contraargumentos": [
@@ -668,17 +645,22 @@
           "aDondeLoEmpuja": "A distinguir entre el agente que causa la enfermedad y las circunstancias que debilitan las defensas, que es la idea imprescindible."
         },
         {
-          "siDice": "El agua sin hervir es peligrosa porque viaja la bacteria en ella.",
-          "seLeContesta": "Exacto. La bacteria es lo que daña, no el agua. El agua es la vía: el camino que usa la bacteria para llegar. Eso es lo que te falta: decir que dentro del agua viaja la bacteria.",
-          "aDondeLoEmpuja": "A distinguir entre la vía de transmisión, que es el agua, y lo que viaja en ella, que es el agente."
+          "siDice": "El agua sin hervir es peligrosa porque la bacteria viaja en ella.",
+          "seLeContesta": "Eso es lo importante: el agua no enferma por sí sola, lo que enferma es la bacteria que lleva. El agua es el camino y la bacteria es la causa. Ahora dime: ¿qué le pasa a esa bacteria cuando hierves el agua?",
+          "aDondeLoEmpuja": "A separar el agente (la bacteria) de la vía (el agua que lo lleva) y a ligarlo con por qué hervir corta la cadena."
         },
         {
           "siDice": "Sí entendí, nada más no sé cómo escribirlo.",
           "seLeContesta": "Entonces contesta esto: ¿por qué el agua sin hervir hace daño y el agua hervida no? Si ese por qué te sale, ya está explicado. Escribe eso y nada más.",
           "aDondeLoEmpuja": "A que vea que la idea ya la tiene y lo que falta es decirla corta."
+        },
+        {
+          "siDice": "Si alguien no se ve enfermo, no contagia.",
+          "seLeContesta": "Piensa en alguien que se ve sano pero lleva la bacteria adentro: los síntomas y la bacteria no llegan ni se van al mismo tiempo. ¿Puede pasarla a otros mientras se ve bien?",
+          "aDondeLoEmpuja": "A separar tener el agente de tener síntomas: lo que causa y contagia es el agente, se note o no por fuera."
         }
       ],
-      "ejemploQueSiCuenta": "La disentería viene de una bacteria que está en el agua sin hervir. Mojarse baja las defensas, pero eso no causa la enfermedad si no hay bacteria. El agua caliente mata la bacteria, así que si la hiervo no llega al intestino y no me enferma. Por eso el culpable es el agua con bacteria, no simplemente mojarse.",
+      "ejemploQueSiCuenta": "La disentería la causa una bacteria que viaja en el agua sucia. Mojarse o tener frío baja las defensas, pero no causa la enfermedad si no hay bacteria. Al hervir el agua la bacteria se muere, así que ya no llega a mi intestino y no me enferma. Por eso lo que enferma es la bacteria, no mojarse.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
         "Que no use las palabras agente, bacteria, fuente o vía: si dice qué viaja y dónde, ya dijo la idea.",
@@ -692,11 +674,11 @@
       "temaNumero": 13,
       "materia": "biologia",
       "teclado": "opciones",
-      "porQueEseTeclado": "La respuesta es una acción para cortar la cadena de contagio: reconocer cuál eslabón de la transmisión se puede interrumpir entre varias opciones. No se produce la cadena entera, se identifica el punto de intervención más práctico. El estudiante distingue entre eliminar la fuente, bloquear la vía e impedir la entrada del agente.",
+      "porQueEseTeclado": "La respuesta es el eslabón que corta una medida, o la medida que corta la cadena, y se reconoce entre pocas opciones cerradas. No se produce una fórmula ni un número: se distingue cuál eslabón (la fuente, la vía, la puerta de entrada) toca cada medida.",
       "tecladosDescartados": [
         {
           "teclado": "digitos",
-          "porQue": "La respuesta es una frase con palabras como 'hervir el agua' o 'aislar al enfermo', no un número. El teclado de dígitos no tiene letras."
+          "porQue": "La respuesta es el nombre de un eslabón o una medida, como 'la fuente' o 'taparse al toser', no un número. El teclado de dígitos no tiene letras."
         }
       ],
       "fichas": [],
@@ -710,81 +692,95 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "En la cadena de la disentería,"
+            "valor": "En la disentería (charco con la bacteria → agua que se bebe → boca → intestino),"
           },
           {
             "tipo": "texto",
-            "valor": "el eslabón que se puede cortar es:"
+            "valor": "hervir el agua corta el eslabón de:"
           },
           {
             "tipo": "hueco"
           }
         ],
         "respuesta": {
-          "correcta": "hervir el agua",
+          "correcta": "la vía",
           "enAtomos": [
             {
               "tipo": "texto",
-              "valor": "hervir el agua"
+              "valor": "la vía"
             }
           ],
-          "comoSeLee": "hervir el agua",
+          "comoSeLee": "la vía",
           "aceptaTambien": [],
           "opciones": [
             {
-              "etiqueta": "hervir el agua",
+              "etiqueta": "la fuente",
+              "esCorrecta": false,
+              "queRevela": "La fuente es el charco o pozo donde está la bacteria; hervir no lo limpia, sólo trata el agua que bebes."
+            },
+            {
+              "etiqueta": "la vía",
               "esCorrecta": true,
-              "queRevela": "Cortaste la cadena donde se puede: eliminaste la fuente del agente. Sin agua contaminada, la bacteria no llega a nadie."
+              "queRevela": "Hervir mata la bacteria en el agua que viaja hacia ti: bloqueas el camino y la bacteria ya no llega a tu boca."
             },
             {
-              "etiqueta": "no mojarse",
+              "etiqueta": "la puerta de entrada",
               "esCorrecta": false,
-              "queRevela": "Mojarse no causa la disentería. La causa es la bacteria en el agua sin hervir. Una circunstancia riesgosa no es el eslabón que corta la cadena."
+              "queRevela": "La puerta de entrada es la boca, por donde entra la bacteria. Hervir no cambia por dónde entra: actúa antes, en el agua que se bebe."
             },
             {
-              "etiqueta": "usar antibióticos",
+              "etiqueta": "la causa",
               "esCorrecta": false,
-              "queRevela": "Los antibióticos matan la bacteria después de que entra, pero no cortan la cadena. El eslabón para cortar es antes de que entre, no después."
-            },
-            {
-              "etiqueta": "aislar al enfermo",
-              "esCorrecta": false,
-              "queRevela": "Aislar bloquea una vía, pero la disentería viaja por agua, no por contacto. Ese eslabón importa para enfermedades respiratorias."
+              "queRevela": "La bacteria es la causa, pero la causa no es un eslabón: es lo que viaja por ellos. Hervir corta el eslabón por donde ella viaja, la vía."
             }
           ]
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "Piensa en los tres eslabones de esta cadena: dónde vivía el agente, por dónde viajó y dónde entra al cuerpo. ¿Cuál es más fácil de cortar?"
+            "texto": "La cadena tiene tres eslabones: dónde estaba la bacteria, por dónde viaja y por dónde entra al cuerpo. Fíjate a cuál de los tres afecta hervir."
           },
           {
             "orden": 2,
-            "texto": "El paso es elegir cuál eslabón puedes cortar. Mira la fuente del contagio: ¿se puede hacer algo con el agua?"
+            "texto": "Hervir actúa sobre el agua que se va a beber. ¿Eso cambia el lugar donde estaba la bacteria (el charco), el camino que recorre o la parte del cuerpo por donde entra?"
           },
           {
             "orden": 3,
-            "texto": "La bacteria vive en el agua sin hervir. Si hirviera el agua, la bacteria no llega a la boca ni al intestino."
+            "texto": "Piensa en el segundo eslabón, el camino por donde viaja la bacteria hasta tu boca: el agua que se bebe. ¿Qué le pasa a la bacteria que va en esa agua cuando la hierves?"
           }
         ]
       },
       "escalera": [
         {
-          "situacion": "Un niño de tu edad tose sin taparse y sus compañeros se resfrian. El virus viaja por el aire que respira cada quien.",
+          "situacion": "Un niño de tu edad tose cerca de sus compañeros y varios se resfrían. El virus viaja por el aire que respira cada quien.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "En un resfriado que viaja por aire,"
+              "valor": "En un resfriado que viaja por el aire,"
             },
             {
               "tipo": "texto",
-              "valor": "el eslabón más fácil de cortar es:"
+              "valor": "lo que corta la cadena es:"
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿Qué se puede hacer para cortar la vía de contagio?",
+          "pregunta": "¿Qué hace el niño que tose para que el virus no salga hacia sus compañeros?",
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "El virus del resfriado sale de quien tose y viaja por el aire. Piensa en lo que puede hacer el niño enfermo para frenar ese camino."
+            },
+            {
+              "orden": 2,
+              "texto": "La vía es el aire que sale de la boca del niño. Piensa en cómo frenar ese aire antes de que llegue a los demás."
+            },
+            {
+              "orden": 3,
+              "texto": "Cuando alguien tose, el aire sale con el virus: ¿qué puedes poner delante de la boca para frenarlo?"
+            }
+          ],
           "respuesta": {
             "correcta": "taparse al toser",
             "enAtomos": [
@@ -799,56 +795,56 @@
               {
                 "etiqueta": "taparse al toser",
                 "esCorrecta": true,
-                "queRevela": "Cortaste la vía. Si tapas la boca, el aire que sale no carga el virus hacia otros pulmones."
+                "queRevela": "Cortaste la vía: al taparse la boca, el aire que sale ya no lleva el virus hacia otros."
               },
               {
-                "etiqueta": "no salir de casa",
+                "etiqueta": "abrigarse más",
                 "esCorrecta": false,
-                "queRevela": "No salir es difícil de cumplir siempre. El eslabón más fácil de cortar es la vía: si todos tapan la boca al toser, el virus no viaja."
+                "queRevela": "Abrigarse es una circunstancia: no detiene el virus que sale al toser."
               },
               {
-                "etiqueta": "lavarse las manos",
+                "etiqueta": "dormir más horas",
                 "esCorrecta": false,
-                "queRevela": "Lavarse es bueno, pero en el resfriado la vía es el aire, no el contacto. Ese eslabón importa más en otras enfermedades."
+                "queRevela": "Dormir ayuda a tus defensas, pero el virus sigue saliendo de quien tose."
               },
               {
                 "etiqueta": "comer mejor",
                 "esCorrecta": false,
-                "queRevela": "Comer mejor fortalece las defensas, pero no corta la cadena. La fuente seguiría siendo alguien enfermo que tose."
+                "queRevela": "Comer mejor fortalece las defensas, pero no corta la cadena: el virus seguiría saliendo de quien tose."
               }
             ]
-          },
-          "pistas": [
-            {
-              "orden": 1,
-              "texto": "El resfriado viaja por aire. Piensa cuál de los tres eslabones se puede interrumpir de verdad cuando alguien está tosiendo."
-            },
-            {
-              "orden": 2,
-              "texto": "La vía es el aire que respiras. ¿Qué hace la gente cuando tose para que el aire que sale no llegue tan lejos?"
-            },
-            {
-              "orden": 3,
-              "texto": "Si la persona que tose se tapa la boca con el antebrazo o un pañuelo, el aire se frena y el virus no viaja tan lejos."
-            }
-          ]
+          }
         },
         {
-          "situacion": "En una consulta, el doctor dice que su hijo tiene varicela, una enfermedad que viaja por aire y también por contacto con las costras de la piel. Por eso la gente con varicela se aísla una semana.",
+          "situacion": "Tu hermano tiene varicela, una enfermedad que viaja por el aire y también por contacto con el líquido de las ampollas de la piel. En casa hay otros niños sanos.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "En la varicela que viaja por aire y contacto,"
+              "valor": "En la varicela, que viaja por aire y por contacto,"
             },
             {
               "tipo": "texto",
-              "valor": "el eslabón que se puede cortar es:"
+              "valor": "lo que corta las dos vías a la vez es:"
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿Cuál es el movimiento más eficaz para romper la cadena?",
+          "pregunta": "Con tu hermano ya enfermo, ¿qué hace la familia para que no contagie a los demás?",
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Esta enfermedad usa dos vías: el aire y el contacto con las ampollas. Piensa en un movimiento que cierre las dos a la vez, no sólo una."
+            },
+            {
+              "orden": 2,
+              "texto": "Con dos vías, una sola barrera no basta. ¿Qué haría falta para que el enfermo no comparta ni aire ni contacto con los demás?"
+            },
+            {
+              "orden": 3,
+              "texto": "Piensa en lo que se hace con alguien contagioso mientras tenga ampollas con líquido."
+            }
+          ],
           "respuesta": {
             "correcta": "aislar al enfermo",
             "enAtomos": [
@@ -863,56 +859,56 @@
               {
                 "etiqueta": "aislar al enfermo",
                 "esCorrecta": true,
-                "queRevela": "Cortaste los dos eslabones a la vez: la vía por aire y el contacto con piel. Si nadie respira el aire cerca ni toca las costras, el virus no llega a nadie."
+                "queRevela": "Cortaste las dos vías a la vez: si nadie respira el aire cerca ni toca las ampollas, el virus no llega a nadie."
               },
               {
                 "etiqueta": "ponerse guantes",
                 "esCorrecta": false,
-                "queRevela": "Los guantes bloquean una vía, pero el virus también viaja por aire. Un solo eslabón no es suficiente cuando hay dos vías."
+                "queRevela": "Los guantes bloquean una vía, la del contacto, pero el virus también viaja por el aire. Bloquear una sola vía no basta cuando hay dos."
               },
               {
                 "etiqueta": "aplicar crema",
                 "esCorrecta": false,
-                "queRevela": "La crema alivia el picor, pero no corta la cadena. El virus sigue adentro y contagioso mientras hay costras."
+                "queRevela": "La crema alivia el picor, pero el virus sigue contagioso mientras haya ampollas con líquido."
               },
               {
-                "etiqueta": "tomar vacunas",
+                "etiqueta": "vacunar al enfermo",
                 "esCorrecta": false,
-                "queRevela": "Las vacunas previenen que te enfermes, pero una vez enfermo, no cortan el contagio a otros. El eslabón es aislar."
+                "queRevela": "Las vacunas protegen a quien aún no se ha enfermado; tu hermano ya tiene el virus, y para cortar su contagio hay que separarlo."
               }
             ]
-          },
-          "pistas": [
-            {
-              "orden": 1,
-              "texto": "Esta enfermedad usa dos vías: aire y contacto con piel. ¿Qué movimiento bloquea las dos a la vez?"
-            },
-            {
-              "orden": 2,
-              "texto": "Cuando una enfermedad viaja por más de una vía, el eslabón más eficaz es separar al enfermo de quien está sano."
-            },
-            {
-              "orden": 3,
-              "texto": "Aislar significa no compartir aire ni contacto. Así se rompe la cadena de ambas vías."
-            }
-          ]
+          }
         },
         {
-          "situacion": "En una escuela rural sin agua potable, varios niños enfermaron de cólera después de beber agua de un pozo. El agente es una bacteria que viaja por agua contaminada.",
+          "situacion": "En una escuela rural varios niños enferman de diarrea fuerte. Todos bebieron del mismo pozo y el análisis encuentra en el agua la bacteria del cólera.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "En la cadena del cólera por agua,"
+              "valor": "Con el agua del pozo contaminada,"
             },
             {
               "tipo": "texto",
-              "valor": "el movimiento que salva vidas es:"
+              "valor": "lo que evita nuevos contagios es:"
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿Dónde se tiene que intervenir para evitar más muertes?",
+          "pregunta": "¿Qué se hace para que no se enferme nadie más con el agua de ese pozo?",
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Todos los niños bebieron del mismo pozo. Fíjate por dónde les llegó la bacteria y cuál eslabón de la cadena sería más fácil de cortar ahí."
+            },
+            {
+              "orden": 2,
+              "texto": "Entre actuar sobre los niños enfermos o sobre el agua que los demás van a beber, ¿cuál evita que se enferme alguien más?"
+            },
+            {
+              "orden": 3,
+              "texto": "La bacteria viaja en el agua del pozo hasta la boca de quien la bebe: piensa qué se le hace a esa agua antes de beberla para que ya no traiga la bacteria."
+            }
+          ],
           "respuesta": {
             "correcta": "purificar el agua",
             "enAtomos": [
@@ -922,47 +918,94 @@
               }
             ],
             "comoSeLee": "purificar el agua",
-            "aceptaTambien": [
-              "hervir el agua",
-              "desinfectar el agua"
-            ],
+            "aceptaTambien": [],
             "opciones": [
               {
                 "etiqueta": "purificar el agua",
                 "esCorrecta": true,
-                "queRevela": "Cortaste la fuente. Sin agua contaminada, la bacteria no entra en nadie. Es lo que salva vidas en lugares sin sistema de agua potable."
+                "queRevela": "Cortaste la vía: el agua que se bebe ya no lleva la bacteria, y los demás niños ya no se contagian al beberla."
               },
               {
                 "etiqueta": "aislar a los enfermos",
                 "esCorrecta": false,
-                "queRevela": "Aislarlos evita contagio por contacto, pero el cólera viaja por agua, no por aire ni contacto. El eslabón que corta es otra vía."
+                "queRevela": "Aislar a los enfermos no cambia el agua del pozo: los demás niños seguirían bebiendo agua con la bacteria."
               },
               {
                 "etiqueta": "dar medicinas",
                 "esCorrecta": false,
-                "queRevela": "Las medicinas tratan síntomas, pero la cadena sigue activa. Más gente sigue bebiendo del pozo contaminado y enfermando."
+                "queRevela": "Las medicinas ayudan a los niños que ya enfermaron, pero otros siguen bebiendo el agua contaminada. Para que no se enferme nadie más hay que cortar la vía: el agua que se bebe."
               },
               {
-                "etiqueta": "mejorar la higiene",
+                "etiqueta": "cerrar la escuela",
                 "esCorrecta": false,
-                "queRevela": "La higiene ayuda, pero no basta si el agua sigue contaminada. El eslabón decisivo es hacer segura el agua."
+                "queRevela": "Cerrar la escuela no quita la bacteria del pozo; los niños seguirían bebiendo ahí."
               }
             ]
-          },
+          }
+        },
+        {
+          "situacion": "Un compañero se ve sano, pero lleva en el cuerpo la bacteria de la disentería sin saberlo. Ayuda a servir la comida en la cooperativa y la toca con las manos.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "Si alguien sin síntomas puede contagiar,"
+            },
+            {
+              "tipo": "texto",
+              "valor": "lo que corta la cadena es:"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Qué se hace para que ese compañero no contagie a los demás?",
           "pistas": [
             {
               "orden": 1,
-              "texto": "El cólera viaja por agua. De los tres eslabones, ¿cuál tiene que romperse para que nadie más enferme de esa fuente?"
+              "texto": "Un portador lleva la bacteria aunque no tenga síntomas. Piensa por dónde puede pasar la bacteria de él a los demás."
             },
             {
               "orden": 2,
-              "texto": "La fuente es el agua del pozo. Si esa agua se trata y pierde la bacteria, la cadena se rompe."
+              "texto": "Aquí la bacteria pasa de sus manos a la comida. Esperar a que aparezcan síntomas no sirve: él puede no tener nunca ninguno."
             },
             {
               "orden": 3,
-              "texto": "Hervir o desinfectar el agua mata la bacteria que viaja. Si todos beben agua segura, el cólera no llega a nadie más."
+              "texto": "Si la comida no pasa por sus manos, la bacteria no llega a nadie: piensa en qué cambiar de lo que él hace en la cooperativa."
             }
-          ]
+          ],
+          "respuesta": {
+            "correcta": "apartarlo de la comida",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "apartarlo de la comida"
+              }
+            ],
+            "comoSeLee": "apartarlo de la comida",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "apartarlo de la comida",
+                "esCorrecta": true,
+                "queRevela": "Cortaste el camino de la bacteria: si no toca la comida, no llega a nadie, aunque él se vea y se sienta sano."
+              },
+              {
+                "etiqueta": "revisarle la fiebre",
+                "esCorrecta": false,
+                "queRevela": "Sin síntomas no hay fiebre que encontrar: se ve sano y la bacteria sigue adentro. Esperar a ver síntomas deja pasar el contagio."
+              },
+              {
+                "etiqueta": "hervir el agua de beber",
+                "esCorrecta": false,
+                "queRevela": "Hervir el agua corta la vía del agua que se bebe, pero aquí la bacteria no viaja en el agua: la lleva él y pasa a la comida con sus manos."
+              },
+              {
+                "etiqueta": "usar cubrebocas",
+                "esCorrecta": false,
+                "queRevela": "El cubrebocas bloquea una vía de aire, pero esta bacteria no viaja por el aire: llega con lo que él toca y con la comida."
+              }
+            ]
+          }
         }
       ],
       "noSePuede": null,

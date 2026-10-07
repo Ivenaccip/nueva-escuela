@@ -21,7 +21,7 @@
               "valor": "Componente 1: azúcar. Componente 2: agua."
             }
           ],
-          "porQue": "Una disolución siempre tiene exactamente dos cosas: una que se disuelve y otra que la disuelve. Si no reconoces cuáles son los dos, no puedes decir cuál es cuál."
+          "porQue": "Una disolución tiene lo que se disuelve (el soluto) y lo que lo disuelve (el disolvente). En este tema siempre habrá un soluto y un disolvente. Si no reconoces cuáles son los dos, no puedes decir cuál es cuál."
         },
         {
           "numero": 2,
@@ -32,7 +32,7 @@
               "valor": "20 g de azúcar y 200 g de agua."
             }
           ],
-          "porQue": "El componente que hay en mayor cantidad es el disolvente, y el que hay menos es el soluto. La comparación decide cuál es cuál, no lo que ves."
+          "porQue": "En estas disoluciones, el componente que hay en mayor cantidad es el disolvente, y el que hay menos es el soluto. La comparación decide cuál es cuál, no lo que ves."
         },
         {
           "numero": 3,
@@ -43,7 +43,7 @@
               "valor": "Soluto: azúcar (20 g, menor cantidad)."
             }
           ],
-          "porQue": "El soluto es lo que se disuelve, y siempre es la sustancia que está en menor cantidad. El azúcar es menos que el agua."
+          "porQue": "El soluto es lo que se disuelve, y en estas disoluciones es la sustancia que está en menor cantidad. El azúcar es menos que el agua."
         },
         {
           "numero": 4,
@@ -54,7 +54,7 @@
               "valor": "Disolvente: agua (200 g, mayor cantidad)."
             }
           ],
-          "porQue": "El disolvente es lo que hace la disolución, y siempre es la sustancia que está en mayor cantidad. El agua es más que el azúcar."
+          "porQue": "El disolvente es el que disuelve al soluto, y en estas disoluciones es el que está en mayor cantidad. El agua es más que el azúcar."
         },
         {
           "numero": 5,
@@ -87,7 +87,7 @@
     },
     "error": {
       "enUnaFrase": "Confunde soluto y disolvente; llama soluto al componente que está en mayor cantidad.",
-      "creenciaDeAtras": "cree que el componente principal o el que hay más de eso tiene que ser el soluto porque es 'el protagonista' de la mezcla",
+      "creenciaDeAtras": "confunde los nombres: cree que disolvente es lo que se disuelve (el azúcar) y que soluto es el líquido de la solución (el agua)",
       "pasoQueCorrompe": 3,
       "renglonMalo": [
         {
@@ -101,7 +101,7 @@
           "valor": "Soluto: agua. Disolvente: azúcar."
         }
       ],
-      "comoSeCacha": "El agua es el componente que está en mayor cantidad, pero el soluto siempre es el que está en menor cantidad. La definición de soluto no depende de lo que el estudiante crea que es importante."
+      "comoSeCacha": "El agua es el componente que está en mayor cantidad, y en estas disoluciones el soluto es el que está en menor cantidad. El nombre lo decide la cantidad, no cuál de los dos suene a «lo que se disuelve»."
     },
     "erroresSecundarios": [
       {
@@ -112,12 +112,12 @@
     "vocabulario": [
       {
         "palabra": "soluto",
-        "queEs": "El componente que se disuelve en otro, y que siempre está en menor cantidad en la disolución.",
-        "noEsLoMismoQue": "disolvente, que es lo que hace la disolución y está en mayor cantidad"
+        "queEs": "El componente que se disuelve en otro. En las disoluciones de este tema es el que está en menor cantidad.",
+        "noEsLoMismoQue": "disolvente, que es el que disuelve al soluto y está en mayor cantidad"
       },
       {
         "palabra": "disolvente",
-        "queEs": "El componente que disuelve a otro, y que siempre está en mayor cantidad en la disolución.",
+        "queEs": "El componente que disuelve a otro. En las disoluciones de este tema es el que está en mayor cantidad.",
         "noEsLoMismoQue": "soluto, que es lo que se disuelve y está en menor cantidad"
       },
       {
@@ -127,7 +127,7 @@
       },
       {
         "palabra": "disolver",
-        "queEs": "Cuando una sustancia sólida se mezcla con un líquido de manera que ya no se ve el sólido, pero sigue ahí."
+        "queEs": "Cuando una sustancia se reparte por completo en otra, por ejemplo un sólido en un líquido, de manera que ya no se ve, pero sigue ahí."
       }
     ],
     "cotas": {
@@ -147,7 +147,7 @@
     "temaNumero": 9,
     "materia": "quimica",
     "pregunta": "¿Por qué el azúcar disuelto es el soluto y no el agua?",
-    "resumen": "El soluto y el disolvente no se definen por cuál es más importante, sino por cuál está en menor cantidad. El azúcar sigue siendo azúcar aunque no la veas: la disolución no cambia lo que las cosas son, solo las mezcla.",
+    "resumen": "En estas disoluciones, el soluto y el disolvente se reconocen por cuánto hay de cada uno, no por cuál parece más importante. El azúcar sigue siendo azúcar aunque no la veas: la disolución no cambia lo que las cosas son, solo las mezcla.",
     "busqueda": {
       "criterios": [
         "Explica por qué soluto es lo que está en menor cantidad y disolvente es lo que está en mayor cantidad, no lo que el estudiante cree que es principal.",
@@ -235,7 +235,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": true,
-            "queRevela": "Estás llamando soluto al componente que está en mayor cantidad. El soluto siempre es el que hay menos, sin importar cuál te parezca más importante.",
+            "queRevela": "Ése es el disolvente: es el que hay más (150 g). El soluto es el que hay menos: aquí, la sal (30 g).",
             "letra": "B"
           },
           {
@@ -254,12 +254,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Depende del sabor"
+                "valor": "El que se echó primero al vaso"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El soluto y el disolvente se identifican comparando cantidades, no por cómo se ve o se siente la mezcla.",
+            "queRevela": "El orden en que se echan las sustancias no decide cuál es el soluto. Se compara cuánto hay de cada una: la sal (30 g) es la que hay menos.",
             "letra": "D"
           }
         ]
@@ -301,24 +301,24 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Se convirtió en agua"
+                "valor": "Se fue al fondo, aunque no se vea"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El azúcar sigue siendo azúcar. Disolverse no es convertirse en otra cosa, es mezclarse hasta que no se ve como sólido.",
+            "queRevela": "Si se hubiera ido al fondo, se vería azúcar sin disolver abajo y el agua de arriba no sabría dulce. Disuelta, el azúcar está repartida por todo el líquido.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Se dividió entre 10 partes"
+                "valor": "Se derritió, como el hielo"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El azúcar se distribuye por todo el agua, pero sus moléculas no desaparecen. Siguen siendo azúcar, solo que esparcidas.",
+            "queRevela": "Disolver no es derretir: el azúcar no cambió de estado por sí sola. Sus partículas se repartieron entre las del agua.",
             "letra": "D"
           }
         ]
@@ -341,7 +341,7 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Identificaste correctamente los dos componentes de la mezcla: lo que se disolvió y lo que hizo la disolución.",
+            "queRevela": "Identificaste correctamente los dos componentes de la mezcla: lo que se disolvió (el café) y en lo que se disolvió (el agua).",
             "letra": "A"
           },
           {
@@ -353,7 +353,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Una disolución tiene exactamente dos componentes. El café es uno; el agua es el otro.",
+            "queRevela": "Falta una sustancia: una disolución necesita al menos un soluto y un disolvente. El café es uno; el agua es el otro.",
             "letra": "B"
           },
           {
@@ -386,7 +386,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "En una disolución de 50 g de azúcar y 200 g de agua, ¿cuál es el disolvente?"
+            "valor": "En el alcohol de farmacia hay 180 g de alcohol y 20 g de agua. ¿Cuál es el disolvente?"
           }
         ],
         "pasoDelCanon": 4,
@@ -395,48 +395,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "El agua"
+                "valor": "El alcohol"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Identificaste correctamente el disolvente: es el componente que está en mayor cantidad, los 200 g de agua.",
+            "queRevela": "El alcohol está en mayor cantidad (180 g frente a 20 g), así que es el disolvente. El agua, en menor cantidad, es el soluto.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "El azúcar"
+                "valor": "El agua"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El azúcar está en menor cantidad, así que es el soluto. El disolvente es siempre el que hay más.",
+            "queRevela": "El agua suele ser el disolvente, pero aquí es la que hay menos (20 g): es el soluto. El disolvente es el que hay más, el alcohol (180 g).",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Ambos por igual"
+                "valor": "El que se echó primero al vaso"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "No están en igual cantidad. El disolvente es específicamente el componente mayoritario.",
+            "queRevela": "El orden en que se echan las sustancias no decide cuál es el disolvente. Se compara cuánto hay de cada una: el alcohol (180 g) es el que hay más.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "La sustancia que calienta"
+                "valor": "La mezcla completa"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El disolvente se identifica por su cantidad, no por su temperatura. Es el componente que hay en mayor cantidad.",
+            "queRevela": "La mezcla completa es la disolución, no el disolvente. El disolvente es sólo uno de los dos componentes: el que hay más.",
             "letra": "D"
           }
         ]
@@ -471,7 +471,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "La disolución incluye los dos componentes. Lo que hay en mayor cantidad no es «lo principal»: es el disolvente.",
+            "queRevela": "Una disolución no es un solo componente: la forman el soluto y el disolvente juntos. El que hay en mayor cantidad es el disolvente, pero sólo es una parte de la disolución.",
             "letra": "B"
           },
           {
@@ -550,49 +550,49 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Disolvente: azúcar (20 g, menor cantidad)."
+            "valor": "Disolvente: el otro componente, azúcar."
           }
         ],
-        "siLoTocas": "La identificación está bien hecha con lo que le llegó del paso 3, pero eso que le llegó fue incorrecto. Ese paso no inventó sus nombres, los recibió del anterior."
+        "siLoTocas": "Este paso no inventó el nombre que usa: lo recibió. Con ese nombre, ponerle «disolvente» al otro componente está bien deducido; por sí mismo no decide nada."
       },
       {
         "numero": 5,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Agua: líquido. Azúcar: sólido. La disolución es sólida."
+            "valor": "Agua: líquido. Azúcar: sólido. Disolvente sólido, disolución sólida."
           }
         ],
-        "siLoTocas": "El paso describe bien los estados de lo que llegó, pero llama sólida a la disolución porque cree que el azúcar es el disolvente. Ese renglón repite la confusión que heredó."
+        "siLoTocas": "Los estados de cada sustancia están bien: el azúcar es sólido y el agua, líquida. Y la regla de que la disolución queda en el estado del disolvente está bien aplicada a lo que el paso ya traía. Este paso no decide quién es el disolvente: lo recibió."
       }
     ],
     "pasoMalo": 3,
-    "arrastre": "El agua y el azúcar que se intercambiaron en el paso 3 reaparecen en el paso 4 con sus papeles invertidos (agua como disolvente, azúcar como soluto), y eso tira el paso 5: si el azúcar fuera el disolvente, la disolución sería sólida en vez de líquida. El error del paso 3 se arrastra hasta el final.",
+    "arrastre": "En el paso 3 se pusieron al revés los papeles (agua como soluto, azúcar como disolvente) y el paso 4 los repite. Con el azúcar como disolvente, el paso 5 concluye que la disolución es sólida, y eso es falso: es líquida. El error del paso 3 se arrastra hasta el final.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
-        "texto": "Confundió cuál está en mayor cantidad con cuál es el soluto.",
+        "texto": "Llamó soluto a la sustancia que está en mayor cantidad (el agua, 200 g).",
         "esElBueno": true,
-        "queRevela": "El soluto siempre es el componente en menor cantidad, no el que hay más. El agua está en mayor cantidad (200 g), así que es el disolvente. El azúcar está en menor cantidad (20 g), así que es el soluto. La definición no depende de cuál parezca más importante."
+        "queRevela": "El soluto es la que hay menos: aquí el azúcar, 20 g. El agua, que es la que hay más, es el disolvente."
       },
       {
-        "texto": "Pensó que el soluto es el que da sabor o es el componente principal.",
+        "texto": "No comparó las cantidades: eligió el soluto sin mirar los gramos.",
         "esElBueno": false,
-        "queRevela": "Quién escoge esto está pensando en cuál es el ingrediente que importa en la mezcla, no en cuál está en mayor o menor cantidad. Pero en química, principal no significa soluto: significa la sustancia que hace la mayoría de la mezcla, que es el disolvente."
+        "queRevela": "Sí las comparó: el paso 2 pone 20 g y 200 g, y este paso cita los 200 g como la mayor cantidad. El fallo no está en leer los gramos, sino en el nombre que le dio a cada componente."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro de los cinco pasos están bien hechos. El error no es una confusión de estados ni un cálculo: es una identificación equivocada que se propaga."
+        "texto": "Hay un solo renglón donde se decide cuál componente es cuál. Los demás sólo repiten o dependen de esa decisión."
       },
       {
         "orden": 2,
-        "texto": "Mira las cantidades que se comparan en el paso 2. El soluto siempre es la sustancia en menor cantidad, y el disolvente es la que está en mayor cantidad."
+        "texto": "Fíjate en los renglones que nombran un soluto o un disolvente: ¿en qué se basa el nombre que le dan a cada componente?"
       },
       {
         "orden": 3,
-        "texto": "Compara el paso 2 con el paso 3. ¿Quién está en menor cantidad? Ése tiene que ser el soluto."
+        "texto": "Lee cada uno de esos renglones con la regla en la mano y compara los gramos de ese componente con los del otro. Empieza por el primero donde el nombre no le corresponde."
       }
     ],
     "noSePuede": null
@@ -600,70 +600,74 @@
   "explicar": {
     "temaNumero": 9,
     "materia": "quimica",
-    "titulo": "Explícame por qué el azúcar sigue ahí aunque no la veas.",
-    "aclaracion": "Con tus palabras, sin escribir la definición. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "titulo": "Explícame cómo sabes cuál es el soluto y cuál el disolvente en agua con sal.",
+    "aclaracion": "Piensa en 10 g de sal disueltos en 100 g de agua. Con tus palabras, sin copiar la definición: aquí no hay pistas, y es a propósito.",
     "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
     "rubrica": {
       "ideasQueCuentan": [
         {
-          "idea": "Cuando el azúcar se disuelve sigue siendo azúcar, solo que está repartida en toda el agua, por eso no se ve como cristales.",
-          "porQueImporta": "Sin esta idea, desaparecer es lo mismo que no existir. Con ella, el azúcar está ahí aunque no se vea el sólido.",
-          "comoSuenaDicha": "El azúcar no desapareció, solo está distribuida en el agua y por eso no se ve.",
+          "idea": "Para saber cuál es el soluto y cuál el disolvente se compara cuánto hay de cada componente: el que hay menos es el soluto y el que hay más es el disolvente, sin importar cuál parezca más importante.",
+          "porQueImporta": "Es lo que decide los nombres: sin comparar cantidades, el estudiante adivina o se guía por cuál suena más importante. En agua con sal, la sal (la que hay menos) es el soluto y el agua (la que hay más) es el disolvente.",
+          "comoSuenaDicha": "Hay que ver cuánta sal y cuánta agua hay: la sal es el soluto porque hay menos, y el agua es el disolvente porque hay más. No cuenta cuál parezca más importante.",
           "esImprescindible": true
         },
         {
-          "idea": "La cantidad de azúcar que metiste es la misma que hay en la disolución, no se perdió nada.",
-          "porQueImporta": "Es la prueba de que el soluto sigue ahí: si midieras bien, sacabas los 20 gramos de antes.",
-          "comoSuenaDicha": "La masa del azúcar no cambió, sigue siendo 20 gramos.",
-          "esImprescindible": false
-        },
-        {
-          "idea": "El agua también disuelve porque el soluto entra entre las moléculas del disolvente y se mezclan completamente.",
-          "porQueImporta": "Explica por qué el agua es capaz de disolver: no es magia, es que el azúcar se distribuye físicamente en el líquido.",
-          "comoSuenaDicha": "El azúcar se reparte entre el agua, como si los granos chiquitos se metieran entre el agua.",
+          "idea": "Aunque el soluto ya no se vea, sigue ahí: sus partículas quedan repartidas entre las del disolvente.",
+          "porQueImporta": "Evita pensar que disolver es desaparecer: el soluto se reparte en el disolvente, y por eso sigue contando como componente.",
+          "comoSuenaDicha": "La sal no desaparece, solo se reparte en el agua y por eso ya no se ve.",
           "esImprescindible": false
         }
       ],
-      "minimoParaContar": 2,
+      "minimoParaContar": 1,
       "suenanBienYNoDicen": [
         {
-          "respuesta": "Porque el azúcar se disuelve en el agua.",
-          "queLaDelata": "Solo nombra lo que pasa, sin explicar qué quiere decir que se disuelva. No dice en dónde está el azúcar después.",
-          "queLeFalta": "Que diga dónde está el azúcar: distribuida en el agua, no desaparecida."
+          "respuesta": "Porque el soluto es lo que se disuelve y el disolvente es lo que disuelve.",
+          "queLaDelata": "Repite las definiciones, que son correctas, pero no dice cómo se reconoce cuál es cuál en una mezcla concreta. Con sal y agua se podría decir sin comparar nada.",
+          "queLeFalta": "Que diga con qué se decide: se compara cuánto hay de cada componente y el que hay menos es el soluto."
+        },
+        {
+          "respuesta": "Porque el agua es lo principal de la mezcla y la sal solo la acompaña.",
+          "queLaDelata": "Si «lo principal» quiere decir «lo más importante», no es un criterio: el nombre se decide por la cantidad, no por la importancia. Si quiere decir «lo que hay más», es la idea de comparar cantidades con otras palabras y cuenta.",
+          "queLeFalta": "Que lo diga con la cantidad: hay más agua que sal, así que el agua es el disolvente."
+        },
+        {
+          "respuesta": "Porque el agua siempre es el disolvente: el agua siempre disuelve las cosas.",
+          "queLaDelata": "Es una regla que aquí coincide, pero falla cuando el agua es la que hay menos, como en el alcohol de farmacia. No explica cómo se decide.",
+          "queLeFalta": "Que diga que se compara cuánto hay de cada uno, y no cuál de los dos es el agua."
         },
         {
           "respuesta": "Porque cuando algo se disuelve desaparece pero sigue siendo la misma sustancia.",
-          "queLaDelata": "Usa 'desaparece' como si fuera lo mismo que no existir. Es una frase que suena profunda pero mezcla dos ideas que se contradicen.",
-          "queLeFalta": "Que distinga: desaparece de la vista, pero no desaparece la sustancia."
-        },
-        {
-          "respuesta": "Porque así funciona el agua, disuelve cosas.",
-          "queLaDelata": "Describe lo que hace el agua sin explicar por qué sigue ahí el azúcar si no se ve.",
-          "queLeFalta": "Que diga que aunque no se vea, el azúcar está en el agua repartido en todas partes."
+          "queLaDelata": "Dice que desaparece y que sigue siendo la misma sustancia, pero no aclara dónde está la sal ni qué quiere decir desaparecer. Sin eso no se sabe si entiende que sigue ahí repartida.",
+          "queLeFalta": "Que distinga: deja de verse, pero no deja de existir, porque queda repartida entre el agua. Y que conteste lo que se preguntaba: cómo se sabe cuál es el soluto y cuál el disolvente."
         }
       ],
       "contraargumentos": [
         {
-          "siDice": "Si el azúcar sigue ahí, ¿por qué no sale cuando cuela el agua?",
-          "seLeContesta": "Porque el azúcar está distribuida en todo el agua en pedazos tan chiquitos que no se quedan en un colador. Pero si dejas que el agua se evapore toda, el azúcar vuelve a aparecer. Así se prueba que estuvo ahí todo el tiempo.",
+          "siDice": "Si la sal sigue ahí, ¿por qué no sale cuando cuelo el agua?",
+          "seLeContesta": "Porque la sal está repartida en partículas tan pequeñas que pasan por el colador junto con el agua. Pero si dejas que el agua se evapore toda, la sal vuelve a aparecer. Así se prueba que estuvo ahí todo el tiempo.",
           "aDondeLoEmpuja": "A ver que la cantidad de soluto es la misma, y que solo está escondida por estar repartida."
         },
         {
-          "siDice": "La cantidad de azúcar cambió porque se perdió en el agua.",
-          "seLeContesta": "Cierto que es difícil de ver cuando el azúcar está disuelta, pero la cantidad no cambió: sigue siendo 20 gramos. Prueba esto: mezcla 20 gramos de azúcar en agua, espera a que se disuelva, y ahora déjalo evaporar. ¿Cuántos gramos de azúcar ves al final?",
-          "aDondeLoEmpuja": "A que la masa del soluto es la misma, aunque esté distribuida."
+          "siDice": "La sal es el soluto porque es lo que le echo al agua.",
+          "seLeContesta": "Aquí coincide: la sal es lo que se disuelve. Pero en estas disoluciones el nombre se decide comparando cantidades, no por lo que echas. Compara los gramos de sal con los de agua: ¿cuál hay menos? Ése es el soluto.",
+          "aDondeLoEmpuja": "A que justifique el nombre comparando cantidades, y no sólo porque la sal es lo que se echa."
+        },
+        {
+          "siDice": "La sal es el disolvente porque es la que se disuelve.",
+          "seLeContesta": "Tienes razón en que la sal es la que se disuelve, y eso es justo lo que se llama soluto. El disolvente es lo que disuelve, y aquí es el agua. Para no confundirlos, compara los gramos: ¿cuál hay más, la sal o el agua?",
+          "aDondeLoEmpuja": "A que ponga cada nombre según la comparación de cantidades y no según cuál suene a «lo que se disuelve»."
         },
         {
           "siDice": "Entiendo, solo me cuesta explicarlo.",
-          "seLeContesta": "Entonces contesta esto: si metes 20 gramos de azúcar y el azúcar no desaparece, ¿cuántos gramos hay en la disolución?",
-          "aDondeLoEmpuja": "A que vea que ya tiene la idea y lo que falta es decirla."
+          "seLeContesta": "Entonces contesta esto: en 10 gramos de sal con 100 gramos de agua, ¿cuál es el soluto y qué hiciste para saberlo?",
+          "aDondeLoEmpuja": "A que diga la comparación de cantidades, que es la idea que cuenta, y vea que ya la tiene."
         }
       ],
-      "ejemploQueSiCuenta": "El azúcar no desapareció cuando se disolvió, solo está repartida en todo el agua en partículas tan pequeñas que no se ven. Es como si la rompieras en polvo muy fino y lo mezclaras todo. Los 20 gramos de azúcar que metiste siguen siendo 20 gramos, nada más que ahora están distribuidos en el agua y por eso el líquido es dulce.",
+      "ejemploQueSiCuenta": "Se comparan las cantidades de los dos componentes: en 10 g de sal con 100 g de agua hay menos sal, así que la sal es el soluto, y como hay más agua, el agua es el disolvente. No importa cuál parezca más importante: solo cuenta cuánto hay de cada uno. Y aunque la sal ya no se vea, sigue ahí: se separó en partículas tan pequeñas que quedaron repartidas entre las del agua.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
-        "Que no use las palabras soluto, disolvente ni disolución: si dice que el azúcar está ahí repartida, ya dijo la idea.",
-        "Que no escriba ningún número: la idea cuenta sin hacer las cuentas."
+        "Que diga «lo que se disuelve» en vez de «soluto», o «lo que disuelve» en vez de «disolvente»: si la idea está, cuenta.",
+        "Que no cite las cifras exactas (10 g y 100 g): si dice cuál hay más y cuál hay menos, la idea ya está dicha."
       ]
     },
     "noSePuede": null
@@ -673,7 +677,7 @@
       "materia": "quimica",
       "temaNumero": 9,
       "teclado": "opciones",
-      "porQueEseTeclado": "La respuesta es reconocer cuál de dos términos es el soluto: soluto o disolvente. El teclado de dígitos no tiene letras; con fichas el estudiante armaría palabras completas, pero aquí sólo hay dos opciones fijas que se confunden sistemáticamente. El tema enseña a distinguirlas, no a deletrearlas.",
+      "porQueEseTeclado": "La respuesta es reconocer qué nombre le toca a un componente: soluto, disolvente o disolución (el nombre de la mezcla). Son tres términos que se confunden entre sí, y el tema enseña a distinguirlos, no a deletrearlos. El teclado de dígitos no tiene letras.",
       "tecladosDescartados": [
         {
           "teclado": "digitos",
@@ -691,213 +695,217 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "De 20 g de azúcar y 200 g de agua, el"
+            "valor": "De 15 g de sal y 120 g de agua, la sal es"
           },
           {
             "tipo": "hueco"
-          },
-          {
-            "tipo": "texto",
-            "valor": "es el azúcar."
           }
         ],
         "pistas": [
           {
-            "texto": "Acabas de comparar: 20 g es menos que 200 g. Cuál de los dos términos describe lo que está en menor cantidad.",
+            "texto": "Compara los gramos de los dos componentes: 15 g de sal y 120 g de agua. ¿Cuál hay menos?",
             "orden": 1
           },
           {
-            "texto": "El paso que toca es identificar cuál está en menor cantidad. Ese componente recibe un nombre especial en las disoluciones.",
+            "texto": "Uno de los tres términos nombra a lo que hay menos, otro a lo que hay más y el tercero a la mezcla completa.",
             "orden": 2
           },
           {
-            "texto": "El azúcar está en menor cantidad (20 g menos que 200 g). Ese componente, el que hay menos de él, es el que buscas.",
+            "texto": "La sal (15 g) es la que hay menos. Busca el término que se le da al componente que está en menor cantidad.",
             "orden": 3
           }
         ],
         "respuesta": {
-          "correcta": "soluto",
+          "correcta": "el soluto",
           "enAtomos": [
             {
               "tipo": "texto",
-              "valor": "soluto"
+              "valor": "el soluto"
             }
           ],
-          "comoSeLee": "soluto",
+          "comoSeLee": "el soluto",
           "aceptaTambien": [],
           "opciones": [
             {
-              "etiqueta": "soluto",
+              "etiqueta": "el soluto",
               "esCorrecta": true,
-              "queRevela": "Viste que el azúcar está en menor cantidad y reconociste el nombre: el soluto es lo que hay menos de él."
+              "queRevela": "Comparaste los gramos: la sal (15 g) es la que hay menos, y lo que está en menor cantidad es el soluto."
             },
             {
-              "etiqueta": "disolvente",
+              "etiqueta": "el disolvente",
               "esCorrecta": false,
-              "queRevela": "Crees que el componente principal o el que hay más de él es el soluto. El disolvente es el que está en mayor cantidad, y aquí el agua (200 g) es más que el azúcar (20 g)."
+              "queRevela": "La sal es la que hay menos (15 g frente a 120 g de agua), y lo que está en menor cantidad es el soluto. El disolvente es el agua."
+            },
+            {
+              "etiqueta": "la disolución",
+              "esCorrecta": false,
+              "queRevela": "La disolución es la mezcla completa, sal y agua juntas, no uno de sus componentes. La sal es solo uno de los dos."
             }
           ]
         }
       },
       "escalera": [
         {
-          "situacion": "En tu cocina diluyes una cucharada de sal de mesa (unos 10 g) en un vaso de agua (unos 200 g).",
+          "situacion": "En tu cocina disuelves una cucharadita de bicarbonato (unos 5 g) en un vaso de agua (unos 200 g).",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "De 10 g de sal y 200 g de agua, el"
+              "valor": "De 200 g de agua y 5 g de bicarbonato, el agua es"
             },
             {
               "tipo": "hueco"
-            },
-            {
-              "tipo": "texto",
-              "valor": "es la sal."
             }
           ],
-          "pregunta": "¿Cuál es el nombre del componente que está en menor cantidad?",
+          "pregunta": "¿Qué nombre le toca al agua en esta disolución?",
           "pistas": [
             {
-              "texto": "10 g es menor que 200 g. Uno de los dos términos describe eso.",
+              "texto": "El agua tiene 200 g y el bicarbonato 5 g. Compara cuál de los dos hay en mayor cantidad.",
               "orden": 1
             },
             {
-              "texto": "El paso es nombrar cuál está en menor cantidad. Ese componente tiene un nombre especial.",
+              "texto": "Ubica al agua en una de las tres ideas: lo que hay menos, lo que hay más o la mezcla completa.",
               "orden": 2
             },
             {
-              "texto": "La sal (10 g) está en menor cantidad que el agua. El que hay menos de él recibe ese nombre.",
+              "texto": "El agua (200 g) es la que hay más. Piensa qué nombre se da al componente que está en mayor cantidad.",
               "orden": 3
             }
           ],
           "respuesta": {
-            "correcta": "soluto",
+            "correcta": "el disolvente",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": "soluto"
+                "valor": "el disolvente"
               }
             ],
-            "comoSeLee": "soluto",
+            "comoSeLee": "el disolvente",
             "aceptaTambien": [],
             "opciones": [
               {
-                "etiqueta": "soluto",
+                "etiqueta": "el disolvente",
                 "esCorrecta": true,
-                "queRevela": "Viste que la sal está en menor cantidad y recordaste su nombre."
+                "queRevela": "Comparaste los gramos: el agua (200 g) es la que hay más, y lo que está en mayor cantidad es el disolvente."
               },
               {
-                "etiqueta": "disolvente",
+                "etiqueta": "el soluto",
                 "esCorrecta": false,
-                "queRevela": "El agua es lo que está en mayor cantidad, así que es el disolvente. La sal está en menor cantidad."
+                "queRevela": "El soluto es lo que hay menos, y aquí es el bicarbonato (5 g). El agua (200 g) es la que hay más: es el disolvente."
+              },
+              {
+                "etiqueta": "la disolución",
+                "esCorrecta": false,
+                "queRevela": "La disolución es la mezcla completa de agua y bicarbonato. El agua es solo uno de sus dos componentes."
               }
             ]
           }
         },
         {
-          "situacion": "Haces té: echas una bolsita (unos 2 g) en agua caliente (unos 150 g).",
+          "situacion": "La tintura de yodo se prepara disolviendo unos 5 g de yodo en unos 200 g de alcohol.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "De 2 g de té y 150 g de agua, el"
+              "valor": "De 5 g de yodo y 200 g de alcohol, el alcohol es"
             },
             {
               "tipo": "hueco"
-            },
-            {
-              "tipo": "texto",
-              "valor": "es el té."
             }
           ],
-          "pregunta": "¿Cuál es el nombre del componente que está en menor cantidad?",
+          "pregunta": "¿Qué nombre le toca al alcohol en esta disolución?",
           "pistas": [
             {
-              "texto": "2 g es mucho menor que 150 g. Compara y di cuál está en menor cantidad.",
+              "texto": "Compara los gramos: 5 g de yodo y 200 g de alcohol. ¿Cuál de los dos hay en mayor cantidad?",
               "orden": 1
             },
             {
-              "texto": "El paso es reconocer cuál de los dos está en menor cantidad y decir su nombre.",
+              "texto": "Esta mezcla no lleva agua: el nombre lo decide solo la cantidad. Ubica al alcohol entre lo que hay menos, lo que hay más y la mezcla completa.",
               "orden": 2
             },
             {
-              "texto": "El té (2 g) está en menor cantidad. El componente en menor cantidad siempre recibe el mismo nombre.",
+              "texto": "El alcohol (200 g) es el que hay más. Piensa qué nombre se da al componente que está en mayor cantidad.",
               "orden": 3
             }
           ],
           "respuesta": {
-            "correcta": "soluto",
+            "correcta": "el disolvente",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": "soluto"
+                "valor": "el disolvente"
               }
             ],
-            "comoSeLee": "soluto",
+            "comoSeLee": "el disolvente",
             "aceptaTambien": [],
             "opciones": [
               {
-                "etiqueta": "soluto",
+                "etiqueta": "el disolvente",
                 "esCorrecta": true,
-                "queRevela": "Comparaste bien: el té (2 g) es mucho menos que el agua (150 g), y todo en menor cantidad es soluto."
+                "queRevela": "El alcohol (200 g) es el que hay más, y lo que está en mayor cantidad es el disolvente. No hace falta que haya agua."
               },
               {
-                "etiqueta": "disolvente",
+                "etiqueta": "el soluto",
                 "esCorrecta": false,
-                "queRevela": "El agua disuelve el té y está en mayor cantidad, así que es el disolvente. El té está en menor cantidad."
+                "queRevela": "El soluto es lo que hay menos, y aquí es el yodo (5 g). El alcohol (200 g) es el que hay más: es el disolvente."
+              },
+              {
+                "etiqueta": "la disolución",
+                "esCorrecta": false,
+                "queRevela": "La disolución es la mezcla completa, yodo y alcohol juntos. El alcohol es solo uno de los dos componentes."
               }
             ]
           }
         },
         {
-          "situacion": "Disuelves una cucharadita de café instantáneo (unos 3 g) en agua caliente (unos 180 g).",
+          "situacion": "Algunos quitaesmaltes traen unos 150 g de acetona por cada 50 g de agua.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "De 3 g de café y 180 g de agua, el"
+              "valor": "De 150 g de acetona y 50 g de agua, el agua es"
             },
             {
               "tipo": "hueco"
-            },
-            {
-              "tipo": "texto",
-              "valor": "es el agua."
             }
           ],
-          "pregunta": "¿Cuál es el nombre del componente que está en mayor cantidad?",
+          "pregunta": "¿Qué nombre le toca al agua en esta disolución?",
           "pistas": [
             {
-              "texto": "180 g es mayor que 3 g. Cuál de los dos términos describe lo que está en mayor cantidad.",
+              "texto": "Compara los gramos: 150 g de acetona y 50 g de agua. ¿Cuál de los dos hay en menor cantidad?",
               "orden": 1
             },
             {
-              "texto": "Ya identificaste el soluto. Ahora toca nombrar el otro, el que está en mayor cantidad.",
+              "texto": "El nombre no lo decide la sustancia, aunque sea agua, sino la cantidad. ¿Aquí el agua es lo que hay más o lo que hay menos?",
               "orden": 2
             },
             {
-              "texto": "El agua (180 g) está en mayor cantidad. El que hay más de él, el que disuelve, recibe ese nombre.",
+              "texto": "El agua (50 g) es la que hay menos. Piensa qué nombre se da al componente que está en menor cantidad.",
               "orden": 3
             }
           ],
           "respuesta": {
-            "correcta": "disolvente",
+            "correcta": "el soluto",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": "disolvente"
+                "valor": "el soluto"
               }
             ],
-            "comoSeLee": "disolvente",
+            "comoSeLee": "el soluto",
             "aceptaTambien": [],
             "opciones": [
               {
-                "etiqueta": "disolvente",
+                "etiqueta": "el soluto",
                 "esCorrecta": true,
-                "queRevela": "Viste que el agua está en mayor cantidad y le diste el nombre que le corresponde."
+                "queRevela": "Comparaste los gramos: el agua (50 g) es la que hay menos, así que es el soluto aunque sea agua. El acetona (150 g) es el disolvente."
               },
               {
-                "etiqueta": "soluto",
+                "etiqueta": "el disolvente",
                 "esCorrecta": false,
-                "queRevela": "El café está en menor cantidad, por eso es el soluto. El agua, en mayor cantidad, es el disolvente."
+                "queRevela": "El agua suele ser el disolvente, pero aquí es la que hay menos (50 g). El disolvente es el acetona, que es el que hay más (150 g)."
+              },
+              {
+                "etiqueta": "la disolución",
+                "esCorrecta": false,
+                "queRevela": "La disolución es la mezcla completa de acetona y agua. El agua es solo uno de sus dos componentes."
               }
             ]
           }

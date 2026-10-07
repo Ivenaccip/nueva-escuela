@@ -14,11 +14,11 @@
       "pasos": [
         {
           "numero": 1,
-          "queSeHace": "Identificas que el diafragma es un músculo bajo los pulmones que baja cuando inhalas.",
+          "queSeHace": "Ubicas el diafragma: un músculo plano que está debajo de los pulmones.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "El diafragma está debajo de los pulmones y"
+              "valor": "El diafragma es un músculo plano debajo de los pulmones"
             }
           ],
           "porQue": "El diafragma no es pasivo: su movimiento es activo y controlado. Saber dónde está es el primer paso para entender cómo mueve el aire."
@@ -43,7 +43,7 @@
               "valor": "↑ volumen → ↓ presión dentro"
             }
           ],
-          "porQue": "La presión es cuánto aire hay en cuánto espacio. Si el espacio crece y el aire no entra todavía, hay menos presión. Es la misma causa del vacío: espacio vacío sin aire."
+          "porQue": "La presión es qué tanto empuja el aire contra las paredes: el mismo aire en más espacio empuja menos. Si el espacio crece y todavía no entra más aire, la presión baja."
         },
         {
           "numero": 4,
@@ -94,8 +94,8 @@
       "resultadoEnPalabras": "la presión dentro baja porque el volumen aumenta, y eso permite que la presión de afuera mayor empuje el aire adentro"
     },
     "error": {
-      "enUnaFrase": "Cree que el diafragma sube cuando inhalas y que el pulmón jala el aire por su cuenta.",
-      "creenciaDeAtras": "cree que inhalar es que el pulmón se infla solo, como un globo que se expande, sin necesidad de que algo lo empuje desde afuera. Confunde la causa con el efecto: ve que el pulmón se expande, así que piensa que él es quien causa que el aire entre.",
+      "enUnaFrase": "Al describir una inhalación, dice que el diafragma sube y que el tórax se achica.",
+      "creenciaDeAtras": "cree que al inhalar el diafragma sube, como si el pecho se levantara y se cerrara. Invierte la geometría del cuerpo, y con ese dato al revés todo lo que deduce después sale al revés.",
       "pasoQueCorrompe": 2,
       "renglonMalo": [
         {
@@ -106,10 +106,10 @@
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "El diafragma sube y el pulmón jala el aire"
+          "valor": "El aire no entra: la presión de adentro lo empuja hacia afuera"
         }
       ],
-      "comoSeCacha": "El movimiento está invertido: si el diafragma sube, el volumen disminuye, no aumenta. La geometría del cuerpo no cambia: un músculo que sube es lo opuesto a uno que baja."
+      "comoSeCacha": "Al inhalar el diafragma baja, no sube: ese renglón describe una exhalación. Si el diafragma sube, el volumen sí disminuye, pero eso saca el aire, no lo mete."
     },
     "erroresSecundarios": [
       {
@@ -129,7 +129,7 @@
       },
       {
         "palabra": "presión",
-        "queEs": "El aire que empuja contra las paredes. Con más aire en menos espacio, la presión es mayor. Con menos aire o más espacio, la presión es menor.",
+        "queEs": "El aire que empuja contra las paredes. Con más aire en menos espacio, la presión es mayor. Con el mismo aire en más espacio, la presión es menor.",
         "noEsLoMismoQue": "volumen, que es el espacio, no la fuerza del aire"
       },
       {
@@ -174,7 +174,7 @@
     "temaNumero": 12,
     "materia": "biologia",
     "pregunta": "¿Qué empuja el aire hacia adentro cuando inhalas?",
-    "resumen": "El aire no entra porque el pulmón lo jale. Entra empujado por la presión del aire de afuera, que es mayor que la presión adentro. El diafragma que baja es lo que crea esa diferencia de presión.",
+    "resumen": "Cómo el movimiento del diafragma cambia el espacio dentro del tórax y qué le pasa a la presión del aire cuando eso ocurre. Con eso se entiende de dónde viene lo que mueve el aire al inhalar.",
     "busqueda": {
       "criterios": [
         "Explica por qué el aire entra al pulmón: por diferencia de presión, no porque el pulmón lo jale.",
@@ -202,20 +202,9 @@
       "canal": "La pizarra de Noe",
       "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
     },
-    "alternativas": [
-      {
-        "idDeYouTube": "vy4ud96MidY",
-        "variedadDeEspanol": "no se pudo determinar",
-        "explicaElPorQue": true,
-        "porQueEste": "Primer respaldo. El título dice fisiología respiratoria y ventilación pulmonar, que cubre el tema. Es del mismo nivel educativo que el elegido, aunque no se ve claramente el acento del español.",
-        "url": "https://www.youtube.com/watch?v=vy4ud96MidY",
-        "titulo": "FISIOLOGÍA RESPIRATORIA: VENTILACIÓN PULMONAR",
-        "canal": "MediLu: aprende medicina facil",
-        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
-      }
-    ],
-    "confianza": "media",
-    "porQueEsaConfianza": "Los dos videos salieron de la lista validada y sus títulos hablan de ventilación pulmonar y presión en la respiración. El riesgo: no se pudo determinar con seguridad si el acento es de México o América Latina a partir de los títulos, así que la confianza no puede ser alta. Ninguno de los dos trae duración en los datos disponibles, así que ese recuadro se queda vacío.",
+    "alternativas": [],
+    "confianza": "baja",
+    "porQueEsaConfianza": "El video elegido salió de la lista validada y su título habla de ventilación pulmonar y de presión, pero no se pudo ver su contenido para comprobar el nivel, ni su duración, ni si el acento es de México. Además no hay respaldo: el único que había era de un canal de medicina con título de fisiología de licenciatura y se quitó. Con una sola opción y sin comprobar el nivel, la confianza es baja.",
     "noSePuede": null
   },
   "contacto": {
@@ -229,7 +218,7 @@
             "valor": "Cuando inhalas, ¿qué le pasa al diafragma?"
           }
         ],
-        "pasoDelCanon": 1,
+        "pasoDelCanon": 2,
         "opciones": [
           {
             "partes": [
@@ -259,24 +248,24 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Se expande sin moverse"
+                "valor": "Se queda quieto y las costillas hacen todo"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Crees que el diafragma se infla como un globo. El diafragma es un músculo plano: se mueve, no se expande.",
+            "queRevela": "Crees que el diafragma no participa y que sólo las costillas agrandan el tórax. Él también trabaja: al bajar, le da más espacio al aire.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Jala el aire directamente"
+                "valor": "Se infla"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Crees que el diafragma atrae aire por sí solo. El diafragma mueve el espacio; la presión mueve el aire.",
+            "queRevela": "Crees que el diafragma se infla como un globo. Es un músculo plano: no se infla, se mueve hacia abajo y deja más espacio.",
             "letra": "D"
           }
         ]
@@ -299,7 +288,7 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Deduciste que más espacio con menos aire significa menor presión.",
+            "queRevela": "Deduciste que el mismo aire en más espacio empuja menos contra las paredes, así que la presión baja.",
             "letra": "A"
           },
           {
@@ -311,7 +300,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Crees que un volumen mayor trae más presión. Es lo opuesto: más espacio dispersa el aire.",
+            "queRevela": "Crees que más espacio trae más presión. Es lo opuesto: el mismo aire en más espacio empuja menos contra las paredes.",
             "letra": "B"
           },
           {
@@ -323,19 +312,19 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Crees que el espacio no afecta la presión. La presión es aire concentrado en un espacio.",
+            "queRevela": "Crees que el espacio no afecta la presión. Sí la afecta: el mismo aire en más espacio empuja menos.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Desaparece"
+                "valor": "Es igual a la de afuera"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Confundes presión baja con no haber aire. Siempre hay aire; solo está menos concentrado.",
+            "queRevela": "Crees que adentro y afuera ya están parejos. Justo cuando el espacio crece, la presión de adentro cae por debajo de la de afuera, y esa diferencia es la que hace entrar el aire.",
             "letra": "D"
           }
         ]
@@ -344,7 +333,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Cuando P dentro < P fuera, ¿qué hace el aire?"
+            "valor": "Justo después de que baja el diafragma, ¿qué hace el aire?"
           }
         ],
         "pasoDelCanon": 5,
@@ -370,31 +359,31 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Crees que el pulmón atrae aire. El pulmón solo cambia el volumen y la presión hace el trabajo.",
+            "queRevela": "Crees que el pulmón atrae el aire. Quien agranda el espacio es el diafragma; después la diferencia de presión es la que mueve el aire.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Se queda afuera"
+                "valor": "Se queda quieto: las presiones se igualan"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Crees que la diferencia de presión no mueve el aire. La presión es lo que mueve el aire entre espacios.",
+            "queRevela": "Crees que las presiones ya están parejas. Con el espacio más grande, la de adentro queda más baja que la de afuera, y esa diferencia empuja el aire.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Genera un vacio"
+                "valor": "Sale del pulmón"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Confundes qué causa el vacío con qué viene después. El volumen sube, presión baja, luego entra aire.",
+            "queRevela": "Crees que el aire va hacia afuera. El aire va de donde hay más presión a donde hay menos, y adentro hay menos: por eso entra.",
             "letra": "D"
           }
         ]
@@ -469,11 +458,7 @@
     "enunciado": [
       {
         "tipo": "texto",
-        "valor": "Alguien explicó por qué entra el aire al pulmón cuando inhalas. El diafragma baja,"
-      },
-      {
-        "tipo": "texto",
-        "valor": "la presión dentro baja y queda menor que la de afuera. Hay exactamente un paso mal. Tócalo."
+        "valor": "Alguien explicó qué le pasa al aire cuando inhalas. Hay exactamente un paso mal. Tócalo."
       }
     ],
     "pasos": [
@@ -482,10 +467,10 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "El diafragma está debajo de los pulmones y"
+            "valor": "El diafragma es un músculo plano debajo de los pulmones"
           }
         ],
-        "siLoTocas": "Ese paso reconoce dónde está el diafragma y que es un músculo que se mueve. Saber dónde está es el punto de partida para entender cómo cambia el volumen."
+        "siLoTocas": "Este paso solo ubica el diafragma: dice dónde está, no cómo se mueve ni qué pasa con la presión."
       },
       {
         "numero": 2,
@@ -495,17 +480,17 @@
             "valor": "↑ diafragma → ↓ volumen del tórax"
           }
         ],
-        "siLoTocas": "Ahí está. Ese renglón tiene el movimiento invertido, y es el que les pasa su error a los pasos que siguen."
+        "siLoTocas": "Ahí está. Los tres renglones que siguen salen de éste, y todo lo que concluyen depende de lo que diga. Ahora dime qué tiene mal."
       },
       {
         "numero": 3,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "↑ volumen → ↓ presión dentro"
+            "valor": "↓ volumen → ↑ presión dentro"
           }
         ],
-        "siLoTocas": "La lógica está bien: si el espacio crece, la presión baja. Pero ese paso recibió un volumen mal desde antes, así que su conclusión viene equivocada de donde vino."
+        "siLoTocas": "La cuenta está bien hecha: si el espacio del tórax se achica, la presión de adentro sube. Este paso usó el dato que traía en vez de inventar uno."
       },
       {
         "numero": 4,
@@ -523,42 +508,46 @@
             "valor": "P fuera"
           }
         ],
-        "siLoTocas": "La comparación está bien hecha: si el volumen sube, la presión dentro sube. Ese paso no inventó ninguno de sus dos números, los recibió del paso anterior."
+        "siLoTocas": "La comparación sigue bien: si la presión de adentro subió, queda por encima de la de afuera, que no cambió. Este paso tampoco inventó nada: trabajó con lo que traía."
       },
       {
         "numero": 5,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "El pulmón jala el aire hacia adentro"
+            "valor": "El aire no entra: la presión de adentro lo empuja hacia afuera"
           }
         ],
-        "siLoTocas": "La conclusión sigue bien de su renglón anterior: si la presión dentro es mayor, el aire entraría de adentro hacia afuera, no al revés. Ese paso repite lo que le llegó."
+        "siLoTocas": "Sigue bien de la comparación: el aire va de donde hay más presión a donde hay menos, y en esos renglones la mayor está adentro. Concluye con lo que traía."
       }
     ],
     "pasoMalo": 2,
-    "arrastre": "El diafragma invertido del paso 2 hace que el paso 3 diga que el volumen sube cuando baja el diafragma, y con un volumen que sube, el paso 4 compara presiones invertidas: adentro mayor que afuera. El paso 5 sigue bien la lógica falsa de sus pasos anteriores. Si buscas sólo el renglón raro, cuatro de los cinco se ven coherentes entre sí.\">",
-    "porQue": "¿Qué movimiento tiene mal ese paso?",
+    "arrastre": "El diafragma que sube del paso 2 achica el tórax, y de ese ↓ volumen sale el ↑ presión del paso 3. Con la presión de adentro más alta, el paso 4 la compara con la de afuera y la deja mayor, y por eso el paso 5 concluye que el aire no entra. Cada paso sigue bien al anterior: si sólo buscas la conclusión rara, tocas el 5, pero la causa está en el 2.",
+    "porQue": "¿Qué tiene mal ese paso?",
     "motivos": [
       {
-        "texto": "Invirtió el movimiento del diafragma: sube cuando debería bajar.",
+        "texto": "Describió una exhalación: el diafragma sube, pero al inhalar baja.",
         "esElBueno": true,
-        "queRevela": "Cuando el diafragma baja, la caja torácica se expande y hay más espacio. El renglón dice que sube, que es lo opuesto: la geometría del cuerpo no cambia porque alguien crea que cambia. El diafragma es un músculo que baja en una inhalación."
+        "queRevela": "Al inhalar el diafragma baja y el tórax gana espacio. El renglón dice lo contrario: que sube y que el tórax se achica, que es lo que pasa al exhalar. Ese dato al revés es el que arrastran los renglones que siguen."
       },
       {
-        "texto": "Confundió el diafragma con el pulmón.",
+        "texto": "Se equivocó con el volumen: con el diafragma arriba el tórax se agranda.",
         "esElBueno": false,
-        "queRevela": "Quien escoge esto distingue entre dos órganos diferentes pero cree que el paso habla de otro. El paso 2 dice explícitamente «diafragma», no «pulmón». El problema no es que confunda las palabras: es que invertiu el sentido del movimiento."
+        "queRevela": "Quien escoge esto cree que un diafragma que sube agranda el tórax, y es al revés: si sube, el espacio se achica, que es justo lo que dice el renglón. Lo que no cuadra es que al inhalar el diafragma baja."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro de los cinco pasos siguen bien la lógica uno después de otro. El error es un movimiento que está al revés, y todo lo que viene después lo arrastra."
+        "texto": "Lee la cadena paso por paso: cada renglón debe salir del anterior. Busca el primero que ya parte de algo que no pasa en una inhalación."
       },
       {
         "orden": 2,
-        "texto": "El paso 1 dice que el diafragma está debajo. El paso 2 dice qué hace. Compara lo que pasa en una inhalación: ¿qué movimiento hace el músculo que está debajo, cuando el pecho se expande?"
+        "texto": "Piensa en el émbolo de una jeringa: para que entre más aire, el espacio tiene que crecer. ¿Hacia dónde tiene que moverse el diafragma para que el tórax crezca?"
+      },
+      {
+        "orden": 3,
+        "texto": "Compara lo que dice el renglón que describe el movimiento del diafragma con lo que pasa en tu pecho cuando inhalas."
       }
     ],
     "noSePuede": null
@@ -566,39 +555,39 @@
   "explicar": {
     "temaNumero": 12,
     "materia": "biologia",
-    "titulo": "Explícame por qué el aire entra empujado y no jalado por el pulmón.",
+    "titulo": "Explícame por qué entra aire al inhalar, empezando por el diafragma.",
     "aclaracion": "Con tus palabras, sin nombrar los pasos. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
     "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
     "rubrica": {
       "ideasQueCuentan": [
         {
-          "idea": "El diafragma que baja crea más espacio adentro del tórax, no menos, y ese espacio adicional es lo que causa que la presión baje.",
-          "porQueImporta": "Si no saca esta diferencia, seguirá pensando que el diafragma sube cuando inhalas, y que el espacio disminuye en vez de crecer. Esa inversión lo lleva a pensar que el pulmón jala.",
-          "comoSuenaDicha": "Cuando el diafragma baja, hay más espacio dentro, y eso hace que la presión baje.",
-          "esImprescindible": true
+          "idea": "Al inhalar, el diafragma baja y el espacio dentro del tórax crece.",
+          "porQueImporta": "Es el punto de partida: quien cree que el diafragma sube al inhalar invierte la geometría del cuerpo y no puede explicar de dónde sale el cambio de presión. Sin esta idea, el diafragma sigue siendo sólo un músculo que se mueve.",
+          "comoSuenaDicha": "Cuando inhalo, el diafragma baja y hay más espacio dentro del pecho.",
+          "esImprescindible": false
         },
         {
-          "idea": "La presión dentro del tórax baja cuando el volumen crece, porque hay más espacio y menos aire apretado por ahora.",
-          "porQueImporta": "Es lo que convierte el movimiento del diafragma en una causa real de que entre aire. Sin esta conexión entre volumen y presión, el diafragma es sólo un múculo que se mueve.",
+          "idea": "Con más espacio, la presión de adentro baja.",
+          "porQueImporta": "Es lo que convierte el movimiento del diafragma en una causa real de que entre aire. Sin esta conexión entre volumen y presión, el movimiento queda suelto y no explica nada.",
           "comoSuenaDicha": "Cuando hay más espacio, el aire que está ahí tiene más sitio, así que empuja menos, y la presión baja.",
           "esImprescindible": false
         },
         {
-          "idea": "La presión de afuera es siempre mayor que la presión adentro después de que el diafragma baja, y esa diferencia es lo que empuja el aire a entrar.",
-          "porQueImporta": "Es la idea que cierra la explicación: sin diferencia de presión, el aire no se mueve, y sin entender que afuera hay más presión que adentro, el estudiante sigue pensando que el pulmón es quien tira.",
+          "idea": "Mientras inhalas, afuera hay más presión que adentro, y esa diferencia empuja el aire hacia adentro: el pulmón no lo jala.",
+          "porQueImporta": "Es la idea que contesta por qué entra el aire. Sin ella, aunque diga bien lo del diafragma y la presión, sigue pensando que el pulmón es quien tira. Si la respuesta afirma que el pulmón jala el aire o que el diafragma sube al inhalar, no cuenta aunque junte otras dos ideas, porque deja en pie el error.",
           "comoSuenaDicha": "El aire de afuera empuja porque hay más presión ahí que adentro.",
-          "esImprescindible": false
+          "esImprescindible": true
         }
       ],
       "minimoParaContar": 2,
       "suenanBienYNoDicen": [
         {
           "respuesta": "El pulmón se infla como un globo cuando inhalas, y ese es el que jala el aire adentro.",
-          "queLaDelata": "Describe el efecto, no la causa: sí, el pulmón se expande, pero no porque él sea quien jala. Es al revés: el aire entra porque la presión de afuera lo empuja, y el pulmón se expande como consecuencia.",
+          "queLaDelata": "Describe el efecto, no la causa: el pulmón sí se expande, pero se agranda porque el diafragma agranda el tórax, no porque él jale. Esa expansión baja la presión de adentro, y por eso entra el aire.",
           "queLeFalta": "Que diga que el espacio crece primero, la presión baja después, y la presión de afuera es la que empuja."
         },
         {
-          "respuesta": "Porque el diafragma sube y eso comprime el aire, sacándolo del pulmón.",
+          "respuesta": "Porque el diafragma sube y empuja el aire hacia adentro de los pulmones.",
           "queLaDelata": "El movimiento está invertido: dice que el diafragma sube cuando en realidad baja. Si sube, el espacio disminuye, no crece, y la presión subiría en vez de bajar.",
           "queLeFalta": "Que corrija el movimiento: el diafragma baja, no sube."
         },
@@ -616,7 +605,7 @@
         },
         {
           "siDice": "Entiendo que entra aire, nada más no sé cómo explicar por qué es la presión.",
-          "seLeContesta": "Entonces contesta sólo esto: cuando el diafragma baja y hay más espacio, el aire que está ahí tiene menos lugar para estar apretado, ¿la presión sube o baja?",
+          "seLeContesta": "Entonces contesta sólo esto: cuando el diafragma baja y hay más espacio, el mismo aire queda menos apretado. ¿La presión sube o baja?",
           "aDondeLoEmpuja": "A que vea que la conexión entre volumen y presión ya la tiene, nada más le falta escribirla."
         }
       ],
@@ -634,11 +623,19 @@
       "temaNumero": 12,
       "materia": "biologia",
       "teclado": "opciones",
-      "porQueEseTeclado": "La respuesta es un signo de comparación entre dos presiones. El teclado de dígitos no tiene símbolos de comparación (<, >). El tema enseña a reconocer cuándo una presión es menor que la otra, y con opciones el estudiante identifica el símbolo correcto.",
+      "porQueEseTeclado": "La respuesta de cada hueco es la relación entre dos presiones: menor, igual o mayor. Con opciones el estudiante elige entre las tres relaciones posibles, así que creer que no hay diferencia (=) o que va al revés (>) es un error real y no un signo opuesto al azar. Las fichas o el texto sólo pedirían escribir un signo suelto.",
       "tecladosDescartados": [
         {
           "teclado": "digitos",
-          "porQue": "No tiene los símbolos < y > que necesita la comparación de presiones. La respuesta es un signo de comparación, no un número."
+          "porQue": "No tiene los símbolos <, = y > que necesita la comparación de presiones. La respuesta es un signo de comparación, no un número."
+        },
+        {
+          "teclado": "fichas",
+          "porQue": "Con fichas se armaría el mismo signo suelto que con opciones, pero sin mostrar las tres relaciones posibles: el estudiante tendría que adivinar qué signos existen."
+        },
+        {
+          "teclado": "texto",
+          "porQue": "Escribir el signo o decirlo con letras abre errores de escritura que no son lo que el tema enseña, y la respuesta es de un solo símbolo."
         }
       ],
       "fichas": [],
@@ -652,7 +649,7 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "La presión dentro es "
+            "valor": "Justo después de que baja el diafragma, la presión dentro es "
           },
           {
             "tipo": "hueco"
@@ -682,6 +679,11 @@
               "etiqueta": ">",
               "esCorrecta": false,
               "queRevela": "Pensaste que la presión adentro es mayor, pero si el volumen crece sin que entre aire, la presión baja, no sube."
+            },
+            {
+              "etiqueta": "=",
+              "esCorrecta": false,
+              "queRevela": "Pensaste que las presiones quedan iguales, pero justo después de que baja el diafragma la de adentro bajó y la de afuera no: por eso hay diferencia."
             }
           ]
         },
@@ -692,11 +694,11 @@
           },
           {
             "orden": 2,
-            "texto": "La presión es aire en un espacio. Si el espacio crece sin que entre aire, hay menos presión."
+            "texto": "La presión de afuera no cambió. Adentro, en cambio, el mismo aire tiene ahora más espacio: ¿qué le pasa a lo que empuja contra las paredes?"
           },
           {
             "orden": 3,
-            "texto": "El volumen aumentó y la presión adentro bajó. Está por debajo de la de afuera. Elige el signo que lo dice."
+            "texto": "Si el espacio crece y el aire todavía no ha entrado, ¿la presión de adentro queda arriba o abajo de la que hay afuera?"
           }
         ]
       },
@@ -713,7 +715,7 @@
             },
             {
               "tipo": "texto",
-              "valor": " que antes de bajar el diafragma."
+              "valor": " la que había antes de bajar el diafragma."
             }
           ],
           "pregunta": "¿Cómo cambia la presión cuando aumenta el volumen?",
@@ -737,6 +739,11 @@
                 "etiqueta": ">",
                 "esCorrecta": false,
                 "queRevela": "Crees que la presión sube cuando el volumen aumenta, pero ocurre lo opuesto: en más espacio, el aire se dispersa."
+              },
+              {
+                "etiqueta": "=",
+                "esCorrecta": false,
+                "queRevela": "Piensas que el espacio no afecta la presión, pero con el mismo aire en más lugar la presión baja."
               }
             ]
           },
@@ -747,30 +754,30 @@
             },
             {
               "orden": 2,
-              "texto": "El espacio se hizo más grande y el aire no entra todavía. Hay menos aire en más lugar."
+              "texto": "El espacio se hizo más grande y todavía no entra más aire: es el mismo aire en más espacio."
             },
             {
               "orden": 3,
-              "texto": "La presión tiene que ser menor que la que había antes del movimiento."
+              "texto": "Compara cuánto empuja el mismo aire contra las paredes ahora que tiene más lugar con lo que empujaba antes."
             }
           ]
         },
         {
-          "situacion": "Tu maestro de biología te pregunta qué comparación existe entre las presiones cuando estás inhalando.",
+          "situacion": "Ahora exhalas: el diafragma sube y el tórax se hace más chico.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "La presión atmosférica de afuera es "
+              "valor": "Al exhalar, la presión dentro es "
             },
             {
               "tipo": "hueco"
             },
             {
               "tipo": "texto",
-              "valor": " que la presión dentro del tórax durante la inhalación."
+              "valor": " la presión afuera."
             }
           ],
-          "pregunta": "¿Cómo se comparan las dos presiones cuando el diafragma está bajado?",
+          "pregunta": "¿Cómo se compara la presión de adentro con la de afuera al exhalar?",
           "respuesta": {
             "correcta": ">",
             "enAtomos": [
@@ -785,81 +792,91 @@
               {
                 "etiqueta": ">",
                 "esCorrecta": true,
-                "queRevela": "Viste que la presión de afuera empuja el aire adentro porque es mayor que la presión que bajó."
+                "queRevela": "Con el diafragma arriba el espacio se achica y el mismo aire empuja más: la presión de adentro queda mayor que la de afuera, y por eso el aire sale."
               },
               {
                 "etiqueta": "<",
                 "esCorrecta": false,
-                "queRevela": "Pensaste que la presión de afuera es menor, pero entonces no habría diferencia que empujara el aire."
+                "queRevela": "Pensaste que pasa lo mismo que al inhalar. Aquí el espacio se achica, no crece, así que la presión de adentro sube en vez de bajar."
+              },
+              {
+                "etiqueta": "=",
+                "esCorrecta": false,
+                "queRevela": "Si las presiones fueran iguales el aire no se movería, y al exhalar sí sale. Al achicarse el espacio, la de adentro queda más alta que la de afuera."
               }
             ]
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "La presión atmosférica siempre está ahí, empujando desde afuera."
+              "texto": "El diafragma sube: ¿el espacio dentro del tórax crece o se achica?"
             },
             {
               "orden": 2,
-              "texto": "El diafragma bajó, así que la presión adentro bajó. Una mayor empuja a una menor."
+              "texto": "El mismo aire queda en menos espacio, como al apretar el émbolo de una jeringa tapada. ¿Empuja más o menos contra las paredes?"
             },
             {
               "orden": 3,
-              "texto": "La presión de afuera es la mayor de las dos. Por eso el aire entra empujado."
+              "texto": "Al exhalar el aire sale del pulmón, y el aire siempre va de donde hay más presión a donde hay menos. ¿Qué lado tiene entonces más presión?"
             }
           ]
         },
         {
-          "situacion": "Tu amigo dice que el pulmón jala el aire adentro. Explicas que no es así.",
+          "situacion": "Justo antes de inhalar, el diafragma está relajado y no se mueve.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "El aire entra porque la presión de afuera es "
+              "valor": "Antes de inhalar, la presión dentro es "
             },
             {
               "tipo": "hueco"
             },
             {
               "tipo": "texto",
-              "valor": " que la de adentro, no porque el pulmón jale."
+              "valor": " la presión afuera."
             }
           ],
-          "pregunta": "¿Qué diferencia de presión causa que el aire entre?",
+          "pregunta": "¿Cómo se comparan las dos presiones antes de que el diafragma se mueva?",
           "respuesta": {
-            "correcta": ">",
+            "correcta": "=",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": ">"
+                "valor": "="
               }
             ],
-            "comoSeLee": "mayor que",
+            "comoSeLee": "igual a",
             "aceptaTambien": [],
             "opciones": [
               {
-                "etiqueta": ">",
+                "etiqueta": "=",
                 "esCorrecta": true,
-                "queRevela": "Explicaste que el aire no se mueve por voluntad del pulmón, sino porque una presión mayor empuja hacia una menor."
+                "queRevela": "Sin movimiento no hay cambio de volumen, así que adentro y afuera hay la misma presión. Por eso el aire no se mueve hasta que el diafragma baja."
               },
               {
                 "etiqueta": "<",
                 "esCorrecta": false,
-                "queRevela": "Crees que la presión de afuera es menor. Pero entonces no habría diferencia que empujara. El aire siempre corre hacia menos presión."
+                "queRevela": "Esa diferencia aparece cuando el diafragma baja y el espacio crece. Antes de moverse no hay nada que baje la presión de adentro."
+              },
+              {
+                "etiqueta": ">",
+                "esCorrecta": false,
+                "queRevela": "Esa diferencia aparece al exhalar, cuando el espacio se achica. Con el diafragma relajado el espacio no cambia y la presión de adentro no sube."
               }
             ]
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "Repasa: diafragma baja, volumen sube, presión adentro baja. Compara con la de afuera."
+              "texto": "El diafragma todavía no baja ni sube: el espacio dentro del tórax no ha cambiado."
             },
             {
               "orden": 2,
-              "texto": "Una presión mayor siempre empuja aire hacia donde hay menos presión."
+              "texto": "Si hubiera más presión de un lado, empujaría el aire hacia el otro lado."
             },
             {
               "orden": 3,
-              "texto": "La presión de afuera es mayor. Esa diferencia es el motor del aire que entra."
+              "texto": "En este momento el aire no se mueve ni hacia adentro ni hacia afuera. ¿Cómo tienen que ser las dos presiones para que eso pase?"
             }
           ]
         }

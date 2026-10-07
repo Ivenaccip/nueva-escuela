@@ -913,7 +913,7 @@
             "abajo": 8
           }
         ],
-        "siLoTocas": "Este paso sólo escribe las fracciones originales con la conclusión que le llegó del paso 4. No inventó el signo: lo copió, y por eso el renglón sale mal."
+        "siLoTocas": "Este paso sólo vuelve a escribir las dos fracciones originales con el signo que traía. No inventó el signo: lo copió, y por eso su renglón sale mal."
       }
     ],
     "pasoMalo": 4,
@@ -934,11 +934,11 @@
     "pistas": [
       {
         "orden": 1,
-        "texto": "Los pasos 1, 2 y 3 están bien. Fíjate en el paso donde se comparan las fracciones; el último sólo copia lo que dice ese."
+        "texto": "Un solo paso está mal y los que vienen después sólo copian lo que ese les dejó. Lee los pasos en orden y busca el primero cuya conclusión no te convence."
       },
       {
         "orden": 2,
-        "texto": "¿Qué números está comparando el paso 4: los de abajo de las fracciones originales o los de arriba de las ya convertidas?"
+        "texto": "Fíjate en el paso que decide cuál fracción es mayor: ¿con qué números lo decide, y son los que tocaba comparar en ese punto?"
       },
       {
         "orden": 3,
@@ -1144,7 +1144,7 @@
             },
             {
               "orden": 2,
-              "texto": "Si quieres comprobarlo con el procedimiento: pasa las dos a denominador 12 (paso 3) y compara los numeradores (paso 4)."
+              "texto": "Si quieres comprobarlo con el procedimiento: pasa las dos a denominador 12 y compara los numeradores."
             },
             {
               "orden": 3,
@@ -1205,7 +1205,7 @@
             },
             {
               "orden": 2,
-              "texto": "Lleva las dos a un mismo denominador (paso 3), o compara el tamaño del pedazo: ¿qué pasa con los pedazos cuando el pastel se corta en más partes?"
+              "texto": "Lleva las dos a un mismo denominador, o compara el tamaño del pedazo: ¿qué pasa con los pedazos cuando el pastel se corta en más partes?"
             },
             {
               "orden": 3,
@@ -1266,7 +1266,7 @@
             },
             {
               "orden": 2,
-              "texto": "Pasa un medio a cuartos multiplicando arriba y abajo por 2 (paso 3). Luego compara los numeradores (paso 4)."
+              "texto": "Pasa un medio a cuartos multiplicando arriba y abajo por 2. Luego compara los numeradores."
             },
             {
               "orden": 3,
@@ -1327,7 +1327,7 @@
             },
             {
               "orden": 2,
-              "texto": "Lleva las dos a un mismo denominador (paso 3): 15 es múltiplo de 3 y de 5. Luego compara los numeradores (paso 4)."
+              "texto": "Lleva las dos a un mismo denominador: 15 es múltiplo de 3 y de 5. Luego compara los numeradores."
             },
             {
               "orden": 3,
@@ -1336,72 +1336,63 @@
           ]
         },
         {
-          "situacion": "Estás ordenando fracciones de menor a mayor. Ya pusiste un tercio al principio y un medio al final, y falta la fracción que va en medio.",
+          "situacion": "Ana y Luis leen el mismo libro, cada quien su copia. Ana ya va en un medio del libro y Luis en dos quintos.",
           "expresion": [
             {
               "tipo": "fraccion",
               "arriba": 1,
-              "abajo": 3
-            },
-            {
-              "tipo": "texto",
-              "valor": "<"
+              "abajo": 2
             },
             {
               "tipo": "hueco"
             },
             {
-              "tipo": "texto",
-              "valor": "<"
-            },
-            {
               "tipo": "fraccion",
-              "arriba": 1,
-              "abajo": 2
+              "arriba": 2,
+              "abajo": 5
             }
           ],
-          "pregunta": "¿Cuál de estas fracciones va en medio para que la lista quede de menor a mayor?",
+          "pregunta": "¿Ana ha leído más, menos o lo mismo que Luis?",
           "respuesta": {
-            "correcta": "2/5",
+            "correcta": ">",
             "enAtomos": [
               {
-                "tipo": "fraccion",
-                "arriba": 2,
-                "abajo": 5
+                "tipo": "texto",
+                "valor": ">"
               }
             ],
-            "comoSeLee": "dos quintos",
+            "comoSeLee": "mayor que",
             "aceptaTambien": [],
             "opciones": [
               {
-                "etiqueta": "2/5",
+                "etiqueta": ">",
                 "esCorrecta": true,
-                "queRevela": "Llevadas a denominador 30, los numeradores quedan 10 para un tercio, 12 para dos quintos y 15 para un medio. Como 10 es menor que 12 y 12 menor que 15, dos quintos va en medio."
+                "queRevela": "Llevadas a denominador 10, los numeradores quedan 5 para un medio y 4 para dos quintos. Como 5 es mayor que 4, Ana ha leído más que Luis."
               },
               {
-                "etiqueta": "1/4",
+                "etiqueta": "<",
                 "esCorrecta": false,
-                "queRevela": "Un cuarto es más chico que un tercio: cortar en 4 da pedazos más chicos que cortar en 3. Iría antes del tercio, no en medio."
+                "queRevela": "Pensaste que dos quintos es más porque su numerador, 2, es mayor que 1. Pero el denominador también decide el tamaño del pedazo: llévalas al mismo denominador y compara."
               },
               {
-                "etiqueta": "2/3",
+                "etiqueta": "=",
                 "esCorrecta": false,
-                "queRevela": "Dos tercios son más que un medio: con denominador 6, un medio es 3 y dos tercios son 4. Iría después del medio, no en medio."
+                "queRevela": "Parecen cercanas, pero no son iguales: al llevarlas al mismo denominador, los numeradores no coinciden. Un medio y dos quintos no valen lo mismo."
               }
             ]
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "Compara cada opción con las fracciones que ya están: la que falta tiene que ser mayor que un tercio y menor que un medio."
+              "texto": "Ni los números de arriba ni los de abajo son iguales en las dos fracciones, así que mirar un solo lado no alcanza. Piensa qué te conviene que tengan igual para poder comparar."
             },
             {
               "orden": 2,
-              "texto": "Si dudas con alguna, llévala a un denominador común con la otra fracción (paso 3) y compara los numeradores (paso 4)."
+              "texto": "Lleva un medio y dos quintos a un mismo denominador: 10 es múltiplo de 2 y de 5. Luego compara los numeradores."
             },
             {
               "orden": 3,
-              "texto": "Empieza por descartar la opción que queda antes del tercio y la que queda después del medio."
+              "texto": "Escribe un medio con denominador 10 (el 5 va arriba) y haz lo mismo con dos quintos. Compara los dos numeradores y elige el signo que se abre hacia el mayor."
             }
           ]
         }

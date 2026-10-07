@@ -10,7 +10,7 @@
     "notacion": "lineal",
     "formaDeRespuesta": "expresion",
     "procedimiento": {
-      "nombre": "Calcular el aumento total de un microscopio",
+      "nombre": "Del aumento del microscopio al tamaño real de una célula",
       "pasos": [
         {
           "numero": 1,
@@ -52,41 +52,41 @@
         },
         {
           "numero": 3,
-          "queSeHace": "Enfocar la muestra con el tornillo fino para que se vea clara.",
+          "queSeHace": "Enfocas la muestra con el tornillo fino hasta que se vea clara.",
           "renglon": [
             {
               "tipo": "texto",
               "valor": "Giras el tornillo fino hasta ver nítido"
             }
           ],
-          "porQue": "El aumento total te dice cuánto ves, no te dice si ves bien. Sin enfocar, la imagen se ve borrosa aunque esté amplificada."
+          "porQue": "El aumento total te dice cuánto ves, no si ves bien. Sin enfocar, la imagen se ve borrosa aunque esté amplificada, y no podrías medir bien la célula."
         },
         {
           "numero": 4,
-          "queSeHace": "Cuentas cuántas células o estructuras caben dentro del campo que ves.",
+          "queSeHace": "Mides con una regla cuánto ocupa una célula en una fotografía tomada con ese aumento.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Entran 4 células en el campo"
+              "valor": "En la fotografía la célula mide 4000 μm (4 mm)"
             }
           ],
-          "porQue": "El aumento total es un número, pero eso no te dice qué tan grandes son las cosas de verdad. Necesitas contar cuántas entran en lo que ves para medir."
+          "porQue": "Lo único que puedes medir con la regla es la fotografía. Esa medida está agrandada: todavía no es el tamaño de la célula, y para obtenerlo necesitas el aumento total con que se tomó."
         },
         {
           "numero": 5,
-          "queSeHace": "Divides el tamaño total del campo entre el número de células para saber cuánto mide de verdad una.",
+          "queSeHace": "Divides lo que mide la célula en la fotografía entre el aumento total para obtener su tamaño real.",
           "renglon": [
             {
               "tipo": "fraccion",
-              "arriba": "400 μm",
-              "abajo": "4 células"
+              "arriba": "4000 μm",
+              "abajo": "400×"
             },
             {
               "tipo": "texto",
-              "valor": "= 100 μm por célula"
+              "valor": "= 10 μm de verdad"
             }
           ],
-          "porQue": "Si en 400 micrómetros caben 4 células iguales, cada una mide 100. Es la única manera de relacionar lo que ves amplificado con el tamaño real de las cosas."
+          "porQue": "La fotografía está agrandada 400 veces, así que la célula real es 400 veces más chica que en ella: 4000 entre 400 da 10. Para volver al tamaño real se divide entre el aumento."
         }
       ]
     },
@@ -95,32 +95,29 @@
       "planteamiento": [
         {
           "tipo": "texto",
-          "valor": "¿Cuál es el aumento total?"
+          "valor": "Ocular de 10×, objetivo de 40×. En la fotografía, una célula mide 4000 μm."
+        },
+        {
+          "tipo": "texto",
+          "valor": "¿Cuál es el aumento total y cuánto mide de verdad la célula?"
         }
       ],
       "resultado": [
         {
           "tipo": "texto",
-          "valor": "10×"
+          "valor": "10× × 40× = 400×;"
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": "4000 μm",
+          "abajo": "400×"
         },
         {
           "tipo": "texto",
-          "valor": "×"
-        },
-        {
-          "tipo": "texto",
-          "valor": "40×"
-        },
-        {
-          "tipo": "texto",
-          "valor": "="
-        },
-        {
-          "tipo": "texto",
-          "valor": "400×"
+          "valor": "= 10 μm"
         }
       ],
-      "resultadoEnPalabras": "400 aumentos"
+      "resultadoEnPalabras": "400 aumentos en total; la célula mide diez micrómetros de verdad"
     },
     "error": {
       "enUnaFrase": "Suma los aumentos en vez de multiplicarlos.",
@@ -151,10 +148,10 @@
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "El aumento total es 50×"
+          "valor": "El aumento total sale 50× y la célula mediría 80 μm"
         }
       ],
-      "comoSeCacha": "Sumar amplificaciones no tiene sentido: si el ocular amplía 10 veces una imagen que ya está amplificada 40 veces, no amplificas 50 veces, amplificas 400. Los dos aumentos se multiplican uno dentro del otro, no se apilan uno después del otro."
+      "comoSeCacha": "Sumar los aumentos no tiene sentido: el objetivo agranda la muestra 40 veces y el ocular agranda 10 veces esa imagen ya agrandada, así que no ves 50 veces, ves 400. Cada lente trabaja sobre lo que dejó la anterior, por eso se multiplica."
     },
     "erroresSecundarios": [
       {
@@ -189,10 +186,11 @@
       }
     ],
     "cotas": {
-      "numeros": "números naturales del 1 al 12 para los aumentos del ocular y objetivo; números naturales del 1 al 100 para el tamaño del campo en micrómetros y cantidad de células",
+      "numeros": "aumento del ocular de 5×, 10× o 15×; aumento del objetivo de 4×, 10×, 40× o 100×; aumento total hasta 1500×; medidas en la fotografía hasta 8000 μm (8 mm); tamaño real de una célula de 1 a 100 μm; células en el campo del 1 al 10",
       "unidades": [
         "×",
-        "μm"
+        "μm",
+        "mm"
       ],
       "simbolos": [
         {
@@ -203,6 +201,10 @@
           "tipo": "simbolo",
           "valor": "μ",
           "sup": "m"
+        },
+        {
+          "tipo": "texto",
+          "valor": "mm"
         }
       ]
     },
@@ -215,33 +217,49 @@
   "ver": {
     "temaNumero": 3,
     "materia": "biologia",
-    "pregunta": "¿Por qué con un aumento más grande ves menos cosas en el campo?",
-    "resumen": "Amplificar no es lo mismo que agrandar la zona que ves. Cuando cambias a un objetivo más fuerte, la imagen se hace más grande pero el espacio que cabe en el círculo del microscopio se hace más pequeño.",
+    "pregunta": "¿Por qué ves menos células cuando amplificas más con el microscopio?",
+    "resumen": "El ocular y el objetivo amplifican juntos por multiplicación, no por suma. Cuando amplíficas más, aumentas los detalles de lo que ves, pero el campo se achica y caben menos células.",
     "busqueda": {
       "criterios": [
-        "Explica por qué ampliar más hace que quepan menos cosas en el campo visual, no solo cómo se cambia el objetivo.",
-        "Está en español de México o América Latina. Es del nivel de sexto de primaria.",
-        "Muestra de forma clara que el aumento del ocular multiplica al aumento del objetivo, no se suma.",
-        "Llega a un ejemplo práctico antes del minuto dos sin introducción larga del canal."
+        "Explica por qué el aumento total del microscopio se obtiene multiplicando el ocular por el objetivo, no sumándolos.",
+        "Muestra cómo el campo de visión se achica al usar objetivos de mayor aumento y por eso se ven menos células.",
+        "Es para el nivel de sexto de primaria: no usa terminología de óptica avanzada ni entra en física de lentes.",
+        "Llega al punto en menos de dos minutos, sin presentación larga del canal.",
+        "Está en español de México o de América Latina."
       ],
       "descarta": [
-        "Enseña que sumar los aumentos (10× + 40× = 50×) es correcto.",
-        "Solo lista pasos mecánicos sin explicar por qué la multiplicación en vez de suma.",
-        "Es un video de más de 5 minutos sin entrar al punto en el primer minuto.",
-        "Confunde aumento con el tamaño real del objeto."
+        "Suma los aumentos en vez de multiplicarlos (10× + 40× = 50×) o enseña eso como el método correcto.",
+        "Solo enseña el procedimiento de cálculo sin explicar por qué se multiplica.",
+        "Es un video de bachillerato o nivel superior de física óptica."
       ],
-      "consultasAlternas": [],
-      "consulta": "video explicación \"El aumento del microscopio\" biología 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento"
+      "consulta": "video explicación \"El aumento del microscopio\" biología 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
     },
-    "video": null,
-    "alternativas": [],
-    "confianza": "baja",
-    "porQueEsaConfianza": "La búsqueda no devolvió ningún video en la lista de candidatos que cumpla los criterios: explicar por qué la multiplicación de aumentos es correcta y por qué el campo se reduce con mayor aumento, en nivel de sexto de primaria y en español de México o América Latina. Sin video disponible que se haya validado, el tema abre con la pregunta y el resumen, pero sin el soporte visual.",
-    "noSePuede": {
-      "que": "No se encontró ningún video en la búsqueda que explique por qué los aumentos se multiplican en vez de sumarse, y por qué amplificar más reduce el campo visual.",
-      "porQue": "La lista de candidatos que se consultó está vacía. Se necesita un video de nivel de sexto primaria en español de México o América Latina que enseñe esta idea específica del microscopio.",
-      "queHagoConEsto": "Se puede reformular la búsqueda con términos más específicos del temario o esperar nuevos candidatos de YouTube. Mientras tanto, la estación 1 abre con pregunta y resumen sin video, y el estudiante puede pasar a las siguientes estaciones."
-    }
+    "video": {
+      "idDeYouTube": "pdICDO8PzYU",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "Explica el funcionamiento del microscopio y cómo los aumentos se multiplican. El canal es educativo y el video llega al punto sin rodeos.",
+      "url": "https://www.youtube.com/watch?v=pdICDO8PzYU",
+      "titulo": "Uso y cuidado del microscopio (tutorial)",
+      "canal": "Profe Andres",
+      "dondeSalio": "De donde lo vio el buscador: página abierta."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "Op4K7S_9GSo",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": false,
+        "porQueEste": "Segundo respaldo. Es una cápsula sobre técnicas de microscopio, pero por el título no queda claro si explica el por qué de la multiplicación de aumentos.",
+        "url": "https://www.youtube.com/watch?v=Op4K7S_9GSo",
+        "titulo": "Cápsula 1 Técnicas Isabel Castro M",
+        "canal": "Valeria Sabaj Diez",
+        "dondeSalio": "De donde lo vio el buscador: página abierta."
+      }
+    ],
+    "confianza": "media",
+    "porQueEsaConfianza": "El primer video tiene el id y título verificados de la lista. Explica el por qué del aumento. Media porque en el segundo respaldo no se puede determinar con seguridad si explica la razón de la multiplicación, y la variedad de español del canal no se pudo confirmar con certeza.",
+    "noSePuede": null
   },
   "contacto": {
     "temaNumero": 3,
@@ -265,7 +283,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": true,
-            "queRevela": "Sumaste los aumentos como si fueran números que se apilan uno después del otro. Cuando el ocular amplía lo que ya está amplificado por el objetivo, los dos aumentos se multiplican: 10 veces 40 no es 50, es 400.",
+            "queRevela": "Sumaste 10 + 40. Pero el ocular no le agrega 10 a lo que hizo el objetivo: agranda 10 veces la imagen que el objetivo ya agrandó 40 veces. Por eso se multiplica: 10 × 40 = 400, no 50.",
             "letra": "A"
           },
           {
@@ -310,7 +328,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Usas el objetivo de 40× con un ocular de 8×. ¿Qué pasa cuando cambias a un objetivo de 10×, dejando el mismo ocular?"
+            "valor": "Usas el objetivo de 40× con un ocular de 10×. ¿Qué pasa cuando cambias a un objetivo de 10×, dejando el mismo ocular?"
           }
         ],
         "pasoDelCanon": 1,
@@ -336,19 +354,19 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estás confundiendo amplificación con cantidad. Cambiar a un objetivo de menor aumento reduce la amplificación total, así que ves menos detalles de cada célula.",
+            "queRevela": "Con un objetivo de 10× cada célula se ve más chica y con menos detalle, no con más. Lo de que caben más células sí está bien.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "El campo se queda igual"
+                "valor": "Ves menos detalles y menos células en el campo"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El tamaño del campo depende del objetivo: con un objetivo de menor aumento el campo es más grande y ves más área de la muestra.",
+            "queRevela": "Con menos aumento ves cada célula más chica, pero el campo se hace más grande y caben más.",
             "letra": "C"
           },
           {
@@ -369,7 +387,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Ocular de 10× y objetivo de 12×. Cuentas que entran 5 células en el campo. ¿Cuál es el aumento total?"
+            "valor": "Ocular de 10× y objetivo de 4×. Cuentas que entran 5 células en el campo. ¿Cuál es el aumento total?"
           }
         ],
         "pasoDelCanon": 2,
@@ -378,24 +396,24 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "120×"
+                "valor": "40×"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Multiplicaste los dos aumentos: 10 veces 12 es 120.",
+            "queRevela": "Multiplicaste los dos aumentos: 10 veces 4 es 40.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "22×"
+                "valor": "14×"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Sumaste el ocular y el objetivo. Los aumentos no se suman; la amplificación de uno actúa sobre la del otro, así que se multiplican.",
+            "queRevela": "Sumaste el ocular y el objetivo. Los aumentos no se suman: el ocular agranda la imagen que el objetivo ya agrandó, así que se multiplican.",
             "letra": "B"
           },
           {
@@ -407,19 +425,19 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Usaste el número de células que contaste. El aumento total es un número fijo que depende del ocular y del objetivo, no del número de células que entren en el campo.",
+            "queRevela": "Usaste el número de células que contaste. El aumento total depende del ocular y del objetivo, no de cuántas células entren en el campo.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "2×"
+                "valor": "6×"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Dividiste o restaste. El aumento total es el resultado de multiplicar el ocular por el objetivo, no de una división.",
+            "queRevela": "Restaste el aumento del objetivo al del ocular. El aumento total sale de multiplicar los dos, no de restarlos.",
             "letra": "D"
           }
         ]
@@ -428,7 +446,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Miras una célula con aumento total 100× y el campo mide 200 μm. Caben 4 células iguales. ¿Cuánto mide cada una de verdad?"
+            "valor": "Con aumento total de 100×, la fotografía de una célula mide 5000 μm. ¿Cuánto mide de verdad la célula?"
           }
         ],
         "pasoDelCanon": 5,
@@ -442,8 +460,32 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Dividiste el tamaño del campo entre el número de células: 200 entre 4 es 50.",
+            "queRevela": "Dividiste lo que mide la célula en la fotografía entre el aumento total: 5000 entre 100 es 50.",
             "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5000 μm"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Leíste la medida de la fotografía tal cual. Está agrandada 100 veces, así que no es lo que mide la célula: hay que dividir entre el aumento.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "500000 μm"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste. La fotografía ya está agrandada, así que la célula real es más chica que en ella: se divide, no se multiplica.",
+            "letra": "C"
           },
           {
             "partes": [
@@ -454,31 +496,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Usaste el aumento total. El aumento no te dice el tamaño real; solo te dice que la imagen está amplificada. Para medir necesitas dividir.",
-            "letra": "B"
-          },
-          {
-            "partes": [
-              {
-                "tipo": "texto",
-                "valor": "800 μm"
-              }
-            ],
-            "esCorrecta": false,
-            "esElErrorTipico": false,
-            "queRevela": "Multiplicaste el tamaño del campo por el número de células. El campo es lo que ves amplificado, así que tienes que dividir, no multiplicar.",
-            "letra": "C"
-          },
-          {
-            "partes": [
-              {
-                "tipo": "texto",
-                "valor": "200 μm"
-              }
-            ],
-            "esCorrecta": false,
-            "esElErrorTipico": false,
-            "queRevela": "Leíste el tamaño del campo completo. Eso es lo que mide toda el área que ves, no una sola célula.",
+            "queRevela": "Tomaste el aumento total como si fuera una medida. El 100× dice cuántas veces se agranda la célula en la fotografía, no cuántos micrómetros mide.",
             "letra": "D"
           }
         ]
@@ -494,7 +512,7 @@
     "enunciado": [
       {
         "tipo": "texto",
-        "valor": "Alguien calculó el aumento total de un microscopio con ocular de 10× y objetivo de 40×. Hay exactamente un paso mal. Tócalo."
+        "valor": "Alguien midió una célula con ocular de 10× y objetivo de 40×. En la fotografía mide 4000 μm. Hay exactamente un paso mal. Tócalo."
       }
     ],
     "pasos": [
@@ -513,7 +531,7 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Multiplico ocular por objetivo:"
+            "valor": "Combino ocular y objetivo:"
           },
           {
             "tipo": "texto",
@@ -536,7 +554,7 @@
             "valor": "50×"
           }
         ],
-        "siLoTocas": "Ahí está. Ese renglón es el que les pasa su número a los dos pasos que siguen."
+        "siLoTocas": "Ahí está. El resultado de ese renglón se usa más adelante, en la división del último paso, y por eso el error se arrastra hasta el final."
       },
       {
         "numero": 3,
@@ -546,65 +564,69 @@
             "valor": "Giro el tornillo fino hasta ver nítido"
           }
         ],
-        "siLoTocas": "La acción de enfocar es correcta. Ese paso no inventó ninguno de sus números; no hay números que inventar. El error no está en enfocar."
+        "siLoTocas": "Enfocar con el tornillo fino está bien hecho y no usa ningún número, así que no hay cuenta que pudiera salir mal. El error no está aquí."
       },
       {
         "numero": 4,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Cuento cuántas células entran:"
+            "valor": "Mido la célula en la fotografía:"
           },
           {
             "tipo": "texto",
-            "valor": "4 células en el campo"
+            "valor": "4000 μm"
           }
         ],
-        "siLoTocas": "El conteo está bien hecho. Ese paso recibió el 50× del paso anterior, pero ese dato no aparece aquí: aquí sólo se cuentan células. Este renglón no inventó nada."
+        "siLoTocas": "La medida está bien tomada: son los 4000 μm del problema, y este paso no usa ningún aumento. El error no está aquí."
       },
       {
         "numero": 5,
         "partes": [
           {
+            "tipo": "texto",
+            "valor": "Divido entre el aumento total:"
+          },
+          {
             "tipo": "fraccion",
-            "arriba": "400 μm",
-            "abajo": "4 células"
+            "arriba": "4000 μm",
+            "abajo": "50×"
           },
           {
             "tipo": "texto",
-            "valor": "= 100 μm por célula"
+            "valor": "= 80 μm de verdad"
           }
         ],
-        "siLoTocas": "La división está bien hecha: 400 entre 4 da 100. Ese paso recibió el 50× del paso 2, pero ese número no entra en esta cuenta. El renglón repite lo que le llegó de abajo."
+        "siLoTocas": "La división está bien hecha con lo que le llegó: 4000 entre 50 da 80. Este paso no inventó el número por el que divide; ya venía de antes."
       }
     ],
     "pasoMalo": 2,
-    "arrastre": "No hay arrastre num\\u00e9rico visible: el paso 4 cuenta c\\u00e9lulas y el paso 5 divide tamaño entre cantidad. El signo que delata el error es que amplificar se multiplica, no se suma. Dos aumentos se multiplican uno dentro del otro, no se apilan.",
+    "arrastre": "El 50× del paso 2 entra en el paso 5: se divide 4000 μm entre 50× y salen 80 μm, cuando con el 400× correcto serían 4000 ÷ 400 = 10 μm. Los pasos 3 y 4 no usan el aumento y no cambian.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
         "texto": "Sumó los aumentos en vez de multiplicarlos.",
         "esElBueno": true,
-        "queRevela": "Eso pasó: el signo es + en vez de ×. El ocular amplía una imagen que ya está amplificada por el objetivo, así que los dos trabajos se multiplican: 10 × 40 = 400, no 10 + 40 = 50."
+        "queRevela": "Eso pasó: el signo es + en vez de ×. El ocular amplía una imagen que ya está amplificada por el objetivo, así que cada lente trabaja sobre lo que dejó la anterior: 10 × 40 = 400, no 10 + 40 = 50. Con ese 50× la célula sale de 80 μm en vez de 10 μm."
       },
       {
-        "texto": "Cambió el orden de los números en la suma.",
+        "texto": "Debió usar sólo el objetivo, porque es la lente que amplía primero.",
         "esElBueno": false,
-        "queRevela": "Quien escoge esto cree que lo que está mal es dónde va cada número. No es así: 10 + 40 = 50 da lo mismo que 40 + 10 = 50. El problema es la operación en sí, no el orden de los números."
+        "queRevela": "El ocular también agranda: trabaja sobre la imagen que formó el objetivo, así que sus 10× sí cuentan. Lo que falla en el renglón es la operación con que se combinan los dos aumentos, no cuál de las dos lentes se usó."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro de los cinco pasos hacen bien lo que les toca. El error no está en elegir, enfocar o contar: está en cómo se combinan los dos aumentos."
+        "texto": "Cuatro de los cinco pasos hacen bien lo que les toca. Revisa de dónde sale cada número que usa cada renglón."
       },
       {
         "orden": 2,
-        "texto": "El problema traía 10× del ocular y 40× del objetivo. Fíjate en el signo que los une en el paso 2."
+        "texto": "El problema traía 10× del ocular y 40× del objetivo. Busca el renglón donde se combinan esos dos números y mira qué signo los une."
       },
       {
         "orden": 3,
-        "texto": "Si el ocular amplía 10 veces una imagen que ya está amplificada 40 veces, ¿se suman los aumentos o se multiplican?"
+        "texto": "Piensa qué le hace el ocular a una imagen que el objetivo ya agrandó, y compara eso con el signo del renglón donde se combinan."
       }
     ],
     "noSePuede": null
@@ -618,21 +640,21 @@
     "rubrica": {
       "ideasQueCuentan": [
         {
-          "idea": "El ocular amplía lo que ya el objetivo amplificó, así que los dos trabajos se superponen uno dentro del otro: no sumas lo que amplía cada uno, multiplicas.",
+          "idea": "El ocular amplía la imagen que el objetivo ya amplificó: cada lente trabaja sobre lo que dejó la anterior, así que los aumentos se multiplican y no se suman.",
           "porQueImporta": "Sin esta idea, el orden de la operación parece una regla arbitraria. Con ella, es el único resultado posible: la amplificación del ocular actúa sobre una imagen que ya está amplificada.",
           "comoSuenaDicha": "El ocular amplía una imagen que ya está grande, así que los dos aumentos se multiplican.",
           "esImprescindible": true
         },
         {
-          "idea": "Si sumas 10 más 40 tienes 50, pero eso no te dice qué tan grande ves de verdad. Multiplicar 10 por 40 te dice que ves 400 veces más grande que en la realidad.",
-          "porQueImporta": "Quien solo suma se queda sin forma de comprobar si su respuesta tiene sentido: 50 veces qué. Multiplicar conecta los dos aumentos con lo que realmente ves en el campo.",
-          "comoSuenaDicha": "Si sumo me da 50, pero 50 qué. Si multiplico me dice cuántas veces de verdad está amplificado.",
+          "idea": "Con aumentos de 10× y 10× esperas 100×, no 20×: cada lente agranda 10 veces la imagen que le llega, y la segunda recibe algo que ya es 10 veces más grande.",
+          "porQueImporta": "Da una forma de comprobar el resultado con números fáciles: quien entiende la idea sabe que dos lentes de 10× no pueden dar sólo 20×, y deja de sumar aunque cambien los números.",
+          "comoSuenaDicha": "Si las dos lentes agrandan 10 veces, no ves 20 veces más grande sino 100, porque la segunda agranda algo que ya está grande.",
           "esImprescindible": false
         },
         {
-          "idea": "Amplificar es agrandar, no agregar. Si el ocular agranda 10 veces una imagen que ya está agrandada 40 veces, el resultado es 400, no 50.",
-          "porQueImporta": "Es la creencia detrás del error: confundir amplificar con sumar. Sin romper esa confusión, el estudiante vuelve a sumar con otros números.",
-          "comoSuenaDicha": "Agrandar no es lo mismo que sumar números. Agrando la imagen 40 veces, luego la agrando 10 veces más, y es 400, no 50.",
+          "idea": "Un aumento dice cuántas veces se agranda la imagen, no cuánto se le suma: 40× es 40 veces el tamaño real, no el tamaño real más 40.",
+          "porQueImporta": "Es la creencia detrás del error: quien lee 10× y 40× como cantidades que se agregan vuelve a sumar con otros números.",
+          "comoSuenaDicha": "40× quiere decir 40 veces más grande, no 40 más. Por eso el 10× del ocular no se le pega al 40×: se aplica sobre lo que ya hizo.",
           "esImprescindible": false
         }
       ],
@@ -654,9 +676,9 @@
           "queLeFalta": "Que diga que ocular y objetivo no son dos aumentos que se suman, sino dos lentes que actúan una después de la otra."
         },
         {
-          "respuesta": "Porque el objetivo amplía 40 veces y luego el ocular amplía 10 veces eso, así que es 40 por 10.",
-          "queLaDelata": "Describe el orden correcto del proceso, que es correcto, pero confunde en qué cosa amplía cada lente. El ocular no amplía el objetivo: amplía lo que el objetivo ya amplificó. Si describe mal qué amplía cada uno, con otras lentes vuelve a confundir.",
-          "queLeFalta": "Que diga que es la imagen la que se amplifica dos veces, no el proceso físico de dos lentes actuando."
+          "respuesta": "Porque el microscopio tiene dos lentes y hay que usar las dos, así que se multiplican.",
+          "queLaDelata": "Dice que son dos lentes pero no dice qué hace la segunda con lo que ya hizo la primera; que sean dos no explica por qué se multiplican y no se suman.",
+          "queLeFalta": "Que diga que el ocular amplía una imagen que el objetivo ya agrandó."
         }
       ],
       "contraargumentos": [
@@ -667,8 +689,8 @@
         },
         {
           "siDice": "En el ejemplo me sale 50 si sumo y 400 si multiplico. Son números distintos, claro que uno está bien. ¿Pero por qué multiplicar y no sumar?",
-          "seLeContesta": "Porque el ocular no suma nada: amplía. Si tu imagen ya está amplificada 40 veces, y el ocular la amplifica 10 veces más, ves la imagen 40 veces amplificada, magnificada por 10 más. Eso no es suma: es multiplicación. Dime cuántas células ves en el campo con ocular de 10 y objetivo de 10, y luego con objetivo de 40. ¿Ves 10 más de diferencia o ves mucho menos?",
-          "aDondeLoEmpuja": "A ver que cambiar un objetivo cambia el número de células en el campo de una forma que la multiplicación explica y la suma no."
+          "seLeContesta": "Piensa en dos lupas en fila: la primera agranda 10 veces y la segunda agranda 4 veces lo que ya agrandó la primera. ¿Ves 14 veces más grande o 40 veces más grande? Con 10× y 40× pasa lo mismo: se multiplica y da 400.",
+          "aDondeLoEmpuja": "A ver que cada lente agranda lo que dejó la anterior, así que se multiplica."
         },
         {
           "siDice": "Sí entiendo que multiplica, nada más no sé cómo explicarlo.",
@@ -676,7 +698,7 @@
           "aDondeLoEmpuja": "A que vea que ya tiene la idea y lo que falta es escribirla corta."
         }
       ],
-      "ejemploQueSiCuenta": "El ocular amplía lo que el objetivo ya amplificó, así que los dos trabajos ocurren al mismo tiempo en la imagen. Si el objetivo hace la imagen 40 veces más grande y el ocular la hace 10 veces más grande, la imagen final es 400 veces más grande de lo real. Si sumara sería 50 veces, pero eso no es lo que ves. Multiplico porque el segundo aumento actúa sobre algo que ya está aumentado.",
+      "ejemploQueSiCuenta": "El objetivo agranda la muestra 40 veces y forma una imagen. El ocular agranda esa imagen 10 veces más. Como el segundo aumento trabaja sobre una imagen que ya es 40 veces más grande, la imagen final es 40 × 10 = 400 veces más grande que lo real, no 50.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
         "Que no use las palabras objetivo, ocular o aumento: si dice que una lente amplía algo que ya está amplificado, ya tiene la idea.",
@@ -690,11 +712,11 @@
       "temaNumero": 3,
       "materia": "biologia",
       "teclado": "fichas",
-      "porQueEseTeclado": "La respuesta es un producto de aumentos con el símbolo ×: «10× × 40× = 400×». El teclado de dígitos no tiene la letra «×», así que 400 solo tampoco sirve. Con fichas el estudiante arma la multiplicación de aumentos con dígitos y el signo de multiplicar, y aprende a escribir multiplicación en biología, no solo a contar.",
+      "porQueEseTeclado": "La respuesta lleva la × pegada al número, como unidad de aumento (40×). Con fichas el estudiante teclea las cifras y la ×, y la × es obligatoria: así 45× es justo lo que teclea quien suma, y el error se puede nombrar.",
       "tecladosDescartados": [
         {
           "teclado": "digitos",
-          "porQue": "No tiene el símbolo ×. Toda respuesta de este tema incluye el símbolo de aumentos pegado a números (10×, 40×, 400×), y sin la tecla × solo se podría escribir números solos."
+          "porQue": "No tiene el símbolo ×: con dígitos sólo se escribiría el número, sin la unidad de aumento que lleva cada respuesta de este tema (40×, 400×) y que el estudiante tiene que escribir."
         }
       ],
       "fichas": [
@@ -740,7 +762,7 @@
         },
         {
           "etiqueta": "×",
-          "comoSeLee": "por"
+          "comoSeLee": "aumentos"
         }
       ],
       "comoSeCompara": {
@@ -753,62 +775,50 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "Multiplicas el ocular por el objetivo: 10×"
-          },
-          {
-            "tipo": "texto",
-            "valor": "×"
-          },
-          {
-            "tipo": "texto",
-            "valor": "40×"
-          },
-          {
-            "tipo": "texto",
-            "valor": "="
+            "valor": "Con ocular de 5× y objetivo de 40×, el aumento total, con su ×, es"
           },
           {
             "tipo": "hueco"
           }
         ],
         "respuesta": {
-          "correcta": "400×",
+          "correcta": "200×",
           "enAtomos": [
             {
               "tipo": "texto",
-              "valor": "400×"
+              "valor": "200×"
             }
           ],
-          "comoSeLee": "cuatrocientos aumentos",
+          "comoSeLee": "doscientos aumentos",
           "aceptaTambien": [],
           "opciones": []
         },
         "pistas": [
           {
-            "texto": "El ocular amplía 10 veces. El objetivo amplía 40 veces. Multiplica los números: 10 por 40.",
+            "texto": "El ocular amplía una imagen que el objetivo ya agrandó. ¿Los aumentos se suman o se multiplican?",
             "orden": 1
           },
           {
-            "texto": "Cuando multiplicas 10 por 40, el resultado es 400. Ahora agrega el símbolo × al final.",
+            "texto": "Multiplica los dos números: 5 y 40.",
             "orden": 2
           },
           {
-            "texto": "Escribe 400 seguido del símbolo × sin espacios.",
+            "texto": "Un ocular de 5× es la mitad de uno de 10×, así que el total es la mitad de lo que daría 10 por 40. Teclea ese resultado, con su ×.",
             "orden": 3
           }
         ],
         "siTecleaElError": {
-          "tecleado": "50×",
-          "queSeLeDice": "Sumaste 10 + 40 = 50. Pero los aumentos no se suman: el ocular amplía una imagen que ya está amplificada por el objetivo, así que se multiplican: 10 × 40."
+          "tecleado": "45×",
+          "queSeLeDice": "Sumaste 5 + 40 = 45. Pero los aumentos no se suman: el ocular amplía una imagen que ya está amplificada por el objetivo, así que se multiplican: 5 × 40."
         }
       },
       "escalera": [
         {
-          "situacion": "En clase, tu maestro usa el microscopio con ocular de 10× y objetivo de 10× para que vean mejor.",
+          "situacion": "En clase, tu maestro usa el microscopio con ocular de 5× y objetivo de 4× para buscar la muestra.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "Con ocular de 10× y objetivo de 10×, el aumento total es"
+              "valor": "Con ocular de 5× y objetivo de 4×, el aumento total, con su ×, es"
             },
             {
               "tipo": "hueco"
@@ -816,28 +826,28 @@
           ],
           "pregunta": "¿Cuál es el aumento total?",
           "respuesta": {
-            "correcta": "100×",
+            "correcta": "20×",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": "100×"
+                "valor": "20×"
               }
             ],
-            "comoSeLee": "cien aumentos",
+            "comoSeLee": "veinte aumentos",
             "aceptaTambien": [],
             "opciones": []
           },
           "pistas": [
             {
-              "texto": "Multiplica el ocular por el objetivo: 10 × 10.",
+              "texto": "Multiplica el ocular por el objetivo: 5 × 4.",
               "orden": 1
             },
             {
-              "texto": "El resultado de 10 × 10 es cien.",
+              "texto": "Es de la tabla del 5: si te cuesta, piensa en cuatro monedas de 5 pesos y cuánto juntan.",
               "orden": 2
             },
             {
-              "texto": "Escribe 100 seguido del símbolo × sin espacios.",
+              "texto": "Teclea las cifras del resultado y cierra con la tecla ×.",
               "orden": 3
             }
           ]
@@ -847,7 +857,7 @@
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "Con ocular de 10× y objetivo de 100×, el aumento total es"
+              "valor": "Con ocular de 10× y objetivo de 100×, el aumento total, con su ×, es"
             },
             {
               "tipo": "hueco"
@@ -872,50 +882,50 @@
               "orden": 1
             },
             {
-              "texto": "Cuando multiplicas 10 por cualquier número, el resultado tiene un cero más.",
+              "texto": "Multiplicar por 10 agrega un cero a la derecha del otro número.",
               "orden": 2
             },
             {
-              "texto": "10 × 100 = 1000. Escribe el resultado con × al final.",
+              "texto": "Teclea las cifras del resultado y cierra con la tecla ×.",
               "orden": 3
             }
           ]
         },
         {
-          "situacion": "Tu compañero usa un ocular de 12× que trae el equipo nuevo. El objetivo es de 40×.",
+          "situacion": "El equipo nuevo de la escuela trae un ocular sin el aumento escrito. El maestro anota que, con un objetivo de 10×, el microscopio da 150× en total.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "Con ocular de 12× y objetivo de 40×, el aumento total es"
+              "valor": "El ocular de ese microscopio, con su ×, es de"
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿Cuál es el aumento total?",
+          "pregunta": "¿De qué aumento es el ocular?",
           "respuesta": {
-            "correcta": "480×",
+            "correcta": "15×",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": "480×"
+                "valor": "15×"
               }
             ],
-            "comoSeLee": "cuatrocientos ochenta aumentos",
+            "comoSeLee": "quince aumentos",
             "aceptaTambien": [],
             "opciones": []
           },
           "pistas": [
             {
-              "texto": "Multiplica: 12 × 40.",
+              "texto": "Piensa cómo se llega del ocular y el objetivo hasta el total, y qué operación deshace ese camino.",
               "orden": 1
             },
             {
-              "texto": "12 × 4 = 48. Como el 40 tiene un cero, el resultado tiene uno también.",
+              "texto": "Busca el aumento del ocular: el número que, combinado con el 10× del objetivo, da el total del microscopio.",
               "orden": 2
             },
             {
-              "texto": "12 × 40 = 480. Escribe el número seguido de × sin espacios.",
+              "texto": "Reparte el aumento total entre el aumento del objetivo y teclea el resultado, con su ×.",
               "orden": 3
             }
           ]

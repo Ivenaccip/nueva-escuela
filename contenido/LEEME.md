@@ -326,6 +326,16 @@ Matemáticas cuya estación 3 y 4 se habían escrito con dígitos y una reformul
   - `porQueEseTeclado` de más de 400 caracteres: se recorta al tope, nadie lo pinta.
   - Exponentes: `2³` se teclea con la ficha `³` y `enAtomos` lo pinta como superíndice;
     `aplanar` acepta las dos escrituras.
+- **Todos los temas traían errores graves** (14 temas revisados con dos lentes independientes, ciencia
+  y cuentas/contrato del teclado): 116 graves, 312 medios y 155 leves en total. Los más
+  repetidos: un error típico que con el ejemplo del canon da el resultado correcto, rúbricas de
+  la estación 6 que afirman algo falso, una opción equivocada que también es correcta, y
+  escalones que repiten la misma respuesta. Tras una a tres rondas de corrección y verificación
+  no quedó ningún grave; sobreviven 8 medios (en `matematicas-6`, `quimica-4` y `quimica-9`,
+  que ya se arreglaron a mano) y el video de `biologia-3` (se buscó dos veces: la primera sin
+  candidatos).
+- **Los de Matemáticas del prototipo (1, 3, 5, 7, 8, 9, 13, 14, 18) no pasaron por esa
+  revisión.** Con esta tasa de errores es probable que tengan los mismos defectos.
 - **Decimales:** `2.50` y `2.5` son el mismo número y la app no los distingue (`19.5` vale
   `19.50`). Un entero (`100`) no se toca.
 

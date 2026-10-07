@@ -54,7 +54,7 @@
               "valor": "intestino delgado → intestino grueso"
             }
           ],
-          "porQue": "El intestino delgado es donde pasa de verdad lo importante: tiene la superficie exacta para que los nutrientes atraviesen la pared hacia los vasos sanguíneos. Sin esa absorción no hay energía para el cuerpo. Es el paso que define si los nutrientes entran a la sangre o se pierden."
+          "porQue": "El intestino delgado es muy largo y su pared tiene pliegues y vellosidades diminutas, llenas de vasos sanguíneos: así hay muchísima superficie para que los nutrientes pasen a la sangre. Sin esa absorción no hay energía para el cuerpo."
         },
         {
           "numero": 5,
@@ -92,7 +92,7 @@
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "estómago: aquí se digiere y se absorben los nutrientes → intestino grueso"
+          "valor": "estómago: aquí se digiere y se absorben los nutrientes → intestino delgado"
         }
       ],
       "resultadoMalo": [
@@ -101,7 +101,7 @@
           "valor": "estómago"
         }
       ],
-      "comoSeCacha": "El estudiante salta el intestino delgado, que es el órgano clave para la absorción. Cuando dices qué órgano absorbe los nutrientes de verdad, falta en su respuesta el que hace ese trabajo."
+      "comoSeCacha": "El estudiante dice que los nutrientes pasan a la sangre en el estómago. Cuando le preguntas qué órgano absorbe los nutrientes de verdad, nombra el estómago en vez del intestino delgado."
     },
     "erroresSecundarios": [
       {
@@ -134,7 +134,7 @@
       },
       {
         "palabra": "intestino delgado",
-        "queEs": "El órgano donde se absorben la mayoría de los nutrientes hacia la sangre. Es delgado pero muy largo para tener más superficie."
+        "queEs": "El órgano donde se absorben la mayoría de los nutrientes hacia la sangre. Es delgado pero muy largo, y su pared tiene pliegues que le dan más superficie."
       }
     ],
     "cotas": {
@@ -161,7 +161,7 @@
     "busqueda": {
       "criterios": [
         "Explica por qué el intestino delgado es donde se absorben los nutrientes a la sangre, no nada más donde se digiere la comida.",
-        "Distingue entre digestión (romper la comida) y absorción (que los nutrientes pasen a la sangre), mostrando que son pasos distintos en órganos distintos.",
+        "Distingue digestión (romper la comida) de absorción (pasar a la sangre) y deja claro que el estómago digiere pero no absorbe.",
         "Es del nivel de primero de secundaria: recorre el tubo digestivo sin mezclar con temas de química orgánica ni nomenclatura.",
         "Llega a nombrar el intestino delgado antes del minuto dos, sin presentación larga del canal.",
         "Deja claro que el estómago digiere pero no absorbe, corrigiendo la creencia de que ahí terminan los nutrientes."
@@ -338,7 +338,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Un taco llega al estómago. ¿Dónde pasan los nutrientes a la sangre?"
+            "valor": "El taco ya está en el estómago. ¿En qué órgano pasan sus nutrientes a la sangre?"
           }
         ],
         "opciones": [
@@ -363,19 +363,19 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "El intestino delgado es donde de verdad los nutrientes entran a la sangre. Tiene la superficie exacta para eso.",
+            "queRevela": "El intestino delgado es donde de verdad los nutrientes entran a la sangre. Es muy largo y su pared tiene muchísima superficie para eso.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "En el esófago"
+                "valor": "En el hígado"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El esófago solo transporta. Ni digiere ni absorbe. Está antes del estómago.",
+            "queRevela": "El hígado no absorbe la comida: produce bilis y la vierte en el intestino delgado, donde ayuda a digerir.",
             "letra": "C"
           },
           {
@@ -397,7 +397,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "¿Por qué el hígado y el páncreas vierten sus jugos en el intestino delgado?"
+            "valor": "¿Para qué vierten el hígado y el páncreas sus jugos en el intestino delgado?"
           }
         ],
         "opciones": [
@@ -410,19 +410,19 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Los jugos del hígado y el páncreas tienen enzimas que rompen lo que el ácido del estómago dejó sin terminar.",
+            "queRevela": "El páncreas aporta enzimas y el hígado la bilis, que separa las grasas en gotitas. Con eso el intestino delgado termina de digerir lo que el estómago dejó a medias.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Para proteger el intestino"
+                "valor": "Para producir el ácido que rompe las proteínas"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Los jugos digieren, no protegen. El hígado produce bilis para romper grasas; el páncreas produce enzimas.",
+            "queRevela": "Ese ácido es del estómago; los jugos del páncreas y la bilis no lo producen.",
             "letra": "B"
           },
           {
@@ -434,19 +434,19 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Los jugos rompen la comida. La absorción la hace la pared del intestino delgado, sin ayuda de esos jugos.",
+            "queRevela": "La absorción la hace la pared del intestino delgado; los jugos sólo preparan la comida rompiéndola.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Para neutralizar el ácido"
+                "valor": "Para empujar la comida hacia el intestino grueso"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El ácido se neutraliza, pero ese no es el trabajo principal. Los jugos están ahí para terminar de digerir.",
+            "queRevela": "Empujar lo hacen los músculos de la pared del intestino, no los jugos.",
             "letra": "D"
           }
         ]
@@ -550,59 +550,59 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "En el estómago se digiere y se absorben los nutrientes: estómago → intestino grueso"
+            "valor": "En el estómago se digiere y también se absorben los nutrientes: estómago → intestino delgado"
           }
         ],
-        "siLoTocas": "Ahí está. Ese renglón salta un órgano y confunde qué hace cada uno."
+        "siLoTocas": "Ahí está. Ese renglón le atribuye al estómago algo que no hace: absorber los nutrientes. El estómago digiere, pero la absorción pasa en el intestino delgado."
       },
       {
         "numero": 4,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "En el intestino grueso se absorbe el agua: intestino grueso → afuera"
+            "valor": "Al intestino delgado llegan jugos del hígado y del páncreas: intestino delgado → intestino grueso"
           }
         ],
-        "siLoTocas": "La absorción de agua en el intestino grueso está bien dicha. Ese paso recibió que ya se habían absorbido los nutrientes antes, en el órgano anterior."
+        "siLoTocas": "Ese paso está bien: ahí se sigue digiriendo con los jugos del hígado y del páncreas."
       },
       {
         "numero": 5,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Resultado: el estómago es donde pasan los nutrientes a la sangre."
+            "valor": "En el intestino grueso se absorbe el agua que queda y salen las heces: intestino grueso → afuera"
           }
         ],
-        "siLoTocas": "La conclusión viene de los pasos anteriores, no la inventó. Repite lo que le llegó del paso 3."
+        "siLoTocas": "Ese paso está bien dicho: el intestino grueso absorbe el agua que queda y lo que no se digirió sale como heces."
       }
     ],
     "pasoMalo": 3,
-    "arrastre": "El error del paso 3 hace que el paso 4 reciba un \\u00f3rgano incorrecto (el intestino grueso en vez del intestino delgado), y eso lleva al paso 5 a la conclusi\\u00f3n equivocada. Quien resolvi\\u00f3 sigui\\u00f3 con lo que le lleg\\u00f3: si el est\\u00f3mago absorbe los nutrientes, entonces el paso 4 habla del siguiente \\u00f3rgano y el paso 5 confirma la respuesta equivocada.",
-    "porQue": "¿Qu\\u00e9 confundi\\u00f3 en ese paso?",
+    "arrastre": "Sólo el paso 3 está mal: le atribuye al estómago algo que no hace, que los nutrientes pasen a la sangre. Los demás pasos describen bien cada órgano.",
+    "porQue": "¿Qué confundió en ese paso?",
     "motivos": [
       {
-        "texto": "Confundió dónde se digiere con dónde entran nutrientes a la sangre.",
+        "texto": "Creyó que, si el estómago rompe la comida, ahí pasan los nutrientes a la sangre.",
         "esElBueno": true,
-        "queRevela": "El estómago sí digiere: rompe proteínas y grasas. Pero sus paredes no dejan pasar nutrientes a la sangre. Ese paso dice que el estómago «digiere y absorbe», como si ambas cosas ocurrieran allí. La absorción de verdad pasa después."
+        "queRevela": "El estómago sí digiere: rompe proteínas y grasas. Pero su pared no deja pasar nutrientes a la sangre. Ese paso dice que ahí «se digiere y también se absorbe», como si ambas cosas ocurrieran allí. La absorción de verdad pasa después, en el intestino delgado."
       },
       {
-        "texto": "Olvidó que el intestino delgado existe y saltó directo al grueso.",
+        "texto": "Creyó que el estómago no hace nada con la comida y sólo la transporta.",
         "esElBueno": false,
-        "queRevela": "Es cierto que falta el intestino delgado, pero la pregunta es qué hizo mal en lo que sí escribió. Quien escoge esto ve que falta un órgano, pero no explica por qué el estómago no absorbe nutrientes, que es el error de fondo."
+        "queRevela": "El paso dice que en el estómago se digiere, y es cierto: rompe proteínas con su ácido. Quien escoge esto confunde el estómago con el esófago; lo que el paso hace mal es decir que ahí también se absorben los nutrientes."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Dos pasos hablan de absorción. Compara qué órgano absorbe en cada uno y dónde termina la comida en cada caso."
+        "texto": "Lee en cada paso qué órgano dice que absorbe y compara con lo que sabes de cada uno."
       },
       {
         "orden": 2,
-        "texto": "El estómago hace algo bien descrito. Pero hay otro órgano que hace exactamente lo que ese renglón le atribuye al estómago. Busca quién absorbe nutrientes en el canon."
+        "texto": "Fíjate en el paso que le atribuye al estómago algo que otro órgano hace."
       },
       {
         "orden": 3,
-        "texto": "Romper la comida no es lo mismo que dejarla pasar a la sangre. Revisa cuál es el órgano con la superficie exacta para que los nutrientes atraviesen la pared."
+        "texto": "Romper la comida no es lo mismo que dejarla pasar a la sangre. Pregúntate qué órgano tiene una pared hecha para que los nutrientes pasen a los vasos sanguíneos."
       }
     ],
     "noSePuede": null
@@ -617,15 +617,15 @@
       "ideasQueCuentan": [
         {
           "idea": "El estómago digiere pero no absorbe: rompe la comida pero no deja que los nutrientes atraviesen su pared hacia la sangre.",
-          "porQueImporta": "Sin esta idea, el estudiante piensa que porque el estómago hace algo a la comida también es donde ésta entra a la sangre. Si no se entiende que digerir y absorber son trabajos distintos en órganos distintos, la respuesta se cae.",
+          "porQueImporta": "Sin esta idea, el estudiante piensa que porque el estómago hace algo a la comida también es donde ésta entra a la sangre. Si no se entiende que digerir y absorber son dos trabajos distintos, y que el estómago sólo hace el primero, la respuesta se queda sin el contraste con el estómago.",
           "comoSuenaDicha": "El estómago rompe la comida pero su pared no deja que los nutrientes pasen a la sangre.",
-          "esImprescindible": true
+          "esImprescindible": false
         },
         {
-          "idea": "El intestino delgado tiene una pared especial que sí deja que los nutrientes atraviesen hacia la sangre.",
+          "idea": "El intestino delgado es largo y su pared tiene muchos pliegues y vellosidades, con muchos vasos sanguíneos: esa gran superficie deja pasar los nutrientes a la sangre; el estómago no.",
           "porQueImporta": "Es la diferencia funcional entre los dos órganos. Si falta, el estudiante puede creer que cualquier órgano que toca la comida la absorbe.",
-          "comoSuenaDicha": "El intestino delgado tiene la pared que deja pasar los nutrientes a la sangre.",
-          "esImprescindible": false
+          "comoSuenaDicha": "El intestino delgado es larguísimo y su pared tiene mucha superficie, por eso deja pasar los nutrientes a la sangre y el estómago no.",
+          "esImprescindible": true
         },
         {
           "idea": "Si los nutrientes no llegan a la sangre, el cuerpo no puede usarlos para energía o crecimiento.",
@@ -642,39 +642,39 @@
           "queLeFalta": "Que diga qué es digerir y qué es absorber, o sea qué hace cada órgano."
         },
         {
-          "respuesta": "Porque el intestino delgado es más largo y tiene más superficie.",
-          "queLaDelata": "Ve la diferencia física pero no la funcional. Con esta lógica, el estómago debería absorber también.",
-          "queLeFalta": "Que diga para qué sirve esa superficie: para que los nutrientes atraviesen la pared hacia la sangre."
+          "respuesta": "Porque el intestino delgado es más largo.",
+          "queLaDelata": "Nombra una diferencia física sin decir para qué sirve: un órgano largo, por sí solo, no explica por qué ahí pasan los nutrientes a la sangre.",
+          "queLeFalta": "Que diga para qué sirve esa longitud: da mucha superficie para que los nutrientes pasen a la sangre, algo que la pared del estómago no hace."
         },
         {
           "respuesta": "Porque el intestino delgado es donde están el hígado y el páncreas.",
           "queLaDelata": "Confunde la presencia de otros órganos con la función del intestino delgado.",
-          "queLeFalta": "Que diga qué capacidad tiene el intestino delgado que el estómago no: permitir que los nutrientes pasen a la sangre."
+          "queLeFalta": "Que diga qué capacidad tiene el intestino delgado que el estómago no: su pared, larga y con pliegues y vasos sanguíneos, tiene mucha superficie y deja pasar los nutrientes a la sangre; la del estómago no."
         },
         {
           "respuesta": "Porque el intestino delgado está después del estómago en el camino.",
           "queLaDelata": "Ve el orden del viaje pero confunde dónde llega algo con dónde se procesa.",
-          "queLeFalta": "Que diga que el intestino delgado es el único que tiene la pared que deja pasar los nutrientes a la sangre."
+          "queLeFalta": "Que diga qué hace el intestino delgado con los nutrientes: su pared, larga y con pliegues y vasos sanguíneos, tiene mucha superficie y los deja pasar a la sangre; la del estómago no."
         }
       ],
       "contraargumentos": [
         {
           "siDice": "Pero el estómago también digiere, así que hace algo importante.",
           "seLeContesta": "Cierto, digiere es importante: rompe proteínas y grasas. Pero digerir no es absorber. El taco sale del estómago roto en pedazos, pero la pared del estómago no abre paso a la sangre. Entonces, ¿en qué órgano entra de verdad el taco a la sangre?",
-          "aDondeLoEmpuja": "A darse cuenta de que digerir y absorber ocurren en lugares distintos."
+          "aDondeLoEmpuja": "A ver que digerir (romper) y absorber (pasar a la sangre) son dos trabajos distintos, y que el estómago hace el primero pero no el segundo."
         },
         {
           "siDice": "El intestino delgado es sólo un tubo de paso, sin función especial.",
-          "seLeContesta": "Mira el ejemplo: un taco entra al intestino delgado y ahí es donde los nutrientes atraviesan la pared y entran a la sangre. Eso no sucede en el esófago, estómago ni intestino grueso. ¿Qué tiene el intestino delgado que los otros no?",
+          "seLeContesta": "Mira el ejemplo: un taco entra al intestino delgado y ahí es donde los nutrientes atraviesan la pared y entran a la sangre. Eso no sucede en el esófago ni en el estómago. ¿Qué tiene el intestino delgado que ellos no?",
           "aDondeLoEmpuja": "A pensar que el intestino delgado es donde se absorben porque su pared tiene esa capacidad."
         },
         {
           "siDice": "Sí entiendo, nada más no sé cómo escribirlo.",
-          "seLeContesta": "Entonces dilo corto: el estómago rompe la comida pero no deja que los nutrientes pasen a la sangre. El intestino delgado sí lo deja. Escribe eso.",
+          "seLeContesta": "Empieza por un solo órgano. Piensa en el taco dentro del estómago: ¿qué le pasa ahí? Escríbelo con tus palabras y luego piensa qué le pasa en el intestino delgado.",
           "aDondeLoEmpuja": "A que vea que la idea ya la tiene y sólo le falta decirla sin complicarse."
         }
       ],
-      "ejemploQueSiCuenta": "El estómago digiere el taco, lo rompe en pedazos más chiquitos, pero su pared no deja que los nutrientes atraviesen hacia la sangre. El intestino delgado es distinto: tiene una pared que sí permite que esos nutrientes atraviesen y entren a la sangre. Por eso es en el intestino delgado donde el taco entra de verdad a la sangre, no en el estómago.",
+      "ejemploQueSiCuenta": "El estómago digiere el taco, lo rompe en pedazos más chiquitos, pero su pared no deja que los nutrientes pasen a la sangre. El intestino delgado es larguísimo y su pared tiene muchos pliegues y vasitos de sangre, o sea muchísima superficie, y por eso sí deja que los nutrientes entren a la sangre. Por eso es ahí, y no en el estómago, donde el taco entra de verdad a la sangre.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba en minúsculas.",
         "Que use palabras del vocabulario de otra forma o que invente sinónimos: si dice lo que quiere decir, cuenta.",
@@ -688,7 +688,7 @@
       "temaNumero": 7,
       "materia": "biologia",
       "teclado": "opciones",
-      "porQueEseTeclado": "La respuesta es un órgano del tubo digestivo: un nombre de un conjunto cerrado y limitado. El estudiante tiene que reconocer cuál es el órgano clave donde ocurre la absorción, y eso es justo lo que opciones mide. El teclado de dígitos no tiene letras, así que \"intestino delgado\" no se puede escribir con él.",
+      "porQueEseTeclado": "La respuesta es un órgano del tubo digestivo: un nombre de un conjunto cerrado y de pocos elementos. El estudiante tiene que reconocer qué órgano hace cada trabajo (transportar, romper, absorber), y eso es justo lo que opciones mide. El teclado de dígitos no tiene letras, así que \"intestino delgado\" no se puede escribir con él.",
       "tecladosDescartados": [
         {
           "teclado": "digitos",
@@ -702,187 +702,187 @@
         "ignoraEspaciosDeMas": false
       },
       "completar": {
-        "pasoDelCanon": 4,
+        "pasoDelCanon": 3,
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "El órgano donde se absorben de verdad los nutrientes a la sangre es el"
+            "valor": "El órgano donde el ácido rompe las proteínas de la comida es el"
           },
           {
             "tipo": "hueco"
           }
         ],
         "respuesta": {
-          "correcta": "intestino delgado",
+          "correcta": "estómago",
           "enAtomos": [
             {
               "tipo": "texto",
-              "valor": "intestino delgado"
+              "valor": "estómago"
             }
           ],
-          "comoSeLee": "intestino delgado",
+          "comoSeLee": "estómago",
           "aceptaTambien": [],
           "opciones": [
             {
-              "etiqueta": "intestino delgado",
-              "esCorrecta": true,
-              "queRevela": "Viste que la absorción de nutrientes no ocurre donde se rompe la comida, sino donde la pared del órgano deja pasar esos nutrientes a la sangre."
-            },
-            {
               "etiqueta": "estómago",
-              "esCorrecta": false,
-              "queRevela": "Confundiste dónde se digiere con dónde se absorbe. El estómago rompe proteínas y grasas, pero su pared no deja pasar los nutrientes a la sangre."
-            },
-            {
-              "etiqueta": "intestino grueso",
-              "esCorrecta": false,
-              "queRevela": "El intestino grueso absorbe agua, pero la mayoría de los nutrientes ya pasaron a la sangre en el órgano anterior."
+              "esCorrecta": true,
+              "queRevela": "Distinguiste que el estómago rompe la comida con su ácido, pero su pared no deja pasar los nutrientes a la sangre."
             },
             {
               "etiqueta": "esófago",
               "esCorrecta": false,
-              "queRevela": "El esófago es sólo un tubo de transporte, no digiere ni absorbe nada. La comida pasa sin cambiar."
+              "queRevela": "El esófago sólo baja el bolo hacia el estómago: no tiene ácido ni enzimas, así que no rompe nada."
+            },
+            {
+              "etiqueta": "intestino delgado",
+              "esCorrecta": false,
+              "queRevela": "El intestino delgado recibe la papilla ácida que sale del estómago, donde el ácido ya rompió las proteínas."
+            },
+            {
+              "etiqueta": "intestino grueso",
+              "esCorrecta": false,
+              "queRevela": "El intestino grueso está al final: ahí se absorbe el agua que queda y se forman las heces, no se rompen las proteínas."
             }
           ]
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "Es el órgano donde pasan los nutrientes de la comida rota a la sangre del cuerpo. Sin este paso, la comida no sirve de nada."
+            "texto": "Es un órgano del tubo digestivo que viene después del esófago y antes de los intestinos."
           },
           {
             "orden": 2,
-            "texto": "En el paso del canon que trata este hueco, se dice que aquí es donde pasan de verdad los nutrientes a la sangre, en contraste con otros órganos que sólo rompen o transportan."
+            "texto": "Ahí la comida se mezcla con un jugo ácido y se convierte en una papilla llamada quimo."
           },
           {
             "orden": 3,
-            "texto": "Es delgado pero muy largo, y eso es a propósito: la longitud le da más superficie para que los nutrientes atraviesen su pared."
+            "texto": "Es una bolsa de pared muscular donde la comida se queda un rato mezclándose con el ácido; casi nada pasa a la sangre desde ahí."
           }
         ]
       },
       "escalera": [
         {
-          "situacion": "Estás comiendo un sandwich de jamón en el recreo, y necesitas saber en dónde ese jamón llega de verdad a tu sangre.",
+          "situacion": "Acabas de masticar un taco y lo tragas: el bolo tiene que viajar de la boca hasta el estómago por un tubo.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "Las proteínas del jamón se rompen en el estómago, pero entran a la sangre en el"
+              "valor": "El bolo baja de la boca al estómago por el"
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿En qué órgano pasan las proteínas del jamón a la sangre?",
+          "pregunta": "¿Por qué órgano baja el bolo de la boca al estómago?",
           "respuesta": {
-            "correcta": "intestino delgado",
+            "correcta": "esófago",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": "intestino delgado"
+                "valor": "esófago"
               }
             ],
-            "comoSeLee": "intestino delgado",
+            "comoSeLee": "esófago",
             "aceptaTambien": [],
             "opciones": [
               {
-                "etiqueta": "intestino delgado",
+                "etiqueta": "esófago",
                 "esCorrecta": true,
-                "queRevela": "Separaste el paso donde se rompe la proteína del paso donde entra a la sangre."
+                "queRevela": "Seguiste el orden del recorrido: después de la boca viene el esófago, que baja el bolo hasta el estómago."
               },
               {
-                "etiqueta": "estómago",
-                "esCorrecta": false,
-                "queRevela": "El estómago rompe la proteína pero no tiene la pared adecuada para dejar pasar los nutrientes a la sangre."
-              },
-              {
-                "etiqueta": "boca",
-                "esCorrecta": false,
-                "queRevela": "La boca empieza la digestión mecánica, pero los nutrientes de verdad se absorben mucho más abajo en el tubo."
-              }
-            ]
-          },
-          "pistas": [
-            {
-              "orden": 1,
-              "texto": "El jamón es proteína. ¿En qué órgano se rompen las proteínas y en qué órgano entra esa proteína rota a la sangre? Son dos órganos distintos."
-            },
-            {
-              "orden": 2,
-              "texto": "Ocurre después del estómago, en el paso que el canon destaca como el lugar donde pasan de verdad los nutrientes a la sangre."
-            },
-            {
-              "orden": 3,
-              "texto": "Es el órgano delgado que viene después del estómago, y su pared es el puente entre la comida rota y la sangre."
-            }
-          ]
-        },
-        {
-          "situacion": "Tu hermano menor pregunta dónde entra el agua que toma a la sangre. Tú sabes que el agua pasa en más de un órgano, pero hay uno que absorbe la mayor parte.",
-          "expresion": [
-            {
-              "tipo": "texto",
-              "valor": "La mayoría del agua que bebes entra a la sangre en el"
-            },
-            {
-              "tipo": "hueco"
-            }
-          ],
-          "pregunta": "¿En qué órgano se absorbe la mayor parte del agua que bebes?",
-          "respuesta": {
-            "correcta": "intestino delgado",
-            "enAtomos": [
-              {
-                "tipo": "texto",
-                "valor": "intestino delgado"
-              }
-            ],
-            "comoSeLee": "intestino delgado",
-            "aceptaTambien": [],
-            "opciones": [
-              {
                 "etiqueta": "intestino delgado",
-                "esCorrecta": true,
-                "queRevela": "El intestino delgado es el órgano donde entra el agua junto con todos los nutrientes a la sangre."
+                "esCorrecta": false,
+                "queRevela": "El intestino delgado viene después del estómago, no antes: el bolo todavía no llega ahí."
               },
               {
                 "etiqueta": "intestino grueso",
                 "esCorrecta": false,
-                "queRevela": "El intestino grueso absorbe agua, pero sólo lo que queda después de que el intestino delgado ya pasó lo suyo a la sangre."
-              },
-              {
-                "etiqueta": "estómago",
-                "esCorrecta": false,
-                "queRevela": "El estómago calienta el agua y la mezcla con la comida, pero no tiene la pared que deja pasar los nutrientes a la sangre."
+                "queRevela": "El intestino grueso está casi al final del recorrido, mucho después del estómago."
               }
             ]
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "El agua es un nutriente que el cuerpo absorbe. Piensa en el órgano que el canon destaca como el lugar donde ocurre la absorción principal."
+              "texto": "Piensa en el tubo que conecta la boca con el estómago: el bolo sólo pasa por él, no se queda."
             },
             {
               "orden": 2,
-              "texto": "Viene después del estómago y tiene la pared especial para dejar pasar lo que el cuerpo necesita a la sangre."
+              "texto": "No digiere ni absorbe nada: sólo empuja el bolo hacia abajo con contracciones, como una manguera."
             },
             {
               "orden": 3,
-              "texto": "Es donde se absorben la mayoría de los nutrientes, no sólo proteínas, sino también el agua y las grasas."
+              "texto": "Es el órgano que viene justo después de la boca en el recorrido, antes de llegar al estómago."
             }
           ]
         },
         {
-          "situacion": "Leyendo un blog de nutrición descubres que una vitamina entra a la sangre en el intestino delgado y no en el estómago, aunque estén conectados.",
+          "situacion": "Tu taco ya pasó por el intestino delgado, donde se absorbieron casi todos los nutrientes. Lo que no se aprovechó sigue su camino.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "Las vitaminas que comes se absorben en el"
+              "valor": "Lo que el intestino delgado no aprovechó pasa al"
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿En qué órgano del tubo digestivo se absorben las vitaminas a la sangre?",
+          "pregunta": "¿A qué órgano pasa lo que sobró, donde se absorbe el agua que queda?",
+          "respuesta": {
+            "correcta": "intestino grueso",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "intestino grueso"
+              }
+            ],
+            "comoSeLee": "intestino grueso",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "intestino grueso",
+                "esCorrecta": true,
+                "queRevela": "Seguiste el recorrido: lo que no se aprovechó llega al intestino grueso, que absorbe el agua que queda y forma las heces."
+              },
+              {
+                "etiqueta": "estómago",
+                "esCorrecta": false,
+                "queRevela": "El estómago está antes del intestino delgado, no después: lo que sobró ya pasó por ahí."
+              },
+              {
+                "etiqueta": "intestino delgado",
+                "esCorrecta": false,
+                "queRevela": "Lo que sobró ya salió del intestino delgado; el que sigue es el que recibe el resto y le saca el agua."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Sigue el recorrido hacia adelante: después del intestino delgado queda un solo órgano antes de que la comida salga del cuerpo."
+            },
+            {
+              "orden": 2,
+              "texto": "Ahí se absorbe el agua que queda y lo que no se pudo digerir se prepara para salir como heces."
+            },
+            {
+              "orden": 3,
+              "texto": "Es el intestino más ancho de los dos y el último del tubo digestivo."
+            }
+          ]
+        },
+        {
+          "situacion": "A Luis lo operaron del tubo digestivo y le quitaron buena parte de un órgano. Desde entonces, aunque come bien, casi no le pasan nutrientes de la comida a la sangre.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "A Luis le quitaron buena parte del"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿De qué órgano le quitaron buena parte a Luis?",
           "respuesta": {
             "correcta": "intestino delgado",
             "enAtomos": [
@@ -897,32 +897,37 @@
               {
                 "etiqueta": "intestino delgado",
                 "esCorrecta": true,
-                "queRevela": "Las vitaminas son nutrientes que se absorben donde están los nutrientes principales: en el intestino delgado."
+                "queRevela": "Ubicaste la absorción: casi todos los nutrientes pasan a la sangre en el intestino delgado, y sin buena parte de él casi no pasan."
               },
               {
                 "etiqueta": "estómago",
                 "esCorrecta": false,
-                "queRevela": "El estómago trata la vitamina como trata todo: la mezcla con el ácido. Pero no la deja pasar a la sangre, eso ocurre después."
+                "queRevela": "Confundiste dónde se rompe la comida con dónde se absorbe: el estómago digiere, pero su pared no deja pasar los nutrientes a la sangre."
               },
               {
-                "etiqueta": "boca",
+                "etiqueta": "intestino grueso",
                 "esCorrecta": false,
-                "queRevela": "La boca digiere un poco con saliva, pero los nutrientes en general se absorben mucho más abajo, en el tubo."
+                "queRevela": "El intestino grueso absorbe sobre todo el agua que queda: sin él los nutrientes seguirían pasando a la sangre en el órgano anterior."
+              },
+              {
+                "etiqueta": "esófago",
+                "esCorrecta": false,
+                "queRevela": "El esófago sólo transporta la comida y no absorbe nada: no es ahí donde pasan los nutrientes a la sangre."
               }
             ]
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "Las vitaminas son nutrientes, como proteínas, grasas y carbohidratos. ¿Dónde van los nutrientes de la comida a la sangre?"
+              "texto": "Piensa en los órganos del recorrido y en cuál de ellos deja pasar los nutrientes a la sangre."
             },
             {
               "orden": 2,
-              "texto": "Es el órgano que el canon señala como el sitio donde pasan de verdad los nutrientes a la sangre, gracias a su pared especial."
+              "texto": "Viene justo después del estómago y recibe los jugos del hígado y del páncreas."
             },
             {
               "orden": 3,
-              "texto": "Tiene la superficie larga y delgada que permite que los nutrientes, incluyendo vitaminas, atraviesen a la sangre."
+              "texto": "Su pared es larga y está llena de pliegues y vasos sanguíneos: así tiene muchísima superficie para que los nutrientes pasen."
             }
           ]
         }

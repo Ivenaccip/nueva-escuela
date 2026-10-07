@@ -78,22 +78,18 @@
         },
         {
           "numero": 5,
-          "queSeHace": "Compruebas si tu resultado tiene sentido usando un caso que ya conoces.",
+          "queSeHace": "Compruebas el signo con un caso que ya conoces: el mismo producto con un solo negativo, bajando el segundo número de uno en uno.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Comprobación: 2 ×"
+              "valor": "Comprobación: (−2) × 3 = −6, (−2) × 2 = −4, (−2) × 1 = −2, (−2) × 0 = 0,"
             },
             {
               "tipo": "texto",
-              "valor": "3 ="
-            },
-            {
-              "tipo": "texto",
-              "valor": "+6 ✓"
+              "valor": "(−2) × (−1) = +2, (−2) × (−2) = +4, (−2) × (−3) = +6 ✓"
             }
           ],
-          "porQue": "Si multiplicas dos positivos y te da un positivo, tu patrón de signos funciona. Si algo no cuadra con lo que ya sabes, el error está en alguno de los pasos anteriores."
+          "porQue": "Con un solo negativo ya sabes el signo: (−2) × 3 es sumar tres veces −2. Al bajar el segundo número, el resultado sube de 2 en 2, cruza el cero y llega a +6. Si tu signo no sigue ese patrón, el error está en el paso 2."
         }
       ]
     },
@@ -118,35 +114,39 @@
       "resultadoEnPalabras": "más seis"
     },
     "error": {
-      "enUnaFrase": "Aplica la regla de los signos a una suma en lugar de una multiplicación.",
-      "creenciaDeAtras": "cree que la regla menos por menos es más funciona igual en la suma, así que −4 + (−5) debe dar un positivo porque tiene dos signos negativos",
+      "enUnaFrase": "Decide mal el signo: con dos negativos deja el resultado negativo en vez de positivo.",
+      "creenciaDeAtras": "cree que el signo menos pesa más y se queda en el resultado: si en la operación hay un menos, el resultado sigue siendo negativo aunque haya dos, así que (−2) × (−3) debe dar −6 igual que (−2) × 3",
       "pasoQueCorrompe": 2,
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "Dos negativos: número par → resultado positivo"
+          "valor": "Dos negativos: el menos se queda → resultado negativo"
         }
       ],
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "−4 +"
+          "valor": "(−2) ×"
         },
         {
           "tipo": "texto",
-          "valor": "(−5) ="
+          "valor": "(−3) ="
         },
         {
           "tipo": "texto",
-          "valor": "+9"
+          "valor": "−6"
         }
       ],
-      "comoSeCacha": "El resultado +9 es mayor que cada uno de los números que sumaste. Cuando sumas números negativos, el resultado tiene que ser más negativo que ambos, no más positivo."
+      "comoSeCacha": "Un solo negativo ya deja el resultado negativo: (−2) × 3 = −6. Si bajas el 3 de uno en uno, el resultado sube de 2 en 2: −4, −2, 0, +2, +4. Con (−3) tiene que llegar a +6, no quedarse en −6."
     },
     "erroresSecundarios": [
       {
-        "enUnaFrase": "Confunde multiplicación con suma al ver dos números negativos juntos.",
-        "creenciaDeAtras": "cree que cualquier vez que haya dos números negativos, la regla de signos se aplica automáticamente, sin importar si se están sumando o multiplicando"
+        "enUnaFrase": "Aplica «menos por menos es más» a una suma: ve dos negativos juntos y escribe −4 + (−5) = +9.",
+        "creenciaDeAtras": "cree que dos signos menos juntos siempre dan más, sea que se multipliquen o se sumen, así que −4 + (−5) debe dar un positivo; pero esa regla es solo de la multiplicación y la división"
+      },
+      {
+        "enUnaFrase": "Con tres negativos escribe un resultado positivo, como si el tercer negativo no cambiara el signo.",
+        "creenciaDeAtras": "cree que, una vez que dos negativos dan positivo, el signo ya quedó fijo; no se da cuenta de que cada negativo que se agrega lo cambia otra vez"
       }
     ],
     "vocabulario": [
@@ -164,9 +164,9 @@
         "noEsLoMismoQue": "número par"
       },
       {
-        "palabra": "la regla de los signos",
-        "queEs": "Una regla que solo funciona en multiplicación y división: número par de negativos da positivo, número impar de negativos da negativo.",
-        "noEsLoMismoQue": "la suma de números negativos, donde siempre el resultado es más negativo"
+        "palabra": "la regla de los signos (en multiplicación y división)",
+        "queEs": "Un número par de negativos da positivo y uno impar da negativo. Solo sirve para multiplicar y dividir; para sumar se usa otra: signos iguales se suman y se deja el signo, signos distintos se restan.",
+        "noEsLoMismoQue": "la suma de enteros, donde dos negativos dan un resultado más negativo"
       },
       {
         "palabra": "entero",
@@ -217,9 +217,9 @@
     },
     "video": {
       "idDeYouTube": "BxO3sfT33Es",
-      "variedadDeEspanol": "Mexico",
-      "explicaElPorQue": true,
-      "porQueEste": "Es el video que mejor explica por qué funciona la regla: dice que cada número negativo que multiplicas cambia el signo una vez, así que dos cambios te devuelven al positivo. El título pregunta si conoces la regla, lo que marca que entra explicación. El canal Daniel Carreón es conocido en México por videos de secundaria claros y sin relleno.",
+      "variedadDeEspanol": "no se pudo determinar",
+      "explicaElPorQue": false,
+      "porQueEste": "El título trata la regla de los signos. De él solo se vio el título en los resultados de búsqueda: no se revisó el contenido, el acento ni la duración, así que hay que confirmar que explique por qué funciona y no solo el truco.",
       "url": "https://www.youtube.com/watch?v=BxO3sfT33Es",
       "titulo": "Y tu ¿Conoces la regla de los signos?",
       "canal": "Daniel Carreón",
@@ -229,8 +229,8 @@
       {
         "idDeYouTube": "udGLCVQLdXU",
         "variedadDeEspanol": "no se pudo determinar",
-        "explicaElPorQue": true,
-        "porQueEste": "Primer respaldo. Tiene el título claro y promete la regla. Es peor que el elegido porque no deja claro en el título que va a explicar el por qué, y el acento del canal Rodrigo Pereira Campos no se alcanza a determinar de verdad del resultado de búsqueda.",
+        "explicaElPorQue": false,
+        "porQueEste": "Primer respaldo. El título trata la regla de los signos en la multiplicación y división de números enteros. Solo se vio el título y el canal: no se revisó el contenido ni el acento.",
         "url": "https://www.youtube.com/watch?v=udGLCVQLdXU",
         "titulo": "Regla de los signos multiplicación y división de números enteros",
         "canal": "Rodrigo Pereira Campos",
@@ -238,17 +238,17 @@
       },
       {
         "idDeYouTube": "PUG2If5MqZ0",
-        "variedadDeEspanol": "America Latina",
-        "explicaElPorQue": true,
-        "porQueEste": "Segundo respaldo. El canal julioprofe es de calidad y explica bien. Entra aquí porque aunque el título dice multiplicación y división de enteros, no deja tan claro que va a explicar el por qué de la regla como lo hace el elegido.",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": false,
+        "porQueEste": "Segundo respaldo. El título trata la multiplicación y división de enteros. Solo se vio el título y el canal: no se revisó el contenido ni el acento.",
         "url": "https://www.youtube.com/watch?v=PUG2If5MqZ0",
         "titulo": "Multiplicación y división de enteros #julioprofe",
         "canal": "julioprofe",
         "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
       }
     ],
-    "confianza": "alta",
-    "porQueEsaConfianza": "La URL y el título del elegido salieron literales en la búsqueda limitada a youtube.com. El título «Y tu ¿Conoces la regla de los signos?» deja claro que entra explicación de la regla. El canal Daniel Carreón es de México. El video explica por qué funciona la regla contando cambios de signo. Los dos respaldos son buenos pero menos directos en el por qué. La duración no venía en los resultados, así que se omitió.",
+    "confianza": "media",
+    "porQueEsaConfianza": "La URL y el título del elegido salieron literales en la búsqueda limitada a youtube.com. De los tres videos solo se conocen el título y el canal: no se revisó el contenido, ni el acento, ni la duración. Por eso la confianza es media y falta confirmar que el elegido explique por qué funciona la regla.",
     "noSePuede": null
   },
   "contacto": {
@@ -280,8 +280,8 @@
               }
             ],
             "esCorrecta": false,
-            "esElErrorTipico": false,
-            "queRevela": "Estás contando un solo negativo. Cuando multiplicas dos números negativos, son dos negativos, y dos es un número par.",
+            "esElErrorTipico": true,
+            "queRevela": "Quizá piensas que el negativo «contagia» el resultado. Cada negativo cambia el signo una vez: con dos negativos el signo cambia dos veces y vuelve a ser positivo.",
             "letra": "A"
           },
           {
@@ -312,12 +312,12 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "No se puede saber"
+                "valor": "Depende del número mayor"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El signo del resultado depende de cuántos números negativos hay en la operación. Con dos negativos siempre sabes cuál es el signo.",
+            "queRevela": "El tamaño de los números no decide el signo: lo decide cuántos negativos hay. Con dos negativos el resultado es positivo sin importar cuál número sea mayor.",
             "letra": "D"
           }
         ]
@@ -347,8 +347,8 @@
               }
             ],
             "esCorrecta": false,
-            "esElErrorTipico": true,
-            "queRevela": "Estás aplicando la regla de los signos de la multiplicación a una suma. La regla de los signos solo funciona en multiplicación y división, no en suma.",
+            "esElErrorTipico": false,
+            "queRevela": "Estás aplicando «menos por menos es más» a una suma. Esa regla es solo para multiplicar y dividir; si debes 4 y debes 5, debes 9, no te deben 9.",
             "letra": "A"
           },
           {
@@ -372,7 +372,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estás restando los números en lugar de sumarlos. En una suma, todo lo que esté entre paréntesis se suma; el signo negativo no invierte la operación.",
+            "queRevela": "Restaste 5 − 4 en lugar de juntar las dos deudas. Si debes 4 y debes 5, debes más, no menos.",
             "letra": "C"
           },
           {
@@ -384,7 +384,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estás sumando el valor absoluto y eligiendo el signo del número mayor. En la suma de negativos, no importa cuál sea mayor; sumar negativos siempre da negativo.",
+            "queRevela": "Restaste 5 − 4 y, como hay dos signos menos, pusiste el resultado positivo. Al juntar dos deudas el resultado no puede ser positivo.",
             "letra": "D"
           }
         ]
@@ -502,31 +502,31 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Multiplicaste los números correctamente, pero el signo es incorrecto. Tres números negativos es un número impar, así que el resultado es negativo.",
+            "queRevela": "Los números están bien, pero el signo no: con dos negativos el signo cambia a positivo, y el tercer negativo lo cambia otra vez, a negativo.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "+1"
+                "valor": "−7"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Multiplicaste solo 2 × 1 y dejaste el 4 sin contar. Tienes que multiplicar todos los números, sin el signo.",
+            "queRevela": "Sumaste los tres números con su signo: −2 − 4 − 1 = −7. Aquí se multiplican: 2 × 4 × 1 = 8, y con tres negativos el signo es negativo.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "−1"
+                "valor": "+4"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Multiplicaste solo la parte numérica incompleta. 2 × 4 × 1 = 8, no 1. Multiplica todos los números sin el signo.",
+            "queRevela": "Multiplicaste solo −4 por −1 y dejaste el −2 sin contar. Hay que multiplicar los tres números: 2 × 4 × 1 = 8, con signo negativo.",
             "letra": "D"
           }
         ]
@@ -874,14 +874,14 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Dos negativos: número par"
+            "valor": "Dos negativos: el menos se queda"
           },
           {
             "tipo": "texto",
-            "valor": "→ resultado positivo"
+            "valor": "→ resultado negativo"
           }
         ],
-        "siLoTocas": "Ahí está. Ese renglón es el que lleva su conclusión a los dos pasos que siguen."
+        "siLoTocas": "Ahí está. Ese renglón decide el signo del resultado, y los pasos que siguen lo usan tal como quedó."
       },
       {
         "numero": 3,
@@ -895,7 +895,7 @@
             "valor": "2 × 3 = 6"
           }
         ],
-        "siLoTocas": "La multiplicación de los números positivos está bien: 2 por 3 es 6. Ese paso recibió su indicación del paso anterior y la usó correctamente."
+        "siLoTocas": "La cuenta con los números sin signo está bien: 2 por 3 es 6. Ese paso usó los números de la operación y no inventó ninguno."
       },
       {
         "numero": 4,
@@ -906,53 +906,53 @@
           },
           {
             "tipo": "texto",
-            "valor": "(−2) × (−3) = +6"
+            "valor": "(−2) × (−3) = −6"
           }
         ],
-        "siLoTocas": "La conclusión de ese paso está bien escrita: toma el 6 que le llegó y le pone el signo positivo que decidió el paso 2. No inventó ningún número."
+        "siLoTocas": "Ese paso toma el 6 de la cuenta y le pone el signo que ya traía decidido. Lo escribe bien: no inventó ningún número."
       },
       {
         "numero": 5,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Comprobación: si multiplico dos positivos"
+            "valor": "Escribo el resultado:"
           },
           {
             "tipo": "texto",
-            "valor": "2 × 3 = +6 ✓"
+            "valor": "(−2) × (−3) = −6"
           }
         ],
-        "siLoTocas": "La verificación repite el número que le llegó del paso anterior. El patrón de signos se confirma: dos positivos dan positivo, igual que dos negativos."
+        "siLoTocas": "Ese paso solo repite el resultado que le llegó del paso 4. Escribirlo de nuevo no cambia el signo que se decidió antes."
       }
     ],
     "pasoMalo": 2,
-    "arrastre": "El resultado positivo del paso 2 es lo que lleva el paso 4 a escribir +6 en lugar de otro signo, y es lo que el paso 5 verifica. Si los pasos 3, 4 y 5 estuvieran mal es porque el paso 2 los envenenó, pero están bien hechos: la pista es que el paso 2 es donde se decide un signo sin haber multiplicado números negativos ni positivos aún.\"",
+    "arrastre": "El signo negativo que se decide en el paso 2 es el que el paso 4 pega delante del 6 del paso 3, y de ahí sale el −6. El paso 5 repite ese mismo −6, así que también lo arrastra: los pasos 3, 4 y 5 hacen bien su parte con lo que reciben.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
-        "texto": "Aplicó la regla de signos a una suma en lugar de una multiplicación.",
+        "texto": "Decidió que dos negativos dan negativo: contó bien pero eligió el signo al revés.",
         "esElBueno": true,
-        "queRevela": "El error típico es creer que la regla menos por menos es más funciona igual en suma: si ves −4 + (−5), tienes dos negativos y aplicas la regla sin pensar en si es multiplicación o suma. Aquí la operación es (−2) × (−3), que sí es multiplicación, así que el paso 2 está bien. El paso malo es cuando el estudiante suma números negativos y sigue la regla de multiplicación."
+        "queRevela": "Eso hizo: contó bien los dos negativos, pero dejó el menos en el resultado en lugar de cambiarlo dos veces. Los demás renglones salen bien de ahí: contó dos negativos, multiplicó 2 × 3 = 6 y copió el signo que ya había decidido. Lo que no cuadra es que con dos negativos el resultado quedó negativo."
       },
       {
-        "texto": "Contó mal los negativos y decidió el signo equivocado.",
+        "texto": "Se equivocó al multiplicar 2 × 3.",
         "esElBueno": false,
-        "queRevela": "Quien elige esto cree que el paso 2 cometió un error aritmético: contó dos negativos pero decidió mal el signo, o contó tres en lugar de dos. Pero el paso 2 cuenta dos y aplica la regla correctamente: dos es par, y par de negativos da positivo. El error no es en la regla, es en saber dónde se aplica."
+        "queRevela": "Quien elige esto cree que el problema está en la cuenta con los números. Pero 2 × 3 = 6 está bien, y es el mismo 6 que aparece después. Lo que cambió fue el signo con el que se escribió ese 6."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro de los cinco pasos hacen bien lo que les toca. El error es aplicar una regla correcta en el lugar equivocado."
+        "texto": "Cuatro de los cinco pasos hacen bien lo suyo con lo que les llega. Uno decide algo que los demás solo copian: busca cuál."
       },
       {
         "orden": 2,
-        "texto": "La regla menos por menos es más funciona en multiplicación y división. Busca dónde se ve una multiplicación y dónde se ve una suma."
+        "texto": "Cuenta los negativos que hay en (−2) × (−3) y recuerda qué pasa con el signo cuando esa cantidad es par."
       },
       {
         "orden": 3,
-        "texto": "Compara estos dos renglones: (−2) × (−3) de aquí, y una suma como −4 + (−5). ¿Se parece lo que hace el paso 2 en multiplicación a lo que pasaría si fuera suma?"
+        "texto": "Compara con (−2) × 3 = −6. Si en lugar del 3 pones un −3, ¿puede el resultado quedar exactamente igual?"
       }
     ],
     "noSePuede": null
@@ -966,47 +966,52 @@
     "rubrica": {
       "ideasQueCuentan": [
         {
-          "idea": "Cada número negativo que multiplicas es un cambio de signo, y dos cambios te devuelven al positivo.",
+          "idea": "Multiplicar por un negativo da el opuesto: le da la vuelta al signo, así que cada negativo lo cambia una vez y con dos cambios el resultado vuelve a ser positivo.",
           "porQueImporta": "Sin esta idea, la regla es solo algo que hay que recordar. Con ella, entiendes por qué dos negativos dan positivo y por qué tres negativos dan negativo.",
-          "comoSuenaDicha": "Cada negativo cambia el signo una vez, y si cambias dos veces vuelves al principio.",
+          "comoSuenaDicha": "Cada negativo le da la vuelta al signo una vez. Si se la das dos veces, el signo vuelve a como estaba.",
           "esImprescindible": true
         },
         {
-          "idea": "La regla de los signos es solo para multiplicación y división, no funciona en la suma de números negativos.",
-          "porQueImporta": "Sin esta idea, el estudiante confunde y aplica menos por menos es más a cualquier operación con dos negativos, incluso sumando, y escribe −4 + (−5) = +9.",
-          "comoSuenaDicha": "En la suma dos números negativos dan más negativo, no más positivo.",
+          "idea": "Con tres negativos el signo cambia tres veces y el resultado queda negativo: un número par de negativos da positivo y uno impar da negativo.",
+          "porQueImporta": "Sin esta idea, quien dice que dos negativos dan positivo no sabe si su razón sirve con más negativos; con tres se ve que el signo depende de cuántas veces cambia.",
+          "comoSuenaDicha": "Si hay tres negativos el signo cambia tres veces, y tres cambios lo dejan al revés: negativo.",
           "esImprescindible": false
         },
         {
-          "idea": "Cuando sumas dos números negativos, el resultado es más negativo que cada uno de los números que sumaste.",
-          "porQueImporta": "Es la forma de distinguir la suma de la multiplicación: en la suma el resultado se aleja más del cero, en la multiplicación con dos negativos se acerca.",
-          "comoSuenaDicha": "Al sumar negativos el resultado es más pequeño, no más grande.",
+          "idea": "La regla «menos por menos es más» es solo para multiplicar y dividir: al sumar dos negativos el resultado sigue siendo negativo.",
+          "porQueImporta": "Distingue la suma de la multiplicación: al sumar dos negativos el resultado queda más a la izquierda que ambos (más negativo); al multiplicar dos negativos el resultado es positivo.",
+          "comoSuenaDicha": "En una suma, dos negativos dan más negativo; solo al multiplicar o dividir dos negativos dan positivo.",
           "esImprescindible": false
         }
       ],
-      "minimoParaContar": 2,
+      "minimoParaContar": 1,
       "suenanBienYNoDicen": [
         {
           "respuesta": "Porque la regla de los signos dice que menos por menos es más.",
-          "queLaDelata": "Nombra la regla pero no explica por qué funciona. Es lo que todos memorizan y lo que le falla cuando alguien suma dos negativos sin pensar.",
+          "queLaDelata": "Nombra la regla pero no explica por qué funciona. Es lo que todos memorizan, y quien solo la memoriza no sabe qué hacer cuando el resultado le sale raro.",
           "queLeFalta": "Que diga qué es lo que hace la regla, que cada negativo cambia el signo, y que dos cambios es volver atrás."
         },
         {
           "respuesta": "Porque con dos signos negativos juntos la regla de los signos se aplica y da positivo.",
-          "queLaDelata": "Explica dónde se aplica la regla pero no por qué. El error típico es exactamente esto: ver dos negativos y aplicar la regla sin revisar si se multiplica o se suma.",
-          "queLeFalta": "Que diferencie por qué funciona en multiplicación y división, pero no en suma."
+          "queLaDelata": "Explica dónde se aplica la regla pero no por qué. Es repetir la regla con otras palabras, sin decir qué le pasa al signo.",
+          "queLeFalta": "Que diga qué le pasa al signo con cada negativo, no solo que la regla «se aplica»."
         },
         {
-          "respuesta": "Porque cambias el signo dos veces y queda como empezó, positivo.",
-          "queLaDelata": "Tiene la idea de los dos cambios, pero sin decir qué es lo que cambia, el efecto se ve desconectado de la operación. Suena más a un truco que a una razón.",
-          "queLeFalta": "Que diga que los cambios vienen de multiplicar números negativos, y que en suma no funciona igual."
+          "respuesta": "Porque dos negativos se cancelan entre sí y por eso queda positivo.",
+          "queLaDelata": "Dice «se cancelan» pero no dice qué se cancela: si se cancelaran del todo, el resultado sería cero y no un positivo. Suena a explicación y no nombra ningún cambio de signo.",
+          "queLeFalta": "Que diga que cada negativo le da la vuelta al signo y que dar la vuelta dos veces deja el signo como estaba."
         }
       ],
       "contraargumentos": [
         {
+          "siDice": "Yo creo que con dos menos el resultado sigue siendo negativo, porque el menos siempre gana.",
+          "seLeContesta": "Un solo menos sí deja el resultado negativo: (−2) × 3 = −6. Pero fíjate en el patrón: (−2) × 2 = −4, (−2) × 1 = −2, (−2) × 0 = 0. El resultado va subiendo de 2 en 2. ¿Qué número sigue cuando el segundo factor pasa a −1?",
+          "aDondeLoEmpuja": "A ver que cada negativo cambia el signo una vez y que dos cambios lo dejan positivo, que es la idea que contesta el título."
+        },
+        {
           "siDice": "Pero menos por menos es más, y en −4 + (−5) hay dos signos menos, así que debería dar más.",
           "seLeContesta": "Tienes razón que hay dos signos menos, y es verdad que en multiplicación eso da más. Pero no estamos multiplicando. Cuando sumas dos números negativos, los dos hacen el resultado más negativo, no que se anulen. Dime: si debes 4 y luego debes 5, ¿debes más o menos?",
-          "aDondeLoEmpuja": "A entender que la regla de los signos no funciona en suma, que es la segunda idea de la lista."
+          "aDondeLoEmpuja": "A entender que «menos por menos es más» no funciona en la suma: es solo para multiplicar y dividir."
         },
         {
           "siDice": "Porque cada negativo cambia el resultado, y dos cambios es volver a lo que era, así que positivo.",
@@ -1019,7 +1024,7 @@
           "aDondeLoEmpuja": "A escribir la idea de su propio modo, sin memorizar palabras técnicas."
         }
       ],
-      "ejemploQueSiCuenta": "Cuando multiplicas dos números negativos, el primero negativo te invierte el signo una vez, y el segundo negativo te lo invierte otra vez. Dos cambios te devuelven a donde estabas, así que el resultado es positivo. Pero en la suma no pasa eso: dos números negativos solo hacen el resultado más negativo, porque se juntan, no se anulan.",
+      "ejemploQueSiCuenta": "Cuando multiplico por un negativo, el signo le da la vuelta una vez. Con dos negativos le doy la vuelta dos veces y el resultado vuelve a ser positivo; con tres negativos queda al revés, o sea negativo. Es como quitar deudas: si me quitan una deuda, mi dinero sube.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
         "Que no use la palabra regla: si explica la idea sin nombrarla, cuenta.",
@@ -1100,48 +1105,52 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "(−2) ×"
+            "valor": "(−4) ×"
           },
           {
             "tipo": "texto",
-            "valor": "(−3) ="
+            "valor": "(−2) ="
           },
           {
             "tipo": "hueco"
           }
         ],
         "respuesta": {
-          "correcta": "+6",
+          "correcta": "+8",
           "enAtomos": [
             {
               "tipo": "texto",
-              "valor": "+6"
+              "valor": "+8"
             }
           ],
-          "comoSeLee": "más seis",
+          "comoSeLee": "más ocho",
           "aceptaTambien": [
-            "6"
+            "8"
           ],
           "opciones": []
         },
         "pistas": [
           {
-            "texto": "Dos negativos son un número par. Aplica la regla: número par de negativos da un resultado positivo.",
+            "texto": "Cuenta cuántos negativos hay en (−4) × (−2). ¿La cantidad es par o impar?",
             "orden": 1
           },
           {
-            "texto": "Ya decidiste el signo: positivo. Multiplica los números: 2 × 3 = 6. Ponle el signo adelante.",
+            "texto": "Según esa cantidad decides el signo del resultado. Después multiplica los números como si no tuvieran signo.",
             "orden": 2
           },
           {
-            "texto": "El resultado de multiplicar dos negativos es positivo. Puedes escribir +6 o solo 6.",
+            "texto": "Ya tienes el signo y el producto de los números sin signo: junta las dos cosas en el hueco.",
             "orden": 3
           }
-        ]
+        ],
+        "siTecleaElError": {
+          "tecleado": "−8",
+          "queSeLeDice": "Calculaste bien los números, pero el signo quedó al revés: con dos negativos el menos no se queda. Cada negativo cambia el signo una vez, así que dos cambios lo dejan positivo. Vuelve a decidir el signo."
+        }
       },
       "escalera": [
         {
-          "situacion": "En un videojuego pierdes 3 monedas en cada nivel. Después de pasar 2 niveles, ¿cuántas monedas perdiste?",
+          "situacion": "En un videojuego pierdes 3 monedas en cada nivel. Después de pasar 2 niveles, ¿cómo cambió tu cantidad de monedas?",
           "expresion": [
             {
               "tipo": "texto",
@@ -1155,7 +1164,7 @@
               "tipo": "hueco"
             }
           ],
-          "pregunta": "Escribe el resultado con su signo.",
+          "pregunta": "Escribe el cambio con su signo.",
           "respuesta": {
             "correcta": "−6",
             "enAtomos": [
@@ -1170,70 +1179,31 @@
           },
           "pistas": [
             {
-              "texto": "Tienes un número negativo y otro positivo. ¿Cuántos negativos hay en total?",
+              "texto": "Mira la expresión: ¿cuántos números negativos hay? ¿Esa cantidad es par o impar?",
               "orden": 1
             },
             {
-              "texto": "Un número impar de negativos da negativo. Multiplica 3 × 2 = 6 y ponle el signo que decidiste.",
+              "texto": "Un número impar de negativos da resultado negativo. Falta multiplicar los números sin el signo y ponerle ese signo.",
               "orden": 2
             }
           ]
         },
         {
-          "situacion": "Un submarino baja 4 metros cada minuto. ¿A qué profundidad estará después de 3 minutos?",
+          "situacion": "Tu hermana te perdona 3 deudas de 5 pesos cada una. Perdonar es quitar, y una deuda es un número negativo.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "(−4) ×"
+              "valor": "(−3) ×"
             },
             {
               "tipo": "texto",
-              "valor": "3 ="
+              "valor": "(−5) ="
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "Escribe el resultado con su signo.",
-          "respuesta": {
-            "correcta": "−12",
-            "enAtomos": [
-              {
-                "tipo": "texto",
-                "valor": "−12"
-              }
-            ],
-            "comoSeLee": "menos doce",
-            "aceptaTambien": [],
-            "opciones": []
-          },
-          "pistas": [
-            {
-              "texto": "Un número es negativo y otro es positivo. ¿Cuántos negativos tienes?",
-              "orden": 1
-            },
-            {
-              "texto": "Número impar de negativos: resultado negativo. Multiplica 4 × 3 = 12 y ponle menos.",
-              "orden": 2
-            }
-          ]
-        },
-        {
-          "situacion": "Una deuda de 5 pesos. Tu hermana tiene tres deudas iguales a la tuya. ¿Cuál es su deuda total?",
-          "expresion": [
-            {
-              "tipo": "texto",
-              "valor": "(−5) ×"
-            },
-            {
-              "tipo": "texto",
-              "valor": "(−3) ="
-            },
-            {
-              "tipo": "hueco"
-            }
-          ],
-          "pregunta": "Escribe el resultado con su signo.",
+          "pregunta": "Escribe el cambio en tu saldo con su signo.",
           "respuesta": {
             "correcta": "+15",
             "enAtomos": [
@@ -1250,21 +1220,105 @@
           },
           "pistas": [
             {
-              "texto": "Cuenta los negativos: ¿cuántos hay en total? ¿Ese número es par o impar?",
+              "texto": "Perdonar una deuda es quitar un negativo. Cuenta los negativos que hay en la expresión: ¿son pares o impares?",
               "orden": 1
             },
             {
-              "texto": "Dos negativos: número par, resultado positivo. Multiplica 5 × 3 = 15 y ponle el signo.",
+              "texto": "Un número par de negativos da resultado positivo. Falta multiplicar los números sin el signo y ponerle ese signo.",
               "orden": 2
             }
           ]
         },
         {
-          "situacion": "En una prueba, cada respuesta equivocada quita 2 puntos. Contestaste mal 4 preguntas. ¿Cuántos puntos perdiste?",
+          "situacion": "Tu saldo baja 9 pesos en 3 días, lo mismo cada día. ¿Cómo cambia tu saldo en un solo día?",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "(−9) ÷"
+            },
+            {
+              "tipo": "texto",
+              "valor": "3 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "Escribe el cambio de un día con su signo.",
+          "respuesta": {
+            "correcta": "−3",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "−3"
+              }
+            ],
+            "comoSeLee": "menos tres",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Dividir sigue la misma regla de los signos que multiplicar. Cuenta cuántos negativos hay en la división.",
+              "orden": 1
+            },
+            {
+              "texto": "Un número impar de negativos da resultado negativo. Falta dividir los números sin el signo y ponerle ese signo.",
+              "orden": 2
+            }
+          ]
+        },
+        {
+          "situacion": "Tu saldo baja 2 pesos cada semana. Hoy está 10 pesos más abajo que al empezar. ¿Cuántas semanas pasaron?",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "(−10) ÷"
+            },
+            {
+              "tipo": "texto",
+              "valor": "(−2) ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "Escribe el resultado con su signo.",
+          "respuesta": {
+            "correcta": "+5",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "+5"
+              }
+            ],
+            "comoSeLee": "más cinco",
+            "aceptaTambien": [
+              "5"
+            ],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Cuenta cuántos negativos hay en la división. ¿Esa cantidad es par o impar?",
+              "orden": 1
+            },
+            {
+              "texto": "Un número par de negativos da resultado positivo. Falta dividir los números sin el signo y ponerle ese signo.",
+              "orden": 2
+            }
+          ]
+        },
+        {
+          "situacion": "En clase te piden el producto de tres números negativos: −2, −3 y −4.",
           "expresion": [
             {
               "tipo": "texto",
               "valor": "(−2) ×"
+            },
+            {
+              "tipo": "texto",
+              "valor": "(−3) ×"
             },
             {
               "tipo": "texto",
@@ -1276,26 +1330,24 @@
           ],
           "pregunta": "Escribe el resultado con su signo.",
           "respuesta": {
-            "correcta": "+8",
+            "correcta": "−24",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": "+8"
+                "valor": "−24"
               }
             ],
-            "comoSeLee": "más ocho",
-            "aceptaTambien": [
-              "8"
-            ],
+            "comoSeLee": "menos veinticuatro",
+            "aceptaTambien": [],
             "opciones": []
           },
           "pistas": [
             {
-              "texto": "Dos números negativos: número par. Por la regla, el resultado es positivo.",
+              "texto": "Cuenta cuántos negativos hay entre los tres números. ¿Esa cantidad es par o impar?",
               "orden": 1
             },
             {
-              "texto": "Multiplica 2 × 4 = 8 y ponle el signo de más.",
+              "texto": "Un número impar de negativos da resultado negativo. Falta multiplicar los tres números sin el signo y ponerle ese signo.",
               "orden": 2
             }
           ]
