@@ -2,7 +2,9 @@
 //
 // Metro empaqueta lo que ve escrito, así que no hay forma de cargar una carpeta
 // entera. Este script escribe los `import` uno por uno, y de paso decide qué temas
-// entran: sólo los que se pueden recorrer completos.
+// entran: sólo los que se pueden recorrer completos. La regla vive en `admision.mjs`
+// (la comparte `tanda.mjs`): seis estaciones, y las 3 y 4 pueden venir del caso
+// `X3-teclado` si es contestable (`teclado.mjs`).
 //
 //   node contenido/indexar.mjs           # reescribe el catálogo
 //   node contenido/indexar.mjs --revisar # sólo dice qué entra y qué no, sin escribir
@@ -14,6 +16,8 @@ import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { motivoDeExclusion } from './admision.mjs';
+
 const aqui = dirname(fileURLToPath(import.meta.url));
 const dirTemas = join(aqui, 'temas');
 const dirTemarios = join(aqui, 'temarios');
@@ -23,26 +27,6 @@ const soloRevisar = process.argv.includes('--revisar');
 
 /** El orden en que aparecen las pestañas de materia. */
 const MATERIAS = ['matematicas', 'biologia', 'quimica', 'fisica'];
-
-/** Las seis estaciones, en el orden del círculo. */
-const ESTACIONES = ['ver', 'contacto', 'completar', 'escalera', 'error', 'explicar'];
-
-/**
- * Por qué un tema no se puede abrir, o null si se puede.
- *
- * La estación 1 puede traer `noSePuede` lleno y el tema sí se publica: sin video
- * la tarjeta se queda vacía, pero `pregunta` y `resumen` están escritos. En las
- * otras cinco, un `noSePuede` lleno quiere decir que el ejercicio no se puede
- * dibujar, y son seis estaciones o ninguna (`CONTRATO.md` §6).
- */
-function motivoDeExclusion(tema) {
-  if (tema.canon?.noSePuede) return 'el canon trae noSePuede lleno';
-  const faltan = ESTACIONES.filter((clave) => !tema[clave]);
-  if (faltan.length > 0) return `faltan estaciones: ${faltan.join(', ')}`;
-  const llenas = ESTACIONES.filter((clave) => clave !== 'ver' && tema[clave].noSePuede);
-  if (llenas.length > 0) return `noSePuede lleno en: ${llenas.join(', ')}`;
-  return null;
-}
 
 const temarios = {};
 const admitidos = [];
@@ -90,9 +74,10 @@ const identificador = (t) => `${t.materia}_${t.numero}`;
 const lineas = [];
 lineas.push('// GENERADO por `node contenido/indexar.mjs`. No se edita a mano.');
 lineas.push('//');
-lineas.push('// Los temas que la app puede abrir: seis estaciones, y ninguna con `noSePuede`');
-lineas.push('// lleno salvo la 1, que sin video se publica igual. Para meter uno nuevo, se');
-lineas.push('// genera su JSON en `contenido/temas/` y se vuelve a correr el script.');
+lineas.push('// Los temas que la app puede abrir: seis estaciones (la 3 y la 4 pueden venir del');
+lineas.push('// caso `X3-teclado`), y ninguna con `noSePuede` lleno salvo la 1, que sin video se');
+lineas.push('// publica igual. Para meter uno nuevo, se genera su JSON en `contenido/temas/` y');
+lineas.push('// se vuelve a correr el script.');
 lineas.push('');
 lineas.push("import type { Materia, TemaRedactado } from './autoria';");
 lineas.push('');

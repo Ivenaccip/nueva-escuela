@@ -19,9 +19,11 @@ import { spawn } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { ESTACIONES, motivoDeExclusion } from './admision.mjs';
 import { CODIGO_DE_TOPE, resumenDelGasto } from './gasto.mjs';
-import { llaveDeAnthropic } from './llaves.mjs';
 import { resultadoSinCifra } from './forma.mjs';
+import { llaveDeAnthropic } from './llaves.mjs';
+import { CLAVE_X3, casoDelCanon, noSePuedeVigente } from './teclado.mjs';
 
 const aqui = dirname(fileURLToPath(import.meta.url));
 const raiz = dirname(aqui);
@@ -41,13 +43,12 @@ try {
 }
 
 const MATERIAS = ['matematicas', 'biologia', 'fisica', 'quimica'];
-const ESTACIONES = ['ver', 'contacto', 'completar', 'escalera', 'error', 'explicar'];
 
 /** Lo que cada caso aparte sustituye. Espeja el ruteo de generar.mjs y CONTRATO.md §3. */
 const REEMPLAZA = {
   'X1-tabla': ['contacto', 'completar', 'escalera', 'error'],
   'X2-figura': ['completar', 'escalera'],
-  'X3-teclado': ['completar', 'escalera'],
+  [CLAVE_X3]: ['completar', 'escalera'],
 };
 
 const PAUSA_OK = 1500; // entre temas que salieron, para no pegarle al limite de tasa
@@ -163,9 +164,10 @@ const guardarEstado = async (estado) => {
 
 /**
  * Seis estaciones o ninguna: `BarraEstacion` tiene TOTAL = 6 y `cierre.tsx` dibuja
- * seis nodos. Un tema ruteado a X1/X2/X3 tiene 2 o 4, se puede guardar y NO se puede
- * pintar. Por eso aqui se cuentan las seis de verdad y no se pregunta al ruteo si
- * esta conforme.
+ * seis nodos. Un tema ruteado a X1 o a X2 tiene 2 o 4, se puede guardar y NO se puede
+ * pintar. Uno ruteado a X3 sí: sus estaciones 3 y 4 salen de `casosAparte`, y la
+ * misma regla que usa `indexar.mjs` (`motivoDeExclusion`) dice si entra, para que
+ * «se pinta» aquí y «entra al catálogo» allá nunca se contradigan.
  */
 async function clasificar(numero) {
   let tema;
@@ -180,19 +182,19 @@ async function clasificar(numero) {
 
   const notacion = canon.notacion;
   const forma = canon.formaDeRespuesta;
-  const caso =
-    notacion === 'tabla'
-      ? 'X1-tabla'
-      : notacion === 'figura'
-        ? 'X2-figura'
-        : forma === 'palabra' || forma === 'expresion'
-          ? 'X3-teclado'
-          : forma === 'trazo'
-            ? 'X2-figura'
-            : null;
+  const caso = casoDelCanon(canon);
+  const x3 = tema.casosAparte?.[CLAVE_X3] ?? null;
+  const x3Entregado = Boolean(x3 && !x3.noSePuede);
 
-  const hechas = ESTACIONES.filter((e) => tema[e]);
-  const conNoSePuede = ['canon', ...ESTACIONES].filter((c) => tema[c] && tema[c].noSePuede);
+  // Las dos que X3 sustituye cuentan como hechas cuando el caso está guardado y no dijo que no.
+  const hechas = ESTACIONES.filter(
+    (e) => tema[e] || (caso === CLAVE_X3 && x3Entregado && REEMPLAZA[CLAVE_X3].includes(e)),
+  );
+  const conNoSePuede = [
+    ...(noSePuedeVigente(canon) ? ['canon'] : []),
+    ...ESTACIONES.filter((c) => tema[c]?.noSePuede),
+    ...(x3?.noSePuede ? [CLAVE_X3] : []),
+  ];
   // La estacion 1 es la excepcion del contrato: sin video el tema si se publica.
   const bloquean = conNoSePuede.filter((c) => c !== 'ver');
 
@@ -200,14 +202,31 @@ async function clasificar(numero) {
     notacion,
     forma,
     caso,
+    // El resultado es una frase aunque el canon se llame numerico: es por lo que fue a X3.
+    sinCifra: resultadoSinCifra(canon),
     hechas: hechas.length,
-    faltan: ESTACIONES.filter((e) => !tema[e] && !(caso && REEMPLAZA[caso].includes(e))),
+    faltan: [
+      ...ESTACIONES.filter((e) => !tema[e] && !(caso && REEMPLAZA[caso].includes(e))),
+      ...(caso === CLAVE_X3 && !x3 ? [CLAVE_X3] : []),
+    ],
     conNoSePuede,
   };
 
-  if (canon.noSePuede) return { ...base, estado: 'canon-dice-no', pintable: false };
-  if (caso) return { ...base, estado: `ruteado-${caso}`, pintable: false };
-  if (resultadoSinCifra(canon)) return { ...base, estado: 'forma-dudosa', pintable: false };
+  if (noSePuedeVigente(canon)) return { ...base, estado: 'canon-dice-no', pintable: false };
+  if (caso === 'X1-tabla' || caso === 'X2-figura') {
+    return { ...base, estado: `ruteado-${caso}`, pintable: false };
+  }
+  if (caso === CLAVE_X3) {
+    const motivo = motivoDeExclusion(tema);
+    if (motivo === null) return { ...base, estado: 'x3-teclado', pintable: true };
+    // Lo que sigue es lo mismo que le dice indexar.mjs a quien lo corre.
+    const estado = motivo.startsWith('faltan estaciones')
+      ? 'a-medias'
+      : /noSePuede/.test(motivo)
+        ? 'noSePuede'
+        : 'x3-invalido';
+    return { ...base, estado, motivo, pintable: false };
+  }
   if (hechas.length < 6) return { ...base, estado: 'a-medias', pintable: false };
   if (bloquean.length > 0) return { ...base, estado: 'noSePuede', pintable: false };
   return { ...base, estado: 'completo', pintable: true };
@@ -257,9 +276,11 @@ for (const [i, numero] of numeros.entries()) {
   const tema = temario.temas.find((t) => t.numero === numero);
   const previo = estado[numero];
 
-  // Reanudar: un tema ya resuelto no se vuelve a pedir. Uno ruteado a un caso aparte
+  // Reanudar: un tema ya resuelto no se vuelve a pedir. Uno ruteado a tabla o figura
   // tampoco: volver a correrlo gasta las mismas dos llamadas y da el mismo resultado.
-  if (!seco && !rehacer && previo && (previo.pintable || previo.estado.startsWith('ruteado-'))) {
+  // Uno ruteado a X3 sí se retoma: ese caso ahora se genera de verdad, y un estado
+  // `ruteado-X3-teclado` guardado por una tanda anterior quiere decir que falta.
+  if (!seco && !rehacer && previo && (previo.pintable || /^ruteado-X[12]-/.test(previo.estado))) {
     decir(`\n[${i + 1}/${numeros.length}] tema ${numero} · ${tema.titulo} — ya estaba (${previo.estado})`);
     continue;
   }
@@ -328,23 +349,24 @@ for (const { n, t, e } of filas) {
   }
   // En sondeo las seis estaciones no se pidieron nunca, asi que contar cuantas
   // faltan no dice nada y asusta de balde: lo que se sondeo es el RUTEO.
-  const aparte = e.caso || e.estado === 'canon-dice-no';
+  // X3 se genera y se pinta: no es un caso «aparte» en el sentido de que falte UI.
+  const sinUI = e.estado === 'canon-dice-no' || (e.caso && e.caso !== CLAVE_X3);
   const marca = seco
     ? ''
     : sondeo
       ? !e.notacion
         ? 'SIN CANON'
-        : e.estado === 'forma-dudosa'
-          ? 'FORMA DUDOSA'
-          : aparte
-            ? 'CASO APARTE'
+        : sinUI
+          ? 'CASO APARTE'
+          : e.caso === CLAVE_X3
+            ? 'X3 TECLADO'
             : 'CAMINO NORMAL'
       : e.pintable
         ? 'SE PINTA'
         : 'NO SE PINTA';
   const detalle = [
     e.notacion ? `${e.notacion}/${e.forma}` : null,
-    sondeo ? (e.caso ? `va a ${e.caso}` : null) : null,
+    sondeo ? (e.caso ? `va a ${e.caso}${e.sinCifra ? ' (su resultado no tiene cifra)' : ''}` : null) : null,
     sondeo || e.hechas === undefined ? null : `${e.hechas}/6 estaciones`,
     sondeo || !(e.faltan && e.faltan.length) ? null : `faltan ${e.faltan.join(',')}`,
     e.conNoSePuede && e.conNoSePuede.length ? `noSePuede en ${e.conNoSePuede.join(',')}` : null,
@@ -357,10 +379,11 @@ for (const { n, t, e } of filas) {
 }
 
 const pintables = filas.filter((f) => f.e && f.e.pintable);
+const pintablesPorX3 = pintables.filter((f) => f.e.caso === CLAVE_X3);
 const ruteados = filas.filter((f) => f.e && String(f.e.estado).startsWith('ruteado-'));
 const aMedias = filas.filter((f) => f.e && (f.e.estado === 'a-medias' || f.e.estado === 'sin-canon' || f.e.estado === 'sin-archivo'));
 const negados = filas.filter((f) => f.e && (f.e.estado === 'canon-dice-no' || f.e.estado === 'noSePuede'));
-const dudosas = filas.filter((f) => f.e && f.e.estado === 'forma-dudosa');
+const invalidos = filas.filter((f) => f.e && f.e.estado === 'x3-invalido');
 
 decir('\n' + '-'.repeat(78));
 if (seco) {
@@ -374,24 +397,30 @@ if (seco) {
 // pagarla. Es la unica pregunta que importa antes de soltar la tanda entera.
 if (sondeo) {
   const conCanon = filas.filter((f) => f.e && f.e.notacion);
-  const dudosos = conCanon.filter((f) => f.e.estado === 'forma-dudosa');
-  const aparte = conCanon.filter(
-    (f) => f.e.estado !== 'forma-dudosa' && (f.e.caso || f.e.estado === 'canon-dice-no'),
+  const sinUI = conCanon.filter(
+    (f) => f.e.estado === 'canon-dice-no' || (f.e.caso && f.e.caso !== CLAVE_X3),
   );
+  const aX3 = conCanon.filter((f) => f.e.caso === CLAVE_X3 && f.e.estado !== 'canon-dice-no');
   decir(`  canon obtenido: ${conCanon.length} de ${numeros.length}`);
-  decir(`  van al camino normal y se van a poder pintar: ${conCanon.length - aparte.length - dudosos.length}`);
-  decir(`  van a un caso aparte o el canon los niega: ${aparte.length}`);
-  for (const f of aparte) {
+  decir(`  van al camino normal y se van a poder pintar: ${conCanon.length - sinUI.length - aX3.length}`);
+  decir(`  van a ${CLAVE_X3}, que se genera y se pinta (teclado propio): ${aX3.length}`);
+  for (const f of aX3) {
+    const porQue = f.e.sinCifra ? ' (el resultado del ejemplo no tiene cifra)' : '';
+    decir(`      ${String(f.n).padStart(3)} ${f.e.notacion}/${f.e.forma}${porQue}  ${f.t.titulo}`);
+  }
+  decir(`  van a un caso aparte sin UI (tabla, figura) o el canon los niega: ${sinUI.length}`);
+  for (const f of sinUI) {
     decir(`      ${String(f.n).padStart(3)} ${f.e.notacion}/${f.e.forma} -> ${f.e.caso ?? 'noSePuede'}  ${f.t.titulo}`);
   }
-  decir(`  dicen numero pero su resultado no tiene ninguna cifra: ${dudosos.length}`);
-  for (const f of dudosos) decir(`      ${String(f.n).padStart(3)} ${f.t.titulo}`);
-  decir('\n  Genera la tanda completa solo de los del camino normal. Los de arriba se');
-  decir('  pagarian igual y la app no los puede abrir (CONTRATO.md §5).');
+  decir('\n  Genera la tanda completa de los del camino normal y de los de X3. Los de tabla y');
+  decir('  figura se pagarian igual y la app no los puede abrir (CONTRATO.md §5).');
   decir('-'.repeat(78) + '\n');
   process.exit(topeAlcanzado ? CODIGO_DE_TOPE : 0);
 }
 decir(`  se pintan hoy, con sus seis estaciones: ${pintables.length} de ${numeros.length}`);
+if (pintablesPorX3.length) {
+  decir(`      de ellos, con teclado propio (${CLAVE_X3}): temas ${pintablesPorX3.map((f) => f.n).join(', ')}`);
+}
 if (ruteados.length) {
   const porCaso = {};
   for (const f of ruteados) (porCaso[f.e.caso] ??= []).push(f.n);
@@ -400,8 +429,9 @@ if (ruteados.length) {
   decir('      Falta codigo de UI, no contenido (CONTRATO.md §5).');
 }
 if (negados.length) decir(`  con noSePuede que bloquea: ${negados.map((f) => f.n).join(', ')}`);
-if (dudosas.length) {
-  decir(`  dicen numero pero su resultado no tiene cifras, no se pintan: ${dudosas.map((f) => f.n).join(', ')}`);
+if (invalidos.length) {
+  decir(`  con ${CLAVE_X3} que no se puede contestar, no se pintan: ${invalidos.map((f) => f.n).join(', ')}`);
+  for (const f of invalidos) decir(`      ${String(f.n).padStart(3)} ${f.e.motivo}`);
 }
 if (aMedias.length) decir(`  a medias, vuelve a correr la tanda para retomar: ${aMedias.map((f) => f.n).join(', ')}`);
 decir(`  estado de la tanda: ${rutaEstado}`);

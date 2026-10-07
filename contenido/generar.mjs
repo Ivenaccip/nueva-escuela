@@ -16,6 +16,14 @@
 // guardado se lanzan las seis estaciones, porque las seis lo reciben entero y no
 // se hablan entre ellas (contenido/CONTRATO.md §3).
 //
+// Un tema cuya respuesta no son dígitos (una palabra, una expresión, o un número
+// que en realidad es una frase) se rutea a X3: se generan ver, contacto, error y
+// explicar, y en lugar de completar y escalera se llama a
+// X3-respuesta-no-numerica, que elige el teclado del tema y escribe con él esas dos
+// estaciones. Su salida se guarda en `casosAparte['X3-teclado']`. `--solo
+// X3-teclado` pide sólo esa llamada. Los casos tabla y figura se nombran y no se
+// llaman: todavía no tienen componente de UI.
+//
 // Falla ruidoso y se retoma. La salida se escribe en
 // contenido/temas/<materia>-<numero>.json después de CADA llamada, así que una
 // corrida interrumpida se reanuda sola: al volver a correrlo, lo que ya está no
@@ -30,7 +38,6 @@ import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
 
 import { buscarVideos, candidatosComoTexto } from './buscar-videos.mjs';
-import { resultadoSinCifra } from './forma.mjs';
 import { llaveDeAnthropic } from './llaves.mjs';
 import {
   anotar,
@@ -40,6 +47,13 @@ import {
   resumenDelGasto,
   TopeAlcanzado,
 } from './gasto.mjs';
+import {
+  CLAVE_X3,
+  casoDelCanon,
+  noSePuedeVigente,
+  problemasDeTeclado,
+  unoSoloDeTeclado,
+} from './teclado.mjs';
 
 const aqui = dirname(fileURLToPath(import.meta.url));
 const dirEsquema = join(aqui, 'esquema');
@@ -140,7 +154,11 @@ const ESTACIONES = [
   },
 ];
 
-/** Los casos aparte. El canon rutea, y aquí sólo está su ficha. */
+/**
+ * Los casos aparte. El canon rutea (`casoDelCanon` en `teclado.mjs`), y aquí sólo
+ * está su ficha. Sólo `teclado` se llama de verdad: tabla y figura todavía no tienen
+ * componente de UI que las pinte.
+ */
 const CASOS_APARTE = {
   tabla: {
     clave: 'X1-tabla',
@@ -160,7 +178,7 @@ const CASOS_APARTE = {
     reemplaza: ['completar', 'escalera'],
   },
   teclado: {
-    clave: 'X3-teclado',
+    clave: CLAVE_X3,
     prompt: 'X3-respuesta-no-numerica.md',
     esquema: 'X3-respuesta-no-numerica.schema.json',
     herramienta: 'escribir_caso_teclado',
@@ -222,7 +240,7 @@ if (!materia || !Number.isInteger(numero)) {
     'Uso: node contenido/generar.mjs <materia> <numero> [--solo <estacion>] [--rehacer]\n' +
       `  materia: ${MATERIAS.join(' | ')}\n` +
       '  numero: el numero del tema dentro de su materia\n' +
-      '  --solo: una sola llamada (canon, ver, contacto, completar, escalera, error, explicar)\n' +
+      '  --solo: una sola llamada (canon, ver, contacto, completar, escalera, error, explicar, X3-teclado)\n' +
       '  --rehacer: tira lo ya guardado y empieza de cero\n' +
       '  --seco: arma las llamadas y revisa los placeholders sin llamar a la API',
   );
@@ -250,7 +268,8 @@ let estricto = banderas.has('--estricto');
 //
 // Las dos llaves se comprueban aquí, antes de la primera llamada. La de OpenAI no
 // se usa hasta la estación 1, y descubrir que falta ahí sería descubrirlo con el
-// canon ya pagado. El sondeo (`--solo canon`) no la necesita, así que no la pide.
+// canon ya pagado. Una llamada suelta que no sea la 1 (`--solo canon`, `--solo
+// X3-teclado`) no la necesita, así que no la pide.
 function faltaLaLlave(nombre, paraQue) {
   if (process.env[nombre]) return null;
   return [
@@ -273,7 +292,8 @@ if (!seco) {
           'ANDAMIO_ANTHROPIC_API_KEY',
           'la que escribe el contenido (también vale ANTHROPIC_API_KEY)',
         ),
-    solo === 'canon'
+    // Sólo la estación 1 busca video: el resto de las llamadas sueltas no la pide.
+    solo && solo !== 'ver'
       ? null
       : faltaLaLlave('OPENAI_API_KEY', 'la que busca el video de la estacion 1'),
   ].filter(Boolean);
@@ -602,6 +622,8 @@ const UNO_SOLO = {
       'esImprescindible',
     ],
   ],
+  // Un solo hueco por renglón y, con el teclado `opciones`, una sola opción buena.
+  [CLAVE_X3]: unoSoloDeTeclado,
 };
 
 function comprobarUnoSolo(paso, salida) {
@@ -802,19 +824,51 @@ function comprobarIndices(paso, salida) {
 }
 
 /**
- * Lo que el llamador sabe del caso X3: `faltaCodigo` es `teclado !== 'digitos'`,
- * y los tres booleanos de `comoSeCompara` sólo tienen algo que decidir cuando el
- * teclado es de texto. Con los otros tres teclados sólo se puede escribir lo que
- * viene pintado, así que la comparación es exacta.
+ * Lo que el llamador sabe del caso X3, según el teclado que el modelo eligió:
+ *
+ * - Los tres booleanos de `comoSeCompara` sólo tienen algo que decidir con el
+ *   teclado de texto. Con los otros tres sólo se puede escribir lo que viene
+ *   pintado, así que la comparación es exacta y van en `false`.
+ * - `fichas` sólo se llena con el teclado `fichas`, y `respuesta.opciones` sólo con
+ *   `opciones`: en los demás casos van vacías.
+ * - `faltaCodigo` y `planB` ya no existen (los cuatro teclados se sirven). Un modelo
+ *   que copió la forma de antes los trae por costumbre y el esquema los rechazaría,
+ *   así que se quitan en vez de gastar una corrección en ellos.
  */
 function sellarTeclado(paso, salida) {
-  if (paso.clave !== 'X3-teclado' || !salida || typeof salida !== 'object') return;
-  if (!('faltaCodigo' in salida)) salida.faltaCodigo = salida.teclado !== 'digitos';
-  if (salida.teclado === 'texto') return;
-  salida.comoSeCompara ??= {};
-  for (const b of ['ignoraMayusculas', 'ignoraAcentos', 'ignoraEspaciosDeMas']) {
-    if (!(b in salida.comoSeCompara)) salida.comoSeCompara[b] = false;
+  if (paso.clave !== CLAVE_X3 || !salida || typeof salida !== 'object') return;
+  delete salida.faltaCodigo;
+  delete salida.planB;
+
+  if (salida.teclado !== 'texto') {
+    salida.comoSeCompara = {
+      ignoraMayusculas: false,
+      ignoraAcentos: false,
+      ignoraEspaciosDeMas: false,
+    };
   }
+  if (salida.teclado !== 'fichas') salida.fichas = [];
+  if (salida.teclado !== 'opciones') {
+    const escalones = Array.isArray(salida.escalera) ? salida.escalera : [];
+    for (const r of [salida.completar?.respuesta, ...escalones.map((e) => e?.respuesta)]) {
+      if (r && typeof r === 'object') r.opciones = [];
+    }
+  }
+}
+
+/**
+ * Lo que el esquema no puede expresar del teclado: que cada respuesta se pueda
+ * ARMAR con él. Un `correcta` con una ficha que no existe valida perfecto y deja un
+ * hueco que nadie puede llenar. Los mensajes dicen qué campo y qué hacer, y la
+ * vuelta de corrección se los devuelve al modelo tal cual.
+ */
+function comprobarTeclado(paso, salida) {
+  if (paso.clave !== CLAVE_X3) return;
+  const problemas = problemasDeTeclado(salida);
+  if (problemas.length === 0) return;
+  throw new Rajada(
+    `${paso.clave}: el teclado no se puede contestar tal como quedó\n    ${problemas.join('\n    ')}`,
+  );
 }
 
 function comprobarTraza(paso, salida, temario, tema) {
@@ -972,6 +1026,7 @@ async function correr(paso, valores) {
     comprobarTraza(paso, r, temario, tema);
     comprobarIndices(paso, r);
     comprobarUnoSolo(paso, r);
+    comprobarTeclado(paso, r);
 
     if (paso.necesitaVideos) comprobarVideoEscogido(r, valores.__candidatos ?? []);
   };
@@ -1048,61 +1103,78 @@ if (!salida.canon) {
 }
 
 const canon = salida.canon;
-const valores = {
-  ...valoresDelTema(temario, tema, ejemploCanon),
-  ...valoresDelCanon(canon),
-};
 
-// El ruteo: qué prompts le tocan a este tema (CONTRATO.md §3).
+// El ruteo: qué prompts le tocan a este tema (CONTRATO.md §3). Lo decide
+// `casoDelCanon`, que también usan tanda.mjs e indexar.mjs.
 //
 // `expresion` entró aquí por lo que pasó con el tema 2. La factorización de 360 se
-// escribe 2³ × 3² × 5, y el teclado no tiene ni exponente ni la x de multiplicar:
-// la estación 4 se pidió igual y $defs.tecleado rechazó «2/3*3/2*5» tres veces
-// seguidas. El tope hizo su trabajo; lo que falló fue mandar ese tema a la
-// escalera. La mitad del temario de matemáticas está en el mismo caso (la respuesta
-// necesita el punto decimal, el signo menos o un símbolo de comparación), así que
-// el canon declara `expresion` y el tema sale por aquí en vez de cobrar reintentos.
-const caso =
-  canon.notacion === 'tabla'
-    ? CASOS_APARTE.tabla
-    : canon.notacion === 'figura'
-      ? CASOS_APARTE.figura
-      : canon.formaDeRespuesta === 'palabra' || canon.formaDeRespuesta === 'expresion'
-        ? CASOS_APARTE.teclado
-        : canon.formaDeRespuesta === 'trazo'
-          ? CASOS_APARTE.figura
-          : null;
+// escribe 2³ × 3² × 5, y el teclado de dígitos no tiene ni exponente ni la × de
+// multiplicar: la estación 4 se pidió igual y $defs.tecleado rechazó «2/3*3/2*5»
+// tres veces seguidas. El tope hizo su trabajo; lo que falló fue mandar ese tema a
+// la escalera. La mitad del temario de matemáticas está en el mismo caso (la
+// respuesta necesita el punto decimal, el signo menos o un símbolo de comparación),
+// así que el canon declara `expresion` y el tema sale por aquí en vez de cobrar
+// reintentos. Y un canon que se llama `numero` pero no trae ni una cifra en su
+// resultado es una frase: se rutea igual (contenido/forma.mjs).
+const claveDelCaso = casoDelCanon(canon);
+const caso = Object.values(CASOS_APARTE).find((c) => c.clave === claveDelCaso) ?? null;
+const vaAX3 = caso === CASOS_APARTE.teclado;
+
+// Un canon escrito cuando el único teclado era el de dígitos llenó `noSePuede` por
+// regla («el teclado no tiene letras»). Con los cuatro teclados ese aviso quedó viejo,
+// y dejárselo ver a las llamadas las empuja a darse por vencidas. Sólo se les oculta:
+// el archivo del canon no se toca.
+const canonViejo = vaAX3 && canon.noSePuede && !noSePuedeVigente(canon);
+const valores = {
+  ...valoresDelTema(temario, tema, ejemploCanon),
+  ...valoresDelCanon(canonViejo ? { ...canon, noSePuede: null } : canon),
+};
 
 if (caso) {
-  decir(
-    `\n  Ruteo: notacion "${canon.notacion}", respuesta "${canon.formaDeRespuesta}".\n` +
-      `  Este tema va a ${caso.prompt}, que sustituye a: ${caso.reemplaza.join(', ')}.\n` +
-      '  Ese caso aparte pide componentes de UI que hoy no existen (CONTRATO.md §5),\n' +
-      '  asi que aqui solo se generan las estaciones que si corren.',
-  );
+  if (vaAX3) {
+    const porSinCifra =
+      canon.formaDeRespuesta === 'numero' || canon.formaDeRespuesta === 'fraccion';
+    decir(
+      `\n  Ruteo: notacion "${canon.notacion}", respuesta "${canon.formaDeRespuesta}"` +
+        (porSinCifra ? ', pero el resultado del ejemplo no tiene ninguna cifra: es una frase.' : '.') +
+        `\n  Este tema va a ${caso.prompt}, que sustituye a: ${caso.reemplaza.join(', ')}.\n` +
+        '  Se llama de verdad: elige el teclado del tema y escribe con el las estaciones 3 y 4,\n' +
+        `  y se guarda en casosAparte["${CLAVE_X3}"].`,
+    );
+    if (canonViejo) {
+      decir(
+        '  El noSePuede del canon es de antes de los cuatro teclados y no se le muestra a las\n' +
+          '  llamadas: sigue en el archivo, y tanda.mjs e indexar.mjs tampoco lo cuentan.',
+      );
+    }
+  } else {
+    decir(
+      `\n  Ruteo: notacion "${canon.notacion}", respuesta "${canon.formaDeRespuesta}".\n` +
+        `  Este tema va a ${caso.prompt}, que sustituye a: ${caso.reemplaza.join(', ')}.\n` +
+        '  Ese caso aparte pide componentes de UI que hoy no existen (CONTRATO.md §5),\n' +
+        '  asi que aqui solo se generan las estaciones que si corren.',
+    );
+  }
 }
 
-// Un canon que se llama numérico y no tiene una sola cifra en su resultado no corre
-// en las estaciones 3 y 4: se para aquí, antes de pagar las seis (contenido/forma.mjs).
-if (!caso && !solo && resultadoSinCifra(canon)) {
-  decir(
-    `\n  Forma dudosa: el canon dice "${canon.formaDeRespuesta}" pero su resultado no tiene ninguna cifra.\n` +
-      '  Las estaciones 3 y 4 pedirian una respuesta que el teclado no puede escribir, asi que\n' +
-      '  no se generan. El canon queda guardado; si de verdad es numerico, rehaz el tema.',
-  );
-  decir(`\n  Gasto acumulado (contenido/temas/_gasto.json):\n${await resumenDelGasto()}`);
-  process.exit(0);
-}
+/** Lo que ya está guardado de un paso: una estación, o el caso X3 bajo `casosAparte`. */
+const guardadoDe = (paso) =>
+  paso.clave === CLAVE_X3 ? salida.casosAparte?.[CLAVE_X3] : salida[paso.clave];
 
-const porGenerar = ESTACIONES.filter((e) => {
-  if (solo) return e.clave === solo;
-  if (salida[e.clave]) return false;
-  if (caso && caso.reemplaza.includes(e.clave)) return false;
+// X3 va al final: sustituye a la 3 y a la 4, y es la llamada que más se parece a un
+// ejercicio de verdad, así que se pide cuando lo demás ya está guardado.
+const pasosDelTema = [...ESTACIONES, CASOS_APARTE.teclado];
+
+const porGenerar = pasosDelTema.filter((p) => {
+  if (solo) return p.clave === solo;
+  if (guardadoDe(p)) return false;
+  if (p === CASOS_APARTE.teclado) return vaAX3;
+  if (caso && caso.reemplaza.includes(p.clave)) return false;
   return true;
 });
 
 if (solo && solo !== 'canon' && porGenerar.length === 0) {
-  morir(`--solo ${solo}: no es ninguna de las seis estaciones.`);
+  morir(`--solo ${solo}: no es ninguna de las seis estaciones ni ${CLAVE_X3}.`);
 }
 
 let rajadas = 0;
@@ -1137,7 +1209,9 @@ for (const paso of porGenerar) {
       suyos.__candidatos = hallazgo.candidatos;
       suyos.__consulta = hallazgo.consulta;
     }
-    salida[paso.clave] = await correr(paso, suyos);
+    const resultado = await correr(paso, suyos);
+    if (paso.clave === CLAVE_X3) (salida.casosAparte ??= {})[CLAVE_X3] = resultado;
+    else salida[paso.clave] = resultado;
     await guardar(salida);
     decir(`      ${paso.clave} guardado`);
   } catch (e) {
@@ -1150,13 +1224,21 @@ for (const paso of porGenerar) {
 
 await guardar(salida);
 
-const hechas = ESTACIONES.filter((e) => salida[e.clave]).map((e) => e.clave);
-const faltan = ESTACIONES.filter(
-  (e) => !salida[e.clave] && !(caso && caso.reemplaza.includes(e.clave)),
-).map((e) => e.clave);
-const conNoSePuede = ['canon', ...ESTACIONES.map((e) => e.clave)].filter(
-  (c) => salida[c] && salida[c].noSePuede,
-);
+// Lo que el tema tiene hecho y lo que le falta, con X3 contado como una pieza más
+// cuando el tema va ahí (es lo que sustituye a completar y escalera).
+const hechas = pasosDelTema.filter((p) => guardadoDe(p)).map((p) => p.clave);
+const faltan = pasosDelTema
+  .filter((p) => {
+    if (guardadoDe(p)) return false;
+    if (p === CASOS_APARTE.teclado) return vaAX3;
+    return !(caso && caso.reemplaza.includes(p.clave));
+  })
+  .map((p) => p.clave);
+const conNoSePuede = [
+  ...(noSePuedeVigente(salida.canon) ? ['canon'] : []),
+  ...ESTACIONES.map((e) => e.clave).filter((c) => salida[c]?.noSePuede),
+  ...(salida.casosAparte?.[CLAVE_X3]?.noSePuede ? [CLAVE_X3] : []),
+];
 
 decir(`\n${rutaDelTema}`);
 decir(`  hechas: ${hechas.length ? hechas.join(', ') : 'ninguna'}`);
