@@ -40,7 +40,7 @@
         },
         {
           "numero": 3,
-          "queSeHace": "Repites: pruebas si el nuevo número se divide entre 2, entre 3, entre 5, entre 7 o entre otros primos, hasta que no se divide más. Escribes cada primo que divide y el resultado debajo.",
+          "queSeHace": "Repites con el número nuevo: pruebas los primos en orden (2, 3, 5, 7, 11…), escribes el que lo divide y el resultado debajo, hasta que a la izquierda quede 1.",
           "renglon": [
             {
               "tipo": "texto",
@@ -71,7 +71,7 @@
               "valor": "1 |"
             }
           ],
-          "porQue": "Cada división genera un número nuevo en la izquierda. Cuando el número es impar, no se divide entre 2. Pruebas entonces el 3 sumando sus cifras: si la suma se divide entre 3, el número también. Continúas hasta llegar a 1."
+          "porQue": "Cada división deja un número nuevo a la izquierda. Ser impar no basta para ser primo: pruebas el 3 (suma de cifras), el 5, el 7… hasta que un primo, multiplicado por sí mismo, pasa del número. Si ninguno lo divide, ese número es primo: va a la derecha y abajo queda 1."
         },
         {
           "numero": 4,
@@ -100,18 +100,22 @@
               "valor": "× 5"
             }
           ],
-          "porQue": "El superíndice abrevia: en vez de escribir 2 × 2 × 2, escribes 2³. Esto muestra cuántas veces aparece cada primo en la descomposición."
+          "porQue": "El superíndice abrevia: en vez de escribir 2 × 2 × 2, escribes 2³. Esto muestra cuántas veces aparece cada primo en la descomposición. El primo que sale una sola vez se escribe sin exponente."
         },
         {
           "numero": 5,
-          "queSeHace": "Multiplicas los factores primos agrupados de regreso y verificas que da el número original.",
+          "queSeHace": "Multiplicas los factores de regreso para ver que da el número original, y revisas que cada factor sea primo.",
           "renglon": [
             {
               "tipo": "texto",
               "valor": "2³ × 3² × 5 = 8 × 9 × 5 = 360"
+            },
+            {
+              "tipo": "texto",
+              "valor": "2, 3 y 5 son primos"
             }
           ],
-          "porQue": "La multiplicación de regreso te asegura que no cometiste error en las divisiones. Si el resultado no es el número inicial, hay un fallo en los pasos anteriores."
+          "porQue": "Multiplicar de regreso avisa si te equivocaste en una división. No basta: un factor que todavía se parte, como el 45, tampoco se nota (8 × 45 = 360). Por eso revisas también que cada factor sea primo."
         }
       ]
     },
@@ -146,8 +150,8 @@
       "resultadoEnPalabras": "dos al cubo por tres al cuadrado por cinco"
     },
     "error": {
-      "enUnaFrase": "No prueba todos los números primos que podrían dividir, solo algunos, y da por terminada la factorización sin llegar a 1.",
-      "creenciaDeAtras": "cree que si un número no es par, no acaba en 5 y no se divide entre 3 (por sumar cifras), entonces ya es primo y no hay que seguir probando",
+      "enUnaFrase": "Da por primo un número impar que todavía se parte (como el 45) y deja de dividir sin llegar a 1.",
+      "creenciaDeAtras": "cree que si el número que le queda es impar ya es primo, y por eso no prueba con el 3, el 5 ni el 7 antes de dejar de dividir",
       "pasoQueCorrompe": 3,
       "renglonMalo": [
         {
@@ -164,15 +168,7 @@
         },
         {
           "tipo": "texto",
-          "valor": "45 | 3"
-        },
-        {
-          "tipo": "texto",
-          "valor": "15 | 3"
-        },
-        {
-          "tipo": "texto",
-          "valor": "5 | (primo)"
+          "valor": "45 | (primo)"
         }
       ],
       "resultadoMalo": [
@@ -183,19 +179,10 @@
         },
         {
           "tipo": "texto",
-          "valor": "× "
-        },
-        {
-          "tipo": "simbolo",
-          "valor": "3",
-          "sup": "2"
-        },
-        {
-          "tipo": "texto",
-          "valor": "× 5"
+          "valor": "× 45"
         }
       ],
-      "comoSeCacha": "Al multiplicar de regreso el resultado no da 360: 2³ × 3² × 5 = 8 × 9 × 5 = 360 es correcto, pero el error vive arriba: el 5 quedó escrito como 'primo' sin dividir entre sí mismo."
+      "comoSeCacha": "Multiplicar de regreso sí da 360 (8 × 45 = 360), así que esa prueba no lo caza. Se caza revisando que cada factor sea primo: 45 = 3 × 3 × 5, todavía se parte."
     },
     "erroresSecundarios": [],
     "vocabulario": [
@@ -223,7 +210,7 @@
       }
     ],
     "cotas": {
-      "numeros": "números enteros de dos y tres cifras, del 10 al 500; todos con descomposición en primos de una a cinco factores; sin decimales ni negativos",
+      "numeros": "enteros del 10 al 500; su descomposición en primos tiene de uno a seis factores contando repetidos (el ejemplo 360 tiene seis); en los ejercicios con teclado, sólo los primos 2, 3, 5 y 7 y exponentes hasta 5; sin decimales ni negativos",
       "unidades": [],
       "simbolos": [
         {
@@ -250,10 +237,10 @@
         "Está en español de México o de América Latina, con acento claro.",
         "Es del nivel de 6º primaria: números de dos y tres cifras, procedimiento directo sin tecnicismos extras.",
         "Llega a un ejemplo concreto antes del minuto dos, mostrando la columna de divisiones.",
-        "Muestra que hay que probar todos los números primos (2, 3, 5, 7) hasta que no se divide más, no parar antes de llegar a 1."
+        "Muestra que hay que seguir probando primos (7, 11, 13…) y que no basta parar en 2, 3 y 5, ni porque el número que queda sea impar."
       ],
       "descarta": [
-        "Enseña que si un número no es par ni termina en 5 ni se divide entre 3, entonces es primo sin seguir probando.",
+        "Enseña que si un número es impar, o no es par ni termina en 5 ni se divide entre 3, entonces ya es primo y no hay que seguir probando.",
         "Es un examen o una lista de definiciones que no tiene ejemplo práctico.",
         "Tiene introducción larga de más de un minuto antes de mostrar el método."
       ]
@@ -261,7 +248,7 @@
     "video": null,
     "alternativas": [],
     "confianza": "baja",
-    "porQueEsaConfianza": "La búsqueda en español no devolvió ningún video que explicara por qué funciona la descomposición en factores primos para el nivel de 6º primaria. Se encontraron videos que enseñaban el procedimiento, pero ninguno que explicara la razón de cada paso o que mostrara por qué es necesario probar todos los primos hasta llegar a 1.",
+    "porQueEsaConfianza": "La búsqueda en español no devolvió ningún video que explicara por qué funciona la descomposición en factores primos para el nivel de 6º primaria. Se encontraron videos que enseñaban el procedimiento, pero ninguno que explicara la razón de cada paso o que mostrara por qué hay que seguir probando primos hasta llegar a 1.",
     "noSePuede": {
       "que": "No se encontró video en español que explique por qué la descomposición en factores primos funciona como funciona.",
       "porQue": "Los resultados en español para este nivel o enseñaban solo el algoritmo sin la razón, o eran para grados más avanzados. La búsqueda incluyó variaciones con palabras del temario (número primo, factores, divisiones sucesivas) pero sin éxito.",
@@ -395,7 +382,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "¿Por qué 51 es primo?"
+            "valor": "¿Es primo el 77?"
           }
         ],
         "opciones": [
@@ -404,48 +391,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "No es primo, se divide entre 3"
+                "valor": "No: se divide entre 7, porque 7 × 11 = 77"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Sumaste las cifras: 5 + 1 = 6, y 6 se divide entre 3, así que 51 también."
+            "queRevela": "77 = 7 × 11: tras probar el 2, el 3 y el 5 hay que seguir con el 7. Se prueban los primos en orden hasta que a la izquierda queda 1."
           },
           {
             "letra": "B",
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "No es par, no acaba en 5"
+                "valor": "Sí: es impar y no acaba en 5, ya no se parte"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": true,
-            "queRevela": "Probaste que no se divide entre 2 ni entre 5, y diste la factorización por terminada. Pero hay que seguir probando otros primos, como el 3."
+            "queRevela": "Ser impar sólo descarta al 2, y no acabar en 5 descarta al 5. Pero siguen el 3, el 7…: 77 = 7 × 11, así que todavía se parte."
           },
           {
             "letra": "C",
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Solo se divide entre 1 y entre sí mismo"
+                "valor": "Sí: sólo se divide entre 1 y entre sí mismo"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "51 sí se divide entre otros números además de 1 y 51: prueba dividir entre 3."
+            "queRevela": "Eso es lo que significa ser primo, no una prueba de que 77 lo sea. Hay que probar dividiendo: 77 ÷ 7 = 11 sale exacto, así que tiene otro divisor."
           },
           {
             "letra": "D",
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Está en la tabla del 7"
+                "valor": "No: es impar y todo impar es compuesto"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "51 no está en la tabla del 7. Pero aunque no estuviera en las tablas que memorizaste, hay que probar dividiendo."
+            "queRevela": "La conclusión coincide, pero la razón es falsa: el 3, el 5 y el 7 son impares y son primos. Lo que hace compuesto al 77 es que 7 × 11 = 77."
           }
         ]
       },
@@ -498,12 +485,12 @@
               {
                 "tipo": "simbolo",
                 "valor": "3",
-                "sup": "1"
+                "sup": "2"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Agrupaste bien, pero el 3 aparece una sola vez: no se escribe con superíndice. Escribes 3 sin nada."
+            "queRevela": "El 3 aparece una sola vez, no dos: 2³ × 3² da 72, no 24. El exponente cuenta cuántas veces sale cada primo."
           },
           {
             "letra": "C",
@@ -554,7 +541,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Descompusiste 30 en 2 × 3 × 5. ¿Cómo verificas que no te equivocaste?"
+            "valor": "Descompusiste 30 en 2 × 3 × 5. ¿Cómo compruebas que el producto de tus factores es 30?"
           }
         ],
         "opciones": [
@@ -580,7 +567,7 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Multiplicaste 2 × 3 × 5 para ver si da 30. Si el resultado es el número inicial, la factorización es correcta."
+            "queRevela": "Multiplicaste 2 × 3 × 5 y diste 30: tus cuentas están bien. Además tienes que revisar que cada factor sea primo, porque multiplicar solo no avisa si dejaste uno que todavía se parte."
           },
           {
             "letra": "C",
@@ -686,16 +673,7 @@
       },
       {
         "tipo": "texto",
-        "valor": "×"
-      },
-      {
-        "tipo": "simbolo",
-        "valor": "3",
-        "sup": "2"
-      },
-      {
-        "tipo": "texto",
-        "valor": "× 5. Hay exactamente un paso mal. Tócalo."
+        "valor": "× 45. Hay exactamente un paso mal. Tócalo."
       }
     ],
     "pasos": [
@@ -707,7 +685,7 @@
             "valor": "Trazo la raya: 360 |"
           }
         ],
-        "siLoTocas": "Ese paso sólo dibuja el número y la raya que separa lo que se descompone de los primos que lo dividen. Los números 360 estaban en el problema, y la raya es el formato."
+        "siLoTocas": "Ese paso sólo escribe el 360, que venía en el problema, y traza la raya que separa lo que se descompone de los primos que lo dividen. Nada de eso es un error."
       },
       {
         "numero": 2,
@@ -728,10 +706,10 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Repito: 360 | 2 / 180 | 2 / 90 | 2 / 45 | 3 / 15 | 3 / 5 | (primo)"
+            "valor": "Repito: 360 | 2 / 180 | 2 / 90 | 2 / 45 | (primo)"
           }
         ],
-        "siLoTocas": "Ahí está. Ese renglón es el que manda el número primo a los pasos siguientes."
+        "siLoTocas": "Ahí está. En ese renglón se tuerce la descomposición; qué se hizo mal se contesta en la pregunta que sigue."
       },
       {
         "numero": 4,
@@ -742,7 +720,7 @@
           },
           {
             "tipo": "texto",
-            "valor": "2 × 2 × 2 × 3 × 3 × 5 ="
+            "valor": "2 × 2 × 2 × 45 ="
           },
           {
             "tipo": "simbolo",
@@ -751,19 +729,10 @@
           },
           {
             "tipo": "texto",
-            "valor": "×"
-          },
-          {
-            "tipo": "simbolo",
-            "valor": "3",
-            "sup": "2"
-          },
-          {
-            "tipo": "texto",
-            "valor": "× 5"
+            "valor": "× 45"
           }
         ],
-        "siLoTocas": "La multiplicación está bien hecha y los factores primos salen de arriba. El paso recibió un 5 y lo escribió con los otros: si ese 5 viniera de otro lugar, este paso estaría mal inventado."
+        "siLoTocas": "La cuenta está bien hecha con lo que le llegó: agrupa los tres 2 en 2³ y deja el otro factor tal como lo recibió. Este paso no inventa nada, junta lo que ya estaba escrito."
       },
       {
         "numero": 5,
@@ -774,39 +743,39 @@
           },
           {
             "tipo": "texto",
-            "valor": "8 × 9 × 5 = 360"
+            "valor": "8 × 45 = 360"
           }
         ],
-        "siLoTocas": "La multiplicación de regreso da exactamente 360. Ese renglón está bien hecho con los números que recibió, sin inventar nada."
+        "siLoTocas": "La multiplicación está bien hecha: 8 × 45 da exactamente 360. Este paso multiplica lo que recibió y lo compara con el número del principio, y ahí no hay nada mal hecho."
       }
     ],
     "pasoMalo": 3,
-    "arrastre": "El 5 marcado como primo en el paso 3 fluye al paso 4, donde aparece en la lista de factores y en el resultado con superíndice. De ahí sube al paso 5, donde el 5 entra en la multiplicación de comprobación. Sin ese número escrito así, los pasos 4 y 5 no salen.\"",
+    "arrastre": "El 45 marcado como primo en el paso 3 pasa al paso 4 como si fuera un factor primo (2 × 2 × 2 × 45) y de ahí al paso 5, donde 8 × 45 = 360 sí da, así que la comprobación no avisa que el 45 todavía se parte.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
-        "texto": "Paró la división antes de probar todos los primos.",
+        "texto": "Dio por primo el 45 sólo porque es impar.",
         "esElBueno": true,
-        "queRevela": "Escribir 5 como primo sin dividir es parar sin haber llegado a 1. El 5 es primo de verdad, pero la factorización por divisiones sucesivas tiene que terminar en 1, dividiendo 5 entre 5. El renglón debería tener un paso más con 1 |."
+        "queRevela": "Se quedó en 45 porque ya no se divide entre 2, y lo escribió como primo sin probar con el 3 ni con el 5. Pero 4 + 5 = 9 se divide entre 3, y 45 = 3 × 15: todavía se parte, así que el renglón no puede quedarse ahí. La descomposición sigue hasta que a la izquierda quede 1."
       },
       {
-        "texto": "No sumó las cifras del 5 para probar si se divide entre 3.",
+        "texto": "Dividió mal 90 entre 2.",
         "esElBueno": false,
-        "queRevela": "Quien escoge esto sabe que hay que seguir probando primos. Pero el 5 ya pasó el 3: en un renglón anterior quedó 15, y ahí sí se sumaron las cifras (1+5=6, divisible entre 3). El 5 no se divide entre 3 porque 5 es primo de verdad, así que ese motivo no explica por qué paró."
+        "queRevela": "Quien elige esto revisa la cuenta del renglón anterior, y está bien hecha: 90 ÷ 2 = 45. Lo que falla no es esa división, sino lo que se hace con el 45: se da por primo siendo que todavía se parte."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "La factorización por divisiones tiene que terminar siempre en 1, dividiendo hasta que no se pueda más. Cuando llegas a un número primo, todavía tienes que dividirlo entre sí mismo."
+        "texto": "Fíjate en los números que van quedando a la izquierda de la raya: ¿alguno todavía se puede partir?"
       },
       {
         "orden": 2,
-        "texto": "Mira el paso 3. Cuenta dónde termina: busca el número 1, que es la señal de que todas las divisiones están completas."
+        "texto": "Revisa uno por uno los factores del resultado: ¿todos son primos?"
       },
       {
         "orden": 3,
-        "texto": "Compara el paso 3 que hizo con el paso 3 del procedimiento correcto: uno termina en 1 y el otro termina en un número que no es 1."
+        "texto": "Mira dónde se detienen las divisiones y prueba ese último número con el 3 y con el 5: ¿qué pasa?"
       }
     ],
     "noSePuede": null
@@ -814,15 +783,15 @@
   "explicar": {
     "temaNumero": 2,
     "materia": "matematicas",
-    "titulo": "Explícame por qué tienes que seguir probando números primos hasta llegar a 1.",
+    "titulo": "Explícame por qué no basta probar con el 2, el 3 y el 5 para saber que un número ya es primo.",
     "aclaracion": "Con tus palabras, sin escribir la tabla ni los primos. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
     "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
     "rubrica": {
       "ideasQueCuentan": [
         {
-          "idea": "Si dejas de probar números primos antes de llegar a 1, se quedó sin dividir una parte del número, y la descomposición está incompleta.",
-          "porQueImporta": "Quien no lo ve cree que si un número no se divide entre 2, 3 o 5, ya es primo y se puede dejar. Con números como 51 o 77 eso es falso: tienen otros factores que no viste.",
-          "comoSuenaDicha": "Si paro antes de llegar a 1, el número no quedó partido de verdad.",
+          "idea": "Que un número sea impar, o que no se divida entre 2, 3 ni 5, no quiere decir que sea primo: puede dividirse entre 7, 11, 13… Por eso sigues probando primos hasta que a la izquierda queda 1.",
+          "porQueImporta": "Quien no lo ve deja el 45, el 49 o el 77 como si fueran primos, y la descomposición queda incompleta: 45 = 3 × 15, 49 = 7 × 7 y 77 = 7 × 11.",
+          "comoSuenaDicha": "Aunque sea impar o no se divida entre 2, 3 ni 5, todavía puede dividirse entre otro primo, como el 7.",
           "esImprescindible": true
         },
         {
@@ -832,9 +801,9 @@
           "esImprescindible": false
         },
         {
-          "idea": "Cuando multiplicas los factores de regreso y no te da el número de donde empezaste, te avisa que algo quedó sin dividir.",
-          "porQueImporta": "Es la red de seguridad: si no pruebas todos los primos y verificas al final, nadie se da cuenta de que falta algo.",
-          "comoSuenaDicha": "La multiplicación de regreso me muestra si me faltó dividir.",
+          "idea": "Multiplicar de regreso sirve para ver que las cuentas salieron, pero no avisa si dejaste un factor que todavía se puede partir: hay que revisar que todos los factores sean primos.",
+          "porQueImporta": "Quien confía sólo en la multiplicación cree que 2 × 2 × 2 × 45 está bien porque 8 × 45 da 360.",
+          "comoSuenaDicha": "Aunque multiplique y me dé, tengo que ver que todos los factores sean primos.",
           "esImprescindible": false
         }
       ],
@@ -843,17 +812,17 @@
         {
           "respuesta": "Porque la descomposición en factores primos es así, se hace hasta 1.",
           "queLaDelata": "Nombra la regla y se detiene ahí. No dice qué pasaría si no llegaras a 1, así que no explicó por qué es importante.",
-          "queLeFalta": "Que diga qué le falta al número si dejas de dividir antes de tiempo."
+          "queLeFalta": "Que diga qué pasa si dejas de dividir antes de tiempo: te puede quedar un factor que todavía se parte."
         },
         {
-          "respuesta": "Porque 51 es primo y no se puede dividir más, así que con 360 = 2 al cubo por 3 al cuadrado por 5 ya está.",
-          "queLaDelata": "Dice que 51 es primo sin probar si se divide entre 3 o entre 7. Ve uno o dos números primos y cree que ya agotó todos.",
-          "queLeFalta": "Que diga que aunque un número no sea par ni acabe en 5, todavía hay más primos que probar."
+          "respuesta": "Porque si un número no es par ni acaba en 5 ni se divide entre 3, ya es primo y no hay que seguir.",
+          "queLaDelata": "Da por hecho que 2, 3 y 5 son todos los primos que cuentan. No dice qué pasa con números como 49 o 77, que pasan esas pruebas y no son primos.",
+          "queLeFalta": "Que diga que hay que seguir probando primos más grandes (7, 11, 13…)."
         },
         {
           "respuesta": "Porque si paras antes, el resultado es más chico que el número que empezaste.",
-          "queLaDelata": "Es verdad que sale más chico, pero eso no es la razón. Con 360 = 2 al cubo por 3 al cuadrado por 5, el resultado es 8 por 9 por 5 = 360, perfecto.",
-          "queLeFalta": "Que diga que el número no quedó partido completo, que te faltó sacar factores."
+          "queLaDelata": "No es cierto: aunque pares antes, los factores que dejaste se multiplican y dan el mismo número (8 × 45 = 360). El problema no es el resultado, sino que alguno de esos factores todavía no es primo.",
+          "queLeFalta": "Que diga que algún factor que dejaste todavía se puede partir en primos."
         },
         {
           "respuesta": "Porque así lo hicimos en clase y así la descomposición sale bien.",
@@ -863,25 +832,30 @@
       ],
       "contraargumentos": [
         {
-          "siDice": "No es primo si no es par, no acaba en 5 y no se divide entre 3. Si pasa esas tres pruebas, ya acabé.",
-          "seLeContesta": "Tres pruebas es muy pocas. Toma el 51: no es par, no acaba en 5. Suma sus cifras: 5 + 1 = 6. ¿Se divide 6 entre 3? Sí, así que 51 sí se divide entre 3. Pero hay más primos que 2, 3 y 5. ¿Qué hay entre el 5 y antes de llegar a 51?",
-          "aDondeLoEmpuja": "A entender que hay más primos que revisar, que es la razón de seguir probando."
+          "siDice": "Un número es primo si no es par, no acaba en 5 y no se divide entre 3. Si pasa esas tres pruebas, ya acabé.",
+          "seLeContesta": "Tres pruebas son pocas. Toma el 77: no es par, no acaba en 5 y 7 + 7 = 14 no se divide entre 3. Ahora divídelo entre 7. ¿Qué te sale?",
+          "aDondeLoEmpuja": "A ver que 2, 3 y 5 no son todos los primos y que hay que seguir con 7, 11, 13…"
         },
         {
           "siDice": "Si el número que me queda es pequeño, ya es primo y paro.",
-          "seLeContesta": "Verdad que los números chicos se ven más claros. Pero en 360, cuando llegas a 5 en la izquierda, parece que ya no hay nada. Divide 5 entre 5 y mira qué te queda.",
-          "aDondeLoEmpuja": "A ver que el 1 es la meta verdadera, no el tamaño del número."
+          "seLeContesta": "Un número chico puede no ser primo: 9 y 15 son chicos y se parten. ¿Cómo compruebas que el que te quedó sí es primo?",
+          "aDondeLoEmpuja": "A ver que lo que importa es probar con los primos, no el tamaño del número."
         },
         {
           "siDice": "Sí entendí, nada más no sé cómo escribirlo.",
-          "seLeContesta": "Entonces escribe una sola cosa: qué falta cuando paras en 5 en vez de seguir hasta 1. Si ves qué se quedó sin dividir, ya lo explicaste.",
-          "aDondeLoEmpuja": "A que vea que la idea ya la tiene y solo le falta decirla."
+          "seLeContesta": "Entonces escribe una sola cosa: si un número no se divide entre 2, 3 ni 5, ¿ya puedes decir que es primo? ¿Por qué sí o por qué no?",
+          "aDondeLoEmpuja": "A que vea que la idea ya la tiene y sólo le falta decirla."
+        },
+        {
+          "siDice": "Si el número que me queda es impar, ya es primo y paro.",
+          "seLeContesta": "Es cierto que un impar ya no se divide entre 2. Pero el 45 es impar y 45 = 3 × 15. ¿Qué otros primos tendrías que probar antes de decir que un número ya no se parte?",
+          "aDondeLoEmpuja": "A ver que ser impar sólo descarta al 2 y que hay que seguir probando primos (3, 5, 7…) hasta llegar a 1."
         }
       ],
-      "ejemploQueSiCuenta": "Cuando descompones 360, tienes que seguir hasta que en la izquierda te queda 1. Si paras en 5 porque parece primo, no dividiste 5 entre 5 y el 5 se queda en la descomposición sin estar partido. Si multiplicas de regreso sin ese último paso, el resultado no te da 360, así que ves que falta algo.",
+      "ejemploQueSiCuenta": "Cuando descompones 360, después de dividir entre 2 tres veces te queda 45. Es impar, pero no es primo: 45 = 3 × 15. Si lo dejas así, 8 × 45 multiplica bien y da 360, pero queda un factor que todavía se puede partir. Por eso sigues probando primos (el 3, el 5…) hasta que a la izquierda te queda 1.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
-        "Que no use las palabras primo, factor o descomposición: si dice el número no quedó partido de verdad, ya dijo la idea.",
+        "Que no use las palabras primo, factor o descomposición: si dice que el número todavía se puede partir, ya dijo la idea.",
         "Que no escriba ningún número: la idea cuenta sin hacer las divisiones."
       ]
     },
@@ -921,10 +895,6 @@
           "comoSeLee": "por"
         },
         {
-          "etiqueta": "¹",
-          "comoSeLee": "a la uno"
-        },
-        {
           "etiqueta": "²",
           "comoSeLee": "a la dos"
         },
@@ -951,19 +921,19 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "360 se descompone en"
+            "valor": "252 se descompone en (con exponentes, primos de menor a mayor):"
           },
           {
             "tipo": "hueco"
           }
         ],
         "respuesta": {
-          "correcta": "2³×3²×5",
+          "correcta": "2²×3²×7",
           "enAtomos": [
             {
               "tipo": "simbolo",
               "valor": "2",
-              "sup": "3"
+              "sup": "2"
             },
             {
               "tipo": "texto",
@@ -980,35 +950,40 @@
             },
             {
               "tipo": "texto",
-              "valor": "5"
+              "valor": "7"
             }
           ],
-          "comoSeLee": "dos al cubo por tres al cuadrado por cinco",
-          "aceptaTambien": [],
+          "comoSeLee": "dos al cuadrado por tres al cuadrado por siete",
+          "aceptaTambien": [
+            "7×3²×2²",
+            "2²×7×3²",
+            "3²×2²×7",
+            "3²×7×2²"
+          ],
           "opciones": []
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "Mira la columna que hiciste: cuenta cuántas veces aparece cada número primo en la derecha."
+            "texto": "Empieza dividiendo entre 2 hasta que ya no se pueda, y sigue con los primos más grandes."
           },
           {
             "orden": 2,
-            "texto": "Los números primos se escriben como multiplicación, agrupando los que se repiten con exponente arriba."
+            "texto": "Después de dividir entre 2 y entre 3 todo lo que se pueda, mira el número que te queda: ¿ya es primo o se parte con otro primo?"
           },
           {
             "orden": 3,
-            "texto": "El 2 aparece tres veces, el 3 aparece dos veces y el 5 aparece una sola. Los exponentes van arriba pequeño."
+            "texto": "Cuenta cuántas veces sale cada primo al dividir: el que sale más de una vez lleva exponente y el que sale una vez va solo."
           }
         ],
         "siTecleaElError": {
-          "tecleado": "2³×3²×5¹",
-          "queSeLeDice": "Cada primo se cuenta bien en la columna. El 5 que aparece una sola vez no lleva exponente: cuando algo aparece una vez, el exponente 1 no se escribe."
+          "tecleado": "2×2×3×3×7",
+          "queSeLeDice": "Tienes los primos bien, pero los escribiste uno por uno. Agrupa los que se repiten con un exponente: así se ve cuántas veces sale cada primo."
         }
       },
       "escalera": [
         {
-          "situacion": "En la tiendita venden cajas de 12 caramelos para repartir en bolsitas iguales sin que sobre nada.",
+          "situacion": "La maestra pide partir el 12 hasta que todos sus factores ya no se puedan partir más.",
           "expresion": [
             {
               "tipo": "texto",
@@ -1018,7 +993,7 @@
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿Cuál es la descomposición en factores primos de 12?",
+          "pregunta": "¿Cuál es la descomposición de 12 en factores primos? Usa exponentes y escribe los primos de menor a mayor; el que sale una vez va sin exponente.",
           "respuesta": {
             "correcta": "2²×3",
             "enAtomos": [
@@ -1037,95 +1012,41 @@
               }
             ],
             "comoSeLee": "dos al cuadrado por tres",
-            "aceptaTambien": [],
-            "opciones": []
-          },
-          "pistas": [
-            {
-              "orden": 1,
-              "texto": "Sigue los pasos: divide entre 2, luego entre 2 de nuevo, luego entre 3 hasta llegar a 1."
-            },
-            {
-              "orden": 2,
-              "texto": "12 ÷ 2 = 6, 6 ÷ 2 = 3, y 3 ÷ 3 = 1."
-            },
-            {
-              "orden": 3,
-              "texto": "El 2 aparece dos veces con exponente 2. El 3 aparece una sola vez sin exponente."
-            }
-          ]
-        },
-        {
-          "situacion": "En la escuela hay 18 estudiantes y necesitan hacer equipos iguales sin que nadie quede fuera.",
-          "expresion": [
-            {
-              "tipo": "texto",
-              "valor": "18 se descompone en"
-            },
-            {
-              "tipo": "hueco"
-            }
-          ],
-          "pregunta": "¿Cuál es la descomposición en factores primos de 18?",
-          "respuesta": {
-            "correcta": "2×3²",
-            "enAtomos": [
-              {
-                "tipo": "texto",
-                "valor": "2"
-              },
-              {
-                "tipo": "texto",
-                "valor": "×"
-              },
-              {
-                "tipo": "simbolo",
-                "valor": "3",
-                "sup": "2"
-              }
+            "aceptaTambien": [
+              "3×2²"
             ],
-            "comoSeLee": "dos por tres al cuadrado",
-            "aceptaTambien": [],
             "opciones": []
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "18 es par, así que lo divides entre 2. El resultado es impar, así que lo divides entre 3."
+              "texto": "Empieza por el primo más chico. ¿Se divide el 12 entre 2? Escribe el resultado y repite con ese número."
             },
             {
               "orden": 2,
-              "texto": "18 ÷ 2 = 9, y 9 ÷ 3 = 3, y 3 ÷ 3 = 1."
+              "texto": "Después de dividir entre 2 una vez, ¿el resultado vuelve a ser par? Sigue hasta que ya no se divida entre 2 y prueba con el 3."
             },
             {
               "orden": 3,
-              "texto": "El 2 aparece una sola vez sin exponente. El 3 aparece dos veces con exponente 2."
+              "texto": "Cuenta cuántas veces escribiste cada primo: el que sale más de una vez lleva exponente y el que sale una vez va solo."
             }
           ]
         },
         {
-          "situacion": "Un pastelero tiene 30 galletas y las quiere empacar en cajas con el mismo número de galletas cada una.",
+          "situacion": "Un compañero dice que el 75 ya es primo porque es impar. Descompónlo para comprobarlo.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "30 se descompone en"
+              "valor": "75 se descompone en"
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿Cuál es la descomposición en factores primos de 30?",
+          "pregunta": "¿Cuál es la descomposición de 75 en factores primos? Usa exponentes y escribe los primos de menor a mayor; el que sale una vez va sin exponente.",
           "respuesta": {
-            "correcta": "2×3×5",
+            "correcta": "3×5²",
             "enAtomos": [
-              {
-                "tipo": "texto",
-                "valor": "2"
-              },
-              {
-                "tipo": "texto",
-                "valor": "×"
-              },
               {
                 "tipo": "texto",
                 "valor": "3"
@@ -1135,99 +1056,46 @@
                 "valor": "×"
               },
               {
-                "tipo": "texto",
-                "valor": "5"
-              }
-            ],
-            "comoSeLee": "dos por tres por cinco",
-            "aceptaTambien": [],
-            "opciones": []
-          },
-          "pistas": [
-            {
-              "orden": 1,
-              "texto": "30 es par y acaba en 0, así que empieza dividiendo entre 2. Luego prueba el 3 sumando las cifras del resultado."
-            },
-            {
-              "orden": 2,
-              "texto": "30 ÷ 2 = 15. La suma de cifras de 15 es 1 + 5 = 6, que se divide entre 3."
-            },
-            {
-              "orden": 3,
-              "texto": "15 ÷ 3 = 5, y 5 es primo. Los tres números aparecen una sola vez cada uno sin exponente."
-            }
-          ]
-        },
-        {
-          "situacion": "En una farmacia quieren repartir 60 paquetes de vendas entre varios estantes de manera equitativa.",
-          "expresion": [
-            {
-              "tipo": "texto",
-              "valor": "60 se descompone en"
-            },
-            {
-              "tipo": "hueco"
-            }
-          ],
-          "pregunta": "¿Cuál es la descomposición en factores primos de 60?",
-          "respuesta": {
-            "correcta": "2²×3×5",
-            "enAtomos": [
-              {
                 "tipo": "simbolo",
-                "valor": "2",
+                "valor": "5",
                 "sup": "2"
-              },
-              {
-                "tipo": "texto",
-                "valor": "×"
-              },
-              {
-                "tipo": "texto",
-                "valor": "3"
-              },
-              {
-                "tipo": "texto",
-                "valor": "×"
-              },
-              {
-                "tipo": "texto",
-                "valor": "5"
               }
             ],
-            "comoSeLee": "dos al cuadrado por tres por cinco",
-            "aceptaTambien": [],
+            "comoSeLee": "tres por cinco al cuadrado",
+            "aceptaTambien": [
+              "5²×3"
+            ],
             "opciones": []
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "60 es par, así que lo divides entre 2. El resultado también es par, así que lo divides entre 2 de nuevo."
+              "texto": "Prueba los primos en orden, del más chico al más grande: el 2 no sirve porque 75 es impar. ¿Y el siguiente?"
             },
             {
               "orden": 2,
-              "texto": "60 ÷ 2 = 30, y 30 ÷ 2 = 15. Ahora 15 es impar, prueba con 3 sumando cifras."
+              "texto": "Para el 3, suma las cifras: 7 + 5 = 12, que se divide entre 3. Escribe el resultado y repite con él."
             },
             {
               "orden": 3,
-              "texto": "15 ÷ 3 = 5, y 5 es primo. El 2 aparece dos veces con exponente 2, y el 3 y el 5 aparecen una sola vez."
+              "texto": "Con lo que te queda, prueba otra vez el 3 y luego el 5. Cuenta cuántas veces salió cada primo; el que se repite lleva exponente."
             }
           ]
         },
         {
-          "situacion": "Un taller de costura tiene 120 botones y quiere hacer bolsitas con igual cantidad en cada una.",
+          "situacion": "En la libreta del grupo falta anotar el 56 como un producto de primos.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "120 se descompone en"
+              "valor": "56 se descompone en"
             },
             {
               "tipo": "hueco"
             }
           ],
-          "pregunta": "¿Cuál es la descomposición en factores primos de 120?",
+          "pregunta": "¿Cuál es la descomposición de 56 en factores primos? Usa exponentes y escribe los primos de menor a mayor; el que sale una vez va sin exponente.",
           "respuesta": {
-            "correcta": "2³×3×5",
+            "correcta": "2³×7",
             "enAtomos": [
               {
                 "tipo": "simbolo",
@@ -1240,6 +1108,106 @@
               },
               {
                 "tipo": "texto",
+                "valor": "7"
+              }
+            ],
+            "comoSeLee": "dos al cubo por siete",
+            "aceptaTambien": [
+              "7×2³"
+            ],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Empieza por el primo más chico. ¿Se divide el 56 entre 2? Escribe el resultado y repite con ese número."
+            },
+            {
+              "orden": 2,
+              "texto": "Divide entre 2 mientras el resultado siga siendo par. Cuando ya no se pueda, mira el número que te quedó: ¿es primo o todavía se parte?"
+            },
+            {
+              "orden": 3,
+              "texto": "Junta los primos que fueron saliendo: el que se repite lleva exponente y el que sale una sola vez va sin exponente."
+            }
+          ]
+        },
+        {
+          "situacion": "Otro compañero dice que el 175 no se parte porque no es par ni se divide entre 3. Descompónlo.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "175 se descompone en"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es la descomposición de 175 en factores primos? Usa exponentes y escribe los primos de menor a mayor; el que sale una vez va sin exponente.",
+          "respuesta": {
+            "correcta": "5²×7",
+            "enAtomos": [
+              {
+                "tipo": "simbolo",
+                "valor": "5",
+                "sup": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "7"
+              }
+            ],
+            "comoSeLee": "cinco al cuadrado por siete",
+            "aceptaTambien": [
+              "7×5²"
+            ],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "El 175 es impar, así que el 2 no sirve. Prueba los primos en orden: ¿se divide entre 3? Suma las cifras para saberlo."
+            },
+            {
+              "orden": 2,
+              "texto": "Si el 3 no sirve, sigue con el siguiente primo y pregúntate qué cifra tiene el 175 al final. Repite con el resultado."
+            },
+            {
+              "orden": 3,
+              "texto": "Cuando a la izquierda te quede 1, junta los primos que salieron: el que se repite lleva exponente y se escriben de menor a mayor."
+            }
+          ]
+        },
+        {
+          "situacion": "Para cerrar, el maestro deja el 420, el número más grande del ejercicio, escrito en el pizarrón.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "420 se descompone en"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es la descomposición de 420 en factores primos? Usa exponentes y escribe los primos de menor a mayor; el que sale una vez va sin exponente.",
+          "respuesta": {
+            "correcta": "2²×3×5×7",
+            "enAtomos": [
+              {
+                "tipo": "simbolo",
+                "valor": "2",
+                "sup": "2"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
                 "valor": "3"
               },
               {
@@ -1249,24 +1217,37 @@
               {
                 "tipo": "texto",
                 "valor": "5"
+              },
+              {
+                "tipo": "texto",
+                "valor": "×"
+              },
+              {
+                "tipo": "texto",
+                "valor": "7"
               }
             ],
-            "comoSeLee": "dos al cubo por tres por cinco",
-            "aceptaTambien": [],
+            "comoSeLee": "dos al cuadrado por tres por cinco por siete",
+            "aceptaTambien": [
+              "7×5×3×2²",
+              "2²×3×7×5",
+              "2²×5×3×7",
+              "2²×5×7×3"
+            ],
             "opciones": []
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "120 es par y termina en 0. Divide entre 2 varias veces hasta que ya no se pueda."
+              "texto": "Es par y acaba en 0: empieza por el primo más chico y repite con lo que te va quedando."
             },
             {
               "orden": 2,
-              "texto": "120 ÷ 2 = 60, luego 60 ÷ 2 = 30, luego 30 ÷ 2 = 15. El 15 es impar, así que prueba el 3."
+              "texto": "Divide entre 2 mientras se pueda, sigue con el 3 y con los primos que le siguen, hasta que a la izquierda quede 1."
             },
             {
               "orden": 3,
-              "texto": "15 ÷ 3 = 5, y 5 es primo. El 2 aparece tres veces con exponente 3. El 3 y el 5 aparecen una sola vez."
+              "texto": "Junta los primos que salieron: el que se repite lleva exponente y los que salen una sola vez van sin exponente."
             }
           ]
         }

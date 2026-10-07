@@ -18,11 +18,11 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "0.3 es 3, 0.4 es 4"
+              "valor": "Sin el punto, 0.3 queda como 3 y 0.4 queda como 4."
             },
             {
               "tipo": "texto",
-              "valor": ". Multiplicas: 3 × 4 = 12"
+              "valor": "Multiplicas: 3 × 4 = 12"
             }
           ],
           "porQue": "Los puntos no tienen reglas propias: lo que cambia es dónde va el punto en el resultado. Para eso primero cuentas qué sale si multiplicas los números sin punto."
@@ -36,7 +36,7 @@
               "valor": "En 0.3 hay 1 cifra después del punto"
             }
           ],
-          "porQue": "Cada cifra después del punto es un decimal. Necesitas saber cuántos decimales trae cada número para contar cuántos debe traer el resultado."
+          "porQue": "Cada cifra después del punto es una cifra decimal. Necesitas saber cuántas cifras decimales trae cada número para saber cuántas debe traer el resultado."
         },
         {
           "numero": 3,
@@ -47,7 +47,7 @@
               "valor": "En 0.4 hay 1 cifra después del punto"
             }
           ],
-          "porQue": "El segundo número también trae sus decimales. El resultado va a traer todos los decimales de los dos juntos."
+          "porQue": "El segundo número también trae sus cifras decimales. El resultado va a traer las cifras decimales de los dos juntas."
         },
         {
           "numero": 4,
@@ -58,18 +58,18 @@
               "valor": "1 + 1 = 2 cifras decimales en el resultado"
             }
           ],
-          "porQue": "Si multiplicas 3 décimos por 4 décimos, cada décimo es la décima parte de 1, así que el resultado es la centésima parte de 1. Dos decimales significa centésimas."
+          "porQue": "Una décima por una décima da una centésima. Por eso 3 décimas × 4 décimas son 3 × 4 = 12 centésimas. Dos cifras decimales significan centésimas."
         },
         {
           "numero": 5,
-          "queSeHace": "Colocas el punto en el resultado contando de derecha a izquierda tantas posiciones como cifras decimales sumaste.",
+          "queSeHace": "Colocas el punto en el resultado contando de derecha a izquierda tantas posiciones como cifras decimales sumaste; si faltan cifras, completas con ceros a la izquierda.",
           "renglon": [
             {
               "tipo": "texto",
               "valor": "12 con punto dos posiciones a la izquierda es 0.12"
             }
           ],
-          "porQue": "El punto marca dónde termina la parte entera. Si mueves el punto dos posiciones a la izquierda, el 12 se convierte en 12 centésimas, que es lo que debe ser."
+          "porQue": "El punto marca dónde termina la parte entera. Con dos cifras decimales, el 12 se convierte en 12 centésimas: 0.12. Si faltan cifras, se completan con ceros a la izquierda: 8 con dos cifras decimales es 0.08."
         }
       ]
     },
@@ -91,7 +91,7 @@
     },
     "error": {
       "enUnaFrase": "Cuenta mal las cifras decimales y coloca el punto en la posición equivocada.",
-      "creenciaDeAtras": "cree que puede contar solo un decimal en el resultado porque solo vio un 1 en la multiplicación de 3 × 4, o no suma bien los decimales de los dos números",
+      "creenciaDeAtras": "cree que el resultado trae las mismas cifras decimales que cada número, como al sumar 0.3 + 0.4 = 0.7, o cuenta las de un solo número y deja una sola cifra decimal",
       "pasoQueCorrompe": 4,
       "renglonMalo": [
         {
@@ -109,7 +109,7 @@
     },
     "erroresSecundarios": [
       {
-        "enUnaFrase": "No cuenta los decimales y pone el punto en la posición equivocada sin un método claro.",
+        "enUnaFrase": "No cuenta las cifras decimales y pone el punto en la posición equivocada sin un método claro.",
         "creenciaDeAtras": "cree que el punto va donde cabría en la cifra resultante sin una regla, confiando en lo que «se ve bien» o en una corazonada"
       }
     ],
@@ -125,7 +125,7 @@
       },
       {
         "palabra": "multiplicar",
-        "queEs": "La operación que repite un número varias veces o que encuentra el área o cantidad total de dos medidas juntas."
+        "queEs": "Operación que da una parte de una cantidad o varias veces esa cantidad. Si multiplicas por un número menor que 1, tomas solo una parte: 0.4 × 0.3 es 0.4 de 0.3. También da el área de un rectángulo: largo × ancho."
       },
       {
         "palabra": "punto decimal",
@@ -133,7 +133,7 @@
       }
     ],
     "cotas": {
-      "numeros": "números decimales menores que 1 con una o dos cifras decimales, entre 0.1 y 0.9; el resultado siempre tiene dos o tres decimales y es un número entre 0.01 y 0.81",
+      "numeros": "números decimales menores que 1, entre 0.1 y 0.9, de una o dos cifras decimales cada uno, pero que entre los dos sumen dos o tres cifras decimales (0.3 × 0.4, 0.12 × 0.4); el resultado va de 0.01 a 0.81",
       "unidades": [],
       "simbolos": [
         {
@@ -152,7 +152,7 @@
     "temaNumero": 12,
     "materia": "matematicas",
     "pregunta": "¿Por qué 0.3 × 0.4 sale más chico que cada número?",
-    "resumen": "Cuando multiplicas decimales, el resultado trae más cifras después del punto porque cada decimal es una fracción. Sumar los decimales de los dos números te dice dónde va el punto en el resultado.",
+    "resumen": "Cuando multiplicas decimales, el resultado trae más cifras después del punto porque cada cifra decimal es una fracción. Sumar las cifras decimales de los dos números te dice dónde va el punto en el resultado.",
     "busqueda": {
       "criterios": [
         "Explica por qué multiplicar dos decimales da un resultado más pequeño que los números originales, no nada más cómo se cuenta el punto.",
@@ -214,7 +214,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Cuando multiplicas 0.5 × 0.6, ignoras los puntos. ¿Cuál es la multiplicación que haces?"
+            "valor": "Cuando multiplicas 0.8 × 0.2, ignoras los puntos. ¿Cuál es la multiplicación que haces?"
           }
         ],
         "opciones": [
@@ -223,48 +223,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "5 × 6 = 30"
+                "valor": "8 × 2 = 16"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Ignoraste los puntos y multiplicaste los números enteros: 5 por 6."
+            "queRevela": "Sin los puntos, 0.8 queda como 8 y 0.2 queda como 2, y los multiplicas: 8 × 2 = 16."
           },
           {
             "letra": "B",
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "0.5 × 0.6 = 0.30"
+                "valor": "8 + 2 = 10"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "No ignoraste los puntos: multiplicaste los decimales directamente. El primer paso es quitarlos de la mente y ver solo los números."
+            "queRevela": "Sumaste en vez de multiplicar. El signo del problema es ×, así que aquí se multiplica: 8 × 2."
           },
           {
             "letra": "C",
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "50 × 60 = 3000"
+                "valor": "8 × 0.2 = 1.6"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Contaste mal. El 0.5 es 5 décimos, que es el número 5; el 0.6 es 6 décimos, que es el número 6."
+            "queRevela": "Quitaste el punto solo de un número. Hay que ignorar los dos puntos, el de 0.8 y el de 0.2: queda 8 × 2."
           },
           {
             "letra": "D",
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "55 × 66 = 3630"
+                "valor": "80 × 20 = 1600"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Duplicaste las cifras. Cuando ignoras un punto, el número se queda tal cual: 0.5 es solo 5, no 55."
+            "queRevela": "Al ignorar el punto, 0.8 queda como 8 y 0.2 queda como 2; no se agregan ceros."
           }
         ]
       },
@@ -273,7 +273,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "En 0.2 × 0.7, ¿cuántas cifras hay después del punto en 0.2?"
+            "valor": "En 0.25 × 0.4, ¿cuántas cifras hay después del punto en 0.25?"
           }
         ],
         "opciones": [
@@ -287,7 +287,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El punto sí está en 0.2. La cifra después del punto es el 2."
+            "queRevela": "Pensaste que no hay cifras después del punto. Pero el punto sí está en 0.25: después de él van el 2 y el 5."
           },
           {
             "letra": "B",
@@ -297,9 +297,9 @@
                 "valor": "1"
               }
             ],
-            "esCorrecta": true,
+            "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Contaste bien: después del punto de 0.2 hay un número, el 2."
+            "queRevela": "Contaste solo una de las cifras. Después del punto de 0.25 hay dos: el 2 y el 5."
           },
           {
             "letra": "C",
@@ -309,9 +309,9 @@
                 "valor": "2"
               }
             ],
-            "esCorrecta": false,
+            "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Contaste el 2, pero no cuentas qué es el 2: cuentas cuántas cifras hay después del punto. Hay una cifra, que es el 2."
+            "queRevela": "Contaste bien: después del punto de 0.25 hay dos cifras, el 2 y el 5."
           },
           {
             "letra": "D",
@@ -323,7 +323,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Contaste el 0, el punto y el 2 como si los tres fueran cifras. Solo el 2 está después del punto."
+            "queRevela": "Contaste también el 0, pero el 0 está antes del punto. Después del punto solo están el 2 y el 5."
           }
         ]
       },
@@ -332,7 +332,11 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "Multiplicas 3 × 4 y te da 12. En 0.3 × 0.4, una tiene 1 decimal y la otra tiene 1 decimal. ¿Cuántos decimales lleva 0.3 × 0.4?"
+            "valor": "Multiplicas 5 × 3 y te da 15. Cada número, 0.5 y 0.3, tiene 1 cifra decimal."
+          },
+          {
+            "tipo": "texto",
+            "valor": "¿Cuántas cifras decimales debe llevar el resultado de 0.5 × 0.3?"
           }
         ],
         "opciones": [
@@ -341,15 +345,27 @@
             "partes": [
               {
                 "tipo": "texto",
+                "valor": "0"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dejaste el 15 sin cifras decimales. Pero 0.5 y 0.3 son decimales y el resultado también lo es: lleva 1 + 1 = 2 cifras decimales."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
                 "valor": "1"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": true,
-            "queRevela": "Contaste un solo decimal porque viste un 1 en el resultado de 3 × 4. Pero tienes dos números decimales al multiplicar, así que debes sumar sus decimales: 1 + 1 = 2."
+            "queRevela": "Pusiste una sola cifra decimal, como si el resultado trajera las de un solo número. Cada número trae una, así que se suman: 1 + 1 = 2."
           },
           {
-            "letra": "B",
+            "letra": "C",
             "partes": [
               {
                 "tipo": "texto",
@@ -358,10 +374,10 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Sumaste los decimales de los dos números: 1 + 1 = 2 decimales en el resultado."
+            "queRevela": "Sumaste las cifras decimales de los dos números: 1 + 1 = 2 cifras decimales en el resultado."
           },
           {
-            "letra": "C",
+            "letra": "D",
             "partes": [
               {
                 "tipo": "texto",
@@ -370,19 +386,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Contaste 0.3 como si tuviera tres decimales, o sumaste 1 + 1 + 1. Los dos números solo traen un decimal cada uno."
-          },
-          {
-            "letra": "D",
-            "partes": [
-              {
-                "tipo": "texto",
-                "valor": "4"
-              }
-            ],
-            "esCorrecta": false,
-            "esElErrorTipico": false,
-            "queRevela": "El 12 tiene dos cifras, pero no son decimales. Los decimales vienen del punto, no de cuántos números tiene el resultado."
+            "queRevela": "Sumaste una cifra de más. Cada número aporta una sola cifra decimal, así que el total es 1 + 1 = 2, no 3."
           }
         ]
       },
@@ -391,7 +395,7 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "En 0.4 × 0.9, multiplicas 4 × 9 = 36 y sumas 1 + 1 = 2 decimales. ¿Dónde pones el punto?"
+            "valor": "En 0.4 × 0.9, multiplicas 4 × 9 = 36 y sumas 1 + 1 = 2 cifras decimales. ¿Dónde pones el punto?"
           }
         ],
         "opciones": [
@@ -405,7 +409,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Moviste el punto solo una posición. Necesitas mover dos posiciones a la izquierda porque el resultado lleva 2 decimales."
+            "queRevela": "Moviste el punto solo una posición. Necesitas mover dos posiciones a la izquierda porque el resultado lleva 2 cifras decimales."
           },
           {
             "letra": "B",
@@ -417,7 +421,7 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Moviste el punto dos posiciones a la izquierda. Con 2 decimales, 36 se convierte en 0.36."
+            "queRevela": "Moviste el punto dos posiciones a la izquierda. Con 2 cifras decimales, 36 se convierte en 0.36."
           },
           {
             "letra": "C",
@@ -441,7 +445,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Moviste el punto tres posiciones. Contar mal los decimales te puede llevar aquí, pero el resultado tiene 2 decimales, no 3."
+            "queRevela": "Moviste el punto tres posiciones. Contar mal las cifras decimales te puede llevar aquí, pero el resultado tiene 2 cifras decimales, no 3."
           }
         ]
       }
@@ -481,17 +485,17 @@
         "orden": 1
       },
       {
-        "texto": "Sumas las cifras decimales de los dos números. El 0.3 aporta sus decimales, y el 0.4 aporta los suyos.",
+        "texto": "Sumas las cifras decimales de los dos números. El 0.3 aporta sus cifras decimales, y el 0.4 aporta las suyas.",
         "orden": 2
       },
       {
-        "texto": "El primer número trae 1 cifra después del punto, el segundo también trae 1. Cuando sumas esos dos números de decimales, ¿qué te da?",
+        "texto": "El primer número trae 1 cifra después del punto, el segundo también trae 1. Cuando sumas esas dos cantidades de cifras decimales, ¿qué te da?",
         "orden": 3
       }
     ],
     "siTecleaElError": {
       "tecleado": "1",
-      "queSeLeDice": "Volviste a contar solo el decimal de un número. Pero ambos números tienen decimales: el 0.3 tiene su cifra decimal, y el 0.4 también. Tienes que sumar lo que aporta cada uno."
+      "queSeLeDice": "Volviste a contar solo la cifra decimal de un número. Pero ambos números tienen cifras decimales: el 0.3 tiene la suya, y el 0.4 también. Tienes que sumar lo que aporta cada uno."
     },
     "noSePuede": null
   },
@@ -558,22 +562,22 @@
             "valor": "Pongo el punto una posición a la izquierda: 1.2"
           }
         ],
-        "siLoTocas": "La operación está bien hecha con lo que llegó: si el resultado tuviera 1 cifra decimal, entonces el punto iría una posición a la izquierda del 12 y daría 1.2. Ese paso no inventó su número, lo recibió."
+        "siLoTocas": "La operación está bien hecha con lo que llegó: mover el punto una posición a la izquierda del 12 sí da 1.2. Ese paso no inventó su dato, lo recibió de antes."
       }
     ],
     "pasoMalo": 4,
-    "arrastre": "El 1 del paso 4 es el que el paso 5 usa para poner el punto en 12. Con un decimal el punto queda después de la posición equivocada, y por eso el resultado queda 1.2 en vez de 0.12. El paso 5 está bien hecho con un número malo.\"",
+    "arrastre": "El 1 del paso 4 es el que el paso 5 usa para poner el punto en 12: con una sola cifra decimal el punto queda una posición a la izquierda, y por eso el resultado es 1.2 en vez de 0.12. El paso 5 está bien hecho con un número malo.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
-        "texto": "No sumó los decimales de los dos números.",
+        "texto": "No sumó las cifras decimales de los dos números.",
         "esElBueno": true,
-        "queRevela": "El paso 4 debería sumar 1 + 1 = 2, porque el resultado lleva todos los decimales de los dos números juntos. En cambio pone 1 como si fuera solo. En 0.3 × 0.4 los dos números traen decimales y los dos tienen que contar."
+        "queRevela": "El paso 4 debería sumar 1 + 1 = 2, porque el resultado lleva las cifras decimales de los dos números juntas. En cambio pone 1, como si contara las de un solo número. En 0.3 × 0.4 los dos traen una cifra decimal, y las dos cuentan."
       },
       {
-        "texto": "Contó el número de cifras en el resultado 12 en lugar del total.",
+        "texto": "Contó mal las cifras decimales de 0.3 y de 0.4.",
         "esElBueno": false,
-        "queRevela": "Quien escoge esto está confundiendo dónde se cuentan los decimales: en los números originales, no en la respuesta. El 12 tiene un 1 y un 2, pero el conteo de decimales no es sobre los dígitos de 12. Es sobre los dígitos después del punto en 0.3 y 0.4."
+        "queRevela": "Los pasos donde se cuentan 0.3 y 0.4 ya están bien: cada número trae 1 cifra después del punto. Lo que falló fue el paso 4, donde esos dos conteos quedan en 1 en lugar de juntarse en 2."
       }
     ],
     "pistas": [
@@ -583,11 +587,11 @@
       },
       {
         "orden": 2,
-        "texto": "Los primeros tres pasos cuentan y multiplican. Uno de esos tres pasos cuenta un dato, y ese dato aparece sin ser sumado con el otro dato que también se contó."
+        "texto": "El último renglón usó un dato que recibió de antes, así que no se delata solo. Sigue ese dato hacia atrás: ¿de qué renglón viene y qué tendría que haber salido ahí?"
       },
       {
         "orden": 3,
-        "texto": "Compara lo que los pasos 2 y 3 encontraron: ¿qué debería pasar con esos dos números en el paso 4?"
+        "texto": "Compara el 1 y el 1 que se contaron arriba con la cantidad de cifras decimales con la que luego se colocó el punto."
       }
     ],
     "noSePuede": null
@@ -604,62 +608,56 @@
           "idea": "Cuando multiplicas dos números decimales menores que 1, el resultado es más chico que ambos números porque estás tomando una parte de una parte.",
           "porQueImporta": "Sin esta idea, el estudiante cree que cualquier multiplicación debe tener un resultado cercano al tamaño de los números originales. Con ella, ve por qué 0.12 es más chico que 0.3 y que 0.4.",
           "comoSuenaDicha": "Estoy tomando 0.4 de 0.3, que es un pedazo de un pedazo, así que sale mucho más chico.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "0.3 son 3 décimas y 0.4 son 4 décimas; décima por décima da centésima, así que 3 décimas × 4 décimas son 12 centésimas, que se escribe 0.12 con dos cifras decimales.",
+          "porQueImporta": "Sin esta idea, el estudiante repite una regla de memoria y no sabe por qué el punto cae dos lugares a la izquierda. Con ella ve por qué 0.3 × 0.4 es 0.12 y no 1.2.",
+          "comoSuenaDicha": "Son décimas por décimas, y eso da centésimas: 12 centésimas es 0.12.",
           "esImprescindible": true
-        },
-        {
-          "idea": "Cada número decimal trae sus cifras después del punto, y la cantidad total de cifras decimales en el resultado es la suma de las cifras decimales de los dos números que multiplicas.",
-          "porQueImporta": "Sin esta idea, el estudiante cuenta mal los decimales del resultado y no sabe cómo de colocar el punto. Contarlas bien es lo que garantiza que 0.3 × 0.4 = 0.12 y no 1.2.",
-          "comoSuenaDicha": "El 0.3 tiene una cifra después del punto y el 0.4 también tiene una, así que el resultado debe tener dos cifras después del punto.",
-          "esImprescindible": false
-        },
-        {
-          "idea": "Primero ignoras los puntos y multiplicas como si fueran números enteros, luego cuentas dónde debe ir el punto en el resultado.",
-          "porQueImporta": "Es el método que garantiza que el resultado es correcto. Sin él, el estudiante intenta adivinar dónde va el punto o cuenta solo una cifra decimal.",
-          "comoSuenaDicha": "Multiplico 3 por 4 para obtener 12, y después cuento hacia atrás dos espacios para poner el punto.",
-          "esImprescindible": false
         }
       ],
-      "minimoParaContar": 2,
+      "minimoParaContar": 1,
       "suenanBienYNoDicen": [
         {
           "respuesta": "Porque hay que contar las cifras decimales de los dos números y sumarlas.",
-          "queLaDelata": "Nombra el procedimiento sin decir por qué funciona. Solo dice qué hacer, no entiende que la razón es que el resultado debe tener todos esos decimales.",
-          "queLeFalta": "Que diga por qué sucede que cuando multiplicas dos números con decimales, el resultado trae la suma de esos decimales: que es porque estás multiplicando décimas por décimas, y eso te da centésimas."
+          "queLaDelata": "Nombra el procedimiento sin decir por qué funciona. Solo dice qué hacer, no entiende que la razón es que el resultado debe tener todas esas cifras decimales.",
+          "queLeFalta": "Que diga por qué sucede que cuando multiplicas dos números con cifras decimales, el resultado trae la suma de esas cifras decimales: que es porque estás multiplicando décimas por décimas, y eso te da centésimas."
         },
         {
-          "respuesta": "Porque el 3 por el 4 da 12, y como hay dos decimales, pongo el punto para obtener 0.12.",
-          "queLaDelata": "Describe los pasos del procedimiento pero no entiende por qué tiene que haber dos decimales en el resultado.",
-          "queLeFalta": "Que diga que el número pequeño por el número pequeño da un número todavía más pequeño, no un número grande."
+          "respuesta": "Porque el 3 por el 4 da 12, y como hay dos cifras decimales, pongo el punto para obtener 0.12.",
+          "queLaDelata": "Describe los pasos del procedimiento pero no entiende por qué tiene que haber dos cifras decimales en el resultado.",
+          "queLeFalta": "Que diga por qué son dos cifras decimales: porque 3 décimas por 4 décimas son 12 centésimas. Decir solo que el resultado es más chico que los dos números tampoco alcanza."
         },
         {
           "respuesta": "Porque el punto se mueve dos lugares hacia la izquierda en el 12 para que salga 0.12.",
           "queLaDelata": "Trata el punto como algo que se mueve sin razón, una regla que hay que seguir sin entender qué significa.",
-          "queLeFalta": "Que diga que el punto se mueve porque necesitas el número de decimales correcto: si 0.3 tiene un decimal y 0.4 tiene uno, el resultado debe tener dos, no uno."
+          "queLeFalta": "Que diga por qué dos lugares: porque 0.3 y 0.4 son décimas, y décimas por décimas son centésimas, que se escriben con dos cifras decimales."
         },
         {
           "respuesta": "Porque los números son chiquitos así que el resultado tiene que ser chiquito también.",
-          "queLaDelata": "Es una intuición, no una razón. Funciona con este ejemplo pero se cae cuando cambias los números.",
-          "queLeFalta": "Que diga que cuando multiplicas un número menor que 1 por otro menor que 1, el resultado es más chico que ambos porque estás tomando una parte de una parte."
+          "queLaDelata": "Solo dice que sale chico, sin decir por qué ni cuántas cifras decimales lleva. Con otros números el resultado puede salir grande, y esa frase no distingue cuándo.",
+          "queLeFalta": "Que diga por qué sale chico (se toma una parte de una parte, y eso pasa porque los dos son menores que 1) y por qué lleva dos cifras decimales: décimas por décimas son centésimas."
         }
       ],
       "contraargumentos": [
         {
-          "siDice": "Yo conté solo un decimal porque solo hay un 1 en 3 × 4 = 12, así que el resultado tiene un decimal.",
-          "seLeContesta": "Cierto que solo hay un 1 en el resultado de 3 × 4. Pero el 3 viene de 0.3 y el 4 viene de 0.4. El 0.3 tiene un decimal, el 0.4 tiene otro decimal. ¿Cuántos decimales traen los dos juntos?",
-          "aDondeLoEmpuja": "A que cuente los decimales de los números que multiplica, no los decimales que ve en el resultado de 3 × 4."
+          "siDice": "Puse una sola cifra decimal porque cada número trae una sola, como cuando sumas 0.3 + 0.4 y queda 0.7.",
+          "seLeContesta": "Al sumar 0.3 + 0.4 sí queda una cifra decimal, pero multiplicar es distinto. Piensa en décimas: 3 décimas por 4 décimas, ¿qué tamaño tiene cada pedacito que sale de décima por décima?",
+          "aDondeLoEmpuja": "A que vea que décima por décima es centésima, y que por eso el resultado lleva dos cifras decimales y no una."
         },
         {
           "siDice": "Un número chico por otro número chico da un número chico, así que tiene que ser más pequeño.",
-          "seLeContesta": "Exacto. 0.3 es chico, 0.4 es chico, y 0.12 es más chico que ambos. Ahora dime: ¿cuántos decimales tiene 0.3? ¿Y cuántos tiene 0.4? ¿Cuántos debería tener un número que es 0.3 de 0.4?",
-          "aDondeLoEmpuja": "A que vea que contar los decimales no es opcional: es la única forma de saber dónde va el punto cuando el resultado es más chico."
+          "seLeContesta": "Eso funciona aquí porque 0.3 y 0.4 son menores que 1: tomar una parte de una parte da menos. Ahora dime: ¿cuántas cifras decimales tiene 0.3? ¿Y 0.4? ¿Cuántas debería tener 0.3 de 0.4?",
+          "aDondeLoEmpuja": "A que pase de «sale chico» a «por qué dos cifras decimales»: contar las cifras decimales es lo que dice dónde va el punto."
         },
         {
-          "siDice": "Entendí que el resultado sale chico, pero no sé por qué exactamente dos decimales.",
-          "seLeContesta": "Entonces prueba esto: si 0.3 trae un decimal, significa que representa tres décimas. Si 0.4 trae un decimal, representa cuatro décimas. Una décima por una décima, ¿qué representa?",
-          "aDondeLoEmpuja": "A ver que multiplicar décimas por décimas da centésimas, que es lo que significa tener dos decimales."
+          "siDice": "Entendí que el resultado sale chico, pero no sé por qué exactamente dos cifras decimales.",
+          "seLeContesta": "Entonces prueba esto: si 0.3 trae una cifra decimal, representa tres décimas. Si 0.4 trae una cifra decimal, representa cuatro décimas. Una décima por una décima, ¿qué representa?",
+          "aDondeLoEmpuja": "A ver que multiplicar décimas por décimas da centésimas, que es lo que significa tener dos cifras decimales."
         }
       ],
-      "ejemploQueSiCuenta": "Cuando multiplico 0.3 por 0.4 estoy buscando qué tanto es 0.4 de 0.3, es decir, tomo 0.4 de algo que ya es chico. Primero hago 3 por 4 igual a 12, pero necesito poner el punto en el lugar correcto. El 0.3 trae un decimal y el 0.4 trae otro, eso es dos decimales totales. Entonces el punto tiene que ir dos lugares a la izquierda en el 12, y me da 0.12. Por eso sale más chico, no más grande.",
+      "ejemploQueSiCuenta": "Cuando multiplico 0.3 por 0.4 estoy tomando 0.4 de 0.3, un pedazo de un pedazo, así que sale más chico que los dos y 1.2 no puede ser. Además, 0.3 son 3 décimas y 0.4 son 4 décimas, y décima por décima da centésima. Entonces 3 × 4 = 12 centésimas, y 12 centésimas se escribe 0.12, con dos cifras decimales.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
         "Que no use las palabras cifra decimal o decimal: si dice que tiene un punto o que hay números después del punto, ya dijo la idea.",
@@ -673,7 +671,7 @@
       "temaNumero": 12,
       "materia": "matematicas",
       "teclado": "fichas",
-      "porQueEseTeclado": "La respuesta es un número decimal: 0.12. El teclado de dígitos sólo escribe 0–9 y la diagonal, pero no tiene el punto. Con fichas el estudiante produce el decimal armándolo con los dígitos y el punto, y también puede escribir el error típico del canon: 1.2 con un solo decimal.",
+      "porQueEseTeclado": "La respuesta es un número decimal: 0.56 o 0.048. El teclado de dígitos sólo escribe 0–9 y la diagonal, pero no tiene el punto. Con fichas el estudiante produce el decimal armándolo con los dígitos y el punto, y también puede escribir el error típico del canon: una sola cifra decimal, como 5.6.",
       "tecladosDescartados": [
         {
           "teclado": "digitos",
@@ -718,6 +716,10 @@
           "comoSeLee": "ocho"
         },
         {
+          "etiqueta": "9",
+          "comoSeLee": "nueve"
+        },
+        {
           "etiqueta": ".",
           "comoSeLee": "punto"
         }
@@ -732,124 +734,44 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "0.3 × 0.4 ="
+            "valor": "0.8 × 0.7 ="
           },
           {
             "tipo": "hueco"
           }
         ],
         "respuesta": {
-          "correcta": "0.12",
+          "correcta": "0.56",
           "enAtomos": [
             {
               "tipo": "texto",
-              "valor": "0.12"
+              "valor": "0.56"
             }
           ],
-          "comoSeLee": "cero punto uno dos",
+          "comoSeLee": "cero punto cinco seis",
           "aceptaTambien": [],
           "opciones": []
         },
         "pistas": [
           {
-            "texto": "Multiplicas 3 × 4 = 12. Ahora necesitas contar cuántos decimales trae el resultado.",
+            "texto": "Quita los puntos y multiplica 8 × 7.",
             "orden": 1
           },
           {
-            "texto": "En el primer número hay 1 cifra después del punto, en el segundo hay 1. Suma esas cifras.",
+            "texto": "Cuenta las cifras decimales de cada número y súmalas.",
             "orden": 2
           },
           {
-            "texto": "Salieron 2 cifras decimales en total. Coloca el punto en 12 contando 2 posiciones de derecha a izquierda.",
+            "texto": "Son 2 cifras decimales: pon el punto en 56 contando dos lugares desde la derecha.",
             "orden": 3
           }
         ],
         "siTecleaElError": {
-          "tecleado": "1.2",
-          "queSeLeDice": "Contaste un solo decimal en el resultado, pero hay dos: uno de cada número. Vuelve al paso donde sumas los decimales de los dos."
+          "tecleado": "5.6",
+          "queSeLeDice": "Contaste una sola cifra decimal en el resultado, pero hay dos: una de cada número. Vuelve al paso donde sumas las cifras decimales de los dos."
         }
       },
       "escalera": [
-        {
-          "situacion": "En la escuela compran tela de 0.5 metros de ancho por 0.6 metros de largo para hacer un cartel.",
-          "expresion": [
-            {
-              "tipo": "texto",
-              "valor": "0.5 × 0.6 ="
-            },
-            {
-              "tipo": "hueco"
-            }
-          ],
-          "pregunta": "¿Cuál es el resultado de la multiplicación?",
-          "respuesta": {
-            "correcta": "0.30",
-            "enAtomos": [
-              {
-                "tipo": "texto",
-                "valor": "0.30"
-              }
-            ],
-            "comoSeLee": "cero punto tres cero",
-            "aceptaTambien": [
-              "0.3"
-            ],
-            "opciones": []
-          },
-          "pistas": [
-            {
-              "texto": "Primero quita los puntos y multiplica 5 × 6.",
-              "orden": 1
-            },
-            {
-              "texto": "El primer número trae 1 decimal, el segundo trae 1. Suma esos dos.",
-              "orden": 2
-            },
-            {
-              "texto": "Dos cifras decimales en el resultado. Coloca el punto dos posiciones desde la derecha en 30.",
-              "orden": 3
-            }
-          ]
-        },
-        {
-          "situacion": "Un frasco de medicina tiene 0.2 litros y necesitas usar 0.4 de esa cantidad cada día.",
-          "expresion": [
-            {
-              "tipo": "texto",
-              "valor": "0.2 × 0.4 ="
-            },
-            {
-              "tipo": "hueco"
-            }
-          ],
-          "pregunta": "¿Cuál es el resultado?",
-          "respuesta": {
-            "correcta": "0.08",
-            "enAtomos": [
-              {
-                "tipo": "texto",
-                "valor": "0.08"
-              }
-            ],
-            "comoSeLee": "cero punto cero ocho",
-            "aceptaTambien": [],
-            "opciones": []
-          },
-          "pistas": [
-            {
-              "texto": "Multiplica 2 × 4 sin los puntos.",
-              "orden": 1
-            },
-            {
-              "texto": "Cada número tiene 1 cifra decimal. El total es 1 + 1 = 2 cifras decimales.",
-              "orden": 2
-            },
-            {
-              "texto": "Coloca el punto en 8 contando 2 posiciones desde la derecha. Puede quedar cero adelante.",
-              "orden": 3
-            }
-          ]
-        },
         {
           "situacion": "Una receta pide 0.7 de una taza de harina, y necesitas hacer 0.6 veces esa cantidad.",
           "expresion": [
@@ -888,6 +810,84 @@
               "orden": 3
             }
           ]
+        },
+        {
+          "situacion": "Un frasco de medicina tiene 0.2 litros y necesitas usar 0.4 de esa cantidad cada día.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "0.2 × 0.4 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es el resultado?",
+          "respuesta": {
+            "correcta": "0.08",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "0.08"
+              }
+            ],
+            "comoSeLee": "cero punto cero ocho",
+            "aceptaTambien": [],
+            "opciones": []
+          },
+          "pistas": [
+            {
+              "texto": "Multiplica 2 × 4 sin los puntos.",
+              "orden": 1
+            },
+            {
+              "texto": "Cada número tiene 1 cifra decimal: en total son 1 + 1 = 2. Y si al producto le faltan cifras, se completa con ceros a la izquierda.",
+              "orden": 2
+            },
+            {
+              "texto": "8 solo tiene una cifra y necesitas dos cifras decimales: escribe un cero a la izquierda del 8 (08) y luego pon el punto.",
+              "orden": 3
+            }
+          ]
+        },
+        {
+          "situacion": "Una cinta mide 0.12 metros de largo y para un moño se usa 0.4 de ella.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "0.12 × 0.4 ="
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Cuál es el resultado de la multiplicación?",
+          "pistas": [
+            {
+              "texto": "Quita los puntos y multiplica 12 × 4.",
+              "orden": 1
+            },
+            {
+              "texto": "0.12 tiene 2 cifras decimales y 0.4 tiene 1: en total son 3.",
+              "orden": 2
+            },
+            {
+              "texto": "48 solo tiene 2 cifras y necesitas 3: escribe un cero a la izquierda (048) y pon el punto contando 3 lugares desde la derecha.",
+              "orden": 3
+            }
+          ],
+          "respuesta": {
+            "correcta": "0.048",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "0.048"
+              }
+            ],
+            "comoSeLee": "cero punto cero cuatro ocho",
+            "aceptaTambien": [],
+            "opciones": []
+          }
         }
       ],
       "noSePuede": null,

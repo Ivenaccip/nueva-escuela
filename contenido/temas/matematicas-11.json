@@ -18,26 +18,10 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "12.75"
-            },
-            {
-              "tipo": "texto",
-              "valor": "+"
-            },
-            {
-              "tipo": "texto",
-              "valor": "3.5"
-            },
-            {
-              "tipo": "texto",
-              "valor": "se escribe"
-            },
-            {
-              "tipo": "texto",
-              "valor": "12.75"
+              "valor": "12.75 + 3.5, con el punto de 3.5 justo debajo del punto de 12.75"
             }
           ],
-          "porQue": "El punto decimal marca el lugar de las unidades. Si no alineas por el punto, las decenas se suman con décimas y el resultado sale mal. La alineación es la base de todo."
+          "porQue": "El punto decimal separa las unidades de las décimas. Si no alineas por el punto, sumas lugares distintos, por ejemplo unidades con décimas, y el resultado sale mal. La alineación es la base de todo."
         },
         {
           "numero": 2,
@@ -48,18 +32,30 @@
               "valor": "12.75 + 3.50"
             }
           ],
-          "porQue": "Los ceros no cambian el valor: 3.5 y 3.50 son lo mismo. Rellenar hace que todas las columnas queden completas y el sumador no se pierda."
+          "porQue": "Los ceros no cambian el valor: 3.5 y 3.50 son lo mismo. Rellenar hace que todas las columnas queden completas y no se te pierda ninguna al sumar."
         },
         {
           "numero": 3,
-          "queSeHace": "Sumas o restas por columna, de derecha a izquierda, como en un número entero.",
+          "queSeHace": "Sumas o restas por columna, de derecha a izquierda, como en un número entero. Si en la resta la cifra de arriba es menor, pides prestado a la columna de la izquierda.",
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "Derecha: 5 + 0 = 5. Décimas: 7 + 5 = 12, escribes 2 llevas 1. Unidades: 1 + 2 + 3 = 6. Decenas: 1 + 0 = 1."
+              "valor": "Centésimas: 5 + 0 = 5."
+            },
+            {
+              "tipo": "texto",
+              "valor": "Décimas: 7 + 5 = 12, escribes 2 y llevas 1."
+            },
+            {
+              "tipo": "texto",
+              "valor": "Unidades: 2 + 3 + 1 = 6."
+            },
+            {
+              "tipo": "texto",
+              "valor": "Decenas: 1 + 0 = 1."
             }
           ],
-          "porQue": "Cada columna tiene su propio valor de posición. Sumar columna por columna respeta eso. Los números no se mezclan."
+          "porQue": "Cada columna tiene su propio valor de posición. Sumar columna por columna respeta eso. En la resta, 1 de una columna vale 10 de la columna de su derecha: por eso se puede pedir prestado."
         },
         {
           "numero": 4,
@@ -78,7 +74,11 @@
           "renglon": [
             {
               "tipo": "texto",
-              "valor": "12.75 ≈ 13. 3.5 ≈ 4. 13 + 4 = 17. El resultado 16.25 está cerca de 17, así que es correcto."
+              "valor": "12.75 ≈ 13. 3.5 ≈ 4. 13 + 4 = 17."
+            },
+            {
+              "tipo": "texto",
+              "valor": "El resultado 16.25 está cerca de 17, así que es razonable."
             }
           ],
           "porQue": "La estimación no prueba la cuenta, pero atrapa errores graves. Si tu resultado está muy lejos del estimado, algo salió mal."
@@ -103,21 +103,21 @@
     },
     "error": {
       "enUnaFrase": "Alinea los números por la derecha en vez de por el punto.",
-      "creenciaDeAtras": "cree que los números se alinean por la derecha como siempre en la resta de enteros, sin pensar que el punto cambia los lugares de valor",
+      "creenciaDeAtras": "cree que los números se alinean por la derecha como siempre en las sumas y restas de enteros, sin pensar que el punto cambia los lugares de valor",
       "pasoQueCorrompe": 1,
       "renglonMalo": [
         {
           "tipo": "texto",
-          "valor": "12.75 + 3.5 se escribe alineando por la derecha: 12.75 + 3.50 queda"
+          "valor": "12.75 + 3.5 alineado por la derecha, sin mirar el punto: 1275 + 35 = 1310"
         }
       ],
       "resultadoMalo": [
         {
           "tipo": "texto",
-          "valor": "1310"
+          "valor": "13.10"
         }
       ],
-      "comoSeCacha": "El resultado 1310 no tiene punto decimal. Si sumaste 12.75 + 3.5 y tu respuesta es un número sin punto, algo está muy mal: el resultado debe tener decimales igual que los números que sumaste."
+      "comoSeCacha": "Se cacha con la estimación: 12.75 ≈ 13 y 3.5 ≈ 4 dan 17, y 13.10 queda lejos de 17. Si el resultado se aleja mucho de la estimación, revisa cómo alineaste."
     },
     "erroresSecundarios": [],
     "vocabulario": [
@@ -127,8 +127,8 @@
       },
       {
         "palabra": "relleno con ceros",
-        "queEs": "Agregar ceros a la derecha del punto para que todos los números en la suma o resta tengan la misma cantidad de decimales.",
-        "noEsLoMismoQue": "un cero que no se puede quitarse porque cambia el valor"
+        "queEs": "Agregar ceros al final de la parte decimal, a la derecha de la última cifra, para que todos los números tengan los mismos decimales: 3.5 se escribe 3.50.",
+        "noEsLoMismoQue": "poner un cero justo después del punto: 3.05 no es 3.5, ahí el cero sí cambia el valor"
       },
       {
         "palabra": "punto decimal",
@@ -242,7 +242,11 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "alineado por el punto"
+                "valor": "alineado por el punto:"
+              },
+              {
+                "tipo": "texto",
+                "valor": "el punto de uno debajo del otro"
               }
             ],
             "esCorrecta": true,
@@ -259,31 +263,31 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": true,
-            "queRevela": "Estás alineando por la derecha como en la resta de enteros. El punto es especial: sus dígitos tienen otros valores según dónde estén del punto, no del lado derecho.",
+            "queRevela": "Alineaste por la derecha, como con los enteros. Con decimales eso junta lugares distintos: el 4 de 5.4 (décimas) cae bajo el 5 de 12.35 (centésimas). Lo que manda es dónde está el punto.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "uno debajo del otro"
+                "valor": "alineado por la izquierda"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Alineaste, pero sin decir por dónde: «uno debajo del otro» en general no funciona con decimales porque el punto los mueve de lugar.",
+            "queRevela": "Alinear por la izquierda tampoco junta lugares iguales: el 5 de 5.4 (unidades) cae bajo el 1 de 12.35 (decenas). Los lugares se juntan por el punto, no por el borde del número.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "con los números juntos"
+                "valor": "alineado por el punto, con 5.4 escrito como 5.04"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Si los escribes juntos en un renglón, eres tú el que después tiene que vigilar que no se crucen los valores, y eso es donde se cuela el error.",
+            "queRevela": "Alinear por el punto está bien, pero 5.04 no es 5.4: los ceros de relleno van al final, 5.40. Un cero justo después del punto sí cambia el valor.",
             "letra": "D"
           }
         ]
@@ -314,31 +318,31 @@
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Rellenaste para que ninguna columna quedara vacía y quien suma pueda anotar algo en cada una.",
+            "queRevela": "Rellenaste para que cada columna tenga una cifra que sumar: 7.2 queda como 7.20 y así 7.20 + 3.45 se suma centésima con centésima.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "para cambiar el valor"
+                "valor": "para que 7.2 quede como 7.02"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Los ceros de relleno no cambian nada: 7.2 y 7.20 son el mismo número escrito de dos formas.",
+            "queRevela": "7.02 no es 7.2: un cero justo después del punto cambia el valor. El relleno va al final, 7.20, y ahí no cambia nada.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "porque la regla lo pide"
+                "valor": "para que el resultado sea más preciso"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "No es una regla caprichosa: tienes una razón, que es que las columnas del lado del punto no queden incompletas.",
+            "queRevela": "7.20 vale lo mismo que 7.2: los ceros de relleno no agregan precisión. Sólo completan las columnas para poder sumar.",
             "letra": "C"
           },
           {
@@ -354,7 +358,7 @@
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El punto sigue en el mismo lugar aunque no rellenes: el relleno es para que el sumador tenga un dígito donde escribir la respuesta.",
+            "queRevela": "Los puntos ya quedaron en la misma columna al alinear, en el paso 1, y rellenar no los mueve. El relleno sirve para que cada columna tenga una cifra que sumar.",
             "letra": "D"
           }
         ]
@@ -364,11 +368,11 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "¿De qué lado comienzas en"
+            "valor": "¿Por cuál columna empiezas a restar"
           },
           {
             "tipo": "texto",
-            "valor": "8.6 − 2.4?"
+            "valor": "8.3 − 2.7?"
           }
         ],
         "opciones": [
@@ -376,48 +380,52 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "del punto"
+                "valor": "por el punto"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El punto es la línea vertical que divide: no se suma ni se resta. Comienzas en la columna más a la derecha, que es la de las décimas.",
+            "queRevela": "El punto no se resta: sólo marca dónde termina la parte entera. La resta empieza en la columna de más a la derecha, la de las décimas.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "de la derecha"
+                "valor": "por las décimas, la columna"
+              },
+              {
+                "tipo": "texto",
+                "valor": "de más a la derecha"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Empezaste por las décimas, donde está la columna más a la derecha, igual que en los números sin decimales.",
+            "queRevela": "Empezaste por la columna de más a la derecha, igual que en los números enteros. Ahí 3 − 7 no se puede: pides prestado a las unidades y queda 13 − 7 = 6.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "de la izquierda"
+                "valor": "por las unidades, a la izquierda del punto"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Si empiezas por la izquierda puede haber acarreos que terminen en las décimas, y ahí se te puede perder llevadas.",
+            "queRevela": "Si empiezas por las unidades, al llegar a las décimas 3 − 7 no se puede: tendrías que pedirle una unidad al 8 y volver a corregir el 8 − 2 que ya hiciste.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "del lugar que quieras"
+                "valor": "por donde quieras, da igual"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El orden importa si hay llevadas: empezar siempre por la derecha te salva de olvidarte de algunas.",
+            "queRevela": "Aquí no da igual: en las décimas 3 − 7 no se puede y hay que pedir prestado a las unidades, y eso sólo sale bien si empiezas por la derecha.",
             "letra": "D"
           }
         ]
@@ -439,11 +447,11 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "donde sale en la columna"
+                "valor": "entre las unidades y las décimas,"
               },
               {
                 "tipo": "texto",
-                "valor": "de las décimas"
+                "valor": "debajo de los puntos de arriba"
               }
             ],
             "esCorrecta": true,
@@ -467,24 +475,24 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "donde queda algún dígito"
+                "valor": "después de la primera cifra del resultado"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El lugar donde el punto va no es al azar: tiene que estar en la misma columna donde estaba arriba, donde comienzan las décimas.",
+            "queRevela": "Eso daría 1.41, un número diez veces menor que 14.1. El punto va donde estaba en los números de arriba, entre las unidades y las décimas.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "no importa mucho"
+                "valor": "a la izquierda de todas las cifras"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "El punto marca qué vale qué: 14.1 es catorce con un décimo, y 141 es ciento cuarenta y uno. No es lo mismo.",
+            "queRevela": "Eso daría .141, un número menor que 1, cuando 9.3 + 4.8 pasa de 14. El punto marca qué vale qué: no es lo mismo 14.1 que .141.",
             "letra": "D"
           }
         ]
@@ -494,15 +502,11 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "¿Qué esperas que tu respuesta"
+            "valor": "¿Qué haces para estimar"
           },
           {
             "tipo": "texto",
-            "valor": "esté cerca de en"
-          },
-          {
-            "tipo": "texto",
-            "valor": "6.2 + 5.8?"
+            "valor": "6.4 + 5.7?"
           }
         ],
         "opciones": [
@@ -510,48 +514,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "6 más 6"
+                "valor": "redondear cada número y sumar: 6 + 6"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Redondeaste: 6.2 se redondea a 6 y 5.8 se redondea a 6, así que esperas una respuesta cerca de 12.",
+            "queRevela": "Redondeaste cada número a la unidad más cercana, 6.4 a 6 y 5.7 a 6, y sumaste: esperas una respuesta cerca de 12.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "12.0"
+                "valor": "sumar con todos los decimales: 12.1"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "No redondeas a un número exacto primero: redondeas a la unidad más cercana, y después sumas eso. Así atrapa los errores la estimación.",
+            "queRevela": "Esa es la cuenta exacta, no una estimación: estimar es redondear primero para poder hacer la cuenta de cabeza.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "más o menos 11"
+                "valor": "6 + 5"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estimaste bajo: 6.2 no redondea a 5, sino a 6 porque está más cerca de 6 que de 5. El estimado debe estar cercano al resultado.",
+            "queRevela": "5.7 está más cerca de 6 que de 5, así que se redondea a 6. Si sólo quitas los decimales, 5.7 queda en 5 y la estimación sale baja.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "más o menos 13"
+                "valor": "7 + 6"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estimaste alto: 5.8 redondea a 6, no a 7. Redondear es ir al número entero más cercano, no al siguiente.",
+            "queRevela": "6.4 está más cerca de 6 que de 7, así que se redondea a 6. Redondear es ir al entero más cercano, no al siguiente.",
             "letra": "D"
           }
         ]
@@ -617,7 +621,7 @@
       },
       {
         "tipo": "texto",
-        "valor": "y obtuvo 1310. Hay exactamente un paso mal. Tócalo."
+        "valor": "y obtuvo 13.10. Hay exactamente un paso mal. Tócalo."
       }
     ],
     "pasos": [
@@ -626,40 +630,32 @@
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Alineé los números por la derecha:"
+            "valor": "Alineé por la derecha, sin fijarme en el punto:"
           },
           {
             "tipo": "texto",
-            "valor": "12.75"
+            "valor": "12.75 + 3.5"
           },
           {
             "tipo": "texto",
-            "valor": "+"
-          },
-          {
-            "tipo": "texto",
-            "valor": "3.50"
-          },
-          {
-            "tipo": "texto",
-            "valor": "queda"
+            "valor": "queda como 1275 + 35"
           }
         ],
-        "siLoTocas": "Ese renglón es el que define cómo se ordena todo lo que viene después. Los números están alineados, pero no por donde debería ser."
+        "siLoTocas": "Aquí está el error: alineando por la derecha, el 3 de 3.5 (unidades) cae bajo el 7 de 12.75 (décimas) y el 5 (décimas) bajo el 5 (centésimas). Se juntan lugares distintos y de ahí sale 1275 + 35."
       },
       {
         "numero": 2,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Rellené con ceros:"
+            "valor": "Completé con ceros los lugares vacíos:"
           },
           {
             "tipo": "texto",
-            "valor": "12.75 + 3.50"
+            "valor": "1275 + 0035"
           }
         ],
-        "siLoTocas": "El relleno de ceros se hizo bien y completa las columnas. Ese paso no inventó ningún cero, los añadió porque lo necesitaba."
+        "siLoTocas": "Rellenar con ceros no cambia ningún valor: 0035 vale lo mismo que 35. Con las cifras que le llegaron, este paso está bien; el error viene de antes."
       },
       {
         "numero": 3,
@@ -670,24 +666,28 @@
           },
           {
             "tipo": "texto",
-            "valor": "5 + 0 = 5. 7 + 5 = 12, escribo 2 llevo 1. 2 + 3 = 5, más la que llevaba = 6. 1 + 0 = 1. Queda 1625."
+            "valor": "5 + 5 = 10, escribo 0 y llevo 1. 7 + 3 = 10, más 1 = 11, escribo 1 y llevo 1."
+          },
+          {
+            "tipo": "texto",
+            "valor": "2 + 0 = 2, más 1 = 3. 1 + 0 = 1. Queda 1310."
           }
         ],
-        "siLoTocas": "La suma de cada columna está bien hecha con los números que llegaron. Ese paso no inventó sus cifras, las recibió de arriba."
+        "siLoTocas": "Cada columna está bien sumada, con sus llevadas, a partir de las cifras que recibió. Este paso sólo suma lo que le llegó de arriba."
       },
       {
         "numero": 4,
         "partes": [
           {
             "tipo": "texto",
-            "valor": "Bajé el punto en la respuesta:"
+            "valor": "Puse el punto donde está en 12.75:"
           },
           {
             "tipo": "texto",
-            "valor": "Pongo el punto y queda 1625."
+            "valor": "13.10"
           }
         ],
-        "siLoTocas": "El punto se bajó en el mismo lugar donde estaba arriba. Ese renglón sólo coloca el punto que le llegó como debe ser."
+        "siLoTocas": "El punto quedó donde está el de 12.75, como pide el procedimiento, sobre el 1310 que le llegó. El error no está aquí."
       },
       {
         "numero": 5,
@@ -698,39 +698,43 @@
           },
           {
             "tipo": "texto",
-            "valor": "12.75 ≈ 13. 3.5 ≈ 4. 13 + 4 = 17. El resultado 1625 está muy lejos de 17, así que algo salió mal."
+            "valor": "12.75 ≈ 13. 3.5 ≈ 4. 13 + 4 = 17."
+          },
+          {
+            "tipo": "texto",
+            "valor": "El resultado 13.10 está lejos de 17, así que algo salió mal."
           }
         ],
-        "siLoTocas": "La estimación está correcta y detecta que el resultado es raro. Ese paso hizo bien su trabajo de revisar."
+        "siLoTocas": "La estimación está bien hecha y funciona: 13 + 4 = 17 deja ver que 13.10 está muy lejos. Este paso detecta el error, no lo causa."
       }
     ],
     "pasoMalo": 1,
-    "arrastre": "La alineación mal del paso 1 hace que el paso 3 sume por columnas equivocadas y saque el 1625 en vez del resultado correcto. Ese 1625 es lo que se lleva al paso 4 y lo que delata el error en el paso 5: la estimación muestra que 1625 está muy lejos de 17.\">",
+    "arrastre": "Al alinear por la derecha, el 3 de 3.5 (unidades) queda bajo el 7 de 12.75 (décimas) y el 5 (décimas) bajo el 5 (centésimas): se suman lugares distintos y sale 13.10 en vez de 16.25. Los pasos 2, 3 y 4 trabajan bien con lo que reciben y arrastran ese error hasta el paso 5, donde la estimación lo delata.",
     "porQue": "¿Qué se hizo mal en ese paso?",
     "motivos": [
       {
         "texto": "Alineó por la derecha en vez de por el punto decimal.",
         "esElBueno": true,
-        "queRevela": "La alineación por la derecha es lo que enseña la resta de enteros, pero aquí los números tienen puntos. Alineando por la derecha, el 5 de 3.50 cae debajo del 5 de 12.75 y el punto desaparece del cálculo. Por eso el resultado no tiene punto: entró a la suma como si fuera 1275 + 350, no como 12.75 + 3.50."
+        "queRevela": "Alineando por la derecha, 3.5 queda como 35 bajo 1275: el 3 (unidades) cae bajo el 7 (décimas) y el 5 (décimas) bajo el 5 (centésimas). Es como sumar 1275 + 35 = 1310 en vez de 12.75 + 3.5; el punto es lo que dice qué cifra se junta con cuál."
       },
       {
-        "texto": "No rellenó con ceros antes de alinear.",
+        "texto": "Sumó mal la columna de las décimas.",
         "esElBueno": false,
-        "queRevela": "Si alguien escoge esto, ya sabe que los ceros importan. Pero mira el paso 2: sí rellenó con ceros. El relleno se hizo. El problema fue anterior, en cómo se ordenaron los números de partida."
+        "queRevela": "7 + 3 = 10, más 1 que llevaba, da 11: está bien hecho con las cifras que le llegaron. Lo que salió mal fue cuáles cifras se juntaron, y eso se decidió antes de sumar."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Cuatro de los cinco pasos hacen bien lo que les toca. El error no está en cómo se suma ni en cómo se pone el punto. El error está antes de empezar a sumar."
+        "texto": "Compara cada paso con lo que enseñaba el procedimiento: sólo uno se aparta. Fíjate primero en el tamaño del resultado: ¿se parece a lo que esperarías?"
       },
       {
         "orden": 2,
-        "texto": "El resultado 1625 no tiene punto decimal. Si sumaste dos números que tenían punto, el resultado debe tener punto. Compara dónde empezó a perderse el punto."
+        "texto": "Con 13 + 4 esperas algo cerca de 17. ¿Qué paso pudo cambiar tanto el tamaño del número?"
       },
       {
         "orden": 3,
-        "texto": "El punto decimal marca dónde están las unidades. Compara cómo quedaron alineados los números: ¿la unidad de cada número está debajo de la unidad del otro?"
+        "texto": "El punto decimal separa las unidades de las décimas. Compara cómo quedaron escritos 12.75 y 3.5 en el primer renglón: ¿el punto de uno quedó bajo el punto del otro?"
       }
     ],
     "noSePuede": null
@@ -750,9 +754,9 @@
           "esImprescindible": true
         },
         {
-          "idea": "Cuando alineas por la derecha como en los números enteros, pones las decenas de un número con las décimas del otro, y eso cambia lo que significan.",
+          "idea": "Cuando alineas por la derecha como en los números enteros, pones unidades de un número con décimas del otro (el 3 de 3.5 bajo el 7 de 12.75), y eso cambia lo que significan.",
           "porQueImporta": "Quien no ve esto cree que el punto es una etiqueta que se pega al final, y que siempre alineamos por la derecha. Sin esta idea sigue cometiendo el error.",
-          "comoSuenaDicha": "Si alineas por la derecha, los números se desplazan y terminas sumando decenas con décimas.",
+          "comoSuenaDicha": "Si alineas por la derecha, los números se desplazan y terminas sumando unidades de uno con décimas del otro.",
           "esImprescindible": false
         },
         {
@@ -783,7 +787,7 @@
       "contraargumentos": [
         {
           "siDice": "En los números enteros siempre alineamos por la derecha, así que en los decimales tendría que ser igual.",
-          "seLeContesta": "Verdad: en los enteros alineamos por la derecha. Pero aquí cambió algo: ahora hay un punto que divide en dos partes. En 12.75 el 1 es decena, pero en 3.5 el 5 ya no es decena, es décima. ¿Qué pasaría si pusieras una décima bajo una decena?",
+          "seLeContesta": "Verdad: en los enteros alineamos por la derecha. Pero aquí hay un punto que divide cada número en dos partes. En 12.75 el 7 son décimas y en 3.5 el 3 son unidades. Si los pones uno bajo el otro por la derecha, ¿estás sumando lugares iguales?",
           "aDondeLoEmpuja": "A que vea que el punto cambia los lugares de valor, que es la segunda idea de la lista."
         },
         {
@@ -797,7 +801,7 @@
           "aDondeLoEmpuja": "A decir que el punto marca el lugar de valor de cada cifra, que es lo que sostiene toda la alineación."
         }
       ],
-      "ejemploQueSiCuenta": "El punto decimal marca dónde cambia el valor de las cifras: antes está las unidades y después las décimas. Si alineas 12.75 + 3.5 por la derecha, la décima del 5 cae bajo la unidad del 5, y terminas sumando un lugar de valor incorrecto con otro. Por eso hay que alinear donde dice el punto: para que cada lugar se sume con su mismo lugar.",
+      "ejemploQueSiCuenta": "El punto decimal marca dónde cambia el valor de las cifras: antes están las unidades y después las décimas. Si alineas 12.75 + 3.5 por la derecha, el 3 (unidades) queda bajo el 7 (décimas) y el 5 (décimas) bajo el 5 (centésimas), y sumas lugares que no son iguales. Por eso hay que alinear por el punto: para que cada lugar se sume con su mismo lugar.",
       "noCuentaEnContra": [
         "La ortografía, los acentos y que escriba todo en minúsculas.",
         "Que no use las palabras punto, decimal ni alinear: si dice que mantiene los valores correctos o que el punto marca dónde cambia el valor, ya está.",
@@ -815,7 +819,7 @@
       "tecladosDescartados": [
         {
           "teclado": "digitos",
-          "porQue": "No tiene el punto decimal. En el teclado de dígitos sólo hay 0-9 y la diagonal para fracciones. Sumar 12.75 + 3.5 y teclear 1625 sin punto es un error grave que sin la ficha de punto no se puede atrapar."
+          "porQue": "No tiene el punto decimal. En el teclado de dígitos sólo hay 0-9 y la diagonal para fracciones. Sumar 12.35 + 8.4 y teclear 2075 sin punto es un error grave que sin la ficha de punto no se puede atrapar."
         }
       ],
       "fichas": [
@@ -874,41 +878,41 @@
         "expresion": [
           {
             "tipo": "texto",
-            "valor": "12.75 + 3.50 ="
+            "valor": "12.35 + 8.4 ="
           },
           {
             "tipo": "hueco"
           }
         ],
         "respuesta": {
-          "correcta": "16.25",
+          "correcta": "20.75",
           "enAtomos": [
             {
               "tipo": "texto",
-              "valor": "16.25"
+              "valor": "20.75"
             }
           ],
-          "comoSeLee": "dieciséis punto veinticinco",
+          "comoSeLee": "veinte punto setenta y cinco",
           "aceptaTambien": [],
           "opciones": []
         },
         "pistas": [
           {
             "orden": 1,
-            "texto": "Sumaste las columnas y obtuviste cifras. Ahora coloca el punto en el lugar correcto: donde estaba en los números de arriba."
+            "texto": "Antes de sumar, alinea 12.35 y 8.4 por el punto. ¿Cuántos decimales tiene cada uno? ¿Qué le falta a 8.4 para tener los mismos que 12.35?"
           },
           {
             "orden": 2,
-            "texto": "Bajaste el punto donde corresponde en el resultado. Todos los números que sumaste llevan punto en el mismo lugar, así que tu respuesta también."
+            "texto": "Rellena 8.4 con un cero al final y suma columna por columna, de derecha a izquierda, empezando por las centésimas."
           },
           {
             "orden": 3,
-            "texto": "De derecha: 5 + 0 = 5. Luego 7 + 5 = 12, escribes 2 y llevas 1. El punto va aquí. Luego 1 + 2 + 3 = 6. Finalmente 1 + 0 = 1."
+            "texto": "Al sumar las unidades, 2 + 8 pasa de 9: escribe una cifra y lleva la otra a las decenas. El punto va en la misma columna que los de arriba, entre las unidades y las décimas."
           }
         ],
         "siTecleaElError": {
-          "tecleado": "1625",
-          "queSeLeDice": "Sumaste bien los dígitos, pero el resultado 1625 sin punto no es lo mismo que 16.25. Cuando sumas números con punto decimal, el resultado también lleva punto en el mismo lugar."
+          "tecleado": "13.19",
+          "queSeLeDice": "Eso sale de alinear por la derecha, sin mirar el punto: se suman 1235 + 84 = 1319 y el 8 de 8.4 (unidades) cae bajo el 3 de 12.35 (décimas). Los puntos tienen que quedar uno bajo el otro antes de sumar."
         }
       },
       "escalera": [
@@ -939,20 +943,20 @@
           "pistas": [
             {
               "orden": 1,
-              "texto": "Suma columna por columna de derecha a izquierda. Luego baja el punto en tu respuesta donde estaba en los precios."
+              "texto": "Los dos precios ya tienen dos decimales, así que sus puntos quedan uno bajo el otro. Suma columna por columna, de derecha a izquierda."
             },
             {
               "orden": 2,
-              "texto": "Sumaste cifra por cifra. Ahora ubica el punto donde debe estar en tu resultado final."
+              "texto": "Empieza por las centésimas (0 + 5). Si una columna pasa de 9, escribe una cifra y lleva la otra. El punto va en la misma columna que los de arriba."
             }
           ]
         },
         {
-          "situacion": "Tu hermana tiene 15.30 metros de tela y compra 4.20 metros más para una cortina.",
+          "situacion": "Tu hermana tiene 15.3 metros de tela y compra 4.25 metros más para una cortina.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "15.30 + 4.20 ="
+              "valor": "15.3 + 4.25 ="
             },
             {
               "tipo": "hueco"
@@ -960,34 +964,34 @@
           ],
           "pregunta": "¿Cuántos metros de tela tiene ahora?",
           "respuesta": {
-            "correcta": "19.50",
+            "correcta": "19.55",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": "19.50"
+                "valor": "19.55"
               }
             ],
-            "comoSeLee": "diecinueve punto cincuenta",
+            "comoSeLee": "diecinueve punto cincuenta y cinco",
             "aceptaTambien": [],
             "opciones": []
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "Suma centímetro por centímetro de derecha a izquierda. Los dos números tienen dos decimales, así que tu resultado también."
+              "texto": "15.3 tiene un decimal y 4.25 tiene dos: ¿qué le falta a 15.3 para que las columnas de los dos queden completas?"
             },
             {
               "orden": 2,
-              "texto": "Ya sumaste todas las columnas. El punto tiene que quedar donde estaba en los números que sumaste."
+              "texto": "Escribe 15.3 como 15.30 y suma desde las centésimas hacia la izquierda; el punto de la respuesta va debajo de los de arriba."
             }
           ]
         },
         {
-          "situacion": "Tienes una lata que pesa 0.75 kilos y le agregas arroz que pesa 2.40 kilos.",
+          "situacion": "Tienes una lata que pesa 0.75 kilos y le agregas arroz que pesa 2.4 kilos.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "0.75 + 2.40 ="
+              "valor": "0.75 + 2.4 ="
             },
             {
               "tipo": "hueco"
@@ -1009,20 +1013,20 @@
           "pistas": [
             {
               "orden": 1,
-              "texto": "Aunque el primer número empieza en cero, lo tratas igual: alinea por el punto y suma cada columna."
+              "texto": "Aunque el primer número empieza en cero, lo tratas igual: alinea por el punto y rellena con ceros lo que falte a la derecha."
             },
             {
               "orden": 2,
-              "texto": "Cuando sumas 5 + 0 de la derecha, y luego 7 + 4, suma bien y coloca el punto en su lugar."
+              "texto": "Empieza por las centésimas (5 + 0). En las décimas, 7 + 4 pasa de 9: escribes una cifra y llevas la otra a las unidades."
             }
           ]
         },
         {
-          "situacion": "Un cable mide 25.80 metros y otro mide 12.35 metros. Necesitas saber cuánto miden juntos.",
+          "situacion": "Un cable mide 25.8 metros y otro mide 12.35 metros. Necesitas saber cuánto miden juntos.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "25.80 + 12.35 ="
+              "valor": "25.8 + 12.35 ="
             },
             {
               "tipo": "hueco"
@@ -1044,20 +1048,20 @@
           "pistas": [
             {
               "orden": 1,
-              "texto": "Números más grandes, pero el proceso es el mismo. Alinea por el punto y suma de derecha a izquierda."
+              "texto": "Los números son más grandes, pero el proceso es el mismo: alinea por el punto y rellena con ceros el que tenga menos decimales."
             },
             {
               "orden": 2,
-              "texto": "Sumaste bien todas las columnas. Verifica que el punto esté en el lugar correcto de tu respuesta."
+              "texto": "Suma primero las centésimas (0 + 5), luego las décimas (8 + 3 = 11: escribes 1 y llevas 1) y sigue hacia la izquierda; al final, el punto va debajo de los otros dos."
             }
           ]
         },
         {
-          "situacion": "Tu mamá tenía 30.00 pesos y gastó 15.75 pesos en comida. Necesita saber cuánto le queda.",
+          "situacion": "Tu mamá tenía 30 pesos y gastó 15.75 pesos en comida. Necesita saber cuánto le queda.",
           "expresion": [
             {
               "tipo": "texto",
-              "valor": "30.00 − 15.75 ="
+              "valor": "30 − 15.75 ="
             },
             {
               "tipo": "hueco"
@@ -1079,11 +1083,11 @@
           "pistas": [
             {
               "orden": 1,
-              "texto": "Ahora restas. Alinea igual que en la suma, por el punto, y resta columna por columna de derecha a izquierda."
+              "texto": "Escribe 30 como 30.00 para alinearlo por el punto. En las columnas de la derecha no alcanza (0 − 5, 0 − 7): pide prestado a la izquierda, como en 3000 − 1575 pero con el punto."
             },
             {
               "orden": 2,
-              "texto": "Restaste cifra por cifra. Coloca el punto en tu respuesta donde debe ir según los números de arriba."
+              "texto": "Piensa en 30.00 como 29 unidades, 9 décimas y 10 centésimas: así las columnas de la derecha ya se pueden restar."
             }
           ]
         }

@@ -39,7 +39,7 @@
               "valor": "tienen el mismo número abajo?"
             }
           ],
-          "porQue": "Si el denominador es el mismo, los pedazos tienen el mismo tamaño, y sólo tienes que contar cuál fracción tiene más pedazos. Si no son iguales, los pedazos tienen distinto tamaño y no puedes comparar sin pasar uno a la forma del otro."
+          "porQue": "Si el denominador es el mismo, los pedazos tienen el mismo tamaño y sólo cuentas cuál fracción tiene más pedazos. Si no, los pedazos son de distinto tamaño y contar no alcanza: una forma segura de compararlas es reescribir las dos con el mismo denominador."
         },
         {
           "numero": 2,
@@ -54,7 +54,7 @@
         },
         {
           "numero": 3,
-          "queSeHace": "Conviertes cada fracción a esa forma usando multiplicación.",
+          "queSeHace": "Convierte cada fracción multiplicando arriba y abajo por el número que lleva su denominador a 40 (40 ÷ 5 = 8 y 40 ÷ 8 = 5).",
           "renglon": [
             {
               "tipo": "fraccion",
@@ -149,7 +149,7 @@
               "abajo": 8
             }
           ],
-          "porQue": "Ya sabes cuál es mayor, y ahora dejas escrito con los números que el problema te dio, no con los que inventaste para comparar."
+          "porQue": "La fracción que se volvió ocho cuarentavos era un quinto, y la que se volvió cinco cuarentavos era un octavo; por eso un quinto es la mayor. Escribe la respuesta con las fracciones que te dieron, no con las que usaste para comparar."
         }
       ]
     },
@@ -195,18 +195,8 @@
       "pasoQueCorrompe": 4,
       "renglonMalo": [
         {
-          "tipo": "fraccion",
-          "arriba": 1,
-          "abajo": 5
-        },
-        {
           "tipo": "texto",
-          "valor": "<"
-        },
-        {
-          "tipo": "fraccion",
-          "arriba": 1,
-          "abajo": 8
+          "valor": "Comparo los números de abajo: 5 es menor que 8."
         }
       ],
       "resultadoMalo": [
@@ -225,12 +215,16 @@
           "abajo": 8
         }
       ],
-      "comoSeCacha": "Compara 1 contra 1 en los numeradores, ve que son iguales, y luego compara 5 contra 8 sin darse cuenta de que números más grandes en el denominador significan pedazos más chicos, no más grandes."
+      "comoSeCacha": "Compara los números de abajo de las fracciones originales, 5 y 8, en lugar de los numeradores 8 y 5 que ya salieron del paso 3. Se nota porque su respuesta final dice que un quinto es menor que un octavo."
     },
     "erroresSecundarios": [
       {
-        "enUnaFrase": "No busca denominador común y compara directamente los números que ve.",
-        "creenciaDeAtras": "Cree que las fracciones se pueden comparar tal como vienen, sin transformarlas, como si fueran números enteros."
+        "enUnaFrase": "Al convertir a denominador común multiplica sólo el número de abajo y deja el de arriba igual.",
+        "creenciaDeAtras": "Cree que le alcanza con cambiar el número de abajo, sin ver que la fracción deja de valer lo mismo si no se multiplica también el de arriba."
+      },
+      {
+        "enUnaFrase": "Compara sólo los numeradores de las fracciones originales: ve 1 contra 2 y dice que un medio es menor que dos quintos.",
+        "creenciaDeAtras": "Cree que la fracción con el numerador más grande es siempre la mayor, sin ver que el denominador también decide el tamaño de los pedazos."
       }
     ],
     "vocabulario": [
@@ -343,8 +337,8 @@
           },
           {
             "tipo": "fraccion",
-            "arriba": 3,
-            "abajo": 4
+            "arriba": 2,
+            "abajo": 3
           },
           {
             "tipo": "texto",
@@ -352,8 +346,8 @@
           },
           {
             "tipo": "fraccion",
-            "arriba": 3,
-            "abajo": 6
+            "arriba": 2,
+            "abajo": 5
           },
           {
             "tipo": "texto",
@@ -365,48 +359,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Sí, ambas tienen 3 arriba"
+                "valor": "Sí, las dos tienen 2 arriba"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estás viendo que el numerador es igual en las dos. Pero el paso 1 pregunta si el denominador es igual, no el numerador.",
+            "queRevela": "Estás viendo que el numerador es igual en las dos. Pero el paso 1 pregunta si el denominador es igual, y el denominador es el número de abajo.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "No, uno es 4 y otro es 6"
+                "valor": "No, abajo hay un 3 y un 5"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Identificaste que los denominadores son distintos: 4 abajo en la primera, 6 abajo en la segunda.",
+            "queRevela": "Miraste el número de abajo de cada fracción: 3 en la primera y 5 en la segunda. Son distintos, así que no tienen el mismo denominador.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Sí, porque son fracciones"
+                "valor": "Sí, porque 3 y 5 son números impares"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Pensaste que dos fracciones cualesquiera tienen el mismo denominador. El denominador es el número de abajo y puede cambiar entre fracciones.",
+            "queRevela": "Pensaste que dos números del mismo tipo cuentan como iguales. El denominador es el mismo sólo si es exactamente el mismo número, y aquí uno es 3 y el otro es 5.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "No se puede saber"
+                "valor": "Sí, porque 2 + 3 da 5, el otro denominador"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Los denominadores están escritos: 4 y 6. Se ven directamente sin necesidad de cálculo.",
+            "queRevela": "Sumaste el numerador y el denominador de la primera fracción y te salió el 5 de la segunda. Es una coincidencia: lo que se compara son los dos números de abajo, 3 y 5.",
             "letra": "D"
           }
         ]
@@ -489,6 +483,74 @@
         ]
       },
       {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Para llevar"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 3
+          },
+          {
+            "tipo": "texto",
+            "valor": "a denominador 12, ¿qué se hace?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Multiplicar sólo abajo por 4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste sólo el de abajo y la fracción cambió de valor: queda un doceavo, que es mucho menos que un tercio. Para que valga lo mismo hay que multiplicar también el de arriba.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Multiplicar arriba y abajo por 4"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste arriba y abajo por el mismo número, 4, que es el que lleva el 3 a 12. La fracción cambia de cara, cuatro doceavos, pero no de valor.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sumar 9 arriba y abajo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumar sí cambia el valor de la fracción. Lo que no lo cambia es multiplicar arriba y abajo por el mismo número: aquí, por 4, que es lo que lleva el 3 a 12.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Multiplicar sólo arriba por 4"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste sólo el de arriba: queda cuatro tercios, una fracción mucho mayor que un tercio. El denominador no cambió, así que ni siquiera llegaste a 12.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
         "pasoDelCanon": 4,
         "enunciado": [
           {
@@ -498,7 +560,7 @@
           {
             "tipo": "fraccion",
             "arriba": 1,
-            "abajo": 5
+            "abajo": 6
           },
           {
             "tipo": "texto",
@@ -506,8 +568,8 @@
           },
           {
             "tipo": "fraccion",
-            "arriba": 8,
-            "abajo": 40
+            "arriba": 3,
+            "abajo": 18
           },
           {
             "tipo": "texto",
@@ -516,7 +578,7 @@
           {
             "tipo": "fraccion",
             "arriba": 1,
-            "abajo": 8
+            "abajo": 9
           },
           {
             "tipo": "texto",
@@ -524,8 +586,8 @@
           },
           {
             "tipo": "fraccion",
-            "arriba": 5,
-            "abajo": 40
+            "arriba": 2,
+            "abajo": 18
           },
           {
             "tipo": "texto",
@@ -538,12 +600,12 @@
               {
                 "tipo": "fraccion",
                 "arriba": 1,
-                "abajo": 8
+                "abajo": 9
               }
             ],
             "esCorrecta": false,
-            "esElErrorTipico": true,
-            "queRevela": "Comparaste los denominadores sin fijarte: 8 es mayor que 5, así que pensaste que 1/8 es mayor. Pero cuando los denominadores son iguales, cuenta el numerador: 8 es mayor que 5, así que 8/40 es mayor que 5/40.",
+            "esElErrorTipico": false,
+            "queRevela": "Te fijaste en que 9 es mayor que 6 y pensaste que un noveno es mayor. Pero ya están convertidas: con el mismo denominador, 18, gana el numerador más grande, y 3 es mayor que 2.",
             "letra": "A"
           },
           {
@@ -551,36 +613,36 @@
               {
                 "tipo": "fraccion",
                 "arriba": 1,
-                "abajo": 5
+                "abajo": 6
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Comparaste los numeradores: ambas tienen denominador 40 ahora, así que quien tenga numerador más grande es mayor. 8 es mayor que 5.",
+            "queRevela": "Comparaste los numeradores: las dos tienen denominador 18, así que gana el numerador más grande. 3 es mayor que 2, y ese 3 es el de un sexto.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "Son iguales"
+                "valor": "Son iguales, las dos tienen 1 arriba"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Pensaste que 1/5 y 1/8 son iguales porque tienen el mismo numerador. Pero el denominador dice el tamaño del pedazo: 5 pedazos grandes no pesan lo mismo que 8 pedazos chicos.",
+            "queRevela": "Comparaste sólo los numeradores de las fracciones originales, que son 1 y 1. Pero ya están convertidas: con denominador 18 los numeradores son 3 y 2, y no son iguales.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "No se puede comparar"
+                "valor": "Son iguales, las dos llegaron a 18"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Las dos ya tienen denominador común: 40. Cuando el denominador es igual, la comparación es directa: sólo importa cuál numerador es más grande.",
+            "queRevela": "Que las dos lleguen al mismo denominador no las vuelve iguales: eso sólo permite compararlas. Lo que decide ahora es el numerador, y son 3 y 2.",
             "letra": "D"
           }
         ]
@@ -590,16 +652,16 @@
         "enunciado": [
           {
             "tipo": "texto",
-            "valor": "¿Por qué"
+            "valor": "Alguien dice que"
           },
           {
             "tipo": "fraccion",
             "arriba": 1,
-            "abajo": 6
+            "abajo": 7
           },
           {
             "tipo": "texto",
-            "valor": "es menor que"
+            "valor": "es mayor que"
           },
           {
             "tipo": "fraccion",
@@ -608,7 +670,7 @@
           },
           {
             "tipo": "texto",
-            "valor": "?"
+            "valor": "porque 7 es mayor que 4. ¿Qué le respondes?"
           }
         ],
         "opciones": [
@@ -616,48 +678,48 @@
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "porque 6 es mayor que 4"
+                "valor": "Tiene razón: abajo más grande, fracción más grande"
               }
             ],
             "esCorrecta": false,
-            "esElErrorTipico": false,
-            "queRevela": "Estás comparando los denominadores como números corrientes, sin pensar en lo que significan. Un denominador más grande significa pedazos más chicos, no más grandes.",
+            "esElErrorTipico": true,
+            "queRevela": "Comparaste los de abajo como si fueran cantidades, 7 contra 4. Un denominador más grande significa pedazos más chicos: si cortas en 7 partes, cada una es más chica que si cortas en 4.",
             "letra": "A"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "porque el pedazo es más chico"
+                "valor": "Se equivoca: en 7 partes, cada pedazo es más chico"
               }
             ],
             "esCorrecta": true,
             "esElErrorTipico": false,
-            "queRevela": "Entendiste que el denominador dice el tamaño: si cortas en 6 pedazos, cada uno es más chico que si cortas en 4.",
+            "queRevela": "Entendiste que el denominador dice el tamaño: al cortar el entero en 7 partes, cada una es más chica que al cortarlo en 4, así que un séptimo es menor que un cuarto.",
             "letra": "B"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "porque 1 < 1"
+                "valor": "Se equivoca: valen lo mismo porque tienen 1 arriba"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Estás comparando sólo los numeradores. Los dos son 1, así que eso no ayuda. La diferencia está en cuántos pedazos se parte el entero.",
+            "queRevela": "Con el mismo numerador lo que decide es el tamaño del pedazo, y los pedazos no miden lo mismo: uno es de un entero cortado en 7 y el otro de uno cortado en 4.",
             "letra": "C"
           },
           {
             "partes": [
               {
                 "tipo": "texto",
-                "valor": "porque tienen distinto denominador"
+                "valor": "No se sabe sin llevarlas a denominador común"
               }
             ],
             "esCorrecta": false,
             "esElErrorTipico": false,
-            "queRevela": "Es verdad que tienen distinto denominador, pero eso no es la razón por la que una es menor que la otra. Tendrías que saber qué significa esa diferencia.",
+            "queRevela": "Llevarlas a denominador común siempre funciona, pero aquí no hace falta: con el mismo numerador decide el tamaño del pedazo, y 7 partes dan pedazos más chicos que 4.",
             "letra": "D"
           }
         ]
@@ -692,7 +754,7 @@
     },
     "pistas": [
       {
-        "texto": "Tienes que comparar 8/40 con 5/40. Como ya tienen el mismo denominador, sólo miras los numeradores: 8 y 5.",
+        "texto": "Tienes que comparar las dos fracciones. Como ya tienen el mismo denominador, sólo miras los numeradores: 8 y 5.",
         "orden": 1
       },
       {
@@ -735,7 +797,7 @@
       },
       {
         "tipo": "texto",
-        "valor": "llevándolas a denominador común. Hay exactamente un paso mal. Tócalo."
+        "valor": "llevándolas a denominador común. Un paso está mal y los que siguen sólo lo copian. Tócalo."
       }
     ],
     "pasos": [
@@ -781,29 +843,18 @@
         "numero": 3,
         "partes": [
           {
+            "tipo": "texto",
+            "valor": "Convierto:"
+          },
+          {
             "tipo": "fraccion",
             "arriba": 1,
             "abajo": 5
           },
           {
             "tipo": "texto",
-            "valor": "×"
+            "valor": "="
           },
-          {
-            "tipo": "fraccion",
-            "arriba": 8,
-            "abajo": 8
-          },
-          {
-            "tipo": "texto",
-            "valor": "= 8/40 ; 1/8 × 5/5 = 5/40"
-          }
-        ],
-        "siLoTocas": "Convierte ambas fracciones a denominador 40: 8/40 y 5/40. Multiplica bien arriba y abajo de cada una por el mismo número."
-      },
-      {
-        "numero": 4,
-        "partes": [
           {
             "tipo": "fraccion",
             "arriba": 8,
@@ -811,7 +862,16 @@
           },
           {
             "tipo": "texto",
-            "valor": "<"
+            "valor": "y"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": 1,
+            "abajo": 8
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
           },
           {
             "tipo": "fraccion",
@@ -819,11 +879,25 @@
             "abajo": 40
           }
         ],
-        "siLoTocas": "Ahí está el error. Ese renglón compara dos fracciones con el mismo denominador, pero el signo que pone es el que después arrastra a los renglones de abajo."
+        "siLoTocas": "La conversión está bien hecha: arriba y abajo de la primera fracción se multiplicó por 8, y arriba y abajo de la segunda por 5. Las dos quedaron con denominador 40 y siguen valiendo lo mismo."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Comparo los números de abajo: 5 es menor que 8."
+          }
+        ],
+        "siLoTocas": "Ahí está el error: aquí se compararon los números de abajo de las fracciones originales, 5 y 8, como si fueran enteros. Después del paso 3 lo que toca comparar son los numeradores, 8 y 5."
       },
       {
         "numero": 5,
         "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Escribo con las originales:"
+          },
           {
             "tipo": "fraccion",
             "arriba": 1,
@@ -839,36 +913,36 @@
             "abajo": 8
           }
         ],
-        "siLoTocas": "El paso escribe las fracciones originales con el signo que vino del paso anterior. No inventó el signo: lo copió."
+        "siLoTocas": "Este paso sólo escribe las fracciones originales con la conclusión que le llegó del paso 4. No inventó el signo: lo copió, y por eso el renglón sale mal."
       }
     ],
     "pasoMalo": 4,
-    "arrastre": "El menor que (<) del paso 4 es exactamente el que aparece en el paso 5. Si el paso 4 hubiera puesto mayor que (>), el paso 5 habría quedado correcto. La señal que delata el error es que 8 es mayor que 5 en los denominadores, no en los pedazos: al denominador más grande, más pequeño es el pedazo.",
+    "arrastre": "El paso 4 comparó 5 con 8, los números de abajo, y concluyó que un quinto es menor; el paso 5 sólo copió esa conclusión. Con los numeradores 8 y 5 habría salido mayor que (>) y el paso 5 habría quedado bien.",
     "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
-        "texto": "Confundió los denominadores con números enteros: cree que 8 es mayor que 5.",
+        "texto": "Comparó los de abajo, 5 y 8, como enteros, en vez de los numeradores 8 y 5.",
         "esElBueno": true,
-        "queRevela": "Es exacto: los numeradores son iguales (ambos 1). El renglón comparó 8 contra 5 usando menor que. Pero en denominadores, mayor significa pedazos más chicos. El 8 en el denominador quiere decir octavos, no ocho enteros."
+        "queRevela": "Es exacto: comparó el 5 y el 8 de abajo como si fueran cantidades, y 5 es menor que 8. Pero después del paso 3 las dos fracciones tienen denominador 40, y ahí decide el numerador: 8 contra 5, o sea que la que era un quinto es la mayor. Además, un denominador más grande, como el 8, significa pedazos más chicos."
       },
       {
         "texto": "No llevó las fracciones a denominador común antes de comparar.",
         "esElBueno": false,
-        "queRevela": "Pero sí las llevó: el paso 3 dejó clarito 8/40 y 5/40. El paso 4 está comparando fracciones con denominador común. El error no es que haya saltado ese paso, sino que eligió mal el signo."
+        "queRevela": "Sí las llevó: el paso 3 las dejó las dos con denominador 40, y está bien hecho. Lo que falló fue lo que se comparó después: los 5 y 8 de las fracciones originales, en lugar de los numeradores 8 y 5 de las convertidas."
       }
     ],
     "pistas": [
       {
         "orden": 1,
-        "texto": "Los cuatro pasos antes y después están bien hechos. El error no es un cálculo: es el signo que compara las dos fracciones."
+        "texto": "Los pasos 1, 2 y 3 están bien. Fíjate en el paso donde se comparan las fracciones; el último sólo copia lo que dice ese."
       },
       {
         "orden": 2,
-        "texto": "Compara 8/40 y 5/40 con igual denominador. Mira solo los numeradores: ¿cuál es más grande, 8 u 5?"
+        "texto": "¿Qué números está comparando el paso 4: los de abajo de las fracciones originales o los de arriba de las ya convertidas?"
       },
       {
         "orden": 3,
-        "texto": "Un octavo es un pedazo de 8 partes; un quinto es un pedazo de 5 partes. Menos partes significan pedazos más grandes."
+        "texto": "Un octavo es uno de los 8 pedazos de un entero cortado en 8; un quinto es uno de los 5 de un entero cortado en 5. Con menos cortes, cada pedazo es más grande."
       }
     ],
     "noSePuede": null
@@ -897,9 +971,9 @@
       "minimoParaContar": 1,
       "suenanBienYNoDicen": [
         {
-          "respuesta": "Porque 5 es menor que 8 y el número menor va arriba o es la fracción más grande.",
-          "queLaDelata": "Compara los números como si fueran números enteros normales. Trata el denominador como un dato que se compara de frente, sin pensar en qué significa.",
-          "queLeFalta": "Que diga que el número de abajo no es una cantidad que se compara contra otra cantidad, sino un dato que dice el tamaño del pedazo."
+          "respuesta": "Porque 5 es menor que 8, y cuando abajo hay un número menor la fracción es más grande.",
+          "queLaDelata": "Da la regla correcta, pero sin razón: parece algo que se memorizó, sin la idea de que el número de abajo dice el tamaño del pedazo.",
+          "queLeFalta": "Que diga por qué: con menos partes (5), cada parte es más grande, no que el número menor gane porque sí."
         },
         {
           "respuesta": "Porque un quinto es mayor, como vimos en el ejercicio.",
@@ -909,7 +983,7 @@
         {
           "respuesta": "Porque llevamos los dos al mismo denominador y después se compara fácil.",
           "queLaDelata": "Describe el procedimiento que ya hizo, pero no explica por qué funciona. Es saber cómo hacerlo sin entender qué hace.",
-          "queLeFalta": "Que diga por qué el procedimiento funciona: necesitamos pedazos del mismo tamaño para poder contar cuál tiene más."
+          "queLeFalta": "Que conecte el procedimiento con el tamaño del pedazo: al ver ocho cuarentavos contra cinco cuarentavos, que explique qué quiere decir que un quinto tenga más cuarentavos que un octavo."
         }
       ],
       "contraargumentos": [
@@ -920,8 +994,8 @@
         },
         {
           "siDice": "No entiendo por qué importa que los pedazos sean de distinto tamaño si tengo uno de cada uno.",
-          "seLeContesta": "Exacto: comparar un quinto contra un octavo tal como vienen es como comparar un trozo grande contra un trozo chico, sin medir con la misma regla. Por eso los llevamos al mismo denominador: necesitamos pedazos que midan lo mismo para poder decir «uno de éste versus uno de éste», y ahí sí sale cuál es más grande.",
-          "aDondeLoEmpuja": "A ver que sin igualar el denominador no se puede comparar en paridad, que es el piso para entender por qué el procedimiento funciona."
+          "seLeContesta": "Justo por eso importa: si tienes un pedazo de cada uno, gana el pedazo más grande, y el tamaño depende de en cuántas partes se cortó el entero. Un quinto es un pedazo de un entero cortado en 5 y un octavo de uno cortado en 8; con menos cortes, el pedazo es más grande. Llevar las dos al mismo denominador es otra forma de verlo, pero no hace falta para este caso.",
+          "aDondeLoEmpuja": "A que vea que el tamaño del pedazo es lo que se compara cuando se tiene un pedazo de cada uno."
         },
         {
           "siDice": "Sí entendí, nada más me es difícil escribirlo con palabras.",
@@ -943,11 +1017,11 @@
       "temaNumero": 6,
       "materia": "matematicas",
       "teclado": "opciones",
-      "porQueEseTeclado": "La respuesta es un signo de comparación (<, > o =). Son tres opciones cerradas que el estudiante tiene que reconocer después de comparar los numeradores de dos fracciones llevadas a denominador común. El teclado de dígitos no tiene estos signos, así que con dígitos no cabe la respuesta.",
+      "porQueEseTeclado": "La respuesta de las estaciones 3 y 4 es el signo de la comparación (<, > o =), y el teclado de dígitos no lo trae. El tema usa un solo teclado, así que el signo se elige entre tres opciones. Para que no se acierte por descarte, los escalones suben hasta casos que piden llevar las fracciones a denominador común antes de elegir.",
       "tecladosDescartados": [
         {
           "teclado": "digitos",
-          "porQue": "No tiene los signos de comparación. La respuesta es <, > o =, ninguno de los cuales aparece en el teclado de dígitos que sólo trae 0–9 y la diagonal."
+          "porQue": "El teclado de dígitos sólo trae 0–9 y la diagonal, no los signos < > =. Con dígitos se podría pedir un numerador al convertir, pero el tema usa un solo teclado y la comparación final se escribe con un signo."
         }
       ],
       "fichas": [],
@@ -987,17 +1061,17 @@
             {
               "etiqueta": ">",
               "esCorrecta": true,
-              "queRevela": "El numerador 8 es mayor que 5, así que la fracción de arriba es la más grande."
+              "queRevela": "El numerador 8 es mayor que 5 y el denominador es el mismo, así que la fracción de la izquierda es la más grande."
             },
             {
               "etiqueta": "<",
               "esCorrecta": false,
-              "queRevela": "Crees que 1/5 es menor que 1/8 porque comparas los números 5 y 8 de abajo, sin acordarte de que un denominador más grande significa pedazos más chicos."
+              "queRevela": "Revisa los dos numeradores, 8 y 5: el 8 es mayor, así que la primera fracción es la mayor. A lo mejor leíste el signo al revés: se abre hacia la fracción mayor."
             },
             {
               "etiqueta": "=",
               "esCorrecta": false,
-              "queRevela": "Las dos fracciones llevan el mismo numerador arriba, pero ya las llevaste a denominador común y los numeradores cambiaron: 8 y 5 no son iguales."
+              "queRevela": "Con el mismo denominador, 40, son iguales sólo si tienen el mismo numerador, y aquí son 8 y 5. Las fracciones originales, un quinto y un octavo, tampoco valen lo mismo."
             }
           ]
         },
@@ -1012,13 +1086,13 @@
           },
           {
             "orden": 3,
-            "texto": "El 8 es mayor que el 5, así que la fracción con 8 arriba es la mayor. Ahora escribe cuál es el signo."
+            "texto": "Decide cuál de las dos fracciones tiene más pedazos del mismo tamaño y elige el signo que se abre hacia ella."
           }
         ]
       },
       "escalera": [
         {
-          "situacion": "En clase reparten pizza. Unos compañeros comen 1/3 de pizza y otros comen 1/4 de la misma pizza.",
+          "situacion": "En clase reparten pizza. Unos compañeros comen un tercio de una pizza y otros comen un cuarto de otra pizza del mismo tamaño.",
           "expresion": [
             {
               "tipo": "fraccion",
@@ -1034,7 +1108,7 @@
               "abajo": 4
             }
           ],
-          "pregunta": "¿Quién comió más pizza, los que comieron 1/3 o los que comieron 1/4?",
+          "pregunta": "¿Quiénes comieron más pizza: los que comieron un tercio o los que comieron un cuarto?",
           "respuesta": {
             "correcta": ">",
             "enAtomos": [
@@ -1049,154 +1123,285 @@
               {
                 "etiqueta": ">",
                 "esCorrecta": true,
-                "queRevela": "Bien. Cuando el numerador es el mismo, menos partes en el denominador significa pedazos más grandes."
+                "queRevela": "Con el mismo numerador decide el tamaño del pedazo: cortar en 3 da pedazos más grandes que cortar en 4, así que un tercio es mayor que un cuarto."
               },
               {
                 "etiqueta": "<",
                 "esCorrecta": false,
-                "queRevela": "Pensaste que 1/4 es más grande porque 4 es más grande que 3, pero es al revés: a más partes, más chica es cada parte."
+                "queRevela": "Pensaste que un cuarto es mayor porque 4 es mayor que 3. Pero más partes quiere decir pedazos más chicos, no más grandes."
               },
               {
                 "etiqueta": "=",
                 "esCorrecta": false,
-                "queRevela": "Las fracciones tienen el mismo numerador, pero los denominadores dicen que los pedazos no son del mismo tamaño."
+                "queRevela": "Los dos tienen 1 arriba, pero los pedazos no miden lo mismo: uno es de un entero cortado en 3 y el otro de uno cortado en 4."
               }
             ]
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "Los dos numeradores son 1. Piensa en una pizza cortada en tres pedazos y otra cortada en cuatro: ¿cuál pedazo es más grande?"
+              "texto": "Los dos numeradores son 1: cada quien comió un pedazo. Piensa en una pizza cortada en tres pedazos y otra cortada en cuatro: ¿cuál pedazo es más grande?"
             },
             {
               "orden": 2,
-              "texto": "Recuerda el paso donde compares: cuando el numerador es el mismo, el denominador te dice el tamaño de cada pedazo."
+              "texto": "Si quieres comprobarlo con el procedimiento: pasa las dos a denominador 12 (paso 3) y compara los numeradores (paso 4)."
             },
             {
               "orden": 3,
-              "texto": "En tres pedazos cada uno es más grande que en cuatro pedazos. Elige el signo que dice cuál fracción es mayor."
+              "texto": "Piensa si el pedazo de cada pizza es más grande o más chico que el de la otra; luego mira hacia dónde se abre el signo."
             }
           ]
         },
         {
-          "situacion": "Tu mamá divide un pastel entre ustedes. Tu hermana se come 2/5 del pastel y tú te comes 2/7 del pastel.",
+          "situacion": "Tu mamá compra dos pasteles del mismo tamaño. Tu hermana se come dos séptimos de uno y tú te comes dos quintos del otro.",
           "expresion": [
-            {
-              "tipo": "fraccion",
-              "arriba": 2,
-              "abajo": 5
-            },
-            {
-              "tipo": "hueco"
-            },
             {
               "tipo": "fraccion",
               "arriba": 2,
               "abajo": 7
-            }
-          ],
-          "pregunta": "¿Quién comió más pastel, tu hermana o tú?",
-          "respuesta": {
-            "correcta": ">",
-            "enAtomos": [
-              {
-                "tipo": "texto",
-                "valor": ">"
-              }
-            ],
-            "comoSeLee": "mayor que",
-            "aceptaTambien": [],
-            "opciones": [
-              {
-                "etiqueta": ">",
-                "esCorrecta": true,
-                "queRevela": "Eso es. Tu hermana comió más porque sus 2 pedazos son de una pasta cortada en 5, y los tuyos de una cortada en 7: los de ella son más grandes."
-              },
-              {
-                "etiqueta": "<",
-                "esCorrecta": false,
-                "queRevela": "Crees que 2/7 es más porque 7 es más grande que 5, pero eso hace que los pedazos sean más chicos, no más grandes."
-              },
-              {
-                "etiqueta": "=",
-                "esCorrecta": false,
-                "queRevela": "Los numeradores son iguales en los dos, pero los pedazos son de tamaño distinto."
-              }
-            ]
-          },
-          "pistas": [
-            {
-              "orden": 1,
-              "texto": "Los dos numeradores son 2. Eso significa que los dos comieron la misma cantidad de pedazos, pero ¿de qué tamaño?"
-            },
-            {
-              "orden": 2,
-              "texto": "Cuando el numerador es el mismo, el denominador decide: cuanto más grande el número de abajo, más pequeños los pedazos."
-            },
-            {
-              "orden": 3,
-              "texto": "En 5 los pedazos son más grandes que en 7. Elige el signo que muestra cuál fracción es mayor."
-            }
-          ]
-        },
-        {
-          "situacion": "Dos plantas en el patio están creciendo. Una alcanzó 3/4 de la altura que tendrá cuando sea adulta, y la otra alcanzó 3/5.",
-          "expresion": [
-            {
-              "tipo": "fraccion",
-              "arriba": 3,
-              "abajo": 4
             },
             {
               "tipo": "hueco"
             },
             {
               "tipo": "fraccion",
-              "arriba": 3,
+              "arriba": 2,
               "abajo": 5
             }
           ],
-          "pregunta": "¿Cuál de las dos plantas ya creció más hacia su altura final?",
+          "pregunta": "¿Lo que comió tu hermana es mayor, menor o igual que lo que comiste tú?",
           "respuesta": {
-            "correcta": ">",
+            "correcta": "<",
             "enAtomos": [
               {
                 "tipo": "texto",
-                "valor": ">"
+                "valor": "<"
               }
             ],
-            "comoSeLee": "mayor que",
+            "comoSeLee": "menor que",
             "aceptaTambien": [],
             "opciones": [
               {
-                "etiqueta": ">",
+                "etiqueta": "<",
                 "esCorrecta": true,
-                "queRevela": "Así es. La que alcanzó 3/4 está más cerca de su altura adulta que la que apenas llega a 3/5."
+                "queRevela": "Tu hermana comió menos: sus pedazos, de un pastel cortado en 7, son más chicos que los tuyos, de uno cortado en 5, y los dos se comieron 2 pedazos."
               },
               {
-                "etiqueta": "<",
+                "etiqueta": ">",
                 "esCorrecta": false,
-                "queRevela": "Pensaste que 3/5 es mayor porque 5 es más grande que 4, pero si la altura se divide en 5 partes, cada parte es más chica."
+                "queRevela": "Pensaste que dos séptimos es mayor porque 7 es más grande que 5, pero más partes significa pedazos más chicos, no más grandes."
               },
               {
                 "etiqueta": "=",
                 "esCorrecta": false,
-                "queRevela": "Las dos tienen 3 en el numerador pero el denominador es distinto, así que han crecido diferente."
+                "queRevela": "Los dos comieron 2 pedazos, pero no del mismo tamaño: uno es de un pastel cortado en 7 y el otro de uno cortado en 5."
               }
             ]
           },
           "pistas": [
             {
               "orden": 1,
-              "texto": "Las dos plantas crecieron el mismo número de partes: 3 en ambas. Pero ¿en cuántas partes se divide la altura total en cada caso?"
+              "texto": "Los dos numeradores son 2: cada quien se comió dos pedazos. La diferencia está en el tamaño de esos pedazos."
             },
             {
               "orden": 2,
-              "texto": "En el paso de comparación miras el denominador cuando el numerador es el mismo para saber cuál fracción es mayor."
+              "texto": "Lleva las dos a un mismo denominador (paso 3), o compara el tamaño del pedazo: ¿qué pasa con los pedazos cuando el pastel se corta en más partes?"
             },
             {
               "orden": 3,
-              "texto": "La altura dividida en 4 partes hace cada parte más grande que si se divide en 5. Elige el signo."
+              "texto": "Piensa si los pedazos de tu hermana son más grandes o más chicos que los tuyos; luego mira hacia dónde se abre el signo."
+            }
+          ]
+        },
+        {
+          "situacion": "Dos botellas iguales tienen agua. La primera está llena hasta un medio y la segunda hasta dos cuartos.",
+          "expresion": [
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 2
+            },
+            {
+              "tipo": "hueco"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 2,
+              "abajo": 4
+            }
+          ],
+          "pregunta": "¿La primera botella tiene más agua, menos agua o la misma que la segunda?",
+          "respuesta": {
+            "correcta": "=",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "="
+              }
+            ],
+            "comoSeLee": "igual a",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "=",
+                "esCorrecta": true,
+                "queRevela": "Multiplicando arriba y abajo de un medio por 2 se obtiene dos cuartos: es la misma cantidad con otra cara, así que son iguales."
+              },
+              {
+                "etiqueta": "<",
+                "esCorrecta": false,
+                "queRevela": "Pensaste que dos cuartos es más porque tiene un numerador mayor, 2 contra 1. Pero los cuartos son pedazos más chicos que los medios: lleva las dos al mismo denominador y compara."
+              },
+              {
+                "etiqueta": ">",
+                "esCorrecta": false,
+                "queRevela": "Pensaste que un medio es más porque tiene el denominador menor, pero eso sólo decide cuando los numeradores son iguales, y aquí son 1 y 2. Pasa un medio a cuartos y compara."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Aquí cambian los dos números, el de arriba y el de abajo. Para comparar, conviene que las dos tengan pedazos del mismo tamaño."
+            },
+            {
+              "orden": 2,
+              "texto": "Pasa un medio a cuartos multiplicando arriba y abajo por 2 (paso 3). Luego compara los numeradores (paso 4)."
+            },
+            {
+              "orden": 3,
+              "texto": "Escribe un medio con denominador 4 y compáralo con la otra fracción: ¿los numeradores son iguales o distintos? Elige el signo que corresponde."
+            }
+          ]
+        },
+        {
+          "situacion": "Dos plantas del patio están creciendo, cada una con respecto a su propia altura adulta. La primera alcanzó un tercio de la suya y la segunda dos quintos de la suya.",
+          "expresion": [
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 3
+            },
+            {
+              "tipo": "hueco"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 2,
+              "abajo": 5
+            }
+          ],
+          "pregunta": "En proporción a su altura adulta, ¿la primera planta va más adelantada, menos adelantada o igual que la segunda?",
+          "respuesta": {
+            "correcta": "<",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "<"
+              }
+            ],
+            "comoSeLee": "menor que",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "<",
+                "esCorrecta": true,
+                "queRevela": "Llevadas a denominador 15, el numerador de la primera es 5 y el de la segunda es 6. Como 5 es menor que 6, la primera planta va menos adelantada."
+              },
+              {
+                "etiqueta": ">",
+                "esCorrecta": false,
+                "queRevela": "Pensaste que un tercio es mayor porque tiene el denominador menor. Pero con numeradores distintos eso no alcanza: hay que llevarlas al mismo denominador."
+              },
+              {
+                "etiqueta": "=",
+                "esCorrecta": false,
+                "queRevela": "Parecen cercanas, pero no son iguales: con denominador 15 los numeradores son 5 y 6, y no coinciden."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Aquí no coinciden ni los numeradores ni los denominadores, así que no alcanza con mirar un solo número."
+            },
+            {
+              "orden": 2,
+              "texto": "Lleva las dos a un mismo denominador (paso 3): 15 es múltiplo de 3 y de 5. Luego compara los numeradores (paso 4)."
+            },
+            {
+              "orden": 3,
+              "texto": "Cuando tengas los numeradores, la fracción con el mayor es la mayor. Elige el signo que se abre hacia ella."
+            }
+          ]
+        },
+        {
+          "situacion": "Estás ordenando fracciones de menor a mayor. Ya pusiste un tercio al principio y un medio al final, y falta la fracción que va en medio.",
+          "expresion": [
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 3
+            },
+            {
+              "tipo": "texto",
+              "valor": "<"
+            },
+            {
+              "tipo": "hueco"
+            },
+            {
+              "tipo": "texto",
+              "valor": "<"
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": 1,
+              "abajo": 2
+            }
+          ],
+          "pregunta": "¿Cuál de estas fracciones va en medio para que la lista quede de menor a mayor?",
+          "respuesta": {
+            "correcta": "2/5",
+            "enAtomos": [
+              {
+                "tipo": "fraccion",
+                "arriba": 2,
+                "abajo": 5
+              }
+            ],
+            "comoSeLee": "dos quintos",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "2/5",
+                "esCorrecta": true,
+                "queRevela": "Llevadas a denominador 30, los numeradores quedan 10 para un tercio, 12 para dos quintos y 15 para un medio. Como 10 es menor que 12 y 12 menor que 15, dos quintos va en medio."
+              },
+              {
+                "etiqueta": "1/4",
+                "esCorrecta": false,
+                "queRevela": "Un cuarto es más chico que un tercio: cortar en 4 da pedazos más chicos que cortar en 3. Iría antes del tercio, no en medio."
+              },
+              {
+                "etiqueta": "2/3",
+                "esCorrecta": false,
+                "queRevela": "Dos tercios son más que un medio: con denominador 6, un medio es 3 y dos tercios son 4. Iría después del medio, no en medio."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Compara cada opción con las fracciones que ya están: la que falta tiene que ser mayor que un tercio y menor que un medio."
+            },
+            {
+              "orden": 2,
+              "texto": "Si dudas con alguna, llévala a un denominador común con la otra fracción (paso 3) y compara los numeradores (paso 4)."
+            },
+            {
+              "orden": 3,
+              "texto": "Empieza por descartar la opción que queda antes del tercio y la que queda después del medio."
             }
           ]
         }

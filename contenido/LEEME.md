@@ -300,6 +300,35 @@ dudosa» no se podían abrir. Ahora van a X3 (ver «Qué prompt le toca a qué t
   que regalan la respuesta, fracciones en línea, la voz de «es fácil», signos de JSON
   sueltos. Se corre sobre cada tema generado.
 
+### Lo que se midió con X3 contra la API (15 temas)
+
+Quince temas pasaron por `X3-teclado` con Haiku: los canon que ya estaban guardados
+(Biología 3, 7, 9, 10, 12, 13, 15, 21; Química 4, 9) y, con `--solo X3-teclado`, cinco de
+Matemáticas cuya estación 3 y 4 se habían escrito con dígitos y una reformulación
+(2, 6, 11, 12, 17).
+
+- **Quedaron 14 de 15.** El de Biología 21 no: sus respuestas son frases de más de 24
+  caracteres, que es un problema del contenido y no del teclado.
+- **Una corrida de X3 sale bien menos de la mitad de las veces** (29 corridas, 12
+  guardadas, cada una con su vuelta de corrección); casi todos pasan con reintentos. En total
+  los 15 temas costaron $2.92 de Claude y $2.10 de OpenAI (10 con las cuatro estaciones y la
+  búsqueda de video, 5 sólo con X3), reintentos incluidos; una llamada de X3 suelta cuesta
+  unos $0.04.
+- **Por qué fallaba**, y lo que se hizo con cada cosa:
+  - `completar` o `escalera` llegaban como texto JSON: `repararArreglosSerializados` ya
+    abre también objetos.
+  - Los escalones llegaban sin `pistas`: en el esquema van antes de `respuesta`
+    (el modelo se las salta cuando van al final de un objeto largo) y el prompt lo dice.
+  - Una ficha por número entero (`40`) en vez de dígitos: el prompt lo prohíbe y el aviso
+    de corrección lo nombra.
+  - La pista 3 que escribe la respuesta, sobre todo con `opciones` de dos candidatos: se
+    reescribió a mano en Biología 9 y 15; sigue siendo la causa más común de rechazo.
+  - `porQueEseTeclado` de más de 400 caracteres: se recorta al tope, nadie lo pinta.
+  - Exponentes: `2³` se teclea con la ficha `³` y `enAtomos` lo pinta como superíndice;
+    `aplanar` acepta las dos escrituras.
+- **Decimales:** `2.50` y `2.5` son el mismo número y la app no los distingue (`19.5` vale
+  `19.50`). Un entero (`100`) no se toca.
+
 ### Correr contra las APIs desde el contenedor de la nube
 
 El `fetch` de Node 22 **no usa** `HTTPS_PROXY`. Sin `NODE_USE_ENV_PROXY=1` la búsqueda
@@ -461,9 +490,10 @@ columnas hasta 11 fichas y cuatro hasta 15; borrar quita una ficha entera),
 `opciones` (elegir entre 2 y 4; las baraja la app y una equivocada muestra su
 `queRevela`) y `texto` (el teclado del sistema, con `comoSeCompara` para perdonar
 mayúsculas, acentos y espacios). Con él se abren los temas de palabra, de fórmula y
-de decimales o negativos. Cuántos temas se abren de más no está medido con la API:
-las cuentas de arriba (5 de Biología y 11 de Química con sólo dígitos) son de antes
-de X3.
+de decimales o negativos. Con él y el contenido generado hasta ahora el catálogo tiene
+39 temas (14 de Matemáticas, 12 de Biología y 13 de Química); ver «Lo que se midió con
+X3 contra la API». Las cuentas de la tabla de arriba (5 de Biología y 11 de Química) son
+de antes de X3.
 
 Lo que sigue sin existir, en orden de cuántos temas desbloquea:
 
