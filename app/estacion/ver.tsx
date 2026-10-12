@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import {
   BarraEstacion,
@@ -43,6 +43,14 @@ function Estacion() {
     if (video) Linking.openURL(video.url).catch(() => {});
   };
 
+  // En web el video se abre con un enlace de verdad: dentro de un artefacto o de un
+  // iframe `window.open` queda bloqueado y el botón no hacía nada, mientras que un
+  // <a target="_blank"> sí lo respetan. El enlace se abre solo, sin pasar por `onPress`.
+  const comoEnlace =
+    Platform.OS === 'web' && video
+      ? { href: video.url, hrefAttrs: { target: '_blank', rel: 'noopener noreferrer' } }
+      : null;
+
   return (
     <Marco>
       <BarraEstacion estacion={1} />
@@ -57,10 +65,11 @@ function Estacion() {
           <Tarjeta style={estilos.video}>
             {video ? (
               <Pressable
-                accessibilityRole="button"
+                accessibilityRole={comoEnlace ? 'link' : 'button'}
                 accessibilityLabel={`Reproducir el video «${video.titulo}», de ${video.canal}. Se abre en YouTube.`}
-                onPress={reproducir}
+                onPress={comoEnlace ? undefined : reproducir}
                 style={({ pressed }) => [estilos.reproducir, pressed && estilos.reproducirTocado]}
+                {...comoEnlace}
               >
                 <IconoReproducir />
               </Pressable>
