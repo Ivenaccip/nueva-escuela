@@ -19,7 +19,7 @@ import { colores, espacio, fuentes, radios } from '../../src/tema';
  * bien —eso lo haría una segunda llamada a la API, que necesita la llave en un
  * servidor—, sólo que se intentó.
  */
-const MINIMO_DE_CARACTERES = 40;
+const MINIMO_DE_CARACTERES = 30;
 
 /**
  * Estación 6 · explicarlo. La última: el estudiante escribe con sus palabras lo

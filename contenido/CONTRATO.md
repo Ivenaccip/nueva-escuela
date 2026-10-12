@@ -562,7 +562,7 @@ cambió lo que el contenido puede pedir.
 - **La estación 5 no arranca con el paso malo marcado.** El diseño lo muestra así,
   pero con calificación sería entregar la respuesta. Los motivos se preguntan
   cuando ya hay un paso señalado, que es lo que `ContenidoError` ya decía.
-- **La estación 6** pide al menos 40 caracteres y, al terminar, muestra la
+- **La estación 6** pide al menos 30 caracteres y, al terminar, muestra la
   `rubrica` como autoevaluación. **Nadie la califica**: eso es una segunda llamada
   a la API, y necesita la llave en un servidor, no en la app.
 
