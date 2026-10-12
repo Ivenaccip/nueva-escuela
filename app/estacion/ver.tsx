@@ -16,6 +16,17 @@ import { colores, espacio, fuentes, TOCABLE } from '../../src/tema';
 /** A dónde lleva esta estación, tanto por el botón como por el atajo. */
 const SIGUIENTE = '/estacion/contacto';
 
+/** El círculo de reproducir en web, con las mismas medidas que `estilos.reproducir`. */
+const enlaceDeVideo = {
+  width: 68,
+  height: 68,
+  borderRadius: 34,
+  backgroundColor: colores.acento,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+} as const;
+
 /**
  * Estación 1 · ver el video. La única estación sin pistas y sin respuesta que
  * dar: aquí el estudiante nada más mira y decide si ya lo sabía.
@@ -43,13 +54,9 @@ function Estacion() {
     if (video) Linking.openURL(video.url).catch(() => {});
   };
 
-  // En web el video se abre con un enlace de verdad: dentro de un artefacto o de un
-  // iframe `window.open` queda bloqueado y el botón no hacía nada, mientras que un
-  // <a target="_blank"> sí lo respetan. El enlace se abre solo, sin pasar por `onPress`.
-  const comoEnlace =
-    Platform.OS === 'web' && video
-      ? { href: video.url, hrefAttrs: { target: '_blank', rel: 'noopener noreferrer' } }
-      : null;
+  const etiquetaDelVideo = video
+    ? `Reproducir el video «${video.titulo}», de ${video.canal}. Se abre en YouTube.`
+    : '';
 
   return (
     <Marco>
@@ -64,15 +71,29 @@ function Estacion() {
         <View style={estilos.zonaVideo}>
           <Tarjeta style={estilos.video}>
             {video ? (
-              <Pressable
-                accessibilityRole={comoEnlace ? 'link' : 'button'}
-                accessibilityLabel={`Reproducir el video «${video.titulo}», de ${video.canal}. Se abre en YouTube.`}
-                onPress={comoEnlace ? undefined : reproducir}
-                style={({ pressed }) => [estilos.reproducir, pressed && estilos.reproducirTocado]}
-                {...comoEnlace}
-              >
-                <IconoReproducir />
-              </Pressable>
+              Platform.OS === 'web' ? (
+                // En web es un <a> de verdad y no un Pressable. Dentro de un artefacto o de un
+                // iframe `window.open` queda bloqueado, y el Pressable de React Native Web
+                // detiene el clic antes de que el visor lo vea para abrir el enlace por fuera.
+                <a
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={etiquetaDelVideo}
+                  style={enlaceDeVideo}
+                >
+                  <IconoReproducir />
+                </a>
+              ) : (
+                <Pressable
+                  accessibilityRole="button"
+                  accessibilityLabel={etiquetaDelVideo}
+                  onPress={reproducir}
+                  style={({ pressed }) => [estilos.reproducir, pressed && estilos.reproducirTocado]}
+                >
+                  <IconoReproducir />
+                </Pressable>
+              )
             ) : (
               <Text style={estilos.sinVideo}>
                 Este tema todavía no tiene un video en español. Lee el resumen de abajo y sigue.
