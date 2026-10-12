@@ -64,7 +64,9 @@ diseño. No hay una carpeta "web" y otra "móvil", y no debería haberla.
 | `app/` | Las rutas. Una pantalla por archivo, nada más. |
 | `src/tema/` | Colores, fuentes, espacios, radios. **Única fuente de color.** |
 | `src/componentes/` | Lo que se repite entre pantallas. |
-| `src/contenido/` | Tipos del contenido y el ejemplo de relleno. |
+| `src/contenido/` | Tipos del contenido, el adaptador, la calificación y el catálogo de temas. |
+| `src/estado/` | Lo que la app recuerda del estudiante: el modelo puro, el proveedor de React y el disco. |
+| `contenido/` | El generador de ejercicios (llama a la API) y su salida. Ver `contenido/LEEME.md`. |
 | `_viejo/` | Proyecto anterior, archivado. No se toca ni se importa. |
 
 ## Reglas
@@ -73,14 +75,22 @@ diseño. No hay una carpeta "web" y otra "móvil", y no debería haberla.
 - **Nada de `fontWeight`** junto a las fuentes cargadas: el peso ya viene en
   el `fontFamily` (`fuentes.cuerpoFuerte`, no `fontWeight: '600'`). Con
   fuentes personalizadas, Android ignora el peso y rompe la tipografía.
-- **El contenido no se escribe en las pantallas.** Sale de `src/contenido`.
-  Cuando lleguen los ejercicios de verdad, se reemplaza `demo.ts` y ninguna
-  pantalla cambia.
+- **El contenido no se escribe en las pantallas.** Sale de `src/contenido`, y
+  las pantallas lo piden con `useAndamio()`. `demo.ts` es el relleno del diseño y
+  ya nada lo importa.
 - **Las fracciones se escriben apiladas**, con `Fraccion` o `Expresion`,
   nunca como `"3/5"` en una línea.
 - **Todo lo tocable lleva `accessibilityRole` y `accessibilityLabel`**, y mide
   44 como mínimo.
 - El botón que avanza va siempre abajo, con `paddingBottom: usePieSeguro()`.
+- **Entre estaciones se navega con `router.replace`**, no con `push`: así la pila
+  queda en `[círculo, estación]` y la flecha de la barra vuelve al círculo.
+- **Una estación se envuelve en `<Guardia clave="...">`**: el círculo se recorre en
+  orden y una dirección escrita a mano no debe saltárselo.
+- **La respuesta correcta no viaja al `Tema`.** Las pantallas que califican la leen
+  de `useAndamio().redactado` y la comparan con `calificar.ts`.
+- **Tras generar temas nuevos, `node contenido/indexar.mjs`**: la app sólo abre lo que
+  está en `src/contenido/catalogo.ts`.
 - Comentarios en español, y sólo cuando explican un porqué que no se ve en el
   código.
 

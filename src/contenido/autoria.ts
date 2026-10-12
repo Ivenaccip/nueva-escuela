@@ -10,15 +10,13 @@
  * cuántas le quedan, `escalon: 4` es en cuál va, `indice` es qué tema de la
  * materia. Nada de eso lo escribe la IA (`contenido/CONTRATO.md` §4).
  *
- * FALTA EL ADAPTADOR. Entre este archivo y `tipos.ts` tiene que vivir
- * `src/contenido/adaptar.ts`: la única puerta que recibe el `TemaRedactado` de
- * las siete llamadas más el estado del estudiante y devuelve el `Tema` que las
- * pantallas ya saben pintar. Ahí y sólo ahí se derivan `escalon`, `escalones`
- * como número, `indice`, `total`, `pistas` como contador, `pistaEn` y
- * `estaciones[].estado`; ahí se aplana `escalones[i]` al escalón en curso y
- * `preguntas[i]` a la pregunta en curso; y ahí se arma el `cierre`, que no lo
- * escribe la IA. Mientras ese archivo no exista, el contenido generado se puede
- * guardar y validar, pero ninguna pantalla lo lee: siguen leyendo `demo.ts`.
+ * Entre este archivo y `tipos.ts` vive `src/contenido/adaptar.ts`: la única puerta
+ * que recibe el `TemaRedactado` de las siete llamadas más el avance del estudiante
+ * y devuelve el `Tema` que las pantallas ya saben pintar. Ahí y sólo ahí se derivan
+ * `escalon`, `escalones` como número, `indice`, `total`, `pistas` como contador,
+ * `pistaEn` y `estaciones[].estado`; ahí se aplana `escalones[i]` al escalón en
+ * curso y `preguntas[i]` a la pregunta en curso; y ahí se arma el `cierre`, que no
+ * lo escribe la IA.
  */
 
 import type { ParteMat } from './tipos';
@@ -184,6 +182,45 @@ export type RespuestaTecleada = {
   /** Otras escrituras del mismo número: `4` y `4/1`, `12/5` y `24/10`. */
   aceptaTambien: Tecleado[];
   comoSeLee: string;
+  /**
+   * La respuesta con átomos (`CaCl₂`), para pintarla bien una vez contestada.
+   * Sólo la traen los temas con teclado propio.
+   */
+  enAtomos?: ParteMat[];
+  /** Sólo con el teclado `opciones`: las etiquetas entre las que se elige. */
+  opciones?: OpcionDeRespuesta[];
+};
+
+/** Una opción del teclado `opciones`. `queRevela` es lo que se le contesta al elegirla. */
+export type OpcionDeRespuesta = {
+  etiqueta: string;
+  esCorrecta: boolean;
+  queRevela: string;
+};
+
+/** Con qué contesta el estudiante. Ver `EntradaDePantalla` en `tipos.ts`. */
+export type TecladoDelTema = 'digitos' | 'fichas' | 'opciones' | 'texto';
+
+export type Ficha = { etiqueta: string; comoSeLee: string };
+
+/** Qué perdona la comparación. Sólo el teclado `texto` decide algo aquí. */
+export type ComoSeCompara = {
+  ignoraMayusculas: boolean;
+  ignoraAcentos: boolean;
+  ignoraEspaciosDeMas: boolean;
+};
+
+/**
+ * El teclado de un tema. Los temas de dígitos no lo traen: `entrada` ausente
+ * quiere decir `digitos` con comparación exacta. Los que lo traen lo copian aquí
+ * desde su caso `X3-teclado` (`src/contenido/teclado.ts`), igual en la estación 3
+ * y en todos los escalones de la 4.
+ */
+export type EntradaRedactada = {
+  teclado: TecladoDelTema;
+  /** Vacío salvo con `fichas`. */
+  fichas: Ficha[];
+  comoSeCompara: ComoSeCompara;
 };
 
 export type CompletarRedactado = {
@@ -196,6 +233,7 @@ export type CompletarRedactado = {
   respuesta: RespuestaTecleada;
   pistas: Pista[];
   siTecleaElError: { tecleado: Tecleado; queSeLeDice: string } | null;
+  entrada?: EntradaRedactada;
   noSePuede: NoSePuede;
 };
 
@@ -213,6 +251,7 @@ export type EscalonRedactado = {
   pasoDelCanon: number;
   /** Le dieron el resultado y le falta un dato de entrada. */
   esInverso: boolean;
+  entrada?: EntradaRedactada;
 };
 
 export type EscaleraRedactada = {

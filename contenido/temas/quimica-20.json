@@ -1,0 +1,217 @@
+{
+  "materia": "quimica",
+  "temaNumero": 20,
+  "titulo": "El grupo predice la valencia",
+  "generadoEn": "2026-10-06T16:22:33.407Z",
+  "canon": {
+    "temaNumero": 20,
+    "materia": "quimica",
+    "titulo": "El grupo predice la valencia",
+    "notacion": "tabla",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Sacar la valencia de un elemento usando su grupo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Buscas el elemento en la tabla periódica y lees el número de grupo en romanos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El magnesio está en el grupo"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "II",
+              "sup": "A"
+            }
+          ],
+          "porQue": "El número de grupo es la clave: en los no metales de la derecha está escrito el número de electrones de valencia, y en los metales de la izquierda está el número de cargas que el átomo puede perder."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Cuentas cuántos electrones de valencia tiene: es el número del grupo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Grupo"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "II",
+              "sup": "A"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 2 electrones de valencia"
+            }
+          ],
+          "porQue": "Los electrones más lejanos del núcleo son los únicos que se pierden o se ganan en las reacciones. El grupo dice exactamente cuántos son, porque la tabla periódica está armada para eso."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Decides si le conviene perder esos electrones o ganar para llegar a 8.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Magnesio tiene 2 de valencia. Perder 2 le deja con 8. Le conviene perder."
+            }
+          ],
+          "porQue": "Los átomos son más estables con 8 electrones de valencia, que es el número de la última capa llena. Si el átomo ya tiene pocos, los pierde. Si tiene muchos, los gana para sumar hasta 8."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Cuentas cuántos electrones va a perder o ganar, y ese número es el valor de la carga.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Pierde 2 electrones → carga es 2"
+            }
+          ],
+          "porQue": "Cada electrón que se pierde deja un protón sin compensar, y cada electrón que se gana suma una carga negativa más. El número de cambios es el número de la carga."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Escribes la carga con su signo: más si perdió, menos si ganó.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "Mg",
+              "sup": "2+"
+            }
+          ],
+          "porQue": "El signo cuenta: una carga de +2 no es lo mismo que −2, porque uno perdió electrones y el otro los ganó. La escritura tiene que mostrar cuál pasó."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "el magnesio, que está en el grupo IIA",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Magnesio, grupo"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "II",
+          "sup": "A"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "simbolo",
+          "valor": "Mg",
+          "sup": "2+"
+        }
+      ],
+      "resultadoEnPalabras": "magnesio con carga positiva dos"
+    },
+    "error": {
+      "enUnaFrase": "Usa el número del grupo como carga sin pensar en si el átomo pierde o gana electrones.",
+      "creenciaDeAtras": "cree que la carga siempre es positiva y que el número que está en el grupo es directamente la carga, sin pensar si conviene perder o ganar",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Grupo"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "VII",
+          "sup": "A"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→ carga +7"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "simbolo",
+          "valor": "Cl",
+          "sup": "7+"
+        }
+      ],
+      "comoSeCacha": "El cloro tendría que perder siete electrones para dejar 8 en la capa anterior, pero el cloro ya tiene 7 de valencia: le falta uno para llegar a 8, así que le conviene ganar, no perder. Una carga de +7 no tiene sentido químico."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Confunde la carga con el número de electrones sin pensar en el signo.",
+        "creenciaDeAtras": "cree que el signo de la carga es siempre positivo, porque no relaciona perder electrones con carga positiva y ganar con carga negativa"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "electrones de valencia",
+        "queEs": "Los electrones más lejanos del núcleo, los únicos que se pierden o se ganan en las reacciones químicas.",
+        "noEsLoMismoQue": "los electrones internos, que están pegados al núcleo y no participan"
+      },
+      {
+        "palabra": "grupo",
+        "queEs": "Las columnas verticales de la tabla periódica. El número del grupo (en romanos, de I a VIII) dice cuántos electrones de valencia tiene el elemento."
+      },
+      {
+        "palabra": "carga",
+        "queEs": "El número de electrones que un átomo ha perdido o ganado, con su signo: más si perdió, menos si ganó.",
+        "noEsLoMismoQue": "el grupo, que es el número de electrones que el átomo tiene sin reaccionar"
+      },
+      {
+        "palabra": "estable",
+        "queEs": "Cuando un átomo tiene 8 electrones de valencia y no quiere cambiar ni perder ni ganar más electrones."
+      }
+    ],
+    "cotas": {
+      "numeros": "grupos de IA a VIIIA en números romanos; elementos de los períodos 1 a 3; cargas de −3 a +3",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "simbolo",
+          "valor": "I",
+          "sup": "A"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "II",
+          "sup": "A"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "III",
+          "sup": "A"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "IV",
+          "sup": "A"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "V",
+          "sup": "A"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "VI",
+          "sup": "A"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "VII",
+          "sup": "A"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "VIII",
+          "sup": "A"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

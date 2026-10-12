@@ -1,0 +1,1036 @@
+{
+  "materia": "quimica",
+  "temaNumero": 11,
+  "titulo": "Concentración en porcentaje en masa",
+  "generadoEn": "2026-10-06T16:19:26.581Z",
+  "canon": {
+    "temaNumero": 11,
+    "materia": "quimica",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Calcular el porcentaje en masa de una disolución",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Anotas la masa del soluto que se disolvió.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Masa del soluto = 20 g"
+            }
+          ],
+          "porQue": "El soluto es lo que se disuelve, y su masa es el numerador de la fracción. Si no lo anotas claro, después no sabes qué número va arriba."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Sumas la masa del soluto más la masa del disolvente para obtener la masa de la disolución completa.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Masa de la disolución = 20 g + 80 g = 100 g"
+            }
+          ],
+          "porQue": "La disolución es soluto más disolvente: todos los gramos que quedan cuando se mezclan. Ese total es el denominador, no la masa del disolvente sola."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Escribes la fracción con la masa del soluto arriba y la masa de la disolución abajo.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": "masa del soluto",
+              "abajo": "masa de la disolución"
+            },
+            {
+              "tipo": "texto",
+              "valor": "="
+            },
+            {
+              "tipo": "fraccion",
+              "arriba": "20 g",
+              "abajo": "100 g"
+            }
+          ],
+          "porQue": "La fracción es lo que te pregunta: qué parte de todo lo que hay es lo que se disolvió. Arriba va el soluto, abajo va el total."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Haces la división del numerador entre el denominador.",
+          "renglon": [
+            {
+              "tipo": "fraccion",
+              "arriba": "20 g",
+              "abajo": "100 g"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 0.2"
+            }
+          ],
+          "porQue": "Dividir nos dice qué decimal es esa fracción: cuánto de uno cabe en todo. Es el paso que pone los decimales en número."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Multiplicas por 100 y pones el signo %.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "0.2 × 100 = 20%"
+            }
+          ],
+          "porQue": "El porcentaje es partes de cien. Por eso multiplicas por 100: conviertes el decimal en cuántas partes de cien. El signo % dice que es eso: partes de cien."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "20 gramos de azúcar disueltos en 80 gramos de agua",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Soluto: 20 g. Disolvente: 80 g. ¿Porcentaje en masa?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "20%"
+        }
+      ],
+      "resultadoEnPalabras": "veinte por ciento"
+    },
+    "error": {
+      "enUnaFrase": "Divide la masa del soluto entre la masa del disolvente en vez de entre la masa de la disolución.",
+      "creenciaDeAtras": "cree que el disolvente es lo que va abajo, porque es el medio donde se disuelve, así que que el agua es la base",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "fraccion",
+          "arriba": "masa del soluto",
+          "abajo": "masa del disolvente"
+        },
+        {
+          "tipo": "texto",
+          "valor": "="
+        },
+        {
+          "tipo": "fraccion",
+          "arriba": "20 g",
+          "abajo": "80 g"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "25%"
+        }
+      ],
+      "comoSeCacha": "Dividir entre el disolvente solo siempre da un porcentaje de más, porque abajo tiene que ir el disolvente más el soluto, que pesa más que el agua sola. Con 20 g en 80 g de agua, abajo van 100 g y sale 20%; si abajo quedó 80 g, sale 25%."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "soluto",
+        "queEs": "Lo que se disuelve: la sustancia que se reparte entre las partículas del disolvente. Ya no se ve, pero sigue ahí y sus gramos cuentan en la masa de la disolución."
+      },
+      {
+        "palabra": "disolvente",
+        "queEs": "Lo que disuelve: el líquido en el que se disuelve el soluto, generalmente agua."
+      },
+      {
+        "palabra": "disolución",
+        "queEs": "La mezcla completa de soluto y disolvente: todo lo que queda cuando se mezclan.",
+        "noEsLoMismoQue": "el disolvente solo, que es solo una parte"
+      },
+      {
+        "palabra": "porcentaje en masa",
+        "queEs": "Cuántos gramos de soluto hay por cada cien gramos de disolución completa."
+      }
+    ],
+    "cotas": {
+      "numeros": "masa del soluto de 5 a 30 gramos; masa del disolvente de 50 a 150 gramos; el porcentaje final siempre entero del 5 al 25",
+      "unidades": [
+        "g"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "×"
+        },
+        {
+          "tipo": "texto",
+          "valor": "%"
+        }
+      ]
+    },
+    "noSePuede": null,
+    "titulo": "Concentración en porcentaje en masa"
+  },
+  "ver": {
+    "temaNumero": 11,
+    "materia": "quimica",
+    "pregunta": "¿Por qué divide entre toda la disolución y no solo entre el agua?",
+    "resumen": "El porcentaje en masa compara el soluto con la mezcla completa: soluto más disolvente. El denominador tiene que ser el total de gramos que hay, no solo los del agua.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué el denominador es la disolución completa (soluto más disolvente) y no solo el disolvente.",
+        "Está en español de México o América Latina.",
+        "Es del nivel de tercero de secundaria: concentración en porcentaje en masa, sin logaritmos ni notación científica.",
+        "Llega a resolver un ejercicio antes del minuto dos, sin presentación larga del canal.",
+        "Diferencia claramente entre soluto, disolvente y disolución, y muestra por qué el error de dividir entre el disolvente solo da un resultado diferente."
+      ],
+      "descarta": [
+        "Divide la masa del soluto entre la masa del disolvente en vez de entre la masa de la disolución completa, o lo enseña como el método correcto.",
+        "Usa solo fórmulas sin explicar qué significa cada parte.",
+        "Es un examen resuelto de otro nivel, o son solo ejemplos sin desarrollo."
+      ],
+      "consulta": "video explicación \"Concentración en porcentaje en masa\" química 3º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "yYSkPM9IA38",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "El video explica por qué se suma soluto más disolvente para el denominador, diferencia claramente los tres términos y lo hace paso a paso. Es corto y va directo al ejemplo sin presentación del canal.",
+      "url": "https://www.youtube.com/watch?v=yYSkPM9IA38",
+      "titulo": "Concentración Porcentaje en MASA ⚗️ Disoluciones",
+      "canal": "Susi Profe",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "LC3jpNZVtT8",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Primer respaldo. También explica el por qué y diferencia soluto de disolución. Es del mismo nivel. Falla en que tarda más en llegar al ejemplo.",
+        "url": "https://www.youtube.com/watch?v=LC3jpNZVtT8",
+        "titulo": "Disoluciones 🧪Aprende a calcular el PORCENTAJE (%) en MASA",
+        "canal": "Centro de Estudios Mayte López",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "UUHgymh5CN4",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Desarrolla varios ejercicios y explica el cálculo. Es más largo, pero mantiene claro por qué va la disolución completa abajo.",
+        "url": "https://www.youtube.com/watch?v=UUHgymh5CN4",
+        "titulo": "CONCENTRACIÓN Porcentaje EN MASA, %masa (Ejercicio 1 - 6 miniejercicios variados)",
+        "canal": "Amigos de la Química",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "El video elegido explica el por qué, es de México, el título y canal salieron literales en la búsqueda, y es del nivel correcto. Los dos respaldos existen y están disponibles; ambos explican por qué también, aunque más lentamente.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "materia": "quimica",
+    "temaNumero": 11,
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Tienes 18 g de sal disueltos en 72 g de agua. El primer paso es anotar la masa del soluto. ¿Cuál de estos datos es?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Masa del soluto = 18 g"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Anotaste primero la masa de lo que se disuelve, el soluto, porque eso va en el numerador.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Masa del disolvente = 72 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Ese es el disolvente, el agua en la que se disolvió la sal. El soluto es la sal, lo que se disuelve.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Masa de la disolución = 90 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Ya sumaste: eso es la disolución completa, lo que va en el denominador, no la masa del soluto.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Porcentaje = 20 %"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Pusiste un porcentaje sin haber anotado ningún dato. El procedimiento empieza anotando los gramos del soluto.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Soluto: 12 g. Disolvente: 108 g. ¿Cuál es la masa de la disolución?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "108 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Diste solo el disolvente. La disolución es soluto más disolvente: todo lo que queda al mezclar.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "120 g"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste los dos: 12 + 108 = 120 g. Esa suma es la masa de la disolución completa.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "96 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste en vez de sumar: 108 − 12 = 96. La disolución no es lo que sobra del disolvente; es todo junto.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "9 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste el disolvente entre el soluto: 108 ÷ 12 = 9. Una división no te da la masa de la disolución; la disolución se arma sumando soluto y disolvente.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Soluto: 8 g. Disolvente: 72 g. ¿Cuál es la fracción que escribes?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": "masa del soluto",
+                "abajo": "masa del disolvente"
+              },
+              {
+                "tipo": "texto",
+                "valor": "="
+              },
+              {
+                "tipo": "fraccion",
+                "arriba": "8 g",
+                "abajo": "72 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Pusiste el disolvente abajo porque es el medio donde se disuelve. Lo que va abajo es la disolución completa, que es soluto más disolvente.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": "masa de la disolución",
+                "abajo": "masa del soluto"
+              },
+              {
+                "tipo": "texto",
+                "valor": "="
+              },
+              {
+                "tipo": "fraccion",
+                "arriba": "80 g",
+                "abajo": "8 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Invertiste la fracción. El soluto va arriba porque es lo que pregunta el porcentaje; la disolución va abajo.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": "masa del soluto",
+                "abajo": "masa de la disolución"
+              },
+              {
+                "tipo": "texto",
+                "valor": "="
+              },
+              {
+                "tipo": "fraccion",
+                "arriba": "8 g",
+                "abajo": "80 g"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Escribiste arriba el soluto y abajo la disolución completa: 8 g sobre 80 g, que es lo que pregunta el porcentaje.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "fraccion",
+                "arriba": "masa del disolvente",
+                "abajo": "masa de la disolución"
+              },
+              {
+                "tipo": "texto",
+                "valor": "="
+              },
+              {
+                "tipo": "fraccion",
+                "arriba": "72 g",
+                "abajo": "80 g"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Pusiste arriba el disolvente. Arriba va el soluto, que es lo que se disolvió y lo que pregunta el porcentaje.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Hiciste la división:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": "25 g",
+            "abajo": "125 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "¿Qué decimal obtienes?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.2"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste 25 entre 125 y obtuviste 0.2. Ese decimal es el paso anterior a multiplicar por 100.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.8"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Eso sale de dividir 100 entre 125, el disolvente entre la disolución. El soluto va arriba: 25 ÷ 125.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "5"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Dividiste al revés: 125 ÷ 25 = 5, el denominador entre el numerador. Cuidado: se divide arriba entre abajo.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "20"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Ese 20 ya es el porcentaje. La pregunta pide el decimal que sale de la división, 25 ÷ 125, antes de multiplicar por 100.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Tienes el decimal 0.15 de la división. ¿Cuál es el porcentaje?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "15%"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste 0.15 × 100 = 15 y le pegaste el signo %. Ese es el porcentaje en masa.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0.15%"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Le pegaste el signo % pero no multiplicaste por 100. El porcentaje es cuántas partes de cien.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "1.5%"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Multiplicaste por 10 en vez de por 100. El porcentaje necesita dos ceros: multiplica por cien.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "85%"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Restaste de 100. El porcentaje de soluto es lo que da la división, no lo que falta para llenar.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 11,
+    "materia": "quimica",
+    "pasoDelCanon": 3,
+    "queFalta": "la masa de la disolución completa, en gramos",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "20 g de azúcar en 80 g de agua:"
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": "masa del soluto",
+        "abajo": "masa de la disolución"
+      },
+      {
+        "tipo": "texto",
+        "valor": "="
+      },
+      {
+        "tipo": "fraccion",
+        "arriba": "20 g",
+        "abajo": "?"
+      },
+      {
+        "tipo": "texto",
+        "valor": "con ? ="
+      },
+      {
+        "tipo": "hueco"
+      },
+      {
+        "tipo": "texto",
+        "valor": "g"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "100",
+      "aceptaTambien": [],
+      "comoSeLee": "cien"
+    },
+    "pistas": [
+      {
+        "texto": "La disolución es todo lo que hay en la mezcla: el azúcar que se disolvió más el agua en la que se disolvió.",
+        "orden": 1
+      },
+      {
+        "texto": "Sumas la masa del soluto y la masa del disolvente para obtener la masa de la disolución completa.",
+        "orden": 2
+      },
+      {
+        "texto": "Junta los dos números del enunciado: ese total es lo que va abajo de la fracción.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "80",
+      "queSeLeDice": "80 g es nada más el agua que disolvió el azúcar. Pero la disolución es el agua más el azúcar junto: todo lo que quedó cuando se mezclaron. Vuelve a lo que es la disolución y suma los dos."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 11,
+    "materia": "quimica",
+    "escalones": [
+      {
+        "situacion": "En la cocina disolviste 15 g de sal en 60 g de agua para hacer salmuera.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "15 g",
+            "abajo": "75 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 100 ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
+          }
+        ],
+        "pregunta": "¿Qué porcentaje en masa es la sal?",
+        "respuesta": {
+          "tecleado": "20",
+          "aceptaTambien": [],
+          "comoSeLee": "veinte por ciento"
+        },
+        "pistas": [
+          {
+            "texto": "El porcentaje dice cuántos gramos de soluto hay en cien gramos de disolución.",
+            "orden": 1
+          },
+          {
+            "texto": "Divide el soluto entre la disolución completa y multiplica el resultado por cien.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "Tu hermana prepara café disolviendo 12 g de café soluble en 108 g de agua caliente.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "12 g",
+            "abajo": "120 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 100 ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
+          }
+        ],
+        "pregunta": "¿Qué porcentaje en masa tiene el café?",
+        "respuesta": {
+          "tecleado": "10",
+          "aceptaTambien": [],
+          "comoSeLee": "diez por ciento"
+        },
+        "pistas": [
+          {
+            "texto": "Aquí el soluto es el café soluble y la disolución pesa 120 g en total.",
+            "orden": 1
+          },
+          {
+            "texto": "Divides 12 entre 120 y el decimal que te salga lo multiplicas por cien.",
+            "orden": 2
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "En el laboratorio disolviste 20 g de azúcar en 105 g de agua para una bebida.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "20 g",
+            "abajo": "125 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 100 ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
+          }
+        ],
+        "pregunta": "¿Qué porcentaje en masa tiene el azúcar?",
+        "respuesta": {
+          "tecleado": "16",
+          "aceptaTambien": [],
+          "comoSeLee": "dieciséis por ciento"
+        },
+        "pistas": [
+          {
+            "texto": "La disolución es azúcar más agua: 20 g + 105 g = 125 g en total.",
+            "orden": 1
+          },
+          {
+            "texto": "Divides el soluto entre la disolución completa: 20 entre 125, luego multiplicas por 100.",
+            "orden": 2
+          },
+          {
+            "texto": "Haz primero la división de 20 entre 125; el decimal que te salga lo multiplicas por cien.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "Un refresco tiene 8% en masa de azúcar. Disolviste azúcar en 92 g de agua.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "g de soluto, que son el 8% de la masa de la disolución"
+          }
+        ],
+        "pregunta": "¿Cuántos gramos de azúcar usaste?",
+        "respuesta": {
+          "tecleado": "8",
+          "aceptaTambien": [],
+          "comoSeLee": "ocho gramos"
+        },
+        "pistas": [
+          {
+            "texto": "Aquí ya sabes el porcentaje. Lo que falta son los gramos de soluto.",
+            "orden": 1
+          },
+          {
+            "texto": "El porcentaje compara el soluto con toda la disolución, no con el agua sola.",
+            "orden": 2
+          },
+          {
+            "texto": "El resto de la disolución es agua: ¿qué porcentaje de la disolución son los 92 g de agua? Con eso sabes cuánto pesa toda la disolución.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 1,
+        "esInverso": true
+      },
+      {
+        "situacion": "Disolviste 18 g de sal en agua. Después de pesar todo, tu balanza marcó 150 g en total.",
+        "expresion": [
+          {
+            "tipo": "fraccion",
+            "arriba": "18 g",
+            "abajo": "150 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "× 100 ="
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "%"
+          }
+        ],
+        "pregunta": "¿Qué porcentaje en masa tiene la sal?",
+        "respuesta": {
+          "tecleado": "12",
+          "aceptaTambien": [],
+          "comoSeLee": "doce por ciento"
+        },
+        "pistas": [
+          {
+            "texto": "La balanza marcó la disolución completa: esos 150 g son lo que va abajo de la fracción.",
+            "orden": 1
+          },
+          {
+            "texto": "Compara la sal con la disolución completa: ¿qué parte de los 150 g es sal? Eso se calcula con una división.",
+            "orden": 2
+          },
+          {
+            "texto": "Divide 18 entre 150 y el decimal que te salga multiplícalo por 100.",
+            "orden": 3
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 11,
+    "materia": "quimica",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien calculó el porcentaje en masa de una disolución: 20 g de azúcar en 80 g de agua. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Anoto lo que se disolvió, el soluto:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "Masa del soluto = 20 g"
+          }
+        ],
+        "siLoTocas": "Ese paso solo copia la masa del azúcar que se disolvió, y los 20 g venían en el problema. El soluto es lo que va arriba de la fracción."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Sumo para sacar la disolución:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "20 g + 80 g = 100 g"
+          }
+        ],
+        "siLoTocas": "Esa suma está bien: 20 g más 80 g son 100 g, el total de lo que hay en la mezcla."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Escribo la fracción:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": "masa del soluto",
+            "abajo": "masa del disolvente"
+          },
+          {
+            "tipo": "texto",
+            "valor": "="
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": "20 g",
+            "abajo": "80 g"
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que les pasa su número a los dos pasos que siguen."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Divido el soluto entre lo que puse abajo:"
+          },
+          {
+            "tipo": "fraccion",
+            "arriba": "20 g",
+            "abajo": "80 g"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 0.25"
+          }
+        ],
+        "siLoTocas": "La división está bien hecha con los números que tiene: 20 entre 80 da 0.25. Ese paso no inventó su número, lo recibió."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Multiplico por 100 lo que dio 20 entre 80:"
+          },
+          {
+            "tipo": "texto",
+            "valor": "0.25 × 100 = 25%"
+          }
+        ],
+        "siLoTocas": "La multiplicación está bien: 0.25 por 100 es 25. Ese renglón trabaja con el número que recibió."
+      }
+    ],
+    "pasoMalo": 3,
+    "arrastre": "El 80 del paso 3 es el denominador que llega a la división del paso 4, y de ahí sale el 0.25 y después el 25 del paso 5. Los pasos 4 y 5 están bien calculados con un número malo: si solo buscaras el renglón raro, no encontrarías ninguno porque los cuatro usos de 80 se ven coherentes entre sí.",
+    "porQue": "¿Y qué usó mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Puso el disolvente abajo en vez de la disolución completa.",
+        "esElBueno": true,
+        "queRevela": "Es lo que pasó: el paso 2 sacó 100 g sumando azúcar más agua, pero abajo del paso 3 quedaron solo los 80 g del agua. Al denominador le faltaron los 20 g del azúcar: la disolución completa son 100 g."
+      },
+      {
+        "texto": "Usó 80 en vez de 20 en el numerador.",
+        "esElBueno": false,
+        "queRevela": "En el paso 3 el numerador es 20 g, el soluto, y eso está bien. El problema está abajo, en el denominador: compáralo con el total que sacó el paso 2."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Cuatro de los cinco pasos están bien hechos. El error no es una cuenta mal hecha: es un dato que no se usó donde correspondía."
+      },
+      {
+        "orden": 2,
+        "texto": "Mira el resultado de la suma del paso 2: ¿aparece en algún renglón de los que siguen, o se quedó sin usar?"
+      },
+      {
+        "orden": 3,
+        "texto": "Compara el total que dio la suma con los números de los renglones donde aparece una fracción. ¿En cuál de los dos pisos de la fracción debería estar ese total?"
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 11,
+    "materia": "quimica",
+    "titulo": "Explícame por qué abajo va la disolución completa y no nada más el disolvente.",
+    "aclaracion": "Con tus palabras, sin escribir la fórmula. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El porcentaje dice cuántos gramos de soluto hay por cada cien gramos de mezcla completa, no por cada cien de agua sola.",
+          "porQueImporta": "Si abajo va sólo el disolvente, tu porcentaje mide qué tan concentrado está en el agua, no cuánto soluto hay en toda la disolución. Son dos cosas distintas, y si pones agua sola nunca te da lo correcto.",
+          "comoSuenaDicha": "Es cuánto soluto hay por cada cien de toda la mezcla, no por cada cien de agua.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "La disolución es soluto más disolvente: es todo lo que queda cuando se mezclan.",
+          "porQueImporta": "Si no sabes qué es la disolución, da lo mismo poner agua o mezcla, y te confundes. Con esta idea clara ves que abajo va el total, y que 20 más 80 hace 100, no queda nada fuera.",
+          "comoSuenaDicha": "La disolución es el azúcar más el agua juntos, todo lo que quedó.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Si abajo va sólo el disolvente, el porcentaje te sale más grande, porque divides entre un número más chico.",
+          "porQueImporta": "Es la forma de cachar el error sin hacer la cuenta cada vez. Si tu respuesta sale más grande que cuando la hiciste bien, probablemente abajo pusiste sólo el agua.",
+          "comoSuenaDicha": "Cuando divido entre menos, el resultado es más grande.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque en la disolución el disolvente es el que lleva el soluto, así que el disolvente es la base.",
+          "queLaDelata": "Es verdad que el disolvente lleva el soluto, pero confunde lo que significa con lo que va abajo. El agua lleva el azúcar, pero la pregunta no es sobre el agua sola, es sobre cuánto soluto hay en todo.",
+          "queLeFalta": "Que diga qué es lo que se reparte entre qué: el soluto repartido en la mezcla completa."
+        },
+        {
+          "respuesta": "Porque el disolvente es lo que va abajo, y abajo va el agua.",
+          "queLaDelata": "Memoriza la posición, no la razón. Es el patrón del error: llama al agua «lo que va abajo» sin conectar con lo que mide.",
+          "queLeFalta": "Que diga que abajo va todo lo que hay, soluto y disolvente juntos."
+        },
+        {
+          "respuesta": "Porque si divido entre el agua sola me sale 25%, pero la respuesta correcta es 20%.",
+          "queLaDelata": "Entiende que algo anda mal, pero no dice por qué. Es el estudiante que vio que sus números no calzan, pero sin la idea de qué es la disolución no puede entender por qué.",
+          "queLeFalta": "Que diga por qué el 25 está mal: porque abajo no va nada más el agua, va el agua más el azúcar."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "El agua es lo que disuelve, así que el agua es lo que va abajo, como si fuera la base de todo.",
+          "seLeContesta": "El agua es lo que disuelve, eso es verdad. Pero cuando se disuelve el azúcar, el agua no queda sola: ahora el agua y el azúcar están juntos. La pregunta es cuánto soluto hay en esa mezcla, no en el agua sola. ¿Qué pesa más: 80 gramos de agua o 80 gramos de agua con 20 gramos de azúcar adentro?",
+          "aDondeLoEmpuja": "A que vea que la disolución no es el disolvente, y que es todo lo que queda cuando se mezclan."
+        },
+        {
+          "siDice": "Sí entendí, nada más no sé cómo escribirlo.",
+          "seLeContesta": "Entonces dime una sola cosa: cuando mezclas 20 gramos de azúcar con 80 de agua, ¿cuántos gramos tiene toda la mezcla? Una vez que respondas eso, escribes que abajo va ese número.",
+          "aDondeLoEmpuja": "A que vea que ya tiene la idea y que nada más hace falta decirla corta."
+        }
+      ],
+      "ejemploQueSiCuenta": "El porcentaje es cuántos gramos de soluto hay por cada cien de la mezcla completa. Tengo 20 gramos de azúcar y 80 de agua: cuando se mezclan tengo 100 gramos de disolución. Abajo va ese 100, no nada más los 80 de agua, porque la pregunta es cuánto soluto hay en todo lo que resultó.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras soluto, disolvente ni disolución: si dice azúcar, agua y mezcla, ya dijo la idea.",
+        "Que no escriba ningún número: la idea cuenta sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  }
+}

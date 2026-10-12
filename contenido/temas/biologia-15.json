@@ -1,0 +1,975 @@
+{
+  "materia": "biologia",
+  "temaNumero": 15,
+  "titulo": "Reproducción sexual y asexual",
+  "generadoEn": "2026-10-06T15:54:10.809Z",
+  "canon": {
+    "temaNumero": 15,
+    "materia": "biologia",
+    "titulo": "Reproducción sexual y asexual",
+    "notacion": "lineal",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Clasificar si un ser vivo se reprodujo sexual o asexualmente",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Cuentas cuántos progenitores tuvo el ser vivo: uno o dos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Una célula madre se divide. Un progenitor."
+            }
+          ],
+          "porQue": "En la reproducción sexual se fusionan gametos, y casi siempre vienen de dos progenitores distintos (algunos seres, como ciertas plantas, pueden fusionar gametos de un mismo individuo). Si un solo ser se divide o se desprende y no hay gametos, no hay mezcla."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Determinas si hubo células sexuales o si fue división directa.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "No hay gametos. Se divide el cuerpo directamente."
+            }
+          ],
+          "porQue": "Las células sexuales sirven sólo para que se mezcle información. Si no hay gametos, no hay mezcla posible, aunque haya dos progenitores."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Revisas si se mezclaron dos informaciones genéticas distintas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La información viene toda de un progenitor. Copia exacta."
+            }
+          ],
+          "porQue": "Aunque haya gametos, la información genética es lo que cambia. Si se mezclan dos informaciones, salen crías distintas entre sí. Si no se mezclan, las crías son copias."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Observas qué tan distintos son los hijos entre sí y los comparas con el progenitor.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Todos los hijos son idénticos al progenitor y entre sí."
+            }
+          ],
+          "porQue": "Sin mezcla de gametos, los hijos reciben la misma información genética, así que son copias (salvo mutaciones muy raras). Con mezcla, cada hijo recibe una combinación distinta."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Clasificas: asexual si no hay mezcla de información; sexual si la hay.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Reproducción: asexual."
+            }
+          ],
+          "porQue": "La diferencia entre sexual y asexual es si dos informaciones se mezclaron o una sola se copió. Todo lo anterior fue para saber esto. Asexual produce copias; sexual produce variación."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una bacteria que se divide en dos células iguales",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Una bacteria se divide sin fusionarse con otra. Sus dos células hijas son copias exactas."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Reproducción asexual."
+        }
+      ],
+      "resultadoEnPalabras": "asexual"
+    },
+    "error": {
+      "enUnaFrase": "Clasifica como asexual a cualquier ser que no busque pareja.",
+      "creenciaDeAtras": "cree que 'asexual' significa 'sin pareja' o 'que no se busca pareja', como la palabra en otros contextos; confunde el mecanismo biológico con el comportamiento de buscar compañero",
+      "pasoQueCorrompe": 1,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "La calabaza no busca a otra planta. Un progenitor."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Reproducción asexual."
+        }
+      ],
+      "comoSeCacha": "Una planta con flores puede reproducirse de las dos maneras. Cuando hace semillas, el polen y el óvulo (gametos) se fusionan: eso es sexual, aunque la planta no se mueva ni busque pareja."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Piensa que los hijos asexuales se parecen mucho, pero no son copias exactas.",
+        "creenciaDeAtras": "cree que 'idéntico' significa 'muy parecido' en vez de 'igual en cada detalle', porque en la vida cotidiana se usa así; no ve la diferencia entre 'casi igual' y 'copia exacta'"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "reproducción sexual",
+        "queEs": "La que fusiona gametos, casi siempre de dos progenitores, y mezcla información genética de ambos en los hijos.",
+        "noEsLoMismoQue": "reproducción asexual, donde un solo progenitor se copia sin mezclar información"
+      },
+      {
+        "palabra": "reproducción asexual",
+        "queEs": "La que hace un progenitor solo, sin gametos ni mezcla. Los hijos son copias genéticas idénticas del progenitor.",
+        "noEsLoMismoQue": "tener un solo compañero o no buscar pareja, que es otra cosa"
+      },
+      {
+        "palabra": "gameto",
+        "queEs": "Célula sexual que lleva información genética de un progenitor. Se fusiona con otro gameto para mezclar dos informaciones y hacer un ser vivo nuevo.",
+        "noEsLoMismoQue": "célula ordinaria, que se copia sin fusionarse"
+      },
+      {
+        "palabra": "idéntico",
+        "queEs": "Igual en su información genética: una copia fiel, salvo mutaciones muy raras.",
+        "noEsLoMismoQue": "parecido, que es similar pero no exacto"
+      },
+      {
+        "palabra": "variación",
+        "queEs": "Las diferencias genéticas que aparecen entre los hijos cuando se mezclan informaciones distintas.",
+        "noEsLoMismoQue": "una diferencia que sólo viene del ambiente, como el tamaño de una planta que recibe más luz"
+      },
+      {
+        "palabra": "información genética",
+        "queEs": "Los datos en el ADN que determina las características de un ser vivo: color, forma, tamaño, comportamiento heredado."
+      }
+    ],
+    "cotas": {
+      "numeros": "no aplica; el tema es clasificación cualitativa sin números",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "sexual"
+        },
+        {
+          "tipo": "texto",
+          "valor": "asexual"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "La respuesta es una palabra o una clasificación categórica, no un número ni una fracción.",
+      "porQue": "El teclado de la app sólo puede escribir dígitos y la diagonal. Las palabras 'sexual' y 'asexual' no se teclean.",
+      "queHagoConEsto": "Este tema necesita otro prompt que acepte palabras como respuesta. Declara formaDeRespuesta como 'palabra' y el tema se mandará a una estación que permita seleccionar o confirmar una clasificación en vez de teclear números."
+    }
+  },
+  "ver": {
+    "temaNumero": 15,
+    "materia": "biologia",
+    "pregunta": "¿Por qué los hijos de un solo progenitor son copias exactas de él?",
+    "resumen": "Hay dos formas de reproducirse: una es que un padre se copie sin mezclar con nadie, y la otra es que dos padres mezclen su información. Lo que cambia es si hay una sola información copiada o dos que se mezclaron.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué la reproducción asexual produce copias idénticas y la sexual produce variación, no nada más qué es cada una.",
+        "Está en español de México o de América Latina. Se acepta España sólo si nada de México ni de América Latina explica el por qué.",
+        "Es del nivel de primero de secundaria: diferencia clara entre una información copiada y dos que se mezclan, sin detalles de meiosis ni mitosis.",
+        "Llega rápido al ejemplo o a la explicación, sin presentación larga del canal.",
+        "No confunde 'asexual' con 'sin pareja': asexual es cuando no hay mezcla de información, no cuando un ser no busca compañero."
+      ],
+      "descarta": [
+        "Enseña que asexual significa un ser que no busca pareja o que 'no se busca pareja', confundiendo el comportamiento con el mecanismo biológico.",
+        "Dice que los hijos asexuales son 'parecidos' o 'muy parecidos' en vez de idénticos o copias exactas.",
+        "Es un examen completo o una lista de tipos de reproducción para memorizar sin explicación.",
+        "Enfatiza estructuras celulares (mitosis, meiosis, cromosomas) antes de dejar clara la diferencia de información genética."
+      ],
+      "consulta": "video explicación \"Reproducción sexual y asexual\" biología 1º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "XJRCR2oAA8w",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Es el único de la lista que en el título dice '¿Sexual o asexual?' como pregunta, lo que sugiere que explica la diferencia de fondo. Del canal @prende_mx, que es del programa oficial de la SEP, así que el nivel y el español están seguros.",
+      "url": "https://www.youtube.com/watch?v=XJRCR2oAA8w",
+      "titulo": "1° Secundaria » Ciencias. Biología » ¿Sexual o asexual?",
+      "canal": "@prende_mx",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "KcFabI60VSs",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Primer respaldo. El título es directo y sin adornos. Es peor que el elegido porque el canal no es tan reconocible, pero si el elegido se cae, éste queda.",
+        "url": "https://www.youtube.com/watch?v=KcFabI60VSs",
+        "titulo": "reproduccion sexual y asexual",
+        "canal": "Miriam, Yailin Juarez",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "WUEOFM8pzq0",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Es de Crash Course, canal de buena reputación. El título tiene un adorno ('La ciencia de *aquello*') que no se ve bien en texto, y el español podría no ser de México ni de América Latina, así que entra sólo si los otros dos fallan.",
+        "url": "https://www.youtube.com/watch?v=WUEOFM8pzq0",
+        "titulo": "La ciencia de *aquello*: Reproducción sexual y asexual: Crash Course Biología #47",
+        "canal": "Crash Course en Español",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "Las tres URL y los tres títulos se copiaron literales de la lista validada. El elegido es del canal oficial @prende_mx, explica el por qué en el título y el español es de México. Los tres videos existen, son públicos y se dejan incrustar según la validación anterior.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 15,
+    "materia": "biologia",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "El viento llevó polen del árbol A a las flores del árbol B, que dio semillas. ¿Cuántos progenitores tuvo esta reproducción?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Uno"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Los árboles no se buscan, pero el polen de un árbol llegó al otro: hay dos progenitores aunque ninguno se mueva.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Dos"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste los dos árboles cuya información genética se mezcló en la semilla: el polen de A y el óvulo de B se fusionaron.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Dos, pero sólo si se tocan"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los árboles no necesitan tocarse: el viento, el agua o los insectos llevan el polen de uno a otro, y aun así hay dos progenitores.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Tres: los dos árboles y la semilla"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La semilla es el resultado de la reproducción, no un progenitor. Los progenitores son los seres que aportan los gametos: aquí, los dos árboles.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Una ameba se parte por la mitad y cada mitad sigue viviendo sola. ¿Hay gametos en esta reproducción?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, dos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste las células hijas como si fueran gametos. Los gametos son células especiales para fusionar información; aquí solo hay división directa.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "No hay"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Viste que la ameba se partió sin fusionarse con nada, así que no hay gametos ni mezcla de información.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, muchos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Crees que cualquier división celular produce gametos. Los gametos solo aparecen cuando dos células se van a fusionar.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, uno: la célula que se divide"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La célula que se divide no es un gameto: un gameto es una célula especial hecha para fusionarse con otra.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Una pareja tiene tres hijos distintos entre sí: uno con los ojos de ella y otro con la nariz de él. ¿Se combinó información de los dos?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "No, es coincidencia"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La información genética viene de fuentes separadas. Que los hijos tengan rasgos de ambos no es coincidencia: es síntoma de mezcla.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, de los dos padres"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Viste que los hijos traen rasgos de la madre y del padre, y que son distintos entre sí: dos informaciones se combinaron.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Solo en algunos hijos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Todos los hijos llevan genes de ambos padres, aunque un rasgo se vea más en algunos que en otros.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sí, pero sólo de la madre"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Cada hijo recibe gametos de los dos padres: se combina la información de la madre y la del padre, no sólo la de ella.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 4,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Una fresa saca estolones y de cada uno nace una planta nueva. ¿Cómo es su información genética respecto a la planta madre?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Parecida, pero no idéntica"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Crees que «idéntico» es lo mismo que «muy parecido». Sin mezcla, la información se copia entera: cada planta nueva trae la misma que la madre.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Es la misma"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Entendiste que sin mezcla de gametos la información se copia entera: las plantas nuevas son clones de la madre.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Mitad de la madre y mitad de otra"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Esa mezcla de dos fuentes ocurre en la reproducción sexual. Los estolones salen de una sola planta: no hay otra fuente que aporte información.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Distinta en cada planta nueva"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La información distinta en cada hijo viene de mezclar dos fuentes. Aquí hay una sola fuente, así que no hay diferencias que vengan de una mezcla.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Una levadura echa una yema que se separa y vive sola, sin unirse a ninguna otra célula. ¿Qué tipo de reproducción es?"
+          }
+        ],
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sexual"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La reproducción sexual fusiona gametos y produce variación. Aquí una sola célula echó una yema, sin fusión: no hubo mezcla.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Asexual"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Clasificaste bien: una sola célula se copió, sin fusión de gametos ni mezcla de información. Es asexual.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Las dos"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Algunos seres hacen las dos en distintos momentos, pero cada reproducción es de un solo tipo. Esta yema, sin fusión, es asexual.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Ninguna: sólo crece"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Cuando una levadura echa una yema que se separa, hay un individuo nuevo: es reproducción, y como no se fusionan gametos, es asexual.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": null,
+  "escalera": null,
+  "error": {
+    "temaNumero": 15,
+    "materia": "biologia",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Una calabaza dio semillas con polen que las abejas trajeron de otra calabaza."
+      },
+      {
+        "tipo": "texto",
+        "valor": "Una estudiante dijo que fue asexual porque no busca pareja. Hay un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Cuento progenitores: la calabaza no busca a otra planta. Un progenitor."
+          }
+        ],
+        "siLoTocas": "Ese renglón es el que falla. Pasa su conclusión a todos los pasos que siguen."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Busco células sexuales: con un solo progenitor no hay con quién fusionarlas. No hay gametos."
+          }
+        ],
+        "siLoTocas": "Este paso sigue bien lo que dijo el paso 1: si hubiera un solo progenitor, no habría fusión de gametos. El problema está antes."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Reviso mezcla: La información viene de un progenitor. Copia exacta."
+          }
+        ],
+        "siLoTocas": "Ese paso deduce bien a partir del paso 2. Aunque lo anterior sea incorrecto, sigue el razonamiento correctamente."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Observo variación: Todos los hijos son idénticos al progenitor."
+          }
+        ],
+        "siLoTocas": "Ese paso describe la consecuencia de creer que no hubo mezcla. Es lógico según lo anterior."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Clasifico: Reproducción asexual."
+          }
+        ],
+        "siLoTocas": "Ese paso nombra correctamente la clasificación que resulta de lo anterior. Repite la conclusión que recibió."
+      }
+    ],
+    "pasoMalo": 1,
+    "arrastre": "El error del paso 1 arrastra a todos: sin otro progenitor, el paso 2 no cuenta gametos; el paso 3 cree que no hay mezcla, el paso 4 ve hijos idénticos y el paso 5 clasifica como asexual. Si el paso 1 contara los dos progenitores, los siguientes llevarían a «sexual». La señal del error es que confunde «no buscar pareja» con «tener un solo progenitor».",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Creyó que, como la planta no busca pareja, no hay otro progenitor.",
+        "esElBueno": true,
+        "queRevela": "Buscar pareja es una conducta, y la reproducción sexual se define por si se fusionan gametos. Las abejas trajeron polen de otra calabaza: hubo dos progenitores aunque ninguna planta se moviera. Contar un solo progenitor es el error que arrastra todo lo demás."
+      },
+      {
+        "texto": "Creyó que sólo los animales se reproducen sexualmente.",
+        "esElBueno": false,
+        "queRevela": "Las plantas también se reproducen sexualmente: en la calabaza, el polen y el óvulo son gametos que se fusionan. Y los corales, que casi no se mueven, sueltan gametos al agua. Lo que decide es la fusión de gametos, no si el ser es animal o se mueve."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Fíjate en el dato que usó la estudiante para contar los progenitores: ¿de verdad decide cuántos hubo?"
+      },
+      {
+        "orden": 2,
+        "texto": "¿Que una planta no busque a otra demuestra que no hubo otra planta? Vuelve a leer qué trajeron las abejas."
+      },
+      {
+        "orden": 3,
+        "texto": "Buscar pareja es una conducta; la reproducción sexual se define por si se fusionan gametos."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 15,
+    "materia": "biologia",
+    "titulo": "Explícame por qué una planta que recibe polen de otra se reproduce sexualmente sin buscar pareja.",
+    "aclaracion": "Con tus palabras, sin usar nombres de procesos. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Al terminar verás cómo suena una buena respuesta. Compárala con la tuya y coméntala con tu maestro o maestra.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "La reproducción sexual fusiona gametos (casi siempre de dos progenitores) para mezclar información genética, sin importar si el ser vivo busca pareja o se mueve.",
+          "porQueImporta": "Sin esta idea, alguien cree que 'sexual' tiene que ver con comportamiento de buscar compañero, cuando en realidad tiene que ver con si dos informaciones genéticas se mezclan o una sola se copia.",
+          "comoSuenaDicha": "Sexual significa que se mezclan dos informaciones genéticas, aunque la planta no busque a otra.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "Las flores producen gametos (polen y óvulos); cuando se fusionan, mezclan la información de las plantas y forman semillas. Eso, y no el simple hecho de tener flores, es lo que hace sexual a esa reproducción.",
+          "porQueImporta": "Evita el atajo «flor = sexual»: una planta con flores también puede copiarse sin gametos, como con los estolones. Lo que decide el tipo es si hubo fusión de gametos.",
+          "comoSuenaDicha": "La flor produce polen y óvulos; cuando se juntan, la información de los dos se mezcla en la semilla.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Buscar pareja es un comportamiento que algunos animales hacen; mezclar dos informaciones genéticas es un mecanismo de reproducción. No son lo mismo.",
+          "porQueImporta": "Si los confundes, clasificas por comportamiento en vez de por biología, y terminas diciendo que cualquier ser que no ande buscando compañero es asexual.",
+          "comoSuenaDicha": "Buscar pareja es algo que hacen algunos animales; mezclar información genética es otra cosa, y las plantas lo hacen aunque no se muevan.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque tiene flores, y las flores son sexuales.",
+          "queLaDelata": "Trata la flor como si fuera sexual por sí sola y se detiene. Una planta con flores también puede copiarse sin gametos, así que tener flores no decide nada.",
+          "queLeFalta": "Que diga qué producen las flores (gametos) y qué pasa con ellos (se fusionan y mezclan la información)."
+        },
+        {
+          "respuesta": "Porque la reproducción sexual es cuando hay dos progenitores, y la planta necesita a otra planta para reproducirse.",
+          "queLaDelata": "Sólo dice cuántos progenitores y no explica qué se junta ni qué pasa con la información.",
+          "queLeFalta": "Que diga qué aporta cada progenitor (gametos con información genética) y que esa información se mezcla, no sólo que sean dos."
+        },
+        {
+          "respuesta": "Porque los hijos de dos plantas distintas salen diferentes, y si salen diferentes es porque es sexual.",
+          "queLaDelata": "Describe lo que se ve (hijos distintos) pero no dice por qué: la causa es que se combinan dos informaciones al fusionarse gametos.",
+          "queLeFalta": "Que diga qué se combina (la información de los gametos) y cómo se forma la semilla."
+        },
+        {
+          "respuesta": "Porque las flores tienen polen y óvulos, así que es sexual porque hay dos partes en la misma flor.",
+          "queLaDelata": "Nombra polen y óvulo y cuenta partes, pero no dice que se fusionan ni que mezclan información: dos partes juntas en una flor no explican nada por sí solas.",
+          "queLeFalta": "Que diga que el polen y el óvulo son gametos que se fusionan y que al hacerlo mezclan su información genética."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "La reproducción asexual es cuando el ser vivo no busca pareja. Las plantas no buscan, así que son asexuales.",
+          "seLeContesta": "Es verdad que las plantas no andan buscando pareja. Pero buscar pareja es un comportamiento, y reproducción sexual es un mecanismo biológico: son cosas distintas. Una planta con flor produce gametos que se fusionan con otros gametos, igual que lo hacen los gametos de dos animales que sí se buscan. ¿Qué hace que sea sexual: que se busquen, o que se mezclen dos informaciones genéticas?",
+          "aDondeLoEmpuja": "A ver que sexual y asexual se definen por la información genética que se mezcla, no por el comportamiento de buscar pareja."
+        },
+        {
+          "siDice": "Claro, porque tiene órganos de reproducción. Un órgano de reproducción es sexual.",
+          "seLeContesta": "No del todo: hay estructuras de reproducción que sólo copian a la planta, como los estolones. Lo que hace sexual a la reproducción de la flor es que el polen y el óvulo son gametos que se fusionan. ¿Qué pasa con la información de los dos gametos cuando se fusionan?",
+          "aDondeLoEmpuja": "A que vea que lo que hace sexual a la flor es la fusión de sus gametos, no tener un órgano de reproducción."
+        },
+        {
+          "siDice": "Entiendo, pero no sé cómo explicarlo sin usar palabras raras.",
+          "seLeContesta": "Piensa en una semilla: ¿qué se juntó para hacerla? Cuéntalo con tus palabras.",
+          "aDondeLoEmpuja": "A que vea que la idea ya la tiene y lo que falta es decirla sin miedo a las palabras."
+        }
+      ],
+      "ejemploQueSiCuenta": "La reproducción sexual es cuando se fusionan gametos y se mezcla información genética. Una planta con flores produce polen y óvulos, que son gametos; cuando el polen de una planta llega a la flor de otra y se fusiona con un óvulo, la información de las dos se mezcla en la semilla. Por eso es sexual, aunque la planta no salga a buscar a otra. Una bacteria que se divide no hace nada de eso: se copia sola, sin mezclar nada.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras sexual, asexual, gameto, información genética ni reproducción: si dice que se mezclan dos fuentes de datos o que algo se copia solo, ya dijo la idea.",
+        "Que no escriba ningún número ni nombre de seres vivos específicos: la idea cuenta sin ejemplos."
+      ]
+    },
+    "noSePuede": null
+  },
+  "casosAparte": {
+    "X3-teclado": {
+      "temaNumero": 15,
+      "materia": "biologia",
+      "teclado": "opciones",
+      "porQueEseTeclado": "La respuesta es una palabra del vocabulario: «sexual» o «asexual». El teclado de dígitos no tiene letras, y con fichas habría que armar la palabra letra por letra, que no es lo que el tema enseña. Con opciones, el estudiante distingue dos términos que se confunden fácilmente y, si se equivoca, la opción le explica por qué no era.",
+      "tecladosDescartados": [
+        {
+          "teclado": "digitos",
+          "porQue": "No tiene letras. La respuesta es una palabra: «sexual» o «asexual». Sin letras, el hueco no puede recibirla."
+        }
+      ],
+      "fichas": [],
+      "comoSeCompara": {
+        "ignoraMayusculas": false,
+        "ignoraAcentos": false,
+        "ignoraEspaciosDeMas": false
+      },
+      "completar": {
+        "pasoDelCanon": 5,
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "Una papa echa un brote por uno de sus ojos y crece una planta nueva, igual a la original."
+          },
+          {
+            "tipo": "texto",
+            "valor": "Fue reproducción"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "respuesta": {
+          "correcta": "asexual",
+          "enAtomos": [
+            {
+              "tipo": "texto",
+              "valor": "asexual"
+            }
+          ],
+          "comoSeLee": "asexual",
+          "aceptaTambien": [],
+          "opciones": [
+            {
+              "etiqueta": "asexual",
+              "esCorrecta": true,
+              "queRevela": "El brote salió de la papa misma, sin gametos ni fusión, y la planta nueva es una copia. Un solo ser vivo se copió: eso es asexual."
+            },
+            {
+              "etiqueta": "sexual",
+              "esCorrecta": false,
+              "queRevela": "Sexual necesita que se fusionen gametos. Aquí la planta nueva brotó de un solo ser vivo, sin gametos ni mezcla de información; por eso no es sexual."
+            }
+          ]
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Cuenta de cuántos seres vivos salió la planta nueva y si algo se fusionó con una célula de otro ser."
+          },
+          {
+            "orden": 2,
+            "texto": "El brote salió de la papa misma, sin semilla de por medio. ¿Intervino algún gameto de otra planta? ¿La planta nueva salió igual o distinta?"
+          },
+          {
+            "orden": 3,
+            "texto": "Si la planta nueva es una copia exacta y no hubo gametos, piensa qué pasó con la información: ¿se mezcló o una sola se copió?"
+          }
+        ],
+        "siTecleaElError": null
+      },
+      "escalera": [
+        {
+          "situacion": "Un guppy macho y una hembra viven juntos en una pecera. Después de unas cuatro semanas nacen veinte crías, cada una con manchas y colores distintos a los de las otras.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "Las crías de guppy nacieron por reproducción"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Esas crías nacieron por reproducción sexual o asexual?",
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Cuenta cuántos peces intervinieron y compara las crías entre sí: ¿salieron todas iguales o cada una trae algo propio?"
+            },
+            {
+              "orden": 2,
+              "texto": "¿De cuántos peces vino la información de las crías? ¿Qué pasa con esa información cuando se combina la de dos?"
+            },
+            {
+              "orden": 3,
+              "texto": "Si la información de dos progenitores se combina al fusionarse sus gametos, cada cría recibe una combinación distinta. ¿Es lo que ves en estas crías?"
+            }
+          ],
+          "respuesta": {
+            "correcta": "sexual",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "sexual"
+              }
+            ],
+            "comoSeLee": "sexual",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "sexual",
+                "esCorrecta": true,
+                "queRevela": "Dos progenitores aportaron gametos que se fusionaron, y las crías salieron distintas entre sí porque cada una recibió una combinación diferente de información."
+              },
+              {
+                "etiqueta": "asexual",
+                "esCorrecta": false,
+                "queRevela": "Asexual da copias: las crías serían iguales entre sí. Aquí cada una salió distinta, señal de que se combinó información de dos progenitores."
+              }
+            ]
+          }
+        },
+        {
+          "situacion": "En un acuario, del cuerpo de una hidra, un animal diminuto, sale un bulto que crece. Un día se desprende y vive solo como otra hidra igual a la primera.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "La hidra nueva nació por reproducción"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Esa hidra nueva nació por reproducción sexual o asexual?",
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Cuenta cuántos animales intervinieron en el bulto que se desprendió. ¿Hubo otro animal con el que se fusionara algo?"
+            },
+            {
+              "orden": 2,
+              "texto": "¿El bulto se formó por la unión de dos gametos o creció directo del cuerpo de la hidra?"
+            },
+            {
+              "orden": 3,
+              "texto": "Compara la hidra nueva con la hidra madre: si es una copia y nada se mezcló, piensa qué clase de reproducción describe eso."
+            }
+          ],
+          "respuesta": {
+            "correcta": "asexual",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "asexual"
+              }
+            ],
+            "comoSeLee": "asexual",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "asexual",
+                "esCorrecta": true,
+                "queRevela": "Del cuerpo de una sola hidra salió un bulto que se desprendió: sin otro progenitor, sin gametos y con una copia como resultado. Eso es asexual."
+              },
+              {
+                "etiqueta": "sexual",
+                "esCorrecta": false,
+                "queRevela": "La reproducción sexual fusiona gametos. Aquí un solo animal formó un bulto de su propio cuerpo, sin fusión y sin mezcla; por eso no es sexual."
+              }
+            ]
+          }
+        },
+        {
+          "situacion": "Una planta de «madre de miles», con flores rosas, tiene plantitas diminutas en el borde de sus hojas. Caen a la tierra, echan raíz y crecen iguales a ella.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "Las plantitas nuevas nacieron por reproducción"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Las plantitas nuevas nacieron por reproducción sexual o asexual?",
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "La planta tiene flores, pero la pregunta es por las plantitas nuevas: ¿de qué parte salieron y de cuántas plantas?"
+            },
+            {
+              "orden": 2,
+              "texto": "¿Hubo gametos que se fusionaran para hacerlas, o brotaron directamente de la hoja?"
+            },
+            {
+              "orden": 3,
+              "texto": "Tener flores no responde la pregunta. Fíjate en cuántas plantas aportaron información y en si las plantitas salieron como copias o con una combinación nueva."
+            }
+          ],
+          "respuesta": {
+            "correcta": "asexual",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "asexual"
+              }
+            ],
+            "comoSeLee": "asexual",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "asexual",
+                "esCorrecta": true,
+                "queRevela": "Las plantitas brotaron de una sola planta, sin fusión de gametos y como copias. Una planta con flores también puede reproducirse así: es asexual."
+              },
+              {
+                "etiqueta": "sexual",
+                "esCorrecta": false,
+                "queRevela": "Tener flores no decide el tipo de reproducción. Estas plantitas salieron de la hoja de una sola planta, sin gametos que se fusionaran y como copias: no es sexual."
+              }
+            ]
+          }
+        },
+        {
+          "situacion": "Los corales de un arrecife no se desplazan ni buscan pareja. Una noche sueltan al agua óvulos y espermatozoides; al encontrarse se unen, y de cada unión nace una larva.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "Las larvas de coral nacieron por reproducción"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Esas larvas nacieron por reproducción sexual o asexual?",
+          "pistas": [
+            {
+              "orden": 1,
+              "texto": "Los corales casi no se mueven, pero ¿eso dice algo sobre lo que se unió para hacer las larvas?"
+            },
+            {
+              "orden": 2,
+              "texto": "Fíjate en lo que sueltan al agua y en lo que pasa cuando se encuentran: ¿se fusiona algo de dos seres vivos?"
+            },
+            {
+              "orden": 3,
+              "texto": "Cuando se fusionan células de dos progenitores, la información de ambos se combina en cada larva. Compara eso con lo que describe la situación."
+            }
+          ],
+          "respuesta": {
+            "correcta": "sexual",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "sexual"
+              }
+            ],
+            "comoSeLee": "sexual",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "sexual",
+                "esCorrecta": true,
+                "queRevela": "Óvulos y espermatozoides son gametos y aquí se fusionan, combinando información de dos corales. Que no se muevan ni busquen pareja no cambia que sea sexual."
+              },
+              {
+                "etiqueta": "asexual",
+                "esCorrecta": false,
+                "queRevela": "Crees que sin movimiento ni pareja no hay reproducción sexual, pero eso es comportamiento. Aquí se fusionan gametos de dos corales, y eso es lo que decide el tipo."
+              }
+            ]
+          }
+        }
+      ],
+      "noSePuede": null,
+      "titulo": "Reproducción sexual y asexual"
+    }
+  }
+}

@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { AndamioProvider } from '../src/estado/Andamio';
 import { colores } from '../src/tema';
 
 SplashScreen.preventAutoHideAsync().catch(() => {
@@ -39,13 +40,15 @@ export default function Raiz() {
   return (
     <SafeAreaProvider>
       <StatusBar style="light" />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: colores.fondo },
-          animation: 'slide_from_right',
-        }}
-      />
+      <AndamioProvider>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: colores.fondo },
+            animation: 'slide_from_right',
+          }}
+        />
+      </AndamioProvider>
     </SafeAreaProvider>
   );
 }

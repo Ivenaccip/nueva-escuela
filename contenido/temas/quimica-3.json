@@ -1,0 +1,174 @@
+{
+  "materia": "quimica",
+  "temaNumero": 3,
+  "titulo": "Los estados de la materia y sus partículas",
+  "generadoEn": "2026-10-06T16:16:26.461Z",
+  "canon": {
+    "temaNumero": 3,
+    "materia": "quimica",
+    "titulo": "Los estados de la materia y sus partículas",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Describir un estado de la materia y cómo se mueven sus partículas",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Nombras el estado en el que se encuentra el material: sólido, líquido o gas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El agua en hielo es un sólido."
+            }
+          ],
+          "porQue": "El estado te dice cómo se comportan las partículas por dentro. No es una etiqueta: es la razón de todo lo que ves."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Dices si el material tiene forma propia o si toma la forma del recipiente.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El hielo mantiene su forma aunque lo cambies de recipiente."
+            }
+          ],
+          "porQue": "La forma propia te dice si las partículas están atrapadas en un lugar fijo o si pueden moverse. Es la primera pista de qué tan juntas están."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Dices si el material tiene volumen propio o si se expande para llenar todo el recipiente.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El hielo ocupa el mismo volumen aunque lo metas en un vaso o en una caja."
+            }
+          ],
+          "porQue": "El volumen propio significa que las partículas no pueden separarse más. Es la segunda pista de qué tan unidas están y qué tan rápido se mueven."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Describes qué tan juntas están las partículas: pegadas, cercanas o muy separadas.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "En el hielo las partículas están pegadas unas a otras, sin espacios vacíos entre ellas."
+            }
+          ],
+          "porQue": "Las partículas no desaparecen ni se estiran: siguen siendo las mismas. Lo que cambia es cuánto espacio hay entre ellas. Juntas significa sólido; cercanas con movimiento significa líquido; separadas significa gas."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Describes qué tan rápido se mueven las partículas: inmóviles, vibrando o moviéndose libremente.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "En el hielo las partículas vibran en el mismo lugar, sin poder salirse de su sitio."
+            }
+          ],
+          "porQue": "El movimiento no aparece ni desaparece: existe en todos los estados, pero a distinta velocidad. Inmóviles con juntas significa sólido; vibrando con cercanas significa líquido; moviéndose libremente con separadas significa gas. El movimiento explica el cambio de estado."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "comparar cómo están las partículas en el agua sólida, en el agua líquida y en el vapor",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Explica cómo están las partículas en un cubito de hielo."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Sólido: forma propia, volumen propio, partículas pegadas, vibrando sin salirse del lugar."
+        }
+      ],
+      "resultadoEnPalabras": "sólido con forma y volumen propios, partículas pegadas y vibrando"
+    },
+    "error": {
+      "enUnaFrase": "Cree que las partículas en el gas se estiran o se hacen más grandes, o que en el sólido las partículas no se mueven.",
+      "creenciaDeAtras": "cree que el estado de la materia cambia porque las partículas mismas se transforman, cuando en realidad se transforman la distancia entre ellas y la velocidad del movimiento, pero las partículas siguen siendo iguales",
+      "pasoQueCorrompe": 4,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "En el gas las partículas se estiran y se hacen más grandes para llenar todo el espacio."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Gas: forma y volumen del recipiente, partículas más grandes y estiradas."
+        }
+      ],
+      "comoSeCacha": "Si las partículas fuera más grandes en el gas, pesarían más, y el gas pesaría más que el sólido de la misma materia. Pero un cubito de hielo y su vapor pesan lo mismo: nada se estira, nada crece, solo se separan."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que en el sólido las partículas están completamente quietas, sin ningún tipo de movimiento.",
+        "creenciaDeAtras": "cree que el movimiento de las partículas empieza cuando el sólido se convierte en líquido, en vez de estar presente en todos los estados pero a distintas velocidades"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "sólido",
+        "queEs": "Un estado de la materia donde las partículas están pegadas unas a otras, vibrando en el mismo lugar sin poder moverse de su sitio. Tiene forma propia y volumen propio.",
+        "noEsLoMismoQue": "duro o frío: un sólido puede ser blando o caliente y seguir siendo sólido"
+      },
+      {
+        "palabra": "líquido",
+        "queEs": "Un estado de la materia donde las partículas están cercanas pero pueden deslizarse una sobre la otra. Tiene volumen propio pero no forma propia: toma la forma del recipiente.",
+        "noEsLoMismoQue": "mojado: mojado es una sensación, líquido es un estado de la materia"
+      },
+      {
+        "palabra": "gas",
+        "queEs": "Un estado de la materia donde las partículas están muy separadas y se mueven libremente en todas direcciones. No tiene forma propia ni volumen propio: se expande para llenar todo el espacio disponible.",
+        "noEsLoMismoQue": "aire: aire es una mezcla de gases"
+      },
+      {
+        "palabra": "partículas",
+        "queEs": "Las piezas minúsculas que forman toda la materia. Son iguales en todos los estados y no cambian de tamaño: solo cambia la distancia entre ellas y su velocidad de movimiento.",
+        "noEsLoMismoQue": "átomos, aunque los átomos son un tipo de partícula"
+      },
+      {
+        "palabra": "volumen propio",
+        "queEs": "Cuando un material ocupa siempre el mismo espacio sin importar el recipiente en el que lo metas. Los sólidos y los líquidos tienen volumen propio.",
+        "noEsLoMismoQue": "forma propia: el volumen es cuánto espacio ocupa, la forma es cómo se ve"
+      },
+      {
+        "palabra": "forma propia",
+        "queEs": "Cuando un material mantiene siempre la misma forma sin importar el recipiente en el que lo metas. Solo los sólidos tienen forma propia.",
+        "noEsLoMismoQue": "volumen propio: la forma es cómo se ve, el volumen es cuánto espacio ocupa"
+      }
+    ],
+    "cotas": {
+      "numeros": "ejemplos de temperaturas y cambios de estado entre 0 °C y 150 °C; descripciones cualitativas del movimiento y la distancia entre partículas, sin mediciones numéricas de velocidad o tamaño",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "sólido"
+        },
+        {
+          "tipo": "texto",
+          "valor": "líquido"
+        },
+        {
+          "tipo": "texto",
+          "valor": "gas"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema pide comparar tres estados de la materia usando un esquema de puntos que el estudiante observa, no que teclea.",
+      "porQue": "La respuesta es un dibujo: tres recuadros con puntos que representan partículas en distintas posiciones y distancias. El teclado de la app solo tiene números, la diagonal y borrar, y la pantalla no puede dibujar puntos que el estudiante coloque.",
+      "queHagoConEsto": "Este tema debe ir a un prompt distinto que permita esquemas gráficos. La notación es figura, no lineal. Las seis estaciones necesitan la capacidad de mostrar y calificar dibujos de partículas, no solo texto."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

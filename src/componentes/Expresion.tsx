@@ -137,7 +137,8 @@ export function Expresion({
       const alPie = altoBase - pegado;
 
       atomos.push({
-        pegado: false,
+        // Dos símbolos seguidos son una fórmula (C₆H₁₂O₆), no dos palabras.
+        pegado: partes[i - 1]?.tipo === 'simbolo',
         nodo: (
           <View
             key={`s${i}`}

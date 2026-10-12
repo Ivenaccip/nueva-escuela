@@ -37,7 +37,7 @@
     },
     "formaDeRespuesta": {
       "type": "string",
-      "description": "Que forma tiene lo que el estudiante contesta en las estaciones 3 y 4, y con ella se decide a que prompt va el tema. El teclado de hoy tiene DOCE teclas y nada mas: 1-9, 0, la diagonal y borrar (app/estacion/completar.tsx:23-28). numero: digitos pelones, y se teclean. fraccion: numerador diagonal denominador, y se teclea. expresion: la respuesta necesita un caracter que el teclado NO tiene — el punto decimal, el signo menos, un exponente, la x de multiplicar, los dos puntos de una razon, o <, > y =. palabra: la respuesta es una palabra o un nombre. trazo: se contesta dibujando. Solo numero y fraccion corren en las estaciones 3 y 4 de hoy; expresion, palabra y trazo salen por otro prompt y se llena noSePuede. Medir esto contra el teclado ANTES de escribir los escalones es lo que evita que la estacion 4 pida una respuesta intecleable y cobre tres reintentos por tema.",
+      "description": "Que forma tiene lo que el estudiante contesta en las estaciones 3 y 4, y con ella se decide a que prompt va el tema. Hay cuatro teclados (digitos, fichas, opciones y texto) y el tema elige uno en X3-respuesta-no-numerica: aqui solo se dice que forma tiene la respuesta. numero: el resultado ES un numero, un entero, y se teclea con digitos. fraccion: numerador diagonal denominador, y se teclea con digitos. expresion: la respuesta necesita un caracter que el teclado de digitos no tiene (punto decimal, signo menos, parentesis, exponente, la x de multiplicar, los dos puntos de una razon, <, > o =), o letras de variable, simbolos de elementos o una formula: se arma con fichas. palabra: la respuesta es un termino, un nombre o un par que se confunde: se elige entre opciones o se escribe con texto. trazo: se contesta dibujando y no hay teclado que lo cubra. numero y fraccion corren por 03-completar y 04-escalera; expresion y palabra salen por X3-respuesta-no-numerica, que SI se sirve; solo trazo llena noSePuede. Si el resultado del ejemplo no trae ni una cifra no es numero: es palabra o expresion.",
       "enum": [
         "numero",
         "fraccion",
@@ -278,7 +278,8 @@
       "additionalProperties": false
     },
     "noSePuede": {
-      "$ref": "#/$defs/noSePuede"
+      "$ref": "#/$defs/noSePuede",
+      "description": "null cuando el tema se puede recorrer completo, y eso incluye las respuestas expresion y palabra: se sirven con el teclado de fichas, de opciones o de texto. Se llena cuando la respuesta es un trazo, o cuando alguno de los cinco pasos no se puede escribir con los cuatro atomos."
     }
   },
   "required": [
@@ -490,7 +491,7 @@
     },
     "tecleado": {
       "type": "string",
-      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que el teclado de la app puede escribir (app/estacion/completar.tsx:23-28, doce teclas: 1-9, 0, / y borrar). Sin punto decimal, sin signo menos, sin letras, sin parentesis, sin exponente, sin x de multiplicar, sin dos puntos. LA DIAGONAL ES LA RAYA DE UNA FRACCION Y NADA MAS: \"a/b\" se dibuja apilado como la fraccion a sobre b (src/componentes/Expresion.tsx:171 y 193) y el lector de pantalla lo dicta \"a entre b\" (Expresion.tsx:54-55). Nunca es \"por\", ni \"y sobran\", ni \"a\", ni \"con\", ni un separador de factores. Si la respuesta son dos numeros que no son numerador y denominador, la pregunta esta mal planteada: se parte en dos escalones.",
+      "description": "Lo que queda escrito en el hueco. Solo digitos y la diagonal: es todo lo que escribe el teclado de digitos de la app (src/componentes/Teclado.tsx, TECLAS_DE_DIGITOS: 1-9, 0, / y borrar), que es el que piden 03-completar y 04-escalera. Un tema que necesita otro caracter sale por X3-respuesta-no-numerica, con su propio teclado. Sin punto decimal, sin signo menos, sin letras, sin parentesis, sin exponente, sin x de multiplicar, sin dos puntos. LA DIAGONAL ES LA RAYA DE UNA FRACCION Y NADA MAS: \"a/b\" se dibuja apilado como la fraccion a sobre b (src/componentes/Expresion.tsx:171 y 193) y el lector de pantalla lo dicta \"a entre b\" (Expresion.tsx:54-55). Nunca es \"por\", ni \"y sobran\", ni \"a\", ni \"con\", ni un separador de factores. Si la respuesta son dos numeros que no son numerador y denominador, la pregunta esta mal planteada: se parte en dos escalones.",
       "pattern": "^[0-9]+(/[0-9]+)?$",
       "maxLength": 9
     },

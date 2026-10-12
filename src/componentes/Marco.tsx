@@ -55,7 +55,7 @@ const estilos = StyleSheet.create({
   },
   escenario: {
     flex: 1,
-    backgroundColor: '#0B0A08',
+    backgroundColor: colores.escenario,
     alignItems: 'center',
     justifyContent: 'center',
   },

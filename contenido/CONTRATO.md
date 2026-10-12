@@ -15,6 +15,8 @@ contenido/
   LEEME.md                 la página que se lee primero: el orden de las llamadas
   CONTRATO.md              este archivo
   generar.mjs              genera un tema completo llamando a la API
+  teclado.mjs              lo que el caso X3 tiene que cumplir además de su esquema
+  admision.mjs             qué temas puede abrir la app (indexar.mjs y tanda.mjs)
   temarios/*.json          los 165 temas, ya escritos
   temas/*.json             la salida, un archivo por tema
   esquema/
@@ -222,7 +224,7 @@ El canon es el paso 0 y se genera **una vez por tema**. Esquema:
 canon
 ├── temaNumero, materia, titulo        copiados del temario, para trazar
 ├── notacion                           lineal | tabla | figura   → a qué prompt va
-├── formaDeRespuesta                   numero | fraccion | palabra | trazo
+├── formaDeRespuesta                   numero | fraccion | expresion | palabra | trazo
 ├── procedimiento
 │   ├── nombre
 │   └── pasos[5]
@@ -279,7 +281,11 @@ canon recortado.
 
 **`notacion` es el ruteo.** El canon decide, y el llamador manda el tema al
 prompt que corresponde. `tabla` y `figura` no van a los prompts normales de
-estación: hoy la app no dibuja ni tablas ni figuras (ver §5).
+estación: hoy la app no dibuja ni tablas ni figuras (ver §5). Y `formaDeRespuesta`
+rutea las estaciones 3 y 4: `numero` y `fraccion` a los prompts normales, `expresion`
+y `palabra` a X3, que elige el teclado del tema (`digitos`, `fichas`, `opciones` o
+`texto`) y que la app sirve. La función es una sola, `casoDelCanon` en
+`contenido/teclado.mjs`, y la usan `generar.mjs`, `tanda.mjs` e `indexar.mjs`.
 
 ### La tabla de ruteo, que vive sólo aquí
 
@@ -291,6 +297,7 @@ qué pasa con las estaciones 2, 3, 4 y 5.
 |---|---|---|---|---|
 | `lineal` | `numero` | `02-contacto` | `03-completar` + `04-escalera` | `05-error` |
 | `lineal` | `fraccion` | `02-contacto` | `03-completar` + `04-escalera` | `05-error` |
+| `lineal` | `numero` o `fraccion`, con el resultado sin una cifra | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `expresion` | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `palabra` | `02-contacto` | `X3-respuesta-no-numerica` | `05-error` |
 | `lineal` | `trazo` | `02-contacto` | `X2-figura` | `05-error` |
@@ -301,7 +308,7 @@ qué pasa con las estaciones 2, 3, 4 y 5.
 | `tabla` | `trazo` | `X1-tabla` | `X2-figura` | `X1-tabla` |
 | `figura` | cualquiera | `02-contacto` | `X2-figura` | `05-error` |
 
-Tres cosas que la tabla no dice sola:
+Lo que la tabla no dice sola:
 
 - **`formaDeRespuesta` no rutea la estación 2.** Ahí no se teclea: se toca una
   tarjeta. Un tema con respuesta de `palabra` sí puede tener su estación 2 normal.
@@ -314,6 +321,10 @@ Tres cosas que la tabla no dice sola:
   y `$defs.tecleado` la rechazó tres veces seguidas: el tope tenía razón, lo que
   estaba mal era el ruteo. De los veinte primeros temas de matemáticas, **diez** están
   en ese caso (ver `LEEME.md`), así que no es un caso raro: es la mitad del temario.
+  X3 los contesta con el teclado de `fichas` (punto, menos, paréntesis, comparaciones).
+- **Un `numero` o `fraccion` sin una sola cifra en su resultado** (`contenido/forma.mjs`)
+  es una frase mal declarada: se rutea a X3 igual que una `palabra`. Antes
+  `generar.mjs` se detenía ahí («forma dudosa»).
 - **`X4-no-encaja` no está en la tabla.** No se rutea por notación: se llama una
   vez por cada entrada de `noEncajan[]`, después de que el anfitrión ya tiene sus
   seis estaciones.
@@ -361,7 +372,7 @@ genera:
 Así que **son siete llamadas por tema, no ocho**: el canon y las seis estaciones.
 No hay `07-cierre.md` y no hace falta.
 
-### Falta el adaptador
+### El adaptador
 
 `src/contenido/autoria.ts` tiene los tipos del contenido redactado, el espejo de
 los esquemas. `src/contenido/tipos.ts` tiene los de la pantalla. **No son la misma
@@ -370,22 +381,42 @@ forma y no se pueden intercambiar**: la salida de `04-escalera` es
 `escalon: number`; los `motivos` de la 5 pasan de `string[]` a objetos con
 `esElBueno`; la 2 pierde `indice` y `total`.
 
-Entre los dos va `src/contenido/adaptar.ts`, **que todavía no existe**: la única
-puerta que recibe el `TemaRedactado` más el estado del estudiante y devuelve el
-`Tema` que las pantallas ya saben pintar. Ahí y sólo ahí se derivan `escalon`,
-`indice`, `total`, `pistas` como contador, `pistaEn` y `estaciones[].estado`; ahí
-se aplana `escalones[i]` al escalón en curso; ahí se arma el `cierre`. Mientras no
-exista, el contenido generado se puede guardar y validar, pero las pantallas siguen
-leyendo `demo.ts`.
+Entre los dos va `src/contenido/adaptar.ts`: la única puerta que recibe el
+`TemaRedactado` más el avance del estudiante y devuelve el `Tema` que las
+pantallas pintan. Ahí y sólo ahí se derivan `escalon`, `indice`, `total`,
+`pistas` como contador, `pistaEn` y `estaciones[].estado`; ahí se aplana
+`escalones[i]` al escalón en curso; ahí se arma el `cierre`.
 
-`src/contenido/calificar.ts` sí existe: son las funciones puras que comparan lo
-tecleado con `respuesta.tecleado` y `aceptaTambien`, y que devuelven qué decir
-(`siTecleaElError.queSeLeDice`, `queRevela`, `siLoTocas`). Lo que falta ahí es
-quién las llame.
+El avance lo guarda `src/estado/` (`modelo.ts` es puro, `Andamio.tsx` lo reparte
+a las pantallas, `almacen.ts` lo escribe al disco) y el catálogo de temas
+abribles lo arma `contenido/indexar.mjs`. `src/contenido/biblioteca.ts` junta las
+dos cosas.
 
-**Consecuencia para los esquemas:** ningún esquema de estación lleva un campo de
-estado. Ni `pistas: number`, ni `escalon`, ni `indice`, ni `estado`. Si un
-prompt pide uno, está mal.
+**La pantalla no ve la respuesta correcta, y así tiene que seguir.** `adaptar`
+no la deja pasar al `Tema`; las estaciones que califican leen el contenido
+redactado por el estado (`useAndamio().redactado`) y se lo dan a
+`src/contenido/calificar.ts`.
+
+**El orden de las opciones lo baraja la app, no el generador.** Medido sobre los
+nueve temas jugables, el motivo bueno de la estación 5 era el primero en los
+nueve, y la opción correcta de la 2 era la A o la B en 35 de 39 preguntas.
+`src/contenido/mezclar.ts` las baraja una vez, con una semilla que sale del tema
+(el mismo orden mañana que hoy) y reescribe las letras. Por eso **ningún texto
+del contenido puede citar una letra ni una posición** («la opción B», «el primer
+motivo»): al reordenar quedaría apuntando a otra cosa.
+
+**Un tema se abre sólo si tiene las seis estaciones** y ninguna de la 2 a la 6
+con `noSePuede` lleno (`contenido/indexar.mjs`). La 1 puede traerlo lleno: sin
+video la tarjeta lo dice y el tema se publica.
+
+En un tema ruteado a X3, la 3 y la 4 son las de `casosAparte['X3-teclado']`, y
+`completar` y `escalera` de la raíz quedan en `null`. Ese caso entra si trae
+`noSePuede` en `null`, al menos tres escalones y pasa las comprobaciones de
+`contenido/teclado.mjs` (cada respuesta se puede escribir con el teclado elegido, un
+solo hueco por renglón, con `opciones` una sola buena...). La regla es una sola
+(`contenido/admision.mjs`) y la comparten `indexar.mjs` y `tanda.mjs`. El `noSePuede`
+del canon cuenta, salvo el de un canon viejo con respuesta `palabra` o `expresion`
+(`noSePuedeVigente`): se escribió cuando el teclado de dígitos era el único.
 
 ### Las listas son listas
 
@@ -404,34 +435,49 @@ prompt pide uno, está mal.
 Cada límite con su archivo y su línea. Ningún prompt puede pedir algo que caiga
 en esta lista.
 
-### El teclado: dígitos y diagonal, nada más
+### El teclado: cuatro, y el de dígitos sólo escribe dígitos
 
-`app/estacion/completar.tsx:23-28`
+`src/componentes/Teclado.tsx`. El tema elige UN teclado para las estaciones 3 y 4 (el
+caso `X3-respuesta-no-numerica`), la app lo arma una vez y no lo cambia entre las dos:
 
-```js
-const FILAS = [['1','2','3'], ['4','5','6'], ['7','8','9'], ['/','0',BORRAR]];
-```
+| Teclado | Qué es |
+|---|---|
+| `digitos` | `0`–`9`, `/` y borrar |
+| `fichas` | hasta 15 teclas que define el tema, y borrar: tres columnas hasta 11 fichas, cuatro hasta 15 |
+| `opciones` | el hueco se contesta eligiendo una de 2 a 4 etiquetas (la app las baraja) |
+| `texto` | el teclado del sistema |
 
-Doce teclas. **No hay** punto decimal, signo menos, letras, paréntesis,
-espacio, `^`, `=` ni `,`. La respuesta de la estación 3 tiene que casar con:
+Una ficha escribe lo que trae pintado y borrar quita **una ficha entera**. Con
+`opciones`, elegir una equivocada muestra su `queRevela`. Sólo `texto` perdona algo
+(`comoSeCompara`: mayúsculas, acentos, espacios de más); con los otros tres la
+comparación es exacta salvo espacios, el signo menos y los ceros de adelante
+(`src/contenido/calificar.ts`). Lo más largo que se puede escribir son 24 caracteres.
+
+`fichas` obliga a **producir** la respuesta y `opciones` a **reconocerla**; por eso el
+orden de elección es `digitos`, `fichas`, `opciones`, `texto`, y se para en el primero
+que sirva (ver `prompts/X3-respuesta-no-numerica.md`).
+
+Los temas que no pasan por X3 (`03-completar` y `04-escalera`) usan el de dígitos, y
+su respuesta tiene que casar con:
 
 ```
 ^[0-9]+(/[0-9]+)?$
 ```
 
-Por decisión del contrato, la estación 4 se somete a la misma regla, aunque su
-campo sea un `TextInput` del sistema (`app/estacion/escalera.tsx:86-95`) y
-físicamente acepte letras. Mientras el teclado de la 3 sea éste, las dos
-estaciones piden lo mismo.
+La estación 4 usa el mismo teclado del tema que la 3: con `digitos` o `texto` su campo
+es un `TextInput` del sistema (`app/estacion/escalera.tsx`), con `fichas` el teclado va
+abajo y con `opciones` es la lista.
 
-Lo que esto mata: `0.8 g/cm³` como respuesta, `−25 m`, `NaCl`, `se hunde`,
-`(a+b)²`. Las unidades **nunca** se teclean: van en el enunciado, y el hueco
-recibe sólo el número.
+Lo que el de dígitos no escribe: `0.8`, `−25`, `NaCl`, `se hunde`, `(a+b)²`. Ahí el
+tema va a X3 y se contesta con fichas, opciones o texto. Las unidades **nunca** se
+teclean, con ningún teclado: van en el enunciado, y el hueco recibe sólo el valor.
 
 **La diagonal es la raya de UNA fracción y nada más.** `a/b` se dibuja apilado como
 a sobre b (`src/componentes/Expresion.tsx:171` y `193`) y el lector de pantalla lo
 dicta «a entre b» (`Expresion.tsx:54-55`). No es «por», ni «y sobran», ni «a», ni un
-separador de factores.
+separador de factores. Y sólo se apila lo que es **exactamente** `a/b` con dígitos
+(`TECLEADA_FRACCION`, `Expresion.tsx:25`), con cualquier teclado: una respuesta de
+fichas como `3/5×2` se pinta en una línea.
 
 Esto importa más que el resto de la sección, porque es el único fallo del juego que
 **no deja rastro**: un `"6/3"` escrito para «6 cajas y sobran 3 pelotas» pasa la
@@ -473,8 +519,8 @@ concéntricos. El único SVG del proyecto es el círculo del cierre
 
 ### La opción de la estación 2 cabe en dos renglones
 
-`app/estacion/contacto.tsx:120-131` — la tarjeta es `minHeight: 64`, no alto fijo, y
-el envoltorio `flex: 1` de `contacto.tsx:70-77` está puesto a propósito para que una
+`app/estacion/contacto.tsx:171-182` — la tarjeta es `minHeight: 64`, no alto fijo, y
+el envoltorio `flex: 1` de `contacto.tsx:108-117` está puesto a propósito para que una
 opción larga **se parta** en vez de desbordarse. Aun así el bloque se ve mal cuando
 una de las cuatro es el doble de alta que las otras, y una opción más larga se elige
 por larga, no por cierta.
@@ -491,69 +537,34 @@ Los tres esquemas que pintan esa misma tarjeta la rutean por `parteMatCorta`:
 `$defs.renglon` —24 átomos de 90— y era un tope treinta veces más flojo por la puerta
 de atrás para la misma tarjeta de 64.
 
-### El video no se reproduce
+### Lo que antes no se podía pintar y ya se pinta
 
-`app/estacion/ver.tsx:37-49` — la tarjeta es un recuadro y el `Pressable` de
-reproducir **no tiene `onPress`**. `ContenidoVer`
-(`src/contenido/tipos.ts:44-49`) no tiene ni URL. La estación 1 va a producir
-una URL y una duración que hoy la pantalla ni recibe ni abre: el contenido se
-guarda, la pantalla se conecta después.
+Estos límites estaban aquí y ya no lo son. Se dejan escritos porque cada uno
+cambió lo que el contenido puede pedir.
 
-### La estación 5 no sabe cuál motivo es el bueno
+- **El teclado propio de cada tema** (`fichas`, `opciones` y `texto`, además del de
+  dígitos): `src/componentes/Teclado.tsx`. Con él se abren los temas de palabra, de
+  fórmula y de decimales o negativos que antes sólo se podían nombrar. Cuando el hueco
+  se contesta bien, la app lo pinta con `respuesta.enAtomos` (`CaCl₂`, no `CaCl2`).
 
-`app/estacion/error.tsx:79-100` — `motivos: string[]`, cadenas pelonas. No hay
-cuál es la correcta, ni qué pasa al elegir mal. El contenido nuevo trae objetos;
-la pantalla tendrá que leerlos.
-
-### La estación 6 no tiene rúbrica
-
-`app/estacion/explicar.tsx:14-22` — lo escrito se queda en `useState` y `listo`
-sólo navega a `/cierre`. No hay nada contra qué juzgar la explicación. La
-rúbrica es contenido nuevo.
-
-### El texto de las pistas no tiene dónde leerse
-
-Éste es el límite que no estaba declarado, y es el más caro.
-
-Las estaciones 3, 4 y 5 generan pistas: 2 o 3 en la 3, 2 o 3 **por escalón** en la
-4, 2 o 3 en la 5. Son hasta quince por tema, unas 2 500 en los 165. Y hoy no hay
-por dónde leerlas:
-
-- `app/estacion/completar.tsx` — el `Pressable` de «una pista en …» **no tiene
-  `onPress`**. Es un adorno.
-- `app/estacion/escalera.tsx` y `app/estacion/error.tsx` — no hay ni botón, sólo el
-  contador de `BarraEstacion`.
-- `src/componentes/` — no hay hoja, modal ni tarjeta donde quepa el texto.
-
-Falta `src/componentes/HojaPista.tsx`: un `Modal` con la `Tarjeta` que ya existe,
-que reciba `pistas[]` y el índice liberado. Es el primer componente que el
-contenido nuevo pide, y hasta que exista los esquemas siguen pidiendo las pistas a
-propósito: se generan una vez y duran, y bajarlas a opcionales ahora dejaría 165
-temas sin ellas el día que la hoja se escriba.
-
-### Nadie compara la respuesta
-
-`app/estacion/completar.tsx`, `escalera.tsx`, `error.tsx` y `contacto.tsx` — los
-tres «comprobar» y el «es ese» hacen `router.push` sin condición. El contenido que
-la API produce para ese instante —`respuesta.tecleado`, `aceptaTambien`,
-`siTecleaElError`, `opciones[].queRevela`, `motivos[].esElBueno`,
-`pasos[].siLoTocas`— se guarda y nadie lo lee.
-
-La mitad lógica ya está en `src/contenido/calificar.ts`: funciones puras que
-comparan y devuelven qué decir. Falta la mitad de UI: un bloque de respuesta debajo
-de la tarjeta (borde `colores.error` cuando falla, `colores.acento` cuando
-acierta) y que `BotonPrincipal` avance sólo cuando la comparación pasa.
-`siTecleaElError` es el caso más caro de perder: es un texto escrito para el
-instante exacto en que el estudiante teclea 170, y ese instante hoy no existe.
-
-### Tres de los cuatro teclados de X3 no existen
-
-`app/estacion/completar.tsx` — `FILAS` es una constante. De los cuatro teclados que
-`X3-respuesta-no-numerica` puede elegir, sólo `digitos` corre hoy: `fichas` pide que
-`FILAS` salga del contenido, `opciones` pide una fila de opciones donde va el
-teclado, `texto` pide un `TextInput` en la estación 3. Por eso ese prompt devuelve
-`faltaCodigo` y, cuando va en `true`, `noSePuede` lleno con el teclado que falta y
-un `planB` con dígitos. El llamador filtra por `noSePuede !== null`.
+- **El video** se abre en YouTube con `Linking` (`app/estacion/ver.tsx`). No se
+  incrusta: eso pediría un WebView distinto por plataforma. Sin video, la tarjeta
+  lo dice y el tema sigue.
+- **Las pistas** se leen en `src/componentes/HojaPista.tsx`, que abre el botón de
+  `BotonPista.tsx`. Una pista se libera cada 18 segundos y cuesta una de las cinco
+  del tema; releer las ya destapadas es gratis. Los topes de 400 caracteres de
+  `pistas[].texto` siguen sin medirse contra la hoja.
+- **La calificación** la llaman las cuatro estaciones que tienen respuesta, y el
+  botón avanza sólo si la comparación pasa (en la 2 nunca se bloquea: ahí se lee
+  qué revela cada opción). `siTecleaElError`, `queRevela`, `siLoTocas` y
+  `esElBueno` ya se leen; el primero es el caso más caro de perder y se prueba en
+  la estación 3.
+- **La estación 5 no arranca con el paso malo marcado.** El diseño lo muestra así,
+  pero con calificación sería entregar la respuesta. Los motivos se preguntan
+  cuando ya hay un paso señalado, que es lo que `ContenidoError` ya decía.
+- **La estación 6** pide al menos 40 caracteres y, al terminar, muestra la
+  `rubrica` como autoevaluación. **Nadie la califica**: eso es una segunda llamada
+  a la API, y necesita la llave en un servidor, no en la app.
 
 ### Siempre seis estaciones
 
@@ -587,12 +598,12 @@ y son los únicos que se pueden medir:
 
 | Campo | Se pinta en |
 |---|---|
-| `ver.pregunta`, `ver.duracion`, `ver.resumen` | `ver.tsx:33`, `:47`, `:53` |
-| `contacto.preguntas[].enunciado`, `opciones[].partes` | `contacto.tsx:41`, `:72-76` |
-| `completar.expresion` | `completar.tsx:62-67` |
-| `escalera.situacion`, `expresion`, `pregunta`, `respuesta` | `escalera.tsx:68`, `:74`, `:79`, `:86-95` |
-| `error.enunciado`, `pasos[].partes`, `porQue`, `motivos[].texto` | `error.tsx:37`, `:65-69`, `:77`, `:95-97` |
-| `explicar.titulo`, `aclaracion`, `nota` | `explicar.tsx:31`, `:32`, `:53` |
+| `ver.pregunta`, `ver.duracion`, `ver.resumen` | `ver.tsx:53`, `:78`, `:92` |
+| `contacto.preguntas[].enunciado`, `opciones[].partes` | `contacto.tsx:70`, `:111-115` |
+| `completar.expresion` | `completar.tsx:79-84` |
+| `escalera.situacion`, `expresion`, `pregunta`, `respuesta` | `escalera.tsx:107`, `:113`, `:118`, `:125-138` |
+| `error.enunciado`, `pasos[].partes`, `porQue`, `motivos[].texto` | `error.tsx:89`, `:118-122`, `:135`, `:154-156` |
+| `explicar.titulo`, `aclaracion`, `nota` | `explicar.tsx:79`, `:80`, `:143` |
 
 **La regla: un tope de un campo pintado lleva su medida escrita en la
 `description`** — la pantalla, el ancho de la caja, el tamaño de letra, el
@@ -608,7 +619,7 @@ Tres cosas que conviene saber antes de medir el siguiente:
 - **Todo lo que va dentro de `Cuerpo` vive en un `ScrollView`**
   (`src/componentes/Cuerpo.tsx:14-24`), así que desbordar se paga en desplazamiento,
   no en recorte. Con una excepción que importa: `explicar.nota` vive en el `Pie`
-  (`explicar.tsx:51-55`), fuera del scroll, y cada renglón que crece le quita 20 px
+  (`explicar.tsx:140-145`), fuera del scroll, y cada renglón que crece le quita 20 px
   al campo de escribir.
 - **Los topes se multiplican.** Un tope por átomo con `maxItems` al lado no es el
   tope de la tarjeta: es el tope dividido entre el número de átomos.
@@ -625,14 +636,16 @@ Lo mismo, pero más flojo, para la **bitácora de la estación 1** (`busqueda.cr
 `descarta`, `porQueEste`, `porQueEsaConfianza`): nada las lee, ya están en 500, 600 y
 900, y ahí se quedan.
 
-**Los topes de los cuatro esquemas aparte son provisionales.** X1, X2, X3 y X4 traen
-casi quinientos topes sobre pantallas que **no existen**: ningún `.tsx` dibuja una
-rejilla, una figura ni un teclado de fichas. No se aprieta ni uno hasta que la
-pantalla exista, porque no hay contra qué medirlo. Las únicas excepciones medibles
-hoy son las que reusan una pantalla que sí está: las opciones de la estación 2 (arriba)
-y `X3.fichas` —`maxItems: 11` y `etiqueta` de 4— que reusa la rejilla de
-`completar.tsx:23-28`: la tecla mide 110x56 y cuatro caracteres a 22 px son ~52 px.
-Ése está medido y sale bien; no se toca.
+**Los topes de X1, X2 y X4 son provisionales.** Traen casi quinientos topes sobre
+pantallas que **no existen**: ningún `.tsx` dibuja una rejilla ni una figura. No se
+aprieta ni uno hasta que la pantalla exista, porque no hay contra qué medirlo. Las
+únicas excepciones medibles hoy son las que reusan una pantalla que sí está: las
+opciones de la estación 2 (arriba) y **X3, que ya tiene su teclado** (`Teclado.tsx`):
+`fichas` de hasta 15 (con borrar son 12 celdas en tres columnas, o 16 en cuatro),
+`etiqueta` de 4 caracteres (la tecla mide 110x56 con tres columnas y unos 80x56 con
+cuatro —calculado con 350 de ancho útil y 10 de hueco—, y cuatro caracteres a 22 px
+son ~52) y `correcta` de 24, que es el `MAXIMO_ESCRITO` del teclado. Lo que X3 escribe
+en `queSeLeDice`, `queRevela` y las pistas sigue sin medirse contra su caja.
 
 ---
 
@@ -648,9 +661,9 @@ o
 
 ```json
 "noSePuede": {
-  "que": "el resultado del ejemplo es 0.8 g/cm³",
-  "porQue": "el teclado de la estación 3 no tiene punto decimal",
-  "queHagoConEsto": "pedir la división como fracción 8/10, o dejar el tema para cuando el teclado acepte decimales"
+  "que": "la respuesta de la estación 3 es un punto en el plano cartesiano",
+  "porQue": "ningún teclado dibuja ni ninguna opción lo sustituye: hace falta un componente de plano",
+  "queHagoConEsto": "mandar el tema a X2-figura y esperar a que exista el componente"
 }
 ```
 
@@ -677,8 +690,10 @@ para que el ejemplo de cada prompt sea un objeto completo:
 | `pistas[].orden`, `pasos[].numero` | la posición: `i + 1` | `sellarIndices` |
 | `video.url`, `.titulo`, `.canal`, `.dondeSalio` (y en `alternativas`) | el oEmbed de YouTube y el campo `deDonde` del candidato (`buscar-videos.mjs:108-115`) | `sellarVideo` |
 | `busqueda.consulta`, `.consultasAlternas` | `buscar-videos.mjs:137-143` la compone | `sellarVideo` |
-| `faltaCodigo` en X3 | es `teclado !== 'digitos'` | `sellarTeclado` |
-| `comoSeCompara.*` en X3 cuando el teclado no es `texto` | los tres van en `false` | `sellarTeclado` |
+| `comoSeCompara.*` en X3 cuando el teclado no es `texto` | los tres van en `false` (se fuerzan, aunque el modelo ponga `true`) | `sellarTeclado` |
+| `fichas` en X3 cuando el teclado no es `fichas` | `[]` | `sellarTeclado` |
+| `respuesta.opciones` en X3 cuando el teclado no es `opciones` | `[]` | `sellarTeclado` |
+| `faltaCodigo` y `planB` en X3 | ya no existen: se quitan si el modelo los trae por costumbre | `sellarTeclado` |
 
 **Rellenar no es dejar de comprobar.** `comprobarTraza` y `comprobarIndices` corren
 después: si el campo vino y no cuadra con su posición o con el temario, eso es una
@@ -796,8 +811,15 @@ Antes de guardar cualquier respuesta:
 2. **`temaNumero` y `materia`** contra el tema que se pidió. Los siete esquemas de
    salida los traen por esto: un reintento que se cruza o una tanda que se reanuda a
    medias se caza aquí, y no con un tema cuya estación 5 acusa un paso de otro tema.
-3. **Las URL de `01-ver`** contra el oEmbed de YouTube, que no pide llave, y el
+3. **El teclado de X3** (`contenido/teclado.mjs`): cada `correcta`, cada `aceptaTambien`
+   y el `siTecleaElError` se pueden escribir con el teclado elegido (con `fichas`, por
+   programación dinámica, porque una etiqueta puede ser prefijo de otra); con
+   `opciones`, de 2 a 4 con una sola `esCorrecta` y `correcta` igual a su etiqueta; un
+   solo hueco por renglón; `enAtomos`, aplanado, da `correcta`; ninguna `aceptaTambien`
+   choca con el error típico; la tercera pista no escribe la respuesta. Lo que falla
+   vuelve al modelo en la vuelta de corrección.
+4. **Las URL de `01-ver`** contra el oEmbed de YouTube, que no pide llave, y el
    `title` y el `author_name` que devuelve contra el `titulo` y el `canal`
    reportados. Una URL que responde pero es otro video se tira igual.
-4. **`noSePuede`**. Si viene lleno, el tema no se publica: se anota y se deja para
+5. **`noSePuede`**. Si viene lleno, el tema no se publica: se anota y se deja para
    cuando exista lo que falta.

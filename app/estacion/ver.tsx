@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import {
   BarraEstacion,
@@ -10,7 +10,7 @@ import {
   Pie,
   Tarjeta,
 } from '../../src/componentes';
-import { tema } from '../../src/contenido/actual';
+import { Guardia, useAndamio } from '../../src/estado/Andamio';
 import { colores, espacio, fuentes, TOCABLE } from '../../src/tema';
 
 /** A dónde lleva esta estación, tanto por el botón como por el atajo. */
@@ -21,7 +21,27 @@ const SIGUIENTE = '/estacion/contacto';
  * dar: aquí el estudiante nada más mira y decide si ya lo sabía.
  */
 export default function VerElVideo() {
-  const avanzar = () => router.push(SIGUIENTE);
+  return (
+    <Guardia clave="ver">
+      <Estacion />
+    </Guardia>
+  );
+}
+
+function Estacion() {
+  const { tema, marcarHecha } = useAndamio();
+  const video = tema.ver.video;
+
+  const avanzar = () => {
+    marcarHecha('ver');
+    router.replace(SIGUIENTE);
+  };
+
+  // El video vive en YouTube: se abre allá, en su app o en el navegador. Incrustarlo
+  // pediría un WebView distinto por plataforma, y para el prototipo no vale lo que cuesta.
+  const reproducir = () => {
+    if (video) Linking.openURL(video.url).catch(() => {});
+  };
 
   return (
     <Marco>
@@ -35,21 +55,35 @@ export default function VerElVideo() {
 
         <View style={estilos.zonaVideo}>
           <Tarjeta style={estilos.video}>
-            <Pressable
-              accessibilityRole="button"
-              accessibilityLabel="Reproducir el video"
-              style={({ pressed }) => [estilos.reproducir, pressed && estilos.reproducirTocado]}
-            >
-              <IconoReproducir />
-            </Pressable>
+            {video ? (
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={`Reproducir el video «${video.titulo}», de ${video.canal}. Se abre en YouTube.`}
+                onPress={reproducir}
+                style={({ pressed }) => [estilos.reproducir, pressed && estilos.reproducirTocado]}
+              >
+                <IconoReproducir />
+              </Pressable>
+            ) : (
+              <Text style={estilos.sinVideo}>
+                Este tema todavía no tiene un video en español. Lee el resumen de abajo y sigue.
+              </Text>
+            )}
 
             {/* Sin duración no se pinta la píldora: una vacía sobre el video se
                 ve como un error de la app, y la duración sólo existe si venía
                 escrita en el resultado de la búsqueda. */}
-            {tema.ver.duracion ? (
+            {video && tema.ver.duracion ? (
               <View style={estilos.duracion}>
                 <Text style={estilos.duracionTexto}>{tema.ver.duracion}</Text>
               </View>
+            ) : null}
+
+            {/* De quién es el video y adónde lleva: el estudiante no lo escogió. */}
+            {video ? (
+              <Text numberOfLines={1} style={estilos.canal}>
+                {video.canal} · YouTube
+              </Text>
             ) : null}
           </Tarjeta>
         </View>
@@ -131,6 +165,24 @@ const estilos = StyleSheet.create({
     fontFamily: fuentes.cuerpo,
     fontSize: 12,
     color: colores.textoSuave,
+  },
+  sinVideo: {
+    paddingHorizontal: 28,
+    textAlign: 'center',
+    fontFamily: fuentes.cuerpo,
+    fontSize: 15,
+    lineHeight: 24,
+    color: colores.textoTenue,
+  },
+  // A la izquierda de la píldora de duración, que ocupa los últimos ~60 px.
+  canal: {
+    position: 'absolute',
+    left: 14,
+    right: 84,
+    bottom: 16,
+    fontFamily: fuentes.cuerpo,
+    fontSize: 12,
+    color: colores.textoTenue,
   },
   zonaResumen: {
     paddingHorizontal: espacio.margen,

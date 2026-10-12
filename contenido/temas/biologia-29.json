@@ -1,0 +1,158 @@
+{
+  "materia": "biologia",
+  "temaNumero": 29,
+  "titulo": "Por qué falla un antibiótico",
+  "generadoEn": "2026-10-06T16:33:33.848Z",
+  "canon": {
+    "temaNumero": 29,
+    "materia": "biologia",
+    "titulo": "Por qué falla un antibiótico",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Entender por qué falla un antibiótico por resistencia bacteriana",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Reconoces que en la población de bacterias ya había individuos resistentes al antibiótico antes de empezar el tratamiento.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Día 0: población 1000000 · algunas son resistentes, otras sensibles"
+            }
+          ],
+          "porQue": "La resistencia no aparece durante el tratamiento. Existe desde antes porque las bacterias mutan naturalmente, y algunas mutaciones las hacen resistentes por casualidad."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Observas cómo el antibiótico mata las bacterias sensibles mientras se toma.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Día 3 · Día 7: población 50 · las sensibles mueren"
+            }
+          ],
+          "porQue": "El antibiótico funciona: mata lo que está sensible. El problema es que no mata todo."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Reconoces que las bacterias resistentes sobreviven porque el antibiótico no las mata.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Día 7: quedan 50 resistentes · el antibiótico no actúa contra ellas"
+            }
+          ],
+          "porQue": "La resistencia es una característica de la bacteria, no de tu cuerpo. Tu cuerpo no se acostumbra; simplemente, esa bacteria ya no muere con ese medicamento."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Observas cómo las bacterias resistentes se multiplican sin competencia cuando suspender el tratamiento.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Día 10: después de suspender, población crece · 50 se multiplican sin rivales"
+            }
+          ],
+          "porQue": "Las bacterias sensibles desaparecieron, así que las resistentes no compiten con nadie. Se reproduce n sin control porque la población que las frenaba ya no existe."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Concluyes que la siguiente infección no cede porque la población es principalmente resistente.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Infección siguiente: bacteria resistente · antibiótico ya no funciona"
+            }
+          ],
+          "porQue": "Ahora la mayoría de las bacterias son resistentes porque descienden de las pocas que sobrevivieron. El medicamento que antes funcionaba ahora falla porque cambió la población, no porque tu cuerpo se acostumbró."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una infección tratada con antibiótico donde se detiene el medicamento apenas se siente mejoría",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Población inicial 1000000 · algunas resistentes"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Infección siguiente: bacteria resistente al medicamento"
+        }
+      ],
+      "resultadoEnPalabras": "la bacteria es resistente porque la población que sobrevivió es resistente"
+    },
+    "error": {
+      "enUnaFrase": "Cree que su cuerpo se acostumbró al medicamento en vez de reconocer que sobrevivieron bacterias resistentes.",
+      "creenciaDeAtras": "piensa que la resistencia es una adaptación del cuerpo al antibiótico, como cuando te acostumbras a un sabor o a un ruido, en vez de entender que la bacteria tiene una característica que le permitió sobrevivir",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Día 7: mi cuerpo se acostumbró al antibiótico · ya no funciona"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Infección siguiente: cuerpo resistente al medicamento"
+        }
+      ],
+      "comoSeCacha": "Dice que es el cuerpo el que se acostumbra, no la bacteria. El resultado pone resistencia en el cuerpo cuando la resistencia vive en la bacteria."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Suspende el antibiótico apenas se siente bien, en vez de terminar todo el tratamiento.",
+        "creenciaDeAtras": "cree que ya se está curando y el medicamento ya no es necesario, sin ver que interrumpir deja vivas las bacterias resistentes que están por multiplicarse"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "resistencia bacteriana",
+        "queEs": "Una característica de la bacteria que le permite sobrevivir a un antibiótico. La bacteria tiene resistencia, no el cuerpo."
+      },
+      {
+        "palabra": "bacteria resistente",
+        "queEs": "Una bacteria que no muere cuando se le aplica un antibiótico porque tiene una proteína o una estructura que el medicamento no puede romper.",
+        "noEsLoMismoQue": "bacteria sensible, que sí muere con el antibiótico"
+      },
+      {
+        "palabra": "selección natural",
+        "queEs": "En una población, mueren los individuos que no pueden sobrevivir al cambio (aquí, mueren los sensibles) y sobreviven los que sí pueden (aquí, los resistentes), así que cambia quién es la mayoría."
+      },
+      {
+        "palabra": "población bacteriana",
+        "queEs": "Todos los individuos bacterianos que comparten un espacio. Al inicio tiene sensibles y resistentes; después de tratar tiene principalmente resistentes."
+      },
+      {
+        "palabra": "terminar el tratamiento",
+        "queEs": "Tomar todas las dosis de antibiótico que el doctor indica, aunque se sienta bien antes de terminar. Es necesario porque algunas bacterias resistentes apenas están empezando a multiplicarse.",
+        "noEsLoMismoQue": "dejar de tomar cuando se siente bien"
+      }
+    ],
+    "cotas": {
+      "numeros": "cifras de población entre 50 y 1000000; días de tratamiento entre 3 y 14; ningún decimal ni número negativo",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "·"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

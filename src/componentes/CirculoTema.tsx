@@ -40,7 +40,9 @@ type Props = {
  * mientras falte, así el avance se lee de una ojeada.
  */
 export function CirculoTema({ estaciones, alTocar }: Props) {
-  const actual = estaciones.find((e) => e.estado === 'actual') ?? estaciones[0];
+  // Sin ninguna «actual» están las seis hechas: el rótulo del centro lo dice en
+  // vez de seguir señalando la primera.
+  const actual = estaciones.find((e) => e.estado === 'actual');
 
   return (
     <View style={estilos.lienzo}>
@@ -76,6 +78,7 @@ export function CirculoTema({ estaciones, alTocar }: Props) {
             key={estacion.numero}
             accessibilityRole="button"
             accessibilityLabel={etiquetaDe(estacion)}
+            accessibilityState={{ disabled: estacion.estado === 'cerrada' }}
             onPress={() => alTocar?.(estacion)}
             style={({ pressed }) => [
               estilos.nodo,
@@ -104,11 +107,23 @@ export function CirculoTema({ estaciones, alTocar }: Props) {
       })}
 
       <View style={estilos.centro}>
-        <Text style={estilos.centroEtiqueta}>vas en</Text>
-        <Text style={estilos.centroNombre}>{actual.nombre}</Text>
-        <Text style={estilos.centroEtiqueta}>
-          {actual.numero} de {estaciones.length}
-        </Text>
+        {actual ? (
+          <>
+            <Text style={estilos.centroEtiqueta}>vas en</Text>
+            <Text style={estilos.centroNombre}>{actual.nombre}</Text>
+            <Text style={estilos.centroEtiqueta}>
+              {actual.numero} de {estaciones.length}
+            </Text>
+          </>
+        ) : (
+          <>
+            <Text style={estilos.centroEtiqueta}>el círculo está</Text>
+            <Text style={estilos.centroNombre}>cerrado</Text>
+            <Text style={estilos.centroEtiqueta}>
+              {estaciones.length} de {estaciones.length}
+            </Text>
+          </>
+        )}
       </View>
     </View>
   );

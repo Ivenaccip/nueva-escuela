@@ -1,121 +1,143 @@
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, View } from 'react-native';
 
 import {
   BarraEstacion,
+  BloqueRespuesta,
+  BotonPista,
   BotonPrincipal,
   Cuerpo,
+  EntradaDeRespuesta,
   Expresion,
-  IconoBorrar,
-  IconoPista,
   Marco,
   Pie,
   Tarjeta,
+  usePuestas,
 } from '../../src/componentes';
-import { tema } from '../../src/contenido/actual';
-import { colores, espacio, fuentes, radios } from '../../src/tema';
-
-/** La tecla que borra en vez de escribir. */
-const BORRAR = 'borrar';
-
-/** El teclado va por filas de tres para que las columnas salgan parejas solas. */
-const FILAS = [
-  ['1', '2', '3'],
-  ['4', '5', '6'],
-  ['7', '8', '9'],
-  ['/', '0', BORRAR],
-];
-
-/** El único radio del diseño que el tema no lleva; el resto sí sale de `radios`. */
-const RADIO_PISTA = 13;
-
-/** Lo que el diseño muestra a medio teclear. Es contenido, así que vive en demo. */
-const HUECO = tema.completar.expresion.find((parte) => parte.tipo === 'hueco');
+import { respuestaDeCompletar, type Respuesta } from '../../src/contenido/calificar';
+import { Guardia, useAndamio } from '../../src/estado/Andamio';
+import { SEGUNDOS_PARA_PISTA } from '../../src/estado/modelo';
+import { colores, espacio, fuentes } from '../../src/tema';
 
 /**
  * Estación 3 · completar el paso. El enunciado ya está resuelto casi entero y
  * falta un pedazo: el estudiante lo teclea abajo y lo ve aparecer en el hueco.
- *
- * Aquí nadie revisa si está bien. Comprobar sólo avanza; la evaluación llega
- * junto con el contenido de verdad.
  */
 export default function Completar() {
-  const [escrito, setEscrito] = useState(HUECO?.valor ?? '');
+  return (
+    <Guardia clave="completar">
+      <Estacion />
+    </Guardia>
+  );
+}
 
-  const teclear = (tecla: string) => {
-    if (tecla === BORRAR) return setEscrito((antes) => antes.slice(0, -1));
-    setEscrito((antes) => antes + tecla);
+function Estacion() {
+  const { tema, redactado, avance, marcarHecha, gastarPista } = useAndamio();
+  const contenido = redactado.completar;
+
+  const entrada = tema.completar.entrada;
+  const puestas = usePuestas();
+  const { escrito } = puestas;
+  const [respuesta, setRespuesta] = useState<Respuesta | null>(null);
+  const acertada = respuesta?.bien === true;
+
+  // Lo que se contestó era sobre lo que había escrito antes: al cambiarlo, deja de valer.
+  const cambiar = (hacer: () => void) => {
+    if (acertada) return;
+    setRespuesta(null);
+    hacer();
   };
+
+  const comprobar = () => {
+    if (escrito !== '') setRespuesta(respuestaDeCompletar(escrito, contenido));
+  };
+
+  const seguir = () => {
+    marcarHecha('completar');
+    router.replace('/estacion/escalera');
+  };
+
+  // Una vez contestada bien, el hueco se pinta con la respuesta escrita de verdad
+  // (`CaCl₂`, no «CaCl2»), si el contenido la trae.
+  const expresion =
+    acertada && contenido.respuesta.enAtomos
+      ? tema.completar.expresion.flatMap((parte) =>
+          parte.tipo === 'hueco' ? contenido.respuesta.enAtomos! : [parte],
+        )
+      : tema.completar.expresion;
 
   return (
     <Marco>
       <BarraEstacion estacion={3} pistas={tema.completar.pistas} />
 
-      <Cuerpo>
-        <View style={estilos.etiqueta}>
-          <Text style={estilos.etiquetaTexto}>estación 3 · completar el paso</Text>
-        </View>
+      <KeyboardAvoidingView
+        style={estilos.cuerpo}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        <Cuerpo desplazarCuando={respuesta}>
+          <View style={estilos.etiqueta}>
+            <Text style={estilos.etiquetaTexto}>estación 3 · completar el paso</Text>
+          </View>
 
-        <View style={estilos.zonaTarjeta}>
-          <Tarjeta style={estilos.tarjeta}>
-            <Expresion
-              partes={tema.completar.expresion}
-              tamano={30}
-              centrado
-              valorHueco={escrito}
+          <View style={estilos.zonaTarjeta}>
+            <Tarjeta style={estilos.tarjeta}>
+              <Expresion partes={expresion} tamano={30} centrado valorHueco={escrito} />
+            </Tarjeta>
+          </View>
+
+          {respuesta ? (
+            <BloqueRespuesta
+              bien={respuesta.bien}
+              titulo={respuesta.bien ? 'Eso es' : 'Todavía no'}
+              texto={
+                respuesta.bien ? null : (respuesta.texto ?? 'Prueba otra vez, o pide una pista.')
+              }
             />
-          </Tarjeta>
-        </View>
+          ) : null}
 
-        <View style={estilos.zonaPista}>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={`Pedir una pista, disponible en ${tema.completar.pistaEn}`}
-            style={({ pressed }) => [estilos.pista, pressed && estilos.pistaPresionada]}
+          <View style={estilos.zonaPista}>
+            <BotonPista
+              pistas={contenido.pistas}
+              liberadas={avance.pistasLiberadas.completar ?? 0}
+              restantes={avance.pistasRestantes}
+              alGastar={() => gastarPista('completar')}
+              espera={SEGUNDOS_PARA_PISTA}
+            />
+          </View>
+
+          <View style={estilos.espaciador} />
+        </Cuerpo>
+
+        {/* El teclado se ancla junto al botón: sin él la pantalla no se puede usar. */}
+        <Pie>
+          <EntradaDeRespuesta
+            entrada={entrada}
+            escrito={escrito}
+            resultado={respuesta}
+            poner={(tecla) => cambiar(() => puestas.poner(tecla))}
+            borrar={() => cambiar(puestas.borrar)}
+            elegir={(etiqueta) => cambiar(() => puestas.elegir(etiqueta))}
+            escribir={(texto) => cambiar(() => puestas.escribir(texto))}
+            alEnviar={acertada ? seguir : comprobar}
+          />
+
+          <BotonPrincipal
+            desactivado={!acertada && escrito === ''}
+            onPress={acertada ? seguir : comprobar}
           >
-            <IconoPista tamano={16} />
-            <Text style={estilos.pistaTexto}>una pista en {tema.completar.pistaEn}</Text>
-          </Pressable>
-        </View>
-
-        <View style={estilos.espaciador} />
-      </Cuerpo>
-
-      {/* El teclado se ancla junto al botón: sin él la pantalla no se puede usar. */}
-      <Pie>
-        <View style={estilos.teclado}>
-          {FILAS.map((fila) => (
-            <View key={fila.join('')} style={estilos.filaTeclas}>
-              {fila.map((tecla) => {
-                const esBorrar = tecla === BORRAR;
-                return (
-                  <Pressable
-                    key={tecla}
-                    accessibilityRole="button"
-                    accessibilityLabel={esBorrar ? 'Borrar' : tecla === '/' ? 'diagonal' : tecla}
-                    onPress={() => teclear(tecla)}
-                    style={({ pressed }) => [estilos.tecla, pressed && estilos.teclaPresionada]}
-                  >
-                    {esBorrar ? (
-                      <IconoBorrar tamano={22} />
-                    ) : (
-                      <Text style={estilos.teclaTexto}>{tecla}</Text>
-                    )}
-                  </Pressable>
-                );
-              })}
-            </View>
-          ))}
-        </View>
-
-        <BotonPrincipal onPress={() => router.push('/estacion/escalera')}>comprobar</BotonPrincipal>
-      </Pie>
+            {acertada ? 'seguir' : 'comprobar'}
+          </BotonPrincipal>
+        </Pie>
+      </KeyboardAvoidingView>
     </Marco>
   );
 }
 
 const estilos = StyleSheet.create({
+  cuerpo: {
+    flex: 1,
+  },
   etiqueta: {
     paddingHorizontal: espacio.margen,
     paddingTop: 8,
@@ -137,54 +159,8 @@ const estilos = StyleSheet.create({
     paddingHorizontal: espacio.margenAncho,
     paddingTop: 16,
   },
-  pista: {
-    height: 46,
-    borderRadius: RADIO_PISTA,
-    backgroundColor: 'transparent',
-    borderWidth: 1,
-    borderColor: colores.borde,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-  },
-  pistaPresionada: {
-    backgroundColor: colores.superficie,
-  },
-  pistaTexto: {
-    fontFamily: fuentes.cuerpo,
-    fontSize: 14,
-    color: colores.textoTenue,
-  },
   // Empuja el teclado al fondo sin fijarle una altura a lo de arriba.
   espaciador: {
     flex: 1,
-  },
-  // El margen lateral ya lo pone el Pie; aquí sólo queda el hueco hasta el botón.
-  teclado: {
-    paddingBottom: 16,
-    gap: 10,
-  },
-  filaTeclas: {
-    flexDirection: 'row',
-    gap: 10,
-  },
-  tecla: {
-    flex: 1,
-    height: 56,
-    borderRadius: radios.tecla,
-    backgroundColor: colores.superficie,
-    borderWidth: 1,
-    borderColor: colores.borde,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  teclaPresionada: {
-    backgroundColor: colores.superficieAlta,
-  },
-  teclaTexto: {
-    fontFamily: fuentes.cuerpo,
-    fontSize: 22,
-    color: colores.texto,
   },
 });

@@ -1,0 +1,159 @@
+{
+  "materia": "biologia",
+  "temaNumero": 34,
+  "titulo": "Si se va una especie",
+  "generadoEn": "2026-10-06T16:01:18.080Z",
+  "canon": {
+    "temaNumero": 34,
+    "materia": "biologia",
+    "titulo": "Si se va una especie",
+    "notacion": "figura",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Seguir el efecto dominó de quitar una especie del ecosistema",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas qué come la especie que desaparece y qué la come.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El venado come pasto. Del venado se alimenta el puma."
+            }
+          ],
+          "porQue": "Para ver qué se queda sin alimento y qué pierde depredador, tienes que saber dónde estaba ese animal en la cadena alimentaria."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Determinas cuál es el primer efecto: quién pierde alimento y quién se queda sin depredador.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Sin venado: el puma pierde comida. El pasto pierde herbívoro."
+            }
+          ],
+          "porQue": "El venado era alimento para el puma y controlador del pasto. Al quitarlo, ambos se ven afectados de formas opuestas."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Proyectas el siguiente efecto sobre las poblaciones que perdieron depredador.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El pasto crece sin límite. La población de pasto sube."
+            }
+          ],
+          "porQue": "Una población crece cuando nadie la come, porque no hay quién la controle. Pero esa población nueva consume sus propios recursos."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Sigues el efecto en la especie que se queda sin alimento.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El puma caza otras presas o se va. Su población baja."
+            }
+          ],
+          "porQue": "Quien pierde comida no crece: o busca de otra parte o desaparece. El puma no come pasto, así que su opción es cambiar de dieta o marcharse."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Completas la cadena: la población que creció sin control se queda sin su propio alimento.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El pasto se acaba. Su población baja. El ecosistema se desequilibra."
+            }
+          ],
+          "porQue": "El crecimiento sin límite no dura: el pasto agota el suelo o el agua. Luego la población que creció se desmorona porque se quedó sin lo que come. El todo quedó distinto."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una cadena de depredador a presa donde el puma come venado y el venado come pasto",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Si desaparece el venado, qué pasa."
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "El pasto se dispara, el puma baja, el pasto se agota, el ecosistema se desequilibra."
+        }
+      ],
+      "resultadoEnPalabras": "no basta con decir que habrá más pasto: hay que seguir hasta que ese pasto se agota porque creció sin límite"
+    },
+    "error": {
+      "enUnaFrase": "Se detiene después del primer paso sin seguir la cadena hasta el final.",
+      "creenciaDeAtras": "cree que desaparecer una especie es bueno para las otras porque hay menos competencia, sin ver que el crecimiento sin control lleva a que esa población se agote su propio alimento",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "El pasto crece. Eso es bueno para el ecosistema."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Habrá más pasto y a todas les va a ir mejor."
+        }
+      ],
+      "comoSeCacha": "El estudiante termina donde debería empezar: dice que la consecuencia es positiva sin seguir qué pasa cuando una población crece sin freno. El ecosistema no quedó mejor; quedó sin control."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Confunde el efecto en el depredador que se queda sin comida con el efecto en la presa que se queda sin control.",
+        "creenciaDeAtras": "cree que quitando una especie todas las demás crecen, sin distinguir entre quién pierde alimento y quién pierde depredador"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "efecto dominó",
+        "queEs": "La cadena de cambios que se produce cuando algo de un ecosistema falla: cada efecto causa el siguiente sin parar.",
+        "noEsLoMismoQue": "un efecto aislado, que sería un solo cambio y nada más"
+      },
+      {
+        "palabra": "depredador",
+        "queEs": "El animal que se alimenta de otro animal. Come carne.",
+        "noEsLoMismoQue": "presa, que es el animal que se come"
+      },
+      {
+        "palabra": "control de población",
+        "queEs": "Cuando una especie impide que otra crezca demasiado porque se la come. Sin ese control la población crece sin freno.",
+        "noEsLoMismoQue": "competencia por alimento, que es cuando dos especies compiten por lo mismo"
+      },
+      {
+        "palabra": "desequilibrio",
+        "queEs": "Cuando el ecosistema pierde el balance que tenía y las poblaciones suben y bajan sin estabilidad."
+      }
+    ],
+    "cotas": {
+      "numeros": "ninguno; el tema usa solo palabras y encadenamiento de efectos",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "↑"
+        },
+        {
+          "tipo": "texto",
+          "valor": "↓"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema necesita mostrar una red de cadenas alimentarias con marcas de aumento y disminución de población, y la capacidad de marcar una especie como ausente.",
+      "porQue": "Las respuestas del tema son verbales o diagramáticas: explicar una cadena de cambios. El teclado de números y fracciones de las estaciones 3 y 4 no puede capturar ni el diagrama ni permitir que el estudiante escriba una explicación encadenada. El tema necesita que se dibuje o que se escriba prosa, y ambas cosas quedan fuera del teclado de doce teclas.",
+      "queHagoConEsto": "Mandar el tema a un prompt diferente, uno que pueda pedir un diagrama etiquetado con flechas y símbolos de aumento/disminución, o que pueda aceptar respuestas en forma de párrafo corto. Las estaciones 3 y 4 de hoy no pueden dibujar ni evaluar prosa: necesitan un formato distinto."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

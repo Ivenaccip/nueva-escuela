@@ -16,6 +16,8 @@
 //
 // La llave se lee de OPENAI_API_KEY. Nunca se escribe, nunca se imprime.
 
+import { anotar, comprobarTope, precioPorBusqueda } from './gasto.mjs';
+
 const BASE = process.env.OPENAI_BASE_URL ?? 'https://api.openai.com/v1';
 
 /**
@@ -88,6 +90,8 @@ function idsQueElBuscadorVio(salida) {
 async function pedirABusqueda(cuerpo, llave) {
   let ultimo;
   for (let intento = 1; intento <= REINTENTOS; intento += 1) {
+    // Antes de cada intento y no una vez por tema: un reintento vuelve a cobrar.
+    await comprobarTope('openai');
     let respuesta;
     try {
       respuesta = await fetch(`${BASE}/responses`, {
@@ -103,7 +107,14 @@ async function pedirABusqueda(cuerpo, llave) {
       continue;
     }
 
-    if (respuesta.ok) return respuesta.json();
+    if (respuesta.ok) {
+      const datos = await respuesta.json();
+      // Se cuentan las búsquedas que hizo y se anotan aunque no haya traído ningún
+      // video: se cobraron igual. Es una estimación (`gasto.mjs`), no la factura.
+      const hechas = (datos.output ?? []).filter((i) => i.type === 'web_search_call').length;
+      await anotar('openai', hechas * precioPorBusqueda(), hechas);
+      return datos;
+    }
 
     // El cuerpo del error puede traer la llave de vuelta en algún eco; se corta.
     const detalle = (await respuesta.text()).slice(0, 300).replace(/sk-[A-Za-z0-9_-]+/g, 'sk-…');

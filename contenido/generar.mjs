@@ -2,6 +2,7 @@
 //
 //   node contenido/generar.mjs quimica 11
 //   node contenido/generar.mjs fisica 4 --solo ver
+//   node contenido/generar.mjs biologia 7 --solo X3-teclado   sólo el caso del teclado
 //   node contenido/generar.mjs matematicas 9 --rehacer
 //   node contenido/generar.mjs quimica 11 --seco     nada de API: sólo arma
 //
@@ -15,6 +16,14 @@
 // El orden importa: primero el canon (paso 0), y sólo cuando el canon está
 // guardado se lanzan las seis estaciones, porque las seis lo reciben entero y no
 // se hablan entre ellas (contenido/CONTRATO.md §3).
+//
+// Un tema cuya respuesta no son dígitos (una palabra, una expresión, o un número
+// que en realidad es una frase) se rutea a X3: se generan ver, contacto, error y
+// explicar, y en lugar de completar y escalera se llama a
+// X3-respuesta-no-numerica, que elige el teclado del tema y escribe con él esas dos
+// estaciones. Su salida se guarda en `casosAparte['X3-teclado']`. `--solo
+// X3-teclado` pide sólo esa llamada. Los casos tabla y figura se nombran y no se
+// llaman: todavía no tienen componente de UI.
 //
 // Falla ruidoso y se retoma. La salida se escribe en
 // contenido/temas/<materia>-<numero>.json después de CADA llamada, así que una
@@ -30,6 +39,22 @@ import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
 
 import { buscarVideos, candidatosComoTexto } from './buscar-videos.mjs';
+import { llaveDeAnthropic } from './llaves.mjs';
+import {
+  anotar,
+  CODIGO_DE_TOPE,
+  comprobarTope,
+  costoDeClaude,
+  resumenDelGasto,
+  TopeAlcanzado,
+} from './gasto.mjs';
+import {
+  CLAVE_X3,
+  casoDelCanon,
+  noSePuedeVigente,
+  problemasDeTeclado,
+  unoSoloDeTeclado,
+} from './teclado.mjs';
 
 const aqui = dirname(fileURLToPath(import.meta.url));
 const dirEsquema = join(aqui, 'esquema');
@@ -130,7 +155,11 @@ const ESTACIONES = [
   },
 ];
 
-/** Los casos aparte. El canon rutea, y aquí sólo está su ficha. */
+/**
+ * Los casos aparte. El canon rutea (`casoDelCanon` en `teclado.mjs`), y aquí sólo
+ * está su ficha. Sólo `teclado` se llama de verdad: tabla y figura todavía no tienen
+ * componente de UI que las pinte.
+ */
 const CASOS_APARTE = {
   tabla: {
     clave: 'X1-tabla',
@@ -150,7 +179,7 @@ const CASOS_APARTE = {
     reemplaza: ['completar', 'escalera'],
   },
   teclado: {
-    clave: 'X3-teclado',
+    clave: CLAVE_X3,
     prompt: 'X3-respuesta-no-numerica.md',
     esquema: 'X3-respuesta-no-numerica.schema.json',
     herramienta: 'escribir_caso_teclado',
@@ -166,10 +195,25 @@ const CASOS_APARTE = {
 
 class Rajada extends Error {}
 
+/**
+ * El id del `tool_use` de cada salida, por objeto. La corrección (ver `correr`) tiene
+ * que devolverle al modelo su propia salida como turno suyo, y la API exige el id.
+ */
+const IDS_DE_SALIDA = new WeakMap();
+
 const morir = (mensaje, detalle) => {
   console.error(`\n${mensaje}`);
   if (detalle) console.error(detalle);
   process.exit(1);
+};
+
+/**
+ * Parar porque se llegó al tope de gasto. Sale con un código propio para que
+ * `tanda.mjs` no siga con el tema siguiente: el tope es de toda la corrida.
+ */
+const pararPorTope = (e) => {
+  console.error(`\n${e.message}`);
+  process.exit(CODIGO_DE_TOPE);
 };
 
 const decir = (mensaje) => console.log(mensaje);
@@ -197,7 +241,7 @@ if (!materia || !Number.isInteger(numero)) {
     'Uso: node contenido/generar.mjs <materia> <numero> [--solo <estacion>] [--rehacer]\n' +
       `  materia: ${MATERIAS.join(' | ')}\n` +
       '  numero: el numero del tema dentro de su materia\n' +
-      '  --solo: una sola llamada (canon, ver, contacto, completar, escalera, error, explicar)\n' +
+      '  --solo: una sola llamada (canon, ver, contacto, completar, escalera, error, explicar, X3-teclado)\n' +
       '  --rehacer: tira lo ya guardado y empieza de cero\n' +
       '  --seco: arma las llamadas y revisa los placeholders sin llamar a la API',
   );
@@ -225,7 +269,8 @@ let estricto = banderas.has('--estricto');
 //
 // Las dos llaves se comprueban aquí, antes de la primera llamada. La de OpenAI no
 // se usa hasta la estación 1, y descubrir que falta ahí sería descubrirlo con el
-// canon ya pagado. El sondeo (`--solo canon`) no la necesita, así que no la pide.
+// canon ya pagado. Una llamada suelta que no sea la 1 (`--solo canon`, `--solo
+// X3-teclado`) no la necesita, así que no la pide.
 function faltaLaLlave(nombre, paraQue) {
   if (process.env[nombre]) return null;
   return [
@@ -242,15 +287,21 @@ function faltaLaLlave(nombre, paraQue) {
 
 if (!seco) {
   const pendientes = [
-    faltaLaLlave('ANTHROPIC_API_KEY', 'la que escribe el contenido'),
-    solo === 'canon'
+    llaveDeAnthropic()
+      ? null
+      : faltaLaLlave(
+          'ANDAMIO_ANTHROPIC_API_KEY',
+          'la que escribe el contenido (también vale ANTHROPIC_API_KEY)',
+        ),
+    // Sólo la estación 1 busca video: el resto de las llamadas sueltas no la pide.
+    solo && solo !== 'ver'
       ? null
       : faltaLaLlave('OPENAI_API_KEY', 'la que busca el video de la estacion 1'),
   ].filter(Boolean);
   if (pendientes.length) morir(pendientes.join('\n\n'));
 }
 
-const cliente = seco ? null : new Anthropic();
+const cliente = seco ? null : new Anthropic({ apiKey: llaveDeAnthropic() });
 
 // ---------------------------------------------------------------------------
 // Validar contra el esquema. La API NO lo hace (CONTRATO.md §7).
@@ -365,7 +416,7 @@ async function pedir(cuerpo) {
   try {
     return await cliente.messages.create(cuerpo);
   } catch (e) {
-    if (e instanceof Anthropic.AuthenticationError) morir('La llave de ANTHROPIC_API_KEY no sirve.');
+    if (e instanceof Anthropic.AuthenticationError) morir('La llave de Anthropic no sirve.');
     if (e instanceof Anthropic.BadRequestError) {
       if (estricto && /strict|schema/i.test(e.message)) {
         estricto = false;
@@ -394,7 +445,7 @@ async function pedir(cuerpo) {
  * esquema en el servidor. No sustituye a ajv —el esquema completo no cabe en el
  * subconjunto de strict— pero atrapa gratis la mitad de los errores de forma.
  */
-async function llamar({ paso, sistema, mensaje }) {
+async function llamar({ paso, sistema, mensaje, corregir }) {
   const esquema = await cargarEsquema(paso.esquema);
   const herramientaSalida = {
     name: paso.herramienta,
@@ -404,9 +455,37 @@ async function llamar({ paso, sistema, mensaje }) {
   };
 
   const mensajes = [{ role: 'user', content: mensaje }];
+  // Una corrección es la misma conversación con dos turnos más: lo que el modelo
+  // devolvió, y el resultado de la herramienta como error con lo que falló.
+  if (corregir) {
+    const id = IDS_DE_SALIDA.get(corregir.salida);
+    mensajes.push(
+      {
+        role: 'assistant',
+        content: [{ type: 'tool_use', id, name: paso.herramienta, input: corregir.salida }],
+      },
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'tool_result',
+            tool_use_id: id,
+            is_error: true,
+            content:
+              `La salida no pasó la validación. Los errores exactos:\n${corregir.errores}\n\n` +
+              `Llama otra vez a ${paso.herramienta} con la salida COMPLETA, igual que la anterior ` +
+              'salvo los campos que el error señala. Corrige sólo esos: lo que pasó del tope de ' +
+              'caracteres se reescribe más corto, con la misma idea y sin cortar a media frase; ' +
+              'respeta cada tope; no cambies nada más.',
+          },
+        ],
+      },
+    );
+  }
   const tope = 1;
 
   for (let turno = 1; turno <= tope; turno += 1) {
+    await comprobarTope('claude');
     const datos = await pedir({
       model: MODELO,
       max_tokens: MAX_TOKENS,
@@ -419,6 +498,8 @@ async function llamar({ paso, sistema, mensaje }) {
     });
 
     if (datos.usage) {
+      const { acumulado, tope: limite } = await anotar('claude', costoDeClaude(MODELO, datos.usage));
+      decir(`      gasto: $${acumulado.toFixed(3)} de $${limite.toFixed(2)}`);
       const leido = datos.usage.cache_read_input_tokens ?? 0;
       const escrito = datos.usage.cache_creation_input_tokens ?? 0;
       if (leido || escrito) decir(`      caché: ${leido} leidos, ${escrito} escritos`);
@@ -447,7 +528,10 @@ async function llamar({ paso, sistema, mensaje }) {
     const salida = (datos.content ?? []).find(
       (b) => b.type === 'tool_use' && b.name === paso.herramienta,
     );
-    if (salida) return salida.input;
+    if (salida) {
+      IDS_DE_SALIDA.set(salida.input, salida.id);
+      return salida.input;
+    }
 
     throw new Rajada(
       `${paso.clave}: contestó sin llamar a ${paso.herramienta} (stop_reason ${datos.stop_reason}). Se descarta.`,
@@ -464,6 +548,8 @@ async function llamarConReintentos(opciones) {
     try {
       return await llamar(opciones);
     } catch (e) {
+      // Reintentar contra el tope sólo gastaría tiempo: la respuesta no va a cambiar.
+      if (e instanceof TopeAlcanzado) throw e;
       ultimo = e;
       console.error(`      intento ${intento} de ${REINTENTOS} falló: ${e.message}`);
       if (intento < REINTENTOS) await dormir(2000 * intento);
@@ -477,8 +563,9 @@ async function llamarConReintentos(opciones) {
 // ---------------------------------------------------------------------------
 
 /**
- * Un renglón que llegó como cadena en vez de arreglo. Haiku lo hace seguido: el
- * arreglo es correcto, pero serializado, con sus comillas escapadas adentro. Se
+ * Un renglón (o un objeto entero, como el `completar` o la `escalera` de X3) que
+ * llegó como cadena en vez de arreglo u objeto. Haiku lo hace seguido: el
+ * valor es correcto, pero serializado, con sus comillas escapadas adentro. Se
  * repara en vez de tirar la llamada, porque un reintento cuesta lo mismo que la
  * llamada entera y lo que devolvería es esto mismo.
  *
@@ -492,17 +579,21 @@ function repararArreglosSerializados(valor, ruta = '') {
   }
   if (!valor || typeof valor !== 'object') return valor;
   for (const [clave, v] of Object.entries(valor)) {
-    if (typeof v === 'string' && v.trimStart().startsWith('[') && v.trimEnd().endsWith(']')) {
+    const t = typeof v === 'string' ? v.trim() : '';
+    const pareceJson = (t.startsWith('[') && t.endsWith(']')) || (t.startsWith('{') && t.endsWith('}'));
+    if (pareceJson) {
       try {
-        const abierto = JSON.parse(v);
-        if (Array.isArray(abierto)) {
+        const abierto = JSON.parse(t);
+        if (abierto && typeof abierto === 'object') {
           valor[clave] = abierto;
-          console.error(`      reparado: ${ruta}/${clave} venía como cadena, era un arreglo`);
+          console.error(
+            `      reparado: ${ruta}/${clave} venía como cadena, era ${Array.isArray(abierto) ? 'un arreglo' : 'un objeto'}`,
+          );
           repararArreglosSerializados(abierto, `${ruta}/${clave}`);
           continue;
         }
       } catch {
-        // No era JSON: es texto que de casualidad empieza con corchete. Se deja.
+        // No era JSON: es texto que de casualidad empieza con corchete o llave. Se deja.
       }
     }
     repararArreglosSerializados(v, `${ruta}/${clave}`);
@@ -537,6 +628,8 @@ const UNO_SOLO = {
       'esImprescindible',
     ],
   ],
+  // Un solo hueco por renglón y, con el teclado `opciones`, una sola opción buena.
+  [CLAVE_X3]: unoSoloDeTeclado,
 };
 
 function comprobarUnoSolo(paso, salida) {
@@ -594,6 +687,65 @@ function sellarTraza(paso, salida, temario, tema) {
   if (!('temaNumero' in salida)) salida.temaNumero = tema.numero;
   if (!('materia' in salida)) salida.materia = temario.clave;
   if (TITULO_DEL_TEMARIO.has(paso.clave) && !('titulo' in salida)) salida.titulo = tema.titulo;
+}
+
+/**
+ * Caracteres que no se ven y sí cuentan: guion blando (U+00AD), espacios de ancho
+ * cero y la marca de orden de bytes. Haiku los mete a veces dentro de una palabra
+ * («só\u00ADlo») o entre todas («error.arrastre» del tema 13 de Química llevaba 29).
+ * En pantalla no se ven, pero parten palabras a medio renglón, rompen la búsqueda
+ * del texto y suman caracteres al tope. No son contenido: se quitan.
+ */
+const INVISIBLES = /[\u00AD\u200B-\u200D\uFEFF]/g;
+
+function sellarInvisibles(salida) {
+  const andar = (nodo) => {
+    if (Array.isArray(nodo)) {
+      nodo.forEach((valor, i) => {
+        if (typeof valor === 'string') nodo[i] = valor.replace(INVISIBLES, '');
+        else andar(valor);
+      });
+      return;
+    }
+    if (!nodo || typeof nodo !== 'object') return;
+    for (const [llave, valor] of Object.entries(nodo)) {
+      if (typeof valor === 'string') nodo[llave] = valor.replace(INVISIBLES, '');
+      else andar(valor);
+    }
+  };
+  andar(salida);
+}
+
+/**
+ * Quita la comilla recta que cierra un texto sin haber abierto nada. Los campos
+ * son texto plano, así que una `"` suelta en el borde no es contenido: es el
+ * cierre del JSON que se coló dentro del valor. Medido sobre los nueve temas
+ * jugables, le pasó a `error.porQue` en tres —y ése se pinta en pantalla, con la
+ * comilla— y a `error.arrastre` en nueve. Con una cantidad par no se toca nada, y
+ * una comilla en medio de una frase tampoco: sólo la del borde.
+ */
+function sellarComillasSueltas(salida) {
+  const limpiar = (texto) => {
+    if ((texto.match(/"/g) ?? []).length % 2 === 0) return texto;
+    if (texto.endsWith('"')) return texto.slice(0, -1);
+    if (texto.startsWith('"')) return texto.slice(1);
+    return texto;
+  };
+  const andar = (nodo) => {
+    if (Array.isArray(nodo)) {
+      nodo.forEach((valor, i) => {
+        if (typeof valor === 'string') nodo[i] = limpiar(valor);
+        else andar(valor);
+      });
+      return;
+    }
+    if (!nodo || typeof nodo !== 'object') return;
+    for (const [llave, valor] of Object.entries(nodo)) {
+      if (typeof valor === 'string') nodo[llave] = limpiar(valor);
+      else andar(valor);
+    }
+  };
+  andar(salida);
 }
 
 /**
@@ -678,19 +830,69 @@ function comprobarIndices(paso, salida) {
 }
 
 /**
- * Lo que el llamador sabe del caso X3: `faltaCodigo` es `teclado !== 'digitos'`,
- * y los tres booleanos de `comoSeCompara` sólo tienen algo que decidir cuando el
- * teclado es de texto. Con los otros tres teclados sólo se puede escribir lo que
- * viene pintado, así que la comparación es exacta.
+ * Lo que el llamador sabe del caso X3, según el teclado que el modelo eligió:
+ *
+ * - Los tres booleanos de `comoSeCompara` sólo tienen algo que decidir con el
+ *   teclado de texto. Con los otros tres sólo se puede escribir lo que viene
+ *   pintado, así que la comparación es exacta y van en `false`.
+ * - `fichas` sólo se llena con el teclado `fichas`, y `respuesta.opciones` sólo con
+ *   `opciones`: en los demás casos van vacías.
+ * - `faltaCodigo` y `planB` ya no existen (los cuatro teclados se sirven). Un modelo
+ *   que copió la forma de antes los trae por costumbre y el esquema los rechazaría,
+ *   así que se quitan en vez de gastar una corrección en ellos.
  */
+/**
+ * Corta un texto de bitácora al tope, en el último espacio, sin dejar una palabra a medias.
+ * Sólo se usa con campos que nadie pinta (`porQueEseTeclado`, el `porQue` de los teclados
+ * descartados): pasarse por unos caracteres de explicación no vale una llamada entera.
+ */
+function recortarBitacora(texto, tope) {
+  if (typeof texto !== 'string' || texto.length <= tope) return texto;
+  const corte = texto.slice(0, tope - 1);
+  const ultimoEspacio = corte.lastIndexOf(' ');
+  return (ultimoEspacio > tope * 0.6 ? corte.slice(0, ultimoEspacio) : corte).trimEnd() + '…';
+}
+
 function sellarTeclado(paso, salida) {
-  if (paso.clave !== 'X3-teclado' || !salida || typeof salida !== 'object') return;
-  if (!('faltaCodigo' in salida)) salida.faltaCodigo = salida.teclado !== 'digitos';
-  if (salida.teclado === 'texto') return;
-  salida.comoSeCompara ??= {};
-  for (const b of ['ignoraMayusculas', 'ignoraAcentos', 'ignoraEspaciosDeMas']) {
-    if (!(b in salida.comoSeCompara)) salida.comoSeCompara[b] = false;
+  if (paso.clave !== CLAVE_X3 || !salida || typeof salida !== 'object') return;
+  delete salida.faltaCodigo;
+  delete salida.planB;
+  salida.porQueEseTeclado = recortarBitacora(salida.porQueEseTeclado, 400);
+  if (Array.isArray(salida.tecladosDescartados)) {
+    for (const d of salida.tecladosDescartados) {
+      if (d && typeof d === 'object') d.porQue = recortarBitacora(d.porQue, 300);
+    }
   }
+
+  if (salida.teclado !== 'texto') {
+    salida.comoSeCompara = {
+      ignoraMayusculas: false,
+      ignoraAcentos: false,
+      ignoraEspaciosDeMas: false,
+    };
+  }
+  if (salida.teclado !== 'fichas') salida.fichas = [];
+  if (salida.teclado !== 'opciones') {
+    const escalones = Array.isArray(salida.escalera) ? salida.escalera : [];
+    for (const r of [salida.completar?.respuesta, ...escalones.map((e) => e?.respuesta)]) {
+      if (r && typeof r === 'object') r.opciones = [];
+    }
+  }
+}
+
+/**
+ * Lo que el esquema no puede expresar del teclado: que cada respuesta se pueda
+ * ARMAR con él. Un `correcta` con una ficha que no existe valida perfecto y deja un
+ * hueco que nadie puede llenar. Los mensajes dicen qué campo y qué hacer, y la
+ * vuelta de corrección se los devuelve al modelo tal cual.
+ */
+function comprobarTeclado(paso, salida) {
+  if (paso.clave !== CLAVE_X3) return;
+  const problemas = problemasDeTeclado(salida);
+  if (problemas.length === 0) return;
+  throw new Rajada(
+    `${paso.clave}: el teclado no se puede contestar tal como quedó\n    ${problemas.join('\n    ')}`,
+  );
 }
 
 function comprobarTraza(paso, salida, temario, tema) {
@@ -834,19 +1036,43 @@ async function correr(paso, valores) {
   decir(`\n  ${paso.clave} · ${paso.herramienta}`);
   let resultado = await llamarConReintentos({ paso, sistema, mensaje });
 
-  // Todo lo que el llamador sabe con certeza se rellena ANTES de validar: un campo
-  // que nadie tenía que adivinar no puede tirar la llamada entera.
-  sellarTraza(paso, resultado, temario, tema);
-  sellarIndices(resultado);
-  sellarTeclado(paso, resultado);
-  if (paso.necesitaVideos) sellarVideo(resultado, valores.__candidatos ?? [], valores.__consulta);
+  const sellarYComprobar = (r) => {
+    // Todo lo que el llamador sabe con certeza se rellena ANTES de validar: un campo
+    // que nadie tenía que adivinar no puede tirar la llamada entera.
+    sellarTraza(paso, r, temario, tema);
+    sellarIndices(r);
+    sellarInvisibles(r);
+    sellarComillasSueltas(r);
+    sellarTeclado(paso, r);
+    if (paso.necesitaVideos) sellarVideo(r, valores.__candidatos ?? [], valores.__consulta);
 
-  comprobarEsquema(paso, resultado);
-  comprobarTraza(paso, resultado, temario, tema);
-  comprobarIndices(paso, resultado);
-  comprobarUnoSolo(paso, resultado);
+    comprobarEsquema(paso, r);
+    comprobarTraza(paso, r, temario, tema);
+    comprobarIndices(paso, r);
+    comprobarUnoSolo(paso, r);
+    comprobarTeclado(paso, r);
 
-  if (paso.necesitaVideos) comprobarVideoEscogido(resultado, valores.__candidatos ?? []);
+    if (paso.necesitaVideos) comprobarVideoEscogido(r, valores.__candidatos ?? []);
+  };
+
+  // Una vuelta de corrección, no un reintento a ciegas. Lo que más tira una salida
+  // es pasarse de un tope de caracteres (resumen 242 de 240, pregunta 75 de 70), y
+  // repetir la llamada tal cual vuelve a pasarse por lo mismo: el modelo no ve qué
+  // falló. Con el error delante corrige sólo ese campo. Cuesta una llamada más, y
+  // ahorra las tres que la tanda se gastaba repitiendo el tema entero.
+  try {
+    sellarYComprobar(resultado);
+  } catch (e) {
+    if (!(e instanceof Rajada)) throw e;
+    decir(`      no valida; una vuelta de corrección con los errores a la vista`);
+    resultado = await llamarConReintentos({
+      paso,
+      sistema,
+      mensaje,
+      corregir: { salida: resultado, errores: e.message },
+    });
+    sellarYComprobar(resultado);
+  }
 
   if (resultado.noSePuede) {
     decir(`      noSePuede lleno: ${resultado.noSePuede.que}`);
@@ -891,6 +1117,7 @@ if (!salida.canon) {
   try {
     salida.canon = await correr(CANON, valoresDelTema(temario, tema, ejemploCanon));
   } catch (e) {
+    if (e instanceof TopeAlcanzado) pararPorTope(e);
     morir(`El canon no salió, así que no hay de dónde colgar las seis estaciones.`, e.message);
   }
   await guardar(salida);
@@ -900,49 +1127,78 @@ if (!salida.canon) {
 }
 
 const canon = salida.canon;
-const valores = {
-  ...valoresDelTema(temario, tema, ejemploCanon),
-  ...valoresDelCanon(canon),
-};
 
-// El ruteo: qué prompts le tocan a este tema (CONTRATO.md §3).
+// El ruteo: qué prompts le tocan a este tema (CONTRATO.md §3). Lo decide
+// `casoDelCanon`, que también usan tanda.mjs e indexar.mjs.
 //
 // `expresion` entró aquí por lo que pasó con el tema 2. La factorización de 360 se
-// escribe 2³ × 3² × 5, y el teclado no tiene ni exponente ni la x de multiplicar:
-// la estación 4 se pidió igual y $defs.tecleado rechazó «2/3*3/2*5» tres veces
-// seguidas. El tope hizo su trabajo; lo que falló fue mandar ese tema a la
-// escalera. La mitad del temario de matemáticas está en el mismo caso (la respuesta
-// necesita el punto decimal, el signo menos o un símbolo de comparación), así que
-// el canon declara `expresion` y el tema sale por aquí en vez de cobrar reintentos.
-const caso =
-  canon.notacion === 'tabla'
-    ? CASOS_APARTE.tabla
-    : canon.notacion === 'figura'
-      ? CASOS_APARTE.figura
-      : canon.formaDeRespuesta === 'palabra' || canon.formaDeRespuesta === 'expresion'
-        ? CASOS_APARTE.teclado
-        : canon.formaDeRespuesta === 'trazo'
-          ? CASOS_APARTE.figura
-          : null;
+// escribe 2³ × 3² × 5, y el teclado de dígitos no tiene ni exponente ni la × de
+// multiplicar: la estación 4 se pidió igual y $defs.tecleado rechazó «2/3*3/2*5»
+// tres veces seguidas. El tope hizo su trabajo; lo que falló fue mandar ese tema a
+// la escalera. La mitad del temario de matemáticas está en el mismo caso (la
+// respuesta necesita el punto decimal, el signo menos o un símbolo de comparación),
+// así que el canon declara `expresion` y el tema sale por aquí en vez de cobrar
+// reintentos. Y un canon que se llama `numero` pero no trae ni una cifra en su
+// resultado es una frase: se rutea igual (contenido/forma.mjs).
+const claveDelCaso = casoDelCanon(canon);
+const caso = Object.values(CASOS_APARTE).find((c) => c.clave === claveDelCaso) ?? null;
+const vaAX3 = caso === CASOS_APARTE.teclado;
+
+// Un canon escrito cuando el único teclado era el de dígitos llenó `noSePuede` por
+// regla («el teclado no tiene letras»). Con los cuatro teclados ese aviso quedó viejo,
+// y dejárselo ver a las llamadas las empuja a darse por vencidas. Sólo se les oculta:
+// el archivo del canon no se toca.
+const canonViejo = vaAX3 && canon.noSePuede && !noSePuedeVigente(canon);
+const valores = {
+  ...valoresDelTema(temario, tema, ejemploCanon),
+  ...valoresDelCanon(canonViejo ? { ...canon, noSePuede: null } : canon),
+};
 
 if (caso) {
-  decir(
-    `\n  Ruteo: notacion "${canon.notacion}", respuesta "${canon.formaDeRespuesta}".\n` +
-      `  Este tema va a ${caso.prompt}, que sustituye a: ${caso.reemplaza.join(', ')}.\n` +
-      '  Ese caso aparte pide componentes de UI que hoy no existen (CONTRATO.md §5),\n' +
-      '  asi que aqui solo se generan las estaciones que si corren.',
-  );
+  if (vaAX3) {
+    const porSinCifra =
+      canon.formaDeRespuesta === 'numero' || canon.formaDeRespuesta === 'fraccion';
+    decir(
+      `\n  Ruteo: notacion "${canon.notacion}", respuesta "${canon.formaDeRespuesta}"` +
+        (porSinCifra ? ', pero el resultado del ejemplo no tiene ninguna cifra: es una frase.' : '.') +
+        `\n  Este tema va a ${caso.prompt}, que sustituye a: ${caso.reemplaza.join(', ')}.\n` +
+        '  Se llama de verdad: elige el teclado del tema y escribe con el las estaciones 3 y 4,\n' +
+        `  y se guarda en casosAparte["${CLAVE_X3}"].`,
+    );
+    if (canonViejo) {
+      decir(
+        '  El noSePuede del canon es de antes de los cuatro teclados y no se le muestra a las\n' +
+          '  llamadas: sigue en el archivo, y tanda.mjs e indexar.mjs tampoco lo cuentan.',
+      );
+    }
+  } else {
+    decir(
+      `\n  Ruteo: notacion "${canon.notacion}", respuesta "${canon.formaDeRespuesta}".\n` +
+        `  Este tema va a ${caso.prompt}, que sustituye a: ${caso.reemplaza.join(', ')}.\n` +
+        '  Ese caso aparte pide componentes de UI que hoy no existen (CONTRATO.md §5),\n' +
+        '  asi que aqui solo se generan las estaciones que si corren.',
+    );
+  }
 }
 
-const porGenerar = ESTACIONES.filter((e) => {
-  if (solo) return e.clave === solo;
-  if (salida[e.clave]) return false;
-  if (caso && caso.reemplaza.includes(e.clave)) return false;
+/** Lo que ya está guardado de un paso: una estación, o el caso X3 bajo `casosAparte`. */
+const guardadoDe = (paso) =>
+  paso.clave === CLAVE_X3 ? salida.casosAparte?.[CLAVE_X3] : salida[paso.clave];
+
+// X3 va al final y sólo se pide si el tema se rutea a él (o con `--solo X3-teclado`):
+// sustituye a completar y escalera.
+const pasosDelTema = [...ESTACIONES, CASOS_APARTE.teclado];
+
+const porGenerar = pasosDelTema.filter((p) => {
+  if (solo) return p.clave === solo;
+  if (guardadoDe(p)) return false;
+  if (p === CASOS_APARTE.teclado) return vaAX3;
+  if (caso && caso.reemplaza.includes(p.clave)) return false;
   return true;
 });
 
 if (solo && solo !== 'canon' && porGenerar.length === 0) {
-  morir(`--solo ${solo}: no es ninguna de las seis estaciones.`);
+  morir(`--solo ${solo}: no es ninguna de las seis estaciones ni ${CLAVE_X3}.`);
 }
 
 let rajadas = 0;
@@ -950,8 +1206,25 @@ for (const paso of porGenerar) {
   try {
     const suyos = { ...valores };
     if (paso.necesitaVideos) {
-      decir('\n  buscando el video con OpenAI...');
-      const hallazgo = await buscarVideos(tema, materia);
+      // La búsqueda se paga (≈ $0.2 con gpt-5.5) y la estación 1 puede no salir a la
+      // primera. Lo buscado se guarda aparte para que reintentar la estación no lo
+      // pague otra vez; un archivo vacío de candidatos no se guarda: ahí sí se busca.
+      const rutaDeVideos = join(dirTemas, `_videos-${materia}-${numero}.json`);
+      let hallazgo = null;
+      try {
+        hallazgo = JSON.parse(await readFile(rutaDeVideos, 'utf8'));
+        if (!hallazgo?.candidatos?.length) hallazgo = null;
+        else decir('\n  video: se reusa la búsqueda guardada de la corrida anterior.');
+      } catch {
+        // Sin archivo, o ilegible: se busca de nuevo.
+      }
+      if (!hallazgo) {
+        decir('\n  buscando el video con OpenAI...');
+        hallazgo = await buscarVideos(tema, materia);
+        if (hallazgo.candidatos.length) {
+          await writeFile(rutaDeVideos, JSON.stringify(hallazgo, null, 2) + '\n', 'utf8');
+        }
+      }
       decir(
         `      ${hallazgo.candidatos.length} candidato(s) de ${hallazgo.buscados} enlace(s) vistos` +
           (hallazgo.descartados.length ? `, ${hallazgo.descartados.length} descartado(s)` : ''),
@@ -960,10 +1233,13 @@ for (const paso of porGenerar) {
       suyos.__candidatos = hallazgo.candidatos;
       suyos.__consulta = hallazgo.consulta;
     }
-    salida[paso.clave] = await correr(paso, suyos);
+    const resultado = await correr(paso, suyos);
+    if (paso.clave === CLAVE_X3) (salida.casosAparte ??= {})[CLAVE_X3] = resultado;
+    else salida[paso.clave] = resultado;
     await guardar(salida);
     decir(`      ${paso.clave} guardado`);
   } catch (e) {
+    if (e instanceof TopeAlcanzado) pararPorTope(e);
     rajadas += 1;
     console.error(`  ${paso.clave} NO SALIÓ: ${e.message}`);
     console.error('  Se sigue con las demás; vuelve a correr el script para retomar ésta.');
@@ -972,13 +1248,21 @@ for (const paso of porGenerar) {
 
 await guardar(salida);
 
-const hechas = ESTACIONES.filter((e) => salida[e.clave]).map((e) => e.clave);
-const faltan = ESTACIONES.filter(
-  (e) => !salida[e.clave] && !(caso && caso.reemplaza.includes(e.clave)),
-).map((e) => e.clave);
-const conNoSePuede = ['canon', ...ESTACIONES.map((e) => e.clave)].filter(
-  (c) => salida[c] && salida[c].noSePuede,
-);
+// Lo que el tema tiene hecho y lo que le falta, con X3 contado como una pieza más
+// cuando el tema va ahí (es lo que sustituye a completar y escalera).
+const hechas = pasosDelTema.filter((p) => guardadoDe(p)).map((p) => p.clave);
+const faltan = pasosDelTema
+  .filter((p) => {
+    if (guardadoDe(p)) return false;
+    if (p === CASOS_APARTE.teclado) return vaAX3;
+    return !(caso && caso.reemplaza.includes(p.clave));
+  })
+  .map((p) => p.clave);
+const conNoSePuede = [
+  ...(noSePuedeVigente(salida.canon) ? ['canon'] : []),
+  ...ESTACIONES.map((e) => e.clave).filter((c) => salida[c]?.noSePuede),
+  ...(salida.casosAparte?.[CLAVE_X3]?.noSePuede ? [CLAVE_X3] : []),
+];
 
 decir(`\n${rutaDelTema}`);
 decir(`  hechas: ${hechas.length ? hechas.join(', ') : 'ninguna'}`);
@@ -989,6 +1273,8 @@ decir(
   '  El cierre no se genera: su frase es quedaSabiendo del temario y el resto es\n' +
     '  copy fijo y estado de la app (CONTRATO.md §4).',
 );
+
+decir(`\n  Gasto acumulado (contenido/temas/_gasto.json):\n${await resumenDelGasto()}`);
 
 if (rajadas > 0) {
   console.error(`\n${rajadas} llamada(s) sin salir. El archivo quedó a medias, y se retoma.`);

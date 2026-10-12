@@ -40,6 +40,11 @@ export const colores = {
   error: '#D9694A',
   /** Fondo del paso equivocado. */
   errorFondo: '#2E1A14',
+
+  /** El escenario detrás del teléfono en escritorio: más oscuro que el fondo. */
+  escenario: '#0B0A08',
+  /** Lo que se oscurece detrás de una hoja que se abre encima, como la de pistas. */
+  velo: 'rgba(11, 10, 8, 0.72)',
 } as const;
 
 export const fuentes = {

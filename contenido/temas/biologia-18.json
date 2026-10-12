@@ -1,0 +1,162 @@
+{
+  "materia": "biologia",
+  "temaNumero": 18,
+  "titulo": "El ciclo menstrual, día por día",
+  "generadoEn": "2026-10-06T15:55:26.317Z",
+  "canon": {
+    "temaNumero": 18,
+    "materia": "biologia",
+    "titulo": "El ciclo menstrual, día por día",
+    "notacion": "figura",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Ubicar la ovulación en el ciclo menstrual y calcular el riesgo de embarazo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas el día 1 del ciclo: es el primer día del sangrado, no el último.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Día 1: comienza el sangrado"
+            }
+          ],
+          "porQue": "El ciclo menstrual se cuenta desde el primer día del sangrado porque es el momento más evidente del ciclo y el que se ve en todas las personas. Si cuentas desde el final, pierdes días y todo se corre."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Marcas los primeros días del sangrado, que duran entre 3 y 7 días.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Días 1 a 5: sangrado y menstruación"
+            }
+          ],
+          "porQue": "El endometrio, la pared interna del útero, se está desprendiendo. Estos primeros días marcan el momento en que la mucosa sale del cuerpo."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Ubicas la ovulación alrededor del día 14, no al final del ciclo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Día 14: ovulación (salida del óvulo)"
+            }
+          ],
+          "porQue": "La ovulación ocurre aproximadamente en la mitad del ciclo de 28 días, alrededor del día 14. Es cuando el óvulo sale del ovario y baja por la trompa de Falopio. Si la colocas al final, todo el cálculo de riesgo sale mal."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Identificas la ventana fértil: los 5 días antes de la ovulación y el día de la ovulación.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Días 9 a 14: hay riesgo de embarazo si hay relaciones"
+            }
+          ],
+          "porQue": "El óvulo vive solo 24 horas, pero los espermatozoides pueden sobrevivir hasta 5 días dentro del cuerpo de la persona. Así que es posible quedar embarazada desde 5 días antes de la ovulación."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Reconoces que durante el sangrado también hay riesgo de embarazo si el ciclo es corto.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "El riesgo de embarazo existe incluso durante la menstruación"
+            }
+          ],
+          "porQue": "Si alguien tiene un ciclo de 21 días en lugar de 28, la ovulación llega al día 7. Como los espermatozoides sobreviven 5 días, pueden fecundar un óvulo que sale durante o justo después del sangrado. Por eso no es cierto que «durante la regla no puede haber embarazo»."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una persona con ciclo regular de 28 días que comienza a sangrar",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Si el sangrado comienza el día 1, ¿qué día ocurre la ovulación?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Día 14"
+        }
+      ],
+      "resultadoEnPalabras": "catorce"
+    },
+    "error": {
+      "enUnaFrase": "Coloca la ovulación al final del ciclo, cerca del día 28, porque empieza a contar desde el último día del sangrado.",
+      "creenciaDeAtras": "cree que el día 1 es cuando termina de sangrar, no cuando comienza; por eso cuenta mal los días y cree que la ovulación llega después",
+      "pasoQueCorrompe": 1,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Día 1: termina el sangrado"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Día 21 o 22 (ovulación al final)"
+        }
+      ],
+      "comoSeCacha": "El resultado coloca la ovulación casi al final del ciclo en lugar de en la mitad. Si comparas con un ciclo de 28 días, 21 es demasiado tarde para que haya riesgo de embarazo durante el sangrado."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que durante el sangrado no hay riesgo de embarazo porque la menstruación es cuando 'no hay óvulo'.",
+        "creenciaDeAtras": "No entiende que con ciclos más cortos (21 días) la ovulación llega muy pronto, dentro de la ventana fértil de los 5 días anteriores, y que los espermatozoides pueden esperar ese tiempo"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "ciclo menstrual",
+        "queEs": "El período que va desde el primer día de una menstruación hasta el primer día de la siguiente menstruación, normalmente dura 28 días pero puede variar entre 21 y 35 días.",
+        "noEsLoMismoQue": "la menstruación, que es solo los días que dura el sangrado"
+      },
+      {
+        "palabra": "ovulación",
+        "queEs": "El momento en el que el óvulo maduro sale del ovario y desciende por la trompa de Falopio, ocurre alrededor del día 14 en un ciclo de 28 días.",
+        "noEsLoMismoQue": "menstruación, que es el sangrado"
+      },
+      {
+        "palabra": "ventana fértil",
+        "queEs": "Los días del ciclo en que hay riesgo de embarazo si hay relaciones sexuales, incluye desde 5 días antes de la ovulación hasta 1 día después.",
+        "noEsLoMismoQue": "el día de la ovulación, que es solo un día"
+      },
+      {
+        "palabra": "endometrio",
+        "queEs": "La pared interna del útero que se engrosa durante el ciclo para prepararse por si llega un óvulo fecundado, y se despende en forma de sangrado si no hay fecundación."
+      },
+      {
+        "palabra": "riesgo de embarazo",
+        "queEs": "La posibilidad de quedar embarazada tras una relación sexual, existe durante la ventana fértil incluso si hay menstruación."
+      }
+    ],
+    "cotas": {
+      "numeros": "números de días del 1 al 35, ciclos de 21 a 35 días, cálculos de días de ovulación en ciclos regulares",
+      "unidades": [
+        "día",
+        "días"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "Día"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema pide un calendario con días numerados del 1 al 28/35 y marcas sobre días concretos, que no se puede escribir como un renglón lineal de átomos.",
+      "porQue": "Los cuatro átomos (texto, fracción, símbolo y hueco) no permiten crear un calendario visual con celdas, números ordenados, y marcas de color en días específicos. Esto requiere una interfaz gráfica que dibuje el calendario.",
+      "queHagoConEsto": "El tema debe mandarse a un prompt especial que genere ejercicios con calendarios visuales, donde el estudiante marque o escriba el número del día en un hueco dentro de la representación gráfica del ciclo menstrual."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

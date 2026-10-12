@@ -1,0 +1,173 @@
+{
+  "materia": "quimica",
+  "temaNumero": 35,
+  "titulo": "Oxidación y reducción",
+  "generadoEn": "2026-10-06T16:35:41.387Z",
+  "canon": {
+    "temaNumero": 35,
+    "materia": "quimica",
+    "titulo": "Oxidación y reducción",
+    "notacion": "figura",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Identificar oxidación y reducción en una reacción",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Escribes el número de oxidación de cada elemento en los reactivos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Zn: 0, H: +1, Cl: −1"
+            }
+          ],
+          "porQue": "El número de oxidación dice cuántos electrones ganó o perdió cada elemento, y es distinto para cada reactivo. Sin saber de dónde empezamos no podemos ver si subió o bajó."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Escribes el número de oxidación de cada elemento en los productos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Zn: +2, H: 0, Cl: −1"
+            }
+          ],
+          "porQue": "En los productos los números de oxidación pueden cambiar. Comparar antes y después es lo que nos dice quién perdió electrones y quién los ganó."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Señalas qué elemento subió su número de oxidación y cuál bajó.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Zn: 0 → +2 (subió 2). H: +1 → 0 (bajó 1)."
+            }
+          ],
+          "porQue": "Cuando el número sube, el elemento perdió electrones. Cuando baja, los ganó. Este cambio es lo que define qué se oxidó y qué se redujo."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Dices quién se oxidó y quién se redujo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Zn se oxidó. H se redujo."
+            }
+          ],
+          "porQue": "El que subió su número de oxidación es el que se oxidó: perdió electrones. El que bajó es el que se redujo: ganó electrones. La palabra oxidación no necesita oxígeno, es un cambio en los electrones."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Dices cuántos electrones perdió uno y cuántos ganó el otro.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Zn perdió 2 electrones. H ganó 1 electrón cada uno."
+            }
+          ],
+          "porQue": "Los electrones que pierde uno tienen que ser los mismos que gana el otro. Escribirlo deja claro que los dos cambios van de la mano en la reacción."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una reacción entre zinc y ácido clorhídrico sin que haya oxígeno",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Zn + 2HCl → ZnCl₂ + H₂"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Zn se oxidó, H se redujo"
+        }
+      ],
+      "resultadoEnPalabras": "zinc se oxidó, hidrógeno se redujo"
+    },
+    "error": {
+      "enUnaFrase": "Cree que oxidarse es ganar electrones.",
+      "creenciaDeAtras": "Cree que oxidación y reducción son lo opuesto de lo que son, porque confunde la palabra oxidarse con ganar oxígeno, y piensa que perder electrones es ganar átomos.",
+      "pasoQueCorrompe": 4,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Zn se redujo. H se oxidó."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Zn se redujo, H se oxidó"
+        }
+      ],
+      "comoSeCacha": "El cambio está al revés: el que perdió electrones (subió de 0 a +2) aparece como reducido, y el que ganó electrones (bajó de +1 a 0) aparece como oxidado. Sin revisar los números de oxidación del paso 3, la respuesta no tiene sentido."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cree que sin oxígeno en la ecuación no puede haber oxidación.",
+        "creenciaDeAtras": "La palabra oxidación suena a oxígeno, así que piensa que si no hay oxígeno escrito en la ecuación, lo que pasa no es oxidación de verdad."
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "número de oxidación",
+        "queEs": "Un número que dice cuántos electrones ganó o perdió un elemento en una reacción. Puede ser positivo, negativo o cero.",
+        "noEsLoMismoQue": "la carga de un ion, aunque a veces sean el mismo número"
+      },
+      {
+        "palabra": "oxidarse",
+        "queEs": "Que un elemento pierda electrones en una reacción. El número de oxidación sube.",
+        "noEsLoMismoQue": "reaccionar con oxígeno, que es sólo una forma en que puede pasar la oxidación"
+      },
+      {
+        "palabra": "reducirse",
+        "queEs": "Que un elemento gane electrones en una reacción. El número de oxidación baja.",
+        "noEsLoMismoQue": "disminuir, que es el significado de la palabra reducir en otros contextos"
+      },
+      {
+        "palabra": "reacción redox",
+        "queEs": "Una reacción en la que al menos un elemento se oxida y otro se reduce. Los dos cambios ocurren a la vez."
+      },
+      {
+        "palabra": "agente oxidante",
+        "queEs": "La sustancia que causa que otro elemento se oxide, porque gana los electrones que ese elemento pierde.",
+        "noEsLoMismoQue": "agente reductor, que es el que causa la reducción"
+      },
+      {
+        "palabra": "agente reductor",
+        "queEs": "La sustancia que causa que otro elemento se reduzca, porque pierde los electrones que ese elemento gana.",
+        "noEsLoMismoQue": "agente oxidante, que es el que causa la oxidación"
+      }
+    ],
+    "cotas": {
+      "numeros": "números de oxidación enteros del −2 al +8; cambios de 1 a 3 electrones; ecuaciones balanceadas con coeficientes del 1 al 4",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "→"
+        },
+        {
+          "tipo": "texto",
+          "valor": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "−"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema pide que se escriban números de oxidación arriba de cada símbolo en la ecuación, con flechas que muestren la subida o bajada del número.",
+      "porQue": "Los cuatro átomos lineales (texto, fracción, símbolo con sub/sup, hueco) no permiten escribir un número de oxidación que flote encima de un símbolo en una ecuación. Esto necesita un dibujo donde se superponen elementos.",
+      "queHagoConEsto": "El tema debe mandarse a un prompt de figura que dibuje ecuaciones químicas con anotaciones de números de oxidación y flechas que muestren el cambio. Sin eso, no se puede mostrar el paso 3 de forma que el estudiante entienda qué números subieron y cuáles bajaron."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

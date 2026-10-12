@@ -1,0 +1,193 @@
+{
+  "materia": "quimica",
+  "temaNumero": 21,
+  "titulo": "Enlace iónico: pasar electrones",
+  "generadoEn": "2026-10-06T16:22:54.890Z",
+  "canon": {
+    "temaNumero": 21,
+    "materia": "quimica",
+    "notacion": "figura",
+    "formaDeRespuesta": "expresion",
+    "procedimiento": {
+      "nombre": "Escribir un enlace iónico identificando quién cede electrones y quién los recibe",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identifica cuál átomo es metal y cuál es no metal.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Na es metal, Cl es no metal"
+            }
+          ],
+          "porQue": "En un enlace iónico siempre hay un metal que cede electrones y un no metal que los recibe. Los metales están a la izquierda de la tabla, los no metales a la derecha. Si no distingues cuál es cuál, vas a poner al revés quién cede y quién recibe."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Escribe la valencia de cada uno: cuántos electrones quiere perder el metal y cuántos quiere ganar el no metal.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Na tiene valencia +1, Cl tiene valencia −1"
+            }
+          ],
+          "porQue": "La valencia te dice cuántos electrones se van a mover. El metal pierde los de su última capa, el no metal recibe los que le faltan para llenar la suya. La tabla periódica te deja leer eso directo."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Dibuja los electrones: puntos alrededor del símbolo. Dibuja una flecha curva que va del metal al no metal, que representa los electrones que se transfieren.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Flecha curva de Na a Cl: un electrón"
+            }
+          ],
+          "porQue": "La flecha curva muestra quién cede y quién recibe. Es la transferencia de electrones que hace el enlace iónico. Sin la flecha, la estructura queda incompleta: no se ve qué pasó."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Verifica que el número de electrones cedidos sea igual al número de electrones recibidos.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Na cede 1, Cl recibe 1. Están iguales"
+            }
+          ],
+          "porQue": "Los electrones no se crean ni se destruyen: los que pierde uno tiene que recibirlos el otro, de una en una. Si escribes un Na₂⁺ con un Cl⁻, tienes un electrón sin casa, y eso no es posible."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Escribe los dos iones con su carga en superíndice, juntos en la misma línea.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "Na",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "y"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "Cl",
+              "sup": "−"
+            }
+          ],
+          "porQue": "La carga en superíndice muestra los electrones que salieron o llegaron: el metal quedó con menos electrones que protones, así que es positivo; el no metal quedó con más electrones, así que es negativo. La carga es la prueba de que hubo transferencia."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "un átomo de sodio y un átomo de cloro que forman un enlace iónico",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Na y Cl"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "simbolo",
+          "valor": "Na",
+          "sup": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "y"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "Cl",
+          "sup": "−"
+        }
+      ],
+      "resultadoEnPalabras": "ión sodio y ión cloruro"
+    },
+    "error": {
+      "enUnaFrase": "Pone al metal recibiendo electrones y al no metal cediéndolos, al revés de lo que pasa.",
+      "creenciaDeAtras": "cree que todos los átomos quieren ganar electrones para completar su última capa, así que no distingue que el metal los pierde y el no metal los recibe",
+      "pasoQueCorrompe": 1,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Na es no metal, Cl es metal"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "simbolo",
+          "valor": "Na",
+          "sup": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "y"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "Cl",
+          "sup": "+"
+        }
+      ],
+      "comoSeCacha": "Las cargas quedaron al revés: un metal nunca forma un ión negativo cuando cede electrones. El na debería ser positivo, no negativo."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Junta dos iones con cargas que no coinciden: un Na²⁺ con un Cl⁻, sin darse cuenta de que falta un electrón por colocar.",
+        "creenciaDeAtras": "cree que los dos átomos se atraen aunque sus cargas no sean opuestas, sin verificar que cada electrón cedido tiene que ser recibido por alguien"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "metal",
+        "queEs": "Un elemento que cede electrones fácilmente para formar un ión positivo. Está a la izquierda de la tabla periódica.",
+        "noEsLoMismoQue": "no metal, que está a la derecha y recibe electrones"
+      },
+      {
+        "palabra": "no metal",
+        "queEs": "Un elemento que recibe electrones para formar un ión negativo. Está a la derecha de la tabla periódica.",
+        "noEsLoMismoQue": "metal, que cede electrones"
+      },
+      {
+        "palabra": "valencia",
+        "queEs": "El número de electrones que un átomo pierde o gana para llenar su última capa. Dice cuántos electrones se van a mover en el enlace."
+      },
+      {
+        "palabra": "ión",
+        "queEs": "Un átomo que ganó o perdió electrones y quedó con carga. Es diferente al átomo neutro."
+      },
+      {
+        "palabra": "transferencia de electrones",
+        "queEs": "El movimiento de uno o más electrones de un metal a un no metal. La flecha curva la dibuja en la estructura de Lewis."
+      },
+      {
+        "palabra": "enlace iónico",
+        "queEs": "El enlace que se forma cuando un metal cede electrones a un no metal. Los dos iones con carga opuesta se atraen.",
+        "noEsLoMismoQue": "enlace covalente, donde los átomos comparten electrones en vez de transferirlos"
+      }
+    ],
+    "cotas": {
+      "numeros": "metales del grupo 1 y no metales del grupo 17; valencias de +1 y −1 únicamente; sin decimales",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema necesita dibujar estructuras de Lewis con puntos alrededor de los símbolos y una flecha curva de transferencia entre los dos átomos.",
+      "porQue": "Los cuatro átomos (texto, fracción, símbolo, hueco) no permiten dibujar puntos decorativos ni flechas curvas de transferencia. La app sólo puede escribir renglones lineales, no gráficos o figuras.",
+      "queHagoConEsto": "Mandar el tema a otro prompt que maneje figuras y dibujos. La estructura de Lewis es visual y no se puede comunicar completamente en texto lineal: el estudiante necesita ver los puntos y la flecha para entender la transferencia."
+    },
+    "titulo": "Enlace iónico: pasar electrones"
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

@@ -11,7 +11,7 @@ import {
   Pie,
   Tarjeta,
 } from '../src/componentes';
-import { tema } from '../src/contenido/actual';
+import { GuardiaDelCierre, useAndamio } from '../src/estado/Andamio';
 import { colores, espacio, fuentes } from '../src/tema';
 
 const LADO = 160;
@@ -34,6 +34,16 @@ const ESTACIONES = Array.from({ length: 6 }, (_, i) => {
  * monedas y el aviso de que el tema volverá.
  */
 export default function Cierre() {
+  return (
+    <GuardiaDelCierre>
+      <Pantalla />
+    </GuardiaDelCierre>
+  );
+}
+
+function Pantalla() {
+  const { tema } = useAndamio();
+
   return (
     <Marco>
       <View style={estilos.pantalla}>
@@ -91,8 +101,8 @@ export default function Cierre() {
 
         {/* sinMargen y margen propio: esta pantalla usa 24, no el ancho de serie. */}
         <Pie arriba={20} sinMargen style={estilos.piePantalla}>
-          {/* replace y no push: el círculo se cierra, no queremos poder volver a él. */}
-          <BotonPrincipal onPress={() => router.replace('/')}>volver al mapa</BotonPrincipal>
+          {/* dismissTo y no push: el círculo se cierra, no queremos poder volver a él. */}
+          <BotonPrincipal onPress={() => router.dismissTo('/')}>volver al mapa</BotonPrincipal>
         </Pie>
       </View>
     </Marco>

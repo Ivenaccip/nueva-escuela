@@ -1,0 +1,160 @@
+{
+  "materia": "biologia",
+  "temaNumero": 27,
+  "titulo": "Leer las capas: fósiles",
+  "generadoEn": "2026-10-06T15:58:46.035Z",
+  "canon": {
+    "temaNumero": 27,
+    "materia": "biologia",
+    "titulo": "Leer las capas: fósiles",
+    "notacion": "figura",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Determinar la edad relativa de fósiles por su posición en las capas de roca",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas todas las capas de roca en el corte del terreno, de abajo hacia arriba.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Capas ordenadas: abajo la 1, luego la 2, la 3 arriba"
+            }
+          ],
+          "porQue": "Las capas más profundas se depositaron primero. Sin ordenarlas bien, no puedes saber cuál es más vieja."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Localizas cada fósil en la capa en que aparece.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Fósil A en capa 1, Fósil B en capa 2"
+            }
+          ],
+          "porQue": "El fósil sólo te dice algo si sabes en qué capa está. Un fósil sin capa es sólo un hueso viejo."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Comparas la posición de sus capas: cuál está más abajo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Capa 1 está debajo de Capa 2"
+            }
+          ],
+          "porQue": "Lo que se deposita en el fondo ocurrió primero. La capa más baja es siempre la más antigua."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Determinas cuál fósil es más antiguo según su capa.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Fósil A es más antiguo que Fósil B"
+            }
+          ],
+          "porQue": "El fósil en la capa más baja vivió hace más tiempo, aunque no sepas exactamente cuántos años."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Verificas tu conclusión sin usar la edad exacta en años.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Conclusión: Fósil A vivió antes que Fósil B"
+            }
+          ],
+          "porQue": "La edad relativa te dice el orden, no la cifra. Eso es suficiente para comparar fósiles de capas distintas."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "dos fósiles encontrados en capas diferentes del mismo corte de terreno",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Un trilobites en la capa 1 y un ammonites en la capa 3. ¿Cuál vivió primero?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "El trilobites vivió primero"
+        }
+      ],
+      "resultadoEnPalabras": "el trilobites vivió primero porque está en la capa más baja"
+    },
+    "error": {
+      "enUnaFrase": "Cree que la capa de abajo es la más reciente porque se acaba de hundir.",
+      "creenciaDeAtras": "piensa que lo que cae es lo más nuevo, porque lo que se ve caer son cosas de hoy que descienden",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Capa 3 está debajo de Capa 1"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "El ammonites vivió primero"
+        }
+      ],
+      "comoSeCacha": "El estudiante invierte el orden de abajo hacia arriba. Si voltea qué capa queda dónde, la conclusión queda al revés: lo que es más viejo se convierte en lo más nuevo."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Llama fósil a cualquier hueso viejo, aunque no esté mineralizado.",
+        "creenciaDeAtras": "confunde un esqueleto enterrado con un fósil de verdad, y piensa que todo hueso antiguo es un fósil"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "fósil",
+        "queEs": "Los restos de un ser vivo que se mineralizaron hace miles o millones de años y quedaron dentro de la roca.",
+        "noEsLoMismoQue": "un hueso viejo enterrado sin mineralizar"
+      },
+      {
+        "palabra": "capa de roca",
+        "queEs": "Una lámina de roca que se depositó en un solo período de tiempo geológico, separada de las otras capas."
+      },
+      {
+        "palabra": "edad relativa",
+        "queEs": "El orden en que ocurrieron dos cosas, sin saber cuántos años tienen: cuál fue primero y cuál después."
+      },
+      {
+        "palabra": "mineralizarse",
+        "queEs": "Cuando los minerales de la roca reemplazan lentamente los restos del ser vivo, durificándolo y convirtiéndolo en piedra."
+      },
+      {
+        "palabra": "principio de superposición",
+        "queEs": "La ley que dice que las capas más profundas se depositaron antes que las de arriba, así que son más antiguas."
+      }
+    ],
+    "cotas": {
+      "numeros": "números de capas del 1 al 5; edades expresadas en palabras como '65 millones de años' o '65 ma' para contexto solamente",
+      "unidades": [
+        "millones de años",
+        "ma"
+      ],
+      "simbolos": [
+        {
+          "tipo": "texto",
+          "valor": "capa"
+        }
+      ]
+    },
+    "noSePuede": {
+      "que": "El tema requiere un dibujo de estratos apilados numerados que se puedan tocar interactivamente para identificar capas y fósiles.",
+      "porQue": "Los cuatro átomos de renglón (texto, fracción, símbolo, hueco) no pueden dibujar un corte de terreno con capas, ni permitir que el estudiante toque cada capa para seleccionar un fósil. La respuesta es una palabra ('el trilobites vivió primero') que sí teclea, pero el proceso requiere una interfaz gráfica que toque capas de roca.",
+      "queHagoConEsto": "Mandar el tema a un prompt especializado en figura que dibuje estratos apilados y permita tocar capas para ubicar fósiles. O reformular el tema para que cada escalón sea una pregunta de opción múltiple sobre qué capa es más antigua, sin el dibujo interactivo (pero esto pierde la esencia visual del aprendizaje de estratigrafía)."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

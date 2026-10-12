@@ -4,6 +4,8 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import {
   BarraEstacion,
+  BloqueRespuesta,
+  BotonPista,
   BotonPrincipal,
   Cuerpo,
   Expresion,
@@ -11,26 +13,76 @@ import {
   Marco,
   Pie,
 } from '../../src/componentes';
-import { tema } from '../../src/contenido/actual';
+import { respuestaDeMotivo, respuestaDePaso } from '../../src/contenido/calificar';
+import { Guardia, useAndamio } from '../../src/estado/Andamio';
+import { SEGUNDOS_PARA_PISTA } from '../../src/estado/modelo';
 import { colores, espacio, fuentes, radios } from '../../src/tema';
+
+/** Lo que se contesta tras «es ese»: con su propio título, porque hay dos maneras de fallar. */
+type Resultado = { bien: boolean; titulo: string; texto: string | null };
 
 /**
  * Estación 5 · cazar el error. Se lee una resolución ajena, se señala el paso
  * que está mal y se dice por qué. Aquí no se corrige nada: sólo se acusa.
  */
 export default function CazarElError() {
-  const { enunciado, pasos, pasoMalo, porQue, motivos, pistas } = tema.error;
+  return (
+    <Guardia clave="error">
+      <Estacion />
+    </Guardia>
+  );
+}
 
-  // Arranca con el paso malo ya señalado, como en el diseño; el estudiante
-  // puede mover la acusación a otro paso mientras no avance.
-  const [senalado, setSenalado] = useState(pasoMalo);
+function Estacion() {
+  const { tema, redactado, avance, marcarHecha, gastarPista } = useAndamio();
+  const { enunciado, pasos, porQue, motivos, pistas } = tema.error;
+  const contenido = redactado.error;
+
+  // Sin ningún paso señalado al llegar: el diseño lo muestra con el malo ya
+  // marcado, pero con calificación eso sería entregar la respuesta.
+  const [senalado, setSenalado] = useState<number | null>(null);
   const [motivoElegido, setMotivoElegido] = useState<number | null>(null);
+  const [resultado, setResultado] = useState<Resultado | null>(null);
+  const acertado = resultado?.bien === true;
+
+  const senalar = (numero: number) => {
+    if (acertado) return;
+    setSenalado(numero);
+    // El porqué se pregunta sobre un paso en concreto: cambiar de paso lo reinicia.
+    setMotivoElegido(null);
+    setResultado(null);
+  };
+
+  const elegirMotivo = (i: number) => {
+    if (acertado) return;
+    setMotivoElegido(i);
+    setResultado(null);
+  };
+
+  const comprobar = () => {
+    if (senalado === null || motivoElegido === null) return;
+    const paso = respuestaDePaso(senalado, contenido);
+    if (!paso.bien) {
+      return setResultado({ bien: false, titulo: 'Ese no es el paso', texto: paso.texto });
+    }
+    const motivo = respuestaDeMotivo(motivoElegido, contenido);
+    setResultado({
+      bien: motivo.bien,
+      titulo: motivo.bien ? 'Eso es: lo cazaste' : 'El paso sí, el porqué no',
+      texto: motivo.texto,
+    });
+  };
+
+  const seguir = () => {
+    marcarHecha('error');
+    router.replace('/estacion/explicar');
+  };
 
   return (
     <Marco>
       <BarraEstacion estacion={5} pistas={pistas} />
 
-      <Cuerpo>
+      <Cuerpo desplazarCuando={resultado}>
         <View style={estilos.encabezado}>
           <Text style={estilos.etiqueta}>estación 5 · cazar el error</Text>
           <View style={estilos.enunciado}>
@@ -46,9 +98,10 @@ export default function CazarElError() {
                 key={paso.numero}
                 accessibilityRole="button"
                 accessibilityLabel={`Paso ${paso.numero}: ${leerExpresion(paso.partes)}`}
-                accessibilityState={{ selected: esteSenalado }}
+                accessibilityState={{ selected: esteSenalado, disabled: acertado }}
                 aria-selected={esteSenalado}
-                onPress={() => setSenalado(paso.numero)}
+                disabled={acertado}
+                onPress={() => senalar(paso.numero)}
                 style={({ pressed }) => [
                   estilos.paso,
                   esteSenalado ? estilos.pasoSenalado : estilos.pasoQuieto,
@@ -74,38 +127,69 @@ export default function CazarElError() {
         </View>
 
         <View style={estilos.porQue}>
-          <Text style={estilos.pregunta}>{porQue}</Text>
-          <View style={estilos.motivos} accessibilityRole="radiogroup">
-            {motivos.map((motivo, i) => {
-              const elegido = i === motivoElegido;
-              return (
-                <Pressable
-                  key={motivo}
-                  accessibilityRole="radio"
-                  accessibilityLabel={motivo}
-                  accessibilityState={{ checked: elegido }}
-                  aria-checked={elegido}
-                  onPress={() => setMotivoElegido(i)}
-                  style={({ pressed }) => [
-                    estilos.motivo,
-                    elegido && estilos.motivoElegido,
-                    pressed && !elegido && estilos.motivoTocado,
-                  ]}
-                >
-                  <Text style={[estilos.motivoTexto, elegido && estilos.motivoTextoElegido]}>
-                    {motivo}
-                  </Text>
-                </Pressable>
-              );
-            })}
-          </View>
+          {/* El porqué se pregunta cuando ya hay un paso señalado: antes no hay de qué. */}
+          {senalado === null ? (
+            <Text style={estilos.indicacion}>Toca el paso que crees que está mal.</Text>
+          ) : (
+            <>
+              <Text style={estilos.pregunta}>{porQue}</Text>
+              <View style={estilos.motivos} accessibilityRole="radiogroup">
+                {motivos.map((motivo, i) => {
+                  const elegido = i === motivoElegido;
+                  return (
+                    <Pressable
+                      key={i}
+                      accessibilityRole="radio"
+                      accessibilityLabel={motivo}
+                      accessibilityState={{ checked: elegido, disabled: acertado }}
+                      aria-checked={elegido}
+                      disabled={acertado}
+                      onPress={() => elegirMotivo(i)}
+                      style={({ pressed }) => [
+                        estilos.motivo,
+                        elegido && estilos.motivoElegido,
+                        pressed && !elegido && estilos.motivoTocado,
+                      ]}
+                    >
+                      <Text style={[estilos.motivoTexto, elegido && estilos.motivoTextoElegido]}>
+                        {motivo}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
+            </>
+          )}
+        </View>
+
+        {resultado ? (
+          <BloqueRespuesta
+            bien={resultado.bien}
+            titulo={resultado.titulo}
+            texto={resultado.texto}
+          />
+        ) : null}
+
+        <View style={estilos.zonaPista}>
+          <BotonPista
+            pistas={contenido.pistas}
+            liberadas={avance.pistasLiberadas.error ?? 0}
+            restantes={avance.pistasRestantes}
+            alGastar={() => gastarPista('error')}
+            espera={SEGUNDOS_PARA_PISTA}
+          />
         </View>
 
         <View style={estilos.espaciador} />
       </Cuerpo>
 
       <Pie>
-        <BotonPrincipal onPress={() => router.push('/estacion/explicar')}>es ese</BotonPrincipal>
+        <BotonPrincipal
+          desactivado={!acertado && (senalado === null || motivoElegido === null)}
+          onPress={acertado ? seguir : comprobar}
+        >
+          {acertado ? 'seguir' : 'es ese'}
+        </BotonPrincipal>
       </Pie>
     </Marco>
   );
@@ -181,6 +265,15 @@ const estilos = StyleSheet.create({
     fontSize: 15,
     color: colores.texto,
     marginBottom: 12,
+  },
+  indicacion: {
+    fontFamily: fuentes.cuerpo,
+    fontSize: 15,
+    color: colores.textoTenue,
+  },
+  zonaPista: {
+    paddingHorizontal: espacio.margenAncho,
+    paddingTop: 16,
   },
   motivos: {
     gap: 9,

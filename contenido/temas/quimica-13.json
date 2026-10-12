@@ -1,0 +1,1194 @@
+{
+  "materia": "quimica",
+  "temaNumero": 13,
+  "titulo": "Protones, neutrones y electrones",
+  "generadoEn": "2026-10-06T16:42:51.352Z",
+  "canon": {
+    "temaNumero": 13,
+    "materia": "quimica",
+    "titulo": "Protones, neutrones y electrones",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Identificar las partículas de un átomo y contar las del núcleo",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Nombras cada partícula que trae el átomo: protón, neutrón o electrón.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "protón"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": ", neutrón"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "n",
+              "sup": "0"
+            },
+            {
+              "tipo": "texto",
+              "valor": ", electrón"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "e",
+              "sup": "−"
+            }
+          ],
+          "porQue": "Las tres partículas son distintas y llevan nombres diferentes. Si no sabes cuál estás viendo, confundes dónde va cada una y qué carga tiene."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Dices la carga que lleva cada una: positiva, negativa o sin carga.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "positivo,"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "n",
+              "sup": "0"
+            },
+            {
+              "tipo": "texto",
+              "valor": "sin carga,"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "e",
+              "sup": "−"
+            },
+            {
+              "tipo": "texto",
+              "valor": "negativo"
+            }
+          ],
+          "porQue": "La carga de cada partícula es fija: el protón siempre es positivo, el electrón siempre es negativo y el neutrón siempre es neutro. Un protón y un electrón se anulan, y por eso un átomo neutro trae tantos electrones como protones."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Dices dónde está cada partícula: dentro del núcleo o en los alrededores.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Núcleo:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "y"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "n",
+              "sup": "0"
+            },
+            {
+              "tipo": "texto",
+              "valor": "; afuera:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "e",
+              "sup": "−"
+            }
+          ],
+          "porQue": "El núcleo es un lugar separado del resto del átomo. Si no sabes dónde vive cada partícula, las metes todas juntas y el modelo del átomo se deshace."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Dices cuáles partículas aportan masa al átomo y cuál casi no aporta nada.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Masa:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "y"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "n",
+              "sup": "0"
+            },
+            {
+              "tipo": "texto",
+              "valor": "; casi nada:"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "e",
+              "sup": "−"
+            }
+          ],
+          "porQue": "El protón y el neutrón pesan casi lo mismo y los dos son pesados. El electrón es casi invisible si los comparas: pesa menos de la milésima parte. La masa del átomo sale de los que pesan."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Cuentas las partículas que están en el núcleo: los protones más los neutrones.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "p",
+              "sup": "+"
+            },
+            {
+              "tipo": "texto",
+              "valor": "+"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "n",
+              "sup": "0"
+            },
+            {
+              "tipo": "texto",
+              "valor": "= 11 + 12 = 23"
+            }
+          ],
+          "porQue": "Sólo lo que está en el núcleo se cuenta aquí: los protones y los neutrones. El electrón anda en los alrededores, así que no se suma."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "contar cuántas partículas hay en el núcleo de un átomo neutro de sodio",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Na:"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "p",
+          "sup": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= 11,"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "n",
+          "sup": "0"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= 12,"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "e",
+          "sup": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "= 11"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "23"
+        }
+      ],
+      "resultadoEnPalabras": "veintitrés partículas en el núcleo"
+    },
+    "error": {
+      "enUnaFrase": "Mete los electrones al núcleo junto con los protones y los neutrones.",
+      "creenciaDeAtras": "cree que todo lo que está dentro del átomo está dentro del núcleo",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Núcleo:"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "p",
+          "sup": "+"
+        },
+        {
+          "tipo": "texto",
+          "valor": ","
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "n",
+          "sup": "0"
+        },
+        {
+          "tipo": "texto",
+          "valor": "y"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "e",
+          "sup": "−"
+        },
+        {
+          "tipo": "texto",
+          "valor": "; afuera: nada"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "34"
+        }
+      ],
+      "comoSeCacha": "El núcleo sólo guarda dos clases de partícula, protones y neutrones. Si en la lista del núcleo aparece un electrón, que anda en los alrededores, la cuenta ya lleva de más."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Asigna carga negativa al neutrón porque el nombre suena parecido a negativo.",
+        "creenciaDeAtras": "cree que el nombre de la partícula describe su carga: neutrón suena como negativo, así que es negativo"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "protón",
+        "queEs": "La partícula que está en el núcleo del átomo y tiene carga positiva. El número de protones define qué elemento es el átomo."
+      },
+      {
+        "palabra": "neutrón",
+        "queEs": "La partícula que está en el núcleo del átomo y no tiene carga, su carga es cero. Pesa casi lo mismo que el protón.",
+        "noEsLoMismoQue": "electrón, que tiene carga negativa y está afuera del núcleo"
+      },
+      {
+        "palabra": "electrón",
+        "queEs": "La partícula que anda en los alrededores del núcleo y tiene carga negativa. Pesa mucho menos que el protón y el neutrón.",
+        "noEsLoMismoQue": "neutrón, que está adentro del núcleo y no tiene carga"
+      },
+      {
+        "palabra": "núcleo",
+        "queEs": "El centro del átomo, donde están el protón y el neutrón, mucho más pequeño y denso que el resto del átomo."
+      },
+      {
+        "palabra": "carga",
+        "queEs": "Una propiedad de las partículas: puede ser positiva, negativa o cero. Dos cargas opuestas se anulan."
+      },
+      {
+        "palabra": "átomo neutro",
+        "queEs": "Un átomo donde el número de protones es igual al número de electrones, así sus cargas se anulan y la carga total es cero."
+      }
+    ],
+    "cotas": {
+      "numeros": "protones del 2 al 20 (sin H); neutrones: los de un isótopo real y común del elemento, cerca del número de protones y nunca más de una vez y media (He 2, Li 4, C 6, O 8, Na 12, Cl 18, Ca 20); electrones igual a protones (átomo neutro); el resultado es protones + neutrones, entero del 4 al 40",
+      "unidades": [],
+      "simbolos": [
+        {
+          "tipo": "simbolo",
+          "valor": "p",
+          "sup": "+"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "n",
+          "sup": "0"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "e",
+          "sup": "−"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": {
+    "temaNumero": 13,
+    "materia": "quimica",
+    "pregunta": "¿Dónde va cada partícula dentro del átomo?",
+    "resumen": "El átomo guarda protones y neutrones en un centro apretado llamado núcleo, y los electrones rodean ese centro desde lejos. Saber dónde está cada partícula te permite contar lo que hay en el núcleo: sólo protones y neutrones.",
+    "busqueda": {
+      "criterios": [
+        "Explica dónde está cada partícula: protón y neutrón adentro del núcleo, electrón afuera, y por qué esa separación importa.",
+        "Está en español de México o de América Latina, en el nivel de tercero de secundaria.",
+        "Muestra el modelo del átomo antes del minuto uno, sin presentación larga del canal.",
+        "Nombra las tres partículas por su nombre y dice su carga: protón positivo, neutrón sin carga, electrón negativo.",
+        "No confunde el neutrón con el electrón, ni sugiere que los electrones viven en el núcleo."
+      ],
+      "descarta": [
+        "Mete los electrones adentro del núcleo junto con protones y neutrones como si todo lo del átomo estuviera en el mismo lugar.",
+        "Dice que el neutrón es negativo o que tiene carga, confundiendo el nombre con la carga.",
+        "Es un video de química de nivel bachillerato sobre isótopos o iones, no del modelo básico del átomo.",
+        "Enseña solo fórmulas y cálculos sin mostrar dónde está cada partícula dentro del átomo."
+      ],
+      "consulta": "video explicación \"Protones, neutrones y electrones\" química 3º secundaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "u-00Q_rTCdY",
+      "variedadDeEspanol": "America Latina",
+      "explicaElPorQue": true,
+      "porQueEste": "Cumple los criterios: nombra las tres partículas, dice su carga, muestra dónde va cada una y explica por qué el núcleo es un lugar separado. El español es de América Latina y la presentación es directa.",
+      "url": "https://www.youtube.com/watch?v=u-00Q_rTCdY",
+      "titulo": "Calcular PROTONES, NEUTRONES y ELECTRONES ⚛️ Átomos con Carga Neutra e Iones",
+      "canal": "Susi Profe",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "-nBFRJ9uLNU",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": true,
+        "porQueEste": "Primer respaldo. Explica bien dónde va cada partícula y sus cargas. Falla: el título está en mayúsculas y la pronunciación no deja claro si es de México o América Latina.",
+        "url": "https://www.youtube.com/watch?v=-nBFRJ9uLNU",
+        "titulo": "El ÁTOMO: PROTONES NEUTRONES y ELECTRONES. (Bien explicado). QUE SON. DIFERENCIAS. EXPLICACIÓN.",
+        "canal": "MATEMÁTICA FABIÁN",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "ufzNm-bgkag",
+        "variedadDeEspanol": "America Latina",
+        "explicaElPorQue": true,
+        "porQueEste": "Segundo respaldo. Está centrado en contar protones, neutrones y electrones, así que roza el error típico del tema. Sirve de respaldo porque también dice dónde va cada uno, pero es menos directo que los otros dos.",
+        "url": "https://www.youtube.com/watch?v=ufzNm-bgkag",
+        "titulo": "Número Atómico y Másico: Cómo calcular Protones, Neutrones y Electrones",
+        "canal": "profeezequiel",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "Las tres URL salieron de la lista validada. El elegido explica por qué el núcleo es un lugar separado, nombrando las tres partículas y su carga. El español es de América Latina. Los dos respaldos también explican el por qué, aunque uno tiene acento indeterminado y el otro roza la cuenta de partículas.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 13,
+    "materia": "quimica",
+    "preguntas": [
+      {
+        "pasoDelCanon": 1,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es el nombre de la partícula con carga positiva en el núcleo?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "protón"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste el nombre correcto de la partícula que está en el núcleo y es positiva."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "electrón"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Estás confundiendo el electrón con el protón. El electrón anda afuera del núcleo y es negativo."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "neutrón"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El neutrón está en el núcleo pero no tiene carga. Busca la partícula positiva."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "átomo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El átomo es la estructura completa. Las partículas que lo forman son más pequeñas que eso."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 3,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "En un átomo de carbono, ¿dónde están los electrones?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En el núcleo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Estás metiendo los electrones al núcleo junto con protones y neutrones. Los electrones andan en los alrededores del núcleo."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En los alrededores"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Separaste bien dónde vive cada partícula: los electrones orbitan alrededor del núcleo."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Fuera del átomo, lejos de él"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los electrones sí forman parte del átomo: andan en los alrededores del núcleo, no fuera de él."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Dentro y fuera a la vez"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los electrones están en un lugar: afuera del núcleo. No hay electrones dentro."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 2,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Cuál es la carga del neutrón?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Positiva"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La carga positiva es del protón. El neutrón no es positivo: no tiene carga."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Sin carga"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "El neutrón es neutro: su carga es cero. Su nombre lo dice."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Negativa"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El nombre neutrón no tiene nada que ver con negativo. Su carga es cero."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Variable"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La carga de cada partícula es fija. El neutrón siempre tiene cero carga."
+          }
+        ]
+      },
+      {
+        "pasoDelCanon": 5,
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Un oxígeno neutro tiene 8 protones y 8 neutrones. ¿Cuántas partículas hay en su núcleo?"
+          }
+        ],
+        "opciones": [
+          {
+            "letra": "A",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "8"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Contaste nada más los protones. El núcleo tiene protones y neutrones juntos."
+          },
+          {
+            "letra": "B",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "24"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste protones, neutrones y electrones. El núcleo solo tiene protones y neutrones."
+          },
+          {
+            "letra": "C",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "16"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Sumaste bien: 8 protones más 8 neutrones son 16 partículas en el núcleo."
+          },
+          {
+            "letra": "D",
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "0"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El núcleo sí tiene partículas. Protones y neutrones están adentro."
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": {
+    "temaNumero": 13,
+    "materia": "quimica",
+    "pasoDelCanon": 3,
+    "queFalta": "cuántos electrones andan afuera del núcleo en un átomo neutro de sodio",
+    "expresion": [
+      {
+        "tipo": "texto",
+        "valor": "Núcleo del Na:"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "p",
+        "sup": "+"
+      },
+      {
+        "tipo": "texto",
+        "valor": "= 11,"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "n",
+        "sup": "0"
+      },
+      {
+        "tipo": "texto",
+        "valor": "= 12; afuera:"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "e",
+        "sup": "−"
+      },
+      {
+        "tipo": "texto",
+        "valor": "="
+      },
+      {
+        "tipo": "hueco"
+      }
+    ],
+    "respuesta": {
+      "tecleado": "11",
+      "aceptaTambien": [],
+      "comoSeLee": "once electrones"
+    },
+    "pistas": [
+      {
+        "texto": "El hueco no pide un lugar, pide un conteo: el renglón ya trae cuántos protones y cuántos neutrones hay adentro, y falta cuántos electrones hay afuera.",
+        "orden": 1
+      },
+      {
+        "texto": "Piensa en las cargas: cada protón es positivo, cada electrón es negativo y una de cada una se anulan. Un átomo neutro es el que tiene todas sus cargas anuladas.",
+        "orden": 2
+      },
+      {
+        "texto": "Si todas las cargas se anulan, por cada protón del núcleo hay un electrón afuera. Mira cuántos protones trae el renglón y ya sabes cuántos andan en los alrededores.",
+        "orden": 3
+      }
+    ],
+    "siTecleaElError": {
+      "tecleado": "0",
+      "queSeLeDice": "Escribiste 0 como si afuera del núcleo no hubiera nada. Sí hay: los electrones andan en los alrededores, no adentro. Cuéntalos de nuevo pensando en las cargas del átomo neutro."
+    },
+    "noSePuede": null
+  },
+  "escalera": {
+    "temaNumero": 13,
+    "materia": "quimica",
+    "escalones": [
+      {
+        "situacion": "El helio tiene 2 protones, 2 neutrones y 2 electrones.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "Núcleo: 2 + 2 ="
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas partículas hay en el núcleo del helio?",
+        "respuesta": {
+          "tecleado": "4",
+          "aceptaTambien": [],
+          "comoSeLee": "cuatro partículas"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "El núcleo guarda sólo dos clases de partícula: protones y neutrones. Los electrones andan afuera."
+          },
+          {
+            "orden": 2,
+            "texto": "Cuentas los protones más los neutrones que están en el núcleo: 2 más 2."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "El litio tiene 3 protones y 4 neutrones. Está en su forma neutra, así que tiene 3 electrones.",
+        "expresion": [
+          {
+            "tipo": "simbolo",
+            "valor": "p",
+            "sup": "+"
+          },
+          {
+            "tipo": "texto",
+            "valor": "en núcleo: 3,"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "n",
+            "sup": "0"
+          },
+          {
+            "tipo": "texto",
+            "valor": "en núcleo:"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántos neutrones están en el núcleo del litio?",
+        "respuesta": {
+          "tecleado": "4",
+          "aceptaTambien": [],
+          "comoSeLee": "cuatro neutrones"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "La situación ya te da cuántas partículas hay de cada clase. Lo que pide el hueco es sólo una de ellas."
+          },
+          {
+            "orden": 2,
+            "texto": "El hueco es de los neutrones, que están en el núcleo junto con los protones. Busca en la situación qué número les toca a ellos."
+          }
+        ],
+        "pasoDelCanon": 3,
+        "esInverso": false
+      },
+      {
+        "situacion": "El carbono es un átomo neutro con 6 protones y 6 electrones. Para contar lo que hay en su núcleo necesitas saber que tiene 6 neutrones.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "Núcleo del carbono:"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "pregunta": "¿Cuántas partículas hay en total en el núcleo?",
+        "respuesta": {
+          "tecleado": "12",
+          "aceptaTambien": [],
+          "comoSeLee": "doce partículas"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "El número de electrones que te dan aquí no entra en la cuenta del núcleo. Andan afuera."
+          },
+          {
+            "orden": 2,
+            "texto": "En el núcleo van sólo los protones y los neutrones. Sumas 6 más 6."
+          },
+          {
+            "orden": 3,
+            "texto": "Si te ayuda, parte del 6 y avanza otros seis lugares contando de uno en uno."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": false
+      },
+      {
+        "situacion": "El flúor neutro tiene 9 protones. Al maestro se le borró cuántos neutrones calculó: salían 19 partículas en el núcleo.",
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "9 +"
+          },
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 19"
+          }
+        ],
+        "pregunta": "¿Cuántos neutrones hay en el núcleo del flúor?",
+        "respuesta": {
+          "tecleado": "10",
+          "aceptaTambien": [],
+          "comoSeLee": "diez neutrones"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Aquí ya tienes el total de partículas en el núcleo. Lo que falta es una de las dos clases."
+          },
+          {
+            "orden": 2,
+            "texto": "Los protones son 9. Necesitas encontrar el número que sumado a 9 te da 19."
+          },
+          {
+            "orden": 3,
+            "texto": "Es el número que resta: 19 menos 9."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": true
+      },
+      {
+        "situacion": "El sodio es neutro con 12 neutrones en su núcleo y un total de 23 partículas en el núcleo. Se borró cuántos protones tiene.",
+        "expresion": [
+          {
+            "tipo": "hueco"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+ 12 = 23"
+          }
+        ],
+        "pregunta": "¿Cuántos protones hay en el núcleo del sodio?",
+        "respuesta": {
+          "tecleado": "11",
+          "aceptaTambien": [],
+          "comoSeLee": "once protones"
+        },
+        "pistas": [
+          {
+            "orden": 1,
+            "texto": "Conoces el total del núcleo y cuántos neutrones hay. Falta una de las dos partes."
+          },
+          {
+            "orden": 2,
+            "texto": "El protón es lo que sumado a 12 te da 23."
+          },
+          {
+            "orden": 3,
+            "texto": "Restas 23 menos 12 para encontrarlo."
+          }
+        ],
+        "pasoDelCanon": 5,
+        "esInverso": true
+      }
+    ],
+    "noSePuede": null
+  },
+  "error": {
+    "temaNumero": 13,
+    "materia": "quimica",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien contó las partículas del núcleo de Na:"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "p",
+        "sup": "+"
+      },
+      {
+        "tipo": "texto",
+        "valor": "= 11,"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "n",
+        "sup": "0"
+      },
+      {
+        "tipo": "texto",
+        "valor": "= 12,"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "e",
+        "sup": "−"
+      },
+      {
+        "tipo": "texto",
+        "valor": "= 11. Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Nombro las partículas:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "p",
+            "sup": "+"
+          },
+          {
+            "tipo": "texto",
+            "valor": ","
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "n",
+            "sup": "0"
+          },
+          {
+            "tipo": "texto",
+            "valor": ","
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "e",
+            "sup": "−"
+          }
+        ],
+        "siLoTocas": "Ese paso sólo nombra las tres partículas con sus símbolos. Los nombres y símbolos vienen en el tema. Nombrar bien no es donde falla."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Anoto las cargas:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "p",
+            "sup": "+"
+          },
+          {
+            "tipo": "texto",
+            "valor": "positivo,"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "n",
+            "sup": "0"
+          },
+          {
+            "tipo": "texto",
+            "valor": "sin carga,"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "e",
+            "sup": "−"
+          },
+          {
+            "tipo": "texto",
+            "valor": "negativo"
+          }
+        ],
+        "siLoTocas": "Las cargas están correctas: protón positivo, neutrón cero, electrón negativo. Ese paso no inventó ningún número."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Digo dónde está cada una: Núcleo:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "p",
+            "sup": "+"
+          },
+          {
+            "tipo": "texto",
+            "valor": ","
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "n",
+            "sup": "0"
+          },
+          {
+            "tipo": "texto",
+            "valor": "y"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "e",
+            "sup": "−"
+          },
+          {
+            "tipo": "texto",
+            "valor": "; afuera: nada"
+          }
+        ],
+        "siLoTocas": "Ahí está. Ese renglón es el que le pasa su lista de partículas al paso que cuenta el núcleo."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Anoto cuáles aportan masa:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "p",
+            "sup": "+"
+          },
+          {
+            "tipo": "texto",
+            "valor": "y"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "n",
+            "sup": "0"
+          },
+          {
+            "tipo": "texto",
+            "valor": "; casi nada:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "e",
+            "sup": "−"
+          }
+        ],
+        "siLoTocas": "La distribución de masa es correcta: protón y neutrón pesan, electrón casi nada. Ese paso no hace ninguna cuenta ni inventa ningún número."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Cuento la lista del núcleo:"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "p",
+            "sup": "+"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "n",
+            "sup": "0"
+          },
+          {
+            "tipo": "texto",
+            "valor": "+"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "e",
+            "sup": "−"
+          },
+          {
+            "tipo": "texto",
+            "valor": "= 11 + 12 + 11 = 34"
+          }
+        ],
+        "siLoTocas": "La suma está bien hecha con los tres números que le llegaron: 11 + 12 + 11 da 34. Ese renglón no inventó nada, repite lo que traía la lista."
+      }
+    ],
+    "pasoMalo": 3,
+    "arrastre": "El e⁻ que el paso 3 mete en la lista del núcleo reaparece como tercer sumando (11) en el paso 5, y de ahí sale 34 en vez de 23.",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Metió el electrón adentro del núcleo junto con protón y neutrón.",
+        "esElBueno": true,
+        "queRevela": "Es lo que pasó: el símbolo e⁻ no debería estar en la lista del núcleo. El electrón anda afuera; protón y neutrón son los únicos que guardan el núcleo. El renglón sí separa \"Núcleo\" de \"afuera\", pero en el núcleo puso las tres partículas, no las dos que van."
+      },
+      {
+        "texto": "Asignó carga negativa al neutrón porque el nombre suena parecido.",
+        "esElBueno": false,
+        "queRevela": "Quien escoge esto cree que el nombre de la partícula dice su carga. Pero en el paso 2 el neutrón ya tiene su carga correcta: cero. El paso 3 no cambia eso. Lo que está mal es el lugar donde puso cada partícula, no la carga que le asignó."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Revisa cada paso por separado y pregúntate si lo que afirma es cierto. No te quedes sólo con el resultado final."
+      },
+      {
+        "orden": 2,
+        "texto": "El error no está en cómo se nombran las partículas ni en la carga que se les da. Fíjate en lo que afirman los otros renglones sobre ellas."
+      },
+      {
+        "orden": 3,
+        "texto": "Compara lo que afirma cada renglón con lo que sabes de cada partícula. Un renglón dice algo que no es cierto, y los que vienen después sólo repiten lo que reciben de él."
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 13,
+    "materia": "quimica",
+    "titulo": "Explícame por qué el protón y el neutrón van en el núcleo, pero el electrón anda afuera.",
+    "aclaracion": "Con tus palabras, sin escribir cuentas. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El núcleo es un lugar separado del resto del átomo, no la totalidad del átomo. Adentro van sólo el protón y el neutrón, y los electrones andan en los alrededores.",
+          "porQueImporta": "Si crees que el núcleo es todo el átomo, metes los electrones adentro y la cuenta sale mal. El núcleo es un centro muy pequeño, no la envolvura.",
+          "comoSuenaDicha": "El núcleo es un lugarcito adentro, y los electrones están en los alrededores, no en el núcleo.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "La carga de cada partícula es fija: el protón es positivo, el neutrón no tiene carga (su nombre viene de «neutro») y el electrón es negativo. «Neutrón» no quiere decir «negativo».",
+          "porQueImporta": "Quien confunde neutrón con negativo le da carga al neutrón, y la cuenta de cargas del átomo ya no sale: un protón y un electrón se anulan, y el neutrón no entra en esa cuenta.",
+          "comoSuenaDicha": "El protón siempre es positivo, el electrón siempre es negativo y el neutrón no tiene carga de nada, es cero.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "Los que están en el núcleo son los que pesan: el protón y el neutrón. El electrón está en los alrededores y pesa casi nada.",
+          "porQueImporta": "Quien incluye el electrón en la cuenta del núcleo le suma masa donde no la hay. El peso del átomo sale de lo que está adentro.",
+          "comoSuenaDicha": "En el núcleo están los que pesan: protón y neutrón. El electrón anda afuera y no pesa casi nada.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque el protón está en el núcleo, el neutrón está en el núcleo y el electrón está en el núcleo, todo está en el núcleo.",
+          "queLaDelata": "Saca el nombre y lo repite. No dice dónde está el núcleo ni qué lo distingue del resto del átomo. Es memorizar la lista sin entender la estructura.",
+          "queLeFalta": "Que el núcleo es un lugar separado, un centro muy pequeño, y que el electrón anda fuera de ese lugar."
+        },
+        {
+          "respuesta": "Porque el protón es positivo, el neutrón es negativo y el electrón es negativo.",
+          "queLaDelata": "Asigna la carga dependiendo del nombre: neutrón suena a negativo, así que le pone carga negativa. No revisa dónde lo dice el canon ni se pregunta por qué se llama así.",
+          "queLeFalta": "Que el neutrón no tiene carga, es cero, y que «neutrón» viene de neutro, no de negativo."
+        },
+        {
+          "respuesta": "Porque todo lo que está dentro del átomo está dentro del núcleo, y el electrón está dentro del átomo.",
+          "queLaDelata": "Confunde dos significados de dentro. Todo está dentro del límite del átomo, pero no todo está dentro del núcleo: es como si dijera que todo lo que está en tu casa está en tu recámara.",
+          "queLeFalta": "Que el núcleo es un lugar separado, un espacio distinto, no lo mismo que el átomo completo."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "Pero el electrón también está dentro del átomo, así que tiene que estar dentro del núcleo.",
+          "seLeContesta": "Sí, está dentro del límite del átomo, pero el núcleo es un lugar separado del resto. La olla está dentro de la cocina, pero no en el refrigerador. El núcleo es un centro muy denso y muy pequeño: de él sale casi toda la masa. Los electrones andan en la región que lo rodea, no apretados dentro de él.",
+          "aDondeLoEmpuja": "A que vea que el núcleo es un lugar separado, la primera idea de la lista."
+        },
+        {
+          "siDice": "El neutrón se llama así porque es negativo, como el electrón.",
+          "seLeContesta": "El neutrón se llama así porque no tiene carga, su carga es neutra, cero. El electrón tiene carga negativa. «Neutrón» y «negativo» suenan parecido, pero no quieren decir lo mismo. Míralo en el ejemplo: el sodio tiene 11 protones, 12 neutrones y 11 electrones. Si el neutrón fuera negativo, ¿cuánta carga total tendría el átomo?",
+          "aDondeLoEmpuja": "A que vea que la carga de cada partícula es fija y que «neutrón» viene de neutro, no de negativo."
+        },
+        {
+          "siDice": "Entiendo que van en distintos lados, nada más no sé cómo explicarlo.",
+          "seLeContesta": "Está bien. Contesta esto: si cuento los protones más los neutrones del sodio del ejemplo, ¿me sale el mismo número que si cuento protones, neutrones y electrones juntos?",
+          "aDondeLoEmpuja": "A que vea que la ubicación de cada partícula es lo que hace que la cuenta salga distinta."
+        }
+      ],
+      "ejemploQueSiCuenta": "El núcleo es un lugar separado, una bolita muy pequeñita en el centro del átomo. Dentro va el protón y el neutrón, que pesan. El electrón está en los alrededores, no en el núcleo. Cuando cuento las partículas del núcleo, sólo cuento protón más neutrón, no el electrón, porque está afuera.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba todo en minúsculas.",
+        "Que no use las palabras protón, neutrón, electrón ni núcleo: si dice dónde va cada partícula y por qué, ya dijo la idea.",
+        "Que no escriba ningún número ni haga referencias al ejemplo del sodio: la idea cuenta sin usar los datos."
+      ]
+    },
+    "noSePuede": null
+  }
+}

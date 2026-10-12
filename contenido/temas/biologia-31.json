@@ -1,0 +1,152 @@
+{
+  "materia": "biologia",
+  "temaNumero": 31,
+  "titulo": "Usar una clave dicotómica",
+  "generadoEn": "2026-10-06T16:00:14.656Z",
+  "canon": {
+    "temaNumero": 31,
+    "materia": "biologia",
+    "titulo": "Usar una clave dicotómica",
+    "notacion": "lineal",
+    "formaDeRespuesta": "palabra",
+    "procedimiento": {
+      "nombre": "Identificar un organismo con una clave dicotómica",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Lees la pareja de opciones que te ofrece la clave en el número donde estés.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "1a. ¿Tiene columna vertebral? 1b. ¿No tiene columna vertebral?"
+            }
+          ],
+          "porQue": "La clave dicotómica te presenta dos caminos opuestos. Uno y sólo uno debe ser verdadero para tu ejemplar. Si no lees bien las opciones, escoges la que suena familiar en vez de la que es verdad."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Observas el carácter en el ejemplar que tienes enfrente: si es animal, piel, forma, tamaño, lo que pida la clave.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Examinas el ejemplar: busca huesos o esqueleto."
+            }
+          ],
+          "porQue": "La clave te pregunta por un carácter real. Lo que creas, lo que esperes o lo que dice el dibujo no importan: lo que importa es lo que ves en tu ejemplar. Si no lo buscas, te dejas llevar por intuición y te equivocas."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Eliges una sola de las dos opciones: la que describe el carácter que viste en tu ejemplar.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Tu ejemplar tiene columna vertebral. Eliges 1a."
+            }
+          ],
+          "porQue": "Una sola opción es verdadera. Elegir las dos no tiene sentido; si ninguna te convence, es porque no buscaste bien el carácter o no entiendes qué pregunta la clave. Vuelves a leer la pareja, no escoges las dos."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Buscas el número que indica la opción que escogiste y saltas ahí.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "1a dice: ve al número 5. Saltas a la pareja 5."
+            }
+          ],
+          "porQue": "El número que sigue no es el que viene después: es el que la clave te ordena. Si no saltas y sigues en orden, pierdes el camino. Si das la vuelta al principio, no avanzas."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Repites los pasos 1, 2, 3 y 4 con cada nueva pareja hasta que no hay número que seguir, sólo un nombre.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "5a, 5b... hasta llegar al nombre final del organismo."
+            }
+          ],
+          "porQue": "La clave es una cadena de decisiones, no un destino único. Cada paso te elimina posibilidades hasta que uno solo queda. Si te brincas una pareja, das un salto que no corresponde y terminas con el nombre equivocado."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "clasificar un insecto que encontraste usando una clave dicotómica paso a paso",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "Tienes un insecto. ¿Tiene alas?"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "Es una hormiga."
+        }
+      ],
+      "resultadoEnPalabras": "hormiga"
+    },
+    "error": {
+      "enUnaFrase": "Se brinca pasos y elige el nombre que le suena por la foto sin seguir toda la clave.",
+      "creenciaDeAtras": "cree que la clave es una sugerencia y que puede adivinar el nombre observando el dibujo sin terminar de recorrer el árbol de decisiones",
+      "pasoQueCorrompe": 3,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Sin terminar de revisar todos los caracteres, decide que se ve como una hormiga."
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "Es una hormiga."
+        }
+      ],
+      "comoSeCacha": "El nombre sale rápido, sin recorrer la mitad de la clave. Comparas lo que hizo contra el procedimiento: si llegó al nombre sin pasar por una de las parejas que la clave ordena, se brincó un paso."
+    },
+    "erroresSecundarios": [
+      {
+        "enUnaFrase": "Cuando ninguna de las dos opciones le convence completamente, elige las dos o regresa al principio en vez de seguir adelante.",
+        "creenciaDeAtras": "cree que si duda es porque la clave está mal o porque no es lo que busca, así que desconfía de la clave y vuelve a empezar; no entiende que la descripción puede sonar rara pero ser verdadera para su ejemplar"
+      }
+    ],
+    "vocabulario": [
+      {
+        "palabra": "clave dicotómica",
+        "queEs": "Una serie de preguntas que siempre ofrecen dos opciones opuestas. Cada opción te lleva a otra pareja de preguntas hasta terminar en el nombre del organismo."
+      },
+      {
+        "palabra": "carácter",
+        "queEs": "La propiedad o característica de un ser vivo que la clave te pide que busques: color, tamaño, forma, presencia o ausencia de algo.",
+        "noEsLoMismoQue": "la opinión de lo que parece, que no es observable o exacto"
+      },
+      {
+        "palabra": "dicotómico",
+        "queEs": "Que se divide en dos opciones opuestas, una sí y una no, sin términos medios."
+      },
+      {
+        "palabra": "opción",
+        "queEs": "Una de las dos descripciones que ofrece cada pareja de la clave. Una es verdadera para tu ejemplar, la otra es falsa."
+      },
+      {
+        "palabra": "organismo",
+        "queEs": "Cualquier ser vivo: animal, planta, hongo, bacteria, protista."
+      }
+    ],
+    "cotas": {
+      "numeros": "números de las parejas entre 1 y 20; no hay cálculos numéricos en este tema",
+      "unidades": [],
+      "simbolos": []
+    },
+    "noSePuede": {
+      "que": "El tema exige que el estudiante recorra una estructura de árbol de decisiones saltando entre números, lo que requiere que la app dibuje una clave dicotómica como lista de pares numerados con saltos interactivos.",
+      "porQue": "Los cuatro átomos disponibles (texto, fracción, símbolo y hueco) no pueden representar una estructura ramificada con saltos condicionales de la forma 1a → 5b → 10a → nombre. Además, la respuesta final es un nombre de organismo que no es un número ni una fracción, y el teclado disponible (dígitos 1-9, 0, diagonal y borrar) no permite escribir letras.",
+      "queHagoConEsto": "Este tema necesita un prompt específico que dibuje la clave como un árbol interactivo donde cada opción sea un botón táctil que salte al número indicado, y donde la respuesta final sea el nombre del organismo mostrado en la pantalla sin necesidad de teclearlo. Se recomienda crear una estación dedicada a claves dicotómicas o esperar a que la app soporte este tipo de notación."
+    }
+  },
+  "ver": null,
+  "contacto": null,
+  "completar": null,
+  "escalera": null,
+  "error": null,
+  "explicar": null
+}

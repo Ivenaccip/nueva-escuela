@@ -1,0 +1,1116 @@
+{
+  "materia": "biologia",
+  "temaNumero": 9,
+  "titulo": "Fotosíntesis: comer del aire",
+  "generadoEn": "2026-10-06T15:51:57.805Z",
+  "canon": {
+    "temaNumero": 9,
+    "materia": "biologia",
+    "titulo": "Fotosíntesis: comer del aire",
+    "notacion": "lineal",
+    "formaDeRespuesta": "numero",
+    "procedimiento": {
+      "nombre": "Explicar el balance de materia en la fotosíntesis",
+      "pasos": [
+        {
+          "numero": 1,
+          "queSeHace": "Identificas dónde ocurre la fotosíntesis: en las partes verdes de la planta, sobre todo en la hoja.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La fotosíntesis ocurre en la hoja"
+            }
+          ],
+          "porQue": "Es donde entra la luz del sol, que es la energía que hace funcionar todo lo demás. Sin ese lugar, confundes dónde entran los ingredientes."
+        },
+        {
+          "numero": 2,
+          "queSeHace": "Señalas qué entra por la hoja y qué entra por la raíz: en la hoja entra bióxido de carbono del aire, en la raíz entra agua del suelo.",
+          "renglon": [
+            {
+              "tipo": "simbolo",
+              "valor": "CO",
+              "sub": "2"
+            },
+            {
+              "tipo": "texto",
+              "valor": "+ H₂O"
+            }
+          ],
+          "porQue": "Casi toda la parte sólida que la planta gana viene del aire, no del suelo. La raíz trae agua, pero la madera está hecha de carbono que tomó del bióxido de carbono."
+        },
+        {
+          "numero": 3,
+          "queSeHace": "Escribes qué se forma gracias a la luz: una azúcar, que es comida para la planta.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Con luz se forma "
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "C",
+              "sub": "6"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "H",
+              "sub": "12"
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "6"
+            }
+          ],
+          "porQue": "Esa azúcar es la que construye la planta: sin ella no crece. Cuando comes una papa, comes azúcares que la planta guardó con esta reacción."
+        },
+        {
+          "numero": 4,
+          "queSeHace": "Dices qué gas sale de la fotosíntesis: oxígeno, que la planta suelta al aire y que tú respiras.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "Sale "
+            },
+            {
+              "tipo": "simbolo",
+              "valor": "O",
+              "sub": "2"
+            }
+          ],
+          "porQue": "Es el gas que respiras. La planta usa una parte para su propia respiración y suelta el resto."
+        },
+        {
+          "numero": 5,
+          "queSeHace": "Concluyes de dónde salió la parte sólida de la planta: casi toda del bióxido de carbono que entró por la hoja, no del suelo.",
+          "renglon": [
+            {
+              "tipo": "texto",
+              "valor": "La madera viene del aire, no del suelo"
+            }
+          ],
+          "porQue": "El carbono y el oxígeno de la azúcar vienen del bióxido de carbono, y son casi toda su masa; del agua sólo llega el hidrógeno, que pesa muy poco. Las sales del suelo son poca masa. Por eso la parte sólida de la planta sale sobre todo del aire."
+        }
+      ]
+    },
+    "ejemplo": {
+      "deQueVa": "una planta que crece bajo la luz del sol",
+      "planteamiento": [
+        {
+          "tipo": "texto",
+          "valor": "6"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "CO",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "+ 6 H₂O →"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "C",
+          "sub": "6"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "12"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "6"
+        },
+        {
+          "tipo": "texto",
+          "valor": "+ 6"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
+        }
+      ],
+      "resultado": [
+        {
+          "tipo": "texto",
+          "valor": "El carbono en la azúcar viene del aire"
+        }
+      ],
+      "resultadoEnPalabras": "el carbono en la azúcar viene del aire, no del suelo"
+    },
+    "error": {
+      "enUnaFrase": "Dice que la planta se alimenta del suelo y que el tronco está hecho de tierra que subió por la raíz.",
+      "creenciaDeAtras": "Cree que todo lo que la planta gana entra por la raíz, porque la raíz es lo único que toca el suelo. No piensa que el carbono de la madera sólo puede venir del bióxido de carbono, que entra por la hoja.",
+      "pasoQueCorrompe": 5,
+      "renglonMalo": [
+        {
+          "tipo": "texto",
+          "valor": "La madera viene del suelo, por la raíz"
+        }
+      ],
+      "resultadoMalo": [
+        {
+          "tipo": "texto",
+          "valor": "La planta se alimenta de la tierra"
+        }
+      ],
+      "comoSeCacha": "Si todo entrara por la raíz, la tierra tendría que perder tanto peso como gana la planta. Pero si pesas una planta y su tierra antes y después, la planta gana muchos kilos y la tierra casi no cambia."
+    },
+    "erroresSecundarios": [],
+    "vocabulario": [
+      {
+        "palabra": "fotosíntesis",
+        "queEs": "El proceso donde la planta usa la luz del sol para juntar bióxido de carbono del aire y agua del suelo, y forma azúcar para crecer.",
+        "noEsLoMismoQue": "la respiración de la planta, que es lo contrario: la planta quema azúcar y produce bióxido de carbono"
+      },
+      {
+        "palabra": "bióxido de carbono",
+        "queEs": "El gas del aire que la planta necesita para la fotosíntesis. Es lo que sueltan los coches, los animales y las fábricas cuando respiran o queman combustible.",
+        "noEsLoMismoQue": "el oxígeno, que es lo que sale de la fotosíntesis y lo que nosotros necesitamos para respirar"
+      },
+      {
+        "palabra": "azúcar",
+        "queEs": "La comida que forma la planta con la luz, el aire y el agua. La planta usa esa azúcar para crecer y construir su madera.",
+        "noEsLoMismoQue": "el nutriente del suelo, que son sales y minerales que entran por la raíz pero no forman la masa principal de la planta"
+      },
+      {
+        "palabra": "hoja",
+        "queEs": "La parte de la planta donde entra la luz del sol y el bióxido de carbono del aire. Es donde ocurre sobre todo la fotosíntesis.",
+        "noEsLoMismoQue": "la raíz, que trae el agua del suelo"
+      },
+      {
+        "palabra": "nutriente",
+        "queEs": "La sal o el mineral que la planta saca del suelo por la raíz. Es poca masa comparada con el carbono del aire.",
+        "noEsLoMismoQue": "el bióxido de carbono, que entra por la hoja y forma casi toda la parte sólida de la planta"
+      }
+    ],
+    "cotas": {
+      "numeros": "Los números del ejemplo son los de la ecuación balanceada: coeficientes 6, 6, 1 y 6 y subíndices 2, 6 y 12. En los escalones sólo se usan los kilos de un arbolito (1, 50, 49, 2 y 47) y dos cuentas equivocadas, 48 y 51.",
+      "unidades": [
+        "kilos"
+      ],
+      "simbolos": [
+        {
+          "tipo": "simbolo",
+          "valor": "CO",
+          "sub": "2"
+        },
+        {
+          "tipo": "texto",
+          "valor": "H₂O"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "2"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "C",
+          "sub": "6"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "H",
+          "sub": "12"
+        },
+        {
+          "tipo": "simbolo",
+          "valor": "O",
+          "sub": "6"
+        },
+        {
+          "tipo": "texto",
+          "valor": "→"
+        }
+      ]
+    },
+    "noSePuede": null
+  },
+  "ver": {
+    "temaNumero": 9,
+    "materia": "biologia",
+    "pregunta": "¿De dónde saca la planta la masa para crecer?",
+    "resumen": "La planta toma bióxido de carbono del aire y agua del suelo, y con la luz del sol los convierte en azúcar para construir su madera. La parte sólida de un árbol viene sobre todo del aire que toma por la hoja, no de la tierra.",
+    "busqueda": {
+      "criterios": [
+        "Explica por qué la planta crece con el carbono del aire y no solo con lo que trae la raíz del suelo.",
+        "Está en español de México o de América Latina para estudiantes de 11 a 12 años.",
+        "Muestra dónde entra el bióxido de carbono (por la hoja) y dónde entra el agua (por la raíz).",
+        "Deja claro que la madera está hecha principalmente de carbono que viene del aire, no del suelo.",
+        "Llega al punto pronto sin presentación larga del canal."
+      ],
+      "descarta": [
+        "Dice o insinúa que la planta se alimenta principalmente del suelo y que la tierra sube por la raíz para hacer el tronco.",
+        "Confunde fotosíntesis con nutrición del suelo, sin separar las dos cosas.",
+        "Es un video de más de 10 minutos sin llegar al ejemplo antes del minuto tres.",
+        "No menciona dónde ocurre la fotosíntesis ni qué entra por cada lugar."
+      ],
+      "consulta": "video explicación \"Fotosíntesis: comer del aire\" biología 6º primaria México, en español, que explique por qué funciona y no sólo el procedimiento",
+      "consultasAlternas": []
+    },
+    "video": {
+      "idDeYouTube": "ru6rZNQg3eM",
+      "variedadDeEspanol": "Mexico",
+      "explicaElPorQue": true,
+      "porQueEste": "Explica que la planta toma bióxido de carbono del aire y lo convierte en su propio alimento con la luz. El título dice cómo se alimentan las plantas, que es exactamente lo que pregunta el tema. El canal es de México y llega al punto sin rodeos.",
+      "url": "https://www.youtube.com/watch?v=ru6rZNQg3eM",
+      "titulo": "LA FOTOSÍNTESIS.  ¿Cómo se alimentan las plantas? | Vídeos Educativos para Niños",
+      "canal": "Happy Learning Español",
+      "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+    },
+    "alternativas": [
+      {
+        "idDeYouTube": "tdDg1uSKyns",
+        "variedadDeEspanol": "Mexico",
+        "explicaElPorQue": true,
+        "porQueEste": "También del canal Happy Learning Español, llega rápido a qué es la fotosíntesis y por qué la planta la necesita. Es respaldo porque el primero es más directo en aclarar de dónde viene la masa de la planta.",
+        "url": "https://www.youtube.com/watch?v=tdDg1uSKyns",
+        "titulo": "LA FOTOSÍNTESIS | Vídeos Educativos para Niños",
+        "canal": "Happy Learning Español",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      },
+      {
+        "idDeYouTube": "8ZGrFsGiubM",
+        "variedadDeEspanol": "no se pudo determinar",
+        "explicaElPorQue": true,
+        "porQueEste": "De Smile and Learn, muestra las partes de la planta y la fotosíntesis de forma clara. Va segundo porque el acento no se escucha del todo en la previa, pero explica bien dónde ocurre y qué entra por dónde.",
+        "url": "https://www.youtube.com/watch?v=8ZGrFsGiubM",
+        "titulo": "Las partes de la planta y la fotosíntesis - Ciencias naturales para niños",
+        "canal": "Smile and Learn - Español",
+        "dondeSalio": "De donde lo vio el buscador: resultados de búsqueda."
+      }
+    ],
+    "confianza": "alta",
+    "porQueEsaConfianza": "La URL y el título salieron literales de los candidatos. El video es de México, explica por qué la planta crece con el aire, no solo con la tierra, y el canal existe con contenido educativo de primaria. Llega al punto sin presentación larga.",
+    "noSePuede": null
+  },
+  "contacto": {
+    "temaNumero": 9,
+    "materia": "biologia",
+    "preguntas": [
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Por dónde entra el bióxido de carbono que usa la mayoría de las plantas?"
+          }
+        ],
+        "pasoDelCanon": 2,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por la hoja"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Identificaste dónde entra el gas del aire que la planta necesita para hacer fotosíntesis.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por la raíz"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La raíz trae agua del suelo, no bióxido de carbono. El bióxido de carbono viene del aire.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por el tallo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El tallo lleva lo que trae la raíz y lo que forma la hoja, pero el gas entra sobre todo por la hoja.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Por las flores"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Las flores no son el lugar principal por donde entra el gas; entra sobre todo por las hojas.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "De los ingredientes de la fotosíntesis, ¿cuál viene del suelo por la raíz?"
+          }
+        ],
+        "pasoDelCanon": 2,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Agua"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "La raíz trae agua del suelo, y esa agua entra en la reacción de fotosíntesis.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Azúcar"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La azúcar es lo que la planta forma en la fotosíntesis, no un ingrediente que traiga del suelo.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Oxígeno"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El oxígeno es lo que la fotosíntesis suelta, no un ingrediente que venga del suelo.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Bióxido de carbono"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El bióxido de carbono entra por la hoja, desde el aire, no por la raíz.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Qué alimento forma la planta con bióxido de carbono y agua cuando hay luz?"
+          }
+        ],
+        "pasoDelCanon": 3,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "simbolo",
+                "valor": "O",
+                "sub": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El oxígeno también sale de la reacción, pero la planta lo suelta: el alimento que construye la planta es la azúcar.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Nutrientes"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Los nutrientes son sales del suelo. Lo que forma la planta con luz es azúcar.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "simbolo",
+                "valor": "C",
+                "sub": "6"
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "H",
+                "sub": "12"
+              },
+              {
+                "tipo": "simbolo",
+                "valor": "O",
+                "sub": "6"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Viste que la luz hace que se forme azúcar, que es lo que la planta usa para crecer.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "simbolo",
+                "valor": "CO",
+                "sub": "2"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El bióxido de carbono es lo que entra, no lo que se forma cuando hay luz.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "Un árbol gana muchos kilos de madera."
+          },
+          {
+            "tipo": "texto",
+            "valor": "¿De dónde sale principalmente el carbono que forma esa madera?"
+          }
+        ],
+        "pasoDelCanon": 5,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Del bióxido de carbono"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Atrapaste el punto: la planta toma carbono del gas del aire y lo usa para construirse.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Del suelo, que sube por la raíz"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": true,
+            "queRevela": "Mucha gente piensa que la planta se alimenta de la tierra. Pero la tierra casi no pierde peso cuando la planta crece, así que el carbono viene de otra parte.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "Del agua que la raíz toma del suelo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El agua trae hidrógeno, que pesa muy poco, pero no trae carbono. El carbono de la madera viene del gas del aire que entra por la hoja.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "De la luz del sol que llega a la hoja"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La luz es la energía que hace funcionar la fotosíntesis, pero no es materia ni trae carbono. El carbono viene del bióxido de carbono del aire.",
+            "letra": "D"
+          }
+        ]
+      },
+      {
+        "enunciado": [
+          {
+            "tipo": "texto",
+            "valor": "¿Dónde ocurre sobre todo la fotosíntesis en la mayoría de las plantas?"
+          }
+        ],
+        "pasoDelCanon": 1,
+        "opciones": [
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En la hoja"
+              }
+            ],
+            "esCorrecta": true,
+            "esElErrorTipico": false,
+            "queRevela": "Localizaste el lugar: es donde entra la luz del sol, que es la energía que mueve todo.",
+            "letra": "A"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En la raíz"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "La raíz está bajo tierra y no recibe luz directa. La fotosíntesis necesita luz del sol.",
+            "letra": "B"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En el tallo"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "El tallo lleva lo que la raíz trae y lo que la hoja forma; la fotosíntesis ocurre sobre todo en la hoja, que es la que recibe más luz.",
+            "letra": "C"
+          },
+          {
+            "partes": [
+              {
+                "tipo": "texto",
+                "valor": "En todo el árbol"
+              }
+            ],
+            "esCorrecta": false,
+            "esElErrorTipico": false,
+            "queRevela": "Las partes que no reciben luz, como la raíz, no hacen fotosíntesis: ocurre sobre todo en las hojas, donde llega la luz.",
+            "letra": "D"
+          }
+        ]
+      }
+    ],
+    "noSePuede": null
+  },
+  "completar": null,
+  "escalera": null,
+  "error": {
+    "temaNumero": 9,
+    "materia": "biologia",
+    "enunciado": [
+      {
+        "tipo": "texto",
+        "valor": "Alguien explicó de dónde viene la masa de una planta:"
+      },
+      {
+        "tipo": "texto",
+        "valor": "6"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "CO",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": "+ 6 H₂O →"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "C",
+        "sub": "6"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "H",
+        "sub": "12"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "O",
+        "sub": "6"
+      },
+      {
+        "tipo": "texto",
+        "valor": "+ 6"
+      },
+      {
+        "tipo": "simbolo",
+        "valor": "O",
+        "sub": "2"
+      },
+      {
+        "tipo": "texto",
+        "valor": ". Hay exactamente un paso mal. Tócalo."
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "La fotosíntesis ocurre en la hoja"
+          }
+        ],
+        "siLoTocas": "Ese paso está bien: ubica la fotosíntesis en la hoja, que es donde llega la luz del sol, la energía que mueve esta reacción."
+      },
+      {
+        "numero": 2,
+        "partes": [
+          {
+            "tipo": "simbolo",
+            "valor": "CO",
+            "sub": "2"
+          },
+          {
+            "tipo": "texto",
+            "valor": "por la hoja, H₂O por la raíz"
+          }
+        ],
+        "siLoTocas": "Ese paso está bien. El bióxido de carbono viene del aire, que es lo que entra por la hoja, y el agua viene del suelo, por la raíz. Los dos ingredientes llegan por lugares distintos."
+      },
+      {
+        "numero": 3,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Con luz se forma "
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "C",
+            "sub": "6"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "H",
+            "sub": "12"
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "6"
+          }
+        ],
+        "siLoTocas": "La azúcar es lo que la planta construye con la energía del sol. Es la comida que la planta usa para crecer y hacer su madera. Sin esa azúcar, la planta no gana nada."
+      },
+      {
+        "numero": 4,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "Sale "
+          },
+          {
+            "tipo": "simbolo",
+            "valor": "O",
+            "sub": "2"
+          }
+        ],
+        "siLoTocas": "Ese paso está bien: la fotosíntesis suelta oxígeno al aire, y ese oxígeno es el que respiramos."
+      },
+      {
+        "numero": 5,
+        "partes": [
+          {
+            "tipo": "texto",
+            "valor": "La madera viene del suelo, por la raíz"
+          }
+        ],
+        "siLoTocas": "Ahí está el error: ese renglón contradice lo que se escribió en los pasos anteriores."
+      }
+    ],
+    "pasoMalo": 5,
+    "arrastre": "No hay pasos después del paso 5, así que no hay números que arrastren el error. Lo que delata este paso es que contradice los pasos anteriores: si el carbono entra por la hoja en el bióxido de carbono, la madera no puede venir del suelo.",
+    "porQue": "¿Y qué hizo mal en ese paso?",
+    "motivos": [
+      {
+        "texto": "Dijo que la madera sale del suelo, cuando su carbono viene del aire.",
+        "esElBueno": true,
+        "queRevela": "Sí es ése. La madera está hecha de carbono, y el único ingrediente que lo trae es el bióxido de carbono, que entra por la hoja, no por la raíz. Los pasos anteriores ya lo habían escrito."
+      },
+      {
+        "texto": "Olvidó que el agua también entra a la planta por la raíz y aporta masa.",
+        "esElBueno": false,
+        "queRevela": "El agua sí entra por la raíz, y el paso 2 ya la puso. El renglón no falla por olvidarla: falla porque dice que la madera sale del suelo, cuando su carbono sólo viene del bióxido de carbono que entra por la hoja."
+      }
+    ],
+    "pistas": [
+      {
+        "orden": 1,
+        "texto": "Lee cada renglón y pregúntate qué cosa afirma que se podría comprobar en la planta."
+      },
+      {
+        "orden": 2,
+        "texto": "Fíjate de qué ingrediente dice cada renglón que sale el carbono de la azúcar y de la madera."
+      },
+      {
+        "orden": 3,
+        "texto": "El agua que entra no trae carbono. ¿Hay algún renglón que le dé a la raíz algo que la raíz no trae?"
+      }
+    ],
+    "noSePuede": null
+  },
+  "explicar": {
+    "temaNumero": 9,
+    "materia": "biologia",
+    "titulo": "Explícame por qué casi toda la parte sólida de un árbol viene del aire, no del suelo.",
+    "aclaracion": "Con tus palabras, sin escribir la reacción. Aquí no hay pistas ni nada que copiar, y eso es a propósito: quiero leer cómo lo piensas. No tienes que demostrar nada, nada más explica la razón.",
+    "nota": "Si no estás de acuerdo con lo que te conteste, escríbelo y lo discutimos.",
+    "rubrica": {
+      "ideasQueCuentan": [
+        {
+          "idea": "El carbono que forma la madera viene del bióxido de carbono del aire, que entra por la hoja, y no del suelo ni de lo que sube por la raíz.",
+          "porQueImporta": "Sin esta idea, el estudiante sigue creyendo que todo lo que la planta gana entra por abajo. Con ella, entiende que hay dos entradas distintas que traen cosas distintas.",
+          "comoSuenaDicha": "La madera se construye con el carbono que agarra del aire, no con la tierra que sube por la raíz.",
+          "esImprescindible": true
+        },
+        {
+          "idea": "El suelo casi no pierde peso aunque la planta gane muchos kilos, así que la masa de la planta no sale de él.",
+          "porQueImporta": "Es la prueba que se puede comprobar: si la masa saliera del suelo, el suelo tendría que perder tantos kilos como gana la planta. Con ella, el estudiante ve por qué el suelo no es la fuente.",
+          "comoSuenaDicha": "Si pesas la tierra de la maceta antes y después, casi no cambia, aunque la planta creció.",
+          "esImprescindible": false
+        },
+        {
+          "idea": "El agua no tiene carbono y sólo aporta hidrógeno, que pesa muy poco; las sales del suelo son poca masa: casi toda la masa viene del bióxido de carbono del aire.",
+          "porQueImporta": "Explica por qué lo que trae la raíz no alcanza: el agua no tiene carbono y sólo aporta hidrógeno, que pesa muy poco, y las sales son poca masa. Sin esta idea, el estudiante sabe que viene del aire pero no por qué el agua no alcanza.",
+          "comoSuenaDicha": "Del agua sólo llega hidrógeno, que casi no pesa, y la madera es sobre todo carbono y oxígeno: eso viene del gas del aire.",
+          "esImprescindible": false
+        }
+      ],
+      "minimoParaContar": 2,
+      "suenanBienYNoDicen": [
+        {
+          "respuesta": "Porque la fotosíntesis transforma el bióxido de carbono y el agua en azúcar y oxígeno.",
+          "queLaDelata": "Escribe la reacción con otras palabras, pero no dice de dónde sale la masa: sólo repite que ocurre la fotosíntesis.",
+          "queLeFalta": "Que diga que el carbono de la madera viene del bióxido de carbono del aire y no del suelo."
+        },
+        {
+          "respuesta": "Porque la luz del sol la alimenta y por eso crece.",
+          "queLaDelata": "Trata la luz como si fuera comida. La luz es energía, no materia: no dice qué ingrediente forma la madera.",
+          "queLeFalta": "Que diga que la madera se arma con carbono que viene del bióxido de carbono del aire, y que la luz sólo da la energía."
+        },
+        {
+          "respuesta": "Porque la raíz trae agua y las hojas traen aire, y con los dos hace azúcar para crecer.",
+          "queLaDelata": "Acomoda bien los dos lugares de entrada, y eso ya cuenta como la idea del aire, pero se queda en describir la fotosíntesis. No explica por qué casi toda la parte sólida es del aire y no del suelo.",
+          "queLeFalta": "Que explique por qué la tierra no puede ser la fuente: casi no pierde peso, o el agua no tiene carbono."
+        }
+      ],
+      "contraargumentos": [
+        {
+          "siDice": "El suelo sí alimenta a la planta, porque sin suelo la planta no crece.",
+          "seLeContesta": "El suelo sí alimenta a la planta, tienes razón: le da agua y sales minerales que necesita en pequeñas cantidades. Pero esas sales son muy poca masa. Si pesas la tierra antes y después de que la planta crezca muchos kilos, casi no cambia. ¿De dónde salió entonces el resto de la masa?",
+          "aDondeLoEmpuja": "A que vea que el suelo aporta nutrientes, pero no el carbono que forma casi toda la parte sólida."
+        },
+        {
+          "siDice": "La raíz trae todo lo que la planta necesita, porque está en contacto con el suelo.",
+          "seLeContesta": "La raíz sí trae cosas importantes: agua y sales. Pero el agua no tiene carbono y la madera sí. Si todo viniera por la raíz, ¿de dónde sacaría la planta el carbono para su madera?",
+          "aDondeLoEmpuja": "A que se dé cuenta de que el carbono de la madera no puede venir de la raíz, porque lo que trae la raíz no tiene carbono."
+        },
+        {
+          "siDice": "Sí, el carbono viene del aire, pero no me cabe cómo puede ser que casi toda la madera sea del aire si el árbol está plantado en tierra.",
+          "seLeContesta": "Es normal dudarlo. El aire parece que no pesa, pero un gas sí tiene masa. La planta toma el bióxido de carbono y, con la luz, junta su carbono con agua para armar azúcar, que ya es sólida. Prueba: si la madera saliera de la tierra, la tierra de la maceta pesaría mucho menos al final, y casi no cambia.",
+          "aDondeLoEmpuja": "A entender que un gas sí tiene masa y que la planta lo convierte en azúcar sólida, y a ver que la tierra casi no pierde peso, así que la madera no sale de ella."
+        }
+      ],
+      "ejemploQueSiCuenta": "La madera está hecha de carbono, oxígeno y un poco de hidrógeno. El carbono y el oxígeno vienen del bióxido de carbono, que entra por la hoja; del agua sólo llega el hidrógeno, que pesa muy poco, y las sales del suelo son poca masa. Por eso casi toda la parte sólida viene del aire y la tierra casi no pierde peso.",
+      "noCuentaEnContra": [
+        "La ortografía, los acentos y que escriba en minúsculas.",
+        "Que no use las palabras fotosíntesis, bióxido de carbono, azúcar o nutriente de memoria: si explica la idea con sus propias palabras, cuenta.",
+        "Que no escriba ningún número ni la reacción química: la idea se explica sin hacer la cuenta."
+      ]
+    },
+    "noSePuede": null
+  },
+  "casosAparte": {
+    "X3-teclado": {
+      "temaNumero": 9,
+      "materia": "biologia",
+      "teclado": "opciones",
+      "porQueEseTeclado": "Cada hueco se contesta con un término o una cantidad que el estudiante reconoce entre cuatro que se confunden entre sí (agua o bióxido de carbono, 47 o 49). Armarlos letra por letra pediría más de quince fichas y calificaría ortografía, no biología.",
+      "tecladosDescartados": [
+        {
+          "teclado": "digitos",
+          "porQue": "No tiene letras. La respuesta es un término que comienza con una palabra, y sin letras el hueco no puede recibir nada."
+        },
+        {
+          "teclado": "fichas",
+          "porQue": "Las respuestas son palabras largas, como «bióxido de carbono» o «pesaría menos»: pasan de quince fichas y no caben en teclas de cuatro caracteres."
+        }
+      ],
+      "fichas": [],
+      "comoSeCompara": {
+        "ignoraMayusculas": false,
+        "ignoraAcentos": false,
+        "ignoraEspaciosDeMas": false
+      },
+      "completar": {
+        "pasoDelCanon": 5,
+        "expresion": [
+          {
+            "tipo": "texto",
+            "valor": "La madera está hecha de carbono, y el carbono entra a la planta en el"
+          },
+          {
+            "tipo": "hueco"
+          }
+        ],
+        "respuesta": {
+          "correcta": "bióxido de carbono",
+          "enAtomos": [
+            {
+              "tipo": "texto",
+              "valor": "bióxido de carbono"
+            }
+          ],
+          "comoSeLee": "bióxido de carbono",
+          "aceptaTambien": [],
+          "opciones": [
+            {
+              "etiqueta": "bióxido de carbono",
+              "esCorrecta": true,
+              "queRevela": "El carbono de la madera viene del bióxido de carbono, el único ingrediente que lo trae, y entra por la hoja desde el aire."
+            },
+            {
+              "etiqueta": "agua",
+              "esCorrecta": false,
+              "queRevela": "La raíz sí trae agua, pero el agua no tiene carbono: su fórmula, H₂O, sólo trae hidrógeno y oxígeno."
+            },
+            {
+              "etiqueta": "oxígeno",
+              "esCorrecta": false,
+              "queRevela": "El oxígeno es lo que la fotosíntesis suelta, y su fórmula, O₂, no tiene ningún carbono."
+            },
+            {
+              "etiqueta": "nutriente del suelo",
+              "esCorrecta": false,
+              "queRevela": "Piensas que la planta se alimenta de lo que trae la raíz. Los nutrientes del suelo son sales y minerales: muy poca masa, y no son el carbono con el que se arma la madera."
+            }
+          ]
+        },
+        "pistas": [
+          {
+            "texto": "Piensa de qué está hecha la madera: la azúcar y la madera tienen carbono. ¿Qué ingrediente de la fotosíntesis lo trae?",
+            "orden": 1
+          },
+          {
+            "texto": "Hay dos ingredientes: uno entra por la hoja y otro por la raíz. Mira la fórmula de cada uno: ¿cuál tiene átomos de carbono?",
+            "orden": 2
+          },
+          {
+            "texto": "El agua es H₂O: no tiene ni un átomo de carbono, y las sales del suelo son muy poca masa. ¿Qué otro ingrediente entra a la planta?",
+            "orden": 3
+          }
+        ]
+      },
+      "escalera": [
+        {
+          "situacion": "Un arbolito crece varios años en una maceta con tierra y sólo se riega con agua. Al final pesa muchos kilos más que al principio, pero la tierra casi no cambió de peso.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "Si toda la masa del arbolito viniera del suelo, el suelo"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Qué tendría que pasar con el peso del suelo si fuera la fuente de casi toda la madera?",
+          "respuesta": {
+            "correcta": "pesaría menos",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "pesaría menos"
+              }
+            ],
+            "comoSeLee": "pesaría menos",
+            "aceptaTambien": [
+              "pesaria menos"
+            ],
+            "opciones": [
+              {
+                "etiqueta": "pesaría menos",
+                "esCorrecta": true,
+                "queRevela": "Exacto: lo que gana el árbol lo tendría que perder el suelo. Pero el suelo casi no baja de peso, así que la masa no salió de ahí."
+              },
+              {
+                "etiqueta": "pesaría igual",
+                "esCorrecta": false,
+                "queRevela": "Si el suelo le pasara masa al árbol, no podría quedar igual: lo que gana uno lo pierde el otro."
+              },
+              {
+                "etiqueta": "pesaría más",
+                "esCorrecta": false,
+                "queRevela": "Es lo contrario: si el suelo alimentara al árbol, perdería masa, no la ganaría."
+              },
+              {
+                "etiqueta": "cambiaría de color",
+                "esCorrecta": false,
+                "queRevela": "El color del suelo no dice nada sobre dónde viene la masa del árbol. Fíjate en lo que pesa: ¿qué pierde peso cuando el árbol gana?"
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "texto": "El árbol gana masa. Si esa masa viniera del suelo, ¿qué le pasaría al suelo?",
+              "orden": 1
+            },
+            {
+              "texto": "Piensa en la masa como en materia que se mueve: si todo pasa del suelo al árbol, uno gana y el otro pierde.",
+              "orden": 2
+            },
+            {
+              "texto": "Mira lo que cuenta la situación sobre la tierra y piensa: si los kilos que ganó el árbol hubieran salido de ella, ¿su peso final sería igual, mayor o menor que el del principio?",
+              "orden": 3
+            }
+          ]
+        },
+        {
+          "situacion": "La fotosíntesis se escribe 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Cuenta los átomos de cada lado: la azúcar C₆H₁₂O₆ tiene 12 átomos de hidrógeno.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "En la ecuación, el hidrógeno de la azúcar lo trae:"
+            },
+            {
+              "tipo": "hueco"
+            }
+          ],
+          "pregunta": "¿Qué trae los átomos de hidrógeno que tiene la azúcar?",
+          "respuesta": {
+            "correcta": "agua",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "agua"
+              }
+            ],
+            "comoSeLee": "agua",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "agua",
+                "esCorrecta": true,
+                "queRevela": "Mira las fórmulas: H₂O tiene dos átomos de hidrógeno y el CO₂ ninguno. El hidrógeno de la azúcar sólo puede venir del agua."
+              },
+              {
+                "etiqueta": "bióxido de carbono",
+                "esCorrecta": false,
+                "queRevela": "El CO₂ trae un carbono y dos oxígenos: ni un solo hidrógeno. Mira otra vez su fórmula."
+              },
+              {
+                "etiqueta": "oxígeno",
+                "esCorrecta": false,
+                "queRevela": "El oxígeno O₂ es lo que sale de la reacción, no un ingrediente, y su fórmula no tiene hidrógeno."
+              },
+              {
+                "etiqueta": "luz del sol",
+                "esCorrecta": false,
+                "queRevela": "La luz es energía, no átomos: no trae hidrógeno ni ningún otro. Los átomos de la azúcar vienen de los ingredientes."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "texto": "Cuenta los átomos de hidrógeno de la ecuación: la azúcar los tiene a la derecha. ¿En cuál fórmula de la izquierda aparecen?",
+              "orden": 1
+            },
+            {
+              "texto": "Mira las dos fórmulas de la izquierda, CO₂ y H₂O, y busca en cuál aparece el símbolo H.",
+              "orden": 2
+            },
+            {
+              "texto": "Con el coeficiente 6, seis fórmulas de H₂O dan 12 átomos de hidrógeno, los mismos que tiene la azúcar. ¿Cuál de las dos fórmulas de la izquierda es la que los trae?",
+              "orden": 3
+            }
+          ]
+        },
+        {
+          "situacion": "Un investigador plantó un arbolito de 1 kilo de materia seca (sin el agua que lleva dentro) en una maceta y sólo lo regó. A los 10 años el árbol tenía 50 kilos de materia seca y la tierra había perdido 2 kilos.",
+          "expresion": [
+            {
+              "tipo": "texto",
+              "valor": "La materia seca del árbol ganó 49 kilos y la tierra perdió 2. Quedan sin explicar"
+            },
+            {
+              "tipo": "hueco"
+            },
+            {
+              "tipo": "texto",
+              "valor": "kilos."
+            }
+          ],
+          "pregunta": "¿Cuántos kilos de materia seca no puede explicar la tierra?",
+          "respuesta": {
+            "correcta": "47",
+            "enAtomos": [
+              {
+                "tipo": "texto",
+                "valor": "47"
+              }
+            ],
+            "comoSeLee": "cuarenta y siete",
+            "aceptaTambien": [],
+            "opciones": [
+              {
+                "etiqueta": "47",
+                "esCorrecta": true,
+                "queRevela": "El árbol ganó 49 kilos y la tierra sólo perdió 2: esos 2 son los únicos que la tierra explica. Los otros 47 salieron de otra parte."
+              },
+              {
+                "etiqueta": "48",
+                "esCorrecta": false,
+                "queRevela": "Restaste lo que perdió la tierra al peso final, que son 50 kilos. Pero el arbolito ya pesaba 1 kilo al empezar: lo que ganó el árbol son 49."
+              },
+              {
+                "etiqueta": "49",
+                "esCorrecta": false,
+                "queRevela": "Esos son todos los kilos que ganó el árbol. La tierra sí explica 2 de ellos, así que a esos 49 hay que quitarles esos 2."
+              },
+              {
+                "etiqueta": "51",
+                "esCorrecta": false,
+                "queRevela": "Sumaste lo que perdió la tierra a lo que ganó el árbol. Los kilos de la tierra son los que sí se explican, así que se restan, no se suman."
+              }
+            ]
+          },
+          "pistas": [
+            {
+              "texto": "Una parte de los kilos que ganó el árbol pudo salir de la tierra, y la tierra dice cuántos kilos perdió. ¿Esos kilos alcanzan para explicar todo lo que ganó el árbol?",
+              "orden": 1
+            },
+            {
+              "texto": "Lo que perdió la tierra es lo único que pudo pasar de la tierra al árbol. Lo que sobra hay que buscarlo en otra parte, y para saber cuánto es, se resta.",
+              "orden": 2
+            },
+            {
+              "texto": "Resta lo que perdió la tierra de lo que ganó el árbol: 49 − 2. Eso es lo que la tierra no explica.",
+              "orden": 3
+            }
+          ]
+        }
+      ],
+      "noSePuede": null,
+      "titulo": "Fotosíntesis: comer del aire"
+    }
+  }
+}

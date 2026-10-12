@@ -1093,7 +1093,7 @@
     ],
     "pasoMalo": 3,
     "arrastre": "El 2/5 del paso 3 aparece sin cambios en el paso 4 como la fracción que se simplifica, y en el paso 5 como el resultado que se comprueba. Los pasos 4 y 5 están bien hechos con una fracción mala: la comparación del paso 5 es lo que delata el error, porque el resultado sale más chico que 1/2.\"",
-    "porQue": "¿Y qué hizo mal en ese paso?\"",
+    "porQue": "¿Y qué hizo mal en ese paso?",
     "motivos": [
       {
         "texto": "Sumó numeradores y denominadores como si ambos se operaran igual.",

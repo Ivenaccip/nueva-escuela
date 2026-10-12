@@ -85,6 +85,7 @@ export const tema: Tema = {
   completar: {
     pistas: 5,
     pistaEn: '0:18',
+    entrada: { modo: 'digitos' },
     expresion: [
       { tipo: 'fraccion', arriba: 3, abajo: 5 },
       { tipo: 'texto', valor: '÷' },
@@ -100,6 +101,7 @@ export const tema: Tema = {
     escalon: 4,
     escalones: 5,
     pistas: 5,
+    entrada: { modo: 'digitos' },
     situacion: 'El maestro borró el divisor sin querer al limpiar el pizarrón.',
     expresion: [
       { tipo: 'fraccion', arriba: 3, abajo: 5 },
